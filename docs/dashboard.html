@@ -518,6 +518,21 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 
 </div></div>
 
+<!-- კითხვარი — მხოლოდ Mariam view-ში ჩანს -->
+<div id="mariam-survey" style="display:none">
+<div class="cd" style="border-left:3px solid var(--pur)"><div class="cd-h"><div><span class="tg tg-b">კითხვარი</span> <span style="font-size:.85rem">გილოცავ, გაიცანი მენცარი — ბივიჟენის AI ასისტენტი</span></div></div>
+<div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.7">
+<p style="margin-bottom:.8rem">გამარჯობა მარიამ! მე მენცარი ვარ, ბივიჟენის AI სისტემა. ეს კითხვარი დაგვეხმარება უკეთ გავიგოთ შენი გამოცდილება და ხედვა. პასუხები კონფიდენციალურია.</p>
+
+<div id="survey-questions"></div>
+
+<div style="margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--brd)">
+<button onclick="exportSurvey()" style="background:var(--pur);color:var(--bg);border:none;border-radius:var(--rs);padding:.6rem 1.2rem;cursor:pointer;font-family:inherit;font-weight:600;font-size:.88rem">📤 პასუხების გაგზავნა</button>
+<span style="font-size:.75rem;color:var(--t3);margin-left:.5rem">ჩამოტვირთავს ფაილს — გელას გაუგზავნე</span>
+</div>
+</div></div>
+</div>
+
 </div><!-- end mkt-overview -->
 
 <!-- ════ SUB-TAB: არხები ════ -->
@@ -856,6 +871,25 @@ el.innerHTML=comments.map((c,ci)=>`<div style="display:flex;align-items:center;g
 if(comments.length){const panel=document.getElementById('fuc-tt-'+i);if(panel)panel.style.display='block';const ico=document.getElementById('tt-'+i+'-ico');if(ico)ico.textContent='▾'}}}
 function addTT(id,input){if(!input||!input.value.trim())return;const s=L();s.tt=s.tt||{};s.tt[id]=s.tt[id]||[];const now=new Date();const date=String(now.getDate()).padStart(2,'0')+'/'+String(now.getMonth()+1).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');s.tt[id].push({text:input.value.trim(),date:date});V(s);input.value='';loadTT()}
 function delTT(id,i){const s=L();s.tt[id].splice(i,1);V(s);loadTT()}
+
+// Survey for Mariam
+const surveyQs=[
+{id:'sq1',q:'რა არის შენი ყველაზე დიდი გამოწვევა მარკეტინგში ახლა?',type:'text'},
+{id:'sq2',q:'ბევრი როლი გაქვს (content, design, social, email, analytics) — კომფორტულად ხარ? რა წაგართმევდა ტვირთს?',type:'text'},
+{id:'sq3',q:'რომელი არხი მუშაობს ყველაზე კარგად შენი აზრით და რატომ?',type:'text'},
+{id:'sq4',q:'რა გაწუხებს ან გაფრუსტრირებს ყოველდღიურ სამუშაოში?',type:'text'},
+{id:'sq5',q:'თუ AI ინსტრუმენტი (მაგ. ტექსტის დაწერა, სურათის შექმნა, ვიდეო) გეხმარებოდა — რაში გამოიყენებდი პირველ რიგში?',type:'text'},
+{id:'sq6',q:'რა ტიპის content-ი მუშაობს ქართულ აუდიტორიაზე შენი გამოცდილებით?',type:'text'},
+{id:'sq7',q:'LinkedIn-ზე რა გამოცდილება გაქვს? რა მუშაობს B2B-ში საქართველოში?',type:'text'},
+{id:'sq8',q:'რას შეცვლიდი ბივიჟენის მარკეტინგში ხვალიდან, რომ შენზე იყოს დამოკიდებული?',type:'text'},
+];
+function loadSurvey(){const s=L();s.survey=s.survey||{};const el=document.getElementById('survey-questions');if(!el)return;
+el.innerHTML=surveyQs.map((q,i)=>`<div style="margin-bottom:1rem">
+<div style="display:flex;gap:.4rem;margin-bottom:.4rem"><strong style="color:var(--pur)">${i+1}.</strong><span>${q.q}</span></div>
+<textarea id="sv-${q.id}" style="width:100%;min-height:60px;background:var(--bg3);border:1px solid var(--brd);border-radius:var(--rs);color:var(--t1);font-family:inherit;font-size:.88rem;padding:.5rem .7rem;resize:vertical" placeholder="შენი პასუხი...">${s.survey[q.id]||''}</textarea>
+</div>`).join('');
+document.querySelectorAll('[id^="sv-sq"]').forEach(ta=>{ta.addEventListener('input',()=>{const s=L();s.survey=s.survey||{};s.survey[ta.id.replace('sv-','')]=ta.value;V(s)})})}
+function exportSurvey(){const s=L();const sv=s.survey||{};let md='# მარიამის კითხვარი — '+new Date().toISOString().slice(0,10)+'\n\n';surveyQs.forEach((q,i)=>{md+=`## ${i+1}. ${q.q}\n${sv[q.id]||'(პასუხი არ არის)'}\n\n`});const blob=new Blob([md],{type:'text/markdown'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='mariam-survey-'+new Date().toISOString().slice(0,10)+'.md';a.click();URL.revokeObjectURL(a.href)}
 function addFU(id,input){if(!input||!input.value.trim())return;const s=L();s.fu=s.fu||{};s.fu[id]=s.fu[id]||[];const now=new Date();const date=String(now.getDate()).padStart(2,'0')+'/'+String(now.getMonth()+1).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');s.fu[id].push({text:input.value.trim(),date:date});V(s);input.value='';loadFuckups()}
 function delFU(id,i){const s=L();s.fu[id].splice(i,1);V(s);loadFuckups()}
 
@@ -963,7 +997,7 @@ setInterval(uKPI,60000);
 // Init
 document.addEventListener('DOMContentLoaded',()=>{const s=L();if(s.r)Object.entries(s.r).forEach(([k,v])=>{const b=document.querySelector(`.rb[data-o="${k}"]`);if(b)b.querySelectorAll('.rn').forEach(n=>n.classList.toggle('on',parseInt(n.dataset.v)===v))});iC();rT();uKPI();loadFuckups();loadTT();
 // Mariam view: ?view=marketing → hide everything except Marketing tab
-const params=new URLSearchParams(window.location.search);if(params.get('view')==='marketing'){document.querySelector('.hdr').innerHTML='<div class="hdr-b"><div class="hdr-l">მ</div><div class="hdr-t">ბივიჟენი მარკეტინგი</div></div>';document.querySelector('.tabs').style.display='none';document.querySelectorAll('.tc').forEach(x=>x.classList.remove('on'));document.getElementById('t-mkt').classList.add('on');const stratBtn=document.querySelector('[data-mt="mkt-strategy"]');if(stratBtn)stratBtn.style.display='none';const stratPanel=document.getElementById('mkt-strategy');if(stratPanel)stratPanel.remove()}});
+const params=new URLSearchParams(window.location.search);if(params.get('view')==='marketing'){document.querySelector('.hdr').innerHTML='<div class="hdr-b"><div class="hdr-l">მ</div><div class="hdr-t">ბივიჟენი მარკეტინგი</div></div>';document.querySelector('.tabs').style.display='none';document.querySelectorAll('.tc').forEach(x=>x.classList.remove('on'));document.getElementById('t-mkt').classList.add('on');const stratBtn=document.querySelector('[data-mt="mkt-strategy"]');if(stratBtn)stratBtn.style.display='none';const stratPanel=document.getElementById('mkt-strategy');if(stratPanel)stratPanel.remove();const surveyEl=document.getElementById('mariam-survey');if(surveyEl){surveyEl.style.display='block';loadSurvey()}}});
 </script>
 </body>
 </html>
