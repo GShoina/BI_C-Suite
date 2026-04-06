@@ -303,28 +303,55 @@ const AGE_CATS = {
   niko: Object.keys(WORDS)
 };
 
-// ═══ MATH (UCMAS + კომაროვი) ═══
-const MATH_CFG = {
-  niko: { addMax:50, subMax:50, mul:[2,3,4,5], patHard:true },
-  masho: { addMax:10, subMax:10, mul:null, patHard:false }
+// ═══ MATH (UCMAS + კომაროვი) — GRADED ═══
+const MATH_GRADES = {
+  niko: {
+    'math-add':[{max:20,label:'1–20'},{max:50,label:'1–50'},{max:100,label:'1–100'}],
+    'math-sub':[{max:20,label:'1–20'},{max:50,label:'1–50'},{max:100,label:'1–100'}],
+    'math-mul':[{tables:[2,3],label:'×2, ×3'},{tables:[2,3,4,5],label:'×2–×5'},{tables:[2,3,4,5,6,7,8,9],label:'×2–×9'}],
+    'math-pat':[{hard:false,label:'მარტივი'},{hard:true,label:'რთული'}]
+  },
+  masho: {
+    'math-add':[{max:10,label:'1–10'},{max:20,label:'1–20'}],
+    'math-sub':[{max:10,label:'1–10'},{max:20,label:'1–20'}],
+    'math-pat':[{hard:false,label:'მარტივი'}]
+  }
 };
+const LVLUP_NEED=20,LVLUP_ACC=80;
 let mathQs=[],mathIdx=0,mathMode='';
 function randInt(a,b){return a+Math.floor(Math.random()*(b-a+1));}
 
+function getMathLvl(mode){if(!state[profile].mathLvl)state[profile].mathLvl={};return state[profile].mathLvl[mode]||0;}
+function getMathLvlStats(mode,lvl){
+  if(!state[profile].mathLvlStats)state[profile].mathLvlStats={};
+  const k=mode+'-'+lvl;if(!state[profile].mathLvlStats[k])state[profile].mathLvlStats[k]={c:0,w:0};
+  return state[profile].mathLvlStats[k];
+}
+function getMathGrade(mode){
+  const grades=(MATH_GRADES[profile]||{})[mode];
+  if(!grades)return null;
+  return grades[Math.min(getMathLvl(mode),grades.length-1)];
+}
+function isMaxMathLvl(mode){
+  const grades=(MATH_GRADES[profile]||{})[mode];
+  return !grades||getMathLvl(mode)>=grades.length-1;
+}
+
 function genMathQs(type){
-  const c=MATH_CFG[profile],qs=[],n=type==='math-pat'?8:10;
+  const gi=getMathGrade(type);if(!gi)return[];
+  const qs=[],n=type==='math-pat'?8:10;
   for(let i=0;i<n;i++){
     if(type==='math-add'){
-      const a=randInt(1,Math.floor(c.addMax*0.7)),b=randInt(1,c.addMax-a);
+      const mx=gi.max,a=randInt(1,Math.floor(mx*0.7)),b=randInt(1,Math.max(1,mx-a));
       qs.push({q:`${a} + ${b} = ?`,ans:a+b,emoji:'➕'});
     }else if(type==='math-sub'){
-      const a=randInt(2,c.subMax),b=randInt(1,a-1);
+      const a=randInt(2,gi.max),b=randInt(1,a-1);
       qs.push({q:`${a} − ${b} = ?`,ans:a-b,emoji:'➖'});
     }else if(type==='math-mul'){
-      const t=c.mul[randInt(0,c.mul.length-1)],b=randInt(1,10);
+      const t=gi.tables[randInt(0,gi.tables.length-1)],b=randInt(1,10);
       qs.push({q:`${t} × ${b} = ?`,ans:t*b,emoji:'✖️'});
     }else if(type==='math-pat'){
-      qs.push(genPattern(c.patHard));
+      qs.push(genPattern(gi.hard));
     }
   }
   return qs;
@@ -455,11 +482,13 @@ function selectSubject(subj){
       <div class="mode-card" onclick="showCategories()"><div class="m-icon">📚</div><div class="m-name">კატეგორიები</div><div class="m-desc">აირჩიე თემა</div></div>
     </div>`;
   } else {
+    const addG=getMathGrade('math-add'),subG=getMathGrade('math-sub'),patG=getMathGrade('math-pat');
+    const mulG=!isKid?getMathGrade('math-mul'):null;
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startMathGame('math-add')"><div class="m-icon">➕</div><div class="m-name">შეკრება</div><div class="m-desc">${isKid?'1 — 10':'1 — 50'}</div></div>
-      <div class="mode-card" onclick="startMathGame('math-sub')"><div class="m-icon">➖</div><div class="m-name">გამოკლება</div><div class="m-desc">${isKid?'1 — 10':'1 — 50'}</div></div>
-      ${!isKid?'<div class="mode-card" onclick="startMathGame(\'math-mul\')"><div class="m-icon">✖️</div><div class="m-name">გამრავლება</div><div class="m-desc">×2, ×3, ×4, ×5</div></div>':''}
-      <div class="mode-card" onclick="startMathGame('math-pat')"><div class="m-icon">🧩</div><div class="m-name">პატერნები</div><div class="m-desc">${isKid?'მარტივი მიმდევრობა':'კანონზომიერება'}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-add')"><div class="m-icon">➕</div><div class="m-name">შეკრება</div><div class="m-desc">${addG?addG.label:''}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-sub')"><div class="m-icon">➖</div><div class="m-name">გამოკლება</div><div class="m-desc">${subG?subG.label:''}</div></div>
+      ${mulG?`<div class="mode-card" onclick="startMathGame('math-mul')"><div class="m-icon">✖️</div><div class="m-name">გამრავლება</div><div class="m-desc">${mulG.label}</div></div>`:''}
+      <div class="mode-card" onclick="startMathGame('math-pat')"><div class="m-icon">🧩</div><div class="m-name">პატერნები</div><div class="m-desc">${patG?patG.label:''}</div></div>
     </div>`;
   }
 }
@@ -727,12 +756,13 @@ function nextMathQ(){
 function checkMathAns(btn,selected,correct){
   if(!state[profile].math)state[profile].math={};
   if(!state[profile].math[mathMode])state[profile].math[mathMode]={correct:0,wrong:0};
+  const lvl=getMathLvl(mathMode);const ls=getMathLvlStats(mathMode,lvl);
   if(selected===correct){
     document.querySelectorAll('.opt').forEach(b=>{b.classList.add('disabled');b.style.pointerEvents='none';});
     btn.classList.add('correct');
     sessionShields++;state[profile].shields++;state[profile].streak++;
     if(state[profile].streak>state[profile].maxStreak)state[profile].maxStreak=state[profile].streak;
-    state[profile].math[mathMode].correct++;
+    state[profile].math[mathMode].correct++;ls.c++;
     save();
     document.getElementById('game-score').textContent='🛡️ '+sessionShields;
     showFeedback(true);
@@ -740,9 +770,8 @@ function checkMathAns(btn,selected,correct){
   } else {
     btn.classList.add('wrong');btn.style.pointerEvents='none';btn.classList.add('disabled');
     sessionWrong++;state[profile].streak=0;
-    state[profile].math[mathMode].wrong++;
+    state[profile].math[mathMode].wrong++;ls.w++;
     save();
-    // ამონაშვილი: let them try again, don't advance
     if(sessionStart&&(Date.now()-sessionStart)>15*60*1000){
       document.getElementById('break-screen').classList.remove('hidden');sessionStart=Date.now();
     }
@@ -753,19 +782,42 @@ function showMathResults(){
   show('results');
   const total=sessionShields+sessionWrong;
   const pct=total>0?Math.round(sessionShields/total*100):0;
+
+  // Level-up check
+  const lvl=getMathLvl(mathMode);const ls=getMathLvlStats(mathMode,lvl);
+  const lvlAcc=ls.c+ls.w>0?Math.round(ls.c/(ls.c+ls.w)*100):0;
+  let leveledUp=false;
+  if(ls.c>=LVLUP_NEED && lvlAcc>=LVLUP_ACC && !isMaxMathLvl(mathMode)){
+    if(!state[profile].mathLvl)state[profile].mathLvl={};
+    state[profile].mathLvl[mathMode]=lvl+1;
+    leveledUp=true;
+  }
+
+  const gi=getMathGrade(mathMode);
   let msg='';
-  if(pct>=90)msg=getName()+', მათემატიკოსი ხარ! 🌟';
+  if(leveledUp)msg=getName()+', ახალი ლეველი! 🚀 → '+gi.label;
+  else if(pct>=90)msg=getName()+', მათემატიკოსი ხარ! 🌟';
   else if(pct>=70)msg=getName()+', კარგად მიდიხარ! 💪';
   else if(pct>=50)msg=getName()+', ისწავლე ახალი! 📚';
   else msg=getName()+', ყოველი ცდა = წინსვლა! 🌱';
 
+  // Progress to next level
+  const maxLvl=isMaxMathLvl(mathMode);
+  const progPct=maxLvl?100:Math.min(100,Math.round((ls.c/LVLUP_NEED)*100));
+  const progAcc=maxLvl?'✅':lvlAcc+'%';
+
   document.getElementById('results-content').innerHTML=`
-    <div class="big">${pct>=80?'🏆':pct>=50?'⭐':'🌱'}</div>
+    <div class="big">${leveledUp?'🚀':pct>=80?'🏆':pct>=50?'⭐':'🌱'}</div>
     <h2>${msg}</h2>
     <div class="stat-row">
       <div class="stat"><div class="val" style="color:var(--green)">${sessionShields}</div><div class="label">🛡️ shields</div></div>
       <div class="stat"><div class="val">${pct}%</div><div class="label">📊 სიზუსტე</div></div>
       <div class="stat"><div class="val" style="color:var(--orange)">${state[profile].streak}</div><div class="label">🔥 streak</div></div>
+    </div>
+    <div class="level-card" style="width:100%">
+      <div class="level-name" style="color:var(--purple)">📐 ${gi?gi.label:''} ${maxLvl?'— მაქსიმუმი! 🏆':''}</div>
+      <div class="level-bar"><div class="level-fill" style="width:${progPct}%;background:linear-gradient(90deg,var(--purple),var(--pink))"></div></div>
+      <div class="level-info">${maxLvl?'მაქსიმალური ლეველი!':`${ls.c}/${LVLUP_NEED} სწორი (${progAcc} სიზუსტე) → შემდეგი ლეველი`}</div>
     </div>
     <button class="btn-primary" onclick="startMathGame('${mathMode}')" style="background:var(--purple)">🎮 ახალი რაუნდი</button>
     <button class="btn-secondary" onclick="goMenu()">📋 მენიუ</button>
