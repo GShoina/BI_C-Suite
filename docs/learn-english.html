@@ -58,6 +58,30 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .menu-card .info p{color:var(--muted);font-size:.82rem}
 .menu-card.locked{opacity:.35;pointer-events:none}
 
+/* ═══ SUBJECTS ═══ */
+.subjects{display:flex;flex-direction:column;gap:1.2rem;flex:1;justify-content:center;padding:1rem 0}
+.subj-card{border:3px solid var(--brd);border-radius:24px;padding:2.2rem 1.5rem;text-align:center;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.subj-card:active{transform:scale(.97)}
+.subj-card .subj-icon{font-size:3.5rem;margin-bottom:.6rem}
+.subj-card .subj-name{font-size:1.5rem;font-weight:800;margin-bottom:.3rem}
+.subj-card .subj-desc{color:var(--muted);font-size:.85rem}
+.subj-card .subj-badge{position:absolute;top:.8rem;right:.8rem;font-size:.75rem;padding:.2rem .6rem;border-radius:12px;font-weight:600}
+.subj-card.english{border-color:rgba(66,165,245,.4);background:linear-gradient(145deg,var(--card) 60%,rgba(66,165,245,.12))}
+.subj-card.english:active{border-color:var(--blue);box-shadow:0 8px 30px rgba(66,165,245,.2)}
+.subj-card.english .subj-badge{background:rgba(66,165,245,.15);color:var(--blue)}
+.subj-card.math{border-color:rgba(171,71,188,.4);background:linear-gradient(145deg,var(--card) 60%,rgba(171,71,188,.12))}
+.subj-card.math:active{border-color:var(--purple);box-shadow:0 8px 30px rgba(171,71,188,.2)}
+.subj-card.math .subj-badge{background:rgba(171,71,188,.15);color:var(--purple)}
+
+/* ═══ MODE GRID ═══ */
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;padding:.5rem 0}
+.mode-card{background:var(--card);border:2px solid var(--brd);border-radius:18px;padding:1.4rem .8rem;text-align:center;cursor:pointer;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:.5rem;touch-action:manipulation;user-select:none}
+.mode-card:active{transform:scale(.96);border-color:var(--gold)}
+.mode-card .m-icon{font-size:2.4rem}
+.mode-card .m-name{font-size:.95rem;font-weight:700}
+.mode-card .m-desc{color:var(--muted);font-size:.72rem}
+.mode-card.wide{grid-column:span 2}
+
 /* ═══ GAME ═══ */
 .game{flex:1;display:flex;flex-direction:column;gap:.8rem}
 .progress-bar{height:10px;background:var(--card);border-radius:5px;overflow:hidden}
@@ -160,10 +184,20 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   </div>
 </div>
 
+<!-- SUBJECTS -->
+<div class="hidden" id="screen-subjects">
+  <div class="hdr">
+    <div class="hdr-left"><button class="back" onclick="goProfiles()">←</button><span class="user" id="subj-user"></span></div>
+    <div class="hdr-right"><span class="score" id="subj-score">🛡️ 0</span><span class="streak" id="subj-streak">🔥 0</span></div>
+  </div>
+  <div id="subj-level"></div>
+  <div class="subjects" id="subject-cards"></div>
+</div>
+
 <!-- MENU -->
 <div class="hidden" id="screen-menu">
   <div class="hdr">
-    <div class="hdr-left"><button class="back" onclick="goProfiles()">←</button><span class="user" id="menu-user"></span></div>
+    <div class="hdr-left"><button class="back" onclick="goSubjects()">←</button><span class="user" id="menu-user"></span></div>
     <div class="hdr-right"><span class="score" id="menu-score">🛡️ 0</span><span class="streak" id="menu-streak">🔥 0</span></div>
   </div>
   <div id="menu-level"></div>
@@ -269,6 +303,50 @@ const AGE_CATS = {
   niko: Object.keys(WORDS)
 };
 
+// ═══ MATH (UCMAS + კომაროვი) ═══
+const MATH_CFG = {
+  niko: { addMax:50, subMax:50, mul:[2,3,4,5], patHard:true },
+  masho: { addMax:10, subMax:10, mul:null, patHard:false }
+};
+let mathQs=[],mathIdx=0,mathMode='';
+function randInt(a,b){return a+Math.floor(Math.random()*(b-a+1));}
+
+function genMathQs(type){
+  const c=MATH_CFG[profile],qs=[],n=type==='math-pat'?8:10;
+  for(let i=0;i<n;i++){
+    if(type==='math-add'){
+      const a=randInt(1,Math.floor(c.addMax*0.7)),b=randInt(1,c.addMax-a);
+      qs.push({q:`${a} + ${b} = ?`,ans:a+b,emoji:'➕'});
+    }else if(type==='math-sub'){
+      const a=randInt(2,c.subMax),b=randInt(1,a-1);
+      qs.push({q:`${a} − ${b} = ?`,ans:a-b,emoji:'➖'});
+    }else if(type==='math-mul'){
+      const t=c.mul[randInt(0,c.mul.length-1)],b=randInt(1,10);
+      qs.push({q:`${t} × ${b} = ?`,ans:t*b,emoji:'✖️'});
+    }else if(type==='math-pat'){
+      qs.push(genPattern(c.patHard));
+    }
+  }
+  return qs;
+}
+
+function genPattern(hard){
+  const type=hard?randInt(0,3):randInt(0,1);
+  let seq=[],ans,step;
+  if(type===0){step=randInt(1,hard?5:2);const s=randInt(1,hard?10:3);seq=[s];for(let i=1;i<4;i++)seq.push(seq[i-1]+step);ans=seq[3]+step;}
+  else if(type===1){step=randInt(1,hard?4:2);const s=randInt(hard?20:12,hard?30:15);seq=[s];for(let i=1;i<4;i++)seq.push(seq[i-1]-step);ans=seq[3]-step;}
+  else if(type===2){const s=randInt(1,4);seq=[s];for(let i=1;i<4;i++)seq.push(seq[i-1]*2);ans=seq[3]*2;}
+  else{const s=randInt(1,5);seq=[s];let inc=1;for(let i=1;i<4;i++){seq.push(seq[i-1]+inc);inc++;}ans=seq[3]+inc;}
+  return{q:seq.join(', ')+', ?',ans,emoji:'🧩'};
+}
+
+function genMathOpts(ans){
+  const opts=new Set([ans]);const range=Math.max(3,Math.ceil(Math.abs(ans)*0.3)+1);
+  while(opts.size<4){const off=randInt(1,range)*(Math.random()>0.5?1:-1);const v=ans+off;if(v>=0&&!opts.has(v))opts.add(v);}
+  if(opts.size<4){let x=ans+1;while(opts.size<4){if(!opts.has(x))opts.add(x);x++;}}
+  return shuffle([...opts]);
+}
+
 // ═══ STATE ═══
 const SK='nikolearn_v2';
 let state,profile,gameMode,questions,qIdx,sessionShields,sessionWrong,sessionPoints;
@@ -321,34 +399,73 @@ function goProfiles(){
   });
 }
 
+let currentSubject=null;
+
 function selectProfile(p){
   profile=p;sessionStart=Date.now();
   const s=state[profile];const lvl=getLevel();
-  show('menu');
-  document.getElementById('menu-user').textContent=(p==='niko'?'ნიკოლოზი':'მაშო');
-  document.getElementById('menu-score').textContent='🛡️ '+s.shields;
-  document.getElementById('menu-streak').textContent='🔥 '+s.streak;
+  show('subjects');
+  const name=p==='niko'?'ნიკოლოზი':'მაშო';
+  document.getElementById('subj-user').textContent=name;
+  document.getElementById('subj-score').textContent='🛡️ '+s.shields;
+  document.getElementById('subj-streak').textContent='🔥 '+s.streak;
 
-  // Level card
-  document.getElementById('menu-level').innerHTML=`<div class="level-card">
+  document.getElementById('subj-level').innerHTML=`<div class="level-card">
     <div class="level-name">${lvl.name}</div>
     <div class="level-bar"><div class="level-fill" style="width:${lvl.next?Math.round(((lvl.next-lvl.need)/lvl.next)*100):100}%"></div></div>
     <div class="level-info">${lvl.next?`შემდეგ ლეველამდე: ${lvl.need} სიტყვა`:'მაქსიმალური ლეველი! 🎉'}</div>
   </div>`;
 
-  // Menu items based on age
-  const isKid = p==='masho';
-  document.getElementById('menu-items').innerHTML=`
-    <div class="menu-card" onclick="startGame('quiz')"><div class="icon">🎯</div><div class="info"><h3>🔊 მოისმინე → აირჩიე</h3><p>ქართული → ინგლისური</p></div></div>
-    <div class="menu-card" onclick="startGame('reverse')"><div class="icon">🔄</div><div class="info"><h3>English → ქართული</h3><p>ინგლისური → აირჩიე ქართული</p></div></div>
-    <div class="menu-card" onclick="startGame('listen')"><div class="icon">👂</div><div class="info"><h3>მოისმინე → სურათი</h3><p>🔊 ხმა → აირჩიე emoji</p></div></div>
-    <div class="menu-card" onclick="startGame('match')"><div class="icon">🧩</div><div class="info"><h3>დააწყვილე</h3><p>ქართული ↔ ინგლისური</p></div></div>
-    ${!isKid?'<div class="menu-card" onclick="startGame(\'spell\')"><div class="icon">✍️</div><div class="info"><h3>დაწერე</h3><p>ინგლისურად spelling</p></div></div>':''}
-    <div class="menu-card" onclick="showCategories()"><div class="icon">📚</div><div class="info"><h3>კატეგორიები</h3><p>აირჩიე თემა</p></div></div>
+  const wordCount=Object.values(s.words).filter(w=>w.correct>=3).length;
+  const mathStats=s.math||{};
+  const mathTotal=Object.values(mathStats).reduce((a,v)=>a+v.correct,0);
+
+  document.getElementById('subject-cards').innerHTML=`
+    <div class="subj-card english" onclick="selectSubject('english')">
+      <div class="subj-badge">${wordCount} სიტყვა</div>
+      <div class="subj-icon">🔤</div>
+      <div class="subj-name">ინგლისური</div>
+      <div class="subj-desc">სიტყვები, გამოთქმა, spelling</div>
+    </div>
+    <div class="subj-card math" onclick="selectSubject('math')">
+      <div class="subj-badge">${mathTotal} 🛡️</div>
+      <div class="subj-icon">📐</div>
+      <div class="subj-name">მათემატიკა & ლოგიკა</div>
+      <div class="subj-desc">შეკრება, გამოკლება, გამრავლება, პატერნები</div>
+    </div>
   `;
 }
 
-function goMenu(){selectProfile(profile);}
+function selectSubject(subj){
+  currentSubject=subj;
+  const s=state[profile];const isKid=profile==='masho';
+  show('menu');
+  document.getElementById('menu-user').textContent=subj==='english'?'🔤 ინგლისური':'📐 მათემატიკა';
+  document.getElementById('menu-score').textContent='🛡️ '+s.shields;
+  document.getElementById('menu-streak').textContent='🔥 '+s.streak;
+  document.getElementById('menu-level').innerHTML='';
+
+  if(subj==='english'){
+    document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
+      <div class="mode-card" onclick="startGame('quiz')"><div class="m-icon">🎯</div><div class="m-name">მოისმინე</div><div class="m-desc">ქართული → ინგლისური</div></div>
+      <div class="mode-card" onclick="startGame('reverse')"><div class="m-icon">🔄</div><div class="m-name">English</div><div class="m-desc">ინგლისური → ქართული</div></div>
+      <div class="mode-card" onclick="startGame('listen')"><div class="m-icon">👂</div><div class="m-name">სურათი</div><div class="m-desc">🔊 ხმა → აირჩიე emoji</div></div>
+      <div class="mode-card" onclick="startGame('match')"><div class="m-icon">🧩</div><div class="m-name">დააწყვილე</div><div class="m-desc">ქართული ↔ ინგლისური</div></div>
+      ${!isKid?'<div class="mode-card" onclick="startGame(\'spell\')"><div class="m-icon">✍️</div><div class="m-name">დაწერე</div><div class="m-desc">ინგლისურად spelling</div></div>':''}
+      <div class="mode-card" onclick="showCategories()"><div class="m-icon">📚</div><div class="m-name">კატეგორიები</div><div class="m-desc">აირჩიე თემა</div></div>
+    </div>`;
+  } else {
+    document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
+      <div class="mode-card" onclick="startMathGame('math-add')"><div class="m-icon">➕</div><div class="m-name">შეკრება</div><div class="m-desc">${isKid?'1 — 10':'1 — 50'}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-sub')"><div class="m-icon">➖</div><div class="m-name">გამოკლება</div><div class="m-desc">${isKid?'1 — 10':'1 — 50'}</div></div>
+      ${!isKid?'<div class="mode-card" onclick="startMathGame(\'math-mul\')"><div class="m-icon">✖️</div><div class="m-name">გამრავლება</div><div class="m-desc">×2, ×3, ×4, ×5</div></div>':''}
+      <div class="mode-card" onclick="startMathGame('math-pat')"><div class="m-icon">🧩</div><div class="m-name">პატერნები</div><div class="m-desc">${isKid?'მარტივი მიმდევრობა':'კანონზომიერება'}</div></div>
+    </div>`;
+  }
+}
+
+function goSubjects(){selectProfile(profile);}
+function goMenu(){selectSubject(currentSubject||'english');}
 
 // ═══ CATEGORIES ═══
 let activeCat=null;
@@ -582,6 +699,82 @@ function retryWeak(){
 
 function endGame(){goMenu();}
 
+// ═══ MATH GAME ═══
+function startMathGame(type){
+  mathMode=type;mathQs=genMathQs(type);mathIdx=0;
+  sessionShields=0;sessionWrong=0;sessionStart=Date.now();
+  show('game');
+  const names={'math-add':'➕ შეკრება','math-sub':'➖ გამოკლება','math-mul':'✖️ გამრავლება','math-pat':'🧩 პატერნები'};
+  document.getElementById('game-mode').textContent=names[type]||type;
+  document.getElementById('game-score').textContent='🛡️ 0';
+  nextMathQ();
+}
+
+function nextMathQ(){
+  if(mathIdx>=mathQs.length){showMathResults();return;}
+  const q=mathQs[mathIdx];
+  document.getElementById('progress').style.width=((mathIdx/mathQs.length)*100)+'%';
+  document.getElementById('q-num').textContent=`${mathIdx+1}/${mathQs.length}`;
+  document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
+  const opts=genMathOpts(q.ans);
+  document.getElementById('game-area').innerHTML=`
+    <div class="word-box"><div class="emoji" style="font-size:3rem">${q.emoji}</div>
+    <div class="word" style="font-size:2.2rem;letter-spacing:3px">${q.q}</div>
+    ${mathMode==='math-pat'?'<div class="sub" style="color:var(--purple)">იპოვე კანონზომიერება!</div>':''}</div>
+    <div class="options">${opts.map(o=>`<button class="opt" style="font-size:1.8rem" onclick="checkMathAns(this,${o},${q.ans})">${o}</button>`).join('')}</div>`;
+}
+
+function checkMathAns(btn,selected,correct){
+  if(!state[profile].math)state[profile].math={};
+  if(!state[profile].math[mathMode])state[profile].math[mathMode]={correct:0,wrong:0};
+  if(selected===correct){
+    document.querySelectorAll('.opt').forEach(b=>{b.classList.add('disabled');b.style.pointerEvents='none';});
+    btn.classList.add('correct');
+    sessionShields++;state[profile].shields++;state[profile].streak++;
+    if(state[profile].streak>state[profile].maxStreak)state[profile].maxStreak=state[profile].streak;
+    state[profile].math[mathMode].correct++;
+    save();
+    document.getElementById('game-score').textContent='🛡️ '+sessionShields;
+    showFeedback(true);
+    setTimeout(()=>{mathIdx++;hideFeedback();nextMathQ();},1200);
+  } else {
+    btn.classList.add('wrong');btn.style.pointerEvents='none';btn.classList.add('disabled');
+    sessionWrong++;state[profile].streak=0;
+    state[profile].math[mathMode].wrong++;
+    save();
+    // ამონაშვილი: let them try again, don't advance
+    if(sessionStart&&(Date.now()-sessionStart)>15*60*1000){
+      document.getElementById('break-screen').classList.remove('hidden');sessionStart=Date.now();
+    }
+  }
+}
+
+function showMathResults(){
+  show('results');
+  const total=sessionShields+sessionWrong;
+  const pct=total>0?Math.round(sessionShields/total*100):0;
+  let msg='';
+  if(pct>=90)msg=getName()+', მათემატიკოსი ხარ! 🌟';
+  else if(pct>=70)msg=getName()+', კარგად მიდიხარ! 💪';
+  else if(pct>=50)msg=getName()+', ისწავლე ახალი! 📚';
+  else msg=getName()+', ყოველი ცდა = წინსვლა! 🌱';
+
+  document.getElementById('results-content').innerHTML=`
+    <div class="big">${pct>=80?'🏆':pct>=50?'⭐':'🌱'}</div>
+    <h2>${msg}</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="val" style="color:var(--green)">${sessionShields}</div><div class="label">🛡️ shields</div></div>
+      <div class="stat"><div class="val">${pct}%</div><div class="label">📊 სიზუსტე</div></div>
+      <div class="stat"><div class="val" style="color:var(--orange)">${state[profile].streak}</div><div class="label">🔥 streak</div></div>
+    </div>
+    <button class="btn-primary" onclick="startMathGame('${mathMode}')" style="background:var(--purple)">🎮 ახალი რაუნდი</button>
+    <button class="btn-secondary" onclick="goMenu()">📋 მენიუ</button>
+  `;
+  state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();
+  if(sessionStart)state[profile].totalTime+=(Date.now()-sessionStart);
+  save();
+}
+
 // ═══ PARENT DASHBOARD ═══
 function showParent(){
   show('parent');
@@ -605,8 +798,11 @@ function showParent(){
     </div>
     <div style="font-size:.82rem;color:var(--muted);margin-bottom:.3rem">🕐 ბოლოს: ${lastPlayed} | 🎮 ${s.sessions} სესია | ⏱️ ${totalMin} წუთი | 🔥 max streak: ${s.maxStreak}</div>
     ${weak.length>0?`<div style="font-size:.82rem;color:var(--orange);margin-bottom:.3rem">⚠️ სუსტი: ${weak.slice(0,8).join(', ')}</div>`:''}
-    ${strong.length>0?`<div style="font-size:.82rem;color:var(--green);margin-bottom:.8rem">✅ ძლიერი: ${strong.slice(0,8).join(', ')}</div>`:''}
-    <hr style="border-color:var(--brd);margin-bottom:1rem">`;
+    ${strong.length>0?`<div style="font-size:.82rem;color:var(--green);margin-bottom:.5rem">✅ ძლიერი: ${strong.slice(0,8).join(', ')}</div>`:''}
+    ${s.math?`<div style="font-size:.85rem;color:var(--purple);margin:.5rem 0;font-weight:600">📐 მათემატიკა</div>
+    <div style="display:grid;grid-template-columns:repeat(${Object.keys(s.math).length},1fr);gap:.4rem;margin-bottom:.5rem">
+    ${Object.entries(s.math).map(([k,v])=>{const nm={'math-add':'➕','math-sub':'➖','math-mul':'✖️','math-pat':'🧩'}[k]||k;const acc=v.correct+v.wrong>0?Math.round(v.correct/(v.correct+v.wrong)*100):0;return`<div style="background:var(--card);border-radius:8px;padding:.5rem;text-align:center"><div style="font-size:1.2rem">${nm}</div><div style="font-size:.9rem;font-weight:700;color:${acc>=70?'var(--green)':'var(--orange)'}">${acc}%</div><div style="font-size:.65rem;color:var(--muted)">${v.correct}✓ ${v.wrong}✗</div></div>`;}).join('')}
+    </div>`:''}<hr style="border-color:var(--brd);margin-bottom:1rem">`;
   });
   html+=`<button class="btn-secondary" onclick="if(confirm('წაშალო progress?')){localStorage.removeItem('${SK}');state=load();goProfiles();}">🗑️ Reset</button>`;
   document.getElementById('parent-content').innerHTML=html;
