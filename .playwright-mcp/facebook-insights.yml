@@ -1,0 +1,14 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - heading "Sorry, this content isn't available right now" [level=2] [ref=e6]
+    - heading [level=2] [ref=e8]: Sorry, this content isn't available right now
+  - generic [ref=e9]:
+    - generic [ref=e10]: The link you followed may have expired, or the page may only be visible to an audience you're not in.
+    - generic [ref=e11]:
+      - button "Go back to the previous page" [ref=e12] [cursor=pointer]
+      - text: ·
+      - link "Go to Feed" [ref=e13] [cursor=pointer]:
+        - /url: https://business.facebook.com/
+      - text: ·
+      - link "Visit our Help Center" [ref=e14] [cursor=pointer]:
+        - /url: /help/?ref=404

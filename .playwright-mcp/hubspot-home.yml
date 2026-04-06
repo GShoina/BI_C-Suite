@@ -1,0 +1,52 @@
+- generic [ref=e1]:
+  - banner [ref=e4]:
+    - img "HubSpot logo" [ref=e7]
+    - navigation "Global toolbar" [ref=e10]:
+      - menu [ref=e11]:
+        - menuitem "View profile and more" [ref=e12]:
+          - button "View profile and more" [ref=e13] [cursor=pointer]:
+            - img "Gela Shonia" [ref=e14]
+            - img [ref=e15]
+  - generic [ref=e19]:
+    - region "Page Section" [ref=e20]:
+      - banner [ref=e21]:
+        - heading "HubSpot Accounts" [level=1] [ref=e23]
+        - generic [ref=e27]:
+          - searchbox "Search accounts" [active] [ref=e28]
+          - generic:
+            - generic:
+              - img
+    - region "Page Section" [ref=e31]:
+      - main [ref=e34]:
+        - table [ref=e40]:
+          - rowgroup [ref=e44]:
+            - row "Name Press to sort. Domain Press to sort." [ref=e45]:
+              - button "Name Press to sort." [ref=e46] [cursor=pointer]:
+                - generic [ref=e48]:
+                  - text: Name
+                  - generic "Press to sort." [ref=e49]:
+                    - img [ref=e50]
+              - button "Domain Press to sort." [ref=e52] [cursor=pointer]:
+                - generic [ref=e54]:
+                  - text: Domain
+                  - generic "Press to sort." [ref=e55]:
+                    - img [ref=e56]
+          - rowgroup [ref=e58]:
+            - row "Bivision Set as Default Pin Open bivision.ge 147341634" [ref=e59] [cursor=pointer]:
+              - cell "Bivision Set as Default Pin Open" [ref=e60]:
+                - generic [ref=e61]:
+                  - link "Bivision" [ref=e67]:
+                    - /url: https://app-eu1.hubspot.com/home?portalId=147341634
+                    - generic [ref=e69]: Bivision
+                  - generic [ref=e72]:
+                    - button "Set as Default" [ref=e73]:
+                      - generic [ref=e75]: Set as Default
+                    - button "Pin" [ref=e76]:
+                      - generic [ref=e78]: Pin
+                    - button "Open" [ref=e79]:
+                      - generic [ref=e80]:
+                        - generic [ref=e81]: Open
+                        - img [ref=e82]
+              - cell "bivision.ge 147341634" [ref=e84]:
+                - generic [ref=e86]: bivision.ge
+                - text: "147341634"

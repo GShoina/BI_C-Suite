@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 Team Performance — Bivision</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0b0f;--card:#12141a;--card2:#1a1d27;--brd:#252830;--text:#e8e6e1;--muted:#8a8d96;--dim:#555860;--amber:#d4a056;--red:#c45c5c;--green:#5cad6f;--blue:#5c8cc4;--purple:#9b7ec8;--r:12px}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);padding:1.5rem;max-width:1100px;margin:0 auto;line-height:1.6}
+h1{font-size:1.5rem;margin-bottom:.3rem}
+.sub{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem}
+h2{font-size:1rem;color:var(--amber);margin:1.5rem 0 .75rem;text-transform:uppercase;letter-spacing:1px}
+
+/* Tabs */
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--brd);margin-bottom:1.5rem;overflow-x:auto}
+.tab{padding:.7rem 1.2rem;font-size:.88rem;color:var(--dim);cursor:pointer;border:none;background:none;font-family:inherit;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s}
+.tab:hover{color:var(--muted)}
+.tab.on{color:var(--amber);border-bottom-color:var(--amber)}
+.tc{display:none}.tc.on{display:block}
+
+/* Cards */
+.card{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:1.2rem;margin-bottom:1rem}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.7rem;margin-bottom:1.5rem}
+.kpi{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:.9rem;text-align:center}
+.kpi .label{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:var(--dim)}
+.kpi .val{font-family:'Consolas',monospace;font-size:1.5rem;font-weight:700;margin:.2rem 0}
+.kpi .note{font-size:.72rem;color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{text-align:left;color:var(--dim);font-size:.7rem;text-transform:uppercase;letter-spacing:1px;padding:.5rem;border-bottom:1px solid var(--brd)}
+td{padding:.5rem;border-bottom:1px solid var(--brd)}
+.num{font-family:'Consolas',monospace;text-align:right}
+.good{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--red)}
+
+.member{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:1.2rem;margin-bottom:1rem}
+.member-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+.member-name{font-size:1.1rem;font-weight:700}
+.member-role{font-size:.82rem;color:var(--muted)}
+.member-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem;margin-bottom:.8rem}
+.mk{background:var(--card2);border-radius:8px;padding:.6rem .8rem}
+.mk .ml{font-size:.62rem;text-transform:uppercase;letter-spacing:1px;color:var(--dim)}
+.mk .mv{font-family:'Consolas',monospace;font-size:1.1rem;font-weight:600;margin-top:.15rem}
+
+.insight{border-left:3px solid var(--amber);padding:.6rem 1rem;margin:.5rem 0;background:rgba(212,160,86,0.05);border-radius:0 8px 8px 0;font-size:.85rem}
+.alert{border-left-color:var(--red);background:rgba(196,92,92,0.05)}
+
+.footer{text-align:center;padding:2rem;font-size:.7rem;color:var(--dim)}
+</style>
+</head>
+<body>
+
+<h1>📊 Team Performance Dashboard — Bivision</h1>
+<div class="sub">7 თანამშრომელი | Data: Terminal + Insightful.io + Manual | Period: კვირა Apr 7-13, 2026</div>
+
+<!-- TABS -->
+<div class="tabs">
+<button class="tab on" onclick="showTab('overview')">Overview</button>
+<button class="tab" onclick="showTab('gela')">გელა (CEO)</button>
+<button class="tab" onclick="showTab('inga')">ინგა (PM)</button>
+<button class="tab" onclick="showTab('gabo')">გაბო (CTO)</button>
+<button class="tab" onclick="showTab('mari-m')">მარი მ. (Dev)</button>
+<button class="tab" onclick="showTab('mari-mik')">მარი მიქ. (Dev)</button>
+<button class="tab" onclick="showTab('luka')">ლუკა (Jr)</button>
+<button class="tab" onclick="showTab('mariam')">მარიამი (Mkt)</button>
+</div>
+
+<!-- OVERVIEW -->
+<div class="tc on" id="tab-overview">
+<div class="kpi-row">
+  <div class="kpi"><div class="label">გუნდის ზომა</div><div class="val">7</div><div class="note">5 core + 1 returning + 1 outsource</div></div>
+  <div class="kpi"><div class="label">Active Accounts</div><div class="val">29</div><div class="note">ინგა 18 + გაბო 21 (overlap)</div></div>
+  <div class="kpi"><div class="label">Salary/Month</div><div class="val">~47K₾</div><div class="note">647K₾/წელი total</div></div>
+  <div class="kpi"><div class="label">Revenue/Person</div><div class="val">98K₾</div><div class="note">target: 200K+</div></div>
+  <div class="kpi"><div class="label">Jira Usage</div><div class="val bad">0%</div><div class="note">არავინ იყენებს</div></div>
+</div>
+
+<h2>თანამშრომლების შედარება</h2>
+<div class="card">
+<table>
+<tr><th>სახელი</th><th>როლი</th><th class="num">ხელფასი/თვე</th><th class="num">Accounts</th><th class="num">Dev</th><th class="num">Support</th><th>Level</th><th>Risk</th></tr>
+<tr><td>გელა</td><td>CEO/Sales</td><td class="num">8,500₾</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td><span class="warn">L2→L4</span></td><td>Burnout</td></tr>
+<tr><td>ინგა</td><td>PM/ანალიტიკოსი</td><td class="num">7,000₾</td><td class="num">18</td><td class="num">3</td><td class="num">6</td><td><span class="good">L3</span></td><td>Overload</td></tr>
+<tr><td>გაბო</td><td>CTO/Sr Dev</td><td class="num">8,500₾</td><td class="num">21</td><td class="num">4</td><td class="num">9</td><td><span class="warn">L2</span></td><td>Motivation</td></tr>
+<tr><td>მარი მ.</td><td>Developer</td><td class="num">6,000₾</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td><span class="warn">Onboarding</span></td><td>Remote</td></tr>
+<tr><td>მარი მიქ.</td><td>Developer</td><td class="num">4,800₾</td><td class="num">11</td><td class="num">0</td><td class="num">11</td><td>Dekret</td><td>—</td></tr>
+<tr><td>ლუკა</td><td>Junior Dev</td><td class="num">1,300₾</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td><span class="warn">L1</span></td><td>Low drive</td></tr>
+<tr><td>მარიამი</td><td>Marketing</td><td class="num">2,500₾</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td><span class="bad">L1</span></td><td>May exit</td></tr>
+</table>
+</div>
+
+<h2>კრიტიკული dependencies</h2>
+<div class="card">
+<table>
+<tr><th>თუ გამოეთიშა</th><th>რა ფუჭდება</th><th>Backup</th></tr>
+<tr><td class="bad">გელა</td><td>გაყიდვები, escalation, scope decisions</td><td class="bad">0 backup</td></tr>
+<tr><td class="bad">ინგა</td><td>პროექტები, კლიენტები, dev coordination</td><td class="bad">0 backup</td></tr>
+<tr><td class="bad">გაბო</td><td>რთული ქეისები, დიდი მონაცემები, key accounts</td><td class="warn">მარი მ. (partial)</td></tr>
+</table>
+</div>
+
+<h2>ტენზიები / გამოწვევები</h2>
+<div class="insight alert">🔴 გაბოს 5% equity + management bonus, მაგრამ accountability/output = არათანმიმდევრული. Insightful.io-მ დაბალი დატვირთულობა აჩვენა.</div>
+<div class="insight">⚠️ Over-delivery კლიენტებისთვის = margin strain. გელა მეტს აძლევს ვიდრე პირდება.</div>
+<div class="insight">⚠️ Jira არავინ იყენებს = visibility gap. ვინ რას აკეთებს = invisible.</div>
+<div class="insight">⚠️ მარიამი 2,500₾-ად all-in-one marketer. May decision pending.</div>
+</div>
+
+<!-- GELA -->
+<div class="tc" id="tab-gela">
+<div class="member">
+  <div class="member-header">
+    <div><div class="member-name">გელა შონია</div><div class="member-role">CEO / Owner / Sales — 8,500₾ + 18K variable</div></div>
+  </div>
+  <div class="member-kpis">
+    <div class="mk"><div class="ml">AI/System (L3-4)</div><div class="mv good">~30%</div></div>
+    <div class="mk"><div class="ml">Sales/CRM (L2)</div><div class="mv warn">~20%</div></div>
+    <div class="mk"><div class="ml">Communication (L2)</div><div class="mv warn">~15%</div></div>
+    <div class="mk"><div class="ml">Research (L3)</div><div class="mv">~12%</div></div>
+    <div class="mk"><div class="ml">Documents (L2)</div><div class="mv">~8%</div></div>
+    <div class="mk"><div class="ml">Social/Break</div><div class="mv good">~3%</div></div>
+  </div>
+  <div class="insight">✅ 30% AI/System = Level 3-4 activity. ეს ახლა სწორია (mentari-ს ფაზა).</div>
+  <div class="insight">⚠️ 20% HubSpot CRM = manual browsing. Level 4 question: რა ავტომატიზდება?</div>
+  <div class="insight alert">🔴 ღამის სესიები (23:40 ChatGPT). CEO rest = strategic resource.</div>
+  <p style="color:var(--muted);font-size:.82rem;margin-top:1rem">Source: Terminal process data + Browser history | Apr 4-6, 2026</p>
+</div>
+</div>
+
+<!-- INGA -->
+<div class="tc" id="tab-inga">
+<div class="member">
+  <div class="member-header">
+    <div><div class="member-name">ინგა ხადარია</div><div class="member-role">ანალიტიკოსი / PM — 7,000₾ + 12K variable | planned 5% partner</div></div>
+  </div>
+  <div class="member-kpis">
+    <div class="mk"><div class="ml">Accounts</div><div class="mv">18</div></div>
+    <div class="mk"><div class="ml">Development</div><div class="mv">3</div></div>
+    <div class="mk"><div class="ml">Hybrid</div><div class="mv">9</div></div>
+    <div class="mk"><div class="ml">Support</div><div class="mv">6</div></div>
+    <div class="mk"><div class="ml">Terminal Data</div><div class="mv dim">❓ N/A</div></div>
+  </div>
+  <div class="insight">✅ Requirements gathering, კლიენტის მართვა, coordination — ძლიერი.</div>
+  <div class="insight">⚠️ "არც თავს მოიკლავს არც გააფუჭებს" — dependable, not high-drive.</div>
+  <div class="insight">⚠️ 11-ზე მოსვლა, სოცმედია, Jira არ იყენებს.</div>
+  <div class="insight alert">🔴 მის გარეშე = ოპერაციული კოლაფსი. 0 backup.</div>
+  <p style="color:var(--dim);font-size:.82rem;margin-top:1rem">❓ Terminal data არ არის — ინგას კომპიუტერზე script გასაშვებია</p>
+</div>
+</div>
+
+<!-- GABO -->
+<div class="tc" id="tab-gabo">
+<div class="member">
+  <div class="member-header">
+    <div><div class="member-name">დავით (გაბო) გაბისონია</div><div class="member-role">CTO / Senior Qlik Dev — 8,500₾ + 18K variable + 5% equity</div></div>
+  </div>
+  <div class="member-kpis">
+    <div class="mk"><div class="ml">Accounts</div><div class="mv">21</div></div>
+    <div class="mk"><div class="ml">Development</div><div class="mv">4</div></div>
+    <div class="mk"><div class="ml">Hybrid</div><div class="mv">8</div></div>
+    <div class="mk"><div class="ml">Support</div><div class="mv">9</div></div>
+    <div class="mk"><div class="ml">Insightful</div><div class="mv bad">Low</div></div>
+  </div>
+  <div class="insight">✅ ტექნიკური სიღრმე, რთული ქეისები, კრიზისში გადარჩენა.</div>
+  <div class="insight alert">🔴 Insightful.io = დაბალი დატვირთულობა. მისთვისაც სურპრიზი.</div>
+  <div class="insight">⚠️ 10:00-16:50, სოცმედია+მოწევა, დელეგირება, ბოლომდე მიყვანა.</div>
+  <div class="insight">⚠️ "ბონუსი მოკლევადიანი ეფექტი" — motivation cycle.</div>
+  <p style="color:var(--dim);font-size:.82rem;margin-top:1rem">❓ Terminal data არ არის — გაბოს კომპიუტერზე script გასაშვებია</p>
+</div>
+</div>
+
+<!-- MARI M -->
+<div class="tc" id="tab-mari-m">
+<div class="member">
+  <div class="member-header">
+    <div><div class="member-name">მარი მაღლაკელიძე</div><div class="member-role">Developer (backend) — 6,000₾ + 6K variable | დისტანციური</div></div>
+  </div>
+  <div class="member-kpis">
+    <div class="mk"><div class="ml">Accounts</div><div class="mv">0</div></div>
+    <div class="mk"><div class="ml">Status</div><div class="mv warn">Onboarding</div></div>
+    <div class="mk"><div class="ml">დაბრუნდა</div><div class="mv">Apr 1</div></div>
+  </div>
+  <div class="insight">✅ პედანტურობა, backend სიღრმე, პასუხისმგებლიანობა.</div>
+  <div class="insight">⚠️ დეკრეტიდან დაბრუნდა Apr 1. ბავშვი მასთან, ძიძა არ ჰყავს.</div>
+  <div class="insight">⚠️ კონფლიქტური, "იჩაგრების" განცდა. მკაფიო tasks სჭირდება.</div>
+</div>
+</div>
+
+<!-- MARI MIK -->
+<div class="tc" id="tab-mari-mik">
+<div class="member">
+  <div class="member-header">
+    <div><div class="member-name">მარი მიქირტუმაშვილი</div><div class="member-role">Developer — 4,800₾ + 4.8K variable | დეკრეტში</div></div>
+  </div>
+  <div class="member-kpis">
+    <div class="mk"><div class="ml">Accounts</div><div class="mv">11 (support)</div></div>
+    <div class="mk"><div class="ml">Status</div><div class="mv dim">Dekret</div></div>
+    <div class="mk"><div class="ml">Power BI</div><div class="mv good">იცის</div></div>
+  </div>
+  <div class="insight">✅ დამოუკიდებლობა, ანალიტიკა+dev, Power BI. Impact gap minimal — support-ზეა.</div>
+</div>
+</div>
+
+<!-- LUKA -->
+<div class="tc" id="tab-luka">
+<div class="member">
+  <div class="member-header">
+    <div><div class="member-name">ლუკა კირვალიძე</div><div class="member-role">Junior Developer — 1,300₾ + 1.8K variable</div></div>
+  </div>
+  <div class="member-kpis">
+    <div class="mk"><div class="ml">Accounts</div><div class="mv">3</div></div>
+    <div class="mk"><div class="ml">Status</div><div class="mv">Learning</div></div>
+    <div class="mk"><div class="ml">Self-drive</div><div class="mv warn">Low</div></div>
+  </div>
+  <div class="insight">✅ იაფი, მშვიდი, სამართავი. საინვესტიციო რესურსი.</div>
+  <div class="insight">⚠️ ნაკლები ამბიცია, pushing არ აქვს. ჯერ არა დამოუკიდებელი ძალა.</div>
+</div>
+</div>
+
+<!-- MARIAM -->
+<div class="tc" id="tab-mariam">
+<div class="member">
+  <div class="member-header">
+    <div><div class="member-name">მარიამი ბანძელაძე</div><div class="member-role">Marketing (outsource) — 2,500₾/თვე</div></div>
+  </div>
+  <div class="member-kpis">
+    <div class="mk"><div class="ml">Post Freq</div><div class="mv warn">~1/week</div></div>
+    <div class="mk"><div class="ml">Engagement</div><div class="mv bad">~3-5/post</div></div>
+    <div class="mk"><div class="ml">Leads</div><div class="mv bad">0</div></div>
+    <div class="mk"><div class="ml">Deadline</div><div class="mv bad">May</div></div>
+  </div>
+  <div class="insight alert">🔴 OKR: Engagement 35-40 target vs actual 3-5. Qualified leads 5-10 target vs 0.</div>
+  <div class="insight">⚠️ AI-ით ტექსტი/დიზაინი, გელა ასწორებს. ხარისხის ownership არ აქვს.</div>
+  <div class="insight">⚠️ ოუნერი: "ალტერნატივა რომ მყავდეს ჩავანაცვლებ, ადამიანურად მეძნელება."</div>
+</div>
+</div>
+
+<footer class="footer">
+  Bivision Team Performance Dashboard v1 | Victor Auditor<br>
+  Data sources: Terminal (გელა only), TEAM_PORTRAIT (owner validated), Insightful.io (გაბო)<br>
+  ❓ ინგა, მარი, ლუკა, მარიამი — terminal data არ არის. გასაშვებია: <code>claude -p "process+browser report"</code>
+</footer>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.tc').forEach(t=>t.classList.remove('on'));
+  document.getElementById('tab-'+id).classList.add('on');
+  event.target.classList.add('on');
+}
+</script>
+</body>
+</html>

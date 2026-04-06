@@ -1,0 +1,8 @@
+[     361ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ https://bivision.ge/wp-admin/load-scripts.php?c=0&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils&ver=6.9.4:4
+[    5882ms] [ERROR] QM error from JS: QM output does not exist @ https://bivision.ge/wp-content/plugins/query-monitor/assets/query-monitor.js?ver=3.20.4:796
+[    7497ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+moreDetailsV2, documentationBlackIcon, Tablet, ShoppingCart, Compare, LightWeight @ https://claritystatic.azureedge.net/scripts/embedrebrand/framework.89efd871f8cec14f58e4.js:0
+[   18717ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+moreDetailsV2, documentationBlackIcon, Tablet, ShoppingCart, Compare, LightWeight @ https://claritystatic.azureedge.net/scripts/embedrebrand/framework.89efd871f8cec14f58e4.js:0
+[   41460ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+moreDetailsV2, documentationBlackIcon, Tablet, ShoppingCart, Compare, LightWeight @ https://claritystatic.azureedge.net/scripts/client/framework.6ec7bb082877e502aaed.js:0

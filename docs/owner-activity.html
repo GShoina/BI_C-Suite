@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 CEO Command Center</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0b0f;--card:#12141a;--card2:#1a1d27;--brd:#252830;--brd2:#3a3f4d;--text:#e8e6e1;--muted:#8a8d96;--dim:#555860;--amber:#d4a056;--ambd:rgba(212,160,86,.15);--red:#c45c5c;--redd:rgba(196,92,92,.12);--green:#5cad6f;--grnd:rgba(92,173,111,.12);--blue:#5c8cc4;--r:12px}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;font-size:18px}
+.app{max-width:1000px;margin:0 auto;padding:1.5rem}
+
+/* Header */
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid var(--brd);margin-bottom:1.2rem}
+.hdr h1{font-size:1.3rem;font-weight:700}
+.hdr .date{color:var(--muted);font-size:.82rem}
+
+/* Nav */
+.nav{display:flex;gap:0;border-bottom:1px solid var(--brd);margin-bottom:1.2rem;overflow-x:auto}
+.nav-btn{padding:.65rem 1.1rem;font-size:.88rem;color:var(--dim);cursor:pointer;border:none;background:none;font-family:inherit;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s}
+.nav-btn:hover{color:var(--muted)}
+.nav-btn.on{color:var(--amber);border-bottom-color:var(--amber)}
+.page{display:none}.page.on{display:block}
+
+/* KPI strip */
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.6rem;margin-bottom:1.2rem}
+.kpi{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:.8rem;text-align:center;position:relative;overflow:hidden}
+.kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.kpi.a::after{background:var(--amber)}.kpi.g::after{background:var(--green)}.kpi.r::after{background:var(--red)}.kpi.b::after{background:var(--blue)}
+.kpi .kl{font-size:.62rem;text-transform:uppercase;letter-spacing:1px;color:var(--dim)}
+.kpi .kv{font-family:'Consolas',monospace;font-size:1.5rem;font-weight:700;margin:.15rem 0}
+.kpi .ks{font-size:.7rem;color:var(--muted)}
+
+/* OKR */
+.okr{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:1rem;margin-bottom:.8rem}
+.okr-title{font-size:1rem;font-weight:700;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+.kr{display:flex;align-items:center;gap:.6rem;padding:.4rem 0;border-bottom:1px solid rgba(37,40,48,.4)}
+.kr:last-child{border-bottom:none}
+.kr-text{flex:1;font-size:.85rem}
+.kr-bar{width:100px;height:7px;background:var(--card2);border-radius:4px;overflow:hidden}
+.kr-fill{height:100%;border-radius:4px}
+.kr-pct{font-family:'Consolas',monospace;font-size:.78rem;width:35px;text-align:right}
+.good{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--red)}
+
+/* Section */
+.sec{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin:1.2rem 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--brd)}
+
+/* Todo items */
+.todo{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);margin-bottom:.5rem;overflow:hidden}
+.todo-main{display:flex;align-items:flex-start;gap:.6rem;padding:.8rem 1rem}
+.todo input[type=checkbox]{appearance:none;width:22px;height:22px;min-width:22px;border:1.5px solid var(--brd2);border-radius:5px;background:transparent;cursor:pointer;margin-top:1px;transition:all .2s}
+.todo input:checked{background:var(--green);border-color:var(--green)}
+.todo input:checked::after{content:'✓';display:block;text-align:center;font-size:13px;color:var(--bg);font-weight:800;line-height:19px}
+.todo.done .todo-text{text-decoration:line-through;color:var(--dim)}
+.todo-text{flex:1;font-size:.9rem}
+.todo-priority{font-size:.7rem;padding:.15rem .5rem;border-radius:4px;font-weight:600;white-space:nowrap}
+.p-high{background:var(--redd);color:var(--red)}
+.p-med{background:var(--ambd);color:var(--amber)}
+.p-low{background:var(--grnd);color:var(--green)}
+.todo-actions{display:flex;gap:.3rem;align-items:center}
+.todo-x{background:none;border:none;color:var(--dim);cursor:pointer;font-size:1.1rem;padding:.2rem .4rem;min-width:30px;min-height:30px;display:flex;align-items:center;justify-content:center;border-radius:4px}
+.todo-x:hover{color:var(--red);background:var(--redd)}
+.todo-x.crossed{color:var(--red);text-decoration:line-through}
+.todo-comment{display:none;padding:.5rem 1rem .8rem 3rem;border-top:1px solid rgba(37,40,48,.3)}
+.todo-comment.open{display:block}
+.todo-comment textarea{width:100%;padding:.5rem;background:var(--card2);border:1px solid var(--brd);border-radius:6px;color:var(--text);font-family:inherit;font-size:.85rem;resize:vertical;min-height:35px;outline:none}
+.todo-comment textarea:focus{border-color:var(--amber)}
+.comment-toggle{background:none;border:none;color:var(--dim);cursor:pointer;font-size:.75rem;padding:.2rem .4rem}
+.comment-toggle:hover{color:var(--amber)}
+
+/* Questions */
+.q-card{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:.8rem 1rem;margin-bottom:.5rem}
+.q-card .q-text{font-size:.9rem;margin-bottom:.4rem}
+.q-card .q-why{font-size:.78rem;color:var(--dim);margin-bottom:.4rem}
+.q-card textarea{width:100%;padding:.5rem;background:var(--card2);border:1px solid var(--brd);border-radius:6px;color:var(--text);font-family:inherit;font-size:.85rem;resize:vertical;min-height:35px;outline:none}
+.q-card textarea:focus{border-color:var(--amber)}
+
+/* Footer */
+.footer{text-align:center;padding:1.5rem;font-size:.7rem;color:var(--dim);margin-top:1rem}
+.footer a{color:var(--blue);text-decoration:none}
+
+/* Export */
+.exp-btn{padding:.5rem 1rem;background:var(--amber);color:var(--bg);border:none;border-radius:8px;font-family:inherit;font-weight:600;cursor:pointer;font-size:.82rem;margin-top:.8rem}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div class="hdr">
+  <h1>📊 CEO Command Center</h1>
+  <div class="date">გელა შონია | <span id="today-date"></span></div>
+</div>
+
+<div class="nav">
+  <button class="nav-btn on" onclick="showPage('okr')">🎯 OKR</button>
+  <button class="nav-btn" onclick="showPage('todo')">📋 To-Do</button>
+  <button class="nav-btn" onclick="showPage('activity')">📈 Activity</button>
+  <button class="nav-btn" onclick="showPage('questions')">❓ კითხვები</button>
+</div>
+
+<!-- ═══ OKR PAGE ═══ -->
+<div class="page on" id="page-okr">
+
+<div class="kpi-strip">
+  <div class="kpi a"><div class="kl">OKR Progress</div><div class="kv" id="okr-avg">—</div><div class="ks">საშუალო</div></div>
+  <div class="kpi g"><div class="kl">Actions Done</div><div class="kv" id="act-count">0/0</div><div class="ks">ამ კვირა</div></div>
+  <div class="kpi b"><div class="kl">CEO Level</div><div class="kv warn">L2→L4</div><div class="ks">transition</div></div>
+  <div class="kpi a"><div class="kl">Shields Earned</div><div class="kv" id="shields-total">0</div><div class="ks">🛡️ mentari</div></div>
+</div>
+
+<div class="okr">
+  <div class="okr-title">🔍 OKR1: Audit Quality</div>
+  <div class="kr"><div class="kr-text">Mentari audit pipeline — file-based, automated</div><div class="kr-bar"><div class="kr-fill" style="width:90%;background:var(--green)"></div></div><div class="kr-pct good">90%</div></div>
+  <div class="kr"><div class="kr-text">გურაფა audit pipeline setup</div><div class="kr-bar"><div class="kr-fill" style="width:20%;background:var(--amber)"></div></div><div class="kr-pct warn">20%</div></div>
+  <div class="kr"><div class="kr-text">EP compliance — 0 critical findings</div><div class="kr-bar"><div class="kr-fill" style="width:100%;background:var(--green)"></div></div><div class="kr-pct good">100%</div></div>
+  <div class="kr"><div class="kr-text">Audit turnaround &lt;30min</div><div class="kr-bar"><div class="kr-fill" style="width:80%;background:var(--green)"></div></div><div class="kr-pct good">80%</div></div>
+</div>
+
+<div class="okr">
+  <div class="okr-title">📊 OKR2: CEO Dashboards & Tools</div>
+  <div class="kr"><div class="kr-text">CEO Command Center — interactive, export working</div><div class="kr-bar"><div class="kr-fill" style="width:80%;background:var(--green)"></div></div><div class="kr-pct good">80%</div></div>
+  <div class="kr"><div class="kr-text">Team Performance Dashboard — live data</div><div class="kr-bar"><div class="kr-fill" style="width:40%;background:var(--amber)"></div></div><div class="kr-pct warn">40%</div></div>
+  <div class="kr"><div class="kr-text">Weekly activity auto-report</div><div class="kr-bar"><div class="kr-fill" style="width:30%;background:var(--amber)"></div></div><div class="kr-pct warn">30%</div></div>
+  <div class="kr"><div class="kr-text">Dashboard auto-update script</div><div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div><div class="kr-pct bad">0%</div></div>
+</div>
+
+<div class="okr">
+  <div class="okr-title">🎮 OKR3: Kids Learning App</div>
+  <div class="kr"><div class="kr-text">English module v2 — shields, levels, audio</div><div class="kr-bar"><div class="kr-fill" style="width:90%;background:var(--green)"></div></div><div class="kr-pct good">90%</div></div>
+  <div class="kr"><div class="kr-text">Math + Mental Arithmetic module</div><div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div><div class="kr-pct bad">0%</div></div>
+  <div class="kr"><div class="kr-text">PWA — iPhone install</div><div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div><div class="kr-pct bad">0%</div></div>
+  <div class="kr"><div class="kr-text">Phonics integration (1000 words)</div><div class="kr-bar"><div class="kr-fill" style="width:10%;background:var(--amber)"></div></div><div class="kr-pct warn">10%</div></div>
+</div>
+
+<div class="okr">
+  <div class="okr-title">🧠 OKR4: System Architecture</div>
+  <div class="kr"><div class="kr-text">გურაფა project — CLAUDE.md + pipeline</div><div class="kr-bar"><div class="kr-fill" style="width:50%;background:var(--amber)"></div></div><div class="kr-pct warn">50%</div></div>
+  <div class="kr"><div class="kr-text">3-agent coordination (მენცარი↔ვიქტორი↔გურაფა)</div><div class="kr-bar"><div class="kr-fill" style="width:40%;background:var(--amber)"></div></div><div class="kr-pct warn">40%</div></div>
+  <div class="kr"><div class="kr-text">Token efficiency — audit interval 15min</div><div class="kr-bar"><div class="kr-fill" style="width:100%;background:var(--green)"></div></div><div class="kr-pct good">✅</div></div>
+  <div class="kr"><div class="kr-text">Owner export pipeline working</div><div class="kr-bar"><div class="kr-fill" style="width:100%;background:var(--green)"></div></div><div class="kr-pct good">✅</div></div>
+</div>
+
+</div>
+
+<!-- ═══ TODO PAGE ═══ -->
+<div class="page" id="page-todo">
+
+<div class="sec">🔴 ამ კვირა — კრიტიკული</div>
+<div id="todos-high"></div>
+
+<div class="sec">🟡 მნიშვნელოვანი</div>
+<div id="todos-med"></div>
+
+<div class="sec">🟢 ნორმალური</div>
+<div id="todos-low"></div>
+
+</div>
+
+<!-- ═══ QUESTIONS PAGE ═══ -->
+<div class="page" id="page-questions">
+
+<div class="sec">❓ Victor-ს კითხვები — პასუხი ჩაწერე</div>
+<div id="questions-list"></div>
+<button class="exp-btn" onclick="exportAll()">📥 Export (Victor წაიკითხავს)</button>
+
+</div>
+
+<!-- ═══ ACTIVITY PAGE ═══ -->
+<div class="page" id="page-activity">
+
+<div class="sec">📊 აპლიკაციები CPU Time-ით (Apr 3-6)</div>
+<div style="background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:1rem;margin-bottom:1rem;overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:.9rem">
+<tr><th style="text-align:left;color:var(--dim);font-size:.72rem;text-transform:uppercase;padding:.5rem;border-bottom:1px solid var(--brd)">App</th><th style="text-align:right;color:var(--dim);font-size:.72rem;text-transform:uppercase;padding:.5rem;border-bottom:1px solid var(--brd)">CPU sec</th><th style="text-align:left;color:var(--dim);font-size:.72rem;text-transform:uppercase;padding:.5rem;border-bottom:1px solid var(--brd)">Level</th></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Terminal (Claude Code)</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">1,902</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)"><span class="good">L3-4 ✅</span></td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Firefox</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">1,629</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Mixed</td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Chrome (Chat, WhatsApp)</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">1,128</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)"><span class="warn">L2</span></td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Outlook</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">735</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)"><span class="warn">L2</span></td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Claude Desktop</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">581</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)"><span class="good">L3</span></td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Word</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">505</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)"><span class="warn">L2</span></td></tr>
+</table>
+</div>
+
+<div class="sec">📈 CEO Level Breakdown</div>
+<div style="background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:1rem;margin-bottom:1rem;overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:.9rem">
+<tr><th style="text-align:left;color:var(--dim);font-size:.72rem;text-transform:uppercase;padding:.5rem;border-bottom:1px solid var(--brd)">აქტივობა</th><th style="text-align:right;color:var(--dim);font-size:.72rem;text-transform:uppercase;padding:.5rem;border-bottom:1px solid var(--brd)">%</th><th style="text-align:left;color:var(--dim);font-size:.72rem;text-transform:uppercase;padding:.5rem;border-bottom:1px solid var(--brd)">Level</th><th style="text-align:left;color:var(--dim);font-size:.72rem;text-transform:uppercase;padding:.5rem;border-bottom:1px solid var(--brd)">Delegatable?</th></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">AI/System Building</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace" class="good">~30%</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="good">L3-4</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="good">არა — CEO value</td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Sales/CRM</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace" class="warn">~20%</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="warn">L2</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="warn">ნაწილობრივ</td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Communication</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace" class="warn">~15%</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="warn">L2</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="bad">დიდი ნაწილი</td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Research</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">~12%</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="good">L3</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)">არა</td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Documents</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">~8%</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="warn">L2</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)" class="warn">ნაწილობრივ</td></tr>
+<tr><td style="padding:.5rem;border-bottom:1px solid var(--brd)">Social/Break</td><td style="padding:.5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">~3%</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)">—</td><td style="padding:.5rem;border-bottom:1px solid var(--brd)">—</td></tr>
+</table>
+</div>
+
+<div class="sec">📅 ყოველდღიური ბრაუზერი (ბოლო 7 დღე)</div>
+<div style="background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:1rem;margin-bottom:1rem;overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:.9rem">
+<tr><th style="text-align:left;color:var(--dim);font-size:.72rem;padding:.5rem;border-bottom:1px solid var(--brd)">დღე</th><th style="text-align:right;color:var(--dim);font-size:.72rem;padding:.5rem;border-bottom:1px solid var(--brd)">Total</th><th style="text-align:right;color:var(--dim);font-size:.72rem;padding:.5rem;border-bottom:1px solid var(--brd)">AI</th><th style="text-align:right;color:var(--dim);font-size:.72rem;padding:.5rem;border-bottom:1px solid var(--brd)">Sales</th><th style="text-align:right;color:var(--dim);font-size:.72rem;padding:.5rem;border-bottom:1px solid var(--brd)">Research</th><th style="text-align:right;color:var(--dim);font-size:.72rem;padding:.5rem;border-bottom:1px solid var(--brd)">Social</th></tr>
+<tr><td style="padding:.4rem .5rem;border-bottom:1px solid var(--brd)">Mar 30</td><td style="padding:.4rem .5rem;border-bottom:1px solid var(--brd);text-align:right;font-family:Consolas,monospace">438</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">22</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">25</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">10</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">5</td></tr>
+<tr><td style="padding:.4rem .5rem;border-bottom:1px solid var(--brd)">Mar 31</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">644</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">40</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">159</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">23</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">—</td></tr>
+<tr><td style="padding:.4rem .5rem;border-bottom:1px solid var(--brd)">Apr 1</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">570</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">103</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">108</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">28</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">1</td></tr>
+<tr style="background:rgba(212,160,86,.04)"><td style="padding:.4rem .5rem;border-bottom:1px solid var(--brd)"><strong>Apr 4 ★</strong></td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace"><strong>63</strong></td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace" class="good"><strong>22</strong></td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">15</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">3</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">7</td></tr>
+<tr style="background:rgba(92,173,111,.04)"><td style="padding:.4rem .5rem;border-bottom:1px solid var(--brd)"><strong>Apr 5 ★</strong></td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace"><strong>42</strong></td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace" class="good"><strong>19</strong></td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">—</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">14</td><td style="text-align:right;padding:.4rem .5rem;border-bottom:1px solid var(--brd);font-family:Consolas,monospace">—</td></tr>
+</table>
+<div style="font-size:.78rem;color:var(--muted);margin-top:.4rem">★ = მენცარის სესიები. Browser ↓, Terminal ↑. წყარო: Firefox + Chrome history.</div>
+</div>
+
+<div style="border-left:3px solid var(--amber);padding:.7rem 1rem;margin:.5rem 0;background:rgba(212,160,86,.05);border-radius:0 8px 8px 0;font-size:.9rem">
+✅ AI/System = 30% — Level 3-4. ახლა სწორია.
+</div>
+<div style="border-left:3px solid var(--amber);padding:.7rem 1rem;margin:.5rem 0;background:rgba(212,160,86,.05);border-radius:0 8px 8px 0;font-size:.9rem">
+⚠️ HubSpot 159 visits (Mar 31) — manual CRM. Automate?
+</div>
+<div style="border-left:3px solid var(--red);padding:.7rem 1rem;margin:.5rem 0;background:rgba(196,92,92,.05);border-radius:0 8px 8px 0;font-size:.9rem">
+🔴 ღამის 23:40 ChatGPT. CEO rest = strategic resource.
+</div>
+
+</div>
+
+<div style="text-align:center;padding:1rem 0">
+  <button class="exp-btn" onclick="exportAll()" style="font-size:1rem;padding:.8rem 2rem">📤 გაგზავნე Victor-ს (Export)</button>
+  <div style="font-size:.75rem;color:var(--dim);margin-top:.4rem">ჩამოტვირთავს JSON → Victor წაიკითხავს</div>
+</div>
+
+<footer class="footer">
+  CEO Command Center v3 | Victor Auditor<br>
+  <a href="team-performance.html">👥 Team</a> · <a href="dashboard.html">📊 Mentari</a> · <a href="learn-english.html">🎮 Kids</a>
+</footer>
+
+</div>
+
+<script>
+const SK='ceo_cmd_v3';
+const load=()=>{try{return JSON.parse(localStorage.getItem(SK))||{};}catch{return{};}};
+const save=d=>localStorage.setItem(SK,JSON.stringify(d));
+
+// Date
+document.getElementById('today-date').textContent=new Date().toLocaleDateString('ka-GE');
+
+// Nav
+function showPage(id){
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.getElementById('page-'+id).classList.add('on');
+  event.target.classList.add('on');
+}
+
+// ═══ TODOS ═══
+const TODOS=[
+  {id:'v1',text:'CEO Activity Dashboard v4 — weekly auto-update script',p:'high',deadline:'Apr 10'},
+  {id:'v2',text:'👥 Team Performance — გუნდის terminal data collection setup',p:'high',deadline:'Apr 14'},
+  {id:'v3',text:'Dashboard auto-update script (OUTPUT_LOG → HTML)',p:'med',deadline:'Apr 12'},
+  {id:'v4',text:'Data persistence script (localStorage → JSON)',p:'med',deadline:'done ✅'},
+  {id:'v5',text:'გურაფა audit pipeline setup',p:'med',deadline:'Apr 10'},
+  {id:'v6',text:'Kids App — Math module (UCMAS + კომაროვი)',p:'low',deadline:'Apr 18'},
+  {id:'v7',text:'Kids App — PWA (iPhone install)',p:'low',deadline:'Apr 14'},
+  {id:'v8',text:'👥 Team Strategy — გუნდის performance system (დააკლიკე დეტალებისთვის)',p:'med',deadline:'ongoing',expandable:true,
+   detail:`<div style="padding:.8rem;font-size:.88rem;line-height:1.8;color:var(--muted)">
+<strong style="color:var(--text)">🔑 რას ვზომავთ:</strong> output quality + velocity, არა screen time<br>
+• ინგა: QBR/month, client satisfaction, requirement turnaround<br>
+• გაბო: tasks completed, code quality, deadline adherence<br>
+• მარი მ.: onboarding progress, independent tasks<br>
+• ლუკა: learning milestones<br>
+• მარიამი: engagement, leads, content frequency<br><br>
+<strong style="color:var(--text)">🔑 როგორ ვზომავთ:</strong><br>
+1. Terminal data (Claude Code) — apps, browser, active/idle<br>
+2. Weekly self-report — structured<br>
+3. Output tracking — delivered vs committed<br><br>
+<strong style="color:var(--text)">🔑 პრიორიტეტული პრობლემები:</strong><br>
+<span style="color:var(--red)">🔴 გაბო:</span> 5% equity + low insightful activity. Level 4: accountability system<br>
+<span style="color:var(--amber)">🟡 ინგა:</span> 18 accounts overload vs "11-ზე მოსვლა + სოცმედია"<br>
+<span style="color:var(--amber)">🟡 მარიამი:</span> May deadline. 0 ROI data-ით<br>
+<span style="color:var(--green)">🟢 მარი მ.:</span> onboarding = opportunity</div>`},
+];
+
+function renderTodos(){
+  const d=load();d.todos=d.todos||{};
+  ['high','med','low'].forEach(p=>{
+    const container=document.getElementById('todos-'+p);
+    container.innerHTML=TODOS.filter(t=>t.p===p).map(t=>{
+      const td=d.todos[t.id]||{};
+      const done=td.done||false;
+      const irrelevant=td.irrelevant||false;
+      const comment=td.comment||'';
+      const commentOpen=comment.length>0;
+      return`<div class="todo ${done?'done':''}" data-id="${t.id}">
+        <div class="todo-main">
+          <input type="checkbox" ${done?'checked':''} onchange="toggleTodo('${t.id}')">
+          <div class="todo-text" style="${irrelevant?'text-decoration:line-through;color:var(--dim)':''}">${t.text} <span style="color:var(--dim);font-size:.75rem">${t.deadline}</span></div>
+          <div class="todo-actions">
+            ${t.expandable?`<button class="comment-toggle" onclick="toggleExpand('expand-${t.id}')" title="დეტალები">📋</button>`:''}
+            <button class="comment-toggle" onclick="toggleComment('${t.id}')" title="კომენტარი">💬</button>
+            <button class="todo-x ${irrelevant?'crossed':''}" onclick="toggleIrrelevant('${t.id}')" title="არ არის რელევანტური">✕</button>
+          </div>
+        </div>
+        ${t.expandable?`<div class="todo-comment" id="expand-${t.id}">${t.detail}</div>`:''}
+        <div class="todo-comment ${commentOpen?'open':''}" id="comment-${t.id}">
+          <textarea placeholder="კომენტარი..." oninput="saveComment('${t.id}',this.value)">${comment}</textarea>
+        </div>
+      </div>`;
+    }).join('');
+  });
+  updateCounts();
+}
+
+function toggleTodo(id){
+  const d=load();d.todos=d.todos||{};d.todos[id]=d.todos[id]||{};
+  d.todos[id].done=!d.todos[id].done;save(d);renderTodos();
+}
+
+function toggleIrrelevant(id){
+  const d=load();d.todos=d.todos||{};d.todos[id]=d.todos[id]||{};
+  d.todos[id].irrelevant=!d.todos[id].irrelevant;save(d);renderTodos();
+}
+
+function toggleComment(id){
+  const el=document.getElementById('comment-'+id);
+  if(el)el.classList.toggle('open');
+}
+function toggleExpand(id){
+  const el=document.getElementById(id);
+  if(el)el.classList.toggle('open');
+}
+
+function saveComment(id,val){
+  const d=load();d.todos=d.todos||{};d.todos[id]=d.todos[id]||{};
+  d.todos[id].comment=val;d.lastUpdated=new Date().toISOString();save(d);
+}
+
+function updateCounts(){
+  const d=load();const todos=d.todos||{};
+  const total=TODOS.filter(t=>!todos[t.id]?.irrelevant).length;
+  const done=TODOS.filter(t=>todos[t.id]?.done&&!todos[t.id]?.irrelevant).length;
+  document.getElementById('act-count').textContent=`${done}/${total}`;
+}
+
+// ═══ QUESTIONS ═══
+const QUESTIONS=[
+  {id:'q1',text:'გაბოს insightful data — export CSV ან screenshot',why:'დაბალი activity baseline'},
+  {id:'q2',text:'ცვლადი ანაზღაურება რაზეა მიბმული?',why:'Accountability system'},
+  {id:'q3',text:'ინგა/გაბო-ს Claude Code command გასაშვებად',why:'Terminal data baseline'},
+  {id:'q4',text:'Jira-ს ალტერნატივა — Google Sheet?',why:'Task tracking'},
+  {id:'q5',text:'მარიამის conversation — როდის?',why:'Timeline'},
+];
+
+function renderQuestions(){
+  const d=load();d.answers=d.answers||{};
+  document.getElementById('questions-list').innerHTML=QUESTIONS.map(q=>`
+    <div class="q-card">
+      <div class="q-text">${q.text}</div>
+      <div class="q-why">რატომ: ${q.why}</div>
+      <textarea placeholder="ჩაწერე პასუხი..." oninput="saveAnswer('${q.id}',this.value)">${d.answers[q.id]||''}</textarea>
+    </div>
+  `).join('');
+}
+
+function saveAnswer(id,val){
+  const d=load();d.answers=d.answers||{};d.answers[id]=val;d.lastUpdated=new Date().toISOString();save(d);
+}
+
+// ═══ EXPORT ═══
+function exportAll(){
+  const d=load();
+  d.exportTime=new Date().toISOString();
+  const blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='ceo-dashboard-export.json';
+  a.click();
+  // Visual feedback
+  const btn=event.target;
+  const orig=btn.textContent;
+  btn.textContent='✅ გაიგზავნა!';
+  btn.style.background='var(--green)';
+  setTimeout(()=>{btn.textContent=orig;btn.style.background='';},2000);
+}
+
+// ═══ INIT ═══
+renderTodos();
+renderQuestions();
+</script>
+</body>
+</html>

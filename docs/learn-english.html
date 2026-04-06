@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1a1b2e">
+<title>🌟 NikoLearn — ისწავლე თამაშით</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#1a1b2e;--card:#252640;--card2:#2d2e4a;--brd:#3a3b5c;
+  --text:#e8e6f0;--muted:#8888aa;--dim:#666680;
+  --gold:#ffd700;--green:#4caf50;--red:#ef5350;--blue:#42a5f5;
+  --purple:#ab47bc;--pink:#ec407a;--orange:#ffa726;--teal:#26a69a;
+  --r:16px
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;font-size:18px;-webkit-tap-highlight-color:transparent}
+.app{max-width:500px;margin:0 auto;padding:1rem;min-height:100vh;display:flex;flex-direction:column}
+
+/* ═══ PROFILES ═══ */
+.profiles{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:85vh;gap:1.5rem}
+.profiles h1{font-size:2.2rem;text-align:center;line-height:1.3}
+.profiles h1 .star{animation:spin 3s linear infinite;display:inline-block}
+@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.profiles h1 span{display:block;font-size:.95rem;color:var(--muted);font-weight:300;margin-top:.4rem}
+.profile-cards{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center}
+.profile-card{background:var(--card);border:2px solid var(--brd);border-radius:20px;padding:1.5rem 2rem;text-align:center;cursor:pointer;transition:all .3s;min-width:150px}
+.profile-card:hover,.profile-card:active{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 8px 25px rgba(255,215,0,.15)}
+.profile-card .avatar img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--gold)}
+.profile-card .avatar{font-size:3rem;margin-bottom:.6rem}
+.profile-card .name{font-size:1.3rem;font-weight:700;margin-bottom:.2rem}
+.profile-card .age{color:var(--muted);font-size:.9rem}
+.profile-card .stats{margin-top:.6rem;font-size:.8rem;color:var(--gold)}
+.profile-card .level-badge{display:inline-block;padding:.2rem .7rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-top:.4rem;background:rgba(255,215,0,.15);color:var(--gold)}
+
+/* ═══ HEADER ═══ */
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;margin-bottom:.8rem}
+.hdr-left{display:flex;align-items:center;gap:.6rem}
+.hdr .back{background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;padding:.5rem;min-width:44px;min-height:44px}
+.hdr .user{font-size:1rem;font-weight:600}
+.hdr-right{display:flex;align-items:center;gap:.8rem}
+.hdr .score{font-size:1rem;color:var(--gold);font-weight:700}
+.hdr .streak{font-size:.85rem;color:var(--orange)}
+
+/* ═══ SHIELDS (ამონაშვილი + Cambridge) ═══ */
+.shields{display:flex;gap:.3rem;margin:.5rem 0}
+.shield{width:28px;height:28px;border-radius:50%;border:2px solid var(--brd);display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:all .3s}
+.shield.earned{border-color:var(--gold);background:rgba(255,215,0,.2)}
+
+/* ═══ MENU ═══ */
+.menu{display:flex;flex-direction:column;gap:.8rem;flex:1}
+.menu-card{background:var(--card);border:2px solid var(--brd);border-radius:var(--r);padding:1.3rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:1rem;touch-action:manipulation;user-select:none}
+.menu-card:hover,.menu-card:active{transform:translateY(-2px);border-color:var(--blue)}
+.menu-card .icon{font-size:2.2rem;min-width:50px;text-align:center}
+.menu-card .info h3{font-size:1rem;margin-bottom:.2rem}
+.menu-card .info p{color:var(--muted);font-size:.82rem}
+.menu-card.locked{opacity:.35;pointer-events:none}
+
+/* ═══ GAME ═══ */
+.game{flex:1;display:flex;flex-direction:column;gap:.8rem}
+.progress-bar{height:10px;background:var(--card);border-radius:5px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .4s;border-radius:5px}
+.q-info{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted)}
+
+/* Word Display */
+.word-box{text-align:center;padding:1.5rem;background:var(--card);border-radius:var(--r);margin:.5rem 0;cursor:pointer;transition:transform .2s}
+.word-box:active{transform:scale(.98)}
+.word-box .emoji{font-size:3.5rem;margin-bottom:.5rem}
+.word-box .word{font-size:2rem;font-weight:700;margin-bottom:.3rem}
+.word-box .sub{color:var(--muted);font-size:.95rem}
+.word-box .speak-hint{color:var(--blue);font-size:.8rem;margin-top:.4rem}
+
+/* Options */
+.options{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.5rem 0}
+.opt{background:var(--card);border:2px solid var(--brd);border-radius:14px;padding:1.3rem .8rem;text-align:center;font-size:1.2rem;font-weight:600;cursor:pointer;transition:all .25s ease;font-family:inherit;color:var(--text);min-height:70px;display:flex;align-items:center;justify-content:center;gap:.4rem;touch-action:manipulation;user-select:none;-webkit-tap-highlight-color:rgba(255,215,0,.2)}
+.opt:active{transform:scale(.95)}
+.opt.correct{border-color:var(--green);background:rgba(76,175,80,.15);animation:pop .3s}
+.opt.wrong{border-color:var(--red);background:rgba(239,83,80,.1);animation:shake .3s}
+.opt.disabled{opacity:.4;pointer-events:none}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+/* Feedback overlay */
+.feedback{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:rgba(26,27,46,.85);z-index:200;animation:fadeIn .2s}
+.feedback-box{text-align:center;padding:2rem}
+.feedback-box .fb-emoji{font-size:4rem;margin-bottom:.5rem}
+.feedback-box .fb-text{font-size:1.5rem;font-weight:700}
+.feedback-box .fb-sub{color:var(--muted);font-size:1rem;margin-top:.3rem}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Spelling */
+.spell-input{width:100%;padding:1.3rem;font-size:1.4rem;text-align:center;background:var(--card);border:2px solid var(--brd);border-radius:14px;color:var(--text);font-family:inherit;outline:none;letter-spacing:2px}
+.spell-input:focus{border-color:var(--blue)}
+.spell-btn{width:100%;padding:1.1rem;background:var(--blue);color:#fff;border:none;border-radius:14px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:.5rem;min-height:50px;touch-action:manipulation}
+
+/* Match */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.match-card{background:var(--card);border:2px solid var(--brd);border-radius:12px;padding:1.1rem;text-align:center;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all .25s;min-height:60px;display:flex;align-items:center;justify-content:center;touch-action:manipulation;user-select:none}
+.match-card.selected{border-color:var(--purple);background:rgba(171,71,188,.15)}
+.match-card.matched{border-color:var(--green);background:rgba(76,175,80,.15);opacity:.5;pointer-events:none}
+.match-card.wrong{animation:shake .3s}
+
+/* Results */
+.results{text-align:center;padding:1.5rem;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.results .big{font-size:4rem}
+.results h2{font-size:1.6rem}
+.results .stat-row{display:flex;gap:1.5rem}
+.results .stat{text-align:center}
+.results .stat .val{font-size:1.8rem;font-weight:700}
+.results .stat .label{color:var(--muted);font-size:.75rem}
+.btn-primary{padding:1rem 2.5rem;background:var(--gold);color:#1a1b2e;border:none;border-radius:14px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit;min-height:50px;touch-action:manipulation}
+.btn-secondary{padding:.8rem 2rem;background:var(--card);color:var(--text);border:2px solid var(--brd);border-radius:14px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;min-height:50px;touch-action:manipulation}
+
+/* Level progress */
+.level-card{background:var(--card);border-radius:var(--r);padding:1rem;margin:.5rem 0}
+.level-name{font-size:1.1rem;font-weight:700;margin-bottom:.4rem}
+.level-bar{height:10px;background:var(--card2);border-radius:5px;overflow:hidden;margin-bottom:.3rem}
+.level-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--orange));border-radius:5px;transition:width .5s}
+.level-info{font-size:.8rem;color:var(--muted)}
+
+/* Break reminder (ამონაშვილი) */
+.break-reminder{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,27,46,.95);z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:2rem}
+.break-reminder .br-emoji{font-size:5rem}
+.break-reminder .br-text{font-size:1.3rem;line-height:1.6}
+.break-reminder .br-btn{padding:1rem 2rem;background:var(--teal);color:#fff;border:none;border-radius:14px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit}
+
+/* Parent */
+.parent{padding:.5rem 0}
+.parent h2{font-size:1.1rem;margin-bottom:.8rem;color:var(--gold)}
+
+/* Hidden */
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+<!-- PROFILES -->
+<div class="profiles" id="screen-profiles">
+  <h1><span class="star">🌟</span> NikoLearn<span>ისწავლე თამაშით!</span></h1>
+  <div class="profile-cards">
+    <div class="profile-card" onclick="selectProfile('niko')">
+      <div class="avatar"><img src="kids.jpeg" style="object-position:left center" alt="ნიკო"></div>
+      <div class="name">ნიკოლოზი</div>
+      <div class="age">7 წლის</div>
+      <div class="stats" id="niko-stats"></div>
+    </div>
+    <div class="profile-card" onclick="selectProfile('masho')">
+      <div class="avatar"><img src="kids.jpeg" style="object-position:right center" alt="მაშო"></div>
+      <div class="name">მაშო</div>
+      <div class="age">5 წლის</div>
+      <div class="stats" id="masho-stats"></div>
+    </div>
+    <div class="profile-card" onclick="showParent()" style="min-width:110px;padding:1.2rem">
+      <div class="avatar">👨‍💼</div>
+      <div class="name" style="font-size:1rem">მშობელი</div>
+    </div>
+  </div>
+</div>
+
+<!-- MENU -->
+<div class="hidden" id="screen-menu">
+  <div class="hdr">
+    <div class="hdr-left"><button class="back" onclick="goProfiles()">←</button><span class="user" id="menu-user"></span></div>
+    <div class="hdr-right"><span class="score" id="menu-score">🛡️ 0</span><span class="streak" id="menu-streak">🔥 0</span></div>
+  </div>
+  <div id="menu-level"></div>
+  <div class="menu" id="menu-items"></div>
+</div>
+
+<!-- GAME -->
+<div class="hidden" id="screen-game">
+  <div class="hdr">
+    <div class="hdr-left"><button class="back" onclick="endGame()">←</button><span class="user" id="game-mode"></span></div>
+    <div class="hdr-right"><span class="score" id="game-score">🛡️ 0</span></div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+  <div class="q-info"><span id="q-num"></span><span id="q-shields"></span></div>
+  <div class="game" id="game-area"></div>
+</div>
+
+<!-- RESULTS -->
+<div class="hidden" id="screen-results">
+  <div class="results" id="results-content"></div>
+</div>
+
+<!-- PARENT -->
+<div class="hidden" id="screen-parent">
+  <div class="hdr"><div class="hdr-left"><button class="back" onclick="goProfiles()">←</button><span class="user">👨‍💼 მშობლის პანელი</span></div></div>
+  <div class="parent" id="parent-content"></div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="hidden" id="screen-cats">
+  <div class="hdr"><div class="hdr-left"><button class="back" onclick="goMenu()">←</button><span class="user">📚 კატეგორიები</span></div></div>
+  <div class="menu" id="cats-list"></div>
+</div>
+
+<!-- BREAK REMINDER -->
+<div class="hidden break-reminder" id="break-screen">
+  <div class="br-emoji">🌈</div>
+  <div class="br-text">ყოჩაღ! 15 წუთი ისწავლე!<br>დროა პატარა შესვენება.<br>წამოდექი, გაიჭიმე, დალიე წყალი 💧</div>
+  <button class="br-btn" onclick="dismissBreak()">მზად ვარ გასაგრძელებლად! 💪</button>
+</div>
+
+</div>
+
+<script>
+// ═══ VOCABULARY ═══
+const WORDS = {
+  "ფერები 🎨": [
+    {ka:"წითელი",en:"red",emoji:"🔴"},{ka:"ლურჯი",en:"blue",emoji:"🔵"},{ka:"მწვანე",en:"green",emoji:"🟢"},
+    {ka:"ყვითელი",en:"yellow",emoji:"🟡"},{ka:"თეთრი",en:"white",emoji:"⬜"},{ka:"შავი",en:"black",emoji:"⬛"},
+    {ka:"ნარინჯისფერი",en:"orange",emoji:"🟠"},{ka:"იისფერი",en:"purple",emoji:"🟣"},{ka:"ვარდისფერი",en:"pink",emoji:"💗"},
+    {ka:"ყავისფერი",en:"brown",emoji:"🟤"}
+  ],
+  "ცხოველები 🐾": [
+    {ka:"ძაღლი",en:"dog",emoji:"🐕"},{ka:"კატა",en:"cat",emoji:"🐱"},{ka:"ფრინველი",en:"bird",emoji:"🐦"},
+    {ka:"თევზი",en:"fish",emoji:"🐟"},{ka:"ცხენი",en:"horse",emoji:"🐴"},{ka:"ძროხა",en:"cow",emoji:"🐄"},
+    {ka:"ღორი",en:"pig",emoji:"🐷"},{ka:"კურდღელი",en:"rabbit",emoji:"🐰"},{ka:"დათვი",en:"bear",emoji:"🐻"},
+    {ka:"ლომი",en:"lion",emoji:"🦁"},{ka:"სპილო",en:"elephant",emoji:"🐘"},{ka:"მაიმუნი",en:"monkey",emoji:"🐵"}
+  ],
+  "რიცხვები 🔢": [
+    {ka:"ერთი",en:"one",emoji:"1️⃣"},{ka:"ორი",en:"two",emoji:"2️⃣"},{ka:"სამი",en:"three",emoji:"3️⃣"},
+    {ka:"ოთხი",en:"four",emoji:"4️⃣"},{ka:"ხუთი",en:"five",emoji:"5️⃣"},{ka:"ექვსი",en:"six",emoji:"6️⃣"},
+    {ka:"შვიდი",en:"seven",emoji:"7️⃣"},{ka:"რვა",en:"eight",emoji:"8️⃣"},{ka:"ცხრა",en:"nine",emoji:"9️⃣"},
+    {ka:"ათი",en:"ten",emoji:"🔟"}
+  ],
+  "ოჯახი 👨‍👩‍👧‍👦": [
+    {ka:"დედა",en:"mother",emoji:"👩"},{ka:"მამა",en:"father",emoji:"👨"},{ka:"ძმა",en:"brother",emoji:"👦"},
+    {ka:"და",en:"sister",emoji:"👧"},{ka:"ბებია",en:"grandmother",emoji:"👵"},{ka:"ბაბუა",en:"grandfather",emoji:"👴"},
+    {ka:"ბავშვი",en:"child",emoji:"🧒"},{ka:"ოჯახი",en:"family",emoji:"👨‍👩‍👧‍👦"}
+  ],
+  "საკვები 🍎": [
+    {ka:"ვაშლი",en:"apple",emoji:"🍎"},{ka:"პური",en:"bread",emoji:"🍞"},{ka:"რძე",en:"milk",emoji:"🥛"},
+    {ka:"წყალი",en:"water",emoji:"💧"},{ka:"ბანანი",en:"banana",emoji:"🍌"},{ka:"კვერცხი",en:"egg",emoji:"🥚"},
+    {ka:"ყველი",en:"cheese",emoji:"🧀"},{ka:"ნაყინი",en:"ice cream",emoji:"🍦"},{ka:"ტორტი",en:"cake",emoji:"🎂"},{ka:"ხილი",en:"fruit",emoji:"🍇"}
+  ],
+  "სხეული 🏃": [
+    {ka:"თავი",en:"head",emoji:"🗣️"},{ka:"ხელი",en:"hand",emoji:"✋"},{ka:"ფეხი",en:"foot",emoji:"🦶"},
+    {ka:"თვალი",en:"eye",emoji:"👁️"},{ka:"ყური",en:"ear",emoji:"👂"},{ka:"ცხვირი",en:"nose",emoji:"👃"},
+    {ka:"პირი",en:"mouth",emoji:"👄"},{ka:"თითი",en:"finger",emoji:"☝️"}
+  ],
+  "სკოლა 🏫": [
+    {ka:"წიგნი",en:"book",emoji:"📖"},{ka:"კალამი",en:"pen",emoji:"🖊️"},{ka:"ფანქარი",en:"pencil",emoji:"✏️"},
+    {ka:"მასწავლებელი",en:"teacher",emoji:"👨‍🏫"},{ka:"სკოლა",en:"school",emoji:"🏫"},{ka:"რვეული",en:"notebook",emoji:"📓"}
+  ],
+  "ბუნება 🌿": [
+    {ka:"მზე",en:"sun",emoji:"☀️"},{ka:"მთვარე",en:"moon",emoji:"🌙"},{ka:"ვარსკვლავი",en:"star",emoji:"⭐"},
+    {ka:"წვიმა",en:"rain",emoji:"🌧️"},{ka:"თოვლი",en:"snow",emoji:"❄️"},{ka:"ხე",en:"tree",emoji:"🌳"},
+    {ka:"ყვავილი",en:"flower",emoji:"🌸"},{ka:"ზღვა",en:"sea",emoji:"🌊"}
+  ],
+  "მოქმედებები 🎬": [
+    {ka:"სირბილი",en:"run",emoji:"🏃"},{ka:"ხტომა",en:"jump",emoji:"🤸"},{ka:"ჭამა",en:"eat",emoji:"🍽️"},
+    {ka:"ძილი",en:"sleep",emoji:"😴"},{ka:"კითხვა",en:"read",emoji:"📖"},{ka:"წერა",en:"write",emoji:"✍️"},
+    {ka:"თამაში",en:"play",emoji:"🎮"},{ka:"სიმღერა",en:"sing",emoji:"🎤"},{ka:"ცეკვა",en:"dance",emoji:"💃"}
+  ],
+  "ფრაზები 💬": [
+    {ka:"გამარჯობა",en:"hello",emoji:"👋"},{ka:"ნახვამდის",en:"goodbye",emoji:"👋"},{ka:"გმადლობთ",en:"thank you",emoji:"🙏"},
+    {ka:"გთხოვთ",en:"please",emoji:"😊"},{ka:"დიახ",en:"yes",emoji:"✅"},{ka:"არა",en:"no",emoji:"❌"},
+    {ka:"კარგი",en:"good",emoji:"👍"},{ka:"დიდი",en:"big",emoji:"🐘"},{ka:"პატარა",en:"small",emoji:"🐜"}
+  ]
+};
+
+const AGE_CATS = {
+  masho: ["ფერები 🎨","ცხოველები 🐾","რიცხვები 🔢","ოჯახი 👨‍👩‍👧‍👦","საკვები 🍎","ფრაზები 💬"],
+  niko: Object.keys(WORDS)
+};
+
+// ═══ STATE ═══
+const SK='nikolearn_v2';
+let state,profile,gameMode,questions,qIdx,sessionShields,sessionWrong,sessionPoints;
+let sessionStart=0;
+
+function load(){try{return JSON.parse(localStorage.getItem(SK))||defaultState();}catch{return defaultState();}}
+function save(){localStorage.setItem(SK,JSON.stringify(state));}
+function defaultState(){return{niko:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0},masho:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0}};}
+
+// ═══ LEVELS (Cambridge YLE inspired) ═══
+function getLevel(p){
+  const s=state[p||profile];
+  const learned=Object.values(s.words).filter(w=>w.correct>=3).length;
+  if(learned>=60)return{num:5,name:'🏆 Champion',emoji:'🏆',next:null,need:0,learned};
+  if(learned>=40)return{num:4,name:'⭐ Explorer',emoji:'⭐',next:60,need:60-learned,learned};
+  if(learned>=20)return{num:3,name:'🚀 Learner',emoji:'🚀',next:40,need:40-learned,learned};
+  if(learned>=8)return{num:2,name:'🌱 Grower',emoji:'🌱',next:20,need:20-learned,learned};
+  return{num:1,name:'🐣 Starter',emoji:'🐣',next:8,need:8-learned,learned};
+}
+
+// ═══ TTS ═══
+function speak(text){
+  if(!('speechSynthesis' in window))return;
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US';u.rate=0.7;u.pitch=1.4;u.volume=1;
+  const voices=window.speechSynthesis.getVoices();
+  const pref=['Samantha','Karen','Moira','Zira','Hazel'];
+  let v=null;
+  for(const n of pref){v=voices.find(x=>x.name.includes(n)&&x.lang.startsWith('en'));if(v)break;}
+  if(!v)v=voices.find(x=>x.lang.startsWith('en'));
+  if(v)u.voice=v;
+  window.speechSynthesis.speak(u);
+}
+if('speechSynthesis' in window)window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();
+
+function getName(){return profile==='niko'?'ნიკოლოზ':'მაშო';}
+
+// ═══ SCREENS ═══
+function show(id){document.querySelectorAll('[id^=screen-]').forEach(s=>s.classList.add('hidden'));document.getElementById('screen-'+id).classList.remove('hidden');}
+
+function goProfiles(){
+  state=load();
+  show('profiles');
+  ['niko','masho'].forEach(p=>{
+    const s=state[p];const lvl=getLevel(p);
+    const el=document.getElementById(p+'-stats');
+    if(s.shields>0)el.innerHTML=`🛡️${s.shields} | ${lvl.learned} სიტყვა<br><span class="level-badge">${lvl.name}</span>`;
+    else el.textContent='დაიწყე თამაში!';
+  });
+}
+
+function selectProfile(p){
+  profile=p;sessionStart=Date.now();
+  const s=state[profile];const lvl=getLevel();
+  show('menu');
+  document.getElementById('menu-user').textContent=(p==='niko'?'ნიკოლოზი':'მაშო');
+  document.getElementById('menu-score').textContent='🛡️ '+s.shields;
+  document.getElementById('menu-streak').textContent='🔥 '+s.streak;
+
+  // Level card
+  document.getElementById('menu-level').innerHTML=`<div class="level-card">
+    <div class="level-name">${lvl.name}</div>
+    <div class="level-bar"><div class="level-fill" style="width:${lvl.next?Math.round(((lvl.next-lvl.need)/lvl.next)*100):100}%"></div></div>
+    <div class="level-info">${lvl.next?`შემდეგ ლეველამდე: ${lvl.need} სიტყვა`:'მაქსიმალური ლეველი! 🎉'}</div>
+  </div>`;
+
+  // Menu items based on age
+  const isKid = p==='masho';
+  document.getElementById('menu-items').innerHTML=`
+    <div class="menu-card" onclick="startGame('quiz')"><div class="icon">🎯</div><div class="info"><h3>🔊 მოისმინე → აირჩიე</h3><p>ქართული → ინგლისური</p></div></div>
+    <div class="menu-card" onclick="startGame('reverse')"><div class="icon">🔄</div><div class="info"><h3>English → ქართული</h3><p>ინგლისური → აირჩიე ქართული</p></div></div>
+    <div class="menu-card" onclick="startGame('listen')"><div class="icon">👂</div><div class="info"><h3>მოისმინე → სურათი</h3><p>🔊 ხმა → აირჩიე emoji</p></div></div>
+    <div class="menu-card" onclick="startGame('match')"><div class="icon">🧩</div><div class="info"><h3>დააწყვილე</h3><p>ქართული ↔ ინგლისური</p></div></div>
+    ${!isKid?'<div class="menu-card" onclick="startGame(\'spell\')"><div class="icon">✍️</div><div class="info"><h3>დაწერე</h3><p>ინგლისურად spelling</p></div></div>':''}
+    <div class="menu-card" onclick="showCategories()"><div class="icon">📚</div><div class="info"><h3>კატეგორიები</h3><p>აირჩიე თემა</p></div></div>
+  `;
+}
+
+function goMenu(){selectProfile(profile);}
+
+// ═══ CATEGORIES ═══
+let activeCat=null;
+function showCategories(){
+  show('cats');const cats=AGE_CATS[profile];
+  document.getElementById('cats-list').innerHTML=cats.map(c=>{
+    const ws=WORDS[c];const learned=ws.filter(w=>(state[profile].words[w.en]||{}).correct>=3).length;
+    return`<div class="menu-card" onclick="activeCat='${c}';goMenu()"><div class="icon">${ws[0].emoji}</div><div class="info"><h3>${c}</h3><p>${learned}/${ws.length} ნასწავლი</p></div></div>`;
+  }).join('')+`<div class="menu-card" onclick="activeCat=null;goMenu()"><div class="icon">🌍</div><div class="info"><h3>ყველა შერეული</h3><p>ყველა კატეგორია ერთად</p></div></div>`;
+}
+
+// ═══ WORDS ═══
+function getWords(){
+  let pool=[];
+  (activeCat?[activeCat]:AGE_CATS[profile]).forEach(c=>pool.push(...WORDS[c]));
+  const ws=state[profile].words;
+  // Weak words first (ამონაშვილი: productive struggle — retry what's hard)
+  pool.sort((a,b)=>{
+    const sa=ws[a.en]?ws[a.en].correct/(ws[a.en].correct+ws[a.en].wrong+1):0;
+    const sb=ws[b.en]?ws[b.en].correct/(ws[b.en].correct+ws[b.en].wrong+1):0;
+    return sa-sb;
+  });
+  return pool;
+}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+// ═══ START GAME ═══
+function startGame(mode){
+  gameMode=mode;
+  const pool=getWords();
+  questions=shuffle([...pool]).slice(0,10);
+  if(questions.length<4)questions=shuffle([...pool]);
+  qIdx=0;sessionShields=0;sessionWrong=0;sessionPoints=0;
+  show('game');
+  const names={quiz:'🎯 მოისმინე',reverse:'🔄 Eng→ქართ',spell:'✍️ დაწერე',match:'🧩 დააწყვილე',listen:'👂 სურათი'};
+  document.getElementById('game-mode').textContent=names[mode]||mode;
+  document.getElementById('game-score').textContent='🛡️ 0';
+  if(mode==='match')startMatch();
+  else if(mode==='listen')nextListen();
+  else nextQ();
+}
+
+// ═══ QUIZ / REVERSE ═══
+function nextQ(){
+  if(qIdx>=questions.length){showResults();return;}
+  const q=questions[qIdx];
+  document.getElementById('progress').style.width=((qIdx/questions.length)*100)+'%';
+  document.getElementById('q-num').textContent=`${qIdx+1}/${questions.length}`;
+  document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
+  const area=document.getElementById('game-area');
+  const pool=getWords();
+  let opts=[q];while(opts.length<4){const r=pool[Math.floor(Math.random()*pool.length)];if(!opts.find(o=>o.en===r.en))opts.push(r);}
+  shuffle(opts);
+
+  if(gameMode==='quiz'){
+    area.innerHTML=`<div class="word-box" onclick="speak('${q.en}')"><div class="emoji">${q.emoji}</div><div class="word">${q.ka}</div><div class="speak-hint">🔊 დააჭირე მოსასმენად</div></div>
+    <div class="options">${opts.map(o=>`<button class="opt" onclick="speak('${o.en}');checkAnswer(this,'${o.en}','${q.en}')">🔊 ${o.en}</button>`).join('')}</div>`;
+  } else if(gameMode==='reverse'){
+    speak(q.en);
+    area.innerHTML=`<div class="word-box" onclick="speak('${q.en}')"><div class="emoji">🔊</div><div class="word">${q.en}</div><div class="speak-hint">🔊 მოისმინე</div></div>
+    <div class="options">${opts.map(o=>`<button class="opt" onclick="checkAnswer(this,'${o.en}','${q.en}')">${o.ka}</button>`).join('')}</div>`;
+  } else if(gameMode==='spell'){
+    area.innerHTML=`<div class="word-box" onclick="speak('${q.en}')"><div class="emoji">${q.emoji}</div><div class="word">${q.ka}</div><div class="speak-hint">🔊 მოისმინე და დაწერე ინგლისურად</div></div>
+    <input class="spell-input" id="sp-in" type="text" autocomplete="off" autocapitalize="off" placeholder="type here...">
+    <button class="spell-btn" onclick="checkSpell('${q.en}')">შეამოწმე ✓</button>`;
+    setTimeout(()=>{const inp=document.getElementById('sp-in');if(inp){inp.focus();inp.onkeypress=e=>{if(e.key==='Enter')checkSpell(q.en);};}},200);
+  }
+}
+
+// ═══ LISTEN (მაშოსთვის — emoji only) ═══
+function nextListen(){
+  if(qIdx>=questions.length){showResults();return;}
+  const q=questions[qIdx];
+  document.getElementById('progress').style.width=((qIdx/questions.length)*100)+'%';
+  document.getElementById('q-num').textContent=`${qIdx+1}/${questions.length}`;
+  document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
+  const pool=getWords();let opts=[q];
+  while(opts.length<4){const r=pool[Math.floor(Math.random()*pool.length)];if(!opts.find(o=>o.en===r.en))opts.push(r);}
+  shuffle(opts);speak(q.en);
+  document.getElementById('game-area').innerHTML=`<div class="word-box" onclick="speak('${q.en}')"><div class="emoji" style="font-size:4rem">🔊</div><div class="sub" style="font-size:1.2rem">მოისმინე და აირჩიე!</div></div>
+  <div class="options">${opts.map(o=>`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="checkAnswer(this,'${o.en}','${q.en}')">${o.emoji}</button>`).join('')}</div>`;
+}
+
+// ═══ ANSWER CHECK ═══
+function checkAnswer(btn,selected,correct){
+  const isCorrect=selected===correct;
+  if(isCorrect){
+    document.querySelectorAll('.opt').forEach(b=>{b.classList.add('disabled');b.style.pointerEvents='none';});
+    btn.classList.add('correct');
+    record(correct,true);
+    speak('well done');
+    // Show brief feedback (ამონაშვილი: warm encouragement)
+    showFeedback(true);
+    setTimeout(()=>{qIdx++;hideFeedback();if(gameMode==='listen')nextListen();else nextQ();},1200);
+  } else {
+    btn.classList.add('wrong');
+    btn.style.pointerEvents='none';
+    btn.classList.add('disabled');
+    record(correct,false);
+    speak('try again');
+    // Don't advance — let child try again (ამონაშვილი: productive struggle)
+  }
+}
+
+function checkSpell(correct){
+  const inp=document.getElementById('sp-in');
+  const val=(inp?inp.value:'').trim().toLowerCase();
+  if(val===correct.toLowerCase()){
+    record(correct,true);speak('well done');
+    showFeedback(true);
+    setTimeout(()=>{qIdx++;hideFeedback();nextQ();},1500);
+  } else {
+    record(correct,false);speak('try again');
+    if(inp){inp.value='';inp.style.borderColor='var(--red)';setTimeout(()=>{inp.style.borderColor='var(--brd)';inp.focus();},500);}
+  }
+}
+
+// ═══ FEEDBACK OVERLAY ═══
+function showFeedback(correct){
+  const fb=document.createElement('div');fb.className='feedback';fb.id='fb-overlay';
+  fb.innerHTML=`<div class="feedback-box"><div class="fb-emoji">${correct?'🎉':'💪'}</div><div class="fb-text">${correct?'ყოჩაღ, '+getName()+'!':getName()+', კიდევ ცადე!'}</div></div>`;
+  document.body.appendChild(fb);
+}
+function hideFeedback(){const fb=document.getElementById('fb-overlay');if(fb)fb.remove();}
+
+// ═══ MATCH ═══
+let matchPairs,matchSel,matchDone;
+function startMatch(){
+  const pool=shuffle(getWords()).slice(0,6);matchPairs=pool;matchSel=null;matchDone=0;
+  const cards=[];pool.forEach(w=>{cards.push({text:w.ka,lang:'ka',word:w});cards.push({text:w.en,lang:'en',word:w});});
+  shuffle(cards);
+  document.getElementById('progress').style.width='0%';
+  document.getElementById('q-num').textContent=`0/${pool.length}`;
+  document.getElementById('q-shields').textContent='🛡️ 0';
+  document.getElementById('game-area').innerHTML=`<div class="match-grid">${cards.map((c,i)=>
+    `<div class="match-card" data-w="${c.word.en}" data-l="${c.lang}" onclick="matchClick(this)">${c.text}</div>`).join('')}</div>`;
+}
+function matchClick(el){
+  if(el.classList.contains('matched'))return;
+  if(el.dataset.l==='en')speak(el.dataset.w);
+  el.classList.add('selected');
+  if(!matchSel){matchSel=el;return;}
+  const a=matchSel,b=el;
+  if(a===b){b.classList.remove('selected');matchSel=null;return;}
+  if(a.dataset.w===b.dataset.w&&a.dataset.l!==b.dataset.l){
+    a.classList.remove('selected');b.classList.remove('selected');a.classList.add('matched');b.classList.add('matched');
+    matchDone++;record(a.dataset.w,true);
+    document.getElementById('progress').style.width=((matchDone/matchPairs.length)*100)+'%';
+    document.getElementById('q-num').textContent=`${matchDone}/${matchPairs.length}`;
+    if(matchDone===matchPairs.length)setTimeout(showResults,500);
+  } else {
+    a.classList.add('wrong');b.classList.add('wrong');record(a.dataset.w,false);
+    setTimeout(()=>{a.classList.remove('selected','wrong');b.classList.remove('selected','wrong');},400);
+  }
+  matchSel=null;
+}
+
+// ═══ SCORING (Shields instead of points — Cambridge YLE) ═══
+function record(word,correct){
+  const s=state[profile];
+  if(!s.words[word])s.words[word]={correct:0,wrong:0,lastSeen:null};
+  s.words[word].lastSeen=new Date().toISOString();
+  if(correct){
+    s.words[word].correct++;sessionShields++;
+    s.shields++;s.streak++;if(s.streak>s.maxStreak)s.maxStreak=s.streak;
+  } else {
+    s.words[word].wrong++;sessionWrong++;s.streak=0;
+  }
+  document.getElementById('game-score').textContent='🛡️ '+sessionShields;
+  save();
+  // Break reminder after 15 min (ამონაშვილი + SmartyKids: 15min optimal)
+  if(sessionStart&&(Date.now()-sessionStart)>15*60*1000){
+    document.getElementById('break-screen').classList.remove('hidden');
+    sessionStart=Date.now();// reset timer
+  }
+}
+
+function dismissBreak(){document.getElementById('break-screen').classList.add('hidden');}
+
+// ═══ RESULTS (Growth narrative, not scores — ამონაშვილი) ═══
+function showResults(){
+  show('results');
+  const lvl=getLevel();
+  const total=sessionShields+sessionWrong;
+  const pct=total>0?Math.round(sessionShields/total*100):0;
+  // Growth message instead of score (ამონაშვილი)
+  const prevLearned=Object.values(state[profile].words).filter(w=>w.correct>=3).length;
+  const weak=questions?questions.filter(q=>{const w=state[profile].words[q.en];return w&&w.wrong>w.correct;}):[];
+
+  let growthMsg='';
+  if(pct>=90)growthMsg=getName()+', შესანიშნავია! 🌟';
+  else if(pct>=70)growthMsg=getName()+', კარგად მიდიხარ! 💪';
+  else if(pct>=50)growthMsg=getName()+', ისწავლე ახალი! 📚';
+  else growthMsg=getName()+', ყოველი ცდა = წინსვლა! 🌱';
+
+  document.getElementById('results-content').innerHTML=`
+    <div class="big">${pct>=80?'🏆':pct>=50?'⭐':'🌱'}</div>
+    <h2>${growthMsg}</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="val" style="color:var(--green)">${sessionShields}</div><div class="label">🛡️ shields</div></div>
+      <div class="stat"><div class="val">${lvl.learned}</div><div class="label">📚 სიტყვა</div></div>
+      <div class="stat"><div class="val" style="color:var(--orange)">${state[profile].streak}</div><div class="label">🔥 streak</div></div>
+    </div>
+    <div class="level-card" style="width:100%">
+      <div class="level-name">${lvl.name}</div>
+      <div class="level-bar"><div class="level-fill" style="width:${lvl.next?Math.round(((lvl.next-lvl.need)/lvl.next)*100):100}%"></div></div>
+      <div class="level-info">${lvl.next?`${lvl.need} სიტყვა შემდეგ ლეველამდე`:'🏆 მაქსიმუმი!'}</div>
+    </div>
+    ${weak.length>0?`<div style="font-size:.9rem;color:var(--orange);margin:.5rem 0">გაიმეორე: ${weak.map(w=>w.emoji+' '+w.en).join(', ')}</div>`:''}
+    <button class="btn-primary" onclick="retryWeak()" ${weak.length<2?'style="display:none"':''}>🔄 სუსტების გამეორება</button>
+    <button class="btn-primary" onclick="startGame(gameMode)" style="background:var(--blue)">🎮 ახალი რაუნდი</button>
+    <button class="btn-secondary" onclick="goMenu()">📋 მენიუ</button>
+  `;
+  state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();
+  if(sessionStart)state[profile].totalTime+=(Date.now()-sessionStart);
+  save();
+  speak(pct>=70?'great job':'keep going');
+}
+
+function retryWeak(){
+  const ws=state[profile].words;
+  const weakW=Object.entries(ws).filter(([k,v])=>v.wrong>=v.correct).map(([k])=>k);
+  if(weakW.length<2){startGame(gameMode);return;}
+  const all=[];Object.values(WORDS).forEach(c=>all.push(...c));
+  questions=all.filter(w=>weakW.includes(w.en));
+  if(questions.length<4){const extra=shuffle(all.filter(w=>!weakW.includes(w.en))).slice(0,4-questions.length);questions.push(...extra);}
+  shuffle(questions);qIdx=0;sessionShields=0;sessionWrong=0;
+  show('game');document.getElementById('game-mode').textContent='🔄 გამეორება';document.getElementById('game-score').textContent='🛡️ 0';
+  if(gameMode==='match')startMatch();else if(gameMode==='listen')nextListen();else nextQ();
+}
+
+function endGame(){goMenu();}
+
+// ═══ PARENT DASHBOARD ═══
+function showParent(){
+  show('parent');
+  let html='';
+  ['niko','masho'].forEach(p=>{
+    const s=state[p];const name=p==='niko'?'🧒 ნიკოლოზი':'👧 მაშო';const lvl=getLevel(p);
+    const words=Object.entries(s.words);const total=words.length;
+    const correct=words.reduce((a,[k,v])=>a+v.correct,0);
+    const wrong=words.reduce((a,[k,v])=>a+v.wrong,0);
+    const accuracy=correct+wrong>0?Math.round(correct/(correct+wrong)*100):0;
+    const weak=words.filter(([k,v])=>v.wrong>v.correct).map(([k])=>k);
+    const strong=words.filter(([k,v])=>v.correct>=3&&v.wrong===0).map(([k])=>k);
+    const lastPlayed=s.lastPlayed?new Date(s.lastPlayed).toLocaleDateString('ka-GE'):'—';
+    const totalMin=Math.round((s.totalTime||0)/60000);
+
+    html+=`<h2>${name} — ${lvl.name}</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:.8rem">
+      <div style="background:var(--card);border-radius:10px;padding:.7rem;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--gold)">${s.shields}</div><div style="font-size:.65rem;color:var(--muted)">🛡️ shields</div></div>
+      <div style="background:var(--card);border-radius:10px;padding:.7rem;text-align:center"><div style="font-size:1.4rem;font-weight:700">${lvl.learned}</div><div style="font-size:.65rem;color:var(--muted)">📚 ნასწავლი</div></div>
+      <div style="background:var(--card);border-radius:10px;padding:.7rem;text-align:center"><div style="font-size:1.4rem;font-weight:700;color:${accuracy>=70?'var(--green)':'var(--orange)'}">${accuracy}%</div><div style="font-size:.65rem;color:var(--muted)">სიზუსტე</div></div>
+    </div>
+    <div style="font-size:.82rem;color:var(--muted);margin-bottom:.3rem">🕐 ბოლოს: ${lastPlayed} | 🎮 ${s.sessions} სესია | ⏱️ ${totalMin} წუთი | 🔥 max streak: ${s.maxStreak}</div>
+    ${weak.length>0?`<div style="font-size:.82rem;color:var(--orange);margin-bottom:.3rem">⚠️ სუსტი: ${weak.slice(0,8).join(', ')}</div>`:''}
+    ${strong.length>0?`<div style="font-size:.82rem;color:var(--green);margin-bottom:.8rem">✅ ძლიერი: ${strong.slice(0,8).join(', ')}</div>`:''}
+    <hr style="border-color:var(--brd);margin-bottom:1rem">`;
+  });
+  html+=`<button class="btn-secondary" onclick="if(confirm('წაშალო progress?')){localStorage.removeItem('${SK}');state=load();goProfiles();}">🗑️ Reset</button>`;
+  document.getElementById('parent-content').innerHTML=html;
+}
+
+// ═══ INIT ═══
+state=load();goProfiles();
+</script>
+</body>
+</html>

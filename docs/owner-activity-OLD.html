@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 CEO Dashboard — გელა შონია</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0b0f;--card:#12141a;--card2:#1a1d27;--brd:#252830;--text:#e8e6e1;--muted:#8a8d96;--dim:#555860;--amber:#d4a056;--red:#c45c5c;--green:#5cad6f;--blue:#5c8cc4;--purple:#9b7ec8;--r:12px}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);padding:1.5rem;max-width:1100px;margin:0 auto;line-height:1.6;font-size:16px}
+h1{font-size:1.5rem;margin-bottom:.3rem}
+.sub{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem}
+h2{font-size:.95rem;color:var(--amber);margin:1.8rem 0 .8rem;text-transform:uppercase;letter-spacing:1.5px;border-bottom:1px solid var(--brd);padding-bottom:.4rem}
+
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--brd);margin-bottom:1.5rem;overflow-x:auto}
+.tab{padding:.7rem 1.2rem;font-size:.88rem;color:var(--dim);cursor:pointer;border:none;background:none;font-family:inherit;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s}
+.tab:hover{color:var(--muted)}
+.tab.on{color:var(--amber);border-bottom-color:var(--amber)}
+.tc{display:none}.tc.on{display:block}
+
+.card{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:1.2rem;margin-bottom:1rem}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem;margin-bottom:1rem}
+.kpi{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:.9rem;text-align:center}
+.kpi .label{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:var(--dim)}
+.kpi .val{font-family:'Consolas',monospace;font-size:1.6rem;font-weight:700;margin:.2rem 0}
+.kpi .note{font-size:.72rem;color:var(--muted)}
+.good{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--red)}
+
+/* OKR */
+.okr{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:1.2rem;margin-bottom:1rem}
+.okr-title{font-size:1.05rem;font-weight:700;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+.kr{display:flex;align-items:center;gap:.8rem;padding:.5rem 0;border-bottom:1px solid rgba(37,40,48,.5)}
+.kr:last-child{border-bottom:none}
+.kr-text{flex:1;font-size:.9rem}
+.kr-bar{width:120px;height:8px;background:var(--card2);border-radius:4px;overflow:hidden}
+.kr-fill{height:100%;border-radius:4px;transition:width .3s}
+.kr-pct{font-family:'Consolas',monospace;font-size:.82rem;width:40px;text-align:right}
+
+/* Actions */
+.action{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0;font-size:.9rem}
+.action input[type=checkbox]{appearance:none;width:20px;height:20px;min-width:20px;border:1.5px solid var(--brd);border-radius:4px;background:transparent;cursor:pointer;margin-top:2px}
+.action input:checked{background:var(--green);border-color:var(--green)}
+.action input:checked+span{text-decoration:line-through;color:var(--dim)}
+
+/* Activity table */
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{text-align:left;color:var(--dim);font-size:.7rem;text-transform:uppercase;letter-spacing:1px;padding:.5rem;border-bottom:1px solid var(--brd)}
+td{padding:.5rem;border-bottom:1px solid var(--brd)}
+.num{font-family:'Consolas',monospace;text-align:right}
+
+.insight{border-left:3px solid var(--amber);padding:.6rem 1rem;margin:.5rem 0;background:rgba(212,160,86,0.05);border-radius:0 8px 8px 0;font-size:.88rem}
+.alert{border-left-color:var(--red);background:rgba(196,92,92,0.05)}
+
+.footer{text-align:center;padding:2rem;font-size:.7rem;color:var(--dim)}
+.comment-box{margin-top:.8rem}
+.comment-input{width:100%;padding:.8rem;background:var(--card2);border:1px solid var(--brd);border-radius:8px;color:var(--text);font-family:inherit;font-size:.88rem;resize:vertical;min-height:50px;outline:none}
+.comment-input:focus{border-color:var(--amber)}
+.answer-input{width:100%;padding:.5rem;background:var(--card2);border:1px solid var(--brd);border-radius:6px;color:var(--text);font-family:inherit;font-size:.85rem;resize:vertical;min-height:40px;outline:none}
+.answer-input:focus{border-color:var(--amber)}
+.export-btn{padding:.6rem 1.2rem;background:var(--amber);color:var(--bg);border:none;border-radius:8px;font-family:inherit;font-weight:600;cursor:pointer;font-size:.85rem;margin-top:1rem}
+.export-btn:hover{opacity:.9}
+</style>
+</head>
+<body>
+
+<h1>📊 CEO Performance Dashboard</h1>
+<div class="sub">გელა შონია — Bivision CEO | Victor Auditor | Updated: 2026-04-06</div>
+
+<div class="tabs">
+<button class="tab on" onclick="showTab('okr')">🎯 OKR & Actions</button>
+<button class="tab" onclick="showTab('activity')">📈 Activity Data</button>
+<button class="tab" onclick="showTab('team')">👥 Team Strategy</button>
+</div>
+
+<!-- ═══ OKR TAB ═══ -->
+<div class="tc on" id="tab-okr">
+
+<div class="kpi-row">
+  <div class="kpi"><div class="label">Active OKRs</div><div class="val">4</div><div class="note">Q2 2026</div></div>
+  <div class="kpi"><div class="label">Actions Done</div><div class="val" id="actions-count">0/12</div><div class="note">this sprint</div></div>
+  <div class="kpi"><div class="label">CEO Level</div><div class="val warn">L2→L4</div><div class="note">transition</div></div>
+  <div class="kpi"><div class="label">Mentari Sessions</div><div class="val">3</div><div class="note">Day 1-2</div></div>
+</div>
+
+<!-- OKR 1 -->
+<div class="okr">
+  <div class="okr-title">🛡️ OKR1: Churn Prevention System (Level 4)</div>
+  <div class="kr">
+    <div class="kr-text">KR1: Billings Sheet-ში 3 column (Active Users, Parent Group, Expiry Alert)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct bad">0%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR2: ყველა expired contract formalized ან closed (7 account)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct bad">0%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR3: Multi-stakeholder engagement — min 2 contact per account</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct bad">0%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR4: Churn MRR ↓ vs 2025 (23.4K → target <15K)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--amber)"></div></div>
+    <div class="kr-pct">TBD</div>
+  </div>
+</div>
+
+<!-- OKR 2 -->
+<div class="okr">
+  <div class="okr-title">📢 OKR2: Digital Marketing Fix (Level 4)</div>
+  <div class="kr">
+    <div class="kr-text">KR1: SEO poisoning cleanup (pashagaming = 0 clicks)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct bad">0%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR2: LinkedIn paid STOP (950₾ saved)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct bad">0%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR3: Demo conversion >0% (baseline: 0%)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct bad">0%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR4: HubSpot real values + stale deals cleaned</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct bad">0%</div>
+  </div>
+</div>
+
+<!-- OKR 3 -->
+<div class="okr">
+  <div class="okr-title">🧠 OKR3: მენცარი System Maturity</div>
+  <div class="kr">
+    <div class="kr-text">KR1: Audit pipeline automated (Victor → Mentari)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:80%;background:var(--green)"></div></div>
+    <div class="kr-pct good">80%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR2: Dashboard v5+ (interactive, all tabs, auto-update)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:60%;background:var(--amber)"></div></div>
+    <div class="kr-pct warn">60%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR3: Owner Rating avg ≥2.5 (5+ outputs rated)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct">TBD</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR4: EP1-EP6 compliance = 100% (0 critical audit findings)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:90%;background:var(--green)"></div></div>
+    <div class="kr-pct good">90%</div>
+  </div>
+</div>
+
+<!-- OKR 4 -->
+<div class="okr">
+  <div class="okr-title">👤 OKR4: CEO Level 2→4 Transition</div>
+  <div class="kr">
+    <div class="kr-text">KR1: L3-4 activity ≥40% of time (baseline: 30%)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:75%;background:var(--green)"></div></div>
+    <div class="kr-pct good">75%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR2: L2 delegatable activities ≤20% (baseline: ~35%)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:30%;background:var(--amber)"></div></div>
+    <div class="kr-pct warn">30%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR3: 0 ღამის სესიები (23:00+ work = CEO health risk)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:0%;background:var(--red)"></div></div>
+    <div class="kr-pct bad">0%</div>
+  </div>
+  <div class="kr">
+    <div class="kr-text">KR4: გუნდის performance system live (insightful alternative)</div>
+    <div class="kr-bar"><div class="kr-fill" style="width:40%;background:var(--amber)"></div></div>
+    <div class="kr-pct warn">40%</div>
+  </div>
+</div>
+
+<h2>⚡ Actions — ამ კვირა (Apr 7-13)</h2>
+<div class="card">
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🔴 ნუტრიმაქსი: დამფუძნებელთან საუბარი</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🔴 TBC Leasing: IT decision-maker identification</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🔴 Mardaleishvili: usage + champion check</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟡 LinkedIn paid ads — გამორთე</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟡 HubSpot: real deal values + 3 stale cleanup</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟡 Aversi Pharma: contract formalization</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟡 ენგადი: 2 expired contracts formalization</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟢 Billings Sheet: Active Users column დამატება</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟢 Billings Sheet: Parent Group column</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟢 Billings Sheet: Expiry conditional formatting</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟢 მარიამის scope change conversation</span></label>
+  <label class="action"><input type="checkbox" onchange="updateCount()"><span>🟢 GSC: pashagaming URL inspection + disavow</span></label>
+</div>
+
+</div>
+
+<!-- ═══ ACTIVITY TAB ═══ -->
+<div class="tc" id="tab-activity">
+
+<h2>აპლიკაციები CPU Time-ით (Apr 3-6)</h2>
+<div class="card">
+<table>
+<tr><th>App</th><th class="num">CPU sec</th><th>Level</th></tr>
+<tr><td>Terminal (Claude Code)</td><td class="num">1,902</td><td class="good">L3-4</td></tr>
+<tr><td>Firefox</td><td class="num">1,629</td><td>Mixed</td></tr>
+<tr><td>Chrome (Chat, WhatsApp)</td><td class="num">1,128</td><td class="warn">L2</td></tr>
+<tr><td>Outlook</td><td class="num">735</td><td class="warn">L2</td></tr>
+<tr><td>Claude Desktop</td><td class="num">581</td><td class="good">L3</td></tr>
+<tr><td>Word</td><td class="num">505</td><td class="warn">L2</td></tr>
+<tr><td>Excel</td><td class="num">37</td><td>—</td></tr>
+</table>
+</div>
+
+<h2>CEO Level Breakdown</h2>
+<div class="card">
+<table>
+<tr><th>აქტივობა</th><th class="num">%</th><th>Level</th><th>Delegatable?</th></tr>
+<tr><td>AI/System Building</td><td class="num good">~30%</td><td class="good">L3-4</td><td>არა — CEO ახლა</td></tr>
+<tr><td>Sales/CRM</td><td class="num warn">~20%</td><td class="warn">L2</td><td class="warn">ნაწილობრივ</td></tr>
+<tr><td>Communication</td><td class="num warn">~15%</td><td class="warn">L2</td><td class="bad">დიდი ნაწილი — yes</td></tr>
+<tr><td>Research</td><td class="num">~12%</td><td class="good">L3</td><td>არა</td></tr>
+<tr><td>Documents</td><td class="num">~8%</td><td class="warn">L2</td><td class="warn">ნაწილობრივ</td></tr>
+<tr><td>Social/Break</td><td class="num">~3%</td><td>—</td><td>—</td></tr>
+<tr><td>Admin</td><td class="num">~2%</td><td class="bad">L1</td><td class="bad">100%</td></tr>
+</table>
+</div>
+
+<h2>ყოველდღიური ბრაუზერის აქტივობა</h2>
+<div class="card">
+<table>
+<tr><th>დღე</th><th class="num">Total</th><th class="num">AI</th><th class="num">Sales</th><th class="num">Research</th><th class="num">Social</th></tr>
+<tr><td>Mar 30 (კვ)</td><td class="num">438</td><td class="num">22</td><td class="num">25</td><td class="num">10</td><td class="num">5</td></tr>
+<tr><td>Mar 31</td><td class="num">644</td><td class="num">40</td><td class="num">159</td><td class="num">23</td><td class="num">—</td></tr>
+<tr><td>Apr 1</td><td class="num">570</td><td class="num">103</td><td class="num">108</td><td class="num">28</td><td class="num">1</td></tr>
+<tr><td>Apr 2</td><td class="num">450</td><td class="num">14</td><td class="num">119</td><td class="num">24</td><td class="num">—</td></tr>
+<tr><td>Apr 3</td><td class="num">324</td><td class="num">6</td><td class="num">56</td><td class="num">2</td><td class="num">13</td></tr>
+<tr style="background:rgba(212,160,86,.05)"><td><strong>Apr 4 ★</strong></td><td class="num"><strong>63</strong></td><td class="num good"><strong>22</strong></td><td class="num">15</td><td class="num">3</td><td class="num">7</td></tr>
+<tr style="background:rgba(92,173,111,.05)"><td><strong>Apr 5 ★</strong></td><td class="num"><strong>42</strong></td><td class="num good"><strong>19</strong></td><td class="num">—</td><td class="num">14</td><td class="num">—</td></tr>
+</table>
+<div style="font-size:.75rem;color:var(--muted);margin-top:.5rem">★ = მენცარის სესიები. Browser ↓, Terminal ↑.</div>
+</div>
+
+<div class="insight">✅ AI/System = 30% — Level 3-4 investment. ახლა სწორია.</div>
+<div class="insight warn">⚠️ HubSpot 159 visits (Mar 31) — manual CRM browsing. Automate.</div>
+<div class="insight alert">🔴 ღამის 23:40 ChatGPT. CEO rest = strategic resource.</div>
+
+</div>
+
+<!-- ═══ TEAM TAB ═══ -->
+<div class="tc" id="tab-team">
+
+<h2>🎯 Team Performance Strategy — Key Points</h2>
+
+<div class="card" style="border-left:3px solid var(--amber)">
+<p style="font-size:.95rem;line-height:1.8"><strong>მიზანი:</strong> output-based performance system რომელიც insightful.io-ს ჩაანაცვლებს და გუნდის ეფექტურობას გაზრდის. Level 4 = system, არა manual monitoring.</p>
+</div>
+
+<div class="okr">
+<div class="okr-title">🔑 Key Point 1: რას ვზომავთ</div>
+<div style="font-size:.9rem;line-height:1.8;color:var(--muted)">
+არა screen time — არამედ <strong>output quality + velocity.</strong><br>
+• ინგა: რამდენი account-ის QBR/month, client satisfaction, requirement turnaround<br>
+• გაბო: რამდენი task completed, code quality, deadline adherence<br>
+• მარი მ.: onboarding progress, tasks completed independently<br>
+• ლუკა: learning milestones, tasks without help<br>
+• მარიამი: OKR (engagement, leads, content frequency)
+</div>
+<div class="comment-box">
+  <textarea class="comment-input" data-key="kp1" placeholder="💬 შენი კომენტარი / ინსტრუქცია..." oninput="saveComment(this)"></textarea>
+</div>
+</div>
+
+<div class="okr">
+<div class="okr-title">🔑 Key Point 2: როგორ ვზომავთ</div>
+<div style="font-size:.9rem;line-height:1.8;color:var(--muted)">
+<strong>3 data source:</strong><br>
+1. <strong>Terminal data</strong> (Claude Code-ით) — ყოველკვირეული: apps, browser, active/idle. შენი მაგალითით.<br>
+2. <strong>Weekly self-report</strong> — Claude Code prompt: "რა გააკეთე ამ კვირას?" structured format-ში.<br>
+3. <strong>Output tracking</strong> — delivered vs committed. Jira-ს ნაცვლად: Google Sheet ან dashboard checkbox.
+</div>
+<div class="comment-box">
+  <textarea class="comment-input" data-key="kp2" placeholder="💬 შენი კომენტარი / ინსტრუქცია..." oninput="saveComment(this)"></textarea>
+</div>
+</div>
+
+<div class="okr">
+<div class="okr-title">🔑 Key Point 3: როგორ ვაუმჯობესებთ</div>
+<div style="font-size:.9rem;line-height:1.8;color:var(--muted)">
+<strong>არა punishment — visibility + accountability:</strong><br>
+• ყოველ ორშაბათს: team dashboard update — ვინ რა გააკეთა<br>
+• Monthly: performance conversation (გელა + თანამშრომელი) — data-driven, არა ინტუიცია<br>
+• Quarterly: bonus tied to measurable output<br>
+• Claude Code usage metric — ვინ იყენებს AI-ს ეფექტურად
+</div>
+<div class="comment-box">
+  <textarea class="comment-input" data-key="kp3" placeholder="💬 შენი კომენტარი / ინსტრუქცია..." oninput="saveComment(this)"></textarea>
+</div>
+</div>
+
+<div class="okr">
+<div class="okr-title">🔑 Key Point 4: პრიორიტეტული პრობლემები</div>
+<div style="font-size:.9rem;line-height:1.8;color:var(--muted)">
+<strong>🔴 გაბო:</strong> 5% equity + max bonus, insightful = low activity. ეს ყველაზე სენსიტიური. Level 4: accountability system, არა confrontation.<br>
+<strong>🟡 ინგა:</strong> 18 accounts = overload. მაგრამ "11-ზე მოსვლა + სოცმედია" = capacity gap? Terminal data გვიჩვენებს.<br>
+<strong>🟡 მარიამი:</strong> May deadline. MARKETING_BASELINE data = 0 ROI. გადაწყვეტილება data-ზე, არა ემოციაზე.<br>
+<strong>🟢 მარი მ.:</strong> onboarding = opportunity. Clear tasks + independence measurement.
+</div>
+<div class="comment-box">
+  <textarea class="comment-input" data-key="kp4" placeholder="💬 შენი კომენტარი / ინსტრუქცია..." oninput="saveComment(this)"></textarea>
+</div>
+</div>
+
+<h2>❓ რა მჭირდება შენგან — პასუხი ჩაწერე</h2>
+<div class="card">
+<table>
+<tr><th style="width:30px">#</th><th style="width:35%">კითხვა</th><th style="width:25%">რატომ</th><th style="width:30%">შენი პასუხი</th></tr>
+<tr><td>1</td><td>გაბოს insightful data — export CSV ან screenshot</td><td>baseline საჭირო</td><td><textarea class="answer-input" data-key="q1" placeholder="ჩაწერე პასუხი..." oninput="saveComment(this)"></textarea></td></tr>
+<tr><td>2</td><td>ცვლადი ანაზღაურება რაზეა მიბმული?</td><td>Accountability system</td><td><textarea class="answer-input" data-key="q2" placeholder="ჩაწერე პასუხი..." oninput="saveComment(this)"></textarea></td></tr>
+<tr><td>3</td><td>ინგა/გაბო-ს Claude Code command</td><td>Terminal data baseline</td><td><textarea class="answer-input" data-key="q3" placeholder="ჩაწერე პასუხი..." oninput="saveComment(this)"></textarea></td></tr>
+<tr><td>4</td><td>Jira-ს ალტერნატივა?</td><td>Task tracking</td><td><textarea class="answer-input" data-key="q4" placeholder="ჩაწერე პასუხი..." oninput="saveComment(this)"></textarea></td></tr>
+<tr><td>5</td><td>მარიამის conversation — როდის?</td><td>Timeline</td><td><textarea class="answer-input" data-key="q5" placeholder="ჩაწერე პასუხი..." oninput="saveComment(this)"></textarea></td></tr>
+</table>
+<button class="export-btn" onclick="exportData()">📥 Export Data (Victor წაიკითხავს)</button>
+</div>
+
+</div>
+
+<footer class="footer">
+CEO Performance Dashboard v2 | Victor Auditor | Mentari C-Suite<br>
+Links: <a href="team-performance.html" style="color:var(--blue)">👥 Team Dashboard</a> |
+<a href="dashboard.html" style="color:var(--blue)">📊 Mentari Dashboard</a> |
+<a href="learn-english.html" style="color:var(--blue)">🎮 Kids English</a>
+</footer>
+
+<script>
+const CK='ceo_dash_v2';
+function loadData(){try{return JSON.parse(localStorage.getItem(CK))||{};}catch{return {};}}
+function saveData(d){localStorage.setItem(CK,JSON.stringify(d));}
+
+function showTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.tc').forEach(t=>t.classList.remove('on'));
+  document.getElementById('tab-'+id).classList.add('on');
+  event.target.classList.add('on');
+}
+
+function updateCount(){
+  const all=document.querySelectorAll('.action input');
+  const done=[...all].filter(i=>i.checked).length;
+  document.getElementById('actions-count').textContent=done+'/'+all.length;
+  const d=loadData();d.actionsDone=done;d.actionsTotal=all.length;saveData(d);
+}
+
+// Comments & Answers
+function saveComment(el){
+  const d=loadData();
+  d.comments=d.comments||{};
+  d.comments[el.dataset.key]=el.value;
+  d.lastUpdated=new Date().toISOString();
+  saveData(d);
+}
+
+function loadComments(){
+  const d=loadData();
+  if(!d.comments)return;
+  document.querySelectorAll('[data-key]').forEach(el=>{
+    if(d.comments[el.dataset.key])el.value=d.comments[el.dataset.key];
+  });
+}
+
+// Export all data as JSON (Victor reads this)
+function exportData(){
+  const d=loadData();
+  const blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='ceo-dashboard-data-'+new Date().toISOString().slice(0,10)+'.json';
+  a.click();
+}
+
+// Init
+document.addEventListener('DOMContentLoaded',()=>{
+  loadComments();
+  // Restore action checkboxes
+  const d=loadData();
+  if(d.actions){
+    document.querySelectorAll('.action input').forEach((cb,i)=>{
+      if(d.actions[i])cb.checked=true;
+    });
+  }
+  updateCount();
+  // Save actions on change
+  document.querySelectorAll('.action input').forEach((cb,i)=>{
+    cb.addEventListener('change',()=>{
+      const d=loadData();d.actions=d.actions||{};d.actions[i]=cb.checked;saveData(d);
+      updateCount();
+    });
+  });
+});
+</script>
+</body>
+</html>

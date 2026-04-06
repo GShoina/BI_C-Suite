@@ -1,0 +1,4 @@
+[       1ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://clarity.microsoft.com/embed/signin?authProvider=Google:0
+[    2120ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+moreDetailsV2, documentationBlackIcon, Tablet, ShoppingCart, Compare, LightWeight @ https://claritystatic.azureedge.net/scripts/embedrebrand/framework.89efd871f8cec14f58e4.js:0
+[    3715ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://clarity.microsoft.com/embed/done:0

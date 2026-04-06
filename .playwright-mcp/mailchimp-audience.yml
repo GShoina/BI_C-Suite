@@ -1,0 +1,86 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link "Skip to main content" [ref=e6] [cursor=pointer]:
+        - /url: "#content"
+      - navigation "Main" [ref=e9]:
+        - generic [ref=e10]:
+          - link "Home" [ref=e12] [cursor=pointer]
+          - generic [ref=e15]:
+            - button "Help" [ref=e16] [cursor=pointer]:
+              - generic [ref=e20]: Help
+            - generic [ref=e24]:
+              - button "account settings button" [ref=e25] [cursor=pointer]:
+                - img "Signed in as Bivision Bivision, Account Menu" [ref=e27]
+              - generic [ref=e28]: "28"
+              - generic [ref=e29]: notifications
+    - navigation "Left" [ref=e34]:
+      - generic [ref=e35]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "Create" [ref=e38] [cursor=pointer]:
+              - /url: "#/create-campaign"
+              - generic [ref=e40]: Create
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "Home" [ref=e43] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e46]: Home
+          - listitem [ref=e47]:
+            - link "Campaigns" [ref=e48] [cursor=pointer]:
+              - /url: /campaigns
+              - generic [ref=e51]: Campaigns
+          - listitem [ref=e52]:
+            - link "Audience" [expanded] [ref=e53] [cursor=pointer]:
+              - /url: /audience/contacts
+              - generic [ref=e56]: Audience
+            - list [ref=e59]:
+              - listitem [ref=e60]:
+                - link "Tags" [ref=e61] [cursor=pointer]:
+                  - /url: /audience/tags
+                  - generic [ref=e63]: Tags
+              - listitem [ref=e64]:
+                - link "Segments" [ref=e65] [cursor=pointer]:
+                  - /url: /audience/segments
+                  - generic [ref=e67]: Segments
+              - listitem [ref=e68]:
+                - link "Inbox" [ref=e69] [cursor=pointer]:
+                  - /url: /audience/inbox
+                  - generic [ref=e71]: Inbox
+          - listitem [ref=e72]:
+            - link "Automations" [ref=e73] [cursor=pointer]:
+              - /url: /customer-journey
+              - generic [ref=e76]: Automations
+          - listitem [ref=e77]:
+            - link "Forms" [ref=e78] [cursor=pointer]:
+              - /url: /forms
+              - generic [ref=e81]: Forms
+          - listitem [ref=e82]:
+            - link "Analytics" [ref=e83] [cursor=pointer]:
+              - /url: /analytics/marketing-dashboard/
+              - generic [ref=e86]: Analytics
+          - listitem [ref=e87]:
+            - link "Website" [ref=e88] [cursor=pointer]:
+              - /url: /website/dashboard
+              - generic [ref=e91]: Website
+          - listitem [ref=e92]:
+            - link "Content and brand" [ref=e93] [cursor=pointer]:
+              - /url: /content/#myfiles
+              - generic [ref=e96]: Content and brand
+          - listitem [ref=e97]:
+            - link "Integrations" [ref=e98] [cursor=pointer]:
+              - /url: /account/connected-sites/discover/
+              - generic [ref=e101]: Integrations
+      - button "Collapse navigation" [ref=e104] [cursor=pointer]
+    - list [ref=e106]:
+      - listitem [ref=e107]:
+        - button "Help" [ref=e109] [cursor=pointer]:
+          - generic [ref=e110]: Help
+          - img [ref=e111]
+    - main [ref=e113]:
+      - alert [ref=e115]
+    - status
+    - status
+  - generic:
+    - status [ref=e120]
+    - alert [ref=e121]

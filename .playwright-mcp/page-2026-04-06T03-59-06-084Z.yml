@@ -1,0 +1,340 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic:
+      - iframe
+    - banner [ref=e4]:
+      - link "HubSpot logo" [ref=e6] [cursor=pointer]:
+        - /url: /global-home/147341634
+        - img "HubSpot logo" [ref=e7]
+      - generic [ref=e9]:
+        - generic [ref=e14]:
+          - searchbox "Search HubSpot" [ref=e15]
+          - generic:
+            - generic:
+              - img
+        - button "Create new" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+      - navigation "Global toolbar" [ref=e21]:
+        - menu [ref=e22]:
+          - menuitem "Upgrade" [ref=e23]:
+            - link "Upgrade" [ref=e24] [cursor=pointer]:
+              - /url: https://app-eu1.hubspot.com/pricing/147341634/upgrade?upgradeSource=global-nav-bar
+              - img [ref=e25]
+              - generic [ref=e29]: Upgrade
+          - menuitem "Calls" [ref=e30]:
+            - button "Calls" [ref=e31] [cursor=pointer]:
+              - img "Calling" [ref=e32]
+          - menuitem "Marketplace" [ref=e34]:
+            - button "Marketplace" [ref=e35] [cursor=pointer]:
+              - img [ref=e36]
+          - menuitem "Help" [ref=e39]:
+            - button "Help" [ref=e41] [cursor=pointer]:
+              - img "Help" [ref=e42]
+          - menuitem "Settings" [ref=e44]:
+            - link "Settings" [ref=e45] [cursor=pointer]:
+              - /url: /sales-products-settings/147341634/deals?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+              - img [ref=e46]
+          - menuitem "Notifications" [ref=e50]:
+            - button "Notifications" [ref=e51] [cursor=pointer]:
+              - img [ref=e52]
+          - menuitem "Open Assistant" [ref=e55]:
+            - button "Open Assistant" [ref=e56] [cursor=pointer]:
+              - img "Open Assistant" [ref=e57]
+              - generic [ref=e60]: Assistant
+          - menuitem "View profile and more" [ref=e62]:
+            - button "View profile and more" [ref=e63] [cursor=pointer]:
+              - img "Gela Shonia" [ref=e64]
+              - generic [ref=e65]: Bivision
+              - img [ref=e66]
+  - generic [ref=e69]:
+    - button "Scroll up":
+      - img
+    - generic [ref=e70]:
+      - navigation [ref=e72]:
+        - menu [ref=e73]:
+          - menuitem [ref=e74] [cursor=pointer]:
+            - img [ref=e75]
+          - menuitem "Bookmarks" [ref=e77] [cursor=pointer]:
+            - img "Bookmarks" [ref=e78]
+          - separator [ref=e80]
+          - menuitem [ref=e81] [cursor=pointer]:
+            - img [ref=e82]
+          - menuitem [ref=e85] [cursor=pointer]:
+            - img [ref=e86]
+          - menuitem [ref=e89] [cursor=pointer]:
+            - img [ref=e90]
+          - menuitem [ref=e95] [cursor=pointer]:
+            - img [ref=e96]
+          - menuitem [ref=e100] [cursor=pointer]:
+            - img [ref=e101]
+          - menuitem [ref=e105] [cursor=pointer]:
+            - img [ref=e106]
+          - menuitem [ref=e109] [cursor=pointer]:
+            - img [ref=e110]
+          - menuitem [ref=e115] [cursor=pointer]:
+            - img [ref=e116]
+          - menuitem [ref=e120] [cursor=pointer]:
+            - img [ref=e121]
+          - separator [ref=e123]
+          - menuitem [ref=e124] [cursor=pointer]:
+            - img [ref=e125]
+          - menuitem [ref=e128] [cursor=pointer]:
+            - img [ref=e129]
+      - button [ref=e134] [cursor=pointer]:
+        - img [ref=e135]
+    - button "Scroll down":
+      - img
+  - generic:
+    - iframe
+  - generic [ref=e138]:
+    - generic [ref=e141]:
+      - generic [ref=e144]:
+        - generic [ref=e146]:
+          - button "Object Type Selector" [ref=e149] [cursor=pointer]:
+            - generic [ref=e150]:
+              - img [ref=e151]
+              - generic [ref=e156]: Deals
+          - generic [ref=e158]:
+            - tablist [ref=e163]:
+              - button "All deals 10" [ref=e164]:
+                - generic [ref=e166]:
+                  - generic [ref=e167]:
+                    - button "All deals 10" [ref=e168] [cursor=pointer]:
+                      - generic [ref=e169]:
+                        - generic [ref=e171]: All deals
+                        - generic [ref=e175]: "10"
+                    - button [ref=e177] [cursor=pointer]:
+                      - img [ref=e179]
+                  - button [ref=e188] [cursor=pointer]:
+                    - img [ref=e190]
+              - button "My deals" [ref=e193]:
+                - button "My deals" [ref=e197] [cursor=pointer]:
+                  - generic [ref=e200]: My deals
+            - button "Create or add existing view" [ref=e204] [cursor=pointer]:
+              - img "Create or add existing view" [ref=e206]
+        - generic [ref=e210]:
+          - button [ref=e211] [cursor=pointer]:
+            - img [ref=e213]
+          - button "Add deals" [ref=e222] [cursor=pointer]:
+            - generic [ref=e225]: Add deals
+      - generic [ref=e230]:
+        - generic [ref=e233]:
+          - generic [ref=e234]:
+            - generic [ref=e237]:
+              - searchbox "Search" [ref=e238]
+              - generic:
+                - generic:
+                  - img
+            - button "Table view" [ref=e242] [cursor=pointer]:
+              - generic [ref=e243]:
+                - img [ref=e244]
+                - generic [ref=e248]: Table view
+            - button "Open Settings Sidebar" [ref=e252] [cursor=pointer]:
+              - img [ref=e254]
+            - button "Edit columns" [ref=e258] [cursor=pointer]:
+              - generic [ref=e260]: Edit columns
+            - button "All Pipelines" [ref=e267] [cursor=pointer]:
+              - listitem [ref=e271]:
+                - generic [ref=e274]: All Pipelines
+            - button "Filters" [pressed] [ref=e280] [cursor=pointer]:
+              - generic [ref=e281]:
+                - img [ref=e282]
+                - generic [ref=e288]: Filters
+            - button "Sort" [ref=e290] [cursor=pointer]:
+              - generic [ref=e291]:
+                - img [ref=e292]
+                - generic [ref=e295]: Sort
+            - button "Export" [ref=e299] [cursor=pointer]:
+              - generic [ref=e301]: Export
+          - generic [ref=e302]:
+            - button [ref=e306] [cursor=pointer]:
+              - img [ref=e308]
+            - button "Save" [disabled] [ref=e312]:
+              - generic [ref=e314]: Save
+        - generic [ref=e323]:
+          - table [ref=e329]:
+            - rowgroup [ref=e330]:
+              - row "Select all records. Deal Name Last Modified Date (GMT+4) Close Date (GMT+4) Descending sort. Press to sort ascending. Deal Stage Amount" [ref=e331]:
+                - columnheader "Select all records." [ref=e332]:
+                  - checkbox "Select all records." [ref=e337]
+                - columnheader "Deal Name" [ref=e343] [cursor=pointer]:
+                  - generic [ref=e352]: Deal Name
+                - columnheader "Last Modified Date (GMT+4)" [ref=e355] [cursor=pointer]:
+                  - generic [ref=e364]: Last Modified Date (GMT+4)
+                - columnheader "Close Date (GMT+4) Descending sort. Press to sort ascending." [ref=e367] [cursor=pointer]:
+                  - generic [ref=e373]:
+                    - generic [ref=e376]: Close Date (GMT+4)
+                    - generic "Descending sort. Press to sort ascending." [ref=e378]:
+                      - img [ref=e379]
+                - columnheader "Deal Stage" [ref=e383] [cursor=pointer]:
+                  - generic [ref=e392]: Deal Stage
+                - columnheader "Amount" [ref=e395] [cursor=pointer]:
+                  - generic [ref=e404]: Amount
+            - rowgroup [ref=e407]:
+              - row "Select row Rampoletx BI Apr 3, 2026 6:38 PM GMT+4 Apr 30, 2026 7:16 PM GMT+4 SQL (Qualified to buy) (Sales Pipeline) $1,000" [ref=e408]:
+                - cell "Select row" [ref=e409]:
+                  - checkbox "Select row" [ref=e414]
+                - cell "Rampoletx BI" [ref=e420]:
+                  - link "Rampoletx BI" [ref=e425] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/496775140560?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e427]: Rampoletx BI
+                - cell "Apr 3, 2026 6:38 PM GMT+4" [ref=e428]:
+                  - generic [ref=e430]: Apr 3, 2026 6:38 PM GMT+4
+                - button "Apr 30, 2026 7:16 PM GMT+4" [ref=e431]:
+                  - generic [ref=e433]: Apr 30, 2026 7:16 PM GMT+4
+                - button "SQL (Qualified to buy) (Sales Pipeline)" [ref=e434]:
+                  - generic [ref=e436]: SQL (Qualified to buy) (Sales Pipeline)
+                - button "$1,000" [ref=e437]:
+                  - generic [ref=e440]: $1,000
+              - row "Select row რუსთავის ავტოდრომი / საგა იმპექსი Apr 2, 2026 10:58 PM GMT+4 Apr 30, 2026 7:10 PM GMT+4 SQL (Qualified to buy) (Sales Pipeline) $1,000" [ref=e441]:
+                - cell "Select row" [ref=e442]:
+                  - checkbox "Select row" [ref=e447]
+                - cell "რუსთავის ავტოდრომი / საგა იმპექსი" [ref=e453]:
+                  - link "რუსთავის ავტოდრომი / საგა იმპექსი" [ref=e458] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/497051421917?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e460]: რუსთავის ავტოდრომი / საგა იმპექსი
+                - cell "Apr 2, 2026 10:58 PM GMT+4" [ref=e461]:
+                  - generic [ref=e463]: Apr 2, 2026 10:58 PM GMT+4
+                - button "Apr 30, 2026 7:10 PM GMT+4" [ref=e464]:
+                  - generic [ref=e466]: Apr 30, 2026 7:10 PM GMT+4
+                - button "SQL (Qualified to buy) (Sales Pipeline)" [ref=e467]:
+                  - generic [ref=e469]: SQL (Qualified to buy) (Sales Pipeline)
+                - button "$1,000" [ref=e470]:
+                  - generic [ref=e473]: $1,000
+              - row "Select row 0llivander Apr 3, 2026 7:54 PM GMT+4 Apr 30, 2026 7:02 PM GMT+4 SQL (Qualified to buy) (Sales Pipeline) $1,000" [ref=e474]:
+                - cell "Select row" [ref=e475]:
+                  - checkbox "Select row" [ref=e480]
+                - cell "0llivander" [ref=e486]:
+                  - link "0llivander" [ref=e491] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/497054363893?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e493]: 0llivander
+                - cell "Apr 3, 2026 7:54 PM GMT+4" [ref=e494]:
+                  - generic [ref=e496]: Apr 3, 2026 7:54 PM GMT+4
+                - button "Apr 30, 2026 7:02 PM GMT+4" [ref=e497]:
+                  - generic [ref=e499]: Apr 30, 2026 7:02 PM GMT+4
+                - button "SQL (Qualified to buy) (Sales Pipeline)" [ref=e500]:
+                  - generic [ref=e502]: SQL (Qualified to buy) (Sales Pipeline)
+                - button "$1,000" [ref=e503]:
+                  - generic [ref=e506]: $1,000
+              - row "Select row ევროპული ჰოსპიტალი Mar 11, 2026 12:48 PM GMT+4 Apr 30, 2026 3:09 PM GMT+4 Messaged (Sales Pipeline) --" [ref=e507]:
+                - cell "Select row" [ref=e508]:
+                  - checkbox "Select row" [ref=e513]
+                - cell "ევროპული ჰოსპიტალი" [ref=e519]:
+                  - link "ევროპული ჰოსპიტალი" [ref=e524] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/488038808797?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e526]: ევროპული ჰოსპიტალი
+                - cell "Mar 11, 2026 12:48 PM GMT+4" [ref=e527]:
+                  - generic [ref=e529]: Mar 11, 2026 12:48 PM GMT+4
+                - button "Apr 30, 2026 3:09 PM GMT+4" [ref=e530]:
+                  - generic [ref=e532]: Apr 30, 2026 3:09 PM GMT+4
+                - button "Messaged (Sales Pipeline)" [ref=e533]:
+                  - generic [ref=e535]: Messaged (Sales Pipeline)
+                - button "--" [ref=e536]:
+                  - generic [ref=e538]: "--"
+              - row "Select row არსი Mar 5, 2026 1:02 PM GMT+4 Mar 5, 2026 1:02 PM GMT+4 Closed Won (Sales Pipeline) $1,000" [ref=e539]:
+                - cell "Select row" [ref=e540]:
+                  - checkbox "Select row" [ref=e545]
+                - cell "არსი" [ref=e551]:
+                  - link "არსი" [ref=e556] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/473516793053?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e558]: არსი
+                - cell "Mar 5, 2026 1:02 PM GMT+4" [ref=e559]:
+                  - generic [ref=e561]: Mar 5, 2026 1:02 PM GMT+4
+                - button "Mar 5, 2026 1:02 PM GMT+4" [ref=e562]:
+                  - generic [ref=e564]: Mar 5, 2026 1:02 PM GMT+4
+                - button "Closed Won (Sales Pipeline)" [ref=e565]:
+                  - generic [ref=e567]: Closed Won (Sales Pipeline)
+                - button "$1,000" [ref=e568]:
+                  - generic [ref=e571]: $1,000
+              - row "Select row Connect Feb 26, 2026 12:38 PM GMT+4 Feb 28, 2026 5:14 PM GMT+4 SQL (Qualified to buy) (Sales Pipeline) $1,000" [ref=e572]:
+                - cell "Select row" [ref=e573]:
+                  - checkbox "Select row" [ref=e578]
+                - cell "Connect" [ref=e584]:
+                  - link "Connect" [ref=e589] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/478625326278?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e591]: Connect
+                - cell "Feb 26, 2026 12:38 PM GMT+4" [ref=e592]:
+                  - generic [ref=e594]: Feb 26, 2026 12:38 PM GMT+4
+                - button "Feb 28, 2026 5:14 PM GMT+4" [ref=e595]:
+                  - generic [ref=e597]: Feb 28, 2026 5:14 PM GMT+4
+                - button "SQL (Qualified to buy) (Sales Pipeline)" [ref=e598]:
+                  - generic [ref=e600]: SQL (Qualified to buy) (Sales Pipeline)
+                - button "$1,000" [ref=e601]:
+                  - generic [ref=e604]: $1,000
+              - row "Select row გრეიდი Mar 23, 2026 11:50 AM GMT+4 Feb 28, 2026 10:34 AM GMT+4 Replied (Sales Pipeline) $1,000" [ref=e605]:
+                - cell "Select row" [ref=e606]:
+                  - checkbox "Select row" [ref=e611]
+                - cell "გრეიდი" [ref=e617]:
+                  - link "გრეიდი" [ref=e622] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/416155345092?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e624]: გრეიდი
+                - cell "Mar 23, 2026 11:50 AM GMT+4" [ref=e625]:
+                  - generic [ref=e627]: Mar 23, 2026 11:50 AM GMT+4
+                - button "Feb 28, 2026 10:34 AM GMT+4" [ref=e628]:
+                  - generic [ref=e630]: Feb 28, 2026 10:34 AM GMT+4
+                - button "Replied (Sales Pipeline)" [ref=e631]:
+                  - generic [ref=e633]: Replied (Sales Pipeline)
+                - button "$1,000" [ref=e634]:
+                  - generic [ref=e637]: $1,000
+              - row "Select row ჯეო ჯგუფი (ბათუმი) Jan 20, 2026 6:23 PM GMT+4 Jan 20, 2026 6:23 PM GMT+4 Closed Lost (Sales Pipeline) $1,000" [ref=e638]:
+                - cell "Select row" [ref=e639]:
+                  - checkbox "Select row" [ref=e644]
+                - cell "ჯეო ჯგუფი (ბათუმი)" [ref=e650]:
+                  - link "ჯეო ჯგუფი (ბათუმი)" [ref=e655] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/406651813050?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e657]: ჯეო ჯგუფი (ბათუმი)
+                - cell "Jan 20, 2026 6:23 PM GMT+4" [ref=e658]:
+                  - generic [ref=e660]: Jan 20, 2026 6:23 PM GMT+4
+                - button "Jan 20, 2026 6:23 PM GMT+4" [ref=e661]:
+                  - generic [ref=e663]: Jan 20, 2026 6:23 PM GMT+4
+                - button "Closed Lost (Sales Pipeline)" [ref=e664]:
+                  - generic [ref=e666]: Closed Lost (Sales Pipeline)
+                - button "$1,000" [ref=e667]:
+                  - generic [ref=e670]: $1,000
+              - row "Select row Music House Jan 20, 2026 6:22 PM GMT+4 Jan 20, 2026 6:22 PM GMT+4 Closed Lost (Sales Pipeline) $1,000" [ref=e671]:
+                - cell "Select row" [ref=e672]:
+                  - checkbox "Select row" [ref=e677]
+                - cell "Music House" [ref=e683]:
+                  - link "Music House" [ref=e688] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/406205338846?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e690]: Music House
+                - cell "Jan 20, 2026 6:22 PM GMT+4" [ref=e691]:
+                  - generic [ref=e693]: Jan 20, 2026 6:22 PM GMT+4
+                - button "Jan 20, 2026 6:22 PM GMT+4" [ref=e694]:
+                  - generic [ref=e696]: Jan 20, 2026 6:22 PM GMT+4
+                - button "Closed Lost (Sales Pipeline)" [ref=e697]:
+                  - generic [ref=e699]: Closed Lost (Sales Pipeline)
+                - button "$1,000" [ref=e700]:
+                  - generic [ref=e703]: $1,000
+              - row "Select row შპს ნუტრიველი / 443873809 - New Deal Dec 16, 2025 12:44 PM GMT+4 Dec 31, 2025 11:16 PM GMT+4 Decision maker aligned (Sales Pipeline) $1,000" [ref=e704]:
+                - cell "Select row" [ref=e705]:
+                  - checkbox "Select row" [ref=e710]
+                - cell "შპს ნუტრიველი / 443873809 - New Deal" [ref=e716]:
+                  - link "შპს ნუტრიველი / 443873809 - New Deal" [ref=e721] [cursor=pointer]:
+                    - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/406329262326?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                    - generic [ref=e723]: შპს ნუტრიველი / 443873809 - New Deal
+                - cell "Dec 16, 2025 12:44 PM GMT+4" [ref=e724]:
+                  - generic [ref=e726]: Dec 16, 2025 12:44 PM GMT+4
+                - button "Dec 31, 2025 11:16 PM GMT+4" [ref=e727]:
+                  - generic [ref=e729]: Dec 31, 2025 11:16 PM GMT+4
+                - button "Decision maker aligned (Sales Pipeline)" [ref=e730]:
+                  - generic [ref=e732]: Decision maker aligned (Sales Pipeline)
+                - button "$1,000" [ref=e733]:
+                  - generic [ref=e736]: $1,000
+          - generic [ref=e738]:
+            - navigation "Pagination" [ref=e739]:
+              - button "Previous page" [disabled] [ref=e741]:
+                - generic [ref=e742]:
+                  - img [ref=e743]
+                  - generic [ref=e745]: Prev
+              - button "You are currently on Page 1" [ref=e747] [cursor=pointer]:
+                - generic [ref=e748]:
+                  - generic [ref=e749]: You are currently on Page
+                  - text: "1"
+              - button "Next page" [disabled] [ref=e751]:
+                - generic [ref=e752]:
+                  - generic [ref=e753]: Next
+                  - img [ref=e754]
+            - button "25 per page" [ref=e756] [cursor=pointer]:
+              - generic [ref=e759]: 25 per page
+    - complementary

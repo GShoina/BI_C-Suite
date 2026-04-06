@@ -1,0 +1,341 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e4]:
+    - link "HubSpot logo" [ref=e6] [cursor=pointer]:
+      - /url: /global-home/147341634
+      - img "HubSpot logo" [ref=e7]
+    - button "Create new" [ref=e13] [cursor=pointer]:
+      - img [ref=e14]
+    - navigation "Global toolbar" [ref=e16]:
+      - menu [ref=e17]:
+        - menuitem "Calls" [ref=e18]:
+          - button "Calls" [ref=e19] [cursor=pointer]:
+            - img "Calling" [ref=e20]
+        - menuitem "Marketplace" [ref=e22]:
+          - button "Marketplace" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - menuitem "Help" [ref=e27]:
+          - button "Help" [ref=e29] [cursor=pointer]:
+            - img "Help" [ref=e30]
+        - menuitem "Settings" [ref=e32]:
+          - link "Settings" [ref=e33] [cursor=pointer]:
+            - /url: /sales-products-settings/147341634/deals?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Fboard
+            - img [ref=e34]
+        - menuitem "Notifications" [ref=e38]:
+          - button "Notifications" [ref=e39] [cursor=pointer]:
+            - img [ref=e40]
+        - menuitem "Open Assistant" [ref=e43]:
+          - button "Open Assistant" [ref=e44] [cursor=pointer]:
+            - img "Open Assistant" [ref=e45]
+        - menuitem "View profile and more" [ref=e49]:
+          - button "View profile and more" [ref=e50] [cursor=pointer]:
+            - img "Gela Shonia" [ref=e51]
+            - img [ref=e52]
+  - generic [ref=e55]:
+    - button "Scroll up":
+      - img
+    - generic [ref=e56]:
+      - navigation [ref=e58]:
+        - menu [ref=e59]:
+          - menuitem [ref=e60] [cursor=pointer]:
+            - img [ref=e61]
+          - menuitem "Bookmarks" [ref=e62] [cursor=pointer]:
+            - img "Bookmarks" [ref=e63]
+          - separator [ref=e65]
+          - menuitem [ref=e66] [cursor=pointer]:
+            - img [ref=e67]
+          - menuitem [ref=e68] [cursor=pointer]:
+            - img [ref=e69]
+          - menuitem [ref=e70] [cursor=pointer]:
+            - img [ref=e71]
+          - menuitem [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+          - menuitem [ref=e74] [cursor=pointer]:
+            - img [ref=e75]
+          - menuitem [ref=e76] [cursor=pointer]:
+            - img [ref=e77]
+          - menuitem [ref=e78] [cursor=pointer]:
+            - img [ref=e79]
+          - menuitem [ref=e80] [cursor=pointer]:
+            - img [ref=e81]
+          - menuitem [ref=e82] [cursor=pointer]:
+            - img [ref=e83]
+          - separator [ref=e84]
+          - menuitem [ref=e85] [cursor=pointer]:
+            - img [ref=e86]
+          - menuitem [ref=e87] [cursor=pointer]:
+            - img [ref=e88]
+      - button [ref=e91] [cursor=pointer]:
+        - img [ref=e92]
+    - button "Scroll down":
+      - img
+  - generic [ref=e95]:
+    - generic [ref=e98]:
+      - generic [ref=e101]:
+        - generic [ref=e103]:
+          - button "Object Type Selector" [ref=e106] [cursor=pointer]:
+            - generic [ref=e107]:
+              - img [ref=e108]
+              - generic [ref=e113]: Deals
+          - generic [ref=e115]:
+            - tablist [ref=e120]:
+              - button "All deals" [ref=e121]:
+                - generic [ref=e123]:
+                  - generic [ref=e124]:
+                    - button "All deals" [ref=e125] [cursor=pointer]:
+                      - generic [ref=e128]: All deals
+                    - button [ref=e131] [cursor=pointer]:
+                      - img [ref=e133]
+                  - button [ref=e142] [cursor=pointer]:
+                    - img [ref=e144]
+              - button "My deals" [ref=e147]:
+                - button "My deals" [ref=e151] [cursor=pointer]:
+                  - generic [ref=e154]: My deals
+            - button "Create or add existing view" [ref=e158] [cursor=pointer]:
+              - img "Create or add existing view" [ref=e160]
+        - generic [ref=e164]:
+          - button [ref=e165] [cursor=pointer]:
+            - img [ref=e167]
+          - button "Add deals" [disabled] [ref=e176]:
+            - generic [ref=e179]: Add deals
+      - generic [ref=e184]:
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - generic [ref=e191]:
+              - searchbox "Search" [ref=e192]
+              - generic:
+                - generic:
+                  - img
+            - button "Board view" [ref=e196] [cursor=pointer]:
+              - generic [ref=e197]:
+                - img [ref=e198]
+                - generic [ref=e202]: Board view
+            - button "Open Settings Sidebar" [ref=e206] [cursor=pointer]:
+              - img [ref=e208]
+            - button "Sales Pipeline" [ref=e217] [cursor=pointer]:
+              - listitem [ref=e221]:
+                - generic [ref=e224]: Sales Pipeline
+            - button "Filters" [pressed] [ref=e230] [cursor=pointer]:
+              - generic [ref=e231]:
+                - img [ref=e232]
+                - generic [ref=e238]: Filters
+            - button "Sort" [ref=e240] [cursor=pointer]:
+              - generic [ref=e241]:
+                - img [ref=e242]
+                - generic [ref=e245]: Sort
+            - button [ref=e247] [cursor=pointer]:
+              - img [ref=e249]
+          - generic [ref=e253]:
+            - button [ref=e254] [cursor=pointer]:
+              - img [ref=e256]
+            - button [ref=e266] [cursor=pointer]:
+              - img [ref=e268]
+            - button "Save" [disabled] [ref=e272]:
+              - generic [ref=e274]: Save
+        - generic [ref=e283]:
+          - generic [ref=e284]: You are currently on the board view. If you are experiencing issues, please click above to access the list view.
+          - generic [ref=e289]:
+            - generic [ref=e290]:
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - generic [ref=e293]:
+                    - generic [ref=e299]: Targeted (LinkedIn)
+                    - paragraph [ref=e307]: "0"
+                  - button [ref=e309] [cursor=pointer]:
+                    - img [ref=e311]
+                - img [ref=e314]
+              - generic [ref=e325]:
+                - generic [ref=e328]:
+                  - generic [ref=e330]: $0
+                  - text: "| Total amount"
+                - generic [ref=e332]:
+                  - generic [ref=e333]:
+                    - generic [ref=e335]: $0
+                    - text: (2%) | Weighted amount
+                  - img [ref=e336]
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - img [ref=e344]
+                - generic [ref=e348]:
+                  - generic [ref=e349]:
+                    - generic [ref=e355]: Messaged
+                    - paragraph [ref=e363]: "1"
+                  - button [ref=e365] [cursor=pointer]:
+                    - img [ref=e367]
+                - img [ref=e370]
+              - 'button "Select card ევროპული ჰოსპიტალი Close date: 04/30/2026 Deal owner: Gela Shonia Create date: 03/05/2026 Email a month ago" [ref=e381] [cursor=pointer]':
+                - generic [ref=e383]:
+                  - generic [ref=e384]:
+                    - checkbox "Select card" [ref=e389]
+                    - generic [ref=e395]:
+                      - link "ევროპული ჰოსპიტალი" [ref=e398]:
+                        - /url: /contacts/147341634/record/0-3/488038808797/
+                      - img [ref=e401]
+                  - generic [ref=e405]:
+                    - generic [ref=e406]:
+                      - list [ref=e409]:
+                        - listitem [ref=e410]:
+                          - generic [ref=e413]:
+                            - generic [ref=e414]: "Close date:"
+                            - generic [ref=e415]: 04/30/2026
+                        - listitem [ref=e416]:
+                          - generic [ref=e419]:
+                            - generic [ref=e420]: "Deal owner:"
+                            - generic [ref=e421]: Gela Shonia
+                        - listitem [ref=e422]:
+                          - generic [ref=e425]:
+                            - generic [ref=e426]: "Create date:"
+                            - generic [ref=e427]: 03/05/2026
+                      - generic [ref=e433]:
+                        - link "Email" [ref=e434]:
+                          - /url: /contacts/147341634/record/0-3/488038808797/?taskId=477374500048
+                        - text: a month ago
+                    - generic [ref=e436]:
+                      - button [ref=e437]:
+                        - img [ref=e439]
+                      - button [ref=e442]:
+                        - img [ref=e444]
+                      - button [ref=e449]:
+                        - img [ref=e451]
+                      - button [ref=e454]:
+                        - img [ref=e456]
+              - generic [ref=e464]:
+                - generic [ref=e467]:
+                  - generic [ref=e469]: $0
+                  - text: "| Total amount"
+                - generic [ref=e471]:
+                  - generic [ref=e472]:
+                    - generic [ref=e474]: $0
+                    - text: (5%) | Weighted amount
+                  - img [ref=e475]
+            - generic [ref=e480]:
+              - generic [ref=e481]:
+                - img [ref=e483]
+                - generic [ref=e487]:
+                  - generic [ref=e488]:
+                    - generic [ref=e494]: Replied
+                    - paragraph [ref=e502]: "1"
+                  - button [ref=e504] [cursor=pointer]:
+                    - img [ref=e506]
+                - img [ref=e509]
+              - 'button "Select card გრეიდი Amount: $1,000 Close date: 02/28/2026 Deal owner: Gela Shonia Create date: 12/24/2025 Task 3 months ago" [ref=e520] [cursor=pointer]':
+                - generic [ref=e522]:
+                  - generic [ref=e523]:
+                    - checkbox "Select card" [ref=e528]
+                    - generic [ref=e534]:
+                      - link "გრეიდი" [ref=e537]:
+                        - /url: /contacts/147341634/record/0-3/416155345092/
+                      - img [ref=e540]
+                  - generic [ref=e544]:
+                    - generic [ref=e545]:
+                      - list [ref=e548]:
+                        - listitem [ref=e549]:
+                          - generic [ref=e552]:
+                            - generic [ref=e553]: "Amount:"
+                            - generic [ref=e555]: $1,000
+                        - listitem [ref=e556]:
+                          - generic [ref=e559]:
+                            - generic [ref=e560]: "Close date:"
+                            - generic [ref=e561]: 02/28/2026
+                        - listitem [ref=e562]:
+                          - generic [ref=e565]:
+                            - generic [ref=e566]: "Deal owner:"
+                            - generic [ref=e567]: Gela Shonia
+                        - listitem [ref=e568]:
+                          - generic [ref=e571]:
+                            - generic [ref=e572]: "Create date:"
+                            - generic [ref=e573]: 12/24/2025
+                      - generic [ref=e579]:
+                        - link "Task" [ref=e580]:
+                          - /url: /contacts/147341634/record/0-3/416155345092/?taskId=398607690980
+                        - text: 3 months ago
+                    - generic [ref=e582]:
+                      - button [ref=e583]:
+                        - img [ref=e585]
+                      - button [ref=e588]:
+                        - img [ref=e590]
+                      - button [ref=e595]:
+                        - img [ref=e597]
+                      - button [ref=e600]:
+                        - img [ref=e602]
+              - generic [ref=e610]:
+                - generic [ref=e613]:
+                  - generic [ref=e615]: $1,000
+                  - text: "| Total amount"
+                - generic [ref=e617]:
+                  - generic [ref=e618]:
+                    - generic [ref=e620]: $100
+                    - text: (10%) | Weighted amount
+                  - img [ref=e621]
+            - generic [ref=e626]:
+              - generic [ref=e627]:
+                - img [ref=e629]
+                - generic [ref=e633]:
+                  - generic [ref=e634]:
+                    - generic [ref=e640]: Meeting booked
+                    - paragraph [ref=e648]: "0"
+                  - button [ref=e650] [cursor=pointer]:
+                    - img [ref=e652]
+                - img [ref=e655]
+              - generic [ref=e666]:
+                - generic [ref=e669]:
+                  - generic [ref=e671]: $0
+                  - text: "| Total amount"
+                - generic [ref=e673]:
+                  - generic [ref=e674]:
+                    - generic [ref=e676]: $0
+                    - text: (20%) | Weighted amount
+                  - img [ref=e677]
+            - generic [ref=e683]:
+              - img [ref=e685]
+              - generic [ref=e689]:
+                - generic [ref=e690]:
+                  - generic [ref=e696]: SQL (Qualified to buy)
+                  - paragraph [ref=e704]: "0"
+                - button [ref=e706] [cursor=pointer]:
+                  - img [ref=e708]
+              - img [ref=e711]
+            - generic [ref=e730]:
+              - img [ref=e732]
+              - generic [ref=e736]:
+                - generic [ref=e737]:
+                  - generic [ref=e743]: Proposal / Contract sent
+                  - paragraph [ref=e751]: "0"
+                - button [ref=e753] [cursor=pointer]:
+                  - img [ref=e755]
+              - img [ref=e758]
+            - generic [ref=e774]:
+              - img [ref=e776]
+              - generic [ref=e780]:
+                - generic [ref=e781]:
+                  - generic [ref=e787]: Decision maker aligned
+                  - paragraph [ref=e795]: "0"
+                - button [ref=e797] [cursor=pointer]:
+                  - img [ref=e799]
+              - img [ref=e802]
+            - generic [ref=e821]:
+              - img [ref=e823]
+              - generic [ref=e827]:
+                - generic [ref=e828]:
+                  - generic [ref=e834]: Contracting
+                  - paragraph [ref=e842]: "0"
+                - button [ref=e844] [cursor=pointer]:
+                  - img [ref=e846]
+              - img [ref=e849]
+            - generic [ref=e865]:
+              - img [ref=e867]
+              - generic [ref=e871]:
+                - generic [ref=e872]:
+                  - generic [ref=e878]: Closed Won
+                  - paragraph [ref=e886]: "0"
+                - button [ref=e888] [cursor=pointer]:
+                  - img [ref=e890]
+              - img [ref=e893]
+            - generic [ref=e912]:
+              - img [ref=e914]
+              - generic [ref=e918]:
+                - generic [ref=e919]:
+                  - generic [ref=e925]: Closed Lost
+                  - paragraph [ref=e933]: "0"
+                - button [ref=e935] [cursor=pointer]:
+                  - img [ref=e937]
+    - complementary

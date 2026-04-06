@@ -1,0 +1,2 @@
+[    4388ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+moreDetailsV2, documentationBlackIcon, Tablet, ShoppingCart, Compare, LightWeight @ https://claritystatic.azureedge.net/scripts/client/framework.6ec7bb082877e502aaed.js:0

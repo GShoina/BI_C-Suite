@@ -1,0 +1,258 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e4]:
+    - link "HubSpot logo" [ref=e6] [cursor=pointer]:
+      - /url: /global-home/147341634
+      - img "HubSpot logo" [ref=e7]
+    - button "Create new" [ref=e13] [cursor=pointer]:
+      - img [ref=e14]
+    - navigation "Global toolbar" [ref=e16]:
+      - menu [ref=e17]:
+        - menuitem "Calls" [ref=e18]:
+          - button "Calls" [ref=e19] [cursor=pointer]:
+            - img "Calling" [ref=e20]
+        - menuitem "Marketplace" [ref=e22]:
+          - button "Marketplace" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - menuitem "Help" [ref=e27]:
+          - button "Help" [ref=e29] [cursor=pointer]:
+            - img "Help" [ref=e30]
+        - menuitem "Settings" [ref=e32]:
+          - link "Settings" [ref=e33] [cursor=pointer]:
+            - /url: /sales-products-settings/147341634/deals?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+            - img [ref=e34]
+        - menuitem "Notifications" [ref=e38]:
+          - button "Notifications" [ref=e39] [cursor=pointer]:
+            - img [ref=e40]
+        - menuitem "Open Assistant" [ref=e43]:
+          - button "Open Assistant" [ref=e44] [cursor=pointer]:
+            - img "Open Assistant" [ref=e45]
+        - menuitem "View profile and more" [ref=e49]:
+          - button "View profile and more" [ref=e50] [cursor=pointer]:
+            - img "Gela Shonia" [ref=e51]
+            - img [ref=e52]
+  - generic [ref=e55]:
+    - button "Scroll up":
+      - img
+    - generic [ref=e56]:
+      - navigation [ref=e58]:
+        - menu [ref=e59]:
+          - menuitem [ref=e60] [cursor=pointer]:
+            - img [ref=e61]
+          - menuitem "Bookmarks" [ref=e62] [cursor=pointer]:
+            - img "Bookmarks" [ref=e63]
+          - separator [ref=e65]
+          - menuitem [ref=e66] [cursor=pointer]:
+            - img [ref=e67]
+          - menuitem [ref=e68] [cursor=pointer]:
+            - img [ref=e69]
+          - menuitem [ref=e70] [cursor=pointer]:
+            - img [ref=e71]
+          - menuitem [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+          - menuitem [ref=e74] [cursor=pointer]:
+            - img [ref=e75]
+          - menuitem [ref=e76] [cursor=pointer]:
+            - img [ref=e77]
+          - menuitem [ref=e78] [cursor=pointer]:
+            - img [ref=e79]
+          - menuitem [ref=e80] [cursor=pointer]:
+            - img [ref=e81]
+          - menuitem [ref=e82] [cursor=pointer]:
+            - img [ref=e83]
+          - separator [ref=e84]
+          - menuitem [ref=e85] [cursor=pointer]:
+            - img [ref=e86]
+          - menuitem [ref=e87] [cursor=pointer]:
+            - img [ref=e88]
+      - button [ref=e91] [cursor=pointer]:
+        - img [ref=e92]
+    - button "Scroll down":
+      - img
+  - generic [ref=e95]:
+    - generic [ref=e146]:
+      - table [ref=e152]:
+        - rowgroup [ref=e153]:
+          - row "Select all records. Deal Name Last Modified Date (GMT+4) Close Date (GMT+4) Descending sort. Press to sort ascending. Deal Stage Amount" [ref=e154]:
+            - columnheader "Select all records." [ref=e155]:
+              - checkbox "Select all records." [ref=e160]
+            - columnheader "Deal Name" [ref=e166] [cursor=pointer]:
+              - generic [ref=e175]: Deal Name
+            - columnheader "Last Modified Date (GMT+4)" [ref=e178] [cursor=pointer]:
+              - generic [ref=e187]: Last Modified Date (GMT+4)
+            - columnheader "Close Date (GMT+4) Descending sort. Press to sort ascending." [ref=e190] [cursor=pointer]:
+              - generic [ref=e196]:
+                - generic [ref=e199]: Close Date (GMT+4)
+                - generic "Descending sort. Press to sort ascending." [ref=e201]:
+                  - img [ref=e202]
+            - columnheader "Deal Stage" [ref=e206] [cursor=pointer]:
+              - generic [ref=e215]: Deal Stage
+            - columnheader "Amount" [ref=e218] [cursor=pointer]:
+              - generic [ref=e227]: Amount
+        - rowgroup [ref=e230]:
+          - row "Select row Rampoletx BI Apr 3, 2026 6:38 PM GMT+4 Apr 30, 2026 7:16 PM GMT+4 $1,000" [ref=e231]:
+            - cell "Select row" [ref=e232]:
+              - checkbox "Select row" [ref=e237]
+            - cell "Rampoletx BI" [ref=e243]:
+              - link "Rampoletx BI" [ref=e248] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/496775140560?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e250]: Rampoletx BI
+            - cell "Apr 3, 2026 6:38 PM GMT+4" [ref=e251]:
+              - generic [ref=e253]: Apr 3, 2026 6:38 PM GMT+4
+            - button "Apr 30, 2026 7:16 PM GMT+4" [ref=e254]:
+              - generic [ref=e256]: Apr 30, 2026 7:16 PM GMT+4
+            - button [ref=e257]:
+              - status [ref=e261]
+            - button "$1,000" [ref=e262]:
+              - generic [ref=e265]: $1,000
+          - row "Select row რუსთავის ავტოდრომი / საგა იმპექსი Apr 2, 2026 10:58 PM GMT+4 Apr 30, 2026 7:10 PM GMT+4 $1,000" [ref=e266]:
+            - cell "Select row" [ref=e267]:
+              - checkbox "Select row" [ref=e272]
+            - cell "რუსთავის ავტოდრომი / საგა იმპექსი" [ref=e278]:
+              - link "რუსთავის ავტოდრომი / საგა იმპექსი" [ref=e283] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/497051421917?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e285]: რუსთავის ავტოდრომი / საგა იმპექსი
+            - cell "Apr 2, 2026 10:58 PM GMT+4" [ref=e286]:
+              - generic [ref=e288]: Apr 2, 2026 10:58 PM GMT+4
+            - button "Apr 30, 2026 7:10 PM GMT+4" [ref=e289]:
+              - generic [ref=e291]: Apr 30, 2026 7:10 PM GMT+4
+            - button [ref=e292]:
+              - status [ref=e296]
+            - button "$1,000" [ref=e297]:
+              - generic [ref=e300]: $1,000
+          - row "Select row 0llivander Apr 3, 2026 7:54 PM GMT+4 Apr 30, 2026 7:02 PM GMT+4 $1,000" [ref=e301]:
+            - cell "Select row" [ref=e302]:
+              - checkbox "Select row" [ref=e307]
+            - cell "0llivander" [ref=e313]:
+              - link "0llivander" [ref=e318] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/497054363893?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e320]: 0llivander
+            - cell "Apr 3, 2026 7:54 PM GMT+4" [ref=e321]:
+              - generic [ref=e323]: Apr 3, 2026 7:54 PM GMT+4
+            - button "Apr 30, 2026 7:02 PM GMT+4" [ref=e324]:
+              - generic [ref=e326]: Apr 30, 2026 7:02 PM GMT+4
+            - button [ref=e327]:
+              - status [ref=e331]
+            - button "$1,000" [ref=e332]:
+              - generic [ref=e335]: $1,000
+          - row "Select row ევროპული ჰოსპიტალი Mar 11, 2026 12:48 PM GMT+4 Apr 30, 2026 3:09 PM GMT+4 --" [ref=e336]:
+            - cell "Select row" [ref=e337]:
+              - checkbox "Select row" [ref=e342]
+            - cell "ევროპული ჰოსპიტალი" [ref=e348]:
+              - link "ევროპული ჰოსპიტალი" [ref=e353] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/488038808797?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e355]: ევროპული ჰოსპიტალი
+            - cell "Mar 11, 2026 12:48 PM GMT+4" [ref=e356]:
+              - generic [ref=e358]: Mar 11, 2026 12:48 PM GMT+4
+            - button "Apr 30, 2026 3:09 PM GMT+4" [ref=e359]:
+              - generic [ref=e361]: Apr 30, 2026 3:09 PM GMT+4
+            - button [ref=e362]:
+              - status [ref=e366]
+            - button "--" [ref=e367]:
+              - generic [ref=e369]: "--"
+          - row "Select row არსი Mar 5, 2026 1:02 PM GMT+4 Mar 5, 2026 1:02 PM GMT+4 $1,000" [ref=e370]:
+            - cell "Select row" [ref=e371]:
+              - checkbox "Select row" [ref=e376]
+            - cell "არსი" [ref=e382]:
+              - link "არსი" [ref=e387] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/473516793053?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e389]: არსი
+            - cell "Mar 5, 2026 1:02 PM GMT+4" [ref=e390]:
+              - generic [ref=e392]: Mar 5, 2026 1:02 PM GMT+4
+            - button "Mar 5, 2026 1:02 PM GMT+4" [ref=e393]:
+              - generic [ref=e395]: Mar 5, 2026 1:02 PM GMT+4
+            - button [ref=e396]:
+              - status [ref=e400]
+            - button "$1,000" [ref=e401]:
+              - generic [ref=e404]: $1,000
+          - row "Select row Connect Feb 26, 2026 12:38 PM GMT+4 Feb 28, 2026 5:14 PM GMT+4 $1,000" [ref=e405]:
+            - cell "Select row" [ref=e406]:
+              - checkbox "Select row" [ref=e411]
+            - cell "Connect" [ref=e417]:
+              - link "Connect" [ref=e422] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/478625326278?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e424]: Connect
+            - cell "Feb 26, 2026 12:38 PM GMT+4" [ref=e425]:
+              - generic [ref=e427]: Feb 26, 2026 12:38 PM GMT+4
+            - button "Feb 28, 2026 5:14 PM GMT+4" [ref=e428]:
+              - generic [ref=e430]: Feb 28, 2026 5:14 PM GMT+4
+            - button [ref=e431]:
+              - status [ref=e435]
+            - button "$1,000" [ref=e436]:
+              - generic [ref=e439]: $1,000
+          - row "Select row გრეიდი Mar 23, 2026 11:50 AM GMT+4 Feb 28, 2026 10:34 AM GMT+4 $1,000" [ref=e440]:
+            - cell "Select row" [ref=e441]:
+              - checkbox "Select row" [ref=e446]
+            - cell "გრეიდი" [ref=e452]:
+              - link "გრეიდი" [ref=e457] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/416155345092?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e459]: გრეიდი
+            - cell "Mar 23, 2026 11:50 AM GMT+4" [ref=e460]:
+              - generic [ref=e462]: Mar 23, 2026 11:50 AM GMT+4
+            - button "Feb 28, 2026 10:34 AM GMT+4" [ref=e463]:
+              - generic [ref=e465]: Feb 28, 2026 10:34 AM GMT+4
+            - button [ref=e466]:
+              - status [ref=e470]
+            - button "$1,000" [ref=e471]:
+              - generic [ref=e474]: $1,000
+          - row "Select row ჯეო ჯგუფი (ბათუმი) Jan 20, 2026 6:23 PM GMT+4 Jan 20, 2026 6:23 PM GMT+4 $1,000" [ref=e475]:
+            - cell "Select row" [ref=e476]:
+              - checkbox "Select row" [ref=e481]
+            - cell "ჯეო ჯგუფი (ბათუმი)" [ref=e487]:
+              - link "ჯეო ჯგუფი (ბათუმი)" [ref=e492] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/406651813050?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e494]: ჯეო ჯგუფი (ბათუმი)
+            - cell "Jan 20, 2026 6:23 PM GMT+4" [ref=e495]:
+              - generic [ref=e497]: Jan 20, 2026 6:23 PM GMT+4
+            - button "Jan 20, 2026 6:23 PM GMT+4" [ref=e498]:
+              - generic [ref=e500]: Jan 20, 2026 6:23 PM GMT+4
+            - button [ref=e501]:
+              - status [ref=e505]
+            - button "$1,000" [ref=e506]:
+              - generic [ref=e509]: $1,000
+          - row "Select row Music House Jan 20, 2026 6:22 PM GMT+4 Jan 20, 2026 6:22 PM GMT+4 $1,000" [ref=e510]:
+            - cell "Select row" [ref=e511]:
+              - checkbox "Select row" [ref=e516]
+            - cell "Music House" [ref=e522]:
+              - link "Music House" [ref=e527] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/406205338846?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e529]: Music House
+            - cell "Jan 20, 2026 6:22 PM GMT+4" [ref=e530]:
+              - generic [ref=e532]: Jan 20, 2026 6:22 PM GMT+4
+            - button "Jan 20, 2026 6:22 PM GMT+4" [ref=e533]:
+              - generic [ref=e535]: Jan 20, 2026 6:22 PM GMT+4
+            - button [ref=e536]:
+              - status [ref=e540]
+            - button "$1,000" [ref=e541]:
+              - generic [ref=e544]: $1,000
+          - row "Select row შპს ნუტრიველი / 443873809 - New Deal Dec 16, 2025 12:44 PM GMT+4 Dec 31, 2025 11:16 PM GMT+4 $1,000" [ref=e545]:
+            - cell "Select row" [ref=e546]:
+              - checkbox "Select row" [ref=e551]
+            - cell "შპს ნუტრიველი / 443873809 - New Deal" [ref=e557]:
+              - link "შპს ნუტრიველი / 443873809 - New Deal" [ref=e562] [cursor=pointer]:
+                - /url: https://app-eu1.hubspot.com/contacts/147341634/record/0-3/406329262326?eschref=%2Fcontacts%2F147341634%2Fobjects%2F0-3%2Fviews%2Fall%2Flist
+                - generic [ref=e564]: შპს ნუტრიველი / 443873809 - New Deal
+            - cell "Dec 16, 2025 12:44 PM GMT+4" [ref=e565]:
+              - generic [ref=e567]: Dec 16, 2025 12:44 PM GMT+4
+            - button "Dec 31, 2025 11:16 PM GMT+4" [ref=e568]:
+              - generic [ref=e570]: Dec 31, 2025 11:16 PM GMT+4
+            - button [ref=e571]:
+              - status [ref=e575]
+            - button "$1,000" [ref=e576]:
+              - generic [ref=e579]: $1,000
+      - generic [ref=e581]:
+        - navigation "Pagination" [ref=e582]:
+          - button "Previous page" [disabled] [ref=e584]:
+            - generic [ref=e585]:
+              - img [ref=e586]
+              - generic [ref=e588]: Prev
+          - button "You are currently on Page 1" [ref=e590] [cursor=pointer]:
+            - generic [ref=e591]:
+              - generic [ref=e592]: You are currently on Page
+              - text: "1"
+          - button "Next page" [disabled] [ref=e594]:
+            - generic [ref=e595]:
+              - generic [ref=e596]: Next
+              - img [ref=e597]
+        - button "25 per page" [ref=e599] [cursor=pointer]:
+          - generic [ref=e602]: 25 per page
+    - complementary

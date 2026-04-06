@@ -1,0 +1,354 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "Toolbar":
+      - menu:
+        - group [ref=e3]:
+          - menuitem "About WordPress" [ref=e4] [cursor=pointer]:
+            - generic [ref=e6]: About WordPress
+        - group [ref=e7]:
+          - menuitem "Bivision" [ref=e8] [cursor=pointer]
+        - group [ref=e9]:
+          - menuitem "Edit Site" [ref=e10] [cursor=pointer]
+        - group [ref=e11]:
+          - menuitem "Customize" [ref=e12] [cursor=pointer]
+        - group [ref=e13]:
+          - menuitem "0 Comments in moderation" [ref=e14] [cursor=pointer]:
+            - generic [ref=e16]: "0"
+            - generic [ref=e17]: 0 Comments in moderation
+        - group [ref=e18]:
+          - menuitem "New" [ref=e19] [cursor=pointer]:
+            - generic [ref=e21]: New
+        - group [ref=e22]:
+          - menuitem "Edit Page" [ref=e23] [cursor=pointer]
+        - group [ref=e24]:
+          - menuitem "" [ref=e25] [cursor=pointer]:
+            - generic [ref=e26]: 
+        - group [ref=e27]:
+          - menuitem "Site Kit" [ref=e28] [cursor=pointer]: Site Kit
+        - group [ref=e30]:
+          - menuitem "Rank Math SEO" [ref=e31] [cursor=pointer]:
+            - img [ref=e33]
+            - text: Rank Math SEO
+        - group [ref=e37]:
+          - menuitem "გაასუფთავე ქეში" [ref=e38] [cursor=pointer]
+        - group [ref=e39]:
+          - menuitem "6.20s 95.1MB 0.07s 111Q" [ref=e40] [cursor=pointer]:
+            - generic [ref=e41]: 6.20s 95.1MB 0.07s 111Q
+      - menu [ref=e42]:
+        - group [ref=e43]:
+          - menuitem "Howdy, bivision" [ref=e44] [cursor=pointer]
+        - group [ref=e45]:
+          - menuitem "Search" [ref=e46]:
+            - generic [ref=e47]:
+              - textbox "Search" [ref=e48] [cursor=pointer]
+              - generic [ref=e49]: Search
+  - generic [ref=e50]:
+    - banner [ref=e51]:
+      - generic [ref=e52]:
+        - link "Logo" [ref=e55] [cursor=pointer]:
+          - /url: /
+          - img "Logo" [ref=e56]
+        - generic [ref=e57]:
+          - navigation [ref=e59]:
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "მთავარი" [ref=e62] [cursor=pointer]:
+                  - /url: https://bivision.ge/
+              - listitem [ref=e63]:
+                - link "სერვისები" [ref=e64] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e65]:
+                - link "პარტნიორები" [ref=e66] [cursor=pointer]:
+                  - /url: https://bivision.ge/blog/
+              - listitem [ref=e67]:
+                - link "ჩვენ შესახებ" [ref=e68] [cursor=pointer]:
+                  - /url: /#about-us
+          - generic [ref=e69]:
+            - generic [ref=e71] [cursor=pointer]:
+              - img "Language Icon" [ref=e72]
+              - generic [ref=e73]: GEO
+            - button "მოითხოვე დემო" [ref=e74] [cursor=pointer]
+    - generic [ref=e75]:
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "All" [ref=e79] [cursor=pointer]
+          - button "პარტნიორები" [ref=e80] [cursor=pointer]
+          - button "ბლოგი" [ref=e81] [cursor=pointer]
+        - generic [ref=e82]:
+          - link "ჯეოქორდი პარტნიორები ჯეოქორდი" [ref=e84] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/geocord-bifinance-bidebitors-bisale/
+            - img "ჯეოქორდი" [ref=e86]
+            - generic [ref=e87]:
+              - generic [ref=e88]: პარტნიორები
+              - heading "ჯეოქორდი" [level=3] [ref=e89]
+          - link "ნუტრიმაქსი პარტნიორები ნუტრიმაქსი" [ref=e91] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/nutrimax-bifinance-biretail-bistock/
+            - img "ნუტრიმაქსი" [ref=e93]
+            - generic [ref=e94]:
+              - generic [ref=e95]: პარტნიორები
+              - heading "ნუტრიმაქსი" [level=3] [ref=e96]
+          - link "8000 მოსავალი პარტნიორები 8000 მოსავალი" [ref=e98] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/8000mosavali-biretail/
+            - img "8000 მოსავალი" [ref=e100]
+            - generic [ref=e101]:
+              - generic [ref=e102]: პარტნიორები
+              - heading "8000 მოსავალი" [level=3] [ref=e103]
+          - link "აი ჯი დეველოფმენტ ჯორჯია პარტნიორები აი ჯი დეველოფმენტ ჯორჯია" [ref=e105] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/igdevelopment-bifinance-bidebitors/
+            - img "აი ჯი დეველოფმენტ ჯორჯია" [ref=e107]
+            - generic [ref=e108]:
+              - generic [ref=e109]: პარტნიორები
+              - heading "აი ჯი დეველოფმენტ ჯორჯია" [level=3] [ref=e110]
+          - link "ICR ტრეიდი პარტნიორები ICR ტრეიდი" [ref=e112] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/icr-bifinance-biretail/
+            - img "ICR ტრეიდი" [ref=e114]
+            - generic [ref=e115]:
+              - generic [ref=e116]: პარტნიორები
+              - heading "ICR ტრეიდი" [level=3] [ref=e117]
+          - link "Wegroup პარტნიორები Wegroup" [ref=e119] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/wegroup-biretail/
+            - img "Wegroup" [ref=e121]
+            - generic [ref=e122]:
+              - generic [ref=e123]: პარტნიორები
+              - heading "Wegroup" [level=3] [ref=e124]
+          - link "დიო პარტნიორები დიო" [ref=e126] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/dio-biretail/
+            - img "დიო" [ref=e128]
+            - generic [ref=e129]:
+              - generic [ref=e130]: პარტნიორები
+              - heading "დიო" [level=3] [ref=e131]
+          - link "მარდალეიშვილის სამედიცინო ცენტრი პარტნიორები მარდალეიშვილის სამედიცინო ცენტრი" [ref=e133] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/mardaleishvili-bifinance-bimedical/
+            - img "მარდალეიშვილის სამედიცინო ცენტრი" [ref=e135]
+            - generic [ref=e136]:
+              - generic [ref=e137]: პარტნიორები
+              - heading "მარდალეიშვილის სამედიცინო ცენტრი" [level=3] [ref=e138]
+          - link "თიბისი ფეი პარტნიორები თიბისი ფეი" [ref=e140] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/tbcpay-bifinance-bisales/
+            - img "თიბისი ფეი" [ref=e142]
+            - generic [ref=e143]:
+              - generic [ref=e144]: პარტნიორები
+              - heading "თიბისი ფეი" [level=3] [ref=e145]
+          - link "საქართველოს ბანკი პარტნიორები საქართველოს ბანკი" [ref=e147] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/bog-bicustomer-flow-management/
+            - img "საქართველოს ბანკი" [ref=e149]
+            - generic [ref=e150]:
+              - generic [ref=e151]: პარტნიორები
+              - heading "საქართველოს ბანკი" [level=3] [ref=e152]
+          - link "ჩირინა პარტნიორები ჩირინა" [ref=e154] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/chirina-bifinance-bisales-bimarket-biproduction/
+            - img "ჩირინა" [ref=e156]
+            - generic [ref=e157]:
+              - generic [ref=e158]: პარტნიორები
+              - heading "ჩირინა" [level=3] [ref=e159]
+          - link "სმარტაგრო პარტნიორები სმარტაგრო" [ref=e161] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/smartagro-bivision-partnership/
+            - img "სმარტაგრო" [ref=e163]
+            - generic [ref=e164]:
+              - generic [ref=e165]: პარტნიორები
+              - heading "სმარტაგრო" [level=3] [ref=e166]
+          - link "ენგადი პარტნიორები ენგადი" [ref=e168] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/engadi-bisale-bistock-bidebitors/
+            - img "ენგადი" [ref=e170]
+            - generic [ref=e171]:
+              - generic [ref=e172]: პარტნიორები
+              - heading "ენგადი" [level=3] [ref=e173]
+          - link "ორბიტა პარტნიორები ორბიტა" [ref=e175] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/oribita-bisale-bistock-bifinance/
+            - img "ორბიტა" [ref=e177]
+            - generic [ref=e178]:
+              - generic [ref=e179]: პარტნიორები
+              - heading "ორბიტა" [level=3] [ref=e180]
+          - link "გასგო მოტორსი პარტნიორები გასგო მოტორსი" [ref=e182] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/gasgomotors-biretail-bifinance-bistock/
+            - img "გასგო მოტორსი" [ref=e184]
+            - generic [ref=e185]:
+              - generic [ref=e186]: პარტნიორები
+              - heading "გასგო მოტორსი" [level=3] [ref=e187]
+          - link "თბილისის გულის ცენტრი პარტნიორები თბილისის გულის ცენტრი" [ref=e189] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/tbilisisguliscentri-bimedical/
+            - img "თბილისის გულის ცენტრი" [ref=e191]
+            - generic [ref=e192]:
+              - generic [ref=e193]: პარტნიორები
+              - heading "თბილისის გულის ცენტრი" [level=3] [ref=e194]
+          - link "Leaderbet პარტნიორები Leaderbet" [ref=e196] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/leaderbet-bivision-partnership/
+            - img "Leaderbet" [ref=e198]
+            - generic [ref=e199]:
+              - generic [ref=e200]: პარტნიორები
+              - heading "Leaderbet" [level=3] [ref=e201]
+          - link "Crocobet პარტნიორები Crocobet" [ref=e203] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/crocobet-bivision-partnership/
+            - img "Crocobet" [ref=e205]
+            - generic [ref=e206]:
+              - generic [ref=e207]: პარტნიორები
+              - heading "Crocobet" [level=3] [ref=e208]
+          - link "Crystalbet პარტნიორები Crystalbet" [ref=e210] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/crystalbet-bi-qliksense/
+            - img "Crystalbet" [ref=e212]
+            - generic [ref=e213]:
+              - generic [ref=e214]: პარტნიორები
+              - heading "Crystalbet" [level=3] [ref=e215]
+          - link "თელმიკო პარტნიორები თელმიკო" [ref=e217] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/telmiko-bivision-partnership/
+            - img "თელმიკო" [ref=e219]
+            - generic [ref=e220]:
+              - generic [ref=e221]: პარტნიორები
+              - heading "თელმიკო" [level=3] [ref=e222]
+          - link "შინაგან საქმეთა სამინისტრო პარტნიორები შინაგან საქმეთა სამინისტრო" [ref=e224] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/shss-bi-qliksense/
+            - img "შინაგან საქმეთა სამინისტრო" [ref=e226]
+            - generic [ref=e227]:
+              - generic [ref=e228]: პარტნიორები
+              - heading "შინაგან საქმეთა სამინისტრო" [level=3] [ref=e229]
+          - link "საჯარო რეესტრის ეროვნული სააგენტო პარტნიორები საჯარო რეესტრის ეროვნული სააგენტო" [ref=e231] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/napr-bi-qliksense/
+            - img "საჯარო რეესტრის ეროვნული სააგენტო" [ref=e233]
+            - generic [ref=e234]:
+              - generic [ref=e235]: პარტნიორები
+              - heading "საჯარო რეესტრის ეროვნული სააგენტო" [level=3] [ref=e236]
+          - link "განათლების მართვის ცენტრი პარტნიორები განათლების მართვის ცენტრი" [ref=e238] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/emis-qlik-sense/
+            - img "განათლების მართვის ცენტრი" [ref=e240]
+            - generic [ref=e241]:
+              - generic [ref=e242]: პარტნიორები
+              - heading "განათლების მართვის ცენტრი" [level=3] [ref=e243]
+          - link "ვიდისი პარტნიორები ვიდისი" [ref=e245] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/vdc-bifinance/
+            - img "ვიდისი" [ref=e247]
+            - generic [ref=e248]:
+              - generic [ref=e249]: პარტნიორები
+              - heading "ვიდისი" [level=3] [ref=e250]
+          - link "ენერგო პრო პარტნიორები ენერგო პრო" [ref=e252] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/energopro-bivision-partnership/
+            - img "ენერგო პრო" [ref=e254]
+            - generic [ref=e255]:
+              - generic [ref=e256]: პარტნიორები
+              - heading "ენერგო პრო" [level=3] [ref=e257]
+          - link "სამედიცინო ცენტრი „ციტო“ პარტნიორები სამედიცინო ცენტრი „ციტო“" [ref=e259] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/cito-bimedical/
+            - img "სამედიცინო ცენტრი „ციტო“" [ref=e261]
+            - generic [ref=e262]:
+              - generic [ref=e263]: პარტნიორები
+              - heading "სამედიცინო ცენტრი „ციტო“" [level=3] [ref=e264]
+          - link "Gtex პარტნიორები Gtex" [ref=e266] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/gtex-biretail-bifinance-bistock/
+            - img "Gtex" [ref=e268]
+            - generic [ref=e269]:
+              - generic [ref=e270]: პარტნიორები
+              - heading "Gtex" [level=3] [ref=e271]
+          - link "ტრანსპორტერი პარტნიორები ტრანსპორტერი" [ref=e273] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/transporter-biretail/
+            - img "ტრანსპორტერი" [ref=e275]
+            - generic [ref=e276]:
+              - generic [ref=e277]: პარტნიორები
+              - heading "ტრანსპორტერი" [level=3] [ref=e278]
+          - link "Apart Group პარტნიორები Apart Group" [ref=e280] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/apartgroup-bifinance/
+            - img "Apart Group" [ref=e282]
+            - generic [ref=e283]:
+              - generic [ref=e284]: პარტნიორები
+              - heading "Apart Group" [level=3] [ref=e285]
+          - link "ავტობანი პარტნიორები ავტობანი" [ref=e287] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/avtobani-biretail-bifinance-bistock/
+            - img "ავტობანი" [ref=e289]
+            - generic [ref=e290]:
+              - generic [ref=e291]: პარტნიორები
+              - heading "ავტობანი" [level=3] [ref=e292]
+          - link "OnePrice პარტნიორები OnePrice" [ref=e294] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/oneprice-biretail/
+            - img "OnePrice" [ref=e296]
+            - generic [ref=e297]:
+              - generic [ref=e298]: პარტნიორები
+              - heading "OnePrice" [level=3] [ref=e299]
+          - link "ენგურჰესი პარტნიორები ენგურჰესი" [ref=e301] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/engurhesi-bifinance/
+            - img "ენგურჰესი" [ref=e303]
+            - generic [ref=e304]:
+              - generic [ref=e305]: პარტნიორები
+              - heading "ენგურჰესი" [level=3] [ref=e306]
+          - link "პინეო ლაქშერი პარტნიორები პინეო ლაქშერი" [ref=e308] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/pineo-bifinance/
+            - img "პინეო ლაქშერი" [ref=e310]
+            - generic [ref=e311]:
+              - generic [ref=e312]: პარტნიორები
+              - heading "პინეო ლაქშერი" [level=3] [ref=e313]
+          - link "დეველოპერებისთვის ბლოგი დეველოპერებისთვის" [ref=e315] [cursor=pointer]:
+            - /url: https://bivision.ge/blog/developers-finance-bivisioin/
+            - img "დეველოპერებისთვის" [ref=e317]
+            - generic [ref=e318]:
+              - generic [ref=e319]: ბლოგი
+              - heading "დეველოპერებისთვის" [level=3] [ref=e320]
+          - link "Balance ბლოგი Balance" [ref=e322] [cursor=pointer]:
+            - /url: https://bivision.ge/blog/balance-bivisioin/
+            - img "Balance" [ref=e324]
+            - generic [ref=e325]:
+              - generic [ref=e326]: ბლოგი
+              - heading "Balance" [level=3] [ref=e327]
+          - link "სუპერი პარტნიორები სუპერი" [ref=e329] [cursor=pointer]:
+            - /url: https://bivision.ge/success-stories/superstore-bifinance-biretail/
+            - img "სუპერი" [ref=e331]
+            - generic [ref=e332]:
+              - generic [ref=e333]: პარტნიორები
+              - heading "სუპერი" [level=3] [ref=e334]
+          - link "BIHUB ბლოგი BIHUB" [ref=e336] [cursor=pointer]:
+            - /url: https://bivision.ge/blog/bihub-bivision-blog/
+            - img "BIHUB" [ref=e338]
+            - generic [ref=e339]:
+              - generic [ref=e340]: ბლოგი
+              - heading "BIHUB" [level=3] [ref=e341]
+          - link "BI ბლოგი BI" [ref=e343] [cursor=pointer]:
+            - /url: https://bivision.ge/blog/why-bi/
+            - img "BI" [ref=e345]
+            - generic [ref=e346]:
+              - generic [ref=e347]: ბლოგი
+              - heading "BI" [level=3] [ref=e348]
+      - generic [ref=e350]:
+        - generic [ref=e351]:
+          - text: დაგვიკავშირდი
+          - heading "დაიწყე გამოყენება დღესვე" [level=2] [ref=e352]
+          - paragraph [ref=e353]:
+            - text: სცადე დემო და გაიმარტივე მონაცემებით მართვის პროცესი
+            - link:
+              - /url: https://wa.me/593255385
+        - link "დაგვიკავშირდი" [ref=e354] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e355]: დაგვიკავშირდი
+      - paragraph
+    - contentinfo [ref=e357]:
+      - generic [ref=e359]:
+        - generic [ref=e360]:
+          - img "B'VISION" [ref=e361]
+          - link "Qlik Partner" [ref=e362] [cursor=pointer]:
+            - /url: http://www.qlik.com
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - img "Phone" [ref=e365]
+            - link "+995 593 255 385" [ref=e366] [cursor=pointer]:
+              - /url: tel:+995 593 255 385
+          - generic [ref=e367]:
+            - img "Mail" [ref=e368]
+            - link "info@bivision.ge" [ref=e369] [cursor=pointer]:
+              - /url: "mailto: info@bivision.ge"
+        - generic [ref=e370]:
+          - img "Map" [ref=e371]
+          - link "ჟ. შარტავას ქ. 40, თბილისი, საქართელო (0160)" [ref=e372] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=40+Juli+shartava+street+Tbilisi+Georgia
+            - text: ჟ. შარტავას ქ. 40,
+            - text: თბილისი, საქართელო (0160)
+        - generic [ref=e373]:
+          - link "Facebook" [ref=e374] [cursor=pointer]:
+            - /url: https://www.facebook.com/bivision.ge/
+            - img "Facebook" [ref=e375]
+          - link "LinkedIn" [ref=e376] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/bivisionge
+            - img "LinkedIn" [ref=e377]
+          - link "Instagram" [ref=e378] [cursor=pointer]:
+            - /url: "#"
+            - img "Instagram" [ref=e379]
+        - generic [ref=e380]:
+          - generic [ref=e381]: © BIVISION 2026
+          - link "Privacy Policy" [ref=e383] [cursor=pointer]:
+            - /url: https://bivision.ge/wp-content/uploads/2025/09/privacy-policy.pdf
+  - text: └ └ └ └ └ └ └ └ └ └ └ └ └
+  - button "Open chat" [ref=e384] [cursor=pointer]

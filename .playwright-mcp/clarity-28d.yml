@@ -1,0 +1,742 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - button "Skip to content" [ref=e4]
+    - banner [ref=e5]:
+      - link "Microsoft Logo" [ref=e6] [cursor=pointer]:
+        - /url: https://www.microsoft.com
+        - img "Microsoft Logo" [ref=e8]
+      - link "Clarity" [ref=e9] [cursor=pointer]:
+        - /url: /
+      - button "Bivision" [ref=e11]:
+        - generic [ref=e12]:
+          - button "Bivision" [ref=e13] [cursor=pointer]:
+            - generic [ref=e16]: Bivision
+          - button "List of my projects" [ref=e17] [cursor=pointer]:
+            - generic [ref=e19]: 
+      - button "Header menu" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: 
+      - button "Gela Shonia Profile" [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]:
+          - img [ref=e27]
+          - generic [ref=e29]: 
+    - main [ref=e30]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - generic [ref=e37]:
+              - button "Filters" [ref=e38] [cursor=pointer]:
+                - generic [ref=e39]:
+                  - img [ref=e41]
+                  - generic [ref=e44]: Filters
+              - button "Segments" [ref=e47] [cursor=pointer]:
+                - generic [ref=e48]:
+                  - generic [ref=e49]: 
+                  - generic [ref=e51]: Segments
+            - generic [ref=e52]:
+              - button "Last 28 days Expand menu" [ref=e56] [cursor=pointer]:
+                - generic [ref=e57]: Last 28 days
+                - button "Expand menu" [ref=e58]:
+                  - generic [ref=e60]: 
+              - generic "Save as segment" [ref=e62]:
+                - button "Save as segment" [ref=e63] [cursor=pointer]:
+                  - generic [ref=e64]:
+                    - img [ref=e66]
+                    - generic [ref=e69]: Save as segment
+          - generic [ref=e71]:
+            - button "Download" [ref=e73] [cursor=pointer]:
+              - img [ref=e75]
+            - button "Chat" [ref=e77]:
+              - img "icon" [ref=e78]
+        - generic [ref=e85]:
+          - generic [ref=e86]:
+            - generic [ref=e87]: Sessions
+            - img "Sessions Total sessions This is the number of visits to your site during the selected period of time. Bot sessions Clarity flagged these sessions as bot traffic. They are not included in the total session count." [ref=e88]:
+              - img "info Bubble" [ref=e89]
+            - generic [ref=e91]:
+              - generic [ref=e126]:
+                - generic [ref=e1830]: "254"
+                - generic [ref=e1831]: 115 bot sessions excluded
+              - button [ref=e1832] [cursor=pointer]:
+                - img [ref=e1835]
+          - generic [ref=e128]:
+            - generic [ref=e129]: Pages per session
+            - generic [ref=e130]:
+              - generic [ref=e165]:
+                - generic [ref=e1837]: "2"
+                - generic [ref=e167]: average
+              - button [ref=e1838] [cursor=pointer]:
+                - img [ref=e1841]
+          - generic [ref=e168]:
+            - generic [ref=e169]: Scroll depth
+            - generic [ref=e170]:
+              - generic [ref=e205]:
+                - generic [ref=e1843]: 55.32%
+                - generic [ref=e207]: average
+              - button [ref=e1844] [cursor=pointer]:
+                - img [ref=e1847]
+          - generic [ref=e208]:
+            - generic [ref=e209]: Active time spent
+            - 'img "This is the average time spent in a session Active time: When a user''s attention was on your site Inactive time: When your site was hidden behind other tabs or windows" [ref=e210]':
+              - img "info Bubble" [ref=e211]
+            - generic [ref=e213]:
+              - generic [ref=e248]:
+                - generic [ref=e1849]: 1.5 min
+                - generic [ref=e1850]: out of 7.9 min total time
+              - button [ref=e1851] [cursor=pointer]:
+                - img [ref=e1854]
+        - generic [ref=e250]:
+          - generic [ref=e251]:
+            - button "Drag card" [ref=e252]:
+              - img [ref=e255]
+            - generic [ref=e257]:
+              - tab "Users overview" [selected] [ref=e260] [cursor=pointer]
+              - tab "All users" [ref=e263] [cursor=pointer]
+              - generic [ref=e265] [cursor=pointer]:
+                - tab "User intent" [ref=e266]
+                - img [ref=e268]
+            - generic [ref=e270]:
+              - button [ref=e271] [cursor=pointer]:
+                - img [ref=e274]
+              - button "Options" [ref=e276] [cursor=pointer]:
+                - generic [ref=e278]: 
+            - generic [ref=e412]:
+              - generic [ref=e413]:
+                - img [ref=e415]
+                - generic [ref=e419]: "0"
+                - generic [ref=e420]:
+                  - generic [ref=e421]: Live users
+                  - generic [ref=e422]: < 1 min ago
+                - button "Go to recordings" [ref=e424] [cursor=pointer]:
+                  - img [ref=e427]
+                - img [ref=e430]
+                - generic [ref=e434]: "179"
+                - generic [ref=e436]: Unique users
+                - button "Go to recordings" [ref=e438] [cursor=pointer]:
+                  - img [ref=e441]
+              - generic [ref=e1856]:
+                - generic [ref=e1857]:
+                  - generic "Sessions with new users" [ref=e1858]
+                  - generic "Sessions with returning users" [ref=e1859]
+                - generic [ref=e1860] [cursor=pointer]:
+                  - generic "Sessions with new users" [ref=e1863]
+                  - generic [ref=e1864]: 74.80%
+                  - generic [ref=e1865]: "190"
+                  - button "Set as filter and go to recordings" [ref=e1867]:
+                    - img [ref=e1870]
+                  - button "Set as filter and go to heatmaps" [ref=e1873]:
+                    - img [ref=e1876]
+                  - generic "Sessions with returning users" [ref=e1880]
+                  - generic [ref=e1881]: 25.20%
+                  - generic [ref=e1882]: "64"
+                  - button "Set as filter and go to recordings" [ref=e1884]:
+                    - img [ref=e1887]
+                  - button "Set as filter and go to heatmaps" [ref=e1890]:
+                    - img [ref=e1893]
+              - generic [ref=e1895]:
+                - img [ref=e1897]
+                - generic [ref=e1899]:
+                  - generic [ref=e1900]: Top user
+                  - button "See all users" [ref=e1901] [cursor=pointer]
+                - generic [ref=e1902] [cursor=pointer]:
+                  - generic [ref=e1903]: 12 sessions
+                  - generic [ref=e1904]: Georgia
+                  - img [ref=e1907]
+                  - button "View visitor profile for visitor with 12 sessions, country Georgia and device PC" [ref=e1910]:
+                    - generic [ref=e1911]:
+                      - img [ref=e1913]
+                      - generic [ref=e1915]: View visitor profile for visitor with 12 sessions, country Georgia and device PC
+                - img [ref=e1917]
+          - generic [ref=e443]:
+            - button "Drag card" [ref=e444]:
+              - img [ref=e447]
+            - heading "Insights" [level=2] [ref=e452]
+            - generic [ref=e453]:
+              - button [ref=e454] [cursor=pointer]:
+                - img [ref=e457]
+              - button "Options" [ref=e459] [cursor=pointer]:
+                - generic [ref=e461]: 
+            - generic [ref=e463]:
+              - generic [ref=e464]:
+                - heading "Rage clicks" [level=2] [ref=e465]
+                - img "User rapidly clicked or tapped in the same small area" [ref=e466]:
+                  - img "info Bubble" [ref=e467]
+                - generic [ref=e481] [cursor=pointer]:
+                  - img [ref=e482]
+                  - generic [ref=e486]:
+                    - generic [ref=e1919]: 0%
+                    - generic [ref=e487]: 0 sessions
+              - generic [ref=e488]:
+                - heading "Dead clicks" [level=2] [ref=e489]
+                - img "User clicked or tapped on a page with no effect" [ref=e490]:
+                  - img "info Bubble" [ref=e491]
+                - generic [ref=e505] [cursor=pointer]:
+                  - img [ref=e506]
+                  - generic [ref=e510]:
+                    - generic [ref=e1920]: 3.15%
+                    - generic [ref=e511]: 8 sessions
+                  - button "Set as filter and go to recordings" [ref=e1921]:
+                    - img [ref=e1924]
+              - generic [ref=e512]:
+                - heading "Excessive scrolling" [level=2] [ref=e513]
+                - img "User scrolled through a page more than expected" [ref=e514]:
+                  - img "info Bubble" [ref=e515]
+                - generic [ref=e529] [cursor=pointer]:
+                  - img [ref=e530]
+                  - generic [ref=e534]:
+                    - generic [ref=e1926]: 0%
+                    - generic [ref=e535]: 0 sessions
+              - generic [ref=e536]:
+                - heading "Quick backs" [level=2] [ref=e537]
+                - img "User navigated to a page then quickly returned to the previous one" [ref=e538]:
+                  - img "info Bubble" [ref=e539]
+                - generic [ref=e553] [cursor=pointer]:
+                  - img [ref=e554]
+                  - generic [ref=e558]:
+                    - generic [ref=e1927]: 13.78%
+                    - generic [ref=e559]: 35 sessions
+                  - button "Set as filter and go to recordings" [ref=e1928]:
+                    - img [ref=e1931]
+          - generic [ref=e560]:
+            - button "Drag card" [ref=e561]:
+              - img [ref=e564]
+            - generic [ref=e568]:
+              - heading "Smart events" [level=2] [ref=e569]
+              - img [ref=e571]
+            - generic [ref=e573]:
+              - button [ref=e574] [cursor=pointer]:
+                - img [ref=e577]
+              - button "Options" [ref=e579] [cursor=pointer]:
+                - generic [ref=e581]: 
+            - generic [ref=e733]:
+              - generic [ref=e1933]:
+                - generic [ref=e1934]: Show percentage of sessions
+                - generic [ref=e1935]:
+                  - switch "Show percentage of sessions" [ref=e1936] [cursor=pointer]
+                  - generic [ref=e1938]: "Off"
+              - generic [ref=e1939]:
+                - img "auto Event Icon" [ref=e1942] [cursor=pointer]
+                - generic [ref=e1946] [cursor=pointer]: Outbound click
+                - generic [ref=e1947] [cursor=pointer]: 27 sessions
+                - generic "Set as filter and go to recordings" [ref=e1948] [cursor=pointer]:
+                  - button "Set as filter and go to recordings" [ref=e1949]:
+                    - img [ref=e1952]
+                - generic "Set as filter and go to heatmaps" [ref=e1954] [cursor=pointer]:
+                  - button "Set as filter and go to heatmaps" [ref=e1955]:
+                    - img [ref=e1958]
+                - img "user Event Icon" [ref=e1963] [cursor=pointer]
+                - generic [ref=e1965] [cursor=pointer]: Demo
+                - generic [ref=e1966] [cursor=pointer]: 20 sessions
+                - generic "Set as filter and go to recordings" [ref=e1967] [cursor=pointer]:
+                  - button "Set as filter and go to recordings" [ref=e1968]:
+                    - img [ref=e1971]
+                - generic "Set as filter and go to heatmaps" [ref=e1973] [cursor=pointer]:
+                  - button "Set as filter and go to heatmaps" [ref=e1974]:
+                    - img [ref=e1977]
+                - img "contact Us Icon" [ref=e1982] [cursor=pointer]
+                - generic [ref=e1984] [cursor=pointer]: Contact us
+                - generic [ref=e1985] [cursor=pointer]: 5 sessions
+                - generic "Set as filter and go to recordings" [ref=e1986] [cursor=pointer]:
+                  - button "Set as filter and go to recordings" [ref=e1987]:
+                    - img [ref=e1990]
+                - generic "Set as filter and go to heatmaps" [ref=e1992] [cursor=pointer]:
+                  - button "Set as filter and go to heatmaps" [ref=e1993]:
+                    - img [ref=e1996]
+          - generic [ref=e783]:
+            - button "Drag card" [ref=e784]:
+              - img [ref=e787]
+            - heading "Funnels" [level=2] [ref=e792]
+            - button "Options" [ref=e794] [cursor=pointer]:
+              - generic [ref=e796]: 
+            - generic [ref=e798]:
+              - combobox "Dropdown options" [ref=e814]:
+                - generic [ref=e815] [cursor=pointer]: Bivision/Products/demo
+                - generic [ref=e816] [cursor=pointer]:
+                  - generic: 
+              - generic [ref=e1998]:
+                - generic [ref=e1999]:
+                  - generic [ref=e2000]:
+                    - strong [ref=e2001]: 1.85%
+                    - generic [ref=e2002]: Conversion rate
+                  - generic [ref=e2003]:
+                    - strong [ref=e2004]: "3"
+                    - generic [ref=e2005]: Sessions converted
+                  - generic [ref=e2006]:
+                    - strong [ref=e2007]: 1.7 m
+                    - generic [ref=e2008]: Median time to convert
+                - generic [ref=e2009]:
+                  - generic [ref=e2010]:
+                    - generic [ref=e2011]: Visit
+                    - generic [ref=e2012]: 63.78% of 254 total sessions
+                  - generic [ref=e2015] [cursor=pointer]:
+                    - generic [ref=e2017]: 100% reached this step
+                    - generic [ref=e2018]: 162 sessions
+                    - button "Go to recordings filtered to Visit." [ref=e2019]:
+                      - img [ref=e2022]
+                    - button "Go to heatmaps filtered to Visit" [ref=e2024]:
+                      - img [ref=e2027]
+                - generic [ref=e2029]:
+                  - generic [ref=e2031]: Products
+                  - generic [ref=e2035] [cursor=pointer]:
+                    - generic [ref=e2037]: 10.49% reached this step
+                    - generic [ref=e2038]: 17 sessions
+                    - button "Go to recordings filtered to Products." [ref=e2039]:
+                      - img [ref=e2042]
+                    - button "Go to heatmaps filtered to Products" [ref=e2044]:
+                      - img [ref=e2047]
+                  - generic [ref=e2049] [cursor=pointer]:
+                    - generic [ref=e2051]: 89.51% didn't reach this step
+                    - generic [ref=e2052]: 145 sessions
+                    - button "Go to recordings filtered to Products." [ref=e2053]:
+                      - img [ref=e2056]
+                    - button "Go to heatmaps filtered to Products" [ref=e2058]:
+                      - img [ref=e2061]
+                - generic [ref=e2063]:
+                  - generic [ref=e2065]: Demo
+                  - generic [ref=e2069] [cursor=pointer]:
+                    - generic [ref=e2071]: 17.65% reached this step
+                    - generic [ref=e2072]: 3 sessions
+                    - button "Go to recordings filtered to Demo." [ref=e2073]:
+                      - img [ref=e2076]
+                    - button "Go to heatmaps filtered to Demo" [ref=e2078]:
+                      - img [ref=e2081]
+                  - generic [ref=e2083] [cursor=pointer]:
+                    - generic [ref=e2085]: 82.35% didn't reach this step
+                    - generic [ref=e2086]: 14 sessions
+                    - button "Go to recordings filtered to Demo." [ref=e2087]:
+                      - img [ref=e2090]
+                    - button "Go to heatmaps filtered to Demo" [ref=e2092]:
+                      - img [ref=e2095]
+          - generic [ref=e847]:
+            - button "Drag card" [ref=e848]:
+              - img [ref=e851]
+            - generic [ref=e853]:
+              - tab "Top pages" [selected] [ref=e856] [cursor=pointer]
+              - tab "Inactive pages" [ref=e859] [cursor=pointer]
+              - tab "Top entry pages" [ref=e862] [cursor=pointer]
+              - button [ref=e863] [cursor=pointer]:
+                - img [ref=e866]
+            - generic [ref=e868]:
+              - button [ref=e869] [cursor=pointer]:
+                - img [ref=e872]
+              - button "Options" [ref=e874] [cursor=pointer]:
+                - generic [ref=e876]: 
+            - generic [ref=e1046]:
+              - generic [ref=e2097]:
+                - generic [ref=e2098]: URL parameters
+                - generic [ref=e2099]:
+                  - switch "URL parameters" [ref=e2100] [cursor=pointer]
+                  - generic [ref=e2102]: "Off"
+              - 'button "Sort by: Most popular" [ref=e2103] [cursor=pointer]':
+                - generic [ref=e2104]:
+                  - generic [ref=e2105]: 
+                  - generic [ref=e2107]: "Sort by: Most popular"
+              - figure [ref=e2108]:
+                - generic [ref=e2109] [cursor=pointer]:
+                  - button "https://bivision.ge/" [ref=e2110]
+                  - button "100% 187" [ref=e2111]:
+                    - img "100%" [ref=e2113]
+                    - generic "187 sessions" [ref=e2114]: "187"
+                  - button "Set as filter and go to recordings" [ref=e2115]:
+                    - img [ref=e2118]
+                  - button "Set as filter and go to heatmaps" [ref=e2120]:
+                    - img [ref=e2123]
+                - generic [ref=e2125] [cursor=pointer]:
+                  - button "https://bivision.ge/saas-products/bifinance/" [ref=e2126]
+                  - button "27.27272727272727% 51" [ref=e2127]:
+                    - img "27.27272727272727%" [ref=e2129]
+                    - generic "51 sessions" [ref=e2130]: "51"
+                  - button "Set as filter and go to recordings" [ref=e2131]:
+                    - img [ref=e2134]
+                  - button "Set as filter and go to heatmaps" [ref=e2136]:
+                    - img [ref=e2139]
+                - generic [ref=e2141] [cursor=pointer]:
+                  - button "https://bivision.ge/blog/balance-bivisioin/" [ref=e2142]
+                  - button "13.368983957219251% 25" [ref=e2143]:
+                    - img "13.368983957219251%" [ref=e2145]
+                    - generic "25 sessions" [ref=e2146]: "25"
+                  - button "Set as filter and go to recordings" [ref=e2147]:
+                    - img [ref=e2150]
+                  - button "Set as filter and go to heatmaps" [ref=e2152]:
+                    - img [ref=e2155]
+                - generic [ref=e2157] [cursor=pointer]:
+                  - button "https://bivision.ge/blog/category/success-stories/" [ref=e2158]
+                  - button "11.229946524064172% 21" [ref=e2159]:
+                    - img "11.229946524064172%" [ref=e2161]
+                    - generic "21 sessions" [ref=e2162]: "21"
+                  - button "Set as filter and go to recordings" [ref=e2163]:
+                    - img [ref=e2166]
+                  - button "Set as filter and go to heatmaps" [ref=e2168]:
+                    - img [ref=e2171]
+                - generic [ref=e2173] [cursor=pointer]:
+                  - button "https://bivision.ge/blog/category/blog/" [ref=e2174]
+                  - button "8.02139037433155% 15" [ref=e2175]:
+                    - img "8.02139037433155%" [ref=e2177]
+                    - generic "15 sessions" [ref=e2178]: "15"
+                  - button "Set as filter and go to recordings" [ref=e2179]:
+                    - img [ref=e2182]
+                  - button "Set as filter and go to heatmaps" [ref=e2184]:
+                    - img [ref=e2187]
+                - generic [ref=e2189] [cursor=pointer]:
+                  - button "https://bivision.ge/saas-products/biretail/" [ref=e2190]
+                  - button "8.02139037433155% 15" [ref=e2191]:
+                    - img "8.02139037433155%" [ref=e2193]
+                    - generic "15 sessions" [ref=e2194]: "15"
+                  - button "Set as filter and go to recordings" [ref=e2195]:
+                    - img [ref=e2198]
+                  - button "Set as filter and go to heatmaps" [ref=e2200]:
+                    - img [ref=e2203]
+                - generic [ref=e2205] [cursor=pointer]:
+                  - button "https://bivision.ge/blog/" [ref=e2206]
+                  - button "4.81283422459893% 9" [ref=e2207]:
+                    - img "4.81283422459893%" [ref=e2209]
+                    - generic "9 sessions" [ref=e2210]: "9"
+                  - button "Set as filter and go to recordings" [ref=e2211]:
+                    - img [ref=e2214]
+                  - button "Set as filter and go to heatmaps" [ref=e2216]:
+                    - img [ref=e2219]
+                - generic [ref=e2221] [cursor=pointer]:
+                  - button "https://bivision.ge/blog/balance-bivisioin-2/" [ref=e2222]
+                  - button "4.81283422459893% 9" [ref=e2223]:
+                    - img "4.81283422459893%" [ref=e2225]
+                    - generic "9 sessions" [ref=e2226]: "9"
+                  - button "Set as filter and go to recordings" [ref=e2227]:
+                    - img [ref=e2230]
+                  - button "Set as filter and go to heatmaps" [ref=e2232]:
+                    - img [ref=e2235]
+                - generic [ref=e2237] [cursor=pointer]:
+                  - button "https://bivision.ge/blog/category/blog" [ref=e2238]
+                  - button "3.7433155080213902% 7" [ref=e2239]:
+                    - img "3.7433155080213902%" [ref=e2241]
+                    - generic "7 sessions" [ref=e2242]: "7"
+                  - button "Set as filter and go to recordings" [ref=e2243]:
+                    - img [ref=e2246]
+                  - button "Set as filter and go to heatmaps" [ref=e2248]:
+                    - img [ref=e2251]
+                - generic [ref=e2253] [cursor=pointer]:
+                  - button "https://bivision.ge/blog/balance-bivision/" [ref=e2254]
+                  - button "3.2085561497326207% 6" [ref=e2255]:
+                    - img "3.2085561497326207%" [ref=e2257]
+                    - generic "6 sessions" [ref=e2258]: "6"
+                  - button "Set as filter and go to recordings" [ref=e2259]:
+                    - img [ref=e2262]
+                  - button "Set as filter and go to heatmaps" [ref=e2264]:
+                    - img [ref=e2267]
+                - generic [ref=e2269] [cursor=pointer]:
+                  - button "https://bivision.ge/blog" [ref=e2270]
+                  - button "2.6737967914438503% 5" [ref=e2271]:
+                    - img "2.6737967914438503%" [ref=e2273]
+                    - generic "5 sessions" [ref=e2274]: "5"
+                  - button "Set as filter and go to recordings" [ref=e2275]:
+                    - img [ref=e2278]
+                  - button "Set as filter and go to heatmaps" [ref=e2280]:
+                    - img [ref=e2283]
+                - generic [ref=e2285] [cursor=pointer]:
+                  - button "https://bivision.ge/saas-products/bistock/" [ref=e2286]
+                  - button "2.6737967914438503% 5" [ref=e2287]:
+                    - img "2.6737967914438503%" [ref=e2289]
+                    - generic "5 sessions" [ref=e2290]: "5"
+                  - button "Set as filter and go to recordings" [ref=e2291]:
+                    - img [ref=e2294]
+                  - button "Set as filter and go to heatmaps" [ref=e2296]:
+                    - img [ref=e2299]
+          - generic [ref=e1092]:
+            - button "Drag card" [ref=e1093]:
+              - img [ref=e1096]
+            - generic [ref=e1098]:
+              - tab "Referrer" [selected] [ref=e1101] [cursor=pointer]
+              - tab "Channel" [ref=e1104] [cursor=pointer]
+              - tab "Campaign" [ref=e1107] [cursor=pointer]
+              - tab "Source" [ref=e1110] [cursor=pointer]
+            - generic [ref=e1111]:
+              - button [ref=e1112] [cursor=pointer]:
+                - img [ref=e1115]
+              - button "Options" [ref=e1117] [cursor=pointer]:
+                - generic [ref=e1119]: 
+            - figure [ref=e2301]:
+              - generic [ref=e2302] [cursor=pointer]:
+                - button "bivision.ge" [ref=e2303]
+                - button "100% 76" [ref=e2304]:
+                  - img "100%" [ref=e2306]
+                  - generic "76 sessions" [ref=e2307]: "76"
+                - button "Set as filter and go to recordings" [ref=e2308]:
+                  - img [ref=e2311]
+                - button "Set as filter and go to heatmaps" [ref=e2313]:
+                  - img [ref=e2316]
+              - generic [ref=e2318] [cursor=pointer]:
+                - button "www.google.com" [ref=e2319]
+                - button "43.42105263157895% 33" [ref=e2320]:
+                  - img "43.42105263157895%" [ref=e2322]
+                  - generic "33 sessions" [ref=e2323]: "33"
+                - button "Set as filter and go to recordings" [ref=e2324]:
+                  - img [ref=e2327]
+                - button "Set as filter and go to heatmaps" [ref=e2329]:
+                  - img [ref=e2332]
+              - generic [ref=e2334] [cursor=pointer]:
+                - button "l.facebook.com" [ref=e2335]
+                - button "14.473684210526317% 11" [ref=e2336]:
+                  - img "14.473684210526317%" [ref=e2338]
+                  - generic "11 sessions" [ref=e2339]: "11"
+                - button "Set as filter and go to recordings" [ref=e2340]:
+                  - img [ref=e2343]
+                - button "Set as filter and go to heatmaps" [ref=e2345]:
+                  - img [ref=e2348]
+              - generic [ref=e2350] [cursor=pointer]:
+                - button "m.facebook.com" [ref=e2351]
+                - button "13.157894736842104% 10" [ref=e2352]:
+                  - img "13.157894736842104%" [ref=e2354]
+                  - generic "10 sessions" [ref=e2355]: "10"
+                - button "Set as filter and go to recordings" [ref=e2356]:
+                  - img [ref=e2359]
+                - button "Set as filter and go to heatmaps" [ref=e2361]:
+                  - img [ref=e2364]
+              - generic [ref=e2366] [cursor=pointer]:
+                - button "bihub.ge" [ref=e2367]
+                - button "7.894736842105263% 6" [ref=e2368]:
+                  - img "7.894736842105263%" [ref=e2370]
+                  - generic "6 sessions" [ref=e2371]: "6"
+                - button "Set as filter and go to recordings" [ref=e2372]:
+                  - img [ref=e2375]
+                - button "Set as filter and go to heatmaps" [ref=e2377]:
+                  - img [ref=e2380]
+              - generic [ref=e2382] [cursor=pointer]:
+                - button "com.linkedin.android" [ref=e2383]
+                - button "3.9473684210526314% 3" [ref=e2384]:
+                  - img "3.9473684210526314%" [ref=e2386]
+                  - generic "3 sessions" [ref=e2387]: "3"
+                - button "Set as filter and go to recordings" [ref=e2388]:
+                  - img [ref=e2391]
+                - button "Set as filter and go to heatmaps" [ref=e2393]:
+                  - img [ref=e2396]
+              - generic [ref=e2398] [cursor=pointer]:
+                - button "bivision.local" [ref=e2399]
+                - button "1.3157894736842104% 1" [ref=e2400]:
+                  - img "1.3157894736842104%" [ref=e2402]
+                  - generic "1 sessions" [ref=e2403]: "1"
+                - button "Set as filter and go to recordings" [ref=e2404]:
+                  - img [ref=e2407]
+                - button "Set as filter and go to heatmaps" [ref=e2409]:
+                  - img [ref=e2412]
+              - generic [ref=e2414] [cursor=pointer]:
+                - button "instagram.com" [ref=e2415]
+                - button "1.3157894736842104% 1" [ref=e2416]:
+                  - img "1.3157894736842104%" [ref=e2418]
+                  - generic "1 sessions" [ref=e2419]: "1"
+                - button "Set as filter and go to recordings" [ref=e2420]:
+                  - img [ref=e2423]
+                - button "Set as filter and go to heatmaps" [ref=e2425]:
+                  - img [ref=e2428]
+          - generic [ref=e1327]:
+            - button "Drag card" [ref=e1328]:
+              - img [ref=e1331]
+            - generic [ref=e1333]:
+              - tab "Browsers" [selected] [ref=e1336] [cursor=pointer]
+              - tab "Devices" [ref=e1339] [cursor=pointer]
+              - tab "Operating systems" [ref=e1342] [cursor=pointer]
+              - tab "Region" [ref=e1345] [cursor=pointer]
+            - generic [ref=e1346]:
+              - button [ref=e1347] [cursor=pointer]:
+                - img [ref=e1350]
+              - button "Options" [ref=e1352] [cursor=pointer]:
+                - generic [ref=e1354]: 
+            - generic [ref=e1478]:
+              - generic [ref=e2430]:
+                - generic:
+                  - img [ref=e2431]
+                  - generic:
+                    - img
+              - generic [ref=e2433] [cursor=pointer]:
+                - generic "Chrome" [ref=e2436]
+                - generic [ref=e2437]: 68.50%
+                - generic [ref=e2438]: 174 sessions
+                - button "Set as filter and go to recordings" [ref=e2440]:
+                  - img [ref=e2443]
+                - button "Set as filter and go to heatmaps" [ref=e2446]:
+                  - img [ref=e2449]
+                - generic "MobileSafari" [ref=e2453]
+                - generic [ref=e2454]: 10.24%
+                - generic [ref=e2455]: 26 sessions
+                - button "Set as filter and go to recordings" [ref=e2457]:
+                  - img [ref=e2460]
+                - button "Set as filter and go to heatmaps" [ref=e2463]:
+                  - img [ref=e2466]
+                - generic "Edge" [ref=e2470]
+                - generic [ref=e2471]: 8.27%
+                - generic [ref=e2472]: 21 sessions
+                - button "Set as filter and go to recordings" [ref=e2474]:
+                  - img [ref=e2477]
+                - button "Set as filter and go to heatmaps" [ref=e2480]:
+                  - img [ref=e2483]
+                - generic "FacebookApp" [ref=e2487]
+                - generic [ref=e2488]: 5.51%
+                - generic [ref=e2489]: 14 sessions
+                - button "Set as filter and go to recordings" [ref=e2491]:
+                  - img [ref=e2494]
+                - button "Set as filter and go to heatmaps" [ref=e2497]:
+                  - img [ref=e2500]
+                - generic "ChromeMobile" [ref=e2504]
+                - generic [ref=e2505]: 3.94%
+                - generic [ref=e2506]: 10 sessions
+                - button "Set as filter and go to recordings" [ref=e2508]:
+                  - img [ref=e2511]
+                - button "Set as filter and go to heatmaps" [ref=e2514]:
+                  - img [ref=e2517]
+                - generic "Other" [ref=e2521]:
+                  - text: Other
+                  - button "Collapsed" [ref=e2522]:
+                    - generic [ref=e2524]: 
+                - generic [ref=e2525]: 3.54%
+                - generic [ref=e2526]: 9 sessions
+          - generic [ref=e1535]:
+            - button "Drag card" [ref=e1536]:
+              - img [ref=e1539]
+            - generic [ref=e1541]:
+              - tab "URL performance" [selected] [ref=e1544] [cursor=pointer]
+              - tab "Performance overview" [ref=e1547] [cursor=pointer]
+            - button "Options" [ref=e1549] [cursor=pointer]:
+              - generic [ref=e1551]: 
+            - generic [ref=e1553]:
+              - 'button "Score: High to low" [ref=e2529] [cursor=pointer]':
+                - generic [ref=e2530]:
+                  - generic [ref=e2531]: 
+                  - generic [ref=e2533]: "Score: High to low"
+                  - generic [ref=e2534]: 
+              - generic [ref=e2535]:
+                - generic [ref=e2536] [cursor=pointer]:
+                  - text: https://bivision.ge/saas-products/bistock/
+                  - generic [ref=e2537]:
+                    - generic [ref=e2538]:
+                      - generic [ref=e2539]:
+                        - text: Score
+                        - generic [ref=e2540]:
+                          - generic [ref=e2541]: "90"
+                          - img [ref=e2543]
+                      - generic [ref=e2545]:
+                        - generic [ref=e2546]: LCP
+                        - generic [ref=e2547]: 1.4s
+                      - generic [ref=e2548]:
+                        - generic [ref=e2549]: INP
+                        - generic [ref=e2550]: 170ms
+                      - generic [ref=e2551]:
+                        - generic [ref=e2552]: CLS
+                        - generic [ref=e2553]: "0.012"
+                    - generic [ref=e2554]:
+                      - button "Set as filter and go to recordings" [ref=e2555]:
+                        - img [ref=e2558]
+                      - button "Set as filter and go to heatmaps" [ref=e2560]:
+                        - img [ref=e2563]
+                - generic [ref=e2565] [cursor=pointer]:
+                  - text: https://bivision.ge/
+                  - generic [ref=e2566]:
+                    - generic [ref=e2567]:
+                      - generic [ref=e2568]:
+                        - text: Score
+                        - generic [ref=e2569]:
+                          - generic [ref=e2570]: "82"
+                          - img [ref=e2572]
+                      - generic [ref=e2574]:
+                        - generic [ref=e2575]: LCP
+                        - generic [ref=e2576]: 3.5s
+                      - generic [ref=e2577]:
+                        - generic [ref=e2578]: INP
+                        - generic [ref=e2579]: 370ms
+                      - generic [ref=e2580]:
+                        - generic [ref=e2581]: CLS
+                        - generic [ref=e2582]: "0.037"
+                    - generic [ref=e2583]:
+                      - button "Set as filter and go to recordings" [ref=e2584]:
+                        - img [ref=e2587]
+                      - button "Set as filter and go to heatmaps" [ref=e2589]:
+                        - img [ref=e2592]
+                - generic [ref=e2594] [cursor=pointer]:
+                  - text: https://bivision.ge/blog/category/blog
+                  - generic [ref=e2595]:
+                    - generic [ref=e2596]:
+                      - generic [ref=e2597]:
+                        - text: Score
+                        - generic [ref=e2598]:
+                          - generic [ref=e2599]: "76"
+                          - img [ref=e2601]
+                      - generic [ref=e2603]:
+                        - generic [ref=e2604]: LCP
+                        - generic [ref=e2605]: 2.1s
+                      - generic [ref=e2606]:
+                        - generic [ref=e2607]: INP
+                        - generic [ref=e2608]: 140ms
+                      - generic [ref=e2609]:
+                        - generic [ref=e2610]: CLS
+                        - generic [ref=e2611]: "0.3"
+                    - generic [ref=e2612]:
+                      - button "Set as filter and go to recordings" [ref=e2613]:
+                        - img [ref=e2616]
+                      - button "Set as filter and go to heatmaps" [ref=e2618]:
+                        - img [ref=e2621]
+                - generic [ref=e2623] [cursor=pointer]:
+                  - text: https://bivision.ge/saas-products/bifinance/
+                  - generic [ref=e2624]:
+                    - generic [ref=e2625]:
+                      - generic [ref=e2626]:
+                        - text: Score
+                        - generic [ref=e2627]:
+                          - generic [ref=e2628]: "68"
+                          - img [ref=e2630]
+                      - generic [ref=e2632]:
+                        - generic [ref=e2633]: LCP
+                        - generic [ref=e2634]: 5.7s
+                      - generic [ref=e2635]:
+                        - generic [ref=e2636]: INP
+                        - generic [ref=e2637]: 170ms
+                      - generic [ref=e2638]:
+                        - generic [ref=e2639]: CLS
+                        - generic [ref=e2640]: "0.017"
+                    - generic [ref=e2641]:
+                      - button "Set as filter and go to recordings" [ref=e2642]:
+                        - img [ref=e2645]
+                      - button "Set as filter and go to heatmaps" [ref=e2647]:
+                        - img [ref=e2650]
+          - generic [ref=e1626]:
+            - button "Drag card" [ref=e1627]:
+              - img [ref=e1630]
+            - generic [ref=e1634]:
+              - heading "JavaScript errors" [level=2] [ref=e1635]
+              - img [ref=e1637]
+            - generic [ref=e1639]:
+              - button [ref=e1640] [cursor=pointer]:
+                - img [ref=e1643]
+              - button "Options" [ref=e1645] [cursor=pointer]:
+                - generic [ref=e1647]: 
+            - generic [ref=e1735]:
+              - generic [ref=e1736]:
+                - generic [ref=e1737]: Only show click errors
+                - generic [ref=e1738]:
+                  - switch "Only show click errors" [ref=e1739] [cursor=pointer]
+                  - generic [ref=e1741]: "Off"
+              - generic [ref=e1742]:
+                - generic:
+                  - img "Sessions with JavaScript errors" [ref=e1743]
+                  - generic:
+                    - img
+                - generic [ref=e2653]: 2.76%
+              - button "Recordings" [ref=e1744] [cursor=pointer]:
+                - generic [ref=e1745]:
+                  - img [ref=e1747]
+                  - generic [ref=e1750]: Recordings
+              - generic [ref=e1751]:
+                - generic [ref=e1753]: 22 total JavaScript errors
+                - generic [ref=e2654] [cursor=pointer]:
+                  - generic [ref=e2656]: 100%updateactivecard is not defined
+                  - button "Set as filter and go to recordings" [ref=e2660]:
+                    - img [ref=e2663]
+          - generic [ref=e1754]:
+            - button "Drag card" [ref=e1755]:
+              - img [ref=e1758]
+            - heading "Bot traffic" [level=2] [ref=e1763]
+            - button "Options" [ref=e1765] [cursor=pointer]:
+              - generic [ref=e1767]: 
+            - generic [ref=e1769]:
+              - img "zero state bruno" [ref=e1771]
+              - heading "No data available" [level=3] [ref=e1824]
+              - paragraph [ref=e2665]: Not enough traffic data, try extending the date range
+        - button "Hidden cards (1)" [ref=e1827] [cursor=pointer]:
+          - generic [ref=e1828]: 
+          - generic [ref=e1829]: Hidden cards (1)
+  - img [ref=e2666]

@@ -1,0 +1,244 @@
+[    4601ms] [WARNING] TypeError: Cannot read properties of undefined (reading 'load')
+    at runIntercept (https://rs.fullstory.com/rec/integrations?OrgId=ZHBMT&isInFrame=false&isNative=false:78:15)
+    at https://rs.fullstory.com/rec/integrations?OrgId=ZHBMT&isInFrame=false&isNative=false:104:5
+    at https://rs.fullstory.com/rec/integrations?OrgId=ZHBMT&isInFrame=false&isNative=false:109:3 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   10868ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://us12.admin.mailchimp.com/autolyse/index.php/twirp/mailchimp.i18n.v1.I18nService/GetTranslations:0
+[   12340ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://us12.admin.mailchimp.com/i/reports/summary/:0
+[   12827ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   13086ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15345ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15413ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17566ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17585ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17587ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17880ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17891ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17911ms] [ERROR] Failed to activate experiment reviews-vertical-launch-experiment: TypeError: Failed to fetch @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17913ms] [ERROR] Failed to activate experiment ha-x399-mc-assistant-fab-scale-experiment: TypeError: Failed to fetch @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17914ms] [ERROR] Partner verification data failed: TypeError: Failed to fetch @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17914ms] [INFO] delivery failed, adding to retry queue @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17916ms] [ERROR] Wix verification data failed: TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/74077.ba7eaeb349b0c47e.js:1:312051
+    at oL (https://us12.admin.mailchimp.com/release/dist/js-src/vendor.256c99b5f933c797.js:1:696162)
+    at iF (https://us12.admin.mailchimp.com/release/dist/js-src/vendor.256c99b5f933c797.js:1:725218)
+    at iN (https://us12.admin.mailchimp.com/release/dist/js-src/vendor.256c99b5f933c797.js:1:708028)
+    at r6 (https://us12.admin.mailchimp.com/release/dist/js-src/vendor.256c99b5f933c797.js:1:656914) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17917ms] [ERROR] Failed to activate experiment finops-trials-upgrade-pub: TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36345)
+    at l (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:30817)
+    at t (https://us12.admin.mailchimp.com/release/dist/js-src/71271.0eccb908f6934518.js:1:85662) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17917ms] [ERROR] Failed to activate experiment growth-x338-persistent-ftu-tasks-in-left-side-navigation: TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36345)
+    at l (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:30817)
+    at t (https://us12.admin.mailchimp.com/release/dist/js-src/71271.0eccb908f6934518.js:1:85662) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17919ms] [ERROR] Failed to activate experiment eee-11280-sms-templates-unified-gallery: TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36345)
+    at l (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:30817)
+    at t (https://us12.admin.mailchimp.com/release/dist/js-src/71271.0eccb908f6934518.js:1:85662) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17921ms] [ERROR] Failed to activate experiment growth-x349-feature-list-in-account-flyout: TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at e (https://edge.fullstory.com/s/fs.js:4:31202)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36345)
+    at l (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:30817) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17921ms] [ERROR] Failed to activate experiment growth-x250-sandbox: TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at e (https://edge.fullstory.com/s/fs.js:4:31202)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36345)
+    at l (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:30817) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17921ms] [ERROR] Failed to activate experiment multi-everything-msg-registrations-experiment: TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at e (https://edge.fullstory.com/s/fs.js:4:31202)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36345)
+    at l (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:30817) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   17922ms] [ERROR] TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at e (https://edge.fullstory.com/s/fs.js:4:31202)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36345)
+    at l (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:30817) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   22492ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   33131ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://us12.admin.mailchimp.com/autolyse/index.php/twirp/mailchimp.i18n.v1.I18nService/GetTranslations:0
+[   42328ms] [LOG] All core plugins started... @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   42348ms] [LOG] Plugins registered... @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   42350ms] [LOG] WebEvents: initing_WebEvents : {"url":"wss://eventinggateway.api.intuit.com/v1/webevents","config":"{\"enabled\":true,\"url\":\"wss://eventinggateway.api.intuit.com/v1/webevents\",\"connectionType\":\"WSS\",\"authType\":\"OAuth2\"}"} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   42351ms] [LOG] Application before-ready completed... @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   42367ms] [LOG] Application ready... @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   42370ms] [LOG] default delegate action handler  {typeName: webShellEvent.handle, category: webShellEvent, command: handle, payload: Object, context: Object} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   49979ms] [WARNING] TypeError: Cannot read properties of undefined (reading 'load')
+    at runIntercept (https://rs.fullstory.com/rec/integrations?OrgId=ZHBMT&isInFrame=false&isNative=false:78:15)
+    at https://rs.fullstory.com/rec/integrations?OrgId=ZHBMT&isInFrame=false&isNative=false:104:5
+    at https://rs.fullstory.com/rec/integrations?OrgId=ZHBMT&isInFrame=false&isNative=false:109:3 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   50004ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://us12.admin.mailchimp.com/audience/contact-table/lazy:0
+[   59127ms] TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36017)
+    at t.resolver (https://us12.admin.mailchimp.com/release/dist/js-src/80907.21fa6d80aeed0b45.js:1:25568)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/80907.21fa6d80aeed0b45.js:1:24649)
+    at b (https://us12.admin.mailchimp.com/release/dist/js-src/80907.21fa6d80aeed0b45.js:1:29695)
+[   59139ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://us12.admin.mailchimp.com/autolyse/index.php/twirp/mailchimp.i18n.v1.I18nService/GetTranslations:0
+[   59141ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://us12.admin.mailchimp.com/autolyse/index.php/twirp/mailchimp.humanassistance.entrypoints.CaseCategorizationService/Get:0
+[   59141ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://us12.admin.mailchimp.com/autolyse/index.php/twirp/mailchimp.appshell.v1.AnalyticsService/GetMeta:0
+[   59148ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   59151ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   59152ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   59154ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   59155ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   59171ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   69594ms] TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36345)
+    at l (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:30817)
+    at Object.o (https://us12.admin.mailchimp.com/release/dist/js-src/main.c56a59d9a16f335d.js:1:4436)
+[   92768ms] TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/ecs/ecs-tracking.94fd4f325e3f14f2.js:1:194332
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/ecs/ecs-tracking.94fd4f325e3f14f2.js:1:194471)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/ecs/ecs-tracking.94fd4f325e3f14f2.js:1:195233)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/ecs/ecs-tracking.94fd4f325e3f14f2.js:1:202186
+    at https://us12.admin.mailchimp.com/release/dist/js-src/ecs/ecs-tracking.94fd4f325e3f14f2.js:1:202824
+[   92870ms] [LOG] Shell - successfully initialized RUM module {msgProps: Object, appProps: null, context: Object, queued: true, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   92951ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://us12.admin.mailchimp.com/autolyse/index.php/twirp/mailchimp.i18n.v1.I18nService/GetTranslations:0
+[   92952ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   92992ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   92995ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93001ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93003ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93006ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93009ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93135ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react (required =18.3.1) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93139ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react-dom (required =18.3.1) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93142ms] [WARNING] Unsatisfied version 9.104.0 from ADKJSONP of shared singleton module @appfabric/web-shell-core/widgets/BaseWidget (required =9.43.1) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93143ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react (required =18.3.1) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93165ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93170ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93173ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93178ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93220ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react (required =18.2.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93220ms] [WARNING] Unsatisfied version 9.104.0 from ADKJSONP of shared singleton module @appfabric/web-shell-core/widgets/BaseWidget (required =3.6.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   93244ms] [ERROR] TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at c (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:40962)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:35585)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/4255.24a623a8f9ada4cf.js:2:36017)
+    at t.resolver (https://us12.admin.mailchimp.com/release/dist/js-src/80907.21fa6d80aeed0b45.js:1:25568)
+    at t.value (https://us12.admin.mailchimp.com/release/dist/js-src/80907.21fa6d80aeed0b45.js:1:24649)
+    at b (https://us12.admin.mailchimp.com/release/dist/js-src/80907.21fa6d80aeed0b45.js:1:29695) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94075ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react (required =18.3.1) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94077ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react-dom (required =18.3.1) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94108ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react (required ^18.2.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94108ms] [WARNING] Unsatisfied version 9.104.0 from ADKJSONP of shared singleton module @appfabric/web-shell-core/widgets/BaseWidget (required ^7.32.1) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94114ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required =3.7.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94544ms] [LOG] widget-load-end {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94571ms] [LOG] widget-mount {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94659ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required =4.7.2) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94707ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react (required =18.3.1) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94735ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required =4.7.2) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94751ms] [WARNING] Unsatisfied version 18.3.1 from vep-collab-smlk-ui of shared singleton module react/jsx-runtime (required =18.2.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94774ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required =4.7.2) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94777ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required =4.7.2) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94792ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required =4.7.2) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94799ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required =4.7.2) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94829ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required =4.7.2) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94847ms] [WARNING] Unsatisfied version 4.4.1 from ADKJSONP of shared singleton module @design-systems/theme (required ^4.7.10) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94852ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react-dom (required =18.2.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   94904ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://uxfabric.intuitcdn.net/marketing-ipd-tsa-widgets/b4358c1049ee69f4.woff2 @ https://us12.admin.mailchimp.com/audience/contacts/:0
+[   94914ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://uxfabric.intuitcdn.net/marketing-ipd-tsa-widgets/50360c9d627dcd59.woff2 @ https://us12.admin.mailchimp.com/audience/contacts/:0
+[   95024ms] [LOG] FAB Orchestrator has loaded {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95026ms] [LOG] User does not have DIWM or BizTax entitlement, skipping expert match {msgProps: null, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95042ms] [LOG] widget-first-display {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95047ms] [LOG] widget-ready {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95086ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95091ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95319ms] [LOG] widget-load-end {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95335ms] [LOG] widget-first-display {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95338ms] [LOG] widget-ready {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95360ms] [LOG] widget-mount {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95369ms] [LOG] widget-load-end {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95376ms] [LOG] widget-mount {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95777ms] [WARNING] module=Entitlements message=oihsAppAdapter.entitlements.getEntitlements is not implemented {msgProps: null, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95803ms] [LOG] widget-load-end {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95819ms] [LOG] widget-mount {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95830ms] [LOG] widget-load-end {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95879ms] [LOG] widget-mount {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95890ms] [LOG] widget-load-end {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95896ms] [LOG] widget-first-display {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95898ms] [LOG] widget-ready {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95905ms] [LOG] widget-mount {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95914ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react-dom (required ^18.2.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95973ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95975ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95977ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   95980ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   98154ms] [LOG] WebEvents: loading controller {} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   98155ms] [LOG] WebEvents: importing_and_initializing_pubsub_and_transport {} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   98158ms] [LOG] WebEvents: getting_transport_code {} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   98340ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   98395ms] [WARNING] Error during FP call {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   98408ms] [WARNING] Error during FP call {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0

@@ -1,0 +1,665 @@
+- generic [ref=e4]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e12]: Analytics
+      - button "Open the universal picker." [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]:
+          - generic [ref=e17]:
+            - generic [ref=e18]: All accounts
+            - img [ref=e19]: chevron_right
+            - generic [ref=e20]: Bivision
+          - generic [ref=e21]:
+            - generic [ref=e23]: Bivision
+            - img [ref=e24]: arrow_drop_down
+      - search [ref=e28]:
+        - img [ref=e29]: search
+        - textbox "Search" [ref=e31]:
+          - /placeholder: Try searching "Explorations"
+      - button "Switch products" [ref=e33] [cursor=pointer]:
+        - img [ref=e34]
+      - button "Ask Analytics Advisor" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]: button_magic
+      - button "Help entry menu" [ref=e43] [cursor=pointer]:
+        - img [ref=e44]: help
+      - button "Open the user account switcher panel." [ref=e48] [cursor=pointer]
+  - generic [ref=e58]:
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - navigation "Main pages" [ref=e63]:
+          - link "Home" [ref=e65] [cursor=pointer]:
+            - img [ref=e66]:
+              - img [ref=e67]
+            - generic [ref=e70]: Home
+          - link "Reports" [ref=e73] [cursor=pointer]:
+            - img [ref=e74]: insert_chart_filled
+            - generic [ref=e75]: Reports
+          - link "Explore" [ref=e77] [cursor=pointer]:
+            - img [ref=e78]: data_exploration
+            - generic [ref=e79]: Explore
+          - link "Advertising" [ref=e81] [cursor=pointer]:
+            - img [ref=e82]: ads_click
+            - generic [ref=e83]: Advertising
+        - navigation "Settings pages" [ref=e84]:
+          - link "Admin" [ref=e86] [cursor=pointer]:
+            - img [ref=e87]: settings_filled
+            - generic [ref=e88]: Admin
+      - generic [ref=e1371]:
+        - tree [ref=e1372]:
+          - treeitem "Reports snapshot" [level=1] [ref=e1373]:
+            - button "Reports snapshot" [ref=e1375] [cursor=pointer]:
+              - generic [ref=e1378]: Reports snapshot
+          - treeitem "Realtime overview" [level=1] [ref=e1381]:
+            - button "Realtime overview" [ref=e1383] [cursor=pointer]:
+              - generic [ref=e1386]: Realtime overview
+          - treeitem "Realtime pages" [level=1] [ref=e1389]:
+            - button "Realtime pages" [ref=e1391] [cursor=pointer]:
+              - generic [ref=e1394]: Realtime pages
+          - treeitem "Business objectives" [expanded] [level=1] [ref=e1397]:
+            - generic [ref=e1398]:
+              - separator [ref=e1399]
+              - button "Business objectives" [ref=e1400] [cursor=pointer]:
+                - generic [ref=e1403]:
+                  - generic [ref=e1404]: Business objectives
+                  - img [ref=e1405]: keyboard_arrow_up
+          - treeitem "Generate leads" [level=2] [ref=e1408]:
+            - button "Generate leads" [ref=e1410] [cursor=pointer]:
+              - generic [ref=e1412]:
+                - img [ref=e1413]: arrow_right
+                - generic [ref=e1414]: Generate leads
+          - treeitem "Drive sales" [level=2] [ref=e1417]:
+            - button "Drive sales" [ref=e1419] [cursor=pointer]:
+              - generic [ref=e1421]:
+                - img [ref=e1422]: arrow_right
+                - generic [ref=e1423]: Drive sales
+          - treeitem "Understand web and/or app traffic" [level=2] [ref=e1426]:
+            - button "Understand web and/or app traffic" [ref=e1428] [cursor=pointer]:
+              - generic [ref=e1430]:
+                - img [ref=e1431]: arrow_right
+                - generic [ref=e1432]: Understand web and/or app traffic
+          - treeitem "View user engagement & retention" [level=2] [ref=e1435]:
+            - button "View user engagement & retention" [ref=e1437] [cursor=pointer]:
+              - generic [ref=e1439]:
+                - img [ref=e1440]: arrow_right
+                - generic [ref=e1441]: View user engagement & retention
+          - treeitem "Life cycle" [expanded] [level=1] [ref=e1444]:
+            - generic [ref=e1445]:
+              - separator [ref=e1446]
+              - button "Life cycle" [ref=e1447] [cursor=pointer]:
+                - generic [ref=e1450]:
+                  - generic [ref=e1451]: Life cycle
+                  - img [ref=e1452]: keyboard_arrow_up
+          - treeitem "Acquisition" [level=2] [ref=e1455]:
+            - button "Acquisition" [ref=e1457] [cursor=pointer]:
+              - generic [ref=e1459]:
+                - img [ref=e1460]: arrow_right
+                - generic [ref=e1461]: Acquisition
+          - treeitem "Engagement" [level=2] [ref=e1464]:
+            - button "Engagement" [ref=e1466] [cursor=pointer]:
+              - generic [ref=e1468]:
+                - img [ref=e1469]: arrow_right
+                - generic [ref=e1470]: Engagement
+          - treeitem "Monetization" [level=2] [ref=e1473]:
+            - button "Monetization" [ref=e1475] [cursor=pointer]:
+              - generic [ref=e1477]:
+                - img [ref=e1478]: arrow_right
+                - generic [ref=e1479]: Monetization
+          - treeitem "Retention" [level=2] [ref=e1482]:
+            - button "Retention" [ref=e1484] [cursor=pointer]:
+              - generic [ref=e1487]: Retention
+          - treeitem "Search Console" [expanded] [level=1] [ref=e1490]:
+            - generic [ref=e1491]:
+              - separator [ref=e1492]
+              - button "Search Console" [ref=e1493] [cursor=pointer]:
+                - generic [ref=e1496]:
+                  - generic [ref=e1497]: Search Console
+                  - img [ref=e1498]: keyboard_arrow_up
+          - treeitem "Search Console" [expanded] [level=2] [ref=e1501]:
+            - button "Search Console" [ref=e1503] [cursor=pointer]:
+              - generic [ref=e1505]:
+                - img [ref=e1506]: arrow_drop_down
+                - generic [ref=e1507]: Search Console
+          - treeitem "Queries" [level=3] [ref=e1510]:
+            - button "Queries" [ref=e1512] [cursor=pointer]:
+              - generic [ref=e1515]: Queries
+          - treeitem "Google organic search traffic" [level=3] [ref=e1518]:
+            - button "Google organic search traffic" [ref=e1520] [cursor=pointer]:
+              - generic [ref=e1523]: Google organic search traffic
+          - treeitem "User" [expanded] [level=1] [ref=e1526]:
+            - generic [ref=e1527]:
+              - separator [ref=e1528]
+              - button "User" [ref=e1529] [cursor=pointer]:
+                - generic [ref=e1532]:
+                  - generic [ref=e1533]: User
+                  - img [ref=e1534]: keyboard_arrow_up
+          - treeitem "User attributes" [level=2] [ref=e1537]:
+            - button "User attributes" [ref=e1539] [cursor=pointer]:
+              - generic [ref=e1541]:
+                - img [ref=e1542]: arrow_right
+                - generic [ref=e1543]: User attributes
+          - treeitem "Tech" [level=2] [ref=e1546]:
+            - button "Tech" [ref=e1548] [cursor=pointer]:
+              - generic [ref=e1550]:
+                - img [ref=e1551]: arrow_right
+                - generic [ref=e1552]: Tech
+        - navigation "Other pages" [ref=e1555]:
+          - button "Library" [ref=e1557] [cursor=pointer]:
+            - generic [ref=e1559]:
+              - img [ref=e1561]: folder
+              - generic [ref=e1562]: Library
+        - separator [ref=e1565]
+      - button "Nav toggle" [expanded] [ref=e1567] [cursor=pointer]:
+        - img [ref=e1568]: keyboard_arrow_left
+    - generic [ref=e1570]:
+      - main [ref=e1571]:
+        - generic [ref=e1572]:
+          - generic [ref=e1575]:
+            - generic [ref=e1576]:
+              - generic [ref=e1577]:
+                - generic [ref=e1578]:
+                  - generic [ref=e1579]:
+                    - button "All Users" [ref=e1582]:
+                      - generic [ref=e1586]:
+                        - generic [ref=e1587]: A
+                        - generic [ref=e1588]: All Users
+                    - button "Add comparison" [ref=e1590] [cursor=pointer]:
+                      - generic [ref=e1591]: Add comparison
+                      - img [ref=e1592]: add
+                  - combobox "Open date range picker" [ref=e1596] [cursor=pointer]:
+                    - generic [ref=e1598]:
+                      - generic [ref=e1599]: Last 28 days
+                      - generic [ref=e1600]: Mar 9 - Apr 5, 2026
+                    - img [ref=e1601]: arrow_drop_down
+                - separator [ref=e1604]
+                - generic [ref=e1605]:
+                  - heading "Reports snapshot" [active] [level=1] [ref=e1609]:
+                    - button "Reports snapshot" [ref=e1610]
+                  - generic [ref=e1615]:
+                    - generic "View annotations" [ref=e1616]:
+                      - button "View annotations" [ref=e1617] [cursor=pointer]:
+                        - img [ref=e1619]:
+                          - img [ref=e1620]
+                    - generic "Edit comparisons" [ref=e1624]:
+                      - button "Edit comparisons" [ref=e1625] [cursor=pointer]:
+                        - img [ref=e1627]:
+                          - img [ref=e1628]
+                    - generic "Share this report" [ref=e1634]:
+                      - button "Share this report" [ref=e1635] [cursor=pointer]:
+                        - img [ref=e1637]: share
+                    - generic "Insights" [ref=e1640]:
+                      - button "Insights" [ref=e1641] [cursor=pointer]:
+                        - img [ref=e1643]:
+                          - img [ref=e1644]
+                    - generic "Customize report" [ref=e1651]:
+                      - button "Customize report" [ref=e1652] [cursor=pointer]:
+                        - img [ref=e1654]: edit
+              - text: add arrow_drop_down share edit
+            - generic [ref=e1660]:
+              - generic [ref=e1671]:
+                - generic [ref=e1672]:
+                  - generic [ref=e1673]:
+                    - generic [ref=e1675]:
+                      - generic [ref=e1676]: Active users
+                      - generic [ref=e1677]: Active users
+                    - generic "262" [ref=e1680]:
+                      - generic [ref=e1683]:
+                        - generic [ref=e1684]: "262"
+                        - generic [ref=e1685]: "262"
+                  - separator [ref=e1686]
+                - generic [ref=e1687]:
+                  - generic [ref=e1688]:
+                    - generic [ref=e1690]:
+                      - generic [ref=e1691]: New users
+                      - generic [ref=e1692]: New users
+                    - generic "254" [ref=e1695]:
+                      - generic [ref=e1698]:
+                        - generic [ref=e1699]: "254"
+                        - generic [ref=e1700]: "254"
+                  - separator [ref=e1701]
+                - generic [ref=e1702]:
+                  - generic [ref=e1703]:
+                    - generic [ref=e1705]:
+                      - generic [ref=e1706]: Average engagement time per active user
+                      - generic [ref=e1707]: Average engagement time per active user
+                    - generic "55s" [ref=e1710]:
+                      - generic [ref=e1713]:
+                        - generic [ref=e1714]: 55s
+                        - generic [ref=e1715]: 55s
+                  - separator [ref=e1716]
+                - generic [ref=e1718]:
+                  - generic [ref=e1720]:
+                    - generic [ref=e1721]: Event count
+                    - generic [ref=e1722]: Event count
+                  - generic "2.2K" [ref=e1725]:
+                    - generic [ref=e1728]:
+                      - generic [ref=e1729]: 2.2K
+                      - generic [ref=e1730]: 2.2K
+              - generic [ref=e1731]:
+                - generic [ref=e1734]:
+                  - generic:
+                    - generic [ref=e1738]:
+                      - generic [ref=e1739]: Top pages/screens
+                      - button "This card uses 100% of available data. Click to view more information." [ref=e1743] [cursor=pointer]:
+                        - img [ref=e1744]: check_circle
+                        - generic [ref=e1745]: This card uses 100% of available data. Click to view more information.
+                        - img [ref=e1746]: arrow_drop_down
+                    - generic [ref=e1753]:
+                      - table [ref=e1754]:
+                        - row "Page title and screen class Views Active users Event count Bounce rate" [ref=e1755]:
+                          - columnheader "Page title and screen class" [ref=e1756]:
+                            - button "Page title and screen class" [ref=e1757]
+                          - columnheader "Views" [ref=e1758]:
+                            - button "Views" [ref=e1759]
+                          - columnheader "Active users" [ref=e1760]:
+                            - button "Active users" [ref=e1761]
+                          - columnheader "Event count" [ref=e1762]:
+                            - button "Event count" [ref=e1763]
+                          - columnheader "Bounce rate" [ref=e1764]:
+                            - button "Bounce rate" [ref=e1765]
+                        - row "დაიწყეთ მონაცემებით მართვა დღესვე - Bivision 333 163 1.1K 53.3%" [ref=e1766]:
+                          - cell "დაიწყეთ მონაცემებით მართვა დღესვე - Bivision" [ref=e1767]
+                          - cell "333" [ref=e1768]
+                          - cell "163" [ref=e1769]
+                          - cell "1.1K" [ref=e1770]
+                          - cell "53.3%" [ref=e1771]
+                        - row "პარტნიორები - Bivision 120 30 268 7.5%" [ref=e1772]:
+                          - cell "პარტნიორები - Bivision" [ref=e1773]
+                          - cell "120" [ref=e1774]
+                          - cell "30" [ref=e1775]
+                          - cell "268" [ref=e1776]
+                          - cell "7.5%" [ref=e1777]
+                        - row "BiFinance - ავტომატიზებული ფინანსური რეპორტინგი 75 59 256 31.6%" [ref=e1778]:
+                          - cell "BiFinance - ავტომატიზებული ფინანსური რეპორტინგი" [ref=e1779]
+                          - cell "75" [ref=e1780]
+                          - cell "59" [ref=e1781]
+                          - cell "256" [ref=e1782]
+                          - cell "31.6%" [ref=e1783]
+                        - row "Balance და Bivison პარტნიორობა 61 24 147 41.3%" [ref=e1784]:
+                          - cell "Balance და Bivison პარტნიორობა" [ref=e1785]
+                          - cell "61" [ref=e1786]
+                          - cell "24" [ref=e1787]
+                          - cell "147" [ref=e1788]
+                          - cell "41.3%" [ref=e1789]
+                        - row "Page Not Found - Bivision 31 26 103 70.0%" [ref=e1790]:
+                          - cell "Page Not Found - Bivision" [ref=e1791]
+                          - cell "31" [ref=e1792]
+                          - cell "26" [ref=e1793]
+                          - cell "103" [ref=e1794]
+                          - cell "70.0%" [ref=e1795]
+                        - row "BiRetail - გაყიდვების ანალიტიკა - 20 13 46 15.0%" [ref=e1796]:
+                          - cell "BiRetail - გაყიდვების ანალიტიკა -" [ref=e1797]
+                          - cell "20" [ref=e1798]
+                          - cell "13" [ref=e1799]
+                          - cell "46" [ref=e1800]
+                          - cell "15.0%" [ref=e1801]
+                        - row "ICR ტრეიდი - Bivision ანალიტიკა 13 9 35 16.7%" [ref=e1802]:
+                          - cell "ICR ტრეიდი - Bivision ანალიტიკა" [ref=e1803]
+                          - cell "13" [ref=e1804]
+                          - cell "9" [ref=e1805]
+                          - cell "35" [ref=e1806]
+                          - cell "16.7%" [ref=e1807]
+                      - table:
+                        - row:
+                          - columnheader
+                          - columnheader
+                          - columnheader
+                          - columnheader
+                          - columnheader
+                        - row:
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                        - row:
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                        - row:
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                        - row:
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                        - row:
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                        - row:
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                        - row:
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                          - cell
+                - button "View pages and screens" [ref=e1810] [cursor=pointer]:
+                  - generic [ref=e1812]: View pages and screens
+                  - img [ref=e1813]: arrow_forward
+              - generic [ref=e1819]:
+                - generic:
+                  - generic [ref=e1823]:
+                    - generic [ref=e1824]:
+                      - generic "Active users" [ref=e1825]:
+                        - button "Active users" [ref=e1826]
+                      - text: by
+                      - generic "First user source / medium" [ref=e1827]:
+                        - button "First user source / medium" [ref=e1828]
+                    - button "This card uses 100% of available data. Click to view more information." [ref=e1832] [cursor=pointer]:
+                      - img [ref=e1833]: check_circle
+                      - generic [ref=e1834]: This card uses 100% of available data. Click to view more information.
+                      - img [ref=e1835]: arrow_drop_down
+                  - generic [ref=e1842]:
+                    - table [ref=e1843]:
+                      - row "First user source / medium Active users" [ref=e1844]:
+                        - columnheader "First user source / medium" [ref=e1845]:
+                          - button "First user source / medium" [ref=e1846]
+                        - columnheader "Active users" [ref=e1847]:
+                          - button "Active users" [ref=e1848]
+                      - row "(direct) / (none) 211" [ref=e1849]:
+                        - cell "(direct) / (none)" [ref=e1850]
+                        - cell "211" [ref=e1851]
+                      - row "google / organic 34" [ref=e1852]:
+                        - cell "google / organic" [ref=e1853]
+                        - cell "34" [ref=e1854]
+                      - row "m.facebook.com / referral 8" [ref=e1855]:
+                        - cell "m.facebook.com / referral" [ref=e1856]
+                        - cell "8" [ref=e1857]
+                      - row "bihub.ge / referral 3" [ref=e1858]:
+                        - cell "bihub.ge / referral" [ref=e1859]
+                        - cell "3" [ref=e1860]
+                      - row "facebook.com / referral 3" [ref=e1861]:
+                        - cell "facebook.com / referral" [ref=e1862]
+                        - cell "3" [ref=e1863]
+                      - row "l.facebook.com / referral 2" [ref=e1864]:
+                        - cell "l.facebook.com / referral" [ref=e1865]
+                        - cell "2" [ref=e1866]
+                      - row "linkedin / paid_social 1" [ref=e1867]:
+                        - cell "linkedin / paid_social" [ref=e1868]
+                        - cell "1" [ref=e1869]
+                    - table:
+                      - row:
+                        - columnheader
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+              - generic [ref=e1873]:
+                - generic:
+                  - generic [ref=e1877]:
+                    - generic [ref=e1878]:
+                      - generic "Sessions" [ref=e1879]:
+                        - button "Sessions" [ref=e1880]
+                      - text: by
+                      - generic "Session source / medium" [ref=e1881]:
+                        - button "Session source / medium" [ref=e1882]
+                    - button "This card uses 100% of available data. Click to view more information." [ref=e1886] [cursor=pointer]:
+                      - img [ref=e1887]: check_circle
+                      - generic [ref=e1888]: This card uses 100% of available data. Click to view more information.
+                      - img [ref=e1889]: arrow_drop_down
+                  - generic [ref=e1896]:
+                    - table [ref=e1897]:
+                      - row "Session source / medium Sessions" [ref=e1898]:
+                        - columnheader "Session source / medium" [ref=e1899]:
+                          - button "Session source / medium" [ref=e1900]
+                        - columnheader "Sessions" [ref=e1901]:
+                          - button "Sessions" [ref=e1902]
+                      - row "(direct) / (none) 284" [ref=e1903]:
+                        - cell "(direct) / (none)" [ref=e1904]
+                        - cell "284" [ref=e1905]
+                      - row "google / organic 64" [ref=e1906]:
+                        - cell "google / organic" [ref=e1907]
+                        - cell "64" [ref=e1908]
+                      - row "l.facebook.com / referral 21" [ref=e1909]:
+                        - cell "l.facebook.com / referral" [ref=e1910]
+                        - cell "21" [ref=e1911]
+                      - row "search.google.com / referral 11" [ref=e1912]:
+                        - cell "search.google.com / referral" [ref=e1913]
+                        - cell "11" [ref=e1914]
+                      - row "m.facebook.com / referral 8" [ref=e1915]:
+                        - cell "m.facebook.com / referral" [ref=e1916]
+                        - cell "8" [ref=e1917]
+                      - row "linkedin / paid_social 7" [ref=e1918]:
+                        - cell "linkedin / paid_social" [ref=e1919]
+                        - cell "7" [ref=e1920]
+                      - row "bihub.ge / referral 4" [ref=e1921]:
+                        - cell "bihub.ge / referral" [ref=e1922]
+                        - cell "4" [ref=e1923]
+                    - table:
+                      - row:
+                        - columnheader
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+                      - row:
+                        - cell
+              - generic [ref=e1927]:
+                - generic:
+                  - generic [ref=e1931]:
+                    - generic [ref=e1932]: New vs Returning users
+                    - button "This card uses 100% of available data. Click to view more information." [ref=e1936] [cursor=pointer]:
+                      - img [ref=e1937]: check_circle
+                      - generic [ref=e1938]: This card uses 100% of available data. Click to view more information.
+                      - img [ref=e1939]: arrow_drop_down
+                  - img [ref=e1945]:
+                    - generic [ref=e1946]:
+                      - generic [ref=e1950]:
+                        - generic [ref=e1952]: 15Mar
+                        - generic [ref=e1954]: "22"
+                        - generic [ref=e1956]: "29"
+                        - generic [ref=e1958]: 05Apr
+                      - generic [ref=e1959]:
+                        - generic [ref=e1961]: "0"
+                        - generic [ref=e1963]: "10"
+                        - generic [ref=e1965]: "20"
+                        - generic [ref=e1967]: "30"
+                        - generic [ref=e1969]: "40"
+                        - generic [ref=e1971]: "50"
+                    - list [ref=e2008]:
+                      - listitem [ref=e2009]:
+                        - generic [ref=e2011]: new
+                        - button "Highlight new line" [pressed] [ref=e2012] [cursor=pointer]
+                      - listitem [ref=e2013]:
+                        - generic [ref=e2015]: returning
+                        - button "Highlight returning line" [pressed] [ref=e2016] [cursor=pointer]
+              - generic [ref=e2017]:
+                - generic [ref=e2020]:
+                  - generic:
+                    - generic [ref=e2024]:
+                      - generic [ref=e2025]:
+                        - generic "Key events" [ref=e2026]:
+                          - combobox "Metrics" [ref=e2027]:
+                            - generic [ref=e2028] [cursor=pointer]:
+                              - generic [ref=e2030]: Key events
+                              - img [ref=e2033]
+                        - text: by
+                        - generic "Platform" [ref=e2035]:
+                          - button "Platform" [ref=e2036]
+                      - button "This card uses 100% of available data. Click to view more information." [ref=e2040] [cursor=pointer]:
+                        - img [ref=e2041]: check_circle
+                        - generic [ref=e2042]: This card uses 100% of available data. Click to view more information.
+                        - img [ref=e2043]: arrow_drop_down
+                    - img [ref=e2048]:
+                      - generic "Key events web, 6 (100%)" [ref=e2051]
+                    - generic "web 100.0%" [ref=e2060]:
+                      - generic [ref=e2063]: web
+                      - generic [ref=e2067]: 100.0%
+                - button "View tech details" [ref=e2070] [cursor=pointer]:
+                  - generic [ref=e2072]: View tech details
+                  - img [ref=e2073]: arrow_forward
+              - generic [ref=e2076]:
+                - generic [ref=e2083]:
+                  - generic [ref=e2084]:
+                    - img [ref=e2085]:
+                      - img [ref=e2086]
+                    - text: Insights
+                  - generic [ref=e2092]:
+                    - generic [ref=e2093]: Your Insights will appear here soon.
+                    - generic [ref=e2094]:
+                      - text: In the meantime, you can create new custom insights to monitor your most important metrics.
+                      - link "Learn more about Custom Insights" [ref=e2095] [cursor=pointer]:
+                        - /url: https://support.google.com/analytics/answer/9443595?hl=en_US&utm_id=ad#delay
+                        - text: Learn more
+                    - button "Create" [ref=e2096] [cursor=pointer]:
+                      - generic [ref=e2097]: Create
+                - button "View all insights" [ref=e2102] [cursor=pointer]:
+                  - generic [ref=e2104]: View all insights
+                  - img [ref=e2105]: arrow_forward
+              - generic [ref=e2108]:
+                - generic [ref=e2111]:
+                  - generic:
+                    - generic [ref=e2115]:
+                      - generic [ref=e2116]:
+                        - generic "Active users" [ref=e2117]:
+                          - combobox "Metrics" [ref=e2118]:
+                            - generic [ref=e2119] [cursor=pointer]:
+                              - generic [ref=e2121]: Active users
+                              - img [ref=e2124]
+                        - text: by
+                        - generic "City" [ref=e2126]:
+                          - combobox "Dimensions" [ref=e2127]:
+                            - generic [ref=e2128] [cursor=pointer]:
+                              - generic [ref=e2130]: City
+                              - img [ref=e2133]
+                      - button "This card uses 100% of available data. Click to view more information." [ref=e2138] [cursor=pointer]:
+                        - img [ref=e2139]: check_circle
+                        - generic [ref=e2140]: This card uses 100% of available data. Click to view more information.
+                        - img [ref=e2141]: arrow_drop_down
+                    - generic [ref=e2148]:
+                      - table [ref=e2149]:
+                        - row "City Active users" [ref=e2150]:
+                          - columnheader "City" [ref=e2151]:
+                            - button "City" [ref=e2152]
+                          - columnheader "Active users" [ref=e2153]:
+                            - button "Active users" [ref=e2154]
+                        - row "Tbilisi 104" [ref=e2155]:
+                          - cell "Tbilisi" [ref=e2156]
+                          - cell "104" [ref=e2157]
+                        - row "Singapore 36" [ref=e2158]:
+                          - cell "Singapore" [ref=e2159]
+                          - cell "36" [ref=e2160]
+                        - row "Boardman 13" [ref=e2161]:
+                          - cell "Boardman" [ref=e2162]
+                          - cell "13" [ref=e2163]
+                        - row "Dublin 10" [ref=e2164]:
+                          - cell "Dublin" [ref=e2165]
+                          - cell "10" [ref=e2166]
+                        - row "Amsterdam 7" [ref=e2167]:
+                          - cell "Amsterdam" [ref=e2168]
+                          - cell "7" [ref=e2169]
+                        - row "Moscow 4" [ref=e2170]:
+                          - cell "Moscow" [ref=e2171]
+                          - cell "4" [ref=e2172]
+                        - row "Ashburn 3" [ref=e2173]:
+                          - cell "Ashburn" [ref=e2174]
+                          - cell "3" [ref=e2175]
+                      - table:
+                        - row:
+                          - columnheader
+                        - row:
+                          - cell
+                        - row:
+                          - cell
+                        - row:
+                          - cell
+                        - row:
+                          - cell
+                        - row:
+                          - cell
+                        - row:
+                          - cell
+                        - row:
+                          - cell
+                - button "View cities" [ref=e2178] [cursor=pointer]:
+                  - generic [ref=e2180]: View cities
+                  - img [ref=e2181]: arrow_forward
+              - generic [ref=e2184]:
+                - generic [ref=e2187]:
+                  - generic:
+                    - generic [ref=e2191]:
+                      - generic [ref=e2192]:
+                        - generic "Active users" [ref=e2193]:
+                          - combobox "Metrics" [ref=e2194]:
+                            - generic [ref=e2195] [cursor=pointer]:
+                              - generic [ref=e2197]: Active users
+                              - img [ref=e2200]
+                        - text: by
+                        - generic "Audience name" [ref=e2202]:
+                          - button "Audience name" [ref=e2203]
+                      - button "This card uses 100% of available data. Click to view more information." [ref=e2207] [cursor=pointer]:
+                        - img [ref=e2208]: check_circle
+                        - generic [ref=e2209]: This card uses 100% of available data. Click to view more information.
+                        - img [ref=e2210]: arrow_drop_down
+                    - generic [ref=e2217]:
+                      - table [ref=e2218]:
+                        - row "Audience name Active users" [ref=e2219]:
+                          - columnheader "Audience name" [ref=e2220]:
+                            - button "Audience name" [ref=e2221]
+                          - columnheader "Active users" [ref=e2222]:
+                            - button "Active users" [ref=e2223]
+                        - row "Press enter to drill down" [ref=e2224]:
+                          - cell "All Users" [ref=e2225]
+                          - cell "262" [ref=e2226]
+                        - row "Press enter to drill down" [ref=e2227]:
+                          - cell "Recently active users" [ref=e2228]
+                          - cell "124" [ref=e2229]
+                      - table:
+                        - row:
+                          - columnheader
+                        - row:
+                          - cell
+                        - row:
+                          - cell
+                - button "View audiences" [ref=e2232] [cursor=pointer]:
+                  - generic [ref=e2234]: View audiences
+                  - img [ref=e2235]: arrow_forward
+          - generic [ref=e2239]:
+            - text: © 2026 Google |
+            - link "Analytics home" [ref=e2240] [cursor=pointer]:
+              - /url: https://www.google.com/analytics/?hl=en-US
+            - text: "|"
+            - link "Terms of Service" [ref=e2241] [cursor=pointer]:
+              - /url: https://www.google.com/analytics/tos.html?hl=en-US
+            - text: "|"
+            - link "Privacy Policy" [ref=e2242] [cursor=pointer]:
+              - /url: https://www.google.com/policies/privacy/?hl=en-US
+            - text: "|"
+            - button "Send feedback" [ref=e2243] [cursor=pointer]:
+              - img [ref=e2244]: feedback
+              - generic [ref=e2245]: Send feedback
+      - generic:
+        - complementary
+    - generic:
+      - button "Open context menu"

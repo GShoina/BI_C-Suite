@@ -1,0 +1,316 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - button "Main menu" [ref=e7] [cursor=pointer]:
+          - img [ref=e8]
+        - link "Google Search Console" [ref=e12] [cursor=pointer]:
+          - /url: ./search-console?resource_id=https%3A%2F%2Fbivision.ge%2F
+          - img [ref=e13]
+      - generic [ref=e14]:
+        - search [ref=e16]:
+          - generic [ref=e22]:
+            - textbox [disabled] [ref=e23]: Inspect any URL in "https://bivision.ge/"
+            - combobox "Inspect any URL in https://bivision.ge/" [ref=e24]
+          - button "Search" [ref=e25] [cursor=pointer]:
+            - img [ref=e26]
+        - generic [ref=e29]:
+          - generic [ref=e31]:
+            - button "Help" [ref=e33] [cursor=pointer]:
+              - generic [ref=e36]: 
+            - button "User settings" [ref=e38] [cursor=pointer]:
+              - img [ref=e41]
+          - 'button "Unread messages: 30" [ref=e45] [cursor=pointer]':
+            - generic [ref=e47]:
+              - generic [ref=e48]: 
+              - generic [ref=e50]: "30"
+      - generic [ref=e52]:
+        - button "Google apps" [ref=e56] [cursor=pointer]:
+          - img [ref=e57]
+        - 'button "Google Account: Gela Shonia (gela.shonia@bivision.ge)" [ref=e62] [cursor=pointer]':
+          - img [ref=e64]
+  - dialog "navigational drawer" [ref=e68]:
+    - navigation "Primary" [ref=e71]:
+      - button "Search property" [ref=e75] [cursor=pointer]:
+        - img [ref=e77]
+        - combobox "https://bivision.ge/" [ref=e84]
+        - generic [ref=e85]: 
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - link "Overview" [ref=e90] [cursor=pointer]:
+              - /url: ./search-console?resource_id=https%3A%2F%2Fbivision.ge%2F
+              - generic [ref=e92]: home
+              - generic [ref=e94]: Overview
+            - link "Insights" [ref=e97] [cursor=pointer]:
+              - /url: ./search-console/performance/insights?resource_id=https%3A%2F%2Fbivision.ge%2F
+              - generic [ref=e99]: lightbulb_2
+              - generic [ref=e101]: Insights
+            - link "Performance" [ref=e104] [cursor=pointer]:
+              - /url: ./search-console/performance/search-analytics?resource_id=https%3A%2F%2Fbivision.ge%2F
+              - generic [ref=e106]: trending_up
+              - generic [ref=e108]: Performance
+            - button "URL inspection" [ref=e111] [cursor=pointer]:
+              - generic [ref=e113]: search
+              - generic [ref=e115]: URL inspection
+          - generic [ref=e119]:
+            - button "Indexing report section" [expanded] [ref=e120] [cursor=pointer]:
+              - generic [ref=e121]:
+                - generic [ref=e124]: Indexing
+                - img [ref=e128]
+            - generic [ref=e133]:
+              - link "Pages" [ref=e135] [cursor=pointer]:
+                - /url: ./search-console/index?resource_id=https%3A%2F%2Fbivision.ge%2F
+                - generic [ref=e137]: file_copy
+                - generic [ref=e139]: Pages
+              - link "Sitemaps" [ref=e142] [cursor=pointer]:
+                - /url: ./search-console/sitemaps?resource_id=https%3A%2F%2Fbivision.ge%2F
+                - generic [ref=e144]: account_tree
+                - generic [ref=e146]: Sitemaps
+              - link "Removals" [ref=e149] [cursor=pointer]:
+                - /url: ./search-console/removals?resource_id=https%3A%2F%2Fbivision.ge%2F
+                - generic [ref=e151]: visibility_off
+                - generic [ref=e153]: Removals
+          - generic [ref=e157]:
+            - button "Experience report section" [expanded] [ref=e158] [cursor=pointer]:
+              - generic [ref=e159]:
+                - generic [ref=e162]: Experience
+                - img [ref=e166]
+            - generic [ref=e171]:
+              - link "Core Web Vitals" [ref=e173] [cursor=pointer]:
+                - /url: ./search-console/core-web-vitals?resource_id=https%3A%2F%2Fbivision.ge%2F
+                - generic [ref=e175]: speed
+                - generic [ref=e177]: Core Web Vitals
+              - link "HTTPS" [ref=e180] [cursor=pointer]:
+                - /url: ./search-console/https?resource_id=https%3A%2F%2Fbivision.ge%2F
+                - generic [ref=e182]: lock
+                - generic [ref=e184]: HTTPS
+          - generic [ref=e188]:
+            - button "Enhancements report section" [expanded] [ref=e189] [cursor=pointer]:
+              - generic [ref=e190]:
+                - generic [ref=e193]: Enhancements
+                - img [ref=e197]
+            - generic [ref=e202]:
+              - link "Breadcrumbs" [ref=e204] [cursor=pointer]:
+                - /url: ./search-console/r/breadcrumbs?resource_id=https%3A%2F%2Fbivision.ge%2F
+                - generic [ref=e206]: layers
+                - generic [ref=e208]: Breadcrumbs
+              - link "FAQ" [ref=e211] [cursor=pointer]:
+                - /url: ./search-console/r/faq?resource_id=https%3A%2F%2Fbivision.ge%2F
+                - generic [ref=e213]: layers
+                - generic [ref=e215]: FAQ
+          - button "Security & Manual Actions report section" [ref=e220] [cursor=pointer]:
+            - generic [ref=e221]:
+              - generic [ref=e224]: Security & Manual Actions
+              - img [ref=e228]
+          - generic [ref=e230]:
+            - link "Links report" [ref=e232] [cursor=pointer]:
+              - /url: ./search-console/links?resource_id=https%3A%2F%2Fbivision.ge%2F
+              - generic [ref=e234]: link_2
+              - generic [ref=e236]: Links
+            - link "Achievements" [ref=e239] [cursor=pointer]:
+              - /url: ./search-console/achievements?resource_id=https%3A%2F%2Fbivision.ge%2F
+              - generic [ref=e241]: trophy
+              - generic [ref=e243]: Achievements
+            - link "Settings" [ref=e246] [cursor=pointer]:
+              - /url: ./search-console/settings?resource_id=https%3A%2F%2Fbivision.ge%2F
+              - generic [ref=e248]: settings
+              - generic [ref=e250]: Settings
+        - generic [ref=e252]:
+          - generic [ref=e254]:
+            - button "Submit feedback" [ref=e256] [cursor=pointer]:
+              - generic [ref=e258]: feedback
+              - generic [ref=e260]: Submit feedback
+            - button "About Search Console" [ref=e263] [cursor=pointer]:
+              - generic [ref=e265]: info
+              - generic [ref=e267]: About Search Console
+          - generic [ref=e271]:
+            - link "Privacy" [ref=e272] [cursor=pointer]:
+              - /url: https://myaccount.google.com/privacypolicy?hl=en
+            - link "Terms" [ref=e273] [cursor=pointer]:
+              - /url: https://myaccount.google.com/termsofservice?hl=en
+  - generic [ref=e275]:
+    - navigation "Breadcrumbs" [ref=e280]:
+      - heading "Overview" [level=1] [ref=e283]
+    - main [ref=e287]:
+      - generic [ref=e288]:
+        - generic [ref=e293]:
+          - generic [ref=e294]:
+            - generic [ref=e295]: lightbulb_outline
+            - generic [ref=e296]: Get insights into your site's Search performance
+          - generic [ref=e299]:
+            - generic [ref=e301]: chevron_right
+            - generic [ref=e302]: Explore your insights
+            - link "Explore your insights" [ref=e303] [cursor=pointer]:
+              - /url: ./search-console/performance/insights?resource_id=https%3A%2F%2Fbivision.ge%2F
+        - generic [ref=e305]:
+          - generic [ref=e306]:
+            - generic [ref=e307]: Performance
+            - generic [ref=e310]:
+              - generic [ref=e312]: chevron_right
+              - generic [ref=e313]: Full report
+              - link "Full report" [ref=e314] [cursor=pointer]:
+                - /url: ./search-console/performance/search-analytics?resource_id=https%3A%2F%2Fbivision.ge%2F
+          - generic [ref=e317]:
+            - generic [ref=e322]: 3,935 total web search clicks
+            - img [ref=e326]:
+              - generic [ref=e327]:
+                - generic [ref=e328]:
+                  - generic [ref=e330]: 1/5/26
+                  - generic [ref=e332]: 1/23/26
+                  - generic [ref=e334]: 2/10/26
+                  - generic [ref=e336]: 2/28/26
+                  - generic [ref=e338]: 3/18/26
+                - generic [ref=e339]:
+                  - generic [ref=e341]: 3K
+                  - generic [ref=e343]: 2K
+                  - generic [ref=e345]: 1K
+                  - generic [ref=e347]: "0"
+        - generic [ref=e352]:
+          - generic [ref=e353]:
+            - generic [ref=e354]:
+              - generic [ref=e355]: Recommendations
+              - button "null" [ref=e358] [cursor=pointer]:
+                - generic [ref=e359]: 
+            - button "Send feedback" [ref=e361] [cursor=pointer]:
+              - generic [ref=e364]: feedback
+              - generic [ref=e365]: Send feedback
+          - generic [ref=e367]:
+            - generic [ref=e368]:
+              - generic [ref=e369]:
+                - generic [ref=e370]: lightbulb
+                - generic [ref=e371]: A page recently got fewer impressions than usual
+              - generic [ref=e372]:
+                - text: Check this page's performance to investigate further
+                - generic [ref=e373]:
+                  - generic [ref=e374]: https://bivision.ge/
+                  - generic [ref=e375]:
+                    - generic [ref=e376]: arrow_downward
+                    - generic [ref=e377]: 100%
+            - generic [ref=e378]:
+              - generic [ref=e380] [cursor=pointer]:
+                - generic [ref=e381]: Check page performance
+                - link "Check page performance" [ref=e382]:
+                  - /url: ./search-console/performance/search-analytics?resource_id=https%3A%2F%2Fbivision.ge%2F&page=%21https%3A%2F%2Fbivision.ge%2F&start_date=20260323&end_date=20260329&compare_start_date=20260316&compare_end_date=20260322&metrics=IMPRESSIONS
+              - generic [ref=e383]:
+                - button "Leave positive feedback" [ref=e384] [cursor=pointer]:
+                  - generic [ref=e386]: thumb_up_filled
+                  - generic [ref=e388]: thumb_up
+                - button "Leave negative feedback" [ref=e390] [cursor=pointer]:
+                  - generic [ref=e392]: thumb_down_filled
+                  - generic [ref=e394]: thumb_down
+        - generic [ref=e397]:
+          - generic [ref=e398]:
+            - generic [ref=e399]: Indexing
+            - generic [ref=e402]:
+              - generic [ref=e404]: chevron_right
+              - generic [ref=e405]: Full report
+              - link "Full report" [ref=e406] [cursor=pointer]:
+                - /url: ./search-console/index?resource_id=https%3A%2F%2Fbivision.ge%2F
+          - generic [ref=e409]:
+            - generic [ref=e411]:
+              - generic [ref=e414]: 558 not indexed pages
+              - generic [ref=e417]: 38 indexed pages
+            - img [ref=e421]:
+              - generic [ref=e422]:
+                - generic [ref=e423]:
+                  - generic [ref=e425]: 1/6/26
+                  - generic [ref=e427]: 1/23/26
+                  - generic [ref=e429]: 2/9/26
+                  - generic [ref=e431]: 2/26/26
+                  - generic [ref=e433]: 3/15/26
+                - generic [ref=e434]:
+                  - generic [ref=e436]: "750"
+                  - generic [ref=e438]: "500"
+                  - generic [ref=e440]: "250"
+                  - generic [ref=e442]: "0"
+        - generic [ref=e457]:
+          - generic [ref=e459]: Experience
+          - table [ref=e463]:
+            - rowgroup [ref=e464]:
+              - row "Type Good Needs improvement Poor Trend" [ref=e465]:
+                - columnheader "Type" [ref=e466]
+                - columnheader [ref=e467]
+                - columnheader "Good" [ref=e468]
+                - columnheader "Needs improvement" [ref=e469]
+                - columnheader "Poor" [ref=e470]
+                - columnheader "Trend" [ref=e471]
+                - columnheader [ref=e472]
+            - rowgroup [ref=e473]:
+              - row "Core Web Vitals Mobile Desktop No data No data No data No data No data No data" [ref=e474]:
+                - cell "Core Web Vitals" [ref=e475]:
+                  - generic [ref=e477]: Core Web Vitals
+                - cell "Mobile Desktop" [ref=e478]:
+                  - generic [ref=e480]:
+                    - generic [ref=e481]: Mobile
+                    - generic [ref=e482]: Desktop
+                - cell "No data No data" [ref=e483]:
+                  - generic [ref=e484]:
+                    - generic [ref=e485]: No data
+                    - generic [ref=e486]: No data
+                - cell "No data No data" [ref=e487]:
+                  - generic [ref=e488]:
+                    - generic [ref=e489]: No data
+                    - generic [ref=e490]: No data
+                - cell "No data No data" [ref=e491]:
+                  - generic [ref=e492]:
+                    - generic [ref=e493]: No data
+                    - generic [ref=e494]: No data
+                - cell [ref=e495]
+              - row "HTTPS Non HTTPS" [ref=e496]:
+                - columnheader [ref=e497]
+                - columnheader [ref=e498]
+                - columnheader "HTTPS" [ref=e499]
+                - columnheader [ref=e500]
+                - columnheader "Non HTTPS" [ref=e501]
+                - columnheader [ref=e502]
+                - columnheader [ref=e503]
+              - row "HTTPS 9 0 Open report" [ref=e504]:
+                - cell "HTTPS" [ref=e505]:
+                  - generic [ref=e507]: HTTPS
+                - cell [ref=e508]
+                - cell "9" [ref=e509]:
+                  - generic [ref=e511]: "9"
+                - cell [ref=e512]
+                - cell "0" [ref=e513]:
+                  - generic [ref=e515]: "0"
+                - cell [ref=e516]:
+                  - img [ref=e519]
+                - cell "Open report" [ref=e521]:
+                  - button "Open report" [ref=e524] [cursor=pointer]:
+                    - generic [ref=e525]: chevron_right
+        - generic [ref=e527]:
+          - generic [ref=e529]: Enhancements
+          - table [ref=e533]:
+            - rowgroup [ref=e534]:
+              - row "Type Valid Invalid Trend" [ref=e535]:
+                - columnheader "Type" [ref=e536]
+                - columnheader "Valid" [ref=e537]
+                - columnheader "Invalid" [ref=e538]
+                - columnheader "Trend" [ref=e539]
+                - columnheader [ref=e540]
+            - rowgroup [ref=e541]:
+              - row "Breadcrumbs 8 0 Open report" [ref=e542]:
+                - cell "Breadcrumbs" [ref=e543]:
+                  - generic [ref=e545]: Breadcrumbs
+                - cell "8" [ref=e546]:
+                  - generic [ref=e548]: "8"
+                - cell "0" [ref=e549]:
+                  - generic [ref=e551]: "0"
+                - cell [ref=e552]:
+                  - img [ref=e555]
+                - cell "Open report" [ref=e557]:
+                  - button "Open report" [ref=e560] [cursor=pointer]:
+                    - generic [ref=e561]: chevron_right
+              - row "FAQ 0 0 Open report" [ref=e562]:
+                - cell "FAQ" [ref=e563]:
+                  - generic [ref=e565]: FAQ
+                - cell "0" [ref=e566]:
+                  - generic [ref=e568]: "0"
+                - cell "0" [ref=e569]:
+                  - generic [ref=e571]: "0"
+                - cell [ref=e572]:
+                  - img [ref=e575]
+                - cell "Open report" [ref=e577]:
+                  - button "Open report" [ref=e580] [cursor=pointer]:
+                    - generic [ref=e581]: chevron_right

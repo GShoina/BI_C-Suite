@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🎮 Learn English — ნიკო & მაშო</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1b2e;--card:#252640;--card2:#2d2e4a;--brd:#3a3b5c;--text:#e8e6f0;--muted:#8888aa;--gold:#ffd700;--green:#4caf50;--red:#ef5350;--blue:#42a5f5;--purple:#ab47bc;--pink:#ec407a;--orange:#ffa726;--r:16px}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;font-size:19px}
+.app{max-width:650px;margin:0 auto;padding:1.2rem;min-height:100vh;display:flex;flex-direction:column}
+
+/* ═══ PROFILE SELECT ═══ */
+.profiles{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:80vh;gap:2rem}
+.profiles h1{font-size:2.5rem;text-align:center}
+.profiles h1 span{display:block;font-size:1rem;color:var(--muted);font-weight:300;margin-top:.5rem}
+.profile-cards{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+.profile-card{background:var(--card);border:2px solid var(--brd);border-radius:var(--r);padding:2rem 2.5rem;text-align:center;cursor:pointer;transition:all .3s;min-width:160px}
+.profile-card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 8px 30px rgba(255,215,0,.15)}
+.profile-card .avatar{font-size:3.5rem;margin-bottom:.8rem}
+.profile-card .avatar img{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--gold)}
+.profile-card .name{font-size:1.5rem;font-weight:700;margin-bottom:.3rem}
+.profile-card .age{color:var(--muted);font-size:1rem}
+.profile-card .stats{margin-top:.8rem;font-size:.8rem;color:var(--gold)}
+
+/* ═══ HEADER ═══ */
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;margin-bottom:1rem}
+.hdr-left{display:flex;align-items:center;gap:.8rem}
+.hdr .back{background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;padding:.5rem}
+.hdr .user{font-size:1.1rem;font-weight:600}
+.hdr-right{display:flex;align-items:center;gap:1rem}
+.hdr .score{font-size:1.1rem;color:var(--gold);font-weight:700}
+.hdr .streak{font-size:.9rem;color:var(--orange)}
+
+/* ═══ MENU ═══ */
+.menu{display:flex;flex-direction:column;gap:1rem;flex:1}
+.menu-card{background:var(--card);border:2px solid var(--brd);border-radius:var(--r);padding:1.5rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:1.2rem}
+.menu-card:hover{transform:translateY(-2px);border-color:var(--blue)}
+.menu-card .icon{font-size:2.5rem;min-width:60px;text-align:center}
+.menu-card .info h3{font-size:1.1rem;margin-bottom:.3rem}
+.menu-card .info p{color:var(--muted);font-size:.85rem}
+.menu-card.locked{opacity:.4;pointer-events:none}
+
+/* ═══ GAME AREA ═══ */
+.game{flex:1;display:flex;flex-direction:column;gap:1rem}
+.progress-bar{height:8px;background:var(--card);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .4s;border-radius:4px}
+.question-num{text-align:center;color:var(--muted);font-size:.85rem}
+.word-display{text-align:center;padding:2rem;background:var(--card);border-radius:var(--r);margin:1rem 0}
+.word-display .emoji{font-size:4rem;margin-bottom:.8rem}
+.word-display .ka{font-size:2.5rem;font-weight:700;margin-bottom:.3rem}
+.word-display .hint{color:var(--muted);font-size:1.1rem}
+
+/* Options */
+.options{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}
+.opt{background:var(--card);border:2px solid var(--brd);border-radius:16px;padding:1.6rem 1.2rem;text-align:center;font-size:1.4rem;font-weight:600;cursor:pointer;transition:all .25s ease;font-family:inherit;color:var(--text);min-height:80px;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:rgba(255,215,0,.2);touch-action:manipulation;user-select:none}
+.opt:hover{border-color:var(--blue);background:var(--card2)}
+.opt:active{transform:scale(.95);transition:transform .1s}
+.opt.correct{border-color:var(--green);background:rgba(76,175,80,.15);animation:pop .3s}
+.opt.wrong{border-color:var(--red);background:rgba(239,83,80,.15);animation:shake .3s}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+/* Spelling */
+.spell-input{width:100%;padding:1.4rem;font-size:1.6rem;text-align:center;background:var(--card);border:2px solid var(--brd);border-radius:12px;color:var(--text);font-family:inherit;outline:none;letter-spacing:2px}
+.spell-input:focus{border-color:var(--blue)}
+.spell-btn{width:100%;padding:1rem;background:var(--blue);color:#fff;border:none;border-radius:12px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:.5rem}
+.spell-btn:hover{opacity:.9}
+
+/* Match */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.match-card{background:var(--card);border:2px solid var(--brd);border-radius:14px;padding:1.3rem;text-align:center;font-size:1.2rem;font-weight:600;cursor:pointer;transition:all .25s ease;min-height:70px;-webkit-tap-highlight-color:rgba(255,215,0,.2);touch-action:manipulation;user-select:none;display:flex;align-items:center;justify-content:center}
+.match-card.selected{border-color:var(--purple);background:rgba(171,71,188,.15)}
+.match-card.matched{border-color:var(--green);background:rgba(76,175,80,.15);opacity:.6;pointer-events:none}
+.match-card.wrong{animation:shake .3s}
+
+/* Results */
+.results{text-align:center;padding:2rem;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem}
+.results .big{font-size:4rem}
+.results h2{font-size:1.8rem}
+.results .stat-row{display:flex;gap:2rem;justify-content:center}
+.results .stat{text-align:center}
+.results .stat .val{font-size:2rem;font-weight:700}
+.results .stat .label{color:var(--muted);font-size:.8rem}
+.play-again{padding:1rem 3rem;background:var(--gold);color:#1a1b2e;border:none;border-radius:12px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit}
+.play-again:hover{opacity:.9}
+
+/* Parent */
+.parent{padding:1rem 0}
+.parent h2{font-size:1.2rem;margin-bottom:1rem;color:var(--gold)}
+.parent table{width:100%;border-collapse:collapse;font-size:.9rem}
+.parent th{text-align:left;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:1px;padding:.6rem .5rem;border-bottom:1px solid var(--brd)}
+.parent td{padding:.6rem .5rem;border-bottom:1px solid var(--brd)}
+.parent .weak{color:var(--red)}
+.parent .strong{color:var(--green)}
+
+/* ═══ HIDDEN ═══ */
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+<!-- PROFILE SELECT -->
+<div class="profiles" id="screen-profiles">
+  <h1>🎮 Learn English<span>აირჩიე ვინ ხარ</span></h1>
+  <div class="profile-cards">
+    <div class="profile-card" onclick="selectProfile('niko')">
+      <div class="avatar"><img src="kids.jpeg" style="object-position:left center" alt="ნიკო"></div>
+      <div class="name">ნიკოლოზი</div>
+      <div class="age">8 წლის</div>
+      <div class="stats" id="niko-stats"></div>
+    </div>
+    <div class="profile-card" onclick="selectProfile('masho')">
+      <div class="avatar"><img src="kids.jpeg" style="object-position:right center" alt="მაშო"></div>
+      <div class="name">მაშო</div>
+      <div class="age">6 წლის</div>
+      <div class="stats" id="masho-stats"></div>
+    </div>
+    <div class="profile-card" onclick="showParent()" style="min-width:120px">
+      <div class="avatar">👨‍💼</div>
+      <div class="name">მშობელი</div>
+      <div class="age">progress</div>
+    </div>
+  </div>
+</div>
+
+<!-- MENU -->
+<div class="hidden" id="screen-menu">
+  <div class="hdr">
+    <div class="hdr-left">
+      <button class="back" onclick="goProfiles()">←</button>
+      <span class="user" id="menu-user"></span>
+    </div>
+    <div class="hdr-right">
+      <span class="score" id="menu-score">⭐ 0</span>
+      <span class="streak" id="menu-streak">🔥 0</span>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="menu-card" onclick="startGame('quiz')">
+      <div class="icon">🎯</div>
+      <div class="info"><h3>ქართული → English</h3><p>მოისმინე და აირჩიე ინგლისური</p></div>
+    </div>
+    <div class="menu-card" onclick="startGame('reverse')">
+      <div class="icon">🔄</div>
+      <div class="info"><h3>English → ქართული</h3><p>მოისმინე და აირჩიე ქართული</p></div>
+    </div>
+    <div class="menu-card" onclick="startGame('spell')" id="spell-card">
+      <div class="icon">✍️</div>
+      <div class="info"><h3>Spelling</h3><p>ინგლისურად დაწერე</p></div>
+    </div>
+    <div class="menu-card" onclick="startGame('match')">
+      <div class="icon">🧩</div>
+      <div class="info"><h3>Match</h3><p>დააწყვილე სიტყვები</p></div>
+    </div>
+    <div class="menu-card" id="listen-card" onclick="startGame('listen')">
+      <div class="icon">👂</div>
+      <div class="info"><h3>მოისმინე</h3><p>🔊 მოისმინე და აირჩიე სურათი</p></div>
+    </div>
+    <div class="menu-card" onclick="showCategories()">
+      <div class="icon">📚</div>
+      <div class="info"><h3>კატეგორიები</h3><p>აირჩიე რა ისწავლო</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- GAME -->
+<div class="hidden" id="screen-game">
+  <div class="hdr">
+    <div class="hdr-left">
+      <button class="back" onclick="endGame()">←</button>
+      <span class="user" id="game-mode"></span>
+    </div>
+    <div class="hdr-right">
+      <span class="score" id="game-score">⭐ 0</span>
+    </div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+  <div class="question-num" id="q-num"></div>
+  <div class="game" id="game-area"></div>
+</div>
+
+<!-- RESULTS -->
+<div class="hidden" id="screen-results">
+  <div class="results">
+    <div class="big" id="result-emoji">🎉</div>
+    <h2 id="result-title">ყოჩაღ!</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="val" id="r-correct" style="color:var(--green)">0</div><div class="label">სწორი</div></div>
+      <div class="stat"><div class="val" id="r-wrong" style="color:var(--red)">0</div><div class="label">არასწორი</div></div>
+      <div class="stat"><div class="val" id="r-points" style="color:var(--gold)">0</div><div class="label">ქულა</div></div>
+    </div>
+    <div id="r-weak" style="color:var(--muted);font-size:.9rem"></div>
+    <button class="play-again" onclick="retryWeak()" id="retry-btn" style="background:var(--orange)">🔄 სუსტი სიტყვების გამეორება</button>
+    <button class="play-again" onclick="startGame(gameMode)">🎮 ახალი რაუნდი</button>
+    <button class="play-again" onclick="goMenu()" style="background:var(--card);color:var(--text);border:2px solid var(--brd)">📋 მენიუ</button>
+  </div>
+</div>
+
+<!-- PARENT DASHBOARD -->
+<div class="hidden" id="screen-parent">
+  <div class="hdr">
+    <div class="hdr-left">
+      <button class="back" onclick="goProfiles()">←</button>
+      <span class="user">👨‍💼 მშობლის პანელი</span>
+    </div>
+  </div>
+  <div class="parent" id="parent-content"></div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="hidden" id="screen-cats">
+  <div class="hdr">
+    <div class="hdr-left">
+      <button class="back" onclick="goMenu()">←</button>
+      <span class="user">📚 კატეგორიები</span>
+    </div>
+  </div>
+  <div class="menu" id="cats-list"></div>
+</div>
+
+</div>
+
+<script>
+// ═══ VOCABULARY ═══
+const WORDS = {
+  "ფერები": [
+    {ka:"წითელი",en:"red",emoji:"🔴"},{ka:"ლურჯი",en:"blue",emoji:"🔵"},{ka:"მწვანე",en:"green",emoji:"🟢"},
+    {ka:"ყვითელი",en:"yellow",emoji:"🟡"},{ka:"თეთრი",en:"white",emoji:"⬜"},{ka:"შავი",en:"black",emoji:"⬛"},
+    {ka:"ნარინჯისფერი",en:"orange",emoji:"🟠"},{ka:"იისფერი",en:"purple",emoji:"🟣"},{ka:"ვარდისფერი",en:"pink",emoji:"💗"},
+    {ka:"ყავისფერი",en:"brown",emoji:"🟤"}
+  ],
+  "ცხოველები": [
+    {ka:"ძაღლი",en:"dog",emoji:"🐕"},{ka:"კატა",en:"cat",emoji:"🐱"},{ka:"ფრინველი",en:"bird",emoji:"🐦"},
+    {ka:"თევზი",en:"fish",emoji:"🐟"},{ka:"ცხენი",en:"horse",emoji:"🐴"},{ka:"ძროხა",en:"cow",emoji:"🐄"},
+    {ka:"ღორი",en:"pig",emoji:"🐷"},{ka:"კურდღელი",en:"rabbit",emoji:"🐰"},{ka:"დათვი",en:"bear",emoji:"🐻"},
+    {ka:"ლომი",en:"lion",emoji:"🦁"},{ka:"სპილო",en:"elephant",emoji:"🐘"},{ka:"მაიმუნი",en:"monkey",emoji:"🐵"}
+  ],
+  "რიცხვები": [
+    {ka:"ერთი",en:"one",emoji:"1️⃣"},{ka:"ორი",en:"two",emoji:"2️⃣"},{ka:"სამი",en:"three",emoji:"3️⃣"},
+    {ka:"ოთხი",en:"four",emoji:"4️⃣"},{ka:"ხუთი",en:"five",emoji:"5️⃣"},{ka:"ექვსი",en:"six",emoji:"6️⃣"},
+    {ka:"შვიდი",en:"seven",emoji:"7️⃣"},{ka:"რვა",en:"eight",emoji:"8️⃣"},{ka:"ცხრა",en:"nine",emoji:"9️⃣"},
+    {ka:"ათი",en:"ten",emoji:"🔟"}
+  ],
+  "ოჯახი": [
+    {ka:"დედა",en:"mother",emoji:"👩"},{ka:"მამა",en:"father",emoji:"👨"},{ka:"ძმა",en:"brother",emoji:"👦"},
+    {ka:"და",en:"sister",emoji:"👧"},{ka:"ბებია",en:"grandmother",emoji:"👵"},{ka:"ბაბუა",en:"grandfather",emoji:"👴"},
+    {ka:"ბავშვი",en:"child",emoji:"🧒"},{ka:"ოჯახი",en:"family",emoji:"👨‍👩‍👧‍👦"}
+  ],
+  "საკვები": [
+    {ka:"ვაშლი",en:"apple",emoji:"🍎"},{ka:"პური",en:"bread",emoji:"🍞"},{ka:"რძე",en:"milk",emoji:"🥛"},
+    {ka:"წყალი",en:"water",emoji:"💧"},{ka:"ბანანი",en:"banana",emoji:"🍌"},{ka:"კვერცხი",en:"egg",emoji:"🥚"},
+    {ka:"ყველი",en:"cheese",emoji:"🧀"},{ka:"ხორცი",en:"meat",emoji:"🥩"},{ka:"თევზი",en:"fish",emoji:"🐟"},
+    {ka:"ნაყინი",en:"ice cream",emoji:"🍦"},{ka:"ტორტი",en:"cake",emoji:"🎂"},{ka:"ხილი",en:"fruit",emoji:"🍇"}
+  ],
+  "სხეული": [
+    {ka:"თავი",en:"head",emoji:"🗣️"},{ka:"ხელი",en:"hand",emoji:"✋"},{ka:"ფეხი",en:"foot",emoji:"🦶"},
+    {ka:"თვალი",en:"eye",emoji:"👁️"},{ka:"ყური",en:"ear",emoji:"👂"},{ka:"ცხვირი",en:"nose",emoji:"👃"},
+    {ka:"პირი",en:"mouth",emoji:"👄"},{ka:"თითი",en:"finger",emoji:"☝️"}
+  ],
+  "სკოლა": [
+    {ka:"წიგნი",en:"book",emoji:"📖"},{ka:"კალამი",en:"pen",emoji:"🖊️"},{ka:"ფანქარი",en:"pencil",emoji:"✏️"},
+    {ka:"მასწავლებელი",en:"teacher",emoji:"👨‍🏫"},{ka:"მოსწავლე",en:"student",emoji:"👨‍🎓"},{ka:"სკოლა",en:"school",emoji:"🏫"},
+    {ka:"კლასი",en:"class",emoji:"🎒"},{ka:"რვეული",en:"notebook",emoji:"📓"}
+  ],
+  "ბუნება": [
+    {ka:"მზე",en:"sun",emoji:"☀️"},{ka:"მთვარე",en:"moon",emoji:"🌙"},{ka:"ვარსკვლავი",en:"star",emoji:"⭐"},
+    {ka:"წვიმა",en:"rain",emoji:"🌧️"},{ka:"თოვლი",en:"snow",emoji:"❄️"},{ka:"ხე",en:"tree",emoji:"🌳"},
+    {ka:"ყვავილი",en:"flower",emoji:"🌸"},{ka:"მთა",en:"mountain",emoji:"🏔️"},{ka:"ზღვა",en:"sea",emoji:"🌊"},
+    {ka:"ტყე",en:"forest",emoji:"🌲"}
+  ],
+  "მოქმედებები": [
+    {ka:"სირბილი",en:"run",emoji:"🏃"},{ka:"ხტომა",en:"jump",emoji:"🤸"},{ka:"ჭამა",en:"eat",emoji:"🍽️"},
+    {ka:"სმა",en:"drink",emoji:"🥤"},{ka:"ძილი",en:"sleep",emoji:"😴"},{ka:"კითხვა",en:"read",emoji:"📖"},
+    {ka:"წერა",en:"write",emoji:"✍️"},{ka:"თამაში",en:"play",emoji:"🎮"},{ka:"სიმღერა",en:"sing",emoji:"🎤"},
+    {ka:"ცეკვა",en:"dance",emoji:"💃"}
+  ],
+  "ფრაზები": [
+    {ka:"გამარჯობა",en:"hello",emoji:"👋"},{ka:"ნახვამდის",en:"goodbye",emoji:"👋"},{ka:"გმადლობთ",en:"thank you",emoji:"🙏"},
+    {ka:"გთხოვთ",en:"please",emoji:"😊"},{ka:"დიახ",en:"yes",emoji:"✅"},{ka:"არა",en:"no",emoji:"❌"},
+    {ka:"ბოდიში",en:"sorry",emoji:"😔"},{ka:"კარგი",en:"good",emoji:"👍"},{ka:"ცუდი",en:"bad",emoji:"👎"},
+    {ka:"დიდი",en:"big",emoji:"🐘"},{ka:"პატარა",en:"small",emoji:"🐜"},{ka:"სწრაფი",en:"fast",emoji:"⚡"}
+  ]
+};
+
+// Age-appropriate categories
+const AGE_CATS = {
+  masho: ["ფერები","ცხოველები","რიცხვები","ოჯახი","საკვები","სხეული","ფრაზები"],
+  niko: Object.keys(WORDS)
+};
+
+// ═══ STATE ═══
+const SK = 'learn_eng_v1';
+let state, profile, gameMode, questions, qIdx, sessionCorrect, sessionWrong, sessionPoints;
+
+function loadState(){
+  try{return JSON.parse(localStorage.getItem(SK))||{niko:{score:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0},masho:{score:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0}};}
+  catch{return{niko:{score:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0},masho:{score:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0}};}
+}
+function saveState(){localStorage.setItem(SK,JSON.stringify(state));}
+
+// ═══ SCREENS ═══
+function show(id){document.querySelectorAll('[id^=screen-]').forEach(s=>s.classList.add('hidden'));document.getElementById('screen-'+id).classList.remove('hidden');}
+
+function goProfiles(){
+  state=loadState();
+  show('profiles');
+  ['niko','masho'].forEach(p=>{
+    const s=state[p];
+    const el=document.getElementById(p+'-stats');
+    if(s.score>0) el.textContent=`⭐${s.score} | 📚${Object.keys(s.words).length} სიტყვა`;
+    else el.textContent='ახალი მოთამაშე';
+  });
+}
+
+function selectProfile(p){
+  profile=p;
+  const s=state[profile];
+  show('menu');
+  const lvl=getLevel();
+  document.getElementById('menu-user').textContent=(p==='niko'?'ნიკოლოზი':'მაშო')+' — '+lvl.name;
+  document.getElementById('menu-score').textContent='⭐ '+s.score;
+  document.getElementById('menu-streak').textContent='🔥 '+s.streak;
+  // Spelling only for 8+
+  document.getElementById('spell-card').classList.toggle('locked',p==='masho');
+  // Listen mode ყველასთვის available, მაგრამ მაშოსთვის ეს = primary
+}
+
+function goMenu(){selectProfile(profile);}
+
+// ═══ CATEGORIES ═══
+let activeCat = null;
+function showCategories(){
+  show('cats');
+  const cats = AGE_CATS[profile];
+  const el = document.getElementById('cats-list');
+  el.innerHTML = cats.map(c=>{
+    const count = WORDS[c].length;
+    const learned = WORDS[c].filter(w=>(state[profile].words[w.en]||{}).correct>0).length;
+    return `<div class="menu-card" onclick="activeCat='${c}';goMenu()">
+      <div class="icon">${WORDS[c][0].emoji}</div>
+      <div class="info"><h3>${c}</h3><p>${learned}/${count} ნასწავლი</p></div>
+    </div>`;
+  }).join('')+`<div class="menu-card" onclick="activeCat=null;goMenu()">
+    <div class="icon">🌍</div>
+    <div class="info"><h3>ყველა</h3><p>შერეული</p></div>
+  </div>`;
+}
+
+// ═══ GAME ═══
+function getWords(){
+  let pool=[];
+  const cats=activeCat?[activeCat]:AGE_CATS[profile];
+  cats.forEach(c=>pool.push(...WORDS[c]));
+  // Prioritize weak words
+  const ws=state[profile].words;
+  pool.sort((a,b)=>{
+    const sa=ws[a.en]?ws[a.en].correct/(ws[a.en].correct+ws[a.en].wrong+1):0;
+    const sb=ws[b.en]?ws[b.en].correct/(ws[b.en].correct+ws[b.en].wrong+1):0;
+    return sa-sb;
+  });
+  return pool;
+}
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function startGame(mode){
+  gameMode=mode;
+  const pool=getWords();
+  questions=shuffle([...pool]).slice(0,10);
+  if(questions.length<4)questions=shuffle([...pool]);
+  qIdx=0;sessionCorrect=0;sessionWrong=0;sessionPoints=0;
+  show('game');
+  const modeNames={quiz:'🎯 ქართ → Eng',reverse:'🔄 Eng → ქართ',spell:'✍️ Spelling',match:'🧩 Match',listen:'👂 მოისმინე'};
+  document.getElementById('game-mode').textContent=modeNames[mode]||mode;
+  document.getElementById('game-score').textContent='⭐ 0';
+  if(mode==='match')startMatch();
+  else if(mode==='listen')nextListenQuestion();
+  else nextQuestion();
+}
+
+function nextQuestion(){
+  if(qIdx>=questions.length){showResults();return;}
+  const q=questions[qIdx];
+  document.getElementById('progress').style.width=((qIdx/questions.length)*100)+'%';
+  document.getElementById('q-num').textContent=`${qIdx+1} / ${questions.length}`;
+  const area=document.getElementById('game-area');
+
+  if(gameMode==='quiz'){
+    const pool=getWords();
+    let opts=[q];
+    while(opts.length<4){
+      const r=pool[Math.floor(Math.random()*pool.length)];
+      if(!opts.find(o=>o.en===r.en))opts.push(r);
+    }
+    shuffle(opts);
+    area.innerHTML=`
+      <div class="word-display">
+        <div class="emoji">${q.emoji}</div>
+        <div class="ka">${q.ka}</div>
+        <div class="hint">🔊 მოისმინე და აირჩიე</div>
+      </div>
+      <div class="options">
+        ${opts.map((o,i)=>`<button class="opt" onclick="speak('${o.en}');setTimeout(()=>answer(this,'${o.en}','${q.en}'),500)">🔊 ${o.en}</button>`).join('')}
+      </div>`;
+  } else if(gameMode==='reverse'){
+    const pool=getWords();
+    let opts=[q];
+    while(opts.length<4){
+      const r=pool[Math.floor(Math.random()*pool.length)];
+      if(!opts.find(o=>o.en===r.en))opts.push(r);
+    }
+    shuffle(opts);
+    speak(q.en);
+    area.innerHTML=`
+      <div class="word-display" onclick="speak('${q.en}')" style="cursor:pointer">
+        <div class="emoji">🔊</div>
+        <div class="ka" style="font-size:2rem">${q.en}</div>
+        <div class="hint">აირჩიე ქართული 👇</div>
+      </div>
+      <div class="options">
+        ${opts.map((o,i)=>`<button class="opt" onclick="answer(this,'${o.en}','${q.en}')">${o.ka}</button>`).join('')}
+      </div>`;
+  } else if(gameMode==='spell'){
+    area.innerHTML=`
+      <div class="word-display" onclick="speak('${q.en}')" style="cursor:pointer" title="🔊 მოისმინე">
+        <div class="emoji">${q.emoji}</div>
+        <div class="ka">${q.ka}</div>
+        <div class="hint">🔊 დააჭირე მოსასმენად, მერე დაწერე ინგლისურად</div>
+      </div>
+      <input class="spell-input" id="spell-in" type="text" autocomplete="off" autocapitalize="off" placeholder="Type here...">
+      <button class="spell-btn" onclick="checkSpell('${q.en}')">შეამოწმე ✓</button>`;
+    setTimeout(()=>document.getElementById('spell-in').focus(),100);
+    document.getElementById('spell-in').onkeypress=e=>{if(e.key==='Enter')checkSpell(q.en);};
+  }
+}
+
+function getName(){return profile==='niko'?'ნიკოლოზ':'მაშო';}
+
+function answer(btn,selected,correct){
+  const isCorrect=selected===correct;
+  if(isCorrect){
+    document.querySelectorAll('.opt').forEach(b=>b.style.pointerEvents='none');
+    btn.classList.add('correct');
+    recordAnswer(correct,true);
+    sayFeedback(true);
+    setTimeout(()=>{qIdx++;if(gameMode==='listen')nextListenQuestion();else nextQuestion();},1500);
+  }else{
+    btn.classList.add('wrong');
+    btn.style.pointerEvents='none';
+    recordAnswer(correct,false);
+    sayFeedback(false);
+    setTimeout(()=>{btn.classList.remove('wrong');},600);
+  }
+}
+
+function checkSpell(correct){
+  const input=document.getElementById('spell-in').value.trim().toLowerCase();
+  const isCorrect=input===correct.toLowerCase();
+  const area=document.getElementById('game-area');
+  if(isCorrect){
+    recordAnswer(correct,true);
+    sayFeedback(true);
+    setTimeout(()=>speak(correct),1000);
+    area.innerHTML=`<div class="word-display" onclick="speak('${correct}')" style="cursor:pointer"><div class="emoji">🎉</div><div class="ka" style="color:var(--green)">${cap(correct)}</div><div class="hint">🔊 დააჭირე</div></div>`;
+    setTimeout(()=>{qIdx++;nextQuestion();},2000);
+  }else{
+    recordAnswer(correct,false);
+    sayFeedback(false);
+    const inp=document.getElementById('spell-in');
+    if(inp){
+      inp.value='';
+      inp.style.borderColor='var(--red)';
+      setTimeout(()=>{inp.style.borderColor='var(--brd)';inp.focus();},600);
+    }
+  }
+}
+
+// ═══ MATCH GAME ═══
+let matchPairs,matchSelected,matchMatched;
+function startMatch(){
+  const pool=shuffle(getWords()).slice(0,6);
+  matchPairs=pool;matchSelected=null;matchMatched=0;
+  const cards=[];
+  pool.forEach(w=>{cards.push({text:w.ka,lang:'ka',word:w});cards.push({text:cap(w.en),lang:'en',word:w});});
+  shuffle(cards);
+  document.getElementById('progress').style.width='0%';
+  document.getElementById('q-num').textContent=`0 / ${pool.length} წყვილი`;
+  document.getElementById('game-area').innerHTML=`<div class="match-grid">${cards.map((c,i)=>
+    `<div class="match-card" data-idx="${i}" data-word="${c.word.en}" data-lang="${c.lang}" onclick="matchClick(this)">${c.text}</div>`
+  ).join('')}</div>`;
+}
+
+function matchClick(el){
+  if(el.classList.contains('matched'))return;
+  if(el.dataset.lang==='en')speak(el.dataset.word);
+  el.classList.add('selected');
+  if(!matchSelected){matchSelected=el;return;}
+  const a=matchSelected,b=el;
+  if(a===b){b.classList.remove('selected');matchSelected=null;return;}
+  if(a.dataset.word===b.dataset.word && a.dataset.lang!==b.dataset.lang){
+    a.classList.remove('selected');b.classList.remove('selected');
+    a.classList.add('matched');b.classList.add('matched');
+    matchMatched++;
+    recordAnswer(a.dataset.word,true);
+    document.getElementById('progress').style.width=((matchMatched/matchPairs.length)*100)+'%';
+    document.getElementById('q-num').textContent=`${matchMatched} / ${matchPairs.length} წყვილი`;
+    if(matchMatched===matchPairs.length)setTimeout(showResults,600);
+  }else{
+    a.classList.add('wrong');b.classList.add('wrong');
+    recordAnswer(a.dataset.word,false);
+    setTimeout(()=>{a.classList.remove('selected','wrong');b.classList.remove('selected','wrong');},500);
+  }
+  matchSelected=null;
+}
+
+// ═══ LISTEN MODE (მაშოსთვის — სურათებით, კითხვის გარეშე) ═══
+function nextListenQuestion(){
+  if(qIdx>=questions.length){showResults();return;}
+  const q=questions[qIdx];
+  document.getElementById('progress').style.width=((qIdx/questions.length)*100)+'%';
+  document.getElementById('q-num').textContent=`${qIdx+1} / ${questions.length}`;
+  const area=document.getElementById('game-area');
+  const pool=getWords();
+  let opts=[q];
+  while(opts.length<4){
+    const r=pool[Math.floor(Math.random()*pool.length)];
+    if(!opts.find(o=>o.en===r.en))opts.push(r);
+  }
+  shuffle(opts);
+  speak(q.en);
+  area.innerHTML=`
+    <div class="word-display" onclick="speak('${q.en}')" style="cursor:pointer">
+      <div class="emoji" style="font-size:5rem">🔊</div>
+      <div class="hint" style="font-size:1.3rem">მოისმინე და აირჩიე სურათი</div>
+    </div>
+    <div class="options">
+      ${opts.map(o=>`<button class="opt" style="font-size:3rem;min-height:90px" onclick="answer(this,'${o.en}','${q.en}')">${o.emoji}</button>`).join('')}
+    </div>`;
+}
+
+// ═══ SCORING ═══
+function recordAnswer(word,correct){
+  const s=state[profile];
+  if(!s.words[word])s.words[word]={correct:0,wrong:0};
+  if(correct){
+    s.words[word].correct++;sessionCorrect++;
+    const pts=gameMode==='spell'?15:10;
+    sessionPoints+=pts;s.score+=pts;
+    s.streak++;if(s.streak>s.maxStreak)s.maxStreak=s.streak;
+  }else{
+    s.words[word].wrong++;sessionWrong++;s.streak=0;
+  }
+  document.getElementById('game-score').textContent='⭐ '+sessionPoints;
+  saveState();
+}
+
+function getLevel(){
+  const s=state[profile];
+  const learned=Object.values(s.words).filter(w=>w.correct>=3).length;
+  if(learned>=80)return{num:5,name:'🏆 Expert',next:null,need:0};
+  if(learned>=50)return{num:4,name:'⭐ Advanced',next:80,need:80-learned};
+  if(learned>=25)return{num:3,name:'🚀 Intermediate',next:50,need:50-learned};
+  if(learned>=10)return{num:2,name:'📖 Beginner+',next:25,need:25-learned};
+  return{num:1,name:'🌱 Starter',next:10,need:10-learned};
+}
+
+function showResults(){
+  show('results');
+  const pct=questions.length>0?Math.round(sessionCorrect/(sessionCorrect+sessionWrong)*100):0;
+  const level=getLevel();
+
+  document.getElementById('result-emoji').textContent=pct>=80?'🏆':pct>=50?'👍':'💪';
+  document.getElementById('result-title').textContent=pct>=80?'ყოჩაღ! შესანიშნავია!':pct>=50?'კარგია! გააგრძელე!':'არ დანებდე!';
+  document.getElementById('r-correct').textContent=sessionCorrect;
+  document.getElementById('r-wrong').textContent=sessionWrong;
+  document.getElementById('r-points').textContent='+'+sessionPoints;
+
+  // Weak words
+  const weak=questions.filter(q=>{const w=state[profile].words[q.en];return w&&w.wrong>w.correct;});
+
+  // Level info + weak words + retry option
+  let extraHtml=`<div style="background:var(--card);border-radius:12px;padding:1rem;margin-top:.5rem;text-align:center">
+    <div style="font-size:1.3rem;font-weight:700">${level.name}</div>
+    <div style="color:var(--muted);font-size:.9rem;margin-top:.3rem">Level ${level.num}</div>
+    ${level.next?`<div style="margin-top:.5rem"><div style="height:8px;background:var(--card2);border-radius:4px;overflow:hidden"><div style="height:100%;width:${Math.round((1-level.need/(level.next-level.next+level.need+1))*100)}%;background:linear-gradient(90deg,var(--blue),var(--purple));border-radius:4px"></div></div>
+    <div style="color:var(--muted);font-size:.8rem;margin-top:.3rem">შემდეგ ლეველამდე: ${level.need} სიტყვა</div></div>`:'<div style="color:var(--gold);margin-top:.3rem">მაქსიმალური ლეველი! 🎉</div>'}
+  </div>`;
+
+  if(weak.length>0){
+    extraHtml+=`<div style="color:var(--orange);font-size:.9rem;margin-top:.5rem">⚠️ გაიმეორე: ${weak.map(w=>w.emoji+' '+w.en).join(', ')}</div>`;
+  }
+
+  document.getElementById('r-weak').innerHTML=extraHtml;
+
+  state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();
+  saveState();
+
+  sayFeedback(pct>=50);
+}
+
+// ═══ PARENT DASHBOARD ═══
+function showParent(){
+  show('parent');
+  const el=document.getElementById('parent-content');
+  let html='';
+  ['niko','masho'].forEach(p=>{
+    const s=state[p];
+    const name=p==='niko'?'🦸‍♂️ ნიკოლოზი':'🧚‍♀️ მაშო';
+    const words=Object.entries(s.words);
+    const total=words.length;
+    const correct=words.reduce((a,[k,v])=>a+v.correct,0);
+    const wrong=words.reduce((a,[k,v])=>a+v.wrong,0);
+    const accuracy=correct+wrong>0?Math.round(correct/(correct+wrong)*100):0;
+    const weak=words.filter(([k,v])=>v.wrong>v.correct).map(([k])=>k);
+    const strong=words.filter(([k,v])=>v.correct>=3&&v.wrong===0).map(([k])=>k);
+    const lastPlayed=s.lastPlayed?new Date(s.lastPlayed).toLocaleDateString('ka-GE'):'ჯერ არ ითამაშა';
+
+    html+=`<h2>${name}</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:1rem">
+      <div style="background:var(--card);border-radius:10px;padding:.8rem;text-align:center">
+        <div style="font-size:1.5rem;font-weight:700;color:var(--gold)">${s.score}</div><div style="font-size:.7rem;color:var(--muted)">ქულა</div>
+      </div>
+      <div style="background:var(--card);border-radius:10px;padding:.8rem;text-align:center">
+        <div style="font-size:1.5rem;font-weight:700">${total}</div><div style="font-size:.7rem;color:var(--muted)">სიტყვა</div>
+      </div>
+      <div style="background:var(--card);border-radius:10px;padding:.8rem;text-align:center">
+        <div style="font-size:1.5rem;font-weight:700;color:${accuracy>=70?'var(--green)':'var(--red)'}">${accuracy}%</div><div style="font-size:.7rem;color:var(--muted)">სიზუსტე</div>
+      </div>
+      <div style="background:var(--card);border-radius:10px;padding:.8rem;text-align:center">
+        <div style="font-size:1.5rem;font-weight:700;color:var(--orange)">${s.maxStreak}</div><div style="font-size:.7rem;color:var(--muted)">max streak</div>
+      </div>
+    </div>
+    <div style="font-size:.85rem;color:var(--muted);margin-bottom:.5rem">🕐 ბოლოს: ${lastPlayed} | 🎮 სესიები: ${s.sessions}</div>
+    ${weak.length>0?`<div style="font-size:.85rem;margin-bottom:.5rem"><span class="weak">⚠️ სუსტი:</span> ${weak.slice(0,10).join(', ')}</div>`:''}
+    ${strong.length>0?`<div style="font-size:.85rem;margin-bottom:1.5rem"><span class="strong">✅ ძლიერი:</span> ${strong.slice(0,10).join(', ')}</div>`:''}
+    <hr style="border-color:var(--brd);margin-bottom:1.5rem">`;
+  });
+  html+=`<button class="play-again" onclick="if(confirm('წაშალო ყველა progress?')){localStorage.removeItem('${SK}');state=loadState();goProfiles();}" style="background:var(--red);font-size:.85rem;padding:.7rem 1.5rem">🗑️ Reset All</button>`;
+  el.innerHTML=html;
+}
+
+// ═══ TEXT-TO-SPEECH ═══
+function speak(text,lang='en-US'){
+  if('speechSynthesis' in window){
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang=lang;
+    u.rate=lang==='ka-GE'?1.0:0.75;
+    u.pitch=lang==='ka-GE'?1.2:1.4;
+    u.volume=1.0;
+    const voices=window.speechSynthesis.getVoices();
+    if(lang==='ka-GE'){
+      const kaVoice=voices.find(v=>v.lang.startsWith('ka'));
+      if(kaVoice)u.voice=kaVoice;
+    }else{
+      const preferred=['Samantha','Karen','Moira','Tessa','Zira','Hazel','Susan'];
+      let picked=null;
+      for(const name of preferred){
+        picked=voices.find(v=>v.name.includes(name)&&v.lang.startsWith('en'));
+        if(picked)break;
+      }
+      if(!picked)picked=voices.find(v=>v.lang.startsWith('en')&&v.name.toLowerCase().includes('female'));
+      if(!picked)picked=voices.find(v=>v.lang.startsWith('en'));
+      if(picked)u.voice=picked;
+    }
+    window.speechSynthesis.speak(u);
+  }
+}
+
+function sayFeedback(correct){
+  const name=getName();
+  if(correct){
+    // ჯერ "Well done!" ინგლისურად, მერე სახელი
+    speak('Well done!');
+    setTimeout(()=>speak('Correct!'),800);
+  }else{
+    speak('Try again!');
+  }
+}
+// Load voices
+if('speechSynthesis' in window){
+  window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();
+}
+
+// ═══ CAPITALIZE ═══
+function cap(s){return s;} // ნიკოლოზს არ მოეწონა მაღალი ასოები
+
+// ═══ RETRY WEAK ═══
+function retryWeak(){
+  const ws=state[profile].words;
+  const weakWords=Object.entries(ws).filter(([k,v])=>v.wrong>=v.correct).map(([k])=>k);
+  if(weakWords.length<2){startGame(gameMode);return;}
+  const allWords=[];
+  Object.values(WORDS).forEach(cat=>allWords.push(...cat));
+  questions=allWords.filter(w=>weakWords.includes(w.en));
+  if(questions.length<4){
+    // add some random to fill
+    const extra=shuffle(allWords.filter(w=>!weakWords.includes(w.en))).slice(0,4-questions.length);
+    questions.push(...extra);
+  }
+  shuffle(questions);
+  qIdx=0;sessionCorrect=0;sessionWrong=0;sessionPoints=0;
+  show('game');
+  document.getElementById('game-mode').textContent='🔄 გამეორება';
+  document.getElementById('game-score').textContent='⭐ 0';
+  if(gameMode==='match')startMatch();
+  else if(gameMode==='listen')nextListenQuestion();
+  else nextQuestion();
+}
+
+// ═══ INIT ═══
+state=loadState();
+goProfiles();
+</script>
+</body>
+</html>

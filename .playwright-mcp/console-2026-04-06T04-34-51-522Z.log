@@ -1,0 +1,41 @@
+[   14827ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   14835ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15041ms] [WARNING] Unsatisfied version 17.0.2 from ADKJSONP of shared singleton module react (required =18.2.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15041ms] [WARNING] Unsatisfied version 9.104.0 from ADKJSONP of shared singleton module @appfabric/web-shell-core/widgets/BaseWidget (required =3.6.0) @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15297ms] [LOG] CONVERSATION_REHYDRATOR_SEARCH_CONVERSATION_V2_SUCCESS:OWNER=UNKNOWN {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15323ms] [LOG] WebEvents: subscribing_adding_to_pubsub : {"topic":"conversation.management.intuit","target":"9411821817284580","configs.resourceOwner":"9411821817284580","configs.trackConnection":true,"configs.txId":"e22beeee-7970-4f4a-beff-c46546180a6e"} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15324ms] [LOG] WebEvents: subscription_added_to_pubsub : {"topic":"conversation.management.intuit","target":"9411821817284580"} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15325ms] [LOG] WebEvents: adding_remote_topic {topic: conversation.management.intuit, target: 9411821817284580, options.resourceOwner: 9411821817284580, options.trackConnection: true, options.txId: e22beeee-7970-4f4a-beff-c46546180a6e} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15414ms] [LOG] Listening for chat rehydrate request {msgProps: null, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15418ms] [WARNING] module=Entitlements message=oihsAppAdapter.entitlements.isPremium is not implemented {msgProps: null, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15440ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15443ms] [LOG] widget-request-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15445ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15449ms] [LOG] widget-load-start {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15462ms] [LOG] widget-load-end {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15469ms] [LOG] widget-mount {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15703ms] [ERROR] WebEvents:: TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at e (https://edge.fullstory.com/s/fs.js:4:31202)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at https://plugin.intuitcdn.net/web-shell/5.160.2/integration/912.js:1:5075 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15706ms] [LOG] WebEvents: connecting {url: wss://eventinggateway.api.intuit.com/v1/webevents, tid: 47b12232-1bda-45c1-aefa-d666d7a6a3cc} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15709ms] [LOG] WebEvents: failed_to_connect {error: Failed to construct 'WebSocket': The subprotocol '' is invalid., connType: WSS} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15709ms] [LOG] WebEvents: disconnecting {rSocketHolderUUID: f0c42481-f833-4935-b775-19f880295f68} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15711ms] [WARNING] Single: Invalid call to onError(): %s. onSubscribe has not been called @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15711ms] [LOG] WebEvents: WSS_connection_closed_retrying {} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15713ms] [ERROR] fetch conversations fails {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} TypeError: Failed to fetch
+    at t.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:4:5195)
+    at https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:40010
+    at new Promise (<anonymous>)
+    at h.fetch (https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:1:39982)
+    at e (https://edge.fullstory.com/s/fs.js:4:31202)
+    at m.<computed>.m.<computed> (<anonymous>:45:142)
+    at https://plugin.intuitcdn.net/web-shell/5.160.2/integration/912.js:1:5075 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15716ms] [LOG] CHAT: Conversion API response for chat hydration, conversationState: undefined {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15718ms] [LOG] CHAT: no open conversation found {msgProps: Object, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   15721ms] [ERROR] InterventionWrapperWidget, subscription: failed, widget: oipro-intervention-module/intervention, error: TypeError: Failed to fetch {msgProps: null, appProps: null, context: Object, queued: false, flushLogsImmediately: false} @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0
+[   19501ms] [LOG] Queuing a session check in  1200 @ https://us12.admin.mailchimp.com/release/dist/js-src/73550.ab2c6c14344a6302.js:0

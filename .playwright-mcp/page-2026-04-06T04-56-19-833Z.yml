@@ -1,0 +1,596 @@
+- generic [ref=e3]:
+  - button "Skip to content" [ref=e4]
+  - banner [ref=e5]:
+    - link "Microsoft Logo" [ref=e6] [cursor=pointer]:
+      - /url: https://www.microsoft.com
+      - img "Microsoft Logo" [ref=e8]
+    - link "Clarity" [ref=e9] [cursor=pointer]:
+      - /url: /
+    - button "Bivision" [ref=e11]:
+      - generic [ref=e12]:
+        - button "Bivision" [ref=e13] [cursor=pointer]:
+          - generic [ref=e16]: Bivision
+        - button "List of my projects" [ref=e17] [cursor=pointer]:
+          - generic [ref=e19]: 
+    - button "Header menu" [ref=e20] [cursor=pointer]:
+      - generic [ref=e22]: 
+    - button "Gela Shonia Profile" [ref=e24] [cursor=pointer]:
+      - generic [ref=e25]:
+        - img [ref=e27]
+        - generic [ref=e29]: 
+  - main [ref=e30]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - button "Filters" [ref=e38] [cursor=pointer]:
+              - generic [ref=e39]:
+                - img [ref=e41]
+                - generic [ref=e44]: Filters
+            - button "Segments" [ref=e47] [cursor=pointer]:
+              - generic [ref=e48]:
+                - generic [ref=e49]: 
+                - generic [ref=e51]: Segments
+          - generic [ref=e52]:
+            - button "Last 28 days Expand menu" [ref=e56] [cursor=pointer]:
+              - generic [ref=e57]: Last 28 days
+              - button "Expand menu" [ref=e58]:
+                - generic [ref=e60]: 
+            - generic "Save as segment" [ref=e62]:
+              - button "Save as segment" [ref=e63] [cursor=pointer]:
+                - generic [ref=e64]:
+                  - img [ref=e66]
+                  - generic [ref=e69]: Save as segment
+        - generic [ref=e71]:
+          - button "Download" [ref=e73] [cursor=pointer]:
+            - img [ref=e75]
+          - button "Chat" [ref=e77]:
+            - img "icon" [ref=e78]
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - generic [ref=e87]: Sessions
+          - img "Sessions Total sessions This is the number of visits to your site during the selected period of time. Bot sessions Clarity flagged these sessions as bot traffic. They are not included in the total session count." [ref=e88]:
+            - img "info Bubble" [ref=e89]
+          - generic [ref=e93]:
+            - generic [ref=e99]:
+              - img [ref=e100]
+              - img [ref=e102]
+              - img [ref=e104]
+              - img [ref=e106]
+            - generic [ref=e117]:
+              - img [ref=e118]
+              - img [ref=e120]
+              - img [ref=e122]
+              - img [ref=e124]
+        - generic [ref=e128]:
+          - generic [ref=e129]: Pages per session
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e138]:
+                - img [ref=e139]
+                - img [ref=e141]
+                - img [ref=e143]
+                - img [ref=e145]
+              - generic [ref=e156]:
+                - img [ref=e157]
+                - img [ref=e159]
+                - img [ref=e161]
+                - img [ref=e163]
+            - generic [ref=e167]: average
+        - generic [ref=e168]:
+          - generic [ref=e169]: Scroll depth
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - generic [ref=e178]:
+                - img [ref=e179]
+                - img [ref=e181]
+                - img [ref=e183]
+                - img [ref=e185]
+              - generic [ref=e196]:
+                - img [ref=e197]
+                - img [ref=e199]
+                - img [ref=e201]
+                - img [ref=e203]
+            - generic [ref=e207]: average
+        - generic [ref=e208]:
+          - generic [ref=e209]: Active time spent
+          - 'img "This is the average time spent in a session Active time: When a user''s attention was on your site Inactive time: When your site was hidden behind other tabs or windows" [ref=e210]':
+            - img "info Bubble" [ref=e211]
+          - generic [ref=e215]:
+            - generic [ref=e221]:
+              - img [ref=e222]
+              - img [ref=e224]
+              - img [ref=e226]
+              - img [ref=e228]
+            - generic [ref=e239]:
+              - img [ref=e240]
+              - img [ref=e242]
+              - img [ref=e244]
+              - img [ref=e246]
+      - generic [ref=e250]:
+        - generic [ref=e251]:
+          - button "Drag card" [ref=e252]:
+            - img [ref=e255]
+          - generic [ref=e257]:
+            - tab "Users overview" [selected] [ref=e260] [cursor=pointer]
+            - tab "All users" [ref=e263] [cursor=pointer]
+            - generic [ref=e265] [cursor=pointer]:
+              - tab "User intent" [ref=e266]
+              - img [ref=e268]
+          - generic [ref=e270]:
+            - button [ref=e271] [cursor=pointer]:
+              - img [ref=e274]
+            - button "Options" [ref=e276] [cursor=pointer]:
+              - generic [ref=e278]: 
+          - generic [ref=e280]:
+            - generic [ref=e283]:
+              - generic [ref=e287]:
+                - generic [ref=e288]:
+                  - img [ref=e289]
+                  - img [ref=e291]
+                  - img [ref=e293]
+                  - img [ref=e295]
+                - generic [ref=e298]:
+                  - img [ref=e299]
+                  - img [ref=e301]
+                  - img [ref=e303]
+                  - img [ref=e305]
+              - generic [ref=e315]:
+                - generic [ref=e316]:
+                  - img [ref=e317]
+                  - img [ref=e319]
+                  - img [ref=e321]
+                  - img [ref=e323]
+                - generic [ref=e326]:
+                  - img [ref=e327]
+                  - img [ref=e329]
+                  - img [ref=e331]
+                  - img [ref=e333]
+              - generic [ref=e344]:
+                - img [ref=e345]
+                - img [ref=e347]
+                - img [ref=e349]
+                - img [ref=e351]
+              - generic [ref=e362]:
+                - img [ref=e363]
+                - img [ref=e365]
+                - img [ref=e367]
+                - img [ref=e369]
+              - generic [ref=e380]:
+                - img [ref=e381]
+                - img [ref=e383]
+                - img [ref=e385]
+                - img [ref=e387]
+              - generic [ref=e403]:
+                - img [ref=e404]
+                - img [ref=e406]
+                - img [ref=e408]
+                - img [ref=e410]
+            - generic [ref=e413]:
+              - img [ref=e415]
+              - generic [ref=e419]: "0"
+              - generic [ref=e420]:
+                - generic [ref=e421]: Live users
+                - generic [ref=e422]: < 1 min ago
+              - button "Go to recordings" [ref=e424] [cursor=pointer]:
+                - img [ref=e427]
+              - img [ref=e430]
+              - generic [ref=e436]: Unique users
+              - button "Go to recordings" [ref=e438] [cursor=pointer]:
+                - img [ref=e441]
+        - generic [ref=e443]:
+          - button "Drag card" [ref=e444]:
+            - img [ref=e447]
+          - heading "Insights" [level=2] [ref=e452]
+          - generic [ref=e453]:
+            - button [ref=e454] [cursor=pointer]:
+              - img [ref=e457]
+            - button "Options" [ref=e459] [cursor=pointer]:
+              - generic [ref=e461]: 
+          - generic [ref=e463]:
+            - generic [ref=e464]:
+              - heading "Rage clicks" [level=2] [ref=e465]
+              - img "User rapidly clicked or tapped in the same small area" [ref=e466]:
+                - img "info Bubble" [ref=e467]
+              - generic [ref=e470] [cursor=pointer]:
+                - generic [ref=e471]:
+                  - generic:
+                    - generic:
+                      - img [ref=e473]
+                      - img [ref=e475]
+                      - img [ref=e477]
+                      - img [ref=e479]
+                - generic [ref=e481]:
+                  - img [ref=e482]
+                  - generic [ref=e487]: sessions
+            - generic [ref=e488]:
+              - heading "Dead clicks" [level=2] [ref=e489]
+              - img "User clicked or tapped on a page with no effect" [ref=e490]:
+                - img "info Bubble" [ref=e491]
+              - generic [ref=e494] [cursor=pointer]:
+                - generic [ref=e495]:
+                  - generic:
+                    - generic:
+                      - img [ref=e497]
+                      - img [ref=e499]
+                      - img [ref=e501]
+                      - img [ref=e503]
+                - generic [ref=e505]:
+                  - img [ref=e506]
+                  - generic [ref=e511]: sessions
+            - generic [ref=e512]:
+              - heading "Excessive scrolling" [level=2] [ref=e513]
+              - img "User scrolled through a page more than expected" [ref=e514]:
+                - img "info Bubble" [ref=e515]
+              - generic [ref=e518] [cursor=pointer]:
+                - generic [ref=e519]:
+                  - generic:
+                    - generic:
+                      - img [ref=e521]
+                      - img [ref=e523]
+                      - img [ref=e525]
+                      - img [ref=e527]
+                - generic [ref=e529]:
+                  - img [ref=e530]
+                  - generic [ref=e535]: sessions
+            - generic [ref=e536]:
+              - heading "Quick backs" [level=2] [ref=e537]
+              - img "User navigated to a page then quickly returned to the previous one" [ref=e538]:
+                - img "info Bubble" [ref=e539]
+              - generic [ref=e542] [cursor=pointer]:
+                - generic [ref=e543]:
+                  - generic:
+                    - generic:
+                      - img [ref=e545]
+                      - img [ref=e547]
+                      - img [ref=e549]
+                      - img [ref=e551]
+                - generic [ref=e553]:
+                  - img [ref=e554]
+                  - generic [ref=e559]: sessions
+        - generic [ref=e560]:
+          - button "Drag card" [ref=e561]:
+            - img [ref=e564]
+          - generic [ref=e568]:
+            - heading "Smart events" [level=2] [ref=e569]
+            - img [ref=e571]
+          - generic [ref=e573]:
+            - button [ref=e574] [cursor=pointer]:
+              - img [ref=e577]
+            - button "Options" [ref=e579] [cursor=pointer]:
+              - generic [ref=e581]: 
+          - generic [ref=e584]:
+            - generic [ref=e587]:
+              - generic [ref=e592]:
+                - img [ref=e593]
+                - img [ref=e595]
+                - img [ref=e597]
+                - img [ref=e599]
+              - generic [ref=e611]:
+                - img [ref=e612]
+                - img [ref=e614]
+                - img [ref=e616]
+                - img [ref=e618]
+              - generic [ref=e629]:
+                - img [ref=e630]
+                - img [ref=e632]
+                - img [ref=e634]
+                - img [ref=e636]
+              - generic [ref=e647]:
+                - img [ref=e648]
+                - img [ref=e650]
+                - img [ref=e652]
+                - img [ref=e654]
+              - generic [ref=e665]:
+                - img [ref=e666]
+                - img [ref=e668]
+                - img [ref=e670]
+                - img [ref=e672]
+              - generic [ref=e683]:
+                - img [ref=e684]
+                - img [ref=e686]
+                - img [ref=e688]
+                - img [ref=e690]
+              - generic [ref=e701]:
+                - img [ref=e702]
+                - img [ref=e704]
+                - img [ref=e706]
+                - img [ref=e708]
+              - generic [ref=e719]:
+                - img [ref=e720]
+                - img [ref=e722]
+                - img [ref=e724]
+                - img [ref=e726]
+            - generic [ref=e734]:
+              - img "No data available" [ref=e735]:
+                - img "zero state finnick" [ref=e736]
+              - generic [ref=e778]: No data available
+              - button "New smart event" [ref=e779] [cursor=pointer]:
+                - generic [ref=e782]: New smart event
+        - generic [ref=e783]:
+          - button "Drag card" [ref=e784]:
+            - img [ref=e787]
+          - heading "Funnels" [level=2] [ref=e792]
+          - button "Options" [ref=e794] [cursor=pointer]:
+            - generic [ref=e796]: 
+          - generic [ref=e798]:
+            - generic [ref=e799]:
+              - generic [ref=e803]:
+                - img [ref=e804]
+                - img [ref=e806]
+                - img [ref=e808]
+                - img [ref=e810]
+              - combobox "Dropdown options" [ref=e814]:
+                - generic [ref=e815] [cursor=pointer]: Select a funnel
+                - generic [ref=e816] [cursor=pointer]:
+                  - generic: 
+            - generic [ref=e817]:
+              - img "No data available" [ref=e818]:
+                - img "zero state clementine" [ref=e819]
+              - generic [ref=e846]: Choose a funnel to see traffic and dropoff information
+        - generic [ref=e847]:
+          - button "Drag card" [ref=e848]:
+            - img [ref=e851]
+          - generic [ref=e853]:
+            - tab "Top pages" [selected] [ref=e856] [cursor=pointer]
+            - tab "Inactive pages" [ref=e859] [cursor=pointer]
+            - tab "Top entry pages" [ref=e862] [cursor=pointer]
+            - button [ref=e863] [cursor=pointer]:
+              - img [ref=e866]
+          - generic [ref=e868]:
+            - button [ref=e869] [cursor=pointer]:
+              - img [ref=e872]
+            - button "Options" [ref=e874] [cursor=pointer]:
+              - generic [ref=e876]: 
+          - generic [ref=e879]:
+            - generic [ref=e882]:
+              - generic [ref=e887]:
+                - img [ref=e888]
+                - img [ref=e890]
+                - img [ref=e892]
+                - img [ref=e894]
+              - generic [ref=e906]:
+                - img [ref=e907]
+                - img [ref=e909]
+                - img [ref=e911]
+                - img [ref=e913]
+              - generic [ref=e924]:
+                - img [ref=e925]
+                - img [ref=e927]
+                - img [ref=e929]
+                - img [ref=e931]
+              - generic [ref=e942]:
+                - img [ref=e943]
+                - img [ref=e945]
+                - img [ref=e947]
+                - img [ref=e949]
+              - generic [ref=e960]:
+                - img [ref=e961]
+                - img [ref=e963]
+                - img [ref=e965]
+                - img [ref=e967]
+              - generic [ref=e978]:
+                - img [ref=e979]
+                - img [ref=e981]
+                - img [ref=e983]
+                - img [ref=e985]
+              - generic [ref=e996]:
+                - img [ref=e997]
+                - img [ref=e999]
+                - img [ref=e1001]
+                - img [ref=e1003]
+              - generic [ref=e1014]:
+                - img [ref=e1015]
+                - img [ref=e1017]
+                - img [ref=e1019]
+                - img [ref=e1021]
+              - generic [ref=e1032]:
+                - img [ref=e1033]
+                - img [ref=e1035]
+                - img [ref=e1037]
+                - img [ref=e1039]
+            - generic [ref=e1047]:
+              - img "No data available" [ref=e1048]:
+                - img "zero state finnick" [ref=e1049]
+              - generic [ref=e1091]: No data available
+        - generic [ref=e1092]:
+          - button "Drag card" [ref=e1093]:
+            - img [ref=e1096]
+          - generic [ref=e1098]:
+            - tab "Referrer" [selected] [ref=e1101] [cursor=pointer]
+            - tab "Channel" [ref=e1104] [cursor=pointer]
+            - tab "Campaign" [ref=e1107] [cursor=pointer]
+            - tab "Source" [ref=e1110] [cursor=pointer]
+          - generic [ref=e1111]:
+            - button [ref=e1112] [cursor=pointer]:
+              - img [ref=e1115]
+            - button "Options" [ref=e1117] [cursor=pointer]:
+              - generic [ref=e1119]: 
+          - generic [ref=e1122]:
+            - generic [ref=e1125]:
+              - generic [ref=e1130]:
+                - img [ref=e1131]
+                - img [ref=e1133]
+                - img [ref=e1135]
+                - img [ref=e1137]
+              - generic [ref=e1148]:
+                - img [ref=e1149]
+                - img [ref=e1151]
+                - img [ref=e1153]
+                - img [ref=e1155]
+              - generic [ref=e1166]:
+                - img [ref=e1167]
+                - img [ref=e1169]
+                - img [ref=e1171]
+                - img [ref=e1173]
+              - generic [ref=e1184]:
+                - img [ref=e1185]
+                - img [ref=e1187]
+                - img [ref=e1189]
+                - img [ref=e1191]
+              - generic [ref=e1202]:
+                - img [ref=e1203]
+                - img [ref=e1205]
+                - img [ref=e1207]
+                - img [ref=e1209]
+              - generic [ref=e1220]:
+                - img [ref=e1221]
+                - img [ref=e1223]
+                - img [ref=e1225]
+                - img [ref=e1227]
+              - generic [ref=e1238]:
+                - img [ref=e1239]
+                - img [ref=e1241]
+                - img [ref=e1243]
+                - img [ref=e1245]
+              - generic [ref=e1256]:
+                - img [ref=e1257]
+                - img [ref=e1259]
+                - img [ref=e1261]
+                - img [ref=e1263]
+            - generic [ref=e1271]:
+              - img "No data available" [ref=e1272]:
+                - img "zero state bruno" [ref=e1273]
+              - generic [ref=e1326]: No data available
+        - generic [ref=e1327]:
+          - button "Drag card" [ref=e1328]:
+            - img [ref=e1331]
+          - generic [ref=e1333]:
+            - tab "Browsers" [selected] [ref=e1336] [cursor=pointer]
+            - tab "Devices" [ref=e1339] [cursor=pointer]
+            - tab "Operating systems" [ref=e1342] [cursor=pointer]
+            - tab "Region" [ref=e1345] [cursor=pointer]
+          - generic [ref=e1346]:
+            - button [ref=e1347] [cursor=pointer]:
+              - img [ref=e1350]
+            - button "Options" [ref=e1352] [cursor=pointer]:
+              - generic [ref=e1354]: 
+          - generic [ref=e1357]:
+            - generic [ref=e1360]:
+              - img [ref=e1367]
+              - generic [ref=e1374]:
+                - img [ref=e1375]
+                - img [ref=e1377]
+                - img [ref=e1379]
+                - img [ref=e1381]
+              - generic [ref=e1392]:
+                - img [ref=e1393]
+                - img [ref=e1395]
+                - img [ref=e1397]
+                - img [ref=e1399]
+              - generic [ref=e1410]:
+                - img [ref=e1411]
+                - img [ref=e1413]
+                - img [ref=e1415]
+                - img [ref=e1417]
+              - generic [ref=e1428]:
+                - img [ref=e1429]
+                - img [ref=e1431]
+                - img [ref=e1433]
+                - img [ref=e1435]
+              - generic [ref=e1446]:
+                - img [ref=e1447]
+                - img [ref=e1449]
+                - img [ref=e1451]
+                - img [ref=e1453]
+              - generic [ref=e1464]:
+                - img [ref=e1465]
+                - img [ref=e1467]
+                - img [ref=e1469]
+                - img [ref=e1471]
+            - generic [ref=e1479]:
+              - img "No data available" [ref=e1480]:
+                - img "zero state bruno" [ref=e1481]
+              - generic [ref=e1534]: No data available
+        - generic [ref=e1535]:
+          - button "Drag card" [ref=e1536]:
+            - img [ref=e1539]
+          - generic [ref=e1541]:
+            - tab "URL performance" [selected] [ref=e1544] [cursor=pointer]
+            - tab "Performance overview" [ref=e1547] [cursor=pointer]
+          - button "Options" [ref=e1549] [cursor=pointer]:
+            - generic [ref=e1551]: 
+          - generic [ref=e1553]:
+            - generic [ref=e1563]:
+              - img [ref=e1564]
+              - img [ref=e1566]
+              - img [ref=e1568]
+              - img [ref=e1570]
+            - generic [ref=e1581]:
+              - img [ref=e1582]
+              - img [ref=e1584]
+              - img [ref=e1586]
+              - img [ref=e1588]
+            - generic [ref=e1599]:
+              - img [ref=e1600]
+              - img [ref=e1602]
+              - img [ref=e1604]
+              - img [ref=e1606]
+            - generic [ref=e1617]:
+              - img [ref=e1618]
+              - img [ref=e1620]
+              - img [ref=e1622]
+              - img [ref=e1624]
+        - generic [ref=e1626]:
+          - button "Drag card" [ref=e1627]:
+            - img [ref=e1630]
+          - generic [ref=e1634]:
+            - heading "JavaScript errors" [level=2] [ref=e1635]
+            - img [ref=e1637]
+          - generic [ref=e1639]:
+            - button [ref=e1640] [cursor=pointer]:
+              - img [ref=e1643]
+            - button "Options" [ref=e1645] [cursor=pointer]:
+              - generic [ref=e1647]: 
+          - generic [ref=e1649]:
+            - generic [ref=e1652]:
+              - img [ref=e1659]
+              - generic [ref=e1666]:
+                - img [ref=e1667]
+                - img [ref=e1669]
+                - img [ref=e1671]
+                - img [ref=e1673]
+              - generic [ref=e1684]:
+                - img [ref=e1685]
+                - img [ref=e1687]
+                - img [ref=e1689]
+                - img [ref=e1691]
+              - generic [ref=e1702]:
+                - img [ref=e1703]
+                - img [ref=e1705]
+                - img [ref=e1707]
+                - img [ref=e1709]
+              - generic [ref=e1720]:
+                - img [ref=e1721]
+                - img [ref=e1723]
+                - img [ref=e1725]
+                - img [ref=e1727]
+            - generic [ref=e1735]:
+              - generic [ref=e1736]:
+                - generic [ref=e1737]: Only show click errors
+                - generic [ref=e1738]:
+                  - switch "Only show click errors" [ref=e1739] [cursor=pointer]
+                  - generic [ref=e1741]: "Off"
+              - generic [ref=e1742]:
+                - generic:
+                  - img "Sessions with JavaScript errors" [ref=e1743]
+                  - generic:
+                    - img
+              - button "Recordings" [ref=e1744] [cursor=pointer]:
+                - generic [ref=e1745]:
+                  - img [ref=e1747]
+                  - generic [ref=e1750]: Recordings
+              - generic [ref=e1753]: total JavaScript errors
+        - generic [ref=e1754]:
+          - button "Drag card" [ref=e1755]:
+            - img [ref=e1758]
+          - heading "Bot traffic" [level=2] [ref=e1763]
+          - button "Options" [ref=e1765] [cursor=pointer]:
+            - generic [ref=e1767]: 
+          - generic [ref=e1769]:
+            - img "zero state bruno" [ref=e1771]
+            - heading "No data available" [level=3] [ref=e1824]
+            - paragraph
+      - button "Hidden cards (1)" [ref=e1827] [cursor=pointer]:
+        - generic [ref=e1828]: 
+        - generic [ref=e1829]: Hidden cards (1)

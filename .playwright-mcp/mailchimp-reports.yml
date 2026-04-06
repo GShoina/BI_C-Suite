@@ -1,0 +1,97 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link "Skip to main content" [ref=e6] [cursor=pointer]:
+        - /url: "#content"
+      - navigation "Main" [ref=e9]:
+        - generic [ref=e10]:
+          - link "Home" [ref=e12] [cursor=pointer]
+          - button "Search..." [ref=e16] [cursor=pointer]:
+            - img [ref=e18]
+            - paragraph [ref=e20]: Search...
+          - generic [ref=e22]:
+            - button "Help" [ref=e23] [cursor=pointer]:
+              - generic [ref=e27]: Help
+            - generic [ref=e31]:
+              - button "account settings button" [ref=e32] [cursor=pointer]:
+                - img "Signed in as Bivision Bivision, Account Menu" [ref=e34]
+              - generic [ref=e35]: "28"
+              - generic [ref=e36]: notifications
+    - navigation "Left" [ref=e41]:
+      - generic [ref=e42]:
+        - list [ref=e43]:
+          - listitem [ref=e44]:
+            - link "Create" [ref=e45] [cursor=pointer]:
+              - /url: "#/create-campaign"
+              - generic [ref=e47]: Create
+        - list [ref=e48]:
+          - listitem [ref=e49]:
+            - link "Home" [ref=e50] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e53]: Home
+          - listitem [ref=e54]:
+            - link "Campaigns" [ref=e55] [cursor=pointer]:
+              - /url: /campaigns
+              - generic [ref=e58]: Campaigns
+          - listitem [ref=e59]:
+            - link "Audience" [ref=e60] [cursor=pointer]:
+              - /url: /audience/contacts
+              - generic [ref=e63]: Audience
+          - listitem [ref=e64]:
+            - link "Automations" [ref=e65] [cursor=pointer]:
+              - /url: /customer-journey
+              - generic [ref=e68]: Automations
+          - listitem [ref=e69]:
+            - link "Forms" [ref=e70] [cursor=pointer]:
+              - /url: /forms
+              - generic [ref=e73]: Forms
+          - listitem [ref=e74]:
+            - link "Analytics" [expanded] [ref=e75] [cursor=pointer]:
+              - /url: /analytics/marketing-dashboard/
+              - generic [ref=e78]: Analytics
+            - list [ref=e81]:
+              - listitem [ref=e82]:
+                - link "Conversion insights" [ref=e83] [cursor=pointer]:
+                  - /url: /analytics/conversion-insights
+                  - generic [ref=e84]:
+                    - generic [ref=e85]: Conversion insights
+                    - generic [ref=e86]: New
+              - listitem [ref=e87]:
+                - link "Reports" [ref=e88] [cursor=pointer]:
+                  - /url: /reports
+                  - generic [ref=e90]: Reports
+              - listitem [ref=e91]:
+                - link "Custom reports" [ref=e92] [cursor=pointer]:
+                  - /url: /analytics/reports/custom-reports
+                  - generic [ref=e94]: Custom reports
+          - listitem [ref=e95]:
+            - link "Website" [ref=e96] [cursor=pointer]:
+              - /url: /website/dashboard
+              - generic [ref=e99]: Website
+          - listitem [ref=e100]:
+            - link "Content and brand" [ref=e101] [cursor=pointer]:
+              - /url: /content/#myfiles
+              - generic [ref=e104]: Content and brand
+          - listitem [ref=e105]:
+            - link "Integrations" [ref=e106] [cursor=pointer]:
+              - /url: /account/connected-sites/discover/
+              - generic [ref=e109]: Integrations
+      - generic [ref=e110]:
+        - paragraph [ref=e114]: Loading
+        - button "Collapse navigation" [ref=e116] [cursor=pointer]
+    - list [ref=e118]:
+      - listitem [ref=e119]:
+        - button "Help" [ref=e121] [cursor=pointer]:
+          - generic [ref=e122]: Help
+          - img [ref=e123]
+    - main [ref=e125]:
+      - generic [ref=e126]:
+        - alert [ref=e128]
+        - iframe [ref=e133]:
+          
+    - status
+    - status
+  - generic:
+    - status [ref=e134]:
+      - generic [ref=e135]: Loading
+    - alert [ref=e136]

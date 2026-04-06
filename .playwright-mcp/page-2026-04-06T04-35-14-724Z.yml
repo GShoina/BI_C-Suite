@@ -1,0 +1,80 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link "Skip to main content" [ref=e6] [cursor=pointer]:
+        - /url: "#content"
+      - navigation "Main" [ref=e9]:
+        - link "Home" [ref=e12] [cursor=pointer]
+    - navigation "Left" [ref=e18]:
+      - generic [ref=e19]:
+        - list [ref=e20]:
+          - listitem [ref=e21]:
+            - link "Create" [ref=e22] [cursor=pointer]:
+              - /url: "#/create-campaign"
+              - generic [ref=e24]: Create
+        - list [ref=e25]:
+          - listitem [ref=e26]:
+            - link "Home" [ref=e27] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e30]: Home
+          - listitem [ref=e31]:
+            - link "Campaigns" [ref=e32] [cursor=pointer]:
+              - /url: /campaigns
+              - generic [ref=e35]: Campaigns
+          - listitem [ref=e36]:
+            - link "Audience" [ref=e37] [cursor=pointer]:
+              - /url: /audience/contacts
+              - generic [ref=e40]: Audience
+          - listitem [ref=e41]:
+            - link "Automations" [ref=e42] [cursor=pointer]:
+              - /url: /customer-journey
+              - generic [ref=e45]: Automations
+          - listitem [ref=e46]:
+            - link "Forms" [ref=e47] [cursor=pointer]:
+              - /url: /forms
+              - generic [ref=e50]: Forms
+          - listitem [ref=e51]:
+            - link "Analytics" [expanded] [ref=e52] [cursor=pointer]:
+              - /url: /analytics/marketing-dashboard/
+              - generic [ref=e55]: Analytics
+            - list [ref=e58]:
+              - listitem [ref=e59]:
+                - link "Conversion insights" [ref=e60] [cursor=pointer]:
+                  - /url: /analytics/conversion-insights
+                  - generic [ref=e61]:
+                    - generic [ref=e62]: Conversion insights
+                    - generic [ref=e63]: New
+              - listitem [ref=e64]:
+                - link "Reports" [ref=e65] [cursor=pointer]:
+                  - /url: /reports
+                  - generic [ref=e67]: Reports
+              - listitem [ref=e68]:
+                - link "Custom reports" [ref=e69] [cursor=pointer]:
+                  - /url: /analytics/reports/custom-reports
+                  - generic [ref=e71]: Custom reports
+          - listitem [ref=e72]:
+            - link "Website" [ref=e73] [cursor=pointer]:
+              - /url: /website/dashboard
+              - generic [ref=e76]: Website
+          - listitem [ref=e77]:
+            - link "Content and brand" [ref=e78] [cursor=pointer]:
+              - /url: /content/#myfiles
+              - generic [ref=e81]: Content and brand
+          - listitem [ref=e82]:
+            - link "Integrations" [ref=e83] [cursor=pointer]:
+              - /url: /account/connected-sites/discover/
+              - generic [ref=e86]: Integrations
+      - generic [ref=e87]:
+        - paragraph [ref=e90]: Loading
+        - button "Collapse navigation" [ref=e92] [cursor=pointer]
+    - main [ref=e94]:
+      - generic [ref=e95]:
+        - alert [ref=e97]
+        - iframe [ref=e102]:
+          
+    - status
+    - status
+  - generic:
+    - status [ref=e103]:
+      - generic [ref=e104]: Loading
+    - alert [ref=e105]

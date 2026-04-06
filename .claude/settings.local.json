@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_wait_for",
+      "Skill(update-config)",
+      "Bash(taskkill /F /IM chrome.exe)",
+      "Bash(curl -sL \"https://docs.google.com/spreadsheets/d/1fbwJ5d3tNrxiuJr2BoGjOahQ_uM08w0Km3Piwhe70i8/export?format=csv&gid=939328869\")",
+      "Bash(curl -sL \"https://docs.google.com/spreadsheets/d/1fbwJ5d3tNrxiuJr2BoGjOahQ_uM08w0Km3Piwhe70i8/gviz/tq?tqx=out:csv&gid=939328869\")"
+    ]
+  }
+}

@@ -1,0 +1,944 @@
+- generic [ref=e1]:
+  - generic [ref=e12]:
+    - generic [ref=e24]:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - heading "Insights" [level=1] [ref=e29]
+            - generic [ref=e30]: Review performance results and more.
+          - toolbar [ref=e32]:
+            - generic [ref=e33]:
+              - generic [ref=e34]:
+                - generic [ref=e41]:
+                  - generic [ref=e47]: Entity selector
+                  - combobox "Entity selector" [ref=e52] [cursor=pointer]:
+                    - generic [ref=e55]:
+                      - generic [ref=e58]:
+                        - img "Facebook"
+                      - generic [ref=e59]: Facebook
+                      - img [ref=e60]
+                - 'button "Last 28 days: Mar 8, 2026 – Apr 4, 2026" [disabled] [ref=e64]':
+                  - generic [ref=e67]:
+                    - img [ref=e68]
+                    - generic [ref=e71]: "Last 28 days: Mar 8, 2026 – Apr 4, 2026"
+                    - img [ref=e72]
+              - button "Facebook" [ref=e75] [cursor=pointer]:
+                - generic [ref=e81]:
+                  - generic:
+                    - img
+                  - img "Facebook" [ref=e83]
+        - button "Pin to navigation" [ref=e87] [cursor=pointer]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: Pin
+            - img [ref=e92]
+      - generic [ref=e98]:
+        - generic [ref=e108]:
+          - generic [ref=e111]:
+            - navigation [ref=e112]:
+              - img [ref=e114]
+              - list [ref=e116]:
+                - listitem [ref=e119]:
+                  - link "Overview" [ref=e121] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/overview?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Overview
+                - listitem [ref=e129]:
+                  - link "Plan" [ref=e131] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/plan?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Plan
+                - listitem [ref=e139]:
+                  - link "Results" [ref=e141] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/results?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Results
+                - listitem [ref=e149]:
+                  - link "Audience" [ref=e151] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/people?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Audience
+                - listitem [ref=e159]:
+                  - link "Messaging" [ref=e161] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/messaging?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Messaging
+                - listitem [ref=e169]:
+                  - link "Benchmarking" [ref=e171] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/benchmark?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Benchmarking
+            - navigation "Content" [ref=e177]:
+              - generic [ref=e180]:
+                - img [ref=e182]
+                - generic [ref=e185]: Content
+              - list [ref=e186]:
+                - listitem [ref=e189]:
+                  - link "Overview" [ref=e191] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/content_summary?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Overview
+                - listitem [ref=e199]:
+                  - link "Content" [ref=e201] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/content?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Content
+                - listitem [ref=e209]:
+                  - link "Ads" [ref=e211] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/content_ads?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Ads
+            - navigation "Earnings" [ref=e217]:
+              - generic [ref=e220]:
+                - img [ref=e222]
+                - generic [ref=e225]: Earnings
+              - list [ref=e226]:
+                - listitem [ref=e229]:
+                  - link "Earnings" [ref=e231] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/insights/video_earnings?business_id=2144231439057749&asset_id=103058778757756
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Earnings
+          - button "Expand" [ref=e240] [cursor=pointer]:
+            - generic [ref=e242]:
+              - generic [ref=e243]: Expand
+              - img [ref=e245]
+        - generic [ref=e258]:
+          - generic [ref=e262]:
+            - generic [ref=e263]:
+              - img [ref=e268]
+              - heading "Views data affected for April 1–4, 2026" [level=4] [ref=e272]
+            - generic [ref=e278]: From April 1 – April 4, 2026, views data may be undercounted due to a temporary reporting issue. Actual content distribution was not affected. The issue has been resolved, but data for this period may not fully reflect actual performance.
+          - generic [ref=e282]:
+            - img [ref=e286]
+            - generic [ref=e294]:
+              - generic [ref=e296]:
+                - heading "New viewers metric for content published after July 31, 2025" [level=4] [ref=e298]
+                - generic [ref=e299]: Use this new metric to help better understand who sees your content across Meta technologies. The reach metric will no longer be shown on Meta Business Suite, but you can still find it in Ads Manager.
+              - button "Close" [ref=e300] [cursor=pointer]:
+                - generic [ref=e302]:
+                  - generic [ref=e303]: Close
+                  - img [ref=e305]
+          - generic [ref=e317]:
+            - generic [ref=e321]:
+              - generic [ref=e322]:
+                - generic [ref=e323]:
+                  - img "Facebook" [ref=e324]
+                  - heading "Performance" [level=3] [ref=e327]
+                - generic [ref=e330]: March 8, 2026 - April 4, 2026
+              - generic [ref=e332]:
+                - generic [ref=e338]: Workspace Selector
+                - 'combobox "Workspace Selector Customize view: Business" [ref=e343] [cursor=pointer]':
+                  - generic [ref=e346]:
+                    - generic [ref=e350]: "Customize view: Business"
+                    - img [ref=e352]
+            - generic [ref=e357]:
+              - generic [ref=e367]:
+                - button "See more" [ref=e369] [cursor=pointer]:
+                  - generic [ref=e371]:
+                    - generic [ref=e372]: See more
+                    - img [ref=e375]
+                - generic [ref=e377]:
+                  - heading "Views" [level=2] [ref=e378]
+                  - generic [ref=e379]:
+                    - generic [ref=e380]:
+                      - generic [ref=e387]:
+                        - generic [ref=e394]: Views
+                        - generic [ref=e400]:
+                          - generic [ref=e401]: 35.8K
+                          - generic [ref=e404]:
+                            - img [ref=e406]
+                            - generic [ref=e408]: 51.7%
+                      - generic [ref=e414]:
+                        - generic [ref=e415]:
+                          - generic:
+                            - heading [level=2]
+                        - table [ref=e417]:
+                          - rowgroup [ref=e418]:
+                            - row "1772956800 1773039600 1773126000 1773212400 1773298800 1773385200 1773471600 1773558000 1773644400 1773730800 1773817200 1773903600 1773990000 1774076400 1774162800 1774249200 1774335600 1774422000 1774508400 1774594800 1774681200 1774767600 1774854000 1774940400 1775026800 1775113200 1775199600 1775286000" [ref=e419]:
+                              - columnheader [ref=e420]
+                              - columnheader "1772956800" [ref=e421]
+                              - columnheader "1773039600" [ref=e422]
+                              - columnheader "1773126000" [ref=e423]
+                              - columnheader "1773212400" [ref=e424]
+                              - columnheader "1773298800" [ref=e425]
+                              - columnheader "1773385200" [ref=e426]
+                              - columnheader "1773471600" [ref=e427]
+                              - columnheader "1773558000" [ref=e428]
+                              - columnheader "1773644400" [ref=e429]
+                              - columnheader "1773730800" [ref=e430]
+                              - columnheader "1773817200" [ref=e431]
+                              - columnheader "1773903600" [ref=e432]
+                              - columnheader "1773990000" [ref=e433]
+                              - columnheader "1774076400" [ref=e434]
+                              - columnheader "1774162800" [ref=e435]
+                              - columnheader "1774249200" [ref=e436]
+                              - columnheader "1774335600" [ref=e437]
+                              - columnheader "1774422000" [ref=e438]
+                              - columnheader "1774508400" [ref=e439]
+                              - columnheader "1774594800" [ref=e440]
+                              - columnheader "1774681200" [ref=e441]
+                              - columnheader "1774767600" [ref=e442]
+                              - columnheader "1774854000" [ref=e443]
+                              - columnheader "1774940400" [ref=e444]
+                              - columnheader "1775026800" [ref=e445]
+                              - columnheader "1775113200" [ref=e446]
+                              - columnheader "1775199600" [ref=e447]
+                              - columnheader "1775286000" [ref=e448]
+                            - row "Primary 34 17 66 35 27 31 35 40 25 38 22 14 29 40 43 4920 4433 5403 5037 952 101 47 50 4789 3958 4864 699 30" [ref=e449]:
+                              - cell "Primary" [ref=e450]
+                              - cell "34" [ref=e451]
+                              - cell "17" [ref=e452]
+                              - cell "66" [ref=e453]
+                              - cell "35" [ref=e454]
+                              - cell "27" [ref=e455]
+                              - cell "31" [ref=e456]
+                              - cell "35" [ref=e457]
+                              - cell "40" [ref=e458]
+                              - cell "25" [ref=e459]
+                              - cell "38" [ref=e460]
+                              - cell "22" [ref=e461]
+                              - cell "14" [ref=e462]
+                              - cell "29" [ref=e463]
+                              - cell "40" [ref=e464]
+                              - cell "43" [ref=e465]
+                              - cell "4920" [ref=e466]
+                              - cell "4433" [ref=e467]
+                              - cell "5403" [ref=e468]
+                              - cell "5037" [ref=e469]
+                              - cell "952" [ref=e470]
+                              - cell "101" [ref=e471]
+                              - cell "47" [ref=e472]
+                              - cell "50" [ref=e473]
+                              - cell "4789" [ref=e474]
+                              - cell "3958" [ref=e475]
+                              - cell "4864" [ref=e476]
+                              - cell "699" [ref=e477]
+                              - cell "30" [ref=e478]
+                    - generic [ref=e483]:
+                      - generic [ref=e486]: From followers
+                      - heading "1.3%" [level=2] [ref=e492]
+                      - generic [ref=e495]:
+                        - img [ref=e497]
+                        - generic [ref=e499]: 32.7%
+                    - generic [ref=e504]:
+                      - generic [ref=e507]: From non-followers
+                      - heading "98.7%" [level=2] [ref=e513]
+                      - generic [ref=e516]:
+                        - img [ref=e518]
+                        - generic [ref=e520]: 0.6%
+                    - separator [ref=e521]
+                    - generic [ref=e526]:
+                      - generic [ref=e529]: Viewers
+                      - heading "26,261" [level=2] [ref=e535]
+                      - generic [ref=e538]:
+                        - img [ref=e540]
+                        - generic [ref=e542]: 48.9%
+              - generic [ref=e548]:
+                - button "See more" [ref=e550] [cursor=pointer]:
+                  - generic [ref=e552]:
+                    - generic [ref=e553]: See more
+                    - img [ref=e556]
+                - generic [ref=e558]:
+                  - heading "Interactions" [level=2] [ref=e559]
+                  - generic [ref=e560]:
+                    - generic [ref=e561]:
+                      - generic [ref=e568]:
+                        - generic [ref=e575]: Content interactions
+                        - generic [ref=e581]:
+                          - generic [ref=e582]: "32"
+                          - generic [ref=e585]:
+                            - img [ref=e587]
+                            - generic [ref=e589]: 87.2%
+                      - generic [ref=e595]:
+                        - generic [ref=e596]:
+                          - generic:
+                            - heading [level=2]
+                        - table [ref=e598]:
+                          - rowgroup [ref=e599]:
+                            - row "1772956800 1773039600 1773126000 1773212400 1773298800 1773385200 1773471600 1773558000 1773644400 1773730800 1773817200 1773903600 1773990000 1774076400 1774162800 1774249200 1774335600 1774422000 1774508400 1774594800 1774681200 1774767600 1774854000 1774940400 1775026800 1775113200 1775199600 1775286000" [ref=e600]:
+                              - columnheader [ref=e601]
+                              - columnheader "1772956800" [ref=e602]
+                              - columnheader "1773039600" [ref=e603]
+                              - columnheader "1773126000" [ref=e604]
+                              - columnheader "1773212400" [ref=e605]
+                              - columnheader "1773298800" [ref=e606]
+                              - columnheader "1773385200" [ref=e607]
+                              - columnheader "1773471600" [ref=e608]
+                              - columnheader "1773558000" [ref=e609]
+                              - columnheader "1773644400" [ref=e610]
+                              - columnheader "1773730800" [ref=e611]
+                              - columnheader "1773817200" [ref=e612]
+                              - columnheader "1773903600" [ref=e613]
+                              - columnheader "1773990000" [ref=e614]
+                              - columnheader "1774076400" [ref=e615]
+                              - columnheader "1774162800" [ref=e616]
+                              - columnheader "1774249200" [ref=e617]
+                              - columnheader "1774335600" [ref=e618]
+                              - columnheader "1774422000" [ref=e619]
+                              - columnheader "1774508400" [ref=e620]
+                              - columnheader "1774594800" [ref=e621]
+                              - columnheader "1774681200" [ref=e622]
+                              - columnheader "1774767600" [ref=e623]
+                              - columnheader "1774854000" [ref=e624]
+                              - columnheader "1774940400" [ref=e625]
+                              - columnheader "1775026800" [ref=e626]
+                              - columnheader "1775113200" [ref=e627]
+                              - columnheader "1775199600" [ref=e628]
+                              - columnheader "1775286000" [ref=e629]
+                            - row "Primary 0 0 0 0 0 0 1 0 0 0 0 0 2 0 0 12 1 1 0 4 0 0 0 5 0 5 1 0" [ref=e630]:
+                              - cell "Primary" [ref=e631]
+                              - cell "0" [ref=e632]
+                              - cell "0" [ref=e633]
+                              - cell "0" [ref=e634]
+                              - cell "0" [ref=e635]
+                              - cell "0" [ref=e636]
+                              - cell "0" [ref=e637]
+                              - cell "1" [ref=e638]
+                              - cell "0" [ref=e639]
+                              - cell "0" [ref=e640]
+                              - cell "0" [ref=e641]
+                              - cell "0" [ref=e642]
+                              - cell "0" [ref=e643]
+                              - cell "2" [ref=e644]
+                              - cell "0" [ref=e645]
+                              - cell "0" [ref=e646]
+                              - cell "12" [ref=e647]
+                              - cell "1" [ref=e648]
+                              - cell "1" [ref=e649]
+                              - cell "0" [ref=e650]
+                              - cell "4" [ref=e651]
+                              - cell "0" [ref=e652]
+                              - cell "0" [ref=e653]
+                              - cell "0" [ref=e654]
+                              - cell "5" [ref=e655]
+                              - cell "0" [ref=e656]
+                              - cell "5" [ref=e657]
+                              - cell "1" [ref=e658]
+                              - cell "0" [ref=e659]
+                    - generic [ref=e664]:
+                      - generic [ref=e667]: From followers
+                      - heading "16" [level=2] [ref=e673]
+                      - generic [ref=e676]:
+                        - img [ref=e678]
+                        - generic [ref=e680]: 82.4%
+                    - generic [ref=e685]:
+                      - generic [ref=e688]: From non-followers
+                      - heading "16" [level=2] [ref=e694]
+                      - generic [ref=e697]:
+                        - img [ref=e699]
+                        - generic [ref=e701]: 89.9%
+              - generic [ref=e707]:
+                - button "See more" [ref=e709] [cursor=pointer]:
+                  - generic [ref=e711]:
+                    - generic [ref=e712]: See more
+                    - img [ref=e715]
+                - generic [ref=e717]:
+                  - heading "Visits" [level=2] [ref=e718]
+                  - generic [ref=e720]:
+                    - generic [ref=e727]:
+                      - generic [ref=e734]: Facebook visits
+                      - generic [ref=e740]:
+                        - generic [ref=e741]: "236"
+                        - generic [ref=e744]:
+                          - img [ref=e746]
+                          - generic [ref=e748]: 30.6%
+                    - generic [ref=e754]:
+                      - generic [ref=e755]:
+                        - generic:
+                          - heading [level=2]
+                      - table [ref=e757]:
+                        - rowgroup [ref=e758]:
+                          - row "1772956800 1773039600 1773126000 1773212400 1773298800 1773385200 1773471600 1773558000 1773644400 1773730800 1773817200 1773903600 1773990000 1774076400 1774162800 1774249200 1774335600 1774422000 1774508400 1774594800 1774681200 1774767600 1774854000 1774940400 1775026800 1775113200 1775199600 1775286000" [ref=e759]:
+                            - columnheader [ref=e760]
+                            - columnheader "1772956800" [ref=e761]
+                            - columnheader "1773039600" [ref=e762]
+                            - columnheader "1773126000" [ref=e763]
+                            - columnheader "1773212400" [ref=e764]
+                            - columnheader "1773298800" [ref=e765]
+                            - columnheader "1773385200" [ref=e766]
+                            - columnheader "1773471600" [ref=e767]
+                            - columnheader "1773558000" [ref=e768]
+                            - columnheader "1773644400" [ref=e769]
+                            - columnheader "1773730800" [ref=e770]
+                            - columnheader "1773817200" [ref=e771]
+                            - columnheader "1773903600" [ref=e772]
+                            - columnheader "1773990000" [ref=e773]
+                            - columnheader "1774076400" [ref=e774]
+                            - columnheader "1774162800" [ref=e775]
+                            - columnheader "1774249200" [ref=e776]
+                            - columnheader "1774335600" [ref=e777]
+                            - columnheader "1774422000" [ref=e778]
+                            - columnheader "1774508400" [ref=e779]
+                            - columnheader "1774594800" [ref=e780]
+                            - columnheader "1774681200" [ref=e781]
+                            - columnheader "1774767600" [ref=e782]
+                            - columnheader "1774854000" [ref=e783]
+                            - columnheader "1774940400" [ref=e784]
+                            - columnheader "1775026800" [ref=e785]
+                            - columnheader "1775113200" [ref=e786]
+                            - columnheader "1775199600" [ref=e787]
+                            - columnheader "1775286000" [ref=e788]
+                          - row "Primary 15 0 10 3 0 4 4 9 0 1 0 0 1 0 11 22 0 0 8 43 3 0 3 21 51 23 3 1" [ref=e789]:
+                            - cell "Primary" [ref=e790]
+                            - cell "15" [ref=e791]
+                            - cell "0" [ref=e792]
+                            - cell "10" [ref=e793]
+                            - cell "3" [ref=e794]
+                            - cell "0" [ref=e795]
+                            - cell "4" [ref=e796]
+                            - cell "4" [ref=e797]
+                            - cell "9" [ref=e798]
+                            - cell "0" [ref=e799]
+                            - cell "1" [ref=e800]
+                            - cell "0" [ref=e801]
+                            - cell "0" [ref=e802]
+                            - cell "1" [ref=e803]
+                            - cell "0" [ref=e804]
+                            - cell "11" [ref=e805]
+                            - cell "22" [ref=e806]
+                            - cell "0" [ref=e807]
+                            - cell "0" [ref=e808]
+                            - cell "8" [ref=e809]
+                            - cell "43" [ref=e810]
+                            - cell "3" [ref=e811]
+                            - cell "0" [ref=e812]
+                            - cell "3" [ref=e813]
+                            - cell "21" [ref=e814]
+                            - cell "51" [ref=e815]
+                            - cell "23" [ref=e816]
+                            - cell "3" [ref=e817]
+                            - cell "1" [ref=e818]
+              - generic [ref=e824]:
+                - button "See more" [ref=e826] [cursor=pointer]:
+                  - generic [ref=e828]:
+                    - generic [ref=e829]: See more
+                    - img [ref=e832]
+                - generic [ref=e834]:
+                  - heading "Follows" [level=2] [ref=e835]
+                  - generic [ref=e836]:
+                    - generic [ref=e837]:
+                      - generic [ref=e844]:
+                        - generic [ref=e851]: Follows
+                        - generic [ref=e857]:
+                          - generic [ref=e858]: "7"
+                          - generic [ref=e861]:
+                            - img [ref=e863]
+                            - generic [ref=e865]: 46.2%
+                      - generic [ref=e871]:
+                        - generic [ref=e872]:
+                          - generic:
+                            - heading [level=2]
+                        - table [ref=e874]:
+                          - rowgroup [ref=e875]:
+                            - row "1772956800 1773039600 1773126000 1773212400 1773298800 1773385200 1773471600 1773558000 1773644400 1773730800 1773817200 1773903600 1773990000 1774076400 1774162800 1774249200 1774335600 1774422000 1774508400 1774594800 1774681200 1774767600 1774854000 1774940400 1775026800 1775113200 1775199600 1775286000" [ref=e876]:
+                              - columnheader [ref=e877]
+                              - columnheader "1772956800" [ref=e878]
+                              - columnheader "1773039600" [ref=e879]
+                              - columnheader "1773126000" [ref=e880]
+                              - columnheader "1773212400" [ref=e881]
+                              - columnheader "1773298800" [ref=e882]
+                              - columnheader "1773385200" [ref=e883]
+                              - columnheader "1773471600" [ref=e884]
+                              - columnheader "1773558000" [ref=e885]
+                              - columnheader "1773644400" [ref=e886]
+                              - columnheader "1773730800" [ref=e887]
+                              - columnheader "1773817200" [ref=e888]
+                              - columnheader "1773903600" [ref=e889]
+                              - columnheader "1773990000" [ref=e890]
+                              - columnheader "1774076400" [ref=e891]
+                              - columnheader "1774162800" [ref=e892]
+                              - columnheader "1774249200" [ref=e893]
+                              - columnheader "1774335600" [ref=e894]
+                              - columnheader "1774422000" [ref=e895]
+                              - columnheader "1774508400" [ref=e896]
+                              - columnheader "1774594800" [ref=e897]
+                              - columnheader "1774681200" [ref=e898]
+                              - columnheader "1774767600" [ref=e899]
+                              - columnheader "1774854000" [ref=e900]
+                              - columnheader "1774940400" [ref=e901]
+                              - columnheader "1775026800" [ref=e902]
+                              - columnheader "1775113200" [ref=e903]
+                              - columnheader "1775199600" [ref=e904]
+                              - columnheader "1775286000" [ref=e905]
+                            - row "Primary 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 3 0 0 0 0 1 1 0 0" [ref=e906]:
+                              - cell "Primary" [ref=e907]
+                              - cell "0" [ref=e908]
+                              - cell "0" [ref=e909]
+                              - cell "0" [ref=e910]
+                              - cell "0" [ref=e911]
+                              - cell "0" [ref=e912]
+                              - cell "0" [ref=e913]
+                              - cell "0" [ref=e914]
+                              - cell "0" [ref=e915]
+                              - cell "0" [ref=e916]
+                              - cell "0" [ref=e917]
+                              - cell "0" [ref=e918]
+                              - cell "0" [ref=e919]
+                              - cell "0" [ref=e920]
+                              - cell "0" [ref=e921]
+                              - cell "1" [ref=e922]
+                              - cell "0" [ref=e923]
+                              - cell "1" [ref=e924]
+                              - cell "0" [ref=e925]
+                              - cell "0" [ref=e926]
+                              - cell "3" [ref=e927]
+                              - cell "0" [ref=e928]
+                              - cell "0" [ref=e929]
+                              - cell "0" [ref=e930]
+                              - cell "0" [ref=e931]
+                              - cell "1" [ref=e932]
+                              - cell "1" [ref=e933]
+                              - cell "0" [ref=e934]
+                              - cell "0" [ref=e935]
+                    - generic [ref=e940]:
+                      - generic [ref=e943]: Unfollows
+                      - heading "1" [level=2] [ref=e949]
+                      - generic [ref=e952]:
+                        - img [ref=e954]
+                        - generic [ref=e956]: 50%
+                    - generic [ref=e961]:
+                      - generic [ref=e964]: Net follows
+                      - heading "6" [level=2] [ref=e970]
+                      - generic [ref=e973]:
+                        - img [ref=e975]
+                        - generic [ref=e977]: 45.5%
+          - generic [ref=e983]:
+            - generic [ref=e986]:
+              - heading "Recent ads" [level=3] [ref=e990]
+              - button "See all ads" [ref=e992] [cursor=pointer]:
+                - generic [ref=e996]: See all ads
+            - generic [ref=e1010]:
+              - heading "No activity during this date range" [level=3] [ref=e1014]
+              - generic [ref=e1015]: Please select a different date range to see these insights.
+          - generic [ref=e1021]:
+            - generic [ref=e1024]:
+              - generic [ref=e1025]:
+                - img "Facebook" [ref=e1026]
+                - heading "Recent content" [level=3] [ref=e1029]
+              - button "See all content" [ref=e1031] [cursor=pointer]:
+                - generic [ref=e1035]: See all content
+            - generic [ref=e1049]:
+              - group "Item 1 of 3" [ref=e1050]:
+                - link "🟢 გააერთიანე სამშენებლო პროექტების ფინანსური მონაცემები ერთ სივრცეში" [ref=e1053] [cursor=pointer]:
+                  - /url: /latest/insights/object_insights/?content_id=946040654472920&nav_ref=bizweb_insights_overview_recent_content
+                  - generic [ref=e1055]:
+                    - generic:
+                      - generic:
+                        - img
+                  - heading "🟢 გააერთიანე სამშენებლო პროექტების ფინანსური მონაცემები ერთ სივრცეში" [level=4] [ref=e1059]
+                  - generic [ref=e1063]:
+                    - heading "🟢 გააერთიანე სამშენებლო პროექტების ფინანსური მონაცემები ერთ სივრცეში" [level=4] [ref=e1065]
+                    - generic [ref=e1067]:
+                      - img [ref=e1068]
+                      - generic [ref=e1073]: Tue Mar 31, 3:29pm
+                    - generic [ref=e1074]:
+                      - generic [ref=e1077]:
+                        - img [ref=e1078]
+                        - generic [ref=e1081]: "46"
+                      - generic [ref=e1084]:
+                        - img [ref=e1085]
+                        - generic [ref=e1087]: "2"
+                      - generic [ref=e1090]:
+                        - img [ref=e1091]
+                        - generic [ref=e1093]: "0"
+                      - generic [ref=e1096]:
+                        - img [ref=e1097]
+                        - generic [ref=e1099]: "0"
+              - group "Item 2 of 3" [ref=e1100]:
+                - link "Your story" [ref=e1103] [cursor=pointer]:
+                  - /url: /latest/insights/object_insights/?content_id=1603738677545911&nav_ref=bizweb_insights_overview_recent_content
+                  - generic [ref=e1105]:
+                    - generic:
+                      - generic:
+                        - img
+                  - heading "Your story" [level=4] [ref=e1109]
+                  - generic [ref=e1113]:
+                    - heading "Your story" [level=4] [ref=e1115]
+                    - generic [ref=e1118]: Mon Mar 23, 12:36pm
+                    - generic [ref=e1119]:
+                      - generic [ref=e1122]:
+                        - img [ref=e1123]
+                        - generic [ref=e1126]: "7"
+                      - generic [ref=e1129]:
+                        - img [ref=e1130]
+                        - generic [ref=e1132]: "0"
+                      - generic [ref=e1135]:
+                        - img [ref=e1136]
+                        - generic [ref=e1138]: "0"
+                      - generic [ref=e1141]:
+                        - img [ref=e1142]
+                        - generic [ref=e1144]: "0"
+              - group "Item 3 of 3" [ref=e1145]:
+                - link "Balance-მა და Bivision-მა პარტნიორობა დაიწყეს. რა ხდება, როცა ბაზარზე ერთ-ერთი ყველაზე მოქნილი ERP სისტემა და მოწინავე BI პლატფორმა ერთიანდება? - მომხმარებელი იღებს სრულყოფილ ეკოსისტემას, სადაც აღრიცხვა და ანალიტიკა ერთმანეთს ავსებს. 🔵 ბალანსი-ის მომხმარებლებისთვის ეს ნიშნავს პროგრამის ფუნქციონალის გაფართოებას სიღმრისეული ანალიტიკით, რაც გადაწყვეტილებების მიღებას მონაცემებზე დაყრდნობით კიდევ უფრო სწრაფს და მარტივს ხდის. 🟢 Bivision-ისთვის კი ეს არის შესაძლებლობა, საკუთარი BI გადაწყვეტილებები „ბალანსის“ მოწესრიგებულ და სტრუქტურირებულ მონაცემთა ბაზებს დაუკავშიროს. ჩვენი ერთობლივი მიზანია დავეხმაროთ ქართულ ბიზნესს, დაზოგონ დრო რეპორტინგზე და მთელი ფოკუსი განვითარებისკენ მიმართონ." [ref=e1148] [cursor=pointer]:
+                  - /url: /latest/insights/object_insights/?content_id=939588018451517&nav_ref=bizweb_insights_overview_recent_content
+                  - generic [ref=e1150]:
+                    - generic:
+                      - generic:
+                        - img
+                  - heading "Balance-მა და Bivision-მა პარტნიორობა დაიწყეს. რა ხდება, როცა ბაზარზე ერთ-ერთი ყველაზე მოქნილი ERP სისტემა და მოწინავე BI პლატფორმა ერთიანდება? - მომხმარებელი იღებს სრულყოფილ ეკოსისტემას, სადაც აღრიცხვა და ანალიტიკა ერთმანეთს ავსებს. 🔵 ბალანსი-ის მომხმარებლებისთვის ეს ნიშნავს პროგრამის ფუნქციონალის გაფართოებას სიღმრისეული ანალიტიკით, რაც გადაწყვეტილებების მიღებას მონაცემებზე დაყრდნობით კიდევ უფრო სწრაფს და მარტივს ხდის. 🟢 Bivision-ისთვის კი ეს არის შესაძლებლობა, საკუთარი BI გადაწყვეტილებები „ბალანსის“ მოწესრიგებულ და სტრუქტურირებულ მონაცემთა ბაზებს დაუკავშიროს. ჩვენი ერთობლივი მიზანია დავეხმაროთ ქართულ ბიზნესს, დაზოგონ დრო რეპორტინგზე და მთელი ფოკუსი განვითარებისკენ მიმართონ." [level=4] [ref=e1154]
+                  - generic [ref=e1158]:
+                    - heading "Balance-მა და Bivision-მა პარტნიორობა დაიწყეს. რა ხდება, როცა ბაზარზე ერთ-ერთი ყველაზე მოქნილი ERP სისტემა და მოწინავე BI პლატფორმა ერთიანდება? - მომხმარებელი იღებს სრულყოფილ ეკოსისტემას, სადაც აღრიცხვა და ანალიტიკა ერთმანეთს ავსებს. 🔵 ბალანსი-ის მომხმარებლებისთვის ეს ნიშნავს პროგრამის ფუნქციონალის გაფართოებას სიღმრისეული ანალიტიკით, რაც გადაწყვეტილებების მიღებას მონაცემებზე დაყრდნობით კიდევ უფრო სწრაფს და მარტივს ხდის. 🟢 Bivision-ისთვის კი ეს არის შესაძლებლობა, საკუთარი BI გადაწყვეტილებები „ბალანსის“ მოწესრიგებულ და სტრუქტურირებულ მონაცემთა ბაზებს დაუკავშიროს. ჩვენი ერთობლივი მიზანია დავეხმაროთ ქართულ ბიზნესს, დაზოგონ დრო რეპორტინგზე და მთელი ფოკუსი განვითარებისკენ მიმართონ." [level=4] [ref=e1160]
+                    - generic [ref=e1162]:
+                      - img [ref=e1163]
+                      - generic [ref=e1168]: Mon Mar 23, 12:36pm
+                    - generic [ref=e1169]:
+                      - generic [ref=e1172]:
+                        - img [ref=e1173]
+                        - generic [ref=e1176]: 43.2K
+                      - generic [ref=e1179]:
+                        - img [ref=e1180]
+                        - generic [ref=e1182]: "10"
+                      - generic [ref=e1185]:
+                        - img [ref=e1186]
+                        - generic [ref=e1188]: "2"
+                      - generic [ref=e1191]:
+                        - img [ref=e1192]
+                        - generic [ref=e1194]: "3"
+          - generic [ref=e1204]:
+            - heading "Recommendations" [level=3] [ref=e1211]
+            - group "Item 1 of 1" [ref=e1222]:
+              - generic [ref=e1234]:
+                - generic [ref=e1238]:
+                  - heading "Grow reach with reels" [level=3] [ref=e1239]
+                  - generic [ref=e1240]: Posting 1-3 times a week may keep your audience engaged and help grow your reach.
+                - button "Create reel" [ref=e1243] [cursor=pointer]:
+                  - generic [ref=e1247]: Create reel
+    - generic [ref=e1253]:
+      - generic [ref=e1255]:
+        - button "Meta Business Suite" [ref=e1256] [cursor=pointer]:
+          - generic [ref=e1258]: Meta Business Suite
+        - button "Pressable" [ref=e1267] [cursor=pointer]:
+          - img "Facebook" [ref=e1272]
+      - navigation "Links" [ref=e1277]:
+        - generic [ref=e1278]: Links
+        - list [ref=e1279]:
+          - generic [ref=e1280]:
+            - listitem [ref=e1284]:
+              - generic [ref=e1286]:
+                - link "Home" [ref=e1287] [cursor=pointer]:
+                  - /url: https://business.facebook.com/latest/home?business_id=2144231439057749&asset_id=103058778757756
+                  - generic [ref=e1288]: Home
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Home
+            - listitem [ref=e1292]:
+              - generic [ref=e1294]:
+                - link "Notifications" [ref=e1295] [cursor=pointer]:
+                  - generic [ref=e1296]: Notifications
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Notifications
+            - listitem [ref=e1301]:
+              - generic [ref=e1303]:
+                - link "Ads Manager" [ref=e1304] [cursor=pointer]:
+                  - generic [ref=e1305]: Ads Manager
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Ads Manager
+            - listitem [ref=e1309]:
+              - generic [ref=e1311]:
+                - link "Inbox" [ref=e1312] [cursor=pointer]:
+                  - /url: https://business.facebook.com/latest/inbox?business_id=2144231439057749&asset_id=103058778757756
+                  - generic [ref=e1313]: Inbox
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Inbox
+            - listitem [ref=e1318]:
+              - generic [ref=e1320]:
+                - link "Content" [ref=e1321] [cursor=pointer]:
+                  - /url: https://business.facebook.com/latest/posts?business_id=2144231439057749&asset_id=103058778757756
+                  - generic [ref=e1322]: Content
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Content
+            - navigation "Links" [ref=e1323]:
+              - generic [ref=e1324]: Links
+              - list [ref=e1325]:
+                - generic [ref=e1327]:
+                  - separator [ref=e1329]
+                  - navigation "Shortcuts" [ref=e1330]:
+                    - generic [ref=e1331]: Shortcuts
+                    - list [ref=e1332]:
+                      - listitem [ref=e1333]:
+                        - listitem [ref=e1339]:
+                          - generic [ref=e1341]:
+                            - link "Planner" [ref=e1342] [cursor=pointer]:
+                              - /url: https://business.facebook.com/latest/content_calendar?business_id=2144231439057749&asset_id=103058778757756
+                              - generic [ref=e1343]: Planner
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Planner
+                      - listitem [ref=e1345]:
+                        - listitem [ref=e1351]:
+                          - generic [ref=e1353]:
+                            - link "Ads" [ref=e1354] [cursor=pointer]:
+                              - /url: https://business.facebook.com/latest/ad_center/ads_summary?business_id=2144231439057749&asset_id=103058778757756
+                              - generic [ref=e1355]: Ads
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Ads
+                      - listitem [ref=e1357]:
+                        - listitem [ref=e1363]:
+                          - generic [ref=e1365]:
+                            - link "Insights" [ref=e1366] [cursor=pointer]:
+                              - /url: https://business.facebook.com/latest/insights?business_id=2144231439057749&asset_id=103058778757756
+                              - generic [ref=e1367]: Insights
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Insights
+                      - listitem [ref=e1369]:
+                        - listitem [ref=e1375]:
+                          - generic [ref=e1377]:
+                            - link "Meta Business Suite" [ref=e1378] [cursor=pointer]:
+                              - /url: https://www.facebook.com/latest/home/?business_id=2144231439057749&asset_id=103058778757756&nav_ref=internal_nav
+                              - generic [ref=e1379]: Meta Business Suite
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Meta Business Suite
+                      - listitem [ref=e1381]:
+                        - listitem [ref=e1387]:
+                          - generic [ref=e1389]:
+                            - link "Audiences" [ref=e1390] [cursor=pointer]:
+                              - /url: https://business.facebook.com/ads/manager/audiences/?business_id=2144231439057749&nav_source=business_manager
+                              - generic [ref=e1391]: Audiences
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Audiences
+                      - listitem [ref=e1393]:
+                        - listitem [ref=e1399]:
+                          - generic [ref=e1401]:
+                            - link "Automated rules" [ref=e1402] [cursor=pointer]:
+                              - /url: https://business.facebook.com/ads/manager/rules/?business_id=2144231439057749&global_scope_id=2144231439057749&nav_entry_point=bm_global_nav_shortcut&nav_source=flyout_menu
+                              - generic [ref=e1403]: Automated rules
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Automated rules
+                      - listitem [ref=e1405]:
+                        - listitem [ref=e1411]:
+                          - generic [ref=e1413]:
+                            - link "Events Manager" [ref=e1414] [cursor=pointer]:
+                              - /url: https://eventsmanager.facebook.com/events_manager2/?business_id=2144231439057749&global_scope_id=2144231439057749&nav_source=biz_nav
+                              - generic [ref=e1415]: Events Manager
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Events Manager
+            - listitem [ref=e1421]:
+              - generic [ref=e1423]:
+                - link "All tools" [ref=e1424] [cursor=pointer]:
+                  - generic [ref=e1425]: All tools
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: All tools
+      - generic [ref=e1428]:
+        - listitem [ref=e1431]:
+          - generic [ref=e1433]:
+            - link "Search" [ref=e1434] [cursor=pointer]:
+              - generic [ref=e1435]: Search
+            - generic:
+              - generic:
+                - generic:
+                  - generic: Search
+            - generic:
+              - generic:
+                - img
+        - navigation "Links" [ref=e1436]:
+          - generic [ref=e1437]: Links
+          - list [ref=e1438]:
+            - listitem [ref=e1442]:
+              - generic [ref=e1444]:
+                - link "Settings" [ref=e1445] [cursor=pointer]:
+                  - /url: https://business.facebook.com/latest/settings/business_users?business_id=2144231439057749&asset_id=103058778757756
+                  - generic [ref=e1446]: Settings
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Settings
+        - listitem [ref=e1453]:
+          - generic [ref=e1455]:
+            - link "Help" [ref=e1456] [cursor=pointer]:
+              - generic [ref=e1457]: Help
+            - generic:
+              - generic:
+                - generic:
+                  - generic: Help
+            - generic:
+              - generic:
+                - img
+  - dialog "Your last week in review" [ref=e1460]:
+    - generic "Your last week in review" [ref=e1461]:
+      - generic [ref=e1462]:
+        - generic [ref=e1463]:
+          - heading "Your last week in review" [level=3] [ref=e1466]
+          - button "Close" [ref=e1469] [cursor=pointer]:
+            - generic [ref=e1471]:
+              - generic [ref=e1472]: Close
+              - img [ref=e1474]
+        - generic [ref=e1480]:
+          - generic [ref=e1481]: Take a moment to review activity and insights for Bivision from Mar 29 - Apr 4.
+          - generic [ref=e1488]:
+            - generic [ref=e1489]:
+              - heading "Your activity" [level=3] [ref=e1490]
+              - generic [ref=e1491]: You published 1 piece of content this past week.
+            - generic [ref=e1494]:
+              - generic [ref=e1495]:
+                - generic [ref=e1496]:
+                  - img "Facebook" [ref=e1497]
+                  - heading "1" [level=3] [ref=e1501]
+                - generic [ref=e1502]: Facebook post
+              - generic [ref=e1503]:
+                - generic [ref=e1504]:
+                  - img "Facebook" [ref=e1505]
+                  - heading "0" [level=3] [ref=e1509]
+                - generic [ref=e1510]: Facebook stories
+          - generic [ref=e1517]:
+            - generic [ref=e1518]:
+              - heading "Your results" [level=3] [ref=e1519]
+              - generic [ref=e1520]: See your Facebook reach from last week.
+            - generic [ref=e1523]:
+              - generic [ref=e1524]:
+                - generic [ref=e1525]:
+                  - generic [ref=e1526]: Total last week
+                  - generic [ref=e1529]: 11.3K
+                - generic [ref=e1532]:
+                  - generic [ref=e1534]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=2]
+                    - table [ref=e1536]:
+                      - rowgroup [ref=e1537]:
+                        - row "2026-03-29T00:00:00-07:00 2026-03-30T00:00:00-07:00 2026-03-31T00:00:00-07:00 2026-04-01T00:00:00-07:00 2026-04-02T00:00:00-07:00 2026-04-03T00:00:00-07:00 2026-04-04T00:00:00-07:00 2026-04-05T00:00:00-07:00 2026-04-06T00:00:00-07:00 2026-04-07T00:00:00-07:00 2026-04-08T00:00:00-07:00 2026-04-09T00:00:00-07:00 2026-04-10T00:00:00-07:00 2026-04-11T00:00:00-07:00" [ref=e1538]:
+                          - columnheader [ref=e1539]
+                          - columnheader "2026-03-29T00:00:00-07:00" [ref=e1540]
+                          - columnheader "2026-03-30T00:00:00-07:00" [ref=e1541]
+                          - columnheader "2026-03-31T00:00:00-07:00" [ref=e1542]
+                          - columnheader "2026-04-01T00:00:00-07:00" [ref=e1543]
+                          - columnheader "2026-04-02T00:00:00-07:00" [ref=e1544]
+                          - columnheader "2026-04-03T00:00:00-07:00" [ref=e1545]
+                          - columnheader "2026-04-04T00:00:00-07:00" [ref=e1546]
+                          - columnheader "2026-04-05T00:00:00-07:00" [ref=e1547]
+                          - columnheader "2026-04-06T00:00:00-07:00" [ref=e1548]
+                          - columnheader "2026-04-07T00:00:00-07:00" [ref=e1549]
+                          - columnheader "2026-04-08T00:00:00-07:00" [ref=e1550]
+                          - columnheader "2026-04-09T00:00:00-07:00" [ref=e1551]
+                          - columnheader "2026-04-10T00:00:00-07:00" [ref=e1552]
+                          - columnheader "2026-04-11T00:00:00-07:00" [ref=e1553]
+                        - row "31 35 4551 3274 4391 669 12 0 0 0 0 0 0 0" [ref=e1554]:
+                          - cell [ref=e1555]
+                          - cell "31" [ref=e1556]
+                          - cell "35" [ref=e1557]
+                          - cell "4551" [ref=e1558]
+                          - cell "3274" [ref=e1559]
+                          - cell "4391" [ref=e1560]
+                          - cell "669" [ref=e1561]
+                          - cell "12" [ref=e1562]
+                          - cell "0" [ref=e1563]
+                          - cell "0" [ref=e1564]
+                          - cell "0" [ref=e1565]
+                          - cell "0" [ref=e1566]
+                          - cell "0" [ref=e1567]
+                          - cell "0" [ref=e1568]
+                          - cell "0" [ref=e1569]
+                  - generic [ref=e1571]:
+                    - generic [ref=e1572]: Sun
+                    - generic [ref=e1573]: Sat
+              - generic [ref=e1574]:
+                - img "Facebook" [ref=e1576]
+                - generic [ref=e1577]: Facebook reach
+                - img [ref=e1582] [cursor=pointer]
+          - generic [ref=e1591]:
+            - generic [ref=e1592]:
+              - heading "Your messaging activity" [level=3] [ref=e1593]
+              - generic [ref=e1594]: Track your progress toward your business messaging goals.
+            - generic [ref=e1597]:
+              - generic [ref=e1598]:
+                - generic [ref=e1599]:
+                  - generic [ref=e1600]: Total last week
+                  - generic [ref=e1603]: "0"
+                - generic [ref=e1606]:
+                  - generic [ref=e1608]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=2]
+                    - table [ref=e1610]:
+                      - rowgroup [ref=e1611]:
+                        - row "2026-03-29T00:00:00-07:00 2026-03-30T00:00:00-07:00 2026-03-31T00:00:00-07:00 2026-04-01T00:00:00-07:00 2026-04-02T00:00:00-07:00 2026-04-03T00:00:00-07:00 2026-04-04T00:00:00-07:00" [ref=e1612]:
+                          - columnheader [ref=e1613]
+                          - columnheader "2026-03-29T00:00:00-07:00" [ref=e1614]
+                          - columnheader "2026-03-30T00:00:00-07:00" [ref=e1615]
+                          - columnheader "2026-03-31T00:00:00-07:00" [ref=e1616]
+                          - columnheader "2026-04-01T00:00:00-07:00" [ref=e1617]
+                          - columnheader "2026-04-02T00:00:00-07:00" [ref=e1618]
+                          - columnheader "2026-04-03T00:00:00-07:00" [ref=e1619]
+                          - columnheader "2026-04-04T00:00:00-07:00" [ref=e1620]
+                        - row "0 0 0 0 0 0 0" [ref=e1621]:
+                          - cell [ref=e1622]
+                          - cell "0" [ref=e1623]
+                          - cell "0" [ref=e1624]
+                          - cell "0" [ref=e1625]
+                          - cell "0" [ref=e1626]
+                          - cell "0" [ref=e1627]
+                          - cell "0" [ref=e1628]
+                          - cell "0" [ref=e1629]
+                  - generic [ref=e1631]:
+                    - generic [ref=e1632]: Sun
+                    - generic [ref=e1633]: Sat
+              - generic [ref=e1634]:
+                - img "Facebook" [ref=e1636]
+                - generic [ref=e1637]: New contacts
+                - img [ref=e1642] [cursor=pointer]
+        - button "View all insights" [active] [ref=e1647] [cursor=pointer]:
+          - generic [ref=e1651]: View all insights
