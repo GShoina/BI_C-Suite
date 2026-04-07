@@ -299,45 +299,21 @@ const WORDS = {
 };
 
 const AGE_CATS = {
-  masho: ["ფერები 🎨","ცხოველები 🐾","საკვები 🍎","ოჯახი 👨‍👩‍👧‍👦"],
+  masho: ["ფერები 🎨","ცხოველები 🐾","რიცხვები 🔢","ოჯახი 👨‍👩‍👧‍👦","საკვები 🍎","ფრაზები 💬"],
   niko: Object.keys(WORDS)
 };
-
-// ═══ ALPHABETS + COUNTING (მაშო + ნიკო) ═══
-const KA_ALPHA = [
-  {l:'ა',w:'ანანასი',e:'🍍'},{l:'ბ',w:'ბანანი',e:'🍌'},{l:'გ',w:'გემი',e:'🚢'},{l:'დ',w:'დათვი',e:'🐻'},
-  {l:'ე',w:'ექიმი',e:'👨‍⚕️'},{l:'ვ',w:'ვაშლი',e:'🍎'},{l:'ზ',w:'ზარი',e:'🔔'},{l:'თ',w:'თევზი',e:'🐟'},
-  {l:'ი',w:'ირემი',e:'🦌'},{l:'კ',w:'კატა',e:'🐱'},{l:'ლ',w:'ლომი',e:'🦁'},{l:'მ',w:'მზე',e:'☀️'},
-  {l:'ნ',w:'ნაყინი',e:'🍦'},{l:'ო',w:'ოქრო',e:'🥇'},{l:'პ',w:'პეპელა',e:'🦋'},{l:'ჟ',w:'ჟირაფი',e:'🦒'},
-  {l:'რ',w:'რაკეტა',e:'🚀'},{l:'ს',w:'სპილო',e:'🐘'},{l:'ტ',w:'ტორტი',e:'🎂'},{l:'უ',w:'უთო',e:'🔥'},
-  {l:'ფ',w:'ფუტკარი',e:'🐝'},{l:'ქ',w:'ქარი',e:'💨'},{l:'ღ',w:'ღამე',e:'🌙'},{l:'ყ',w:'ყვავილი',e:'🌸'},
-  {l:'შ',w:'შოკოლადი',e:'🍫'},{l:'ჩ',w:'ჩიტი',e:'🐦'},{l:'ც',w:'ცხენი',e:'🐴'},{l:'ძ',w:'ძაღლი',e:'🐕'},
-  {l:'წ',w:'წყალი',e:'💧'},{l:'ჭ',w:'ჭიანჭველა',e:'🐜'},{l:'ხ',w:'ხე',e:'🌳'},{l:'ჯ',w:'ჯინსი',e:'👖'},
-  {l:'ჰ',w:'ჰაერი',e:'🎈'}
-];
-const EN_ALPHA = [
-  {l:'A',w:'apple',e:'🍎'},{l:'B',w:'ball',e:'⚽'},{l:'C',w:'cat',e:'🐱'},{l:'D',w:'dog',e:'🐕'},
-  {l:'E',w:'egg',e:'🥚'},{l:'F',w:'fish',e:'🐟'},{l:'G',w:'grape',e:'🍇'},{l:'H',w:'house',e:'🏠'},
-  {l:'I',w:'ice cream',e:'🍦'},{l:'J',w:'juice',e:'🧃'},{l:'K',w:'king',e:'👑'},{l:'L',w:'lion',e:'🦁'},
-  {l:'M',w:'moon',e:'🌙'},{l:'N',w:'nose',e:'👃'},{l:'O',w:'orange',e:'🍊'},{l:'P',w:'pencil',e:'✏️'},
-  {l:'Q',w:'queen',e:'👸'},{l:'R',w:'rabbit',e:'🐰'},{l:'S',w:'sun',e:'☀️'},{l:'T',w:'tree',e:'🌳'},
-  {l:'U',w:'umbrella',e:'☂️'},{l:'V',w:'violin',e:'🎻'},{l:'W',w:'water',e:'💧'},{l:'X',w:'xylophone',e:'🎵'},
-  {l:'Y',w:'yellow',e:'🟡'},{l:'Z',w:'zebra',e:'🦓'}
-];
-const COUNTING = [];
-for(let i=1;i<=20;i++){const emojis=['🍎','⭐','🐟','🌸','🎈','🍌','🦋','⚽'];COUNTING.push({num:i,emoji:emojis[i%emojis.length].repeat(Math.min(i,5)),name:['','ერთი','ორი','სამი','ოთხი','ხუთი','ექვსი','შვიდი','რვა','ცხრა','ათი','თერთმეტი','თორმეტი','ცამეტი','თოთხმეტი','თხუთმეტი','თექვსმეტი','ჩვიდმეტი','თვრამეტი','ცხრამეტი','ოცი'][i],en:['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'][i]});}
 
 // ═══ MATH (UCMAS + კომაროვი) — GRADED ═══
 const MATH_GRADES = {
   niko: {
-    'math-add':[{max:20,label:'1–20',ops:1},{max:20,label:'1–20 ×2',ops:2},{max:50,label:'1–50',ops:1},{max:50,label:'1–50 ×2',ops:2},{max:100,label:'1–100',ops:1}],
-    'math-sub':[{max:20,label:'1–20',ops:1},{max:20,label:'1–20 ×2',ops:2},{max:50,label:'1–50',ops:1},{max:50,label:'1–50 ×2',ops:2},{max:100,label:'1–100',ops:1}],
+    'math-add':[{max:20,label:'1–20'},{max:50,label:'1–50'},{max:100,label:'1–100'}],
+    'math-sub':[{max:20,label:'1–20'},{max:50,label:'1–50'},{max:100,label:'1–100'}],
     'math-mul':[{tables:[2,3],label:'×2, ×3'},{tables:[2,3,4,5],label:'×2–×5'},{tables:[2,3,4,5,6,7,8,9],label:'×2–×9'}],
     'math-pat':[{hard:false,label:'მარტივი'},{hard:true,label:'რთული'}]
   },
   masho: {
-    'math-add':[{max:5,label:'1–5',ops:1},{max:10,label:'1–10',ops:1}],
-    'math-sub':[{max:5,label:'1–5',ops:1},{max:10,label:'1–10',ops:1}],
+    'math-add':[{max:10,label:'1–10'},{max:20,label:'1–20'}],
+    'math-sub':[{max:10,label:'1–10'},{max:20,label:'1–20'}],
     'math-pat':[{hard:false,label:'მარტივი'}]
   }
 };
@@ -366,25 +342,11 @@ function genMathQs(type){
   const qs=[],n=type==='math-pat'?8:10;
   for(let i=0;i<n;i++){
     if(type==='math-add'){
-      const mx=gi.max,ops=gi.ops||1;
-      if(ops>=2){
-        const a=randInt(1,Math.floor(mx*0.4)),b=randInt(1,Math.floor(mx*0.3)),c=randInt(1,Math.max(1,mx-a-b));
-        if(Math.random()>0.5){qs.push({q:`${a} + ${b} + ${c} = ?`,ans:a+b+c,emoji:'➕'});}
-        else{const s=a+b;qs.push({q:`${s} + ${c} − ${Math.min(b,s+c-1)} = ?`,ans:s+c-Math.min(b,s+c-1),emoji:'➕➖'});}
-      }else{
-        const a=randInt(1,Math.floor(mx*0.7)),b=randInt(1,Math.max(1,mx-a));
-        qs.push({q:`${a} + ${b} = ?`,ans:a+b,emoji:'➕'});
-      }
+      const mx=gi.max,a=randInt(1,Math.floor(mx*0.7)),b=randInt(1,Math.max(1,mx-a));
+      qs.push({q:`${a} + ${b} = ?`,ans:a+b,emoji:'➕'});
     }else if(type==='math-sub'){
-      const mx=gi.max,ops=gi.ops||1;
-      if(ops>=2){
-        const a=randInt(Math.floor(mx*0.5),mx),b=randInt(1,Math.floor(a*0.4)),c=randInt(1,Math.floor(a*0.3));
-        if(Math.random()>0.5){qs.push({q:`${a} − ${b} − ${c} = ?`,ans:a-b-c,emoji:'➖'});}
-        else{qs.push({q:`${a} − ${b} + ${c} = ?`,ans:a-b+c,emoji:'➖➕'});}
-      }else{
-        const a=randInt(2,mx),b=randInt(1,a-1);
-        qs.push({q:`${a} − ${b} = ?`,ans:a-b,emoji:'➖'});
-      }
+      const a=randInt(2,gi.max),b=randInt(1,a-1);
+      qs.push({q:`${a} − ${b} = ?`,ans:a-b,emoji:'➖'});
     }else if(type==='math-mul'){
       const t=gi.tables[randInt(0,gi.tables.length-1)],b=randInt(1,10);
       qs.push({q:`${t} × ${b} = ?`,ans:t*b,emoji:'✖️'});
@@ -484,88 +446,49 @@ function selectProfile(p){
   const wordCount=Object.values(s.words).filter(w=>w.correct>=3).length;
   const mathStats=s.math||{};
   const mathTotal=Object.values(mathStats).reduce((a,v)=>a+v.correct,0);
-  const isKid=p==='masho';
 
-  if(isKid){
-    // მაშო — ვიზუალური, ტექსტი მინიმუმ
-    document.getElementById('subject-cards').innerHTML=`
-      <div class="subj-card" onclick="selectSubject('counting')" style="border-color:rgba(255,167,38,.4);background:linear-gradient(145deg,var(--card) 60%,rgba(255,167,38,.12))">
-        <div class="subj-icon">🔢</div>
-        <div class="subj-name" style="font-size:1.8rem">1 2 3</div>
-      </div>
-      <div class="subj-card" onclick="selectSubject('ka-alpha')" style="border-color:rgba(76,175,80,.4);background:linear-gradient(145deg,var(--card) 60%,rgba(76,175,80,.12))">
-        <div class="subj-icon">🇬🇪</div>
-        <div class="subj-name" style="font-size:1.8rem">ა ბ გ</div>
-      </div>
-      <div class="subj-card english" onclick="selectSubject('en-alpha')">
-        <div class="subj-icon">🇬🇧</div>
-        <div class="subj-name" style="font-size:1.8rem">A B C</div>
-      </div>
-      <div class="subj-card math" onclick="selectSubject('math')">
-        <div class="subj-icon">📐</div>
-        <div class="subj-name" style="font-size:1.8rem">➕ ➖</div>
-      </div>
-    `;
-  } else {
-    document.getElementById('subject-cards').innerHTML=`
-      <div class="subj-card english" onclick="selectSubject('english')">
-        <div class="subj-badge">${wordCount} სიტყვა</div>
-        <div class="subj-icon">🔤</div>
-        <div class="subj-name">ინგლისური</div>
-        <div class="subj-desc">სიტყვები, გამოთქმა, spelling</div>
-      </div>
-      <div class="subj-card math" onclick="selectSubject('math')">
-        <div class="subj-badge">${mathTotal} 🛡️</div>
-        <div class="subj-icon">📐</div>
-        <div class="subj-name">მათემატიკა & ლოგიკა</div>
-        <div class="subj-desc">შეკრება, გამოკლება, გამრავლება, პატერნები</div>
-      </div>
-    `;
-  }
+  document.getElementById('subject-cards').innerHTML=`
+    <div class="subj-card english" onclick="selectSubject('english')">
+      <div class="subj-badge">${wordCount} სიტყვა</div>
+      <div class="subj-icon">🔤</div>
+      <div class="subj-name">ინგლისური</div>
+      <div class="subj-desc">სიტყვები, გამოთქმა, spelling</div>
+    </div>
+    <div class="subj-card math" onclick="selectSubject('math')">
+      <div class="subj-badge">${mathTotal} 🛡️</div>
+      <div class="subj-icon">📐</div>
+      <div class="subj-name">მათემატიკა & ლოგიკა</div>
+      <div class="subj-desc">შეკრება, გამოკლება, გამრავლება, პატერნები</div>
+    </div>
+  `;
 }
 
 function selectSubject(subj){
   currentSubject=subj;
   const s=state[profile];const isKid=profile==='masho';
   show('menu');
-  const subjNames={'english':'🔤 ინგლისური','math':'📐 მათემატიკა','counting':'🔢 1 2 3','ka-alpha':'🇬🇪 ა ბ გ','en-alpha':'🇬🇧 A B C'};
-  document.getElementById('menu-user').textContent=subjNames[subj]||subj;
+  document.getElementById('menu-user').textContent=subj==='english'?'🔤 ინგლისური':'📐 მათემატიკა';
   document.getElementById('menu-score').textContent='🛡️ '+s.shields;
   document.getElementById('menu-streak').textContent='🔥 '+s.streak;
   document.getElementById('menu-level').innerHTML='';
 
-  if(subj==='counting'){
-    document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startCountGame('count-pick')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🍎🍎🍎</div><div class="m-name">დათვალე</div></div>
-      <div class="mode-card" onclick="startCountGame('count-listen')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🔊</div><div class="m-name">მოისმინე</div></div>
-    </div>`;
-  } else if(subj==='ka-alpha'){
-    document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startAlphaGame('ka','learn')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">📖</div><div class="m-name">ისწავლე</div></div>
-      <div class="mode-card" onclick="startAlphaGame('ka','quiz')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🎯</div><div class="m-name">გამოიცანი</div></div>
-    </div>`;
-  } else if(subj==='en-alpha'){
-    document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startAlphaGame('en','learn')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">📖</div><div class="m-name">ისწავლე</div></div>
-      <div class="mode-card" onclick="startAlphaGame('en','quiz')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🎯</div><div class="m-name">გამოიცანი</div></div>
-    </div>`;
-  } else if(subj==='english'){
+  if(subj==='english'){
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
       <div class="mode-card" onclick="startGame('quiz')"><div class="m-icon">🎯</div><div class="m-name">მოისმინე</div><div class="m-desc">ქართული → ინგლისური</div></div>
       <div class="mode-card" onclick="startGame('reverse')"><div class="m-icon">🔄</div><div class="m-name">English</div><div class="m-desc">ინგლისური → ქართული</div></div>
       <div class="mode-card" onclick="startGame('listen')"><div class="m-icon">👂</div><div class="m-name">სურათი</div><div class="m-desc">🔊 ხმა → აირჩიე emoji</div></div>
       <div class="mode-card" onclick="startGame('match')"><div class="m-icon">🧩</div><div class="m-name">დააწყვილე</div><div class="m-desc">ქართული ↔ ინგლისური</div></div>
-      <div class="mode-card" onclick="startGame('spell')"><div class="m-icon">✍️</div><div class="m-name">დაწერე</div><div class="m-desc">ინგლისურად spelling</div></div>
+      ${!isKid?'<div class="mode-card" onclick="startGame(\'spell\')"><div class="m-icon">✍️</div><div class="m-name">დაწერე</div><div class="m-desc">ინგლისურად spelling</div></div>':''}
       <div class="mode-card" onclick="showCategories()"><div class="m-icon">📚</div><div class="m-name">კატეგორიები</div><div class="m-desc">აირჩიე თემა</div></div>
     </div>`;
   } else {
     const addG=getMathGrade('math-add'),subG=getMathGrade('math-sub'),patG=getMathGrade('math-pat');
     const mulG=!isKid?getMathGrade('math-mul'):null;
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startMathGame('math-add')"><div class="m-icon">➕</div><div class="m-name">${isKid?'':'შეკრება'}</div><div class="m-desc">${addG?addG.label:''}</div></div>
-      <div class="mode-card" onclick="startMathGame('math-sub')"><div class="m-icon">➖</div><div class="m-name">${isKid?'':'გამოკლება'}</div><div class="m-desc">${subG?subG.label:''}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-add')"><div class="m-icon">➕</div><div class="m-name">შეკრება</div><div class="m-desc">${addG?addG.label:''}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-sub')"><div class="m-icon">➖</div><div class="m-name">გამოკლება</div><div class="m-desc">${subG?subG.label:''}</div></div>
       ${mulG?`<div class="mode-card" onclick="startMathGame('math-mul')"><div class="m-icon">✖️</div><div class="m-name">გამრავლება</div><div class="m-desc">${mulG.label}</div></div>`:''}
-      <div class="mode-card" onclick="startMathGame('math-pat')"><div class="m-icon">🧩</div><div class="m-name">${isKid?'':'პატერნები'}</div><div class="m-desc">${patG?patG.label:''}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-pat')"><div class="m-icon">🧩</div><div class="m-name">პატერნები</div><div class="m-desc">${patG?patG.label:''}</div></div>
     </div>`;
   }
 }
@@ -801,136 +724,6 @@ function retryWeak(){
   shuffle(questions);qIdx=0;sessionShields=0;sessionWrong=0;
   show('game');document.getElementById('game-mode').textContent='🔄 გამეორება';document.getElementById('game-score').textContent='🛡️ 0';
   if(gameMode==='match')startMatch();else if(gameMode==='listen')nextListen();else nextQ();
-}
-
-// ═══ COUNTING GAME (მაშო) ═══
-let countQs=[],countIdx=0,countMode='';
-function startCountGame(mode){
-  countMode=mode;countIdx=0;sessionShields=0;sessionWrong=0;sessionStart=Date.now();
-  const pool=COUNTING.slice(0,10);// 1-10 ჯერ
-  countQs=shuffle([...pool]).slice(0,8);
-  show('game');
-  document.getElementById('game-mode').textContent=mode==='count-listen'?'🔊':'🍎🍎🍎';
-  document.getElementById('game-score').textContent='🛡️ 0';
-  nextCountQ();
-}
-function nextCountQ(){
-  if(countIdx>=countQs.length){showCountResults();return;}
-  const q=countQs[countIdx];
-  document.getElementById('progress').style.width=((countIdx/countQs.length)*100)+'%';
-  document.getElementById('q-num').textContent=`${countIdx+1}/${countQs.length}`;
-  document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
-  const opts=new Set([q.num]);
-  while(opts.size<4){const n=randInt(1,10);opts.add(n);}
-  const optArr=shuffle([...opts]);
-  if(countMode==='count-listen'){
-    speak(q.en);
-    document.getElementById('game-area').innerHTML=`
-      <div class="word-box" onclick="speak('${q.en}')"><div class="emoji" style="font-size:4rem">🔊</div><div class="sub" style="font-size:1.2rem">მოისმინე!</div></div>
-      <div class="options">${optArr.map(n=>`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="checkCountAns(this,${n},${q.num})">${n}</button>`).join('')}</div>`;
-  }else{
-    const objs=q.emoji;
-    document.getElementById('game-area').innerHTML=`
-      <div class="word-box"><div class="emoji" style="font-size:3rem">${objs}</div><div class="sub" style="font-size:1.2rem">რამდენია?</div></div>
-      <div class="options">${optArr.map(n=>`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="checkCountAns(this,${n},${q.num})">${n}</button>`).join('')}</div>`;
-  }
-}
-function checkCountAns(btn,sel,correct){
-  if(sel===correct){
-    document.querySelectorAll('.opt').forEach(b=>{b.classList.add('disabled');b.style.pointerEvents='none';});
-    btn.classList.add('correct');sessionShields++;state[profile].shields++;state[profile].streak++;
-    if(state[profile].streak>state[profile].maxStreak)state[profile].maxStreak=state[profile].streak;
-    save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;
-    showFeedback(true);setTimeout(()=>{countIdx++;hideFeedback();nextCountQ();},1200);
-  }else{
-    btn.classList.add('wrong');btn.style.pointerEvents='none';btn.classList.add('disabled');
-    sessionWrong++;state[profile].streak=0;save();
-  }
-}
-function showCountResults(){
-  show('results');const total=sessionShields+sessionWrong;const pct=total>0?Math.round(sessionShields/total*100):0;
-  let msg=pct>=80?getName()+', ყოჩაღ! 🌟':pct>=50?getName()+', კარგია! 💪':getName()+', კიდევ ცადე! 🌱';
-  document.getElementById('results-content').innerHTML=`
-    <div class="big">${pct>=80?'🏆':'⭐'}</div><h2>${msg}</h2>
-    <div class="stat-row"><div class="stat"><div class="val" style="color:var(--green)">${sessionShields}</div><div class="label">🛡️</div></div>
-    <div class="stat"><div class="val">${pct}%</div><div class="label">📊</div></div></div>
-    <button class="btn-primary" onclick="startCountGame('${countMode}')" style="background:var(--orange)">🎮</button>
-    <button class="btn-secondary" onclick="goMenu()">←</button>`;
-  state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();save();
-  checkActivityBreak();
-}
-
-// ═══ ALPHABET GAME ═══
-let alphaQs=[],alphaIdx=0,alphaLang='',alphaMode='';
-function startAlphaGame(lang,mode){
-  alphaLang=lang;alphaMode=mode;alphaIdx=0;sessionShields=0;sessionWrong=0;sessionStart=Date.now();
-  const src=lang==='ka'?KA_ALPHA:EN_ALPHA;
-  alphaQs=mode==='learn'?src.slice(0,10):shuffle([...src]).slice(0,10);
-  show('game');
-  document.getElementById('game-mode').textContent=lang==='ka'?'🇬🇪 ა ბ გ':'🇬🇧 A B C';
-  document.getElementById('game-score').textContent='🛡️ 0';
-  nextAlphaQ();
-}
-function nextAlphaQ(){
-  if(alphaIdx>=alphaQs.length){showAlphaResults();return;}
-  const q=alphaQs[alphaIdx];const src=alphaLang==='ka'?KA_ALPHA:EN_ALPHA;
-  document.getElementById('progress').style.width=((alphaIdx/alphaQs.length)*100)+'%';
-  document.getElementById('q-num').textContent=`${alphaIdx+1}/${alphaQs.length}`;
-  document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
-  if(alphaMode==='learn'){
-    if(alphaLang==='en')speak(q.w);
-    document.getElementById('game-area').innerHTML=`
-      <div class="word-box" ${alphaLang==='en'?`onclick="speak('${q.w}')"`:''}><div class="emoji" style="font-size:4rem">${q.e}</div>
-      <div class="word" style="font-size:4rem;color:var(--gold)">${q.l}</div>
-      <div class="sub" style="font-size:1.2rem">${q.w}</div>
-      ${alphaLang==='en'?'<div class="speak-hint">🔊</div>':''}</div>
-      <button class="opt" style="font-size:1.3rem;width:100%;margin-top:1rem;min-height:70px;background:var(--green);border-color:var(--green);color:#fff" onclick="sessionShields++;state[profile].shields++;save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;alphaIdx++;nextAlphaQ();">შემდეგი →</button>`;
-  }else{
-    const opts=new Set([q.l]);while(opts.size<4){const r=src[randInt(0,src.length-1)];opts.add(r.l);}
-    const optArr=shuffle([...opts]);
-    if(alphaLang==='en')speak(q.w);
-    document.getElementById('game-area').innerHTML=`
-      <div class="word-box" ${alphaLang==='en'?`onclick="speak('${q.w}')"`:''}><div class="emoji" style="font-size:4rem">${q.e}</div>
-      <div class="sub" style="font-size:1rem">${alphaLang==='en'?'🔊 '+q.w:q.w}</div></div>
-      <div class="options">${optArr.map(o=>`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="checkAlphaAns(this,'${o}','${q.l}')">${o}</button>`).join('')}</div>`;
-  }
-}
-function checkAlphaAns(btn,sel,correct){
-  if(sel===correct){
-    document.querySelectorAll('.opt').forEach(b=>{b.classList.add('disabled');b.style.pointerEvents='none';});
-    btn.classList.add('correct');sessionShields++;state[profile].shields++;state[profile].streak++;
-    if(state[profile].streak>state[profile].maxStreak)state[profile].maxStreak=state[profile].streak;
-    save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;
-    showFeedback(true);setTimeout(()=>{alphaIdx++;hideFeedback();nextAlphaQ();},1200);
-  }else{
-    btn.classList.add('wrong');btn.style.pointerEvents='none';btn.classList.add('disabled');
-    sessionWrong++;state[profile].streak=0;save();
-  }
-}
-function showAlphaResults(){
-  show('results');const total=sessionShields+sessionWrong;const pct=total>0?Math.round(sessionShields/total*100):0;
-  let msg=pct>=80?getName()+', ყოჩაღ! 🌟':pct>=50?getName()+', კარგია! 💪':getName()+', კიდევ ცადე! 🌱';
-  document.getElementById('results-content').innerHTML=`
-    <div class="big">${pct>=80?'🏆':'⭐'}</div><h2>${msg}</h2>
-    <div class="stat-row"><div class="stat"><div class="val" style="color:var(--green)">${sessionShields}</div><div class="label">🛡️</div></div>
-    <div class="stat"><div class="val">${pct}%</div><div class="label">📊</div></div></div>
-    <button class="btn-primary" onclick="startAlphaGame('${alphaLang}','${alphaMode}')" style="background:var(--green)">🎮</button>
-    <button class="btn-secondary" onclick="goMenu()">←</button>`;
-  state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();save();
-  checkActivityBreak();
-}
-
-// ═══ PHYSICAL ACTIVITY BREAK (ყოველ 3 სესიაში) ═══
-let sessionCounter=0;
-function checkActivityBreak(){
-  sessionCounter++;
-  if(sessionCounter>=3){
-    sessionCounter=0;
-    const activities=['5-ჯერ ხტომა! 🤸','10-ჯერ ტაში! 👏','გაიჭიმე ზევით! 🙆','3-ჯერ შემობრუნდი! 🔄','ფეხზე დადექი და იცეკვე! 💃'];
-    const act=activities[randInt(0,activities.length-1)];
-    document.getElementById('break-screen').querySelector('.br-text').innerHTML=`ყოჩაღ! 🌈<br><br><span style="font-size:1.5rem;color:var(--gold)">${act}</span><br><br>მერე დალიე წყალი 💧`;
-    document.getElementById('break-screen').classList.remove('hidden');
-  }
 }
 
 function endGame(){goMenu();}
