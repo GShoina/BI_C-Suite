@@ -330,7 +330,7 @@ MISSION: კონკურენტების დეტალური შე
 ✅ FACT: Balance.ge integration — official connector. Auto-sync accounting → analytics.
 ✅ FACT: BOG "partnership" = გადაჭარბება. Balance.ge connector, არა BOG exclusive deal.
 ✅ FACT: Founder: გიორგი ჩუღოშვილი. Ex-TBC Bank. ფოკუსი გაყოფილი: Retain.ge + freebusiness.ge + amadeo.tech.
-✅ FACT: ReportX.ge = 5,500+ კომპანიის საჯარო data. Forbes "most promising startups."
+🔴 ReportX.ge = ოუნერმა არავალიდურად შეაფასა. Forbes "most promising startups."
 ✅ FACT: amadeo.tech = ცალკე AI/NLP პროდუქტი საერთაშორისო ბაზრისთვის.
 ❓ UNKNOWN: 100₾/თვე pricing საჯაროდ ვერ დადასტურდა.
 
@@ -342,7 +342,7 @@ MISSION: კონკურენტების დეტალური შე
 ━━━ 3. Dastafe ━━━
 
 ✅ FACT: dastafe.com — Power BI + AI WhatsApp assistant + Financial Consulting.
-❓ UNKNOWN: Founder (ex-Liberty Bank ვერ დადასტურდა), კლიენტები, pricing, team — 0 საჯარო ინფო.
+✅ FACT (ოუნერი): Founder = საბანკო სექტორიდან. ოუნერმა "ex-Liberty Bank" თქვა, LinkedIn VTB Georgia-ს აჩვენებს — კონკრეტული ბანკი secondary, მთავარი = banking background. კლიენტები, pricing, team — 0 საჯარო ინფო.
 ❓ UNKNOWN: LinkedIn/Facebook = invisible. 0 media coverage.
 
 🔴 Bivision-ისთვის: WhatsApp AI = საინტერესო feature idea. პირდაპირი საფრთხე არ არის ახლა.
@@ -374,6 +374,58 @@ IV+ ────────  40K+ companies, no one dominant
 2. Dastafe founder — ვინ? რა მოგეწონა?
 3. Amadeo 100₾ — საიდან იცი?
 
-Sources: startupgrind.com, cbw.ge, tracxn.com, balance.ge, amadeo.ge, reportx.ge, dastafe.com, afinwise.ge, bm.ge, linkedin.com
+━━━ 5. BDO Digital Georgia — გამოტოვებული, მნიშვნელოვანი ━━━
+
+✅ FACT: bdodigital.ge — BDO Georgia-ს ციფრული მიმართულება. BI/Analytics = explicit service line.
+✅ FACT: გუნდი: "up to 100 professionals" (data scientists, programmers, cybersecurity).
+✅ FACT: Tech: Power BI (Microsoft ecosystem). SINGU platform (უძრავი ქონება).
+✅ FACT: კლიენტი: Aversi Clinics.
+🔴 **ALERT: Aversi = ბივიჟენის MEDIUM churn risk (21K₾).** BDO Digital-ი უკვე მუშაობს Aversi-სთან. ეს პირდაპირი საფრთხეა.
+
+⚠️ INFERENCE (H): BDO-ს brand trust + აუდიტორ კლიენტებთან წვდომა = built-in pipeline. II-III კატეგორიის კომპანიებს BDO უკვე აუდიტს უწევს → BI upsell = natural.
+⚠️ INFERENCE (M): "100 professionals" — შეიძლება BDO Georgia-ს მთელი digital გუნდია (cybersecurity + dev + BI), არა მხოლოდ BI. მაინც massive vs Bivision-ის 7.
+
+🔴 Bivision-ისთვის: **ეს არის #2 საფრთხე DataMind-ის შემდეგ.** Brand, scale, Aversi overlap.
+
+━━━ 6. DataStudio.ge — Power BI consulting ━━━
+
+✅ FACT: datastudio.ge — Power BI dashboards, SQL/Sheets/SharePoint integration.
+✅ FACT: კლიენტები: GeHealth, Silk Hospitality, Marussia Beverages, Chateau Mukhrani, HB Pharma. 50+ projects.
+✅ FACT: GITA grant winner. "Affordable prices" positioning.
+
+⚠️ INFERENCE (M): consulting, არა SaaS. One-time projects, არა recurring revenue. ფასით undercuts Bivision-ს. Georgian ERP connectors არ აქვს.
+
+🔴 Bivision-ისთვის: MEDIUM. Dashboard consulting ≠ SaaS product, მაგრამ price-sensitive კლიენტებს ართმევს.
+
+━━━ 7. Intelligence Georgia — არ არსებობს ━━━
+
+❓ BI/analytics კომპანია ამ სახელით ვერ მოიძებნა. Dead end.
+
+━━━ 8. Adviso.ge — არა BI ━━━
+
+✅ FACT: adviso.ge — invoicing automation, RS.ge integration, basic financial analytics.
+✅ FACT: კლიენტები: CityMall, CityZen, CMC, Vake Plaza. Setup 2-3 დღე.
+
+🔴 BiRetail overlap: LOW. Adviso = transaction processing (upstream), BiRetail = analytics (downstream). სხვადასხვა layer.
+
+━━━ განახლებული ბაზრის რუკა ━━━
+
+```
+Enterprise ─── DataMind ($1M+, AI, banks, 500 Global)
+           ─── BDO Digital (100 team, Power BI, audit→BI pipeline) ← NEW
+II-III ──────── BIVISION (942K, Qlik, ERP connectors)
+           ─── DataStudio (Power BI consulting, 50+ projects) ← NEW
+III-IV ──────── Amadeo (Balance.ge, automated reports)
+Niche ────────  Dastafe (Power BI + WhatsApp AI, საბანკო)
+Consulting ──── AFinwise (outsourced CFO, no software)
+Not BI ──────── Adviso (invoicing/RS.ge), Intelligence Georgia (არ არსებობს)
+```
+
+**Devil's advocate (ეშმაკის ადვოკატი):**
+- BDO Digital + Aversi = ✅ ჯვარედინი შემოწმება: Aversi Bivision-ის churn list-ში + BDO-ს კლიენტი. ეს coincidence არ არის.
+- DataStudio 50+ projects — ongoing თუ one-time? consulting vs SaaS = სხვა model.
+- "100 professionals" = BDO Digital მთლიანი (cyber+dev+BI), BI-only ნაწილი ალბათ 15-25.
+
+Sources: bdodigital.ge, datastudio.ge, adviso.ge, theorg.com
 
 ---
