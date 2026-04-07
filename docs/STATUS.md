@@ -51,15 +51,35 @@ note: ყველა agent ანახლებს თავის section-ს
 
 ---
 
-## 1-3 დღის პრიორიტეტები
+## პრიორიტეტები — Pipeline First (Apr 7, ოუნერი approved)
 
-| # | რა | ვინ ასრულებს | ვინ ჩელენჯა | ვინ ვალიდირა | Status |
-|---|---|-------------|-----------|------------|--------|
-| 1 | **ნუტრიმაქსი call → ოუნერი რეკავს** | მენცარი (script) + ოუნერი (call) | გურაფა | ოუნერი | 🟡 script ready, call pending |
-| 2 | **Demo funnel fix → devs-ს გადაცე** | მენცარი (spec ready) + devs | ვიქტორი | Playwright verified | 🟡 spec ready, devs pending |
-| 3 | **Qlik MCP + Claude IG pilot plan** | მენცარი + დათო/გაბო | ვიქტორი (flagged) | ოუნერი approved | ⬜ not started |
-| 4 | **გუნდის interview — ინგა, დათო** | მენცარი (framework ready) | — | ოუნერი intro needed | ⬜ not started |
-| 5 | **Apify + Claude outreach test** | მენცარი | გურაფა (proposed) | ოუნერი approved | ⬜ not started |
+**იერარქია:** ცოცხალი ფული → მომაკვდავი ფული → მომავალი ფული → ინფრასტრუქტურა
+
+### 1. ცოცხალი ფული
+| # | რა | ვინ | Status |
+|---|---|-----|--------|
+| 1 | **რუსთავის ავტოდრომი meeting prep — 18 საათში!** | მენცარი (prep) + ოუნერი (meeting) | 🔴 NOW |
+| 2 | **Pipeline follow-up: Rampoletx, 0llivander, ევროპული ჰოსპიტალი** | ოუნერი | 🔴 TODAY |
+| 3 | **Overdue deals cleanup: Connect (38d), გრეიდი (38d), ნუტრიველი (97d)** | ოუნერი | 🟡 THIS WEEK |
+
+### 2. მომაკვდავი ფული
+| # | რა | ვინ | Status |
+|---|---|-----|--------|
+| 4 | **Mardaleishvili Bank API — დათო blocker** (45K₾) | ოუნერი → დათო | 🟡 BLOCKED |
+| 5 | **ნუტრიმაქსი — ალტერნატიული contact path** (42K₾) | მენცარი research | 🟡 BLOCKED |
+| 6 | **TBC Leasing — IT decision-maker identify** (59K₾) | მენცარი research | ⬜ RESEARCH |
+
+### 3. მომავალი ფული
+| # | რა | ვინ | Status |
+|---|---|-----|--------|
+| 7 | **Demo funnel fix → devs** | მენცარი spec ✅ → devs | 🟡 HANDOFF |
+
+### 4. ინფრასტრუქტურა (⚠️ არასდროს სანამ 1-2 OK არ არის)
+| # | რა | ვინ | Status |
+|---|---|-----|--------|
+| 8 | Qlik MCP + Claude IG pilot | მენცარი + დათო | ⬜ WEEK 2 |
+| 9 | გუნდის interview — ინგა, დათო | მენცარი (ოუნერი intro) | ⬜ WEEK 2 |
+| 10 | Apify + Claude outreach | მენცარი | ⬜ AFTER #7 |
 
 ---
 
