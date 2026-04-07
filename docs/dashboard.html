@@ -100,22 +100,68 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 
 <!-- 🔴 პრობლემები სიმწვავით -->
 <div class="st" style="margin-top:1rem">🔴 პრობლემები (სიმწვავით)</div>
-<div class="cd" style="border-left:3px solid var(--red)"><div class="cd-b" style="font-size:.88rem;color:var(--t2);line-height:1.7">
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--red);min-width:16px">1</span><span style="flex:1"><strong>Revenue declining + Churn accelerating</strong></span><span class="tg tg-g" style="font-size:.6rem">VALIDATED</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--red);min-width:16px">2</span><span style="flex:1"><strong>Demo funnel broken</strong> — form null, CTA→WhatsApp, 7.2s load</span><span class="tg tg-g" style="font-size:.6rem">VERIFIED</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--red);min-width:16px">3</span><span style="flex:1"><strong>AI positioning = 0</strong> — DataMind, Amadeo, Dastafe ყველა AI-ზე</span><span class="tg tg-g" style="font-size:.6rem">VALIDATED</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--red);min-width:16px">4</span><span style="flex:1"><strong>Qlik dependency</strong> — WeGroup AI replaces BI signal</span><span class="tg tg-d" style="font-size:.6rem">INFERENCE</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--amb);min-width:16px">5</span><span style="flex:1"><strong>Champion dependency = churn #1</strong> (4/9 clients)</span><span class="tg tg-g" style="font-size:.6rem">VALIDATED</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--amb);min-width:16px">6</span><span style="flex:1"><strong>Marketing ROI = 0</strong> — 3,826₾/თვე → 0 leads</span><span class="tg tg-g" style="font-size:.6rem">VALIDATED</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0"><span style="color:var(--amb);min-width:16px">7</span><span style="flex:1"><strong>გუნდის data = 0</strong> — 7 ადამიანი, capacity unknown</span><span class="tg tg-rh" style="font-size:.6rem">FACT</span></div>
+<div class="cd" style="border-left:3px solid var(--red)"><div class="cd-b" style="font-size:.88rem;color:var(--t2);line-height:1.5" id="problems-list">
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('pr-1')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--red);min-width:16px;font-weight:700">1</span><span style="flex:1"><strong>Revenue declining + Churn accelerating</strong></span><span style="font-size:.58rem;color:var(--grn);background:var(--grnd);padding:.1rem .35rem;border-radius:3px">VALIDATED by: ოუნერი, Budget Sheet</span><span style="color:var(--t3);font-size:.72rem" id="pr-1-ico">▸</span></div>
+<div id="fuc-pr-1" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-1"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('1',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('1',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('pr-2')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--red);min-width:16px;font-weight:700">2</span><span style="flex:1"><strong>Demo funnel broken</strong> — form null, CTA→WhatsApp, 7.2s</span><span style="font-size:.58rem;color:var(--grn);background:var(--grnd);padding:.1rem .35rem;border-radius:3px">VERIFIED by: Playwright Apr 7</span><span style="color:var(--t3);font-size:.72rem" id="pr-2-ico">▸</span></div>
+<div id="fuc-pr-2" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-2"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('2',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('2',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('pr-3')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--red);min-width:16px;font-weight:700">3</span><span style="flex:1"><strong>AI positioning = 0</strong> — ყველა კონკურენტი AI-ზე</span><span style="font-size:.58rem;color:var(--grn);background:var(--grnd);padding:.1rem .35rem;border-radius:3px">VALIDATED by: research + ოუნერი</span><span style="color:var(--t3);font-size:.72rem" id="pr-3-ico">▸</span></div>
+<div id="fuc-pr-3" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-3"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('3',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('3',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('pr-4')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--red);min-width:16px;font-weight:700">4</span><span style="flex:1"><strong>Qlik dependency</strong> — WeGroup AI replaces BI</span><span style="font-size:.58rem;color:var(--t2);background:var(--bg3);padding:.1rem .35rem;border-radius:3px">INFERENCE by: ვიქტორი</span><span style="color:var(--t3);font-size:.72rem" id="pr-4-ico">▸</span></div>
+<div id="fuc-pr-4" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-4"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('4',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('4',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('pr-5')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--amb);min-width:16px;font-weight:700">5</span><span style="flex:1"><strong>Champion dependency = churn #1</strong> (4/9)</span><span style="font-size:.58rem;color:var(--grn);background:var(--grnd);padding:.1rem .35rem;border-radius:3px">VALIDATED by: ოუნერი (9 case)</span><span style="color:var(--t3);font-size:.72rem" id="pr-5-ico">▸</span></div>
+<div id="fuc-pr-5" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-5"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('5',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('5',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('pr-6')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--amb);min-width:16px;font-weight:700">6</span><span style="flex:1"><strong>Marketing ROI = 0</strong> — 3,826₾/თვე → 0 leads</span><span style="font-size:.58rem;color:var(--grn);background:var(--grnd);padding:.1rem .35rem;border-radius:3px">VALIDATED by: GA4 + Playwright + ოუნერი</span><span style="color:var(--t3);font-size:.72rem" id="pr-6-ico">▸</span></div>
+<div id="fuc-pr-6" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-6"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('6',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('6',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;cursor:pointer" onclick="toggleFUInput('pr-7')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--amb);min-width:16px;font-weight:700">7</span><span style="flex:1"><strong>გუნდის data = 0</strong> — 7 ადამიანი, capacity unknown</span><span style="font-size:.58rem;color:var(--red);background:var(--redd);padding:.1rem .35rem;border-radius:3px">FACT — unaddressed</span><span style="color:var(--t3);font-size:.72rem" id="pr-7-ico">▸</span></div>
+<div id="fuc-pr-7" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-7"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('7',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('7',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
 </div></div>
 
 <!-- 🟢 შესაძლებლობები -->
-<div class="cd" style="border-left:3px solid var(--grn);margin-top:.5rem"><div class="cd-b" style="font-size:.88rem;color:var(--t2);line-height:1.7">
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--grn)">★</span><span style="flex:1"><strong>Qlik MCP + Claude = new product.</strong> IG pilot approved</span><span class="tg tg-g" style="font-size:.6rem">VALIDATED</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--grn)">★</span><span style="flex:1"><strong>Balance.ge partnership → ლიდები მოვიდა</strong></span><span class="tg tg-g" style="font-size:.6rem">VALIDATED</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--grn)">★</span><span style="flex:1"><strong>ERP connectors = moat</strong> (DataMind-ს არ აქვს)</span><span class="tg tg-g" style="font-size:.6rem">VALIDATED</span></div>
-<div style="display:flex;gap:.5rem;padding:.3rem 0"><span style="color:var(--pur)">★</span><span style="flex:1"><strong>C-Suite as a Service = Level 5 product</strong></span><span class="tg tg-rh" style="font-size:.6rem">UNVALIDATED</span></div>
+<div class="cd" style="border-left:3px solid var(--grn);margin-top:.5rem"><div class="cd-b" style="font-size:.88rem;color:var(--t2);line-height:1.5">
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('op-1')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--grn)">★</span><span style="flex:1"><strong>Qlik MCP + Claude = new product</strong></span><span style="font-size:.58rem;color:var(--grn);background:var(--grnd);padding:.1rem .35rem;border-radius:3px">VALIDATED by: ვიქტორი + ოუნერი</span><span style="color:var(--t3);font-size:.72rem" id="op-1-ico">▸</span></div>
+<div id="fuc-op-1" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-op1"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('op1',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('op1',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('op-2')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--grn)">★</span><span style="flex:1"><strong>Balance.ge partnership → ლიდები</strong></span><span style="font-size:.58rem;color:var(--grn);background:var(--grnd);padding:.1rem .35rem;border-radius:3px">VALIDATED by: ოუნერი</span><span style="color:var(--t3);font-size:.72rem" id="op-2-ico">▸</span></div>
+<div id="fuc-op-2" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-op2"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('op2',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('op2',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;border-bottom:1px solid var(--brd);cursor:pointer" onclick="toggleFUInput('op-3')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--grn)">★</span><span style="flex:1"><strong>ERP connectors = moat</strong></span><span style="font-size:.58rem;color:var(--grn);background:var(--grnd);padding:.1rem .35rem;border-radius:3px">VALIDATED by: research + ოუნერი</span><span style="color:var(--t3);font-size:.72rem" id="op-3-ico">▸</span></div>
+<div id="fuc-op-3" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-op3"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('op3',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('op3',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
+<div style="padding:.4rem 0;cursor:pointer" onclick="toggleFUInput('op-4')">
+<div style="display:flex;align-items:center;gap:.5rem"><span style="color:var(--pur)">★</span><span style="flex:1"><strong>C-Suite as a Service = Level 5</strong></span><span style="font-size:.58rem;color:var(--red);background:var(--redd);padding:.1rem .35rem;border-radius:3px">UNVALIDATED</span><span style="color:var(--t3);font-size:.72rem" id="op-4-ico">▸</span></div>
+<div id="fuc-op-4" style="display:none;margin:.3rem 0 0 1.3rem" onclick="event.stopPropagation()"><div id="prc-op4"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('op4',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('op4',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+
 </div></div>
 
 <!-- 1-3 დღის პრიორიტეტები -->
@@ -1122,6 +1168,11 @@ function loadOKRC(){const s=L();s.okrc=s.okrc||{};document.querySelectorAll('.ok
 function addOKRC(id,input){if(!input||!input.value.trim())return;const s=L();s.okrc=s.okrc||{};s.okrc[id]=s.okrc[id]||[];const now=new Date();const date=String(now.getDate()).padStart(2,'0')+'/'+String(now.getMonth()+1).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');s.okrc[id].push({text:input.value.trim(),date:date});V(s);input.value='';loadOKRC()}
 function delOKRC(id,i){const s=L();s.okrc[id].splice(i,1);V(s);loadOKRC()}
 
+// Problem/Opportunity Comments
+function loadPRC(){const s=L();s.prc=s.prc||{};const ids=['1','2','3','4','5','6','7','op1','op2','op3','op4'];ids.forEach(k=>{const el=document.getElementById('prc-'+k);if(!el)return;const comments=s.prc[k]||[];el.innerHTML=comments.map((c,ci)=>`<div style="display:flex;align-items:center;gap:.4rem;padding:.15rem 0;font-size:.82rem;color:var(--grn);border-left:2px solid var(--grn);padding-left:.5rem;margin-bottom:.2rem"><span style="flex:1">${c.text}</span><span style="color:var(--t3);font-size:.7rem;min-width:55px;text-align:right">${c.date}</span><button onclick="event.stopPropagation();delPRC('${k}',${ci})" style="background:none;border:none;color:var(--t3);cursor:pointer;font-size:.8rem;padding:0 .2rem">×</button></div>`).join('');if(comments.length){const panel=document.getElementById('fuc-pr-'+k)||document.getElementById('fuc-op-'+k);if(panel)panel.style.display='block';const ico=document.getElementById('pr-'+k+'-ico')||document.getElementById('op-'+k+'-ico');if(ico)ico.textContent='▾'}})}
+function addPRC(id,input){if(!input||!input.value.trim())return;const s=L();s.prc=s.prc||{};s.prc[id]=s.prc[id]||[];const now=new Date();const date=String(now.getDate()).padStart(2,'0')+'/'+String(now.getMonth()+1).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');s.prc[id].push({text:input.value.trim(),date:date});V(s);input.value='';loadPRC()}
+function delPRC(id,i){const s=L();s.prc[id].splice(i,1);V(s);loadPRC()}
+
 // Notifications
 const pendingItems=[
 {id:'n-demo-fix',text:'Demo Funnel Fix Spec — დეველოპერებისთვის გადასაცემი',type:'review',doc:'docs/DEMO_FUNNEL_FIX.md'},
@@ -1259,7 +1310,7 @@ s.lastKPI=Date.now();V(s);
 setInterval(uKPI,60000);
 
 // Init
-document.addEventListener('DOMContentLoaded',()=>{const s=L();if(s.r)Object.entries(s.r).forEach(([k,v])=>{const b=document.querySelector(`.rb[data-o="${k}"]`);if(b)b.querySelectorAll('.rn').forEach(n=>n.classList.toggle('on',parseInt(n.dataset.v)===v))});iC();rT();uKPI();loadFuckups();loadTT();loadOKRC();loadNotifications();
+document.addEventListener('DOMContentLoaded',()=>{const s=L();if(s.r)Object.entries(s.r).forEach(([k,v])=>{const b=document.querySelector(`.rb[data-o="${k}"]`);if(b)b.querySelectorAll('.rn').forEach(n=>n.classList.toggle('on',parseInt(n.dataset.v)===v))});iC();rT();uKPI();loadFuckups();loadTT();loadOKRC();loadNotifications();loadPRC();
 // Mariam view: ?view=marketing → hide everything except Marketing tab
 const params=new URLSearchParams(window.location.search);if(params.get('view')==='marketing'){document.querySelector('.hdr').innerHTML='<div class="hdr-b"><div class="hdr-l">მ</div><div class="hdr-t">ბივიჟენი მარკეტინგი</div></div>';document.querySelector('.tabs').style.display='none';document.querySelectorAll('.tc').forEach(x=>x.classList.remove('on'));document.getElementById('t-mkt').classList.add('on');const stratBtn=document.querySelector('[data-mt="mkt-strategy"]');if(stratBtn)stratBtn.style.display='none';const stratPanel=document.getElementById('mkt-strategy');if(stratPanel)stratPanel.remove();const surveyEl=document.getElementById('mariam-survey');if(surveyEl){surveyEl.style.display='block';loadSurvey()}}});
 </script>
