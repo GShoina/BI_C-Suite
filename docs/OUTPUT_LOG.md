@@ -374,18 +374,23 @@ IV+ ────────  40K+ companies, no one dominant
 2. Dastafe founder — ვინ? რა მოგეწონა?
 3. Amadeo 100₾ — საიდან იცი?
 
-━━━ 5. BDO Digital Georgia — გამოტოვებული, მნიშვნელოვანი ━━━
+━━━ 5. BDO Digital Georgia — ოუნერის insider info ━━━
 
-✅ FACT: bdodigital.ge — BDO Georgia-ს ციფრული მიმართულება. BI/Analytics = explicit service line.
-✅ FACT: გუნდი: "up to 100 professionals" (data scientists, programmers, cybersecurity).
-✅ FACT: Tech: Power BI (Microsoft ecosystem). SINGU platform (უძრავი ქონება).
-✅ FACT: კლიენტი: Aversi Clinics.
-🔴 **ALERT: Aversi = ბივიჟენის MEDIUM churn risk (21K₾).** BDO Digital-ი უკვე მუშაობს Aversi-სთან. ეს პირდაპირი საფრთხეა.
+✅ FACT (საჯარო): bdodigital.ge — BDO Georgia-ს ციფრული მიმართულება. BI/Analytics = service line. "up to 100 professionals."
 
-⚠️ INFERENCE (H): BDO-ს brand trust + აუდიტორ კლიენტებთან წვდომა = built-in pipeline. II-III კატეგორიის კომპანიებს BDO უკვე აუდიტს უწევს → BI upsell = natural.
-⚠️ INFERENCE (M): "100 professionals" — შეიძლება BDO Georgia-ს მთელი digital გუნდია (cybersecurity + dev + BI), არა მხოლოდ BI. მაინც massive vs Bivision-ის 7.
+✅ FACT (ოუნერი, 2026-04-07):
+- წლების წინ სერიოზული კონკურენტი იყო: ERP ნერგვა + დიდი კლიენტების ბაზა.
+- ჩამოყალიბებული გუნდი ჰქონდა — data warehouse → Power BI.
+- **მაგრამ:** მიმართულება ვერ გააპროფიტა, გუნდი დაეშალა, წამყვანი წავიდა.
+- BDO-დან გამოეყო **Balance.ge** — SME ბუღალტერიის ნერგვა (ახლა ცალკე კომპანია).
+- **Bivision-მა Balance.ge-სთან პარტნიორობა გააფორმა** წინა კვირას + email კამპანია = ლიდები მოვიდა.
+- დღეს BDO Digital პროექტებს ინერციულად აკეთებს, **არ არის ლიდერი** ამ მიმართულებით.
 
-🔴 Bivision-ისთვის: **ეს არის #2 საფრთხე DataMind-ის შემდეგ.** Brand, scale, Aversi overlap.
+🔴 **შეფასება შეიცვალა:** #2 საფრთხე → **LOW threat.** Declining direction, გუნდი დაშლილი. Aversi overlap-ი შესაძლოა ძველი პროექტია.
+
+**ეშმაკის ადვოკატი:** ჩემი საჯარო research "100 professionals + Aversi = #2 threat" = არასწორი იყო. ოუნერის insider info-ის გარეშე სურათი სრულად სხვა იყო. ეს = EP4 lesson: ოუნერის ფაქტები > საჯარო website-ის claims.
+
+**საინტერესო ჯაჭვი:** BDO → Balance.ge (გამოეყო) → Amadeo (integrates with Balance.ge). ანუ Bivision-ის Balance.ge partnership = Amadeo-ს distribution channel-ზეც წვდომა.
 
 ━━━ 6. DataStudio.ge — Power BI consulting ━━━
 
@@ -411,20 +416,27 @@ IV+ ────────  40K+ companies, no one dominant
 ━━━ განახლებული ბაზრის რუკა ━━━
 
 ```
-Enterprise ─── DataMind ($1M+, AI, banks, 500 Global)
-           ─── BDO Digital (100 team, Power BI, audit→BI pipeline) ← NEW
+ACTIVE THREATS:
+Enterprise ─── DataMind ($1M+, AI, banks, expanding) ← #1
 II-III ──────── BIVISION (942K, Qlik, ERP connectors)
-           ─── DataStudio (Power BI consulting, 50+ projects) ← NEW
-III-IV ──────── Amadeo (Balance.ge, automated reports)
+           ─── DataStudio (Power BI consulting, 50+ projects, price competitor)
+III-IV ──────── Amadeo (Balance.ge, automated reports, volume play)
+
+WATCH:
 Niche ────────  Dastafe (Power BI + WhatsApp AI, საბანკო)
-Consulting ──── AFinwise (outsourced CFO, no software)
-Not BI ──────── Adviso (invoicing/RS.ge), Intelligence Georgia (არ არსებობს)
+Consulting ──── AFinwise (outsourced CFO, RO overlap)
+
+LOW/DECLINING:
+           ─── BDO Digital (BI გუნდი დაიშალა, ინერციული. Balance.ge გამოეყო → ახლა Bivision-ის პარტნიორი)
+
+NOT COMPETITORS:
+           ─── Adviso (invoicing/RS.ge), Intelligence Georgia (არ არსებობს)
 ```
 
-**Devil's advocate (ეშმაკის ადვოკატი):**
-- BDO Digital + Aversi = ✅ ჯვარედინი შემოწმება: Aversi Bivision-ის churn list-ში + BDO-ს კლიენტი. ეს coincidence არ არის.
-- DataStudio 50+ projects — ongoing თუ one-time? consulting vs SaaS = სხვა model.
-- "100 professionals" = BDO Digital მთლიანი (cyber+dev+BI), BI-only ნაწილი ალბათ 15-25.
+**ეშმაკის ადვოკატი (self-check):**
+- BDO Digital "100 team, #2 threat" = არასწორი. ოუნერის insider info = declining. Website claims ≠ reality.
+- Balance.ge ჯაჭვი: BDO → Balance.ge (გამოეყო) → Amadeo (integrates) → Bivision (პარტნიორი). ბივიჟენი Balance.ge-ს ორივე მხარეზეა.
+- DataStudio 50+ projects — consulting, არა SaaS. ფასით უფრო იაფი, მაგრამ ERP connectors არ აქვს.
 
 Sources: bdodigital.ge, datastudio.ge, adviso.ge, theorg.com
 
