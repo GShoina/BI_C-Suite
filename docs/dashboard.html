@@ -78,6 +78,7 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <button class="tab" data-t="mkt">📢 Marketing</button>
 <button class="tab" data-t="audit">🔒 Audit</button>
 <button class="tab" data-t="waiting">⏳ Waiting</button>
+<button class="tab" data-t="csuite">⚡ C-Suite Decision</button>
 </nav>
 
 <!-- ═══ MAIN ═══ -->
@@ -149,36 +150,103 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 </div>
 </div>
 
-<!-- ═══ TODO ═══ -->
+<!-- ═══ OKR + TODO ═══ -->
 <div class="tc" id="t-todo">
 
-<!-- 1. რაზე მუშაობს მენცარი -->
-<div class="st">🔄 მენცარი მუშაობს</div>
-<div class="cd"><div class="cd-b">
-<div class="sl" style="font-size:.95rem;padding:.4rem 0"><span style="color:var(--grn)">●</span> <strong>Marketing AI Plan</strong> — 4 მოდული, კვირა 1 actions: templates + drafts + email sequence</div>
-<div class="sl" style="font-size:.95rem;padding:.4rem 0"><span style="color:var(--amb)">●</span> <strong>Dashboard development</strong> — Marketing tab, Churn comments, UX fixes</div>
+<!-- 🔔 შეტყობინებები -->
+<div id="notifications-area"></div>
+
+<!-- OKR Section -->
+<div class="st">🎯 OKR — კვირა 1 (Apr 7-13, 2026)</div>
+
+<!-- O1: Churn Intervention -->
+<div class="cd" style="border-left:3px solid var(--red);margin-bottom:.8rem">
+<div class="cd-h"><div><span class="tg tg-rh">O1</span> <strong>Churn intervention დაიწყოს</strong></div><div style="font-size:.72rem;color:var(--t3)">მენცარი + ოუნერი</div></div>
+<div class="cd-b" style="padding:.6rem 1rem">
+<div class="okr-kr" data-okr="o1kr1" style="padding:.4rem 0;border-bottom:1px solid var(--brd)">
+<div style="display:flex;align-items:center;gap:.5rem">
+<span style="color:var(--grn);font-size:.8rem">✅</span>
+<span style="flex:1;font-size:.9rem"><strong>KR1:</strong> 3 at-risk კლიენტზე action plan ready</span>
+<span style="font-size:.72rem;color:var(--grn);background:var(--grnd);padding:.15rem .4rem;border-radius:3px">DONE</span>
+<button onclick="toggleFUInput('okr-o1kr1')" style="background:none;border:1px solid var(--brd);border-radius:4px;color:var(--t3);cursor:pointer;font-size:.72rem;padding:.15rem .35rem;min-width:28px;min-height:24px">💬</button>
+</div>
+<div id="fuc-okr-o1kr1" style="display:none;margin-left:1.5rem;margin-top:.3rem" onclick="event.stopPropagation()"><div id="okrc-o1kr1"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addOKRC('o1kr1',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addOKRC('o1kr1',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+<div class="okr-kr" data-okr="o1kr2" style="padding:.4rem 0">
+<div style="display:flex;align-items:center;gap:.5rem">
+<span style="color:var(--red);font-size:.8rem">⬜</span>
+<span style="flex:1;font-size:.9rem"><strong>KR2:</strong> ოუნერის 1+ churn conversation შესრულებული</span>
+<span style="font-size:.72rem;color:var(--red);background:var(--redd);padding:.15rem .4rem;border-radius:3px">OWNER</span>
+<button onclick="toggleFUInput('okr-o1kr2')" style="background:none;border:1px solid var(--brd);border-radius:4px;color:var(--t3);cursor:pointer;font-size:.72rem;padding:.15rem .35rem;min-width:28px;min-height:24px">💬</button>
+</div>
+<div id="fuc-okr-o1kr2" style="display:none;margin-left:1.5rem;margin-top:.3rem" onclick="event.stopPropagation()"><div id="okrc-o1kr2"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addOKRC('o1kr2',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addOKRC('o1kr2',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
 </div></div>
 
-<!-- 2. შემდეგი 5 პრიორიტეტი -->
-<div class="st" style="margin-top:1.5rem">📋 Next 5 პრიორიტეტი</div>
-<div class="cd"><div class="cd-b">
-<div style="display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--amb);font-weight:800;min-width:20px">1</span><div><strong>Blog post templates + 4 pilot draft</strong><div style="font-size:.8rem;color:var(--t3)">Claude prompt → partner story → blog + social + reel. მენცარი აკეთებს.</div></div></div>
-<div style="display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--amb);font-weight:800;min-width:20px">2</span><div><strong>Mailchimp 3-email welcome sequence</strong><div style="font-size:.8rem;color:var(--t3)">AI-written drafts. Demo funnel-ის ნაწილი.</div></div></div>
-<div style="display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--amb);font-weight:800;min-width:20px">3</span><div><strong>გელას LinkedIn post draft: "AI ბივიჟენში"</strong><div style="font-size:.8rem;color:var(--t3)">AI positioning narrative. გელას personal profile-დან = 10x reach.</div></div></div>
-<div style="display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--amb);font-weight:800;min-width:20px">4</span><div><strong>Site speed audit + broken links fix spec</strong><div style="font-size:.8rem;color:var(--t3)">6.2s/95MB → target <3s. 31 Page Not Found. გაბო/დათოსთვის instructions.</div></div></div>
-<div style="display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0"><span style="color:var(--amb);font-weight:800;min-width:20px">5</span><div><strong>Playwright weekly auto-extraction setup</strong><div style="font-size:.8rem;color:var(--t3)">GA4/Meta/GSC/Clarity/HubSpot → Dashboard auto-update კვირაში 1x.</div></div></div>
+<!-- O2: Demo Funnel -->
+<div class="cd" style="border-left:3px solid var(--amb);margin-bottom:.8rem">
+<div class="cd-h"><div><span class="tg tg-a">O2</span> <strong>Demo funnel გაცოცხლდეს</strong></div><div style="font-size:.72rem;color:var(--t3)">მენცარი + დეველოპერები</div></div>
+<div class="cd-b" style="padding:.6rem 1rem">
+<div class="okr-kr" data-okr="o2kr1" style="padding:.4rem 0;border-bottom:1px solid var(--brd)">
+<div style="display:flex;align-items:center;gap:.5rem">
+<span style="color:var(--grn);font-size:.8rem">✅</span>
+<span style="flex:1;font-size:.9rem"><strong>KR1:</strong> BiFinance funnel audit + fix spec ready</span>
+<span style="font-size:.72rem;color:var(--grn);background:var(--grnd);padding:.15rem .4rem;border-radius:3px">DONE</span>
+<button onclick="toggleFUInput('okr-o2kr1')" style="background:none;border:1px solid var(--brd);border-radius:4px;color:var(--t3);cursor:pointer;font-size:.72rem;padding:.15rem .35rem;min-width:28px;min-height:24px">💬</button>
+</div>
+<div id="fuc-okr-o2kr1" style="display:none;margin-left:1.5rem;margin-top:.3rem" onclick="event.stopPropagation()"><div id="okrc-o2kr1"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addOKRC('o2kr1',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addOKRC('o2kr1',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+<div class="okr-kr" data-okr="o2kr2" style="padding:.4rem 0">
+<div style="display:flex;align-items:center;gap:.5rem">
+<span style="color:var(--red);font-size:.8rem">⬜</span>
+<span style="flex:1;font-size:.9rem"><strong>KR2:</strong> Crisp + WhatsApp CTA + form → deployed by devs</span>
+<span style="font-size:.72rem;color:var(--amb);background:var(--ambd);padding:.15rem .4rem;border-radius:3px">WAITING</span>
+<button onclick="toggleFUInput('okr-o2kr2')" style="background:none;border:1px solid var(--brd);border-radius:4px;color:var(--t3);cursor:pointer;font-size:.72rem;padding:.15rem .35rem;min-width:28px;min-height:24px">💬</button>
+</div>
+<div id="fuc-okr-o2kr2" style="display:none;margin-left:1.5rem;margin-top:.3rem" onclick="event.stopPropagation()"><div id="okrc-o2kr2"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addOKRC('o2kr2',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addOKRC('o2kr2',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
 </div></div>
 
-<!-- 3. რას ელოდება მენცარი გელასგან -->
+<!-- O3: C-Suite Validation -->
+<div class="cd" style="border-left:3px solid var(--pur);margin-bottom:.8rem">
+<div class="cd-h"><div><span class="tg tg-b">O3</span> <strong>C-Suite validation framework</strong></div><div style="font-size:.72rem;color:var(--t3)">გურაფა</div></div>
+<div class="cd-b" style="padding:.6rem 1rem">
+<div class="okr-kr" data-okr="o3kr1" style="padding:.4rem 0">
+<div style="display:flex;align-items:center;gap:.5rem">
+<span style="color:var(--amb);font-size:.8rem">🔄</span>
+<span style="flex:1;font-size:.9rem"><strong>KR1:</strong> before/after metrics doc + tracking system</span>
+<span style="font-size:.72rem;color:var(--amb);background:var(--ambd);padding:.15rem .4rem;border-radius:3px">IN PROGRESS</span>
+<button onclick="toggleFUInput('okr-o3kr1')" style="background:none;border:1px solid var(--brd);border-radius:4px;color:var(--t3);cursor:pointer;font-size:.72rem;padding:.15rem .35rem;min-width:28px;min-height:24px">💬</button>
+</div>
+<div id="fuc-okr-o3kr1" style="display:none;margin-left:1.5rem;margin-top:.3rem" onclick="event.stopPropagation()"><div id="okrc-o3kr1"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addOKRC('o3kr1',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addOKRC('o3kr1',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+</div></div>
+
+<!-- O4: Audit -->
+<div class="cd" style="border-left:3px solid var(--grn);margin-bottom:.8rem">
+<div class="cd-h"><div><span class="tg tg-g">O4</span> <strong>ყოველი output audited</strong></div><div style="font-size:.72rem;color:var(--t3)">ვიქტორი</div></div>
+<div class="cd-b" style="padding:.6rem 1rem">
+<div class="okr-kr" data-okr="o4kr1" style="padding:.4rem 0">
+<div style="display:flex;align-items:center;gap:.5rem">
+<span style="color:var(--grn);font-size:.8rem">✅</span>
+<span style="flex:1;font-size:.9rem"><strong>KR1:</strong> 100% output-ზე ვიქტორის feedback</span>
+<span style="font-size:.72rem;color:var(--grn);background:var(--grnd);padding:.15rem .4rem;border-radius:3px">ACTIVE</span>
+<button onclick="toggleFUInput('okr-o4kr1')" style="background:none;border:1px solid var(--brd);border-radius:4px;color:var(--t3);cursor:pointer;font-size:.72rem;padding:.15rem .35rem;min-width:28px;min-height:24px">💬</button>
+</div>
+<div id="fuc-okr-o4kr1" style="display:none;margin-left:1.5rem;margin-top:.3rem" onclick="event.stopPropagation()"><div id="okrc-o4kr1"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addOKRC('o4kr1',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addOKRC('o4kr1',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
+</div>
+</div></div>
+
+<!-- To-Do linked to OKRs -->
+<div class="st" style="margin-top:1.5rem">📋 Tasks (OKR-თან დაკავშირებული)</div>
+<div id="mt"></div>
+<div class="ta" style="margin-top:.5rem"><input type="text" class="ti" id="mi" placeholder="ახალი task..."><button class="ab" onclick="aT('m')">+</button></div>
+
+<!-- გელასგან ველოდები -->
 <div class="st" style="margin-top:1.5rem">⏳ გელასგან ველოდები</div>
 <div id="owner-actions"></div>
-<div style="display:flex;gap:.4rem;margin-top:.8rem"><input type="text" class="ti" id="oa-input" placeholder="კომენტარი ან პასუხი..."><button onclick="sendOwnerResponse()" style="background:var(--amb);color:var(--bg);border:none;border-radius:var(--rs);padding:.5rem 1rem;cursor:pointer;font-family:inherit;font-weight:600;font-size:.85rem;white-space:nowrap">📤 გაგზავნა მენცართან</button></div>
-<div style="font-size:.72rem;color:var(--t3);margin-top:.3rem">კომენტარი localStorage-ში შეინახება → მენცარი Playwright-ით წაიკითხავს შემდეგ სესიაზე</div>
-
-<!-- 4. მენცარს task ჩააგდე -->
-<div class="st" style="margin-top:1.5rem">➕ მენცარს task ჩააგდე</div>
-<div class="ta"><input type="text" class="ti" id="mi" placeholder="მენცარს task ჩააგდე..."><button class="ab" onclick="aT('m')">+</button></div>
-<div id="mt"></div>
+<div style="display:flex;gap:.4rem;margin-top:.8rem"><input type="text" class="ti" id="oa-input" placeholder="კომენტარი ან პასუხი..."><button onclick="sendOwnerResponse()" style="background:var(--amb);color:var(--bg);border:none;border-radius:var(--rs);padding:.5rem 1rem;cursor:pointer;font-family:inherit;font-weight:600;font-size:.85rem;white-space:nowrap">📤 გაგზავნა</button></div>
+<div style="font-size:.72rem;color:var(--t3);margin-top:.3rem">კომენტარი localStorage-ში → მენცარი Playwright-ით წაიკითხავს</div>
 
 </div>
 
@@ -832,6 +900,141 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 </div></div>
 </div>
 
+<!-- ═══ C-SUITE DECISION ═══ -->
+<div class="tc" id="t-csuite">
+<div class="st">⚡ C-Suite Final Decision — APPROVED (2026-04-07)</div>
+
+<!-- Architecture -->
+<div class="cd" style="border-left:3px solid var(--grn)">
+<div class="cd-h"><span class="tg tg-g">APPROVED</span> <strong style="margin-left:.5rem">არქიტექტურა</strong></div>
+<div class="cd-b" style="font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:2;color:var(--t2)">
+ოუნერი ──→ <strong style="color:var(--amb)">მენცარი</strong> (default hub, daily ops)<br>
+&nbsp;&nbsp; ├──→ <strong style="color:var(--red)">ვიქტორი</strong> (on-demand + auto-audit ყოველ output-ზე)<br>
+&nbsp;&nbsp; └──→ <strong style="color:var(--blu)">გურაფა</strong> (on-demand + intelligence + coaching)<br><br>
+მენცარი ←→ docs/ ←→ ვიქტორი<br>
+მენცარი ←→ docs/ ←→ გურაფა
+</div>
+</div>
+
+<!-- Roles -->
+<div class="cd">
+<div class="cd-h"><span class="tg tg-a">ROLES</span> <strong style="margin-left:.5rem">როლები</strong></div>
+<div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.8">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem;border-left:3px solid var(--amb)">
+<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--amb);margin-bottom:.4rem">მენცარი — HUB</div>
+<div><strong>პირველადი:</strong> execution hub, ბიზნეს ops, marketing</div>
+<div><strong>მეორეული:</strong> data collection, გუნდთან კომუნიკაცია</div>
+</div>
+<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem;border-left:3px solid var(--red)">
+<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:.4rem">ვიქტორი — DEVIL'S ADVOCATE</div>
+<div><strong>პირველადი:</strong> audit ყოველ output-ზე, ruthless challenge</div>
+<div><strong>მეორეული:</strong> source verification, >5K₾ cross-check</div>
+</div>
+<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem;border-left:3px solid var(--blu)">
+<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--blu);margin-bottom:.4rem">გურაფა — INTELLIGENCE + COACH</div>
+<div><strong>პირველადი:</strong> AI intelligence, CEO coaching, strategic challenge</div>
+<div><strong>მეორეული:</strong> cross-agent coordination, improvement, social feed</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Approval Model -->
+<div class="cd" style="border-left:3px solid var(--amb)">
+<div class="cd-h"><span class="tg tg-a">PHASE 1</span> <strong style="margin-left:.5rem">Approval Model (კვირა 1-3)</strong></div>
+<div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.8">
+<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem;margin-bottom:.8rem">
+<strong style="color:var(--t1)">ყოველი output → ოუნერი validates (MUST)</strong><br><br>
+<span style="color:var(--amb)">⏱ TIMEOUT RULE:</span> თუ <strong>24 საათში</strong> ოუნერი არ პასუხობს → auto-approve<br>
+<span style="color:var(--red)">🛡 SAFEGUARD:</span> auto-approve-ზე → <strong style="color:var(--red)">ვიქტორი = ruthless challenger</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;→ ოუნერის მაგივრად დაუნდობელი ჩელენჯი, არა rubber stamp
+</div>
+<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem">
+<strong style="color:var(--t1)">ფაზა 2 (კვირა 4+):</strong> გადაისინჯება<br>
+მოდელი მუშაობს → ოპერაციული auto-approve, strategic = owner-only<br>
+არ მუშაობს → ფაზა 1 გრძელდება
+</div>
+</div>
+</div>
+
+<!-- Hallucination Prevention -->
+<div class="cd">
+<div class="cd-h"><span class="tg tg-rh">SAFETY</span> <strong style="margin-left:.5rem">Hallucination Prevention</strong></div>
+<div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.8">
+<div style="display:grid;gap:.5rem">
+<div>1. <strong>Self-challenge:</strong> ყოველი output-ის წინ — "ყველაზე სუსტი assumption? რა შეიძლება ცდომიერი?"</div>
+<div>2. <strong>Source tracking:</strong> ყოველი FACT → წყარო (URL/file/date)</div>
+<div>3. <strong>Cross-check:</strong> >5K₾ impact → ვიქტორი ვერიფიკაცია BEFORE output</div>
+<div>4. <strong>GCT rule:</strong> კლიენტის სტატუსზე statement → data source required</div>
+</div>
+</div>
+</div>
+
+<!-- Daily Cycle -->
+<div class="cd" style="border-left:3px solid var(--pur)">
+<div class="cd-h"><span class="tg tg-b">CYCLE</span> <strong style="margin-left:.5rem">ყოველდღიური ციკლი</strong></div>
+<div class="cd-b" style="font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:2.2;color:var(--t2)">
+<span style="color:var(--grn)">დილა:</span>&nbsp;&nbsp;&nbsp; მენცარი/გურაფა → output + AUDIT_REQUEST<br>
+<span style="color:var(--amb)">შუადღე:</span> ვიქტორი → audit + challenge<br>
+<span style="color:var(--blu)">საღამო:</span> ოუნერი → review → approve/reject<br>
+<span style="color:var(--t3)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └→ 24სთ timeout → auto + ruthless challenge</span><br>
+<span style="color:var(--pur)">დილა+1:</span> corrected + next deliverable
+</div>
+</div>
+
+<!-- Weekly OKR -->
+<div class="cd" style="border-left:3px solid var(--amb)">
+<div class="cd-h"><span class="tg tg-a">WEEK 1</span> <strong style="margin-left:.5rem">OKR (04-07 → 04-13)</strong></div>
+<div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.7">
+<div style="display:grid;gap:.8rem">
+
+<div style="background:var(--bg3);border-radius:var(--rs);padding:.8rem;border-left:3px solid var(--red)">
+<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:.3rem">O1: CHURN EXECUTION</div>
+<div><strong>Key Result:</strong> 1 real call made (ნუტრიმაქსი)</div>
+<div style="color:var(--t3);font-size:.85rem;margin-top:.3rem">Day 1-2: call script final → Day 3: ოუნერი რეკავს → Day 4-7: TBC/Mardaleishvili prep</div>
+<div style="margin-top:.3rem"><span class="tg tg-a">მენცარი → ოუნერი</span></div>
+</div>
+
+<div style="background:var(--bg3);border-radius:var(--rs);padding:.8rem;border-left:3px solid var(--amb)">
+<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--amb);margin-bottom:.3rem">O2: DEMO FIX</div>
+<div><strong>Key Result:</strong> 1 pricing section live on bivision.ge</div>
+<div style="color:var(--t3);font-size:.85rem;margin-top:.3rem">Day 1: audit → Day 2-3: pricing draft → Day 4-5: approve → Day 6-7: deploy</div>
+<div style="margin-top:.3rem"><span class="tg tg-a">მენცარი</span></div>
+</div>
+
+<div style="background:var(--bg3);border-radius:var(--rs);padding:.8rem;border-left:3px solid var(--blu)">
+<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--blu);margin-bottom:.3rem">O3: VALIDATION METRICS</div>
+<div><strong>Key Result:</strong> before/after tracking doc + dashboard section</div>
+<div style="color:var(--t3);font-size:.85rem;margin-top:.3rem">Day 1-2: metrics doc → Day 3-5: dashboard → Day 6-7: week 1 snapshot</div>
+<div style="margin-top:.3rem"><span class="tg tg-b">გურაფა</span></div>
+</div>
+
+<div style="background:var(--bg3);border-radius:var(--rs);padding:.8rem;border-left:3px solid var(--red)">
+<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:.3rem">O4: AUDIT QUALITY</div>
+<div><strong>Key Result:</strong> 100% output audited, structured, same-day</div>
+<div style="color:var(--t3);font-size:.85rem;margin-top:.3rem">Daily: AUDIT_REQUEST → audit → feedback. Source tracking enforced.</div>
+<div style="margin-top:.3rem"><span class="tg tg-rh">ვიქტორი</span></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Action Deficit -->
+<div class="cd ac">
+<div class="cd-h"><span class="tg tg-rh">#1 PRIORITY</span> <strong style="margin-left:.5rem">Action Deficit Fix</strong></div>
+<div class="cd-b" style="font-size:.95rem;color:var(--t2);line-height:1.7">
+<strong style="color:var(--red)">მენცარი + ვიქტორი ერთხმად:</strong> "4 სესია, 0 intervention call. Dashboard ≠ action."<br><br>
+<strong>O1 = "1 real call made"</strong> — არა "1 plan ready." Plans done. Execution now.
+</div>
+</div>
+
+<div style="text-align:center;padding:1rem;font-size:.78rem;color:var(--t3)">
+Consolidated by გურაფა | მენცარი ✅ ვიქტორი ✅ ოუნერი ✅ | 2026-04-07
+</div>
+</div>
+
 <footer class="ft">მენცარ დეშბორდი v4 — Bivision AI C-Suite — EP1-EP6 — Audited by Mentari</footer>
 
 <script>
@@ -871,6 +1074,23 @@ el.innerHTML=comments.map((c,ci)=>`<div style="display:flex;align-items:center;g
 if(comments.length){const panel=document.getElementById('fuc-tt-'+i);if(panel)panel.style.display='block';const ico=document.getElementById('tt-'+i+'-ico');if(ico)ico.textContent='▾'}}}
 function addTT(id,input){if(!input||!input.value.trim())return;const s=L();s.tt=s.tt||{};s.tt[id]=s.tt[id]||[];const now=new Date();const date=String(now.getDate()).padStart(2,'0')+'/'+String(now.getMonth()+1).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');s.tt[id].push({text:input.value.trim(),date:date});V(s);input.value='';loadTT()}
 function delTT(id,i){const s=L();s.tt[id].splice(i,1);V(s);loadTT()}
+
+// OKR Comments
+function loadOKRC(){const s=L();s.okrc=s.okrc||{};document.querySelectorAll('.okr-kr[data-okr]').forEach(el=>{const k=el.dataset.okr;const comments=s.okrc[k]||[];const container=document.getElementById('okrc-'+k);if(!container)return;container.innerHTML=comments.map((c,ci)=>`<div style="display:flex;align-items:center;gap:.4rem;padding:.15rem 0;font-size:.82rem;color:var(--grn);border-left:2px solid var(--grn);padding-left:.5rem;margin-bottom:.2rem"><span style="flex:1">${c.text}</span><span style="color:var(--t3);font-size:.7rem;min-width:55px;text-align:right">${c.date}</span><button onclick="event.stopPropagation();delOKRC('${k}',${ci})" style="background:none;border:none;color:var(--t3);cursor:pointer;font-size:.8rem;padding:0 .2rem">×</button></div>`).join('');if(comments.length){const panel=document.getElementById('fuc-okr-'+k);if(panel)panel.style.display='block';const ico=document.getElementById('okr-'+k+'-ico');if(ico)ico.textContent='▾'}})}
+function addOKRC(id,input){if(!input||!input.value.trim())return;const s=L();s.okrc=s.okrc||{};s.okrc[id]=s.okrc[id]||[];const now=new Date();const date=String(now.getDate()).padStart(2,'0')+'/'+String(now.getMonth()+1).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');s.okrc[id].push({text:input.value.trim(),date:date});V(s);input.value='';loadOKRC()}
+function delOKRC(id,i){const s=L();s.okrc[id].splice(i,1);V(s);loadOKRC()}
+
+// Notifications
+const pendingItems=[
+{id:'n-demo-fix',text:'Demo Funnel Fix Spec — დეველოპერებისთვის გადასაცემი',type:'review',doc:'docs/DEMO_FUNNEL_FIX.md'},
+{id:'n-competitor',text:'კონკურენტების Deep-Dive — შენი insider info სჭირდება',type:'review',doc:'docs/OUTPUT_LOG.md'},
+{id:'n-interview',text:'გუნდის Interview — ინგა/დათოსთვის intro გააკეთე',type:'action',doc:'docs/TEAM_INTERVIEW_STRATEGY.md'},
+{id:'n-mariam-link',text:'მარიამის ლინკი გაუგზავნე + კითხვარი შეავსოს',type:'action',url:'https://gshoina.github.io/BI_C-Suite/dashboard.html?view=marketing'},
+{id:'n-heygen',text:'HeyGen free trial — ქართული ტესტ ვიდეო',type:'action'},
+];
+function loadNotifications(){const s=L();s.ndone=s.ndone||{};const el=document.getElementById('notifications-area');if(!el)return;const pending=pendingItems.filter(n=>!s.ndone[n.id]);if(pending.length===0){el.innerHTML='';return}
+el.innerHTML='<div class="cd" style="border-left:3px solid var(--amb);margin-bottom:1rem"><div class="cd-h"><div><span class="tg tg-a">🔔 '+pending.length+'</span> <strong>შენი ყურადღება სჭირდება</strong></div></div><div class="cd-b" style="padding:.5rem 1rem">'+pending.map(n=>`<div style="display:flex;align-items:center;gap:.5rem;padding:.4rem 0;border-bottom:1px solid var(--brd)"><span style="font-size:.75rem;color:${n.type==='review'?'var(--amb)':'var(--blu)'};background:${n.type==='review'?'var(--ambd)':'var(--blud)'};padding:.1rem .4rem;border-radius:3px">${n.type==='review'?'REVIEW':'ACTION'}</span><span style="flex:1;font-size:.88rem;color:var(--t2)">${n.text}</span><button onclick="dismissNotif('${n.id}')" style="background:var(--grn);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">✓ ნახე</button></div>`).join('')+'</div></div>'}
+function dismissNotif(id){const s=L();s.ndone=s.ndone||{};s.ndone[id]=true;V(s);loadNotifications()}
 
 // Survey for Mariam
 const surveyQs=[
@@ -939,14 +1159,16 @@ function setMode(m){document.querySelectorAll('#tgl-mode button').forEach(b=>b.c
 
 // Todos
 const dM=[
-{t:'Blog templates + 4 pilot draft (AI Content Engine)',d:false,p:'h'},
-{t:'Mailchimp 3-email welcome sequence draft',d:false,p:'h'},
-{t:'გელას LinkedIn post draft: "AI ბივიჟენში"',d:false,p:'h'},
-{t:'Site speed audit + broken links spec (გაბოსთვის)',d:false,p:'m'},
-{t:'Playwright weekly auto-extraction setup',d:false,p:'m'},
-{t:'Competitor deep-dive: DataMind, Amadeo, Dastafe',d:false,p:'m'},
-{t:'90-day strategic plan — CFO validated',d:false,p:'l'},
-{t:'გურაფასთან კომუნიკაციის არხი (file-based)',d:false,p:'m'},
+{t:'[O1] ნუტრიმაქსი — ოუნერის conversation',d:false,p:'h'},
+{t:'[O1] TBC Leasing — IT decision-maker identify',d:false,p:'h'},
+{t:'[O1] Mardaleishvili — Bank API delivery follow-up',d:false,p:'h'},
+{t:'[O2] Demo funnel fix spec → დეველოპერებს გადაცე',d:false,p:'h'},
+{t:'[O2] Crisp გამორთვა + HubSpot form integration',d:false,p:'h'},
+{t:'[O2] Calendly setup + thank you page',d:false,p:'m'},
+{t:'[O3] გუნდის deep interview — ინგა + დათო',d:false,p:'h'},
+{t:'[O3] HeyGen ქართული ტესტ ვიდეო',d:false,p:'m'},
+{t:'[O4] Competitor deep-dive — ოუნერის insider info validate',d:true,p:'m'},
+{t:'მარიამის ლინკი გაგზავნა + კითხვარი',d:false,p:'m'},
 ];
 // Merge defaults: add any dM task not already in saved list (by text match)
 function mergeDM(saved){
@@ -995,7 +1217,7 @@ s.lastKPI=Date.now();V(s);
 setInterval(uKPI,60000);
 
 // Init
-document.addEventListener('DOMContentLoaded',()=>{const s=L();if(s.r)Object.entries(s.r).forEach(([k,v])=>{const b=document.querySelector(`.rb[data-o="${k}"]`);if(b)b.querySelectorAll('.rn').forEach(n=>n.classList.toggle('on',parseInt(n.dataset.v)===v))});iC();rT();uKPI();loadFuckups();loadTT();
+document.addEventListener('DOMContentLoaded',()=>{const s=L();if(s.r)Object.entries(s.r).forEach(([k,v])=>{const b=document.querySelector(`.rb[data-o="${k}"]`);if(b)b.querySelectorAll('.rn').forEach(n=>n.classList.toggle('on',parseInt(n.dataset.v)===v))});iC();rT();uKPI();loadFuckups();loadTT();loadOKRC();loadNotifications();
 // Mariam view: ?view=marketing → hide everything except Marketing tab
 const params=new URLSearchParams(window.location.search);if(params.get('view')==='marketing'){document.querySelector('.hdr').innerHTML='<div class="hdr-b"><div class="hdr-l">მ</div><div class="hdr-t">ბივიჟენი მარკეტინგი</div></div>';document.querySelector('.tabs').style.display='none';document.querySelectorAll('.tc').forEach(x=>x.classList.remove('on'));document.getElementById('t-mkt').classList.add('on');const stratBtn=document.querySelector('[data-mt="mkt-strategy"]');if(stratBtn)stratBtn.style.display='none';const stratPanel=document.getElementById('mkt-strategy');if(stratPanel)stratPanel.remove();const surveyEl=document.getElementById('mariam-survey');if(surveyEl){surveyEl.style.display='block';loadSurvey()}}});
 </script>
