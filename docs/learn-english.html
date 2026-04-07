@@ -154,6 +154,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .parent{padding:.5rem 0}
 .parent h2{font-size:1.1rem;margin-bottom:.8rem;color:var(--gold)}
 
+/* ═══ BOTTOM NAV ═══ */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:2px solid var(--brd);display:flex;justify-content:space-around;padding:.5rem 0 calc(.5rem + env(safe-area-inset-bottom));z-index:100}
+.bottom-nav button{background:none;border:none;color:var(--muted);font-size:1.6rem;cursor:pointer;padding:.4rem .8rem;border-radius:12px;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:.15rem;font-family:inherit;min-width:60px}
+.bottom-nav button .nav-label{font-size:.6rem;font-weight:600}
+.bottom-nav button:active,.bottom-nav button.active{color:var(--gold);background:rgba(255,215,0,.1)}
+.has-nav{padding-bottom:5rem}
+
+/* ═══ SUBJECT GRID (2x2) ═══ */
+.subj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;flex:1;align-content:center;padding:1rem 0}
+.subj-grid .subj-card{padding:1.5rem .8rem}
+
 /* Hidden */
 .hidden{display:none!important}
 </style>
@@ -237,6 +248,13 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   <div class="br-emoji">🌈</div>
   <div class="br-text">ყოჩაღ! 15 წუთი ისწავლე!<br>დროა პატარა შესვენება.<br>წამოდექი, გაიჭიმე, დალიე წყალი 💧</div>
   <button class="br-btn" onclick="dismissBreak()">მზად ვარ გასაგრძელებლად! 💪</button>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav hidden" id="bottom-nav">
+  <button onclick="goProfiles()"><span>🏠</span><span class="nav-label">Home</span></button>
+  <button onclick="navToSubject('math')"><span>📐</span><span class="nav-label"></span></button>
+  <button onclick="navToSubject('lang')"><span>🔤</span><span class="nav-label"></span></button>
 </div>
 
 </div>
@@ -451,7 +469,23 @@ if('speechSynthesis' in window)window.speechSynthesis.onvoiceschanged=()=>window
 function getName(){return profile==='niko'?'ნიკოლოზ':'მაშო';}
 
 // ═══ SCREENS ═══
-function show(id){document.querySelectorAll('[id^=screen-]').forEach(s=>s.classList.add('hidden'));document.getElementById('screen-'+id).classList.remove('hidden');}
+function show(id){
+  document.querySelectorAll('[id^=screen-]').forEach(s=>s.classList.add('hidden'));
+  document.getElementById('screen-'+id).classList.remove('hidden');
+  // Nav bar: hide on profiles, show everywhere else
+  const nav=document.getElementById('bottom-nav');
+  if(id==='profiles'){nav.classList.add('hidden');document.querySelector('.app').classList.remove('has-nav');}
+  else{nav.classList.remove('hidden');document.querySelector('.app').classList.add('has-nav');}
+}
+function navToSubject(type){
+  if(!profile)return;
+  const isKid=profile==='masho';
+  if(type==='math')selectSubject('math');
+  else if(type==='lang'){
+    if(isKid)selectSubject('ka-alpha');
+    else selectSubject('english');
+  }
+}
 
 function goProfiles(){
   state=load();
@@ -487,26 +521,28 @@ function selectProfile(p){
   const isKid=p==='masho';
 
   if(isKid){
-    // მაშო — ვიზუალური, ტექსტი მინიმუმ
+    // მაშო — ვიზუალური 2x2 grid, ტექსტი მინიმუმ
+    document.getElementById('subject-cards').className='subj-grid';
     document.getElementById('subject-cards').innerHTML=`
       <div class="subj-card" onclick="selectSubject('counting')" style="border-color:rgba(255,167,38,.4);background:linear-gradient(145deg,var(--card) 60%,rgba(255,167,38,.12))">
         <div class="subj-icon">🔢</div>
-        <div class="subj-name" style="font-size:1.8rem">1 2 3</div>
+        <div class="subj-name" style="font-size:1.6rem">1 2 3</div>
       </div>
       <div class="subj-card" onclick="selectSubject('ka-alpha')" style="border-color:rgba(76,175,80,.4);background:linear-gradient(145deg,var(--card) 60%,rgba(76,175,80,.12))">
         <div class="subj-icon">🇬🇪</div>
-        <div class="subj-name" style="font-size:1.8rem">ა ბ გ</div>
+        <div class="subj-name" style="font-size:1.6rem">ა ბ გ</div>
       </div>
       <div class="subj-card english" onclick="selectSubject('en-alpha')">
         <div class="subj-icon">🇬🇧</div>
-        <div class="subj-name" style="font-size:1.8rem">A B C</div>
+        <div class="subj-name" style="font-size:1.6rem">A B C</div>
       </div>
       <div class="subj-card math" onclick="selectSubject('math')">
         <div class="subj-icon">📐</div>
-        <div class="subj-name" style="font-size:1.8rem">➕ ➖</div>
+        <div class="subj-name" style="font-size:1.6rem">➕ ➖</div>
       </div>
     `;
   } else {
+    document.getElementById('subject-cards').className='subjects';
     document.getElementById('subject-cards').innerHTML=`
       <div class="subj-card english" onclick="selectSubject('english')">
         <div class="subj-badge">${wordCount} სიტყვა</div>
