@@ -346,7 +346,7 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div style="display:flex;align-items:center;gap:.5rem">
 <span style="color:var(--red);font-size:.8rem">⬜</span>
 <span style="flex:1;font-size:.9rem"><strong>KR2:</strong> ოუნერის 1+ churn conversation შესრულებული</span>
-<span style="font-size:.72rem;color:var(--red);background:var(--redd);padding:.15rem .4rem;border-radius:3px">OWNER</span>
+<span style="font-size:.72rem;color:var(--red);background:var(--redd);padding:.15rem .4rem;border-radius:3px">BLOCKED</span>
 <button onclick="toggleFUInput('okr-o1kr2')" style="background:none;border:1px solid var(--brd);border-radius:4px;color:var(--t3);cursor:pointer;font-size:.72rem;padding:.15rem .35rem;min-width:28px;min-height:24px">💬</button>
 </div>
 <div id="fuc-okr-o1kr2" style="display:none;margin-left:1.5rem;margin-top:.3rem" onclick="event.stopPropagation()"><div id="okrc-o1kr2"></div><div style="display:flex;gap:.3rem;margin-top:.2rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addOKRC('o1kr2',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addOKRC('o1kr2',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div>
@@ -407,11 +407,6 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 </div>
 </div></div>
 
-<!-- To-Do linked to OKRs -->
-<div class="st" style="margin-top:1.5rem">📋 Tasks (OKR-თან დაკავშირებული)</div>
-<div id="mt"></div>
-<div class="ta" style="margin-top:.5rem"><input type="text" class="ti" id="mi" placeholder="ახალი task..."><button class="ab" onclick="aT('m')">+</button></div>
-
 <!-- 🔴 Pipeline Follow-up -->
 <div class="st" style="margin-top:1.5rem">🔴 HubSpot Follow-up — შეხსენება</div>
 <div class="cd" style="border-left:3px solid var(--red)"><div class="cd-b" style="font-size:.88rem;line-height:1.6">
@@ -452,10 +447,12 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 </div></div>
 
 <!-- გელასგან ველოდები -->
-<div class="st" style="margin-top:1.5rem">⏳ გელასგან ველოდები</div>
-<div id="owner-actions"></div>
-<div style="display:flex;gap:.4rem;margin-top:.8rem"><input type="text" class="ti" id="oa-input" placeholder="კომენტარი ან პასუხი..."><button onclick="sendOwnerResponse()" style="background:var(--amb);color:var(--bg);border:none;border-radius:var(--rs);padding:.5rem 1rem;cursor:pointer;font-family:inherit;font-weight:600;font-size:.85rem;white-space:nowrap">📤 გაგზავნა</button></div>
-<div style="font-size:.72rem;color:var(--t3);margin-top:.3rem">კომენტარი localStorage-ში → მენცარი Playwright-ით წაიკითხავს</div>
+<div class="st" style="margin-top:1.5rem">⏳ ოუნერის pending actions</div>
+<div class="cd" style="border-left:3px solid var(--amb)"><div class="cd-b" style="font-size:.88rem;line-height:1.6">
+<div style="padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--red)">🔴</span> <strong>O1:</strong> ნუტრიმაქსთან ალტერნატიული contact path — ვერ უკავშირდები, რა გზა?</div>
+<div style="padding:.3rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--amb)">🟡</span> <strong>O2:</strong> Demo funnel fix spec devs-ს გადაცემა — ვის? დათო? მარი?</div>
+<div style="padding:.3rem 0"><span style="color:var(--amb)">🟡</span> <strong>Pipeline:</strong> საგა იმპექსი meeting debrief — როგორ ჩაიარა?</div>
+</div></div>
 
 </div>
 
