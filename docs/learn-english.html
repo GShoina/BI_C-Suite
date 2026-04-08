@@ -188,6 +188,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
       <div class="age">5 წლის</div>
       <div class="stats" id="masho-stats"></div>
     </div>
+    <div class="profile-card" onclick="selectProfile('guest')">
+      <div class="avatar">🎮</div>
+      <div class="name">სტუმარი</div>
+      <div class="age"></div>
+      <div class="stats" id="guest-stats"></div>
+    </div>
     <div class="profile-card" onclick="showParent()" style="min-width:110px;padding:1.2rem">
       <div class="avatar">👨‍💼</div>
       <div class="name" style="font-size:1rem">მშობელი</div>
@@ -437,7 +443,7 @@ let sessionStart=0;
 
 function load(){try{return JSON.parse(localStorage.getItem(SK))||defaultState();}catch{return defaultState();}}
 function save(){localStorage.setItem(SK,JSON.stringify(state));}
-function defaultState(){return{niko:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0},masho:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0}};}
+function defaultState(){return{niko:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0},masho:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0},guest:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0}};}
 
 // ═══ LEVELS (Cambridge YLE inspired) ═══
 function getLevel(p){
@@ -466,7 +472,7 @@ function speak(text){
 }
 if('speechSynthesis' in window)window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();
 
-function getName(){return profile==='niko'?'ნიკოლოზ':'მაშო';}
+function getName(){return profile==='niko'?'ნიკოლოზ':profile==='masho'?'მაშო':'სტუმარ';}
 
 // ═══ SCREENS ═══
 function show(id){
@@ -490,7 +496,8 @@ function navToSubject(type){
 function goProfiles(){
   state=load();
   show('profiles');
-  ['niko','masho'].forEach(p=>{
+  ['niko','masho','guest'].forEach(p=>{
+    if(!state[p])state[p]={shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0};
     const s=state[p];const lvl=getLevel(p);
     const el=document.getElementById(p+'-stats');
     if(s.shields>0)el.innerHTML=`🛡️${s.shields} | ${lvl.learned} სიტყვა<br><span class="level-badge">${lvl.name}</span>`;
@@ -1074,8 +1081,9 @@ function showMathResults(){
 function showParent(){
   show('parent');
   let html='';
-  ['niko','masho'].forEach(p=>{
-    const s=state[p];const name=p==='niko'?'🧒 ნიკოლოზი':'👧 მაშო';const lvl=getLevel(p);
+  ['niko','masho','guest'].forEach(p=>{
+    if(!state[p])return;
+    const s=state[p];const name=p==='niko'?'🧒 ნიკოლოზი':p==='masho'?'👧 მაშო':'🎮 სტუმარი';const lvl=getLevel(p);
     const words=Object.entries(s.words);const total=words.length;
     const correct=words.reduce((a,[k,v])=>a+v.correct,0);
     const wrong=words.reduce((a,[k,v])=>a+v.wrong,0);
