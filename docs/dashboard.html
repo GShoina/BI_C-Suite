@@ -517,6 +517,41 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div style="margin:.3rem 0"><div style="cursor:pointer;display:flex;align-items:center;gap:.3rem;padding:.3rem .5rem;background:var(--bg3);border-radius:var(--rs)" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span style="font-size:1.1rem">💬</span><span style="font-size:.82rem;color:var(--t2)">კომენტარი / ლინკი / დადასტურება</span><span style="font-size:.7rem;color:var(--t3)">▸</span></div><div style="display:none;padding:.4rem .5rem;background:var(--bg3);border-radius:0 0 var(--rs) var(--rs)"><div id="prc-saga"></div><div style="display:flex;gap:.3rem"><input type="text" class="ti" placeholder="კომენტარი, ლინკი..." onkeypress="if(event.key==='Enter')addPRC('saga',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('saga',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button><button onclick="emailMentsar('საგა იმპექსი',this.parentElement.querySelector('input').value);this.parentElement.querySelector('input').value=''" style="background:var(--blu);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">📧</button></div></div></div>
 </div>
 
+<!-- Inga Questionnaire Analysis -->
+<div class="cd" style="border-left:3px solid var(--pur)">
+<div class="cd-h"><div><span class="tg tg-b">Apr 8</span> <span class="tg tg-b">INSIGHT</span> <span class="tg tg-a">HR+CEO</span></div></div>
+<div class="hl">📋 <strong>ინგას კითხვარის ანალიზი — CEO/HR პერსპექტივა</strong></div>
+<button class="eb" onclick="X('oinga',this)">სრულად</button>
+<div class="ez" id="oinga"><div class="di">
+
+<h4 style="color:var(--grn)">რა აღმოვაჩინე</h4>
+<p><strong>1. მოტივირებულია მაგრამ ოპერაციულმა ჩაჭამა.</strong> ინგას ძლიერი მხარე = მონაცემების ანალიზი → ბიზნეს გადაწყვეტილებებად ტრანსფორმაცია. მაგრამ "ოპერაციულ ამოცანებზე მიწევს ფოკუსი" — სტრატეგიული capacity იხარჯება ყოველდღიურობაზე.</p>
+<p><strong>2. გუნდის ინიციატივის ნაკლებობა.</strong> რას შეცვლიდა: "პასუხისმგებლობების განაწილება + <strong>ინიციატივა გუნდის მხრიდან.</strong>" ეს ნიშნავს — ინგა ყველაფერს თავად აკეთებს, გუნდი არ იღებს ინიციატივას.</p>
+<p><strong>3. AI power user.</strong> ყოველდღე იყენებს: Excel ანალიზი, კოდინგი, დოკუმენტირება. ეს = AI integration-ის ყველაზე ძლიერი კანდიდატი გუნდში.</p>
+<p><strong>4. გუნდი არ საუბრობს.</strong> "ხშირად არ ვსაუბრობთ, თუნდაც არაფორმალურ გარემოში." კომუნიკაციის gap = information silo risk.</p>
+
+<h4 style="color:var(--red)">გამოწვევები</h4>
+<p>🔴 <strong>Burnout risk:</strong> პარალელურად რამდენიმე ამოცანა + პროცესების სტრუქტურირების დროის ნაკლებობა.</p>
+<p>🔴 <strong>სტრატეგიული capacity waste:</strong> ახალ პროდუქტებზე/შეთავაზებებზე ფიქრის დრო არ აქვს.</p>
+<p>🟡 <strong>გელასთან კომუნიკაცია:</strong> "უფრო მეტს ვისაუბრებდი <strong>შედეგებზე და მომავლის გეგმებზე.</strong>" ახლა ოპერაციულ საუბარია, არა სტრატეგიული.</p>
+<p>🟡 <strong>Churn prevention:</strong> ინგა ხედავს გამოსავალს ("მეტი კომუნიკაცია + სიახლეების შეთავაზება") მაგრამ ოპერაციულმა workload-მა არ აცლის.</p>
+
+<h4 style="color:var(--amb)">რა უნდა გაკეთდეს</h4>
+<p><strong>1. ინგას ოპერაციული დატვირთვის შემცირება.</strong> რუტინული ამოცანები → მარი მაღ/ლუკას. ინგა = სტრატეგიული partner, არა task executor.</p>
+<p><strong>2. ყოველკვირეული გუნდის sync.</strong> ინგამ თავად თქვა — "ხშირად არ ვსაუბრობთ." 30-წუთიანი weekly standup = information flow fix.</p>
+<p><strong>3. გელა-ინგა: შედეგებზე საუბარი.</strong> ინგა ითხოვს სტრატეგიულ dialogue-ს. კვირაში 1 შეხვედრა = "რა მოხდა, რა მუშაობს, სად მივდივართ."</p>
+<p><strong>4. AI integration lead.</strong> ინგა ყოველდღე იყენებს AI-ს. ის = Qlik + Claude pilot-ის ბუნებრივი owner.</p>
+<p><strong>5. Churn prevention mandate.</strong> ინგას მიეცეს პროაქტიული client outreach-ის უფლებამოსილება — არა მხოლოდ support, არამედ "სიახლეების შეთავაზება."</p>
+
+<h4>ინგას ციტატები</h4>
+<p style="color:var(--t2);font-style:italic">"ახალ პროდუქტებზე და განვითარებაზე ფიქრისთვის მეტი დრო რომ მქონდეს უკეთესი იქნებოდა"</p>
+<p style="color:var(--t2);font-style:italic">"ოპერაციულ ამოცანებზე მიწევს ფოკუსი"</p>
+<p style="color:var(--t2);font-style:italic">"უფრო მეტს ვისაუბრებდი შედეგებზე და მომავლის გეგმებზე"</p>
+
+</div></div>
+<div style="margin:.3rem 0"><div style="cursor:pointer;display:flex;align-items:center;gap:.3rem;padding:.3rem .5rem;background:var(--bg3);border-radius:var(--rs)" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span style="font-size:1.1rem">💬</span><span style="font-size:.82rem;color:var(--t2)">კომენტარი / ლინკი</span><span style="font-size:.7rem;color:var(--t3)">▸</span></div><div style="display:none;padding:.4rem .5rem;background:var(--bg3);border-radius:0 0 var(--rs) var(--rs)"><div id="prc-oinga"></div><div style="display:flex;gap:.3rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('oinga',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('oinga',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button><button onclick="emailMentsar('ინგას ანალიზი',this.parentElement.querySelector('input').value);this.parentElement.querySelector('input').value=''" style="background:var(--blu);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">📧</button></div></div></div>
+</div>
+
 <!-- C-Suite Final Decision -->
 <div class="cd" style="border-left:3px solid var(--grn)">
 <div class="cd-h"><div><span class="tg tg-g">Apr 7</span> <span class="tg tg-g">APPROVED</span> <span class="tg tg-b">ALL AGENTS</span></div></div>
