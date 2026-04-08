@@ -340,16 +340,16 @@ const KA_ALPHA = [
   {l:'ჰ',w:'ჰაერი',e:'🎈'}
 ];
 const EN_ALPHA = [
-  {l:'A',w:'apple',e:'🍎'},{l:'B',w:'ball',e:'⚽'},{l:'C',w:'cat',e:'🐱'},{l:'D',w:'dog',e:'🐕'},
-  {l:'E',w:'egg',e:'🥚'},{l:'F',w:'fish',e:'🐟'},{l:'G',w:'grape',e:'🍇'},{l:'H',w:'house',e:'🏠'},
-  {l:'I',w:'ice cream',e:'🍦'},{l:'J',w:'juice',e:'🧃'},{l:'K',w:'king',e:'👑'},{l:'L',w:'lion',e:'🦁'},
-  {l:'M',w:'moon',e:'🌙'},{l:'N',w:'nose',e:'👃'},{l:'O',w:'orange',e:'🍊'},{l:'P',w:'pencil',e:'✏️'},
-  {l:'Q',w:'queen',e:'👸'},{l:'R',w:'rabbit',e:'🐰'},{l:'S',w:'sun',e:'☀️'},{l:'T',w:'tree',e:'🌳'},
-  {l:'U',w:'umbrella',e:'☂️'},{l:'V',w:'violin',e:'🎻'},{l:'W',w:'water',e:'💧'},{l:'X',w:'xylophone',e:'🎵'},
-  {l:'Y',w:'yellow',e:'🟡'},{l:'Z',w:'zebra',e:'🦓'}
+  {l:'A',w:'apple',e:'🍎',p:'ეი',ex:['apple','ant','alligator']},{l:'B',w:'ball',e:'⚽',p:'ბი',ex:['ball','bear','banana']},{l:'C',w:'cat',e:'🐱',p:'სი',ex:['cat','car','cake']},{l:'D',w:'dog',e:'🐕',p:'დი',ex:['dog','duck','door']},
+  {l:'E',w:'egg',e:'🥚',p:'ი',ex:['egg','elephant','eye']},{l:'F',w:'fish',e:'🐟',p:'ეფ',ex:['fish','flower','frog']},{l:'G',w:'grape',e:'🍇',p:'ჯი',ex:['grape','girl','green']},{l:'H',w:'house',e:'🏠',p:'ეიჩ',ex:['house','hat','horse']},
+  {l:'I',w:'ice cream',e:'🍦',p:'აი',ex:['ice cream','igloo']},{l:'J',w:'juice',e:'🧃',p:'ჯეი',ex:['juice','jump','jam']},{l:'K',w:'king',e:'👑',p:'ქეი',ex:['king','kite','key']},{l:'L',w:'lion',e:'🦁',p:'ელ',ex:['lion','lamp','lemon']},
+  {l:'M',w:'moon',e:'🌙',p:'ემ',ex:['moon','monkey','milk']},{l:'N',w:'nose',e:'👃',p:'ენ',ex:['nose','nine','nest']},{l:'O',w:'orange',e:'🍊',p:'ოუ',ex:['orange','owl','octopus']},{l:'P',w:'pencil',e:'✏️',p:'ფი',ex:['pencil','pig','pizza']},
+  {l:'Q',w:'queen',e:'👸',p:'ქიუ',ex:['queen','quilt']},{l:'R',w:'rabbit',e:'🐰',p:'არ',ex:['rabbit','rain','red']},{l:'S',w:'sun',e:'☀️',p:'ეს',ex:['sun','star','snake']},{l:'T',w:'tree',e:'🌳',p:'თი',ex:['tree','tiger','train']},
+  {l:'U',w:'umbrella',e:'☂️',p:'იუ',ex:['umbrella','unicorn']},{l:'V',w:'violin',e:'🎻',p:'ვი',ex:['violin','van']},{l:'W',w:'water',e:'💧',p:'დაბლიუ',ex:['water','wolf','window']},{l:'X',w:'xylophone',e:'🎵',p:'ექს',ex:['xylophone','x-ray']},
+  {l:'Y',w:'yellow',e:'🟡',p:'უაი',ex:['yellow','yogurt']},{l:'Z',w:'zebra',e:'🦓',p:'ზი',ex:['zebra','zoo','zero']}
 ];
 const COUNTING = [];
-for(let i=1;i<=20;i++){const emojis=['🍎','⭐','🐟','🌸','🎈','🍌','🦋','⚽'];COUNTING.push({num:i,emoji:emojis[i%emojis.length].repeat(Math.min(i,5)),name:['','ერთი','ორი','სამი','ოთხი','ხუთი','ექვსი','შვიდი','რვა','ცხრა','ათი','თერთმეტი','თორმეტი','ცამეტი','თოთხმეტი','თხუთმეტი','თექვსმეტი','ჩვიდმეტი','თვრამეტი','ცხრამეტი','ოცი'][i],en:['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'][i]});}
+for(let i=1;i<=20;i++){const emojis=['🍎','⭐','🐟','🌸','🎈','🍌','🦋','⚽'];COUNTING.push({num:i,emoji:emojis[i%emojis.length].repeat(i),name:['','ერთი','ორი','სამი','ოთხი','ხუთი','ექვსი','შვიდი','რვა','ცხრა','ათი','თერთმეტი','თორმეტი','ცამეტი','თოთხმეტი','თხუთმეტი','თექვსმეტი','ჩვიდმეტი','თვრამეტი','ცხრამეტი','ოცი'][i],en:['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'][i]});}
 
 // ═══ MATH (UCMAS + კომაროვი) — GRADED ═══
 const MATH_GRADES = {
@@ -443,7 +443,7 @@ let sessionStart=0;
 
 function load(){try{return JSON.parse(localStorage.getItem(SK))||defaultState();}catch{return defaultState();}}
 function save(){localStorage.setItem(SK,JSON.stringify(state));}
-function defaultState(){return{niko:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0},masho:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0},guest:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0}};}
+function defaultState(){return{niko:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0,bestScore:{},dadMessages:[]},masho:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0,bestScore:{},dadMessages:[]},guest:{shields:0,streak:0,maxStreak:0,words:{},lastPlayed:null,sessions:0,totalTime:0,bestScore:{},dadMessages:[]}};}
 
 // ═══ LEVELS (Cambridge YLE inspired) ═══
 function getLevel(p){
@@ -825,9 +825,12 @@ function showResults(){
     </div>
     ${weak.length>0?`<div style="font-size:.9rem;color:var(--orange);margin:.5rem 0">გაიმეორე: ${weak.map(w=>w.emoji+' '+w.en).join(', ')}</div>`:''}
     <button class="btn-primary" onclick="retryWeak()" ${weak.length<2?'style="display:none"':''}>🔄 სუსტების გამეორება</button>
+    ${beatYesterdayHTML(gameMode,sessionShields)}
     <button class="btn-primary" onclick="startGame(gameMode)" style="background:var(--blue)">🎮 ახალი რაუნდი</button>
     <button class="btn-secondary" onclick="goMenu()">📋 მენიუ</button>
+    <button class="btn-primary" onclick="showDad('${gameMode}',${sessionShields},${pct})" style="background:var(--gold);color:#1a1b2e;margin-top:.5rem">🎉 მამას აჩვენე!</button>
   `;
+  updateBestScore(gameMode,sessionShields);
   state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();
   if(sessionStart)state[profile].totalTime+=(Date.now()-sessionStart);
   save();
@@ -921,13 +924,17 @@ function nextAlphaQ(){
   document.getElementById('q-num').textContent=`${alphaIdx+1}/${alphaQs.length}`;
   document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
   if(alphaMode==='learn'){
-    if(alphaLang==='en')speak(q.w);
+    if(alphaLang==='en'){speak(q.l);setTimeout(()=>speak(q.w),800);}
+    const pron=alphaLang==='en'&&q.p?`<div style="font-size:1.1rem;color:var(--blue);margin:.3rem 0">(${q.p})</div>`:'';
+    const examples=alphaLang==='en'&&q.ex?`<div style="font-size:.85rem;color:var(--muted);margin-top:.3rem">${q.ex.map(x=>`🔹 ${x}`).join('  ')}</div>`:'';
     document.getElementById('game-area').innerHTML=`
-      <div class="word-box" ${alphaLang==='en'?`onclick="speak('${q.w}')"`:''}><div class="emoji" style="font-size:4rem">${q.e}</div>
+      <div class="word-box" ${alphaLang==='en'?`onclick="speak('${q.l}');setTimeout(()=>speak('${q.w}'),600)"`:''}><div class="emoji" style="font-size:4rem">${q.e}</div>
       <div class="word" style="font-size:4rem;color:var(--gold)">${q.l}</div>
+      ${pron}
       <div class="sub" style="font-size:1.2rem">${q.w}</div>
-      ${alphaLang==='en'?'<div class="speak-hint">🔊</div>':''}</div>
-      <button class="opt" style="font-size:1.3rem;width:100%;margin-top:1rem;min-height:70px;background:var(--green);border-color:var(--green);color:#fff" onclick="sessionShields++;state[profile].shields++;save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;alphaIdx++;nextAlphaQ();">შემდეგი →</button>`;
+      ${examples}
+      ${alphaLang==='en'?'<div class="speak-hint">🔊 დააჭირე მოსასმენად</div>':''}</div>
+      <button class="opt" style="font-size:1.3rem;width:100%;margin-top:1rem;min-height:70px;background:var(--green);border-color:var(--green);color:#fff" onclick="sessionShields++;state[profile].shields++;save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;alphaIdx++;nextAlphaQ();">▶️</button>`;
   }else{
     const opts=new Set([q.l]);while(opts.size<4){const r=src[randInt(0,src.length-1)];opts.add(r.l);}
     const optArr=shuffle([...opts]);
@@ -974,6 +981,35 @@ function checkActivityBreak(){
     document.getElementById('break-screen').querySelector('.br-text').innerHTML=`ყოჩაღ! 🌈<br><br><span style="font-size:1.5rem;color:var(--gold)">${act}</span><br><br>მერე დალიე წყალი 💧`;
     document.getElementById('break-screen').classList.remove('hidden');
   }
+}
+
+// ═══ BEAT YESTERDAY + SHOW DAD ═══
+function beatYesterdayHTML(mode,current){
+  if(!state[profile].bestScore)state[profile].bestScore={};
+  const best=state[profile].bestScore[mode]||0;
+  if(best===0)return'';
+  if(current>best)return`<div style="font-size:.9rem;color:var(--green);margin:.5rem 0">🎉 გაჯობე გუშინს! ${best} → ${current}</div>`;
+  if(current===best)return`<div style="font-size:.9rem;color:var(--blue);margin:.5rem 0">🤝 გუშინდელი გაიმეორე: ${current}</div>`;
+  return`<div style="font-size:.9rem;color:var(--orange);margin:.5rem 0">💪 გუშინ ${best} გქონდა. ხვალ გაჯობებ!</div>`;
+}
+function updateBestScore(mode,current){
+  if(!state[profile].bestScore)state[profile].bestScore={};
+  if(current>(state[profile].bestScore[mode]||0))state[profile].bestScore[mode]=current;
+  save();
+}
+function showDad(mode,shields,pct){
+  if(!state[profile].dadMessages)state[profile].dadMessages=[];
+  const names={'quiz':'ინგლისური','reverse':'English→ქართ','listen':'მოსმენა','match':'დაწყვილება','spell':'spelling','math-add':'შეკრება','math-sub':'გამოკლება','math-mul':'გამრავლება','math-pat':'პატერნები','count-pick':'დათვლა','count-listen':'მოსმენა-რიცხვი','ka-learn':'ქართ.ანბანი','ka-quiz':'ქართ.quiz','en-learn':'ინგლ.ანბანი','en-quiz':'ინგლ.quiz'};
+  const msg={date:new Date().toLocaleString('ka-GE'),name:getName(),mode:names[mode]||mode,shields,pct,text:`${getName()}მ ${names[mode]||mode}-ში ${shields} 🛡️ მოაგროვა (${pct}%)!`};
+  state[profile].dadMessages.unshift(msg);
+  if(state[profile].dadMessages.length>20)state[profile].dadMessages.pop();
+  save();
+  // Show celebration
+  const fb=document.createElement('div');fb.className='feedback';fb.id='fb-overlay';
+  fb.innerHTML=`<div class="feedback-box"><div class="fb-emoji" style="font-size:5rem">🎉</div><div class="fb-text" style="font-size:1.3rem">${msg.text}</div><div class="fb-sub" style="margin-top:1rem;color:var(--gold)">მამა დაინახავს! ❤️</div></div>`;
+  fb.onclick=()=>fb.remove();
+  document.body.appendChild(fb);
+  setTimeout(()=>{if(document.getElementById('fb-overlay'))fb.remove();},3000);
 }
 
 function endGame(){goMenu();}
@@ -1069,9 +1105,12 @@ function showMathResults(){
       <div class="level-bar"><div class="level-fill" style="width:${progPct}%;background:linear-gradient(90deg,var(--purple),var(--pink))"></div></div>
       <div class="level-info">${maxLvl?'მაქსიმალური ლეველი!':`${ls.c}/${LVLUP_NEED} სწორი (${progAcc} სიზუსტე) → შემდეგი ლეველი`}</div>
     </div>
+    ${beatYesterdayHTML(mathMode,sessionShields)}
     <button class="btn-primary" onclick="startMathGame('${mathMode}')" style="background:var(--purple)">🎮 ახალი რაუნდი</button>
     <button class="btn-secondary" onclick="goMenu()">📋 მენიუ</button>
+    <button class="btn-primary" onclick="showDad('${mathMode}',${sessionShields},${pct})" style="background:var(--gold);color:#1a1b2e;margin-top:.5rem">🎉 მამას აჩვენე!</button>
   `;
+  updateBestScore(mathMode,sessionShields);
   state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();
   if(sessionStart)state[profile].totalTime+=(Date.now()-sessionStart);
   save();
@@ -1107,7 +1146,13 @@ function showParent(){
     ${Object.entries(s.math).map(([k,v])=>{const nm={'math-add':'➕','math-sub':'➖','math-mul':'✖️','math-pat':'🧩'}[k]||k;const acc=v.correct+v.wrong>0?Math.round(v.correct/(v.correct+v.wrong)*100):0;return`<div style="background:var(--card);border-radius:8px;padding:.5rem;text-align:center"><div style="font-size:1.2rem">${nm}</div><div style="font-size:.9rem;font-weight:700;color:${acc>=70?'var(--green)':'var(--orange)'}">${acc}%</div><div style="font-size:.65rem;color:var(--muted)">${v.correct}✓ ${v.wrong}✗</div></div>`;}).join('')}
     </div>`:''}<hr style="border-color:var(--brd);margin-bottom:1rem">`;
   });
-  html+=`<button class="btn-secondary" onclick="if(confirm('წაშალო progress?')){localStorage.removeItem('${SK}');state=load();goProfiles();}">🗑️ Reset</button>`;
+  // Dad messages
+  const allDadMsgs=[...(state.niko.dadMessages||[]),...(state.masho.dadMessages||[]),...(state.guest.dadMessages||[])].sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,10);
+  if(allDadMsgs.length>0){
+    html+=`<h2 style="color:var(--gold)">🎉 მამას აჩვენე!</h2>`;
+    allDadMsgs.forEach(m=>{html+=`<div style="background:var(--card);border-radius:10px;padding:.6rem;margin-bottom:.4rem;font-size:.85rem"><span style="color:var(--gold)">${m.date}</span> — ${m.text}</div>`;});
+  }
+  html+=`<button class="btn-secondary" style="margin-top:1rem" onclick="if(confirm('წაშალო progress?')){localStorage.removeItem('${SK}');state=load();goProfiles();}">🗑️ Reset</button>`;
   document.getElementById('parent-content').innerHTML=html;
 }
 
