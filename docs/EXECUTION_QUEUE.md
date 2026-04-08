@@ -1,40 +1,49 @@
 ---
 class: ACTIVE
 owner: CEO
-updated: 2026-04-06
+updated: 2026-04-07
 tokens_est: ~400
 ---
 
 # Execution Queue
 
-## Last Completed Mission
-**Dashboard Marketing Redesign + AI Marketing Research** (2026-04-06):
-- Dashboard: 4 sub-tabs, fuckup list, OKR weekly, გუნდთან სასაუბრო, მარიამის კითხვარი
-- GitHub Pages deploy: gshoina.github.io/BI_C-Suite/dashboard.html?view=marketing
-- AI კვლევა: LinkedIn automation (Dripify $59/mo + Claude API) + AI avatars (HeyGen $24/mo + $198 custom)
+## Last Completed
+**Pipeline First Protocol + Dashboard Redesign** (2026-04-07):
+- Pipeline First protocol — ოუნერი approved
+- Dashboard: HubSpot live pipeline, priority hierarchy, comment dropdowns, 📤 export
+- საგა იმპექსის meeting prep (Outputs tab)
+- HubSpot follow-up contacts (To-Do tab)
+- 7/7 tool access (GA4, Gmail, Chat, HubSpot, LinkedIn, Insightful, Calendar)
+
+## Active Now (მენცარი მუშაობს)
+1. გუნდის კითხვარი — გურაფასთან ინსაით-driven კითხვების გადაკეთება
+2. Marketing SWOT + Baseline მომზადება (Apr 10 შეხვედრისთვის)
+3. EXECUTION_QUEUE + STATUS.md განახლება
 
 ## შემდეგი სესიის მისია
-🔴 **AI Marketing — action plan:**
-1. HeyGen free trial — ქართული ტესტ ვიდეო (lip-sync ხარისხი ❓)
-2. LinkedIn automation სცენარი — გელას კონტაქტები, target list, message templates
-3. Deep interview სცენარი — მარიამთან + გელასთან (insider knowledge)
-4. მარიამის კითხვარის პასუხების ანალიზი (თუ შეავსო)
-5. AI "თანამშრომლის" პროფილის დიზაინი — სახელი, პოზიცია, tone
+🔴 **Pipeline First Check:**
+1. HubSpot pipeline — new deals? stage changes? overdue?
+2. ოუნერის follow-up status — 6 კონტაქტი გაიგზავნა?
+3. საგა იმპექსი meeting debrief (Apr 8, 1pm)
 
-## Immediate Owner Actions
-1. 🔴 **Churn conversations** — ნუტრიმაქსი, TBC Leasing, Mardaleishvili
-2. 🟡 **მარიამთან საუბარი** — dashboard ლინკი გაგზავნილია, კითხვარი შეავსოს
-3. 🟡 **LinkedIn კონტაქტები** — რამდენია? target audience რამდენი?
-4. 🟡 **Sales Navigator** — გაქვს?
+## პრიორიტეტის იერარქია (ოუნერი approved)
+```
+1. ცოცხალი ფული (leads, follow-up, კლიენტის პრობლემა)
+2. მომაკვდავი ფული (churn, at-risk)
+3. მომავალი ფული (demo funnel, marketing)
+4. ინფრასტრუქტურა (dashboard, architecture, analysis)
+⚠️ არასდროს #4 სანამ #1-#2 OK არ არის
+```
 
 ## Queue (prioritized)
-1. AI LinkedIn employee — Dripify/Expandi + Claude API pipeline
-2. AI Avatar content — HeyGen custom avatars, BiFinance demo ვიდეო
-3. Competitor deep-dive — DataMind, Amadeo, Dastafe
-4. 90-day strategic plan — CFO validated
+1. Marketing SWOT + AI Automation ჩელენჯი (Apr 10 meeting)
+2. გუნდის performance dashboard — ამოცანები, execution, monitoring
+3. McKinsey rethink — ბივიჟენის გამოწვევები + პრიორიტეტები თავიდან
+4. Competitor deep-dive refresh
 5. Regional expansion research — Armenia, Azerbaijan
 
-## Corrections Made This Session
-- ❌→✅ "950₾/mo LinkedIn ads" → 69₾/mo total digital ads, no LinkedIn
-- ❌→✅ "pashagaming active" → RESOLVED, GSC = historical data
-- ❌→✅ "საიტი clean არ არის" → საიტი clean-ია, 3 კვირის წინ fixed
+## Owner Actions Pending
+1. 🔴 HubSpot follow-up — 6 კონტაქტი (Gemini drafts)
+2. 🔴 ხვალ 1pm — საგა იმპექსი meeting (prep ready)
+3. 🟡 ხვალ 5pm — Keti Piranishvili meeting
+4. 🟡 Dashboard 📤 export — კომენტარებისთვის
