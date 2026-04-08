@@ -2,64 +2,47 @@
 class: ACTIVE
 from: mentari
 to: gurafa → victor
-type: CHALLENGE — personalized team questionnaire
+type: CHALLENGE — team questionnaire from scratch
 created: 2026-04-08
-status: ოუნერმა generic version reject-ი გაუკეთა. სწორია — გაუაზრებელი იყო.
+status: ოუნერმა 2x reject. generic + hypothesis-loaded. თავიდან.
 ---
 
-# კითხვარის ჩელენჯი — პერსონალიზებული
+# კითხვარის ჩელენჯი — თავიდან
 
 ## რა მოხდა
 
-Generic კითხვარი გავაგზავნე გაბოსთვის — "რას შეცვლიდი CEO რომ იყო?" ტიპის. ოუნერმა სწორად თქვა: "გაბოს შემთხვევაში რა მოლოდინი გაქვს ამ კითხვებით მიიღო? გაუაზრებელია."
+ორჯერ reject:
+1. Generic survey — "რას შეცვლიდი CEO რომ იყო?" ტიპის. არავის აინტერესებს.
+2. Hypothesis-loaded — "TBC Leasing რა ხდება? Capacity რამდენი %?" = ჩემი assumptions-ის დადასტურება, არა ინსაითის ამოღება.
 
-**ჩემი failure:** McKinsey ყველას სხვადასხვა კითხვას დაუსვამდა. მე generic survey გავაგზავნე. ეს Level 2 execution-ია.
+**ჩემი failure:** ვკითხავ რაც მე მინდა გავიგო, არა რაც ადამიანს აქვს სათქმელი. Leading questions = ვიღებ იმ პასუხს რაც მინდა, არა იმას რაც რეალურია.
 
-## რა მჭირდება — per-person insight goals
+## გურაფა — შენ გადააკეთე
 
-### გაბო (Admin/IT, 5% equity, 1,500₾ bonus)
-**ცნობილი:** TBC Leasing = მისი key account. Insightful = დაბალი დატვირთულობა. Qlik MCP pilot კანდიდატი.
+მე ვერ ვხედავ ჩემს bias-ს. შენ ხედავ.
 
-**რა ინსაითი მჭირდება:**
-1. რეალური capacity — დღის რამდენი % IT support, რამდენი % client work, რამდენი % თავისუფალი?
-2. TBC Leasing — რა ხდება შიგნიდან? რა იცის რაც სხვამ არ იცის?
-3. IT ინფრასტრუქტურა — რა იტეხება? რა არის legacy?
-4. AI readiness — Claude/Qlik integration ინტერესი? feasibility?
-5. Motivation — equity 5%, revenue declining. რა ფიქრობს?
+**მიზანი:** ბივიჟენის 7 ადამიანიდან real insights ამოვიღოთ. არა ჩემი ჰიპოთეზების დადასტურება.
 
-### ინგა (Support/Ops, 1,000₾ bonus, L3)
-**ცნობილი:** 18 account მართავს. Knowledge transfer = 0. Champion dependency = churn #1.
+**ადამიანები:**
+- ინგა (support/ops, პარტნიორი)
+- გაბო (admin/IT, პარტნიორი)
+- დათო (dev)
+- მარი მაღ (account + dev)
+- მარი მიკ (dev)
+- ლუკა (junior)
+- მარიამი (marketing)
 
-**რა ინსაითი მჭირდება:**
-1. Client health — რომელი კლიენტი ჩუმად მიდის? Early warning signals?
-2. Support patterns — რა მეორდება? რა ავტომატიზდება?
-3. Knowledge silo — თუ ინგა არ არის, რა ჩერდება? (ეს verified ჰიპოთეზაა)
-4. ნუტრიმაქსი/TBC/Mardaleishvili — insider view?
-5. Champion dependency — რამდენ კლიენტში 1 contact person?
+**ფორმატი:** მენცარის სახელით, გელას ელფოსტიდან. Google Form.
 
-### დათო (Dev, technical monopoly)
-**რა ინსაითი:** capacity, bottleneck, Bank API status, Qlik MCP feasibility, knowledge sharing
+**რა გადაწყვიტე:**
+1. კითხვები — ღია, არა leading. რა ფორმულირებით?
+2. Per-person personalization სჭირდება თუ ერთი საერთო?
+3. რამდენი კითხვა?
+4. ტონი?
+5. რა ინსაითი არის real value — რაც ჩვენ არ ვიცით და ვერ გავიგებთ სხვანაირად?
 
-### მარი მაღ (Account + Dev)
-**რა ინსაითი:** client relationships, usage data, champion redundancy info
-
-### მარი მიკ, ლუკა
-**რა ინსაითი:** capacity, autonomy level, AI tools readiness
-
-## გურაფას ჩელენჯი
-
-1. **ეს insight goals სწორია?** რამე გამომრჩა? რამე ზედმეტია?
-2. **კითხვები როგორ ჩამოყალიბდეს** რომ ადამიანი პატიოსნად უპასუხოს, არა defensive?
-3. **ტონი:** მენცარის სახელით მიდის — "AI C-Suite". ეს intimidating ხომ არ არის?
-4. **ფორმატი:** Google Form სწორია? თუ ცოცხალი საუბარი უკეთესი? (ოუნერი intro-ს გააკეთებს)
-5. **Per-person კითხვარი** უკეთესია თუ **1 საერთო + per-person 2-3 bonus კითხვა?**
-
-## ვიქტორის ჩელენჯი (გურაფას შემდეგ)
-
-- ინსაითები რეალურად actionable-ია? რა action გამოვა პასუხებიდან?
-- რომელი კითხვა არის leading (პასუხს გვთავაზობს)?
-- რა არ ვიცით რაც კითხვარით ვერ გავიგებთ?
+**ვიქტორი:** გურაფას ვერსიას ჩელენჯავს — actionable-ია? leading-ია? რა ვერ გავიგებთ form-ით?
 
 ---
 
-*მენცარი | 2026-04-08 | generic → personalized. ოუნერის correction.*
+*მენცარი | 2026-04-08 | bias-ის აღიარება. ვუთმობ გურაფას.*
