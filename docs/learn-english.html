@@ -685,6 +685,7 @@ function selectSubject(subj){
   } else if(subj==='kings-math'){
     const addG=getMathGrade('math-add'),subG=getMathGrade('math-sub'),mulG=getMathGrade('math-mul'),patG=getMathGrade('math-pat');
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
+      <div class="mode-card" onclick="startKingsMath()" style="grid-column:span 2"><div class="m-icon">👑</div><div class="m-name">Kings ოლიმპიადა</div><div class="m-desc">word problems + ლოგიკა</div></div>
       <div class="mode-card" onclick="startMathGame('math-add')"><div class="m-icon">➕</div><div class="m-name">Addition</div><div class="m-desc">${addG?addG.label:''}</div></div>
       <div class="mode-card" onclick="startMathGame('math-sub')"><div class="m-icon">➖</div><div class="m-name">Subtraction</div><div class="m-desc">${subG?subG.label:''}</div></div>
       <div class="mode-card" onclick="startMathGame('math-mul')"><div class="m-icon">✖️</div><div class="m-name">Multiply</div><div class="m-desc">${mulG?mulG.label:''}</div></div>
@@ -1145,6 +1146,80 @@ function showDad(mode,shields,pct){
   fb.onclick=()=>fb.remove();
   document.body.appendChild(fb);
   setTimeout(()=>{if(document.getElementById('fb-overlay'))fb.remove();},3000);
+}
+
+// ═══ KINGS MATH WORD PROBLEMS ═══
+const KINGS_MATH = [
+  // Grade 2 level
+  {q:'რამდენი ფეხი აქვს 3 კატას ჯამში?',a:12,opts:[12,6,8],emoji:'🐱🐱🐱'},
+  {q:'რამდენი ფეხი აქვს 2 ძაღლს ჯამში?',a:8,opts:[8,6,4],emoji:'🐕🐕'},
+  {q:'რამდენი გვერდი აქვს ჯამში 1 სამკუთხედს და 1 ოთხკუთხედს?',a:7,opts:[7,10,14],emoji:'🔺🔲'},
+  {q:'3 ვაშლი + 4 ვაშლი = ?',a:7,opts:[7,6,8],emoji:'🍎🍎🍎 + 🍎🍎🍎🍎'},
+  {q:'10 ფანქარი - 3 ფანქარი = ?',a:7,opts:[7,6,8],emoji:'✏️✏️✏️✏️✏️✏️✏️✏️✏️✏️'},
+  {q:'2 ხუთლარიანი საზამთრო ღირს:',a:10,opts:[10,8,15],emoji:'🍉🍉'},
+  {q:'5 ბავშვს თითო 2 ტკბილეული აქვს. ჯამში რამდენია?',a:10,opts:[10,7,12],emoji:'🧒🧒🧒🧒🧒'},
+  {q:'კიბეს 11 საფეხური აქვს. შუაში რომელია?',a:6,opts:[6,5,7],emoji:'🪜'},
+  // Grade 2-3 sequences
+  {q:'5, 7, 9, ?, 13 — რა უნდა იყოს ?-ის ნაცვლად?',a:11,opts:[11,15,17],emoji:'🔢'},
+  {q:'0, 3, 6, 9, 12, ? — შემდეგი?',a:15,opts:[15,7,19],emoji:'🔢'},
+  {q:'19, 15, 11, 7, ? — შემდეგი?',a:3,opts:[3,5,6],emoji:'🔢'},
+  // Grade 2-3 "რომელი განსხვავდება"
+  {q:'რომელი არ უდრის 11-ს?',a:'3+7',opts:['5+6','13-2','3+7'],emoji:'🤔',type:'text'},
+  {q:'რომელი არ უდრის 10-ს?',a:'6+5',opts:['7+3','15-5','6+5'],emoji:'🤔',type:'text'},
+];
+let kingsQs=[],kingsIdx=0;
+
+function startKingsMath(){
+  kingsQs=shuffle([...KINGS_MATH]).slice(0,10);kingsIdx=0;
+  sessionShields=0;sessionWrong=0;sessionStart=Date.now();
+  show('game');
+  document.getElementById('game-mode').textContent='👑 Kings Math';
+  document.getElementById('game-score').textContent='🛡️ 0';
+  nextKingsQ();
+}
+function nextKingsQ(){
+  if(kingsIdx>=kingsQs.length){showKingsResults();return;}
+  const q=kingsQs[kingsIdx];
+  document.getElementById('progress').style.width=((kingsIdx/kingsQs.length)*100)+'%';
+  document.getElementById('q-num').textContent=`${kingsIdx+1}/${kingsQs.length}`;
+  document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
+  const opts=shuffle([...q.opts]);
+  document.getElementById('game-area').innerHTML=`
+    <div class="word-box"><div class="emoji" style="font-size:2rem">${q.emoji||''}</div>
+    <div style="font-size:1rem;margin:.5rem 0;line-height:1.5">${q.q}</div></div>
+    <div class="options">${opts.map(o=>{
+      const isText=q.type==='text';
+      const display=isText?o:o;
+      return`<button class="opt" style="font-size:${isText?'1rem':'1.8rem'};min-height:75px" onclick="checkKingsAns(this,${isText?`'${o}','${q.a}'`:`${o},${q.a}`})">${display}</button>`;
+    }).join('')}</div>`;
+}
+function checkKingsAns(btn,sel,correct){
+  const match=String(sel)===String(correct);
+  if(match){
+    document.querySelectorAll('.opt').forEach(b=>{b.classList.add('disabled');b.style.pointerEvents='none';});
+    btn.classList.add('correct');sessionShields++;state[profile].shields++;state[profile].streak++;
+    if(state[profile].streak>state[profile].maxStreak)state[profile].maxStreak=state[profile].streak;
+    save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;
+    showFeedback(true);setTimeout(()=>{kingsIdx++;hideFeedback();nextKingsQ();},1200);
+  }else{
+    btn.classList.add('wrong');btn.style.pointerEvents='none';btn.classList.add('disabled');
+    sessionWrong++;state[profile].streak=0;save();
+  }
+}
+function showKingsResults(){
+  show('results');const total=sessionShields+sessionWrong;const pct=total>0?Math.round(sessionShields/total*100):0;
+  let msg=pct>=80?getName()+', Kings Champion! 👑🌟':pct>=50?getName()+', კარგი შედეგი! 💪':getName()+', კიდევ ცადე! 🌱';
+  document.getElementById('results-content').innerHTML=`
+    <div class="big">${pct>=80?'👑':pct>=50?'⭐':'🌱'}</div><h2>${msg}</h2>
+    <div class="stat-row"><div class="stat"><div class="val" style="color:var(--green)">${sessionShields}</div><div class="label">🛡️</div></div>
+    <div class="stat"><div class="val">${pct}%</div><div class="label">📊</div></div></div>
+    ${beatYesterdayHTML('kings-math',sessionShields)}
+    <button class="btn-primary" onclick="startKingsMath()" style="background:var(--gold);color:#1a1b2e">👑 ახალი რაუნდი</button>
+    <button class="btn-secondary" onclick="goMenu()">📋</button>
+    <button class="btn-primary" onclick="showDad('kings-math',${sessionShields},${pct})" style="background:var(--gold);color:#1a1b2e;margin-top:.5rem">🎉 მამას აჩვენე!</button>`;
+  updateBestScore('kings-math',sessionShields);
+  state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();save();
+  checkActivityBreak();
 }
 
 function endGame(){goMenu();}
