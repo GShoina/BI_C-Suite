@@ -689,18 +689,18 @@ function selectSubject(subj){
     </div>`;
   } else if(subj==='counting'){
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startCountGame('count-pick')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🍎🍎🍎</div><div class="m-name">დათვალე</div></div>
-      <div class="mode-card" onclick="startCountGame('count-listen')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🔊</div><div class="m-name">მოისმინე</div></div>
+      <div class="mode-card" onclick="startCountGame('count-pick')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🍎🍎🍎</div></div>
+      <div class="mode-card" onclick="startCountGame('count-listen')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🔊</div></div>
     </div>`;
   } else if(subj==='ka-alpha'){
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startAlphaGame('ka','learn')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">📖</div><div class="m-name">ისწავლე</div></div>
-      <div class="mode-card" onclick="startAlphaGame('ka','quiz')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🎯</div><div class="m-name">გამოიცანი</div></div>
+      <div class="mode-card" onclick="startAlphaGame('ka','learn')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">📖</div></div>
+      <div class="mode-card" onclick="startAlphaGame('ka','quiz')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🎯</div></div>
     </div>`;
   } else if(subj==='en-alpha'){
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startAlphaGame('en','learn')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">📖</div><div class="m-name">ისწავლე</div></div>
-      <div class="mode-card" onclick="startAlphaGame('en','quiz')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🎯</div><div class="m-name">გამოიცანი</div></div>
+      <div class="mode-card" onclick="startAlphaGame('en','learn')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">📖</div></div>
+      <div class="mode-card" onclick="startAlphaGame('en','quiz')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🎯</div></div>
     </div>`;
   } else if(subj==='english'){
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
@@ -982,12 +982,12 @@ function nextCountQ(){
   if(countMode==='count-listen'){
     speak(q.en);
     document.getElementById('game-area').innerHTML=`
-      <div class="word-box" onclick="speak('${q.en}')"><div class="emoji" style="font-size:4rem">🔊</div><div class="sub" style="font-size:1.2rem">მოისმინე!</div></div>
+      <div class="word-box" onclick="speak('${q.en}')" style="min-height:120px"><div class="emoji" style="font-size:5rem">🔊</div></div>
       <div class="options">${optArr.map(n=>`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="checkCountAns(this,${n},${q.num})">${n}</button>`).join('')}</div>`;
   }else{
     const objs=q.emoji;
     document.getElementById('game-area').innerHTML=`
-      <div class="word-box"><div class="emoji" style="font-size:3rem">${objs}</div><div class="sub" style="font-size:1.2rem">რამდენია?</div></div>
+      <div class="word-box" style="min-height:120px"><div style="font-size:2rem;line-height:1.8;word-spacing:.3rem">${objs}</div></div>
       <div class="options">${optArr.map(n=>`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="checkCountAns(this,${n},${q.num})">${n}</button>`).join('')}</div>`;
   }
 }
