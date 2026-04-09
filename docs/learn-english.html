@@ -363,24 +363,67 @@ const AGE_CATS = {
 
 // ═══ ALPHABETS + COUNTING (მაშო + ნიკო) ═══
 const KA_ALPHA = [
-  {l:'ა',w:'ანანასი',e:'🍍'},{l:'ბ',w:'ბანანი',e:'🍌'},{l:'გ',w:'გემი',e:'🚢'},{l:'დ',w:'დათვი',e:'🐻'},
-  {l:'ე',w:'ექიმი',e:'👨‍⚕️'},{l:'ვ',w:'ვაშლი',e:'🍎'},{l:'ზ',w:'ზარი',e:'🔔'},{l:'თ',w:'თევზი',e:'🐟'},
-  {l:'ი',w:'ირემი',e:'🦌'},{l:'კ',w:'კატა',e:'🐱'},{l:'ლ',w:'ლომი',e:'🦁'},{l:'მ',w:'მზე',e:'☀️'},
-  {l:'ნ',w:'ნაყინი',e:'🍦'},{l:'ო',w:'ოქრო',e:'🥇'},{l:'პ',w:'პეპელა',e:'🦋'},{l:'ჟ',w:'ჟირაფი',e:'🦒'},
-  {l:'რ',w:'რაკეტა',e:'🚀'},{l:'ს',w:'სპილო',e:'🐘'},{l:'ტ',w:'ტორტი',e:'🎂'},{l:'უ',w:'უთო',e:'🔥'},
-  {l:'ფ',w:'ფუტკარი',e:'🐝'},{l:'ქ',w:'ქარი',e:'💨'},{l:'ღ',w:'ღამე',e:'🌙'},{l:'ყ',w:'ყვავილი',e:'🌸'},
-  {l:'შ',w:'შოკოლადი',e:'🍫'},{l:'ჩ',w:'ჩიტი',e:'🐦'},{l:'ც',w:'ცხენი',e:'🐴'},{l:'ძ',w:'ძაღლი',e:'🐕'},
-  {l:'წ',w:'წყალი',e:'💧'},{l:'ჭ',w:'ჭიანჭველა',e:'🐜'},{l:'ხ',w:'ხე',e:'🌳'},{l:'ჯ',w:'ჯინსი',e:'👖'},
-  {l:'ჰ',w:'ჰაერი',e:'🎈'}
+  {l:'ა',ex:[{w:'ატამი',e:'🍑'},{w:'აქლემი',e:'🐫'},{w:'ანანასი',e:'🍍'}]},
+  {l:'ბ',ex:[{w:'ბანანი',e:'🍌'},{w:'ბურთი',e:'⚽'},{w:'ბატი',e:'🦢'}]},
+  {l:'გ',ex:[{w:'გემი',e:'🚢'},{w:'გული',e:'❤️'},{w:'გარეჯი',e:'🏜️'}]},
+  {l:'დ',ex:[{w:'დათვი',e:'🐻'},{w:'დედა',e:'👩'},{w:'დრო',e:'⏰'}]},
+  {l:'ე',ex:[{w:'ექიმი',e:'👨‍⚕️'},{w:'ელა',e:'🌲'},{w:'ენა',e:'👅'}]},
+  {l:'ვ',ex:[{w:'ვაშლი',e:'🍎'},{w:'ვარდი',e:'🌹'},{w:'ველო',e:'🚲'}]},
+  {l:'ზ',ex:[{w:'ზარი',e:'🔔'},{w:'ზღვა',e:'🌊'},{w:'ზებრა',e:'🦓'}]},
+  {l:'თ',ex:[{w:'თევზი',e:'🐟'},{w:'თოვლი',e:'❄️'},{w:'თვალი',e:'👁️'}]},
+  {l:'ი',ex:[{w:'ირემი',e:'🦌'},{w:'იხვი',e:'🦆'},{w:'ივლისი',e:'☀️'}]},
+  {l:'კ',ex:[{w:'კატა',e:'🐱'},{w:'კურდღელი',e:'🐰'},{w:'კარი',e:'🚪'}]},
+  {l:'ლ',ex:[{w:'ლომი',e:'🦁'},{w:'ლიმონი',e:'🍋'},{w:'ლამპა',e:'💡'}]},
+  {l:'მ',ex:[{w:'მზე',e:'☀️'},{w:'მთვარე',e:'🌙'},{w:'მანქანა',e:'🚗'}]},
+  {l:'ნ',ex:[{w:'ნაყინი',e:'🍦'},{w:'ნუში',e:'🥜'},{w:'ნავი',e:'⛵'}]},
+  {l:'ო',ex:[{w:'ოქრო',e:'🥇'},{w:'ორბი',e:'🦅'},{w:'ოთახი',e:'🏠'}]},
+  {l:'პ',ex:[{w:'პეპელა',e:'🦋'},{w:'პური',e:'🍞'},{w:'პიანინო',e:'🎹'}]},
+  {l:'ჟ',ex:[{w:'ჟირაფი',e:'🦒'},{w:'ჟოლო',e:'🫐'},{w:'ჟურნალი',e:'📰'}]},
+  {l:'რ',ex:[{w:'რაკეტა',e:'🚀'},{w:'რძე',e:'🥛'},{w:'რობოტი',e:'🤖'}]},
+  {l:'ს',ex:[{w:'სპილო',e:'🐘'},{w:'სახლი',e:'🏠'},{w:'სკოლა',e:'🏫'}]},
+  {l:'ტ',ex:[{w:'ტორტი',e:'🎂'},{w:'ტაქსი',e:'🚕'},{w:'ტიტა',e:'🎀'}]},
+  {l:'უ',ex:[{w:'უთო',e:'🔥'},{w:'უსტარი',e:'🪣'},{w:'უნგრეთი',e:'🇭🇺'}]},
+  {l:'ფ',ex:[{w:'ფუტკარი',e:'🐝'},{w:'ფეხი',e:'🦶'},{w:'ფანქარი',e:'✏️'}]},
+  {l:'ქ',ex:[{w:'ქარი',e:'💨'},{w:'ქუდი',e:'🎩'},{w:'ქვა',e:'🪨'}]},
+  {l:'ღ',ex:[{w:'ღამე',e:'🌙'},{w:'ღორი',e:'🐷'},{w:'ღრუბელი',e:'☁️'}]},
+  {l:'ყ',ex:[{w:'ყვავილი',e:'🌸'},{w:'ყველი',e:'🧀'},{w:'ყავა',e:'☕'}]},
+  {l:'შ',ex:[{w:'შოკოლადი',e:'🍫'},{w:'შვილი',e:'🧒'},{w:'შარი',e:'🎈'}]},
+  {l:'ჩ',ex:[{w:'ჩიტი',e:'🐦'},{w:'ჩანთა',e:'🎒'},{w:'ჩაი',e:'🍵'}]},
+  {l:'ც',ex:[{w:'ცხენი',e:'🐴'},{w:'ცხვარი',e:'🐑'},{w:'ცეცხლი',e:'🔥'}]},
+  {l:'ძ',ex:[{w:'ძაღლი',e:'🐕'},{w:'ძროხა',e:'🐄'},{w:'ძილი',e:'😴'}]},
+  {l:'წ',ex:[{w:'წყალი',e:'💧'},{w:'წიგნი',e:'📖'},{w:'წვიმა',e:'🌧️'}]},
+  {l:'ჭ',ex:[{w:'ჭიანჭველა',e:'🐜'},{w:'ჭიქა',e:'🥤'},{w:'ჭრიჭინა',e:'🦗'}]},
+  {l:'ხ',ex:[{w:'ხე',e:'🌳'},{w:'ხილი',e:'🍇'},{w:'ხიდი',e:'🌉'}]},
+  {l:'ჯ',ex:[{w:'ჯინსი',e:'👖'},{w:'ჯირაფი',e:'🦒'},{w:'ჯამი',e:'🍜'}]},
+  {l:'ჰ',ex:[{w:'ჰაერი',e:'🎈'},{w:'ჰამაკი',e:'🏖️'},{w:'ჰარმონი',e:'🎵'}]}
 ];
 const EN_ALPHA = [
-  {l:'A',w:'apple',e:'🍎',p:'ეი',ex:['apple','ant','alligator']},{l:'B',w:'ball',e:'⚽',p:'ბი',ex:['ball','bear','banana']},{l:'C',w:'cat',e:'🐱',p:'სი',ex:['cat','car','cake']},{l:'D',w:'dog',e:'🐕',p:'დი',ex:['dog','duck','door']},
-  {l:'E',w:'egg',e:'🥚',p:'ი',ex:['egg','elephant','eye']},{l:'F',w:'fish',e:'🐟',p:'ეფ',ex:['fish','flower','frog']},{l:'G',w:'grape',e:'🍇',p:'ჯი',ex:['grape','girl','green']},{l:'H',w:'house',e:'🏠',p:'ეიჩ',ex:['house','hat','horse']},
-  {l:'I',w:'ice cream',e:'🍦',p:'აი',ex:['ice cream','igloo']},{l:'J',w:'juice',e:'🧃',p:'ჯეი',ex:['juice','jump','jam']},{l:'K',w:'king',e:'👑',p:'ქეი',ex:['king','kite','key']},{l:'L',w:'lion',e:'🦁',p:'ელ',ex:['lion','lamp','lemon']},
-  {l:'M',w:'moon',e:'🌙',p:'ემ',ex:['moon','monkey','milk']},{l:'N',w:'nose',e:'👃',p:'ენ',ex:['nose','nine','nest']},{l:'O',w:'orange',e:'🍊',p:'ოუ',ex:['orange','owl','octopus']},{l:'P',w:'pencil',e:'✏️',p:'ფი',ex:['pencil','pig','pizza']},
-  {l:'Q',w:'queen',e:'👸',p:'ქიუ',ex:['queen','quilt']},{l:'R',w:'rabbit',e:'🐰',p:'არ',ex:['rabbit','rain','red']},{l:'S',w:'sun',e:'☀️',p:'ეს',ex:['sun','star','snake']},{l:'T',w:'tree',e:'🌳',p:'თი',ex:['tree','tiger','train']},
-  {l:'U',w:'umbrella',e:'☂️',p:'იუ',ex:['umbrella','unicorn']},{l:'V',w:'violin',e:'🎻',p:'ვი',ex:['violin','van']},{l:'W',w:'water',e:'💧',p:'დაბლიუ',ex:['water','wolf','window']},{l:'X',w:'xylophone',e:'🎵',p:'ექს',ex:['xylophone','x-ray']},
-  {l:'Y',w:'yellow',e:'🟡',p:'უაი',ex:['yellow','yogurt']},{l:'Z',w:'zebra',e:'🦓',p:'ზი',ex:['zebra','zoo','zero']}
+  {l:'A',p:'ეი',ex:[{w:'apple',e:'🍎'},{w:'ant',e:'🐜'},{w:'alligator',e:'🐊'}]},
+  {l:'B',p:'ბი',ex:[{w:'ball',e:'⚽'},{w:'bear',e:'🐻'},{w:'banana',e:'🍌'}]},
+  {l:'C',p:'სი',ex:[{w:'cat',e:'🐱'},{w:'car',e:'🚗'},{w:'cake',e:'🎂'}]},
+  {l:'D',p:'დი',ex:[{w:'dog',e:'🐕'},{w:'duck',e:'🦆'},{w:'door',e:'🚪'}]},
+  {l:'E',p:'ი',ex:[{w:'egg',e:'🥚'},{w:'elephant',e:'🐘'},{w:'eye',e:'👁️'}]},
+  {l:'F',p:'ეფ',ex:[{w:'fish',e:'🐟'},{w:'flower',e:'🌸'},{w:'frog',e:'🐸'}]},
+  {l:'G',p:'ჯი',ex:[{w:'grape',e:'🍇'},{w:'girl',e:'👧'},{w:'goat',e:'🐐'}]},
+  {l:'H',p:'ეიჩ',ex:[{w:'house',e:'🏠'},{w:'hat',e:'🎩'},{w:'horse',e:'🐴'}]},
+  {l:'I',p:'აი',ex:[{w:'ice cream',e:'🍦'},{w:'igloo',e:'🏔️'},{w:'insect',e:'🐛'}]},
+  {l:'J',p:'ჯეი',ex:[{w:'juice',e:'🧃'},{w:'jump',e:'🤸'},{w:'jam',e:'🫙'}]},
+  {l:'K',p:'ქეი',ex:[{w:'king',e:'👑'},{w:'kite',e:'🪁'},{w:'key',e:'🔑'}]},
+  {l:'L',p:'ელ',ex:[{w:'lion',e:'🦁'},{w:'lamp',e:'💡'},{w:'lemon',e:'🍋'}]},
+  {l:'M',p:'ემ',ex:[{w:'moon',e:'🌙'},{w:'monkey',e:'🐵'},{w:'milk',e:'🥛'}]},
+  {l:'N',p:'ენ',ex:[{w:'nose',e:'👃'},{w:'nine',e:'9️⃣'},{w:'nest',e:'🪹'}]},
+  {l:'O',p:'ოუ',ex:[{w:'orange',e:'🍊'},{w:'owl',e:'🦉'},{w:'octopus',e:'🐙'}]},
+  {l:'P',p:'ფი',ex:[{w:'pencil',e:'✏️'},{w:'pig',e:'🐷'},{w:'pizza',e:'🍕'}]},
+  {l:'Q',p:'ქიუ',ex:[{w:'queen',e:'👸'},{w:'quilt',e:'🛏️'},{w:'question',e:'❓'}]},
+  {l:'R',p:'არ',ex:[{w:'rabbit',e:'🐰'},{w:'rain',e:'🌧️'},{w:'rocket',e:'🚀'}]},
+  {l:'S',p:'ეს',ex:[{w:'sun',e:'☀️'},{w:'star',e:'⭐'},{w:'snake',e:'🐍'}]},
+  {l:'T',p:'თი',ex:[{w:'tree',e:'🌳'},{w:'tiger',e:'🐯'},{w:'train',e:'🚂'}]},
+  {l:'U',p:'იუ',ex:[{w:'umbrella',e:'☂️'},{w:'unicorn',e:'🦄'},{w:'up',e:'⬆️'}]},
+  {l:'V',p:'ვი',ex:[{w:'violin',e:'🎻'},{w:'van',e:'🚐'},{w:'vase',e:'🏺'}]},
+  {l:'W',p:'დაბლიუ',ex:[{w:'water',e:'💧'},{w:'wolf',e:'🐺'},{w:'window',e:'🪟'}]},
+  {l:'X',p:'ექს',ex:[{w:'xylophone',e:'🎵'},{w:'x-ray',e:'🩻'},{w:'fox',e:'🦊'}]},
+  {l:'Y',p:'უაი',ex:[{w:'yellow',e:'🟡'},{w:'yogurt',e:'🥛'},{w:'yacht',e:'⛵'}]},
+  {l:'Z',p:'ზი',ex:[{w:'zebra',e:'🦓'},{w:'zoo',e:'🏛️'},{w:'zero',e:'0️⃣'}]}
 ];
 const COUNTING = [];
 for(let i=1;i<=20;i++){const emojis=['🍎','⭐','🐟','🌸','🎈','🍌','🦋','⚽'];COUNTING.push({num:i,emoji:emojis[i%emojis.length].repeat(i),name:['','ერთი','ორი','სამი','ოთხი','ხუთი','ექვსი','შვიდი','რვა','ცხრა','ათი','თერთმეტი','თორმეტი','ცამეტი','თოთხმეტი','თხუთმეტი','თექვსმეტი','ჩვიდმეტი','თვრამეტი','ცხრამეტი','ოცი'][i],en:['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'][i]});}
@@ -507,6 +550,16 @@ function speak(text){
 if('speechSynthesis' in window)window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();
 
 function getName(){return profile==='niko'?'ნიკოლოზ':profile==='masho'?'მაშო':'სტუმარ';}
+function speakKa(text){
+  if(!('speechSynthesis' in window))return;
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='ka-GE';u.rate=0.6;u.pitch=1.3;u.volume=1;
+  const voices=window.speechSynthesis.getVoices();
+  const v=voices.find(x=>x.lang.startsWith('ka'))||voices.find(x=>x.lang.startsWith('ru'))||voices[0];
+  if(v)u.voice=v;
+  window.speechSynthesis.speak(u);
+}
 
 // ═══ SCREENS ═══
 function show(id){
@@ -583,19 +636,25 @@ function selectProfile(p){
       </div>
     `;
   } else {
-    document.getElementById('subject-cards').className='subjects';
+    document.getElementById('subject-cards').className='subj-grid';
     document.getElementById('subject-cards').innerHTML=`
+      <div class="subj-card" onclick="selectSubject('kings-eng')" style="border-color:rgba(255,215,0,.5);background:linear-gradient(145deg,var(--card) 60%,rgba(255,215,0,.12))">
+        <div class="subj-icon">👑</div>
+        <div class="subj-name">Kings English</div>
+      </div>
+      <div class="subj-card math" onclick="selectSubject('kings-math')">
+        <div class="subj-icon">👑📐</div>
+        <div class="subj-name">Kings Math</div>
+      </div>
       <div class="subj-card english" onclick="selectSubject('english')">
         <div class="subj-badge">${wordCount} სიტყვა</div>
         <div class="subj-icon">🔤</div>
         <div class="subj-name">ინგლისური</div>
-        <div class="subj-desc">სიტყვები, გამოთქმა, spelling</div>
       </div>
       <div class="subj-card math" onclick="selectSubject('math')">
         <div class="subj-badge">${mathTotal} 🛡️</div>
         <div class="subj-icon">📐</div>
-        <div class="subj-name">მათემატიკა & ლოგიკა</div>
-        <div class="subj-desc">შეკრება, გამოკლება, გამრავლება, პატერნები</div>
+        <div class="subj-name">მათემატიკა</div>
       </div>
     `;
   }
@@ -611,7 +670,24 @@ function selectSubject(subj){
   document.getElementById('menu-streak').textContent='🔥 '+s.streak;
   document.getElementById('menu-level').innerHTML='';
 
-  if(subj==='counting'){
+  if(subj==='kings-eng'){
+    document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
+      <div class="mode-card" onclick="startGame('listen')"><div class="m-icon">👂</div><div class="m-name">Listening</div><div class="m-desc">🔊 → სურათი</div></div>
+      <div class="mode-card" onclick="startGame('quiz')"><div class="m-icon">🎯</div><div class="m-name">Vocabulary</div><div class="m-desc">ქართ → Eng</div></div>
+      <div class="mode-card" onclick="startGame('reverse')"><div class="m-icon">🔄</div><div class="m-name">Reading</div><div class="m-desc">Eng → ქართ</div></div>
+      <div class="mode-card" onclick="startGame('spell')"><div class="m-icon">✍️</div><div class="m-name">Spelling</div><div class="m-desc">დაწერე</div></div>
+      <div class="mode-card" onclick="startGame('match')"><div class="m-icon">🧩</div><div class="m-name">Match</div><div class="m-desc">დააწყვილე</div></div>
+      <div class="mode-card" onclick="showCategories()"><div class="m-icon">📚</div><div class="m-name">Topics</div><div class="m-desc">16 კატეგორია</div></div>
+    </div>`;
+  } else if(subj==='kings-math'){
+    const addG=getMathGrade('math-add'),subG=getMathGrade('math-sub'),mulG=getMathGrade('math-mul'),patG=getMathGrade('math-pat');
+    document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
+      <div class="mode-card" onclick="startMathGame('math-add')"><div class="m-icon">➕</div><div class="m-name">Addition</div><div class="m-desc">${addG?addG.label:''}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-sub')"><div class="m-icon">➖</div><div class="m-name">Subtraction</div><div class="m-desc">${subG?subG.label:''}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-mul')"><div class="m-icon">✖️</div><div class="m-name">Multiply</div><div class="m-desc">${mulG?mulG.label:''}</div></div>
+      <div class="mode-card" onclick="startMathGame('math-pat')"><div class="m-icon">🧩</div><div class="m-name">Patterns</div><div class="m-desc">${patG?patG.label:''}</div></div>
+    </div>`;
+  } else if(subj==='counting'){
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
       <div class="mode-card" onclick="startCountGame('count-pick')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🍎🍎🍎</div><div class="m-name">დათვალე</div></div>
       <div class="mode-card" onclick="startCountGame('count-listen')" style="min-height:100px"><div class="m-icon" style="font-size:3rem">🔊</div><div class="m-name">მოისმინე</div></div>
@@ -958,25 +1034,47 @@ function nextAlphaQ(){
   document.getElementById('q-num').textContent=`${alphaIdx+1}/${alphaQs.length}`;
   document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
   if(alphaMode==='learn'){
-    if(alphaLang==='en'){speak(q.l);setTimeout(()=>speak(q.w),800);}
-    const pron=alphaLang==='en'&&q.p?`<div style="font-size:1.1rem;color:var(--blue);margin:.3rem 0">(${q.p})</div>`:'';
-    const examples=alphaLang==='en'&&q.ex?`<div style="font-size:.85rem;color:var(--muted);margin-top:.3rem">${q.ex.map(x=>`🔹 ${x}`).join('  ')}</div>`:'';
+    // LEARN: ასო ზევით (click = გახმოვანება) + 3 სურათი ქვევით (click = სიტყვის გახმოვანება)
+    const exs=q.ex||[];
+    const letterClick=alphaLang==='en'?`onclick="speak('${q.l}')"`:`onclick="speakKa('${q.l}')"`;
+    const pron=alphaLang==='en'&&q.p?`<div style="font-size:1rem;color:var(--blue)">(${q.p})</div>`:'';
     document.getElementById('game-area').innerHTML=`
-      <div class="word-box" ${alphaLang==='en'?`onclick="speak('${q.l}');setTimeout(()=>speak('${q.w}'),600)"`:''}><div class="emoji" style="font-size:4rem">${q.e}</div>
-      <div class="word" style="font-size:4rem;color:var(--gold)">${q.l}</div>
-      ${pron}
-      <div class="sub" style="font-size:1.2rem">${q.w}</div>
-      ${examples}
-      ${alphaLang==='en'?'<div class="speak-hint">🔊 დააჭირე მოსასმენად</div>':''}</div>
-      <button class="opt" style="font-size:1.3rem;width:100%;margin-top:1rem;min-height:70px;background:var(--green);border-color:var(--green);color:#fff" onclick="sessionShields++;state[profile].shields++;save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;alphaIdx++;nextAlphaQ();">▶️</button>`;
+      <div class="word-box" ${letterClick}>
+        <div class="word" style="font-size:5rem;color:var(--gold)">${q.l}</div>
+        ${pron}
+        <div class="speak-hint">🔊 დააჭირე</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin:.8rem 0">
+        ${exs.map(x=>`<div class="word-box" style="padding:.8rem;cursor:pointer" onclick="${alphaLang==='en'?`speak('${x.w}')`:`speakKa('${x.w}')`}">
+          <div style="font-size:2.5rem">${x.e}</div>
+          <div style="font-size:.75rem;color:var(--muted);margin-top:.3rem">${x.w}</div>
+          <div style="font-size:.6rem;color:var(--blue)">🔊</div>
+        </div>`).join('')}
+      </div>
+      <div style="display:flex;gap:.5rem">
+        <button class="opt" style="flex:1;font-size:1.3rem;min-height:60px" onclick="if(alphaIdx>0){alphaIdx--;nextAlphaQ();}">⬅️</button>
+        <button class="opt" style="flex:2;font-size:1.3rem;min-height:60px;background:var(--green);border-color:var(--green);color:#fff" onclick="sessionShields++;state[profile].shields++;save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;alphaIdx++;nextAlphaQ();">➡️</button>
+      </div>`;
+    if(alphaLang==='en')speak(q.l);
   }else{
+    // QUIZ: სურათი + ხმა, ასოების არჩევანი (click = გახმოვანება)
+    const exs=q.ex||[];const mainEx=exs[0]||{w:'',e:'❓'};
     const opts=new Set([q.l]);while(opts.size<4){const r=src[randInt(0,src.length-1)];opts.add(r.l);}
     const optArr=shuffle([...opts]);
-    if(alphaLang==='en')speak(q.w);
+    if(alphaLang==='en')speak(mainEx.w);
     document.getElementById('game-area').innerHTML=`
-      <div class="word-box" ${alphaLang==='en'?`onclick="speak('${q.w}')"`:''}><div class="emoji" style="font-size:4rem">${q.e}</div>
-      <div class="sub" style="font-size:1rem">${alphaLang==='en'?'🔊 '+q.w:q.w}</div></div>
-      <div class="options">${optArr.map(o=>`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="checkAlphaAns(this,'${o}','${q.l}')">${o}</button>`).join('')}</div>`;
+      <div class="word-box" onclick="${alphaLang==='en'?`speak('${mainEx.w}')`:`speakKa('${mainEx.w}')`}">
+        <div class="emoji" style="font-size:4rem">${mainEx.e}</div>
+        <div style="font-size:.9rem;color:var(--muted)">${mainEx.w}</div>
+        <div class="speak-hint">🔊</div>
+      </div>
+      <div class="options">${optArr.map(o=>{
+        const clickSpeak=alphaLang==='en'?`speak('${o}');`:`speakKa('${o}');`;
+        return`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="${clickSpeak}checkAlphaAns(this,'${o}','${q.l}')">${o}</button>`;
+      }).join('')}</div>
+      <div style="display:flex;gap:.5rem;margin-top:.5rem">
+        <button class="opt" style="flex:1;font-size:1rem;min-height:50px" onclick="if(alphaIdx>0){alphaIdx--;nextAlphaQ();}">⬅️</button>
+      </div>`;
   }
 }
 function checkAlphaAns(btn,sel,correct){
