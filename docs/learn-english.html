@@ -25,8 +25,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .profiles h1 .star{animation:spin 3s linear infinite;display:inline-block}
 @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 .profiles h1 span{display:block;font-size:.95rem;color:var(--muted);font-weight:300;margin-top:.4rem}
-.profile-cards{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center}
-.profile-card{background:var(--card);border:2px solid var(--brd);border-radius:20px;padding:1.5rem 2rem;text-align:center;cursor:pointer;transition:all .3s;min-width:150px}
+.profile-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;max-width:400px}
+.profile-card{background:var(--card);border:2px solid var(--brd);border-radius:20px;padding:1.2rem;text-align:center;cursor:pointer;transition:all .3s}
 .profile-card:hover,.profile-card:active{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 8px 25px rgba(255,215,0,.15)}
 .profile-card .avatar img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--gold)}
 .profile-card .avatar{font-size:3rem;margin-bottom:.6rem}
@@ -165,6 +165,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .subj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;flex:1;align-content:center;padding:1rem 0}
 .subj-grid .subj-card{padding:1.5rem .8rem}
 
+/* ═══ NAV BUTTONS (big, rounded, visible) ═══ */
+.nav-row{display:flex;gap:.6rem;margin-top:.8rem}
+.nav-btn-big{flex:1;padding:1rem;border-radius:50px;font-size:1.5rem;font-weight:700;cursor:pointer;border:2px solid var(--brd);background:var(--card);color:var(--text);display:flex;align-items:center;justify-content:center;min-height:60px;transition:all .2s;touch-action:manipulation}
+.nav-btn-big:active{transform:scale(.95)}
+.nav-btn-big.back{background:var(--card2);color:var(--muted);flex:.7}
+.nav-btn-big.next{background:var(--green);border-color:var(--green);color:#fff;flex:1.3}
+.nav-btn-big.next:active{background:#4a9;border-color:#4a9}
+
+/* ═══ CATEGORIES GRID ═══ */
+.cats-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+
 /* Hidden */
 .hidden{display:none!important}
 </style>
@@ -246,7 +257,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 <!-- CATEGORIES -->
 <div class="hidden" id="screen-cats">
   <div class="hdr"><div class="hdr-left"><button class="back" onclick="goMenu()">←</button><span class="user">📚 კატეგორიები</span></div></div>
-  <div class="menu" id="cats-list"></div>
+  <div class="cats-grid" id="cats-list"></div>
 </div>
 
 <!-- BREAK REMINDER -->
@@ -675,12 +686,13 @@ function selectSubject(subj){
 
   if(subj==='kings-eng'){
     document.getElementById('menu-items').innerHTML=`<div class="mode-grid">
-      <div class="mode-card" onclick="startGame('listen')"><div class="m-icon">👂</div><div class="m-name">Listening</div><div class="m-desc">🔊 → სურათი</div></div>
-      <div class="mode-card" onclick="startGame('quiz')"><div class="m-icon">🎯</div><div class="m-name">Vocabulary</div><div class="m-desc">ქართ → Eng</div></div>
-      <div class="mode-card" onclick="startGame('reverse')"><div class="m-icon">🔄</div><div class="m-name">Reading</div><div class="m-desc">Eng → ქართ</div></div>
-      <div class="mode-card" onclick="startGame('spell')"><div class="m-icon">✍️</div><div class="m-name">Spelling</div><div class="m-desc">დაწერე</div></div>
-      <div class="mode-card" onclick="startGame('match')"><div class="m-icon">🧩</div><div class="m-name">Match</div><div class="m-desc">დააწყვილე</div></div>
-      <div class="mode-card" onclick="showCategories()"><div class="m-icon">📚</div><div class="m-name">Topics</div><div class="m-desc">16 კატეგორია</div></div>
+      <div class="mode-card" onclick="startKingsEng()" style="grid-column:span 2"><div class="m-icon">👑</div><div class="m-name">Kings ტესტი</div><div class="m-desc">სურათი→სიტყვა, თარგმანი, spelling, grammar</div></div>
+      <div class="mode-card" onclick="startGame('listen')"><div class="m-icon">👂</div><div class="m-name">Listening</div></div>
+      <div class="mode-card" onclick="startGame('quiz')"><div class="m-icon">🎯</div><div class="m-name">Vocabulary</div></div>
+      <div class="mode-card" onclick="startGame('reverse')"><div class="m-icon">🔄</div><div class="m-name">Reading</div></div>
+      <div class="mode-card" onclick="startGame('spell')"><div class="m-icon">✍️</div><div class="m-name">Spelling</div></div>
+      <div class="mode-card" onclick="startGame('match')"><div class="m-icon">🧩</div><div class="m-name">Match</div></div>
+      <div class="mode-card" onclick="showCategories()"><div class="m-icon">📚</div><div class="m-name">Topics</div></div>
     </div>`;
   } else if(subj==='kings-math'){
     const addG=getMathGrade('math-add'),subG=getMathGrade('math-sub'),mulG=getMathGrade('math-mul'),patG=getMathGrade('math-pat');
@@ -736,8 +748,8 @@ function showCategories(){
   show('cats');const cats=AGE_CATS[profile];
   document.getElementById('cats-list').innerHTML=cats.map(c=>{
     const ws=WORDS[c];const learned=ws.filter(w=>(state[profile].words[w.en]||{}).correct>=3).length;
-    return`<div class="menu-card" onclick="activeCat='${c}';goMenu()"><div class="icon">${ws[0].emoji}</div><div class="info"><h3>${c}</h3><p>${learned}/${ws.length} ნასწავლი</p></div></div>`;
-  }).join('')+`<div class="menu-card" onclick="activeCat=null;goMenu()"><div class="icon">🌍</div><div class="info"><h3>ყველა შერეული</h3><p>ყველა კატეგორია ერთად</p></div></div>`;
+    return`<div class="mode-card" onclick="activeCat='${c}';goMenu()"><div class="m-icon">${ws[0].emoji}</div><div class="m-name" style="font-size:.8rem">${c.replace(/ .+/,'')}</div><div class="m-desc">${learned}/${ws.length}</div></div>`;
+  }).join('')+`<div class="mode-card" onclick="activeCat=null;goMenu()" style="grid-column:span 2"><div class="m-icon">🌍</div><div class="m-name">ყველა</div></div>`;
 }
 
 // ═══ WORDS ═══
@@ -1055,9 +1067,9 @@ function nextAlphaQ(){
           <div style="font-size:.6rem;color:var(--blue)">🔊</div>
         </div>`).join('')}
       </div>
-      <div style="display:flex;gap:.5rem">
-        <button class="opt" style="flex:1;font-size:1.3rem;min-height:60px" onclick="if(alphaIdx>0){alphaIdx--;nextAlphaQ();}">⬅️</button>
-        <button class="opt" style="flex:2;font-size:1.3rem;min-height:60px;background:var(--green);border-color:var(--green);color:#fff" onclick="sessionShields++;state[profile].shields++;save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;alphaIdx++;nextAlphaQ();">➡️</button>
+      <div class="nav-row">
+        <button class="nav-btn-big back" onclick="if(alphaIdx>0){alphaIdx--;nextAlphaQ();}">◀</button>
+        <button class="nav-btn-big next" onclick="sessionShields++;state[profile].shields++;save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;alphaIdx++;nextAlphaQ();">▶</button>
       </div>`;
     if(alphaLang==='en')speak(q.l);
   }else{
@@ -1076,8 +1088,8 @@ function nextAlphaQ(){
         const clickSpeak=alphaLang==='en'?`speak('${o}');`:`speakKa('${o}');`;
         return`<button class="opt" style="font-size:2.5rem;min-height:85px" onclick="${clickSpeak}checkAlphaAns(this,'${o}','${q.l}')">${o}</button>`;
       }).join('')}</div>
-      <div style="display:flex;gap:.5rem;margin-top:.5rem">
-        <button class="opt" style="flex:1;font-size:1rem;min-height:50px" onclick="if(alphaIdx>0){alphaIdx--;nextAlphaQ();}">⬅️</button>
+      <div class="nav-row">
+        <button class="nav-btn-big back" onclick="if(alphaIdx>0){alphaIdx--;nextAlphaQ();}">◀</button>
       </div>`;
   }
 }
@@ -1146,6 +1158,105 @@ function showDad(mode,shields,pct){
   fb.onclick=()=>fb.remove();
   document.body.appendChild(fb);
   setTimeout(()=>{if(document.getElementById('fb-overlay'))fb.remove();},3000);
+}
+
+// ═══ KINGS ENGLISH TEST (real exam format) ═══
+const KINGS_ENG = [
+  // Task 1: picture → word (Grade 2)
+  {type:'pic2word',emoji:'🖊️',q:'It is a _____.',opts:['pen','book','car'],a:'pen'},
+  {type:'pic2word',emoji:'📖',q:'It is a _____.',opts:['table','box','book'],a:'book'},
+  {type:'pic2word',emoji:'🏠',q:'It is a _____.',opts:['house','car','desk'],a:'house'},
+  {type:'pic2word',emoji:'⭐',q:'It is a _____.',opts:['desk','box','star'],a:'star'},
+  {type:'pic2word',emoji:'🪞',q:'It is a _____.',opts:['mirror','apple','bag'],a:'mirror'},
+  {type:'pic2word',emoji:'🎩',q:'It is a _____.',opts:['pen','cup','hat'],a:'hat'},
+  {type:'pic2word',emoji:'🚲',q:'It is a _____.',opts:['bike','crocodile','car'],a:'bike'},
+  {type:'pic2word',emoji:'🍦',q:'It is an _____.',opts:['ice cream','cake','pear'],a:'ice cream'},
+  // Task 2: "I see _____" (Grade 2)
+  {type:'pic2word',emoji:'📖🖊️',q:'I see _____.',opts:['a book and a pen','a pen and a ball','a bag and a pen'],a:'a book and a pen'},
+  {type:'pic2word',emoji:'🐕🐱',q:'I see _____.',opts:['a dog and a cat','a dog and a ball','a cat and a book'],a:'a dog and a cat'},
+  // Task 3: Georgian → English (Grade 2-3)
+  {type:'translate',q:'ბაყაყი',opts:['a dog','a frog','a star'],a:'a frog'},
+  {type:'translate',q:'ვარსკვლავი',opts:['a pink','a car','a star'],a:'a star'},
+  {type:'translate',q:'პატარა',opts:['small','big','red'],a:'small'},
+  {type:'translate',q:'წითელი',opts:['pink','frog','red'],a:'red'},
+  {type:'translate',q:'დროშა',opts:['a window','a paper','a flag'],a:'a flag'},
+  {type:'translate',q:'ბიძა',opts:['an uncle','an ankle','an aunt'],a:'an uncle'},
+  {type:'translate',q:'ხე',opts:['a flower','grass','a tree'],a:'a tree'},
+  {type:'translate',q:'ლურჯი ჭიქა',opts:['a black cup','a blue cup','a yellow cup'],a:'a blue cup'},
+  {type:'translate',q:'წვიმიანი დღე',opts:['a sad day','a cold day','a rainy day'],a:'a rainy day'},
+  {type:'translate',q:'ბედნიერი ოჯახი',opts:['a big family','a happy family','a small family'],a:'a happy family'},
+  {type:'translate',q:'მშიერი ობობა',opts:['an angry spider','a hungry spider','a funny spider'],a:'a hungry spider'},
+  // Spelling (Grade 2-4)
+  {type:'spelling',q:'Which is correct?',opts:['book','buuk','bok'],a:'book'},
+  {type:'spelling',q:'Which is correct?',opts:['piupil','pupil','pupile'],a:'pupil'},
+  {type:'spelling',q:'Which is correct?',opts:['lovelly','lovly','lovely'],a:'lovely'},
+  {type:'spelling',q:'სურათი — Which is correct?',opts:['picture','pikture','pictore'],a:'picture'},
+  {type:'spelling',q:'შენობა — Which is correct?',opts:['bulding','bilding','building'],a:'building'},
+  {type:'spelling',q:'ძმა — Which is correct?',opts:['brather','bruther','brother'],a:'brother'},
+  // Numbers → English (Grade 2)
+  {type:'number',emoji:'7️⃣',q:'7',opts:['seven','one','six'],a:'seven'},
+  {type:'number',emoji:'6️⃣',q:'6',opts:['six','eight','zero'],a:'six'},
+  {type:'number',emoji:'5️⃣',q:'5',opts:['seven','five','one'],a:'five'},
+  {type:'number',emoji:'🔟',q:'10',opts:['nine','ten','seven'],a:'ten'},
+  // Grammar (Grade 3)
+  {type:'grammar',q:'I _____ happy.',opts:['am','is','are'],a:'am'},
+  {type:'grammar',q:'Your books _____ here.',opts:['are','is','do'],a:'are'},
+  {type:'grammar',q:'_____ name is Maria.',opts:['She','Her','Him'],a:'Her'},
+  {type:'grammar',q:'That _____ a cat.',opts:['am','are','is'],a:'is'},
+];
+let kingsEngQs=[],kingsEngIdx=0;
+
+function startKingsEng(){
+  kingsEngQs=shuffle([...KINGS_ENG]).slice(0,12);kingsEngIdx=0;
+  sessionShields=0;sessionWrong=0;sessionStart=Date.now();
+  show('game');
+  document.getElementById('game-mode').textContent='👑 Kings English';
+  document.getElementById('game-score').textContent='🛡️ 0';
+  nextKingsEngQ();
+}
+function nextKingsEngQ(){
+  if(kingsEngIdx>=kingsEngQs.length){showKingsEngResults();return;}
+  const q=kingsEngQs[kingsEngIdx];
+  document.getElementById('progress').style.width=((kingsEngIdx/kingsEngQs.length)*100)+'%';
+  document.getElementById('q-num').textContent=`${kingsEngIdx+1}/${kingsEngQs.length}`;
+  document.getElementById('q-shields').textContent=`🛡️ ${sessionShields}`;
+  const opts=shuffle([...q.opts]);
+  const emojiHtml=q.emoji?`<div style="font-size:3rem;margin-bottom:.3rem">${q.emoji}</div>`:'';
+  const typeLabel={'pic2word':'🖼️','translate':'🇬🇪→🇬🇧','spelling':'✍️','number':'🔢','grammar':'📝'}[q.type]||'';
+  document.getElementById('game-area').innerHTML=`
+    <div class="word-box">${emojiHtml}
+    <div style="font-size:.7rem;color:var(--muted);margin-bottom:.3rem">${typeLabel}</div>
+    <div style="font-size:1.1rem;line-height:1.5">${q.q}</div></div>
+    <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem">${opts.map(o=>
+      `<button class="opt" style="font-size:1rem;min-height:55px;width:100%;text-align:left;padding:.8rem 1.2rem" onclick="speak('${o.replace(/'/g,"\\'")}');checkKingsEngAns(this,'${o.replace(/'/g,"\\'")}','${q.a.replace(/'/g,"\\'")}')">${o}</button>`
+    ).join('')}</div>`;
+}
+function checkKingsEngAns(btn,sel,correct){
+  if(sel===correct){
+    document.querySelectorAll('.opt').forEach(b=>{b.classList.add('disabled');b.style.pointerEvents='none';});
+    btn.classList.add('correct');sessionShields++;state[profile].shields++;state[profile].streak++;
+    if(state[profile].streak>state[profile].maxStreak)state[profile].maxStreak=state[profile].streak;
+    save();document.getElementById('game-score').textContent='🛡️ '+sessionShields;
+    speak('well done');showFeedback(true);setTimeout(()=>{kingsEngIdx++;hideFeedback();nextKingsEngQ();},1200);
+  }else{
+    btn.classList.add('wrong');btn.style.pointerEvents='none';btn.classList.add('disabled');
+    sessionWrong++;state[profile].streak=0;save();
+  }
+}
+function showKingsEngResults(){
+  show('results');const total=sessionShields+sessionWrong;const pct=total>0?Math.round(sessionShields/total*100):0;
+  let msg=pct>=80?getName()+', Kings Champion! 👑🌟':pct>=50?getName()+', კარგი! 💪':getName()+', კიდევ ცადე! 🌱';
+  document.getElementById('results-content').innerHTML=`
+    <div class="big">${pct>=80?'👑':'⭐'}</div><h2>${msg}</h2>
+    <div class="stat-row"><div class="stat"><div class="val" style="color:var(--green)">${sessionShields}</div><div class="label">🛡️</div></div>
+    <div class="stat"><div class="val">${pct}%</div><div class="label">📊</div></div></div>
+    ${beatYesterdayHTML('kings-eng',sessionShields)}
+    <button class="btn-primary" onclick="startKingsEng()" style="background:var(--gold);color:#1a1b2e">👑 ახალი ტესტი</button>
+    <button class="btn-secondary" onclick="goMenu()">📋</button>
+    <button class="btn-primary" onclick="showDad('kings-eng',${sessionShields},${pct})" style="background:var(--gold);color:#1a1b2e;margin-top:.5rem">🎉 მამას აჩვენე!</button>`;
+  updateBestScore('kings-eng',sessionShields);
+  state[profile].sessions++;state[profile].lastPlayed=new Date().toISOString();save();
+  checkActivityBreak();
 }
 
 // ═══ KINGS MATH WORD PROBLEMS ═══
