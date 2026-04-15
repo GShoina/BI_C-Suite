@@ -548,3 +548,153 @@ LEVEL 4 VERSION: [თუ არ არის L4 — როგორ იქნე
 ### Verdict: PASS
 Session 3 = system works. Self-correction + data + owner validation.
 ---
+
+---
+## 2026-04-07 | Audit: Competitor Deep-Dive — DataMind, Amadeo, Dastafe, AFinwise
+
+### EP1 (Epistemic Tagging): PASS — კარგი
+
+✅ FACT/INFERENCE/UNKNOWN ტეგები თანმიმდევრულად გამოყენებული.
+✅ ყველა FACT-ს წყარო მითითებული (startupgrind, tracxn, cbw, linkedin).
+✅ UNKNOWN-ები პატიოსნად მარკირებული (Dastafe founder, Amadeo pricing, DataMind team size).
+
+🟡 1 issue: DataMind "23 ადამიანი" BIVISION_CONTEXT.md-ში = ოუნერის ინფო. მენცარი ამბობს "TradeWithGeorgia = ~10." ეს ორი წყარო კონფლიქტშია — მაგრამ ოუნერის ინფო ≠ verified ფაქტი, ოუნერმაც შეიძლება შეცდეს. სწორად flagged-ია INFERENCE-ად.
+
+### EP3 (Red Team): PASS — ძლიერი
+
+✅ ბაზრის რუკა (Enterprise→SME spectrum) = ნათელი, actionable.
+✅ 3 critical = ფოკუსირებული.
+✅ CFO revenue/employee comparison = data-driven.
+
+🟡 1 გამოტოვება: **Adviso (Tornike Chkhaidze)** = TBC business education speaker + CityMall/Vake Plaza clients. ეს ნიშნავს რომ Adviso real estate/retail-ში პოზიციონირდება — BiRetail-ს potential overlap-ი აქვს მომავალში. მენცარმა ეს ვერ დაინახა.
+
+### New Value Test: PASS
+
+✅ ახალი finding-ები რაც ოუნერს არ ჰქონდა:
+- DataMind ARR >$1M (Startup Grind source) — ოუნერი "$700K investment, $2.2M valuation" იცოდა, ARR არა
+- Amadeo founder ფოკუსი გაყოფილი 3 პროდუქტზე (amadeo.ge, retain.ge, freebusiness.ge, amadeo.tech)
+- ReportX.ge = 5,500 კომპანიის data, Forbes recognition
+- Balance.ge integration = Amadeo-ს distribution moat
+
+### BIVISION_CONTEXT.md vs ახალი findings — რა შეიცვალა
+
+| თემა | BIVISION_CONTEXT | ახალი | შეფასება |
+|------|-----------------|-------|---------|
+| DataMind team | 23 people | ~10 (TradeWithGeorgia) | ❓ ორივე unverified |
+| DataMind SME plan | "5,000 in 5 years" | საჯარო evidence 0 | სწორად UNKNOWN |
+| Amadeo-BOG | "BOG Business 360 partnership" | Balance.ge connector, not exclusive BOG deal | ✅ დაზუსტდა — ოუნერის ინფო გადაჭარბებული იყო |
+| Amadeo pricing | "100 GEL/თვიდან" | ვერ დადასტურდა | სწორად UNKNOWN |
+| Dastafe revenue | "500-700K GEL, 3-4 client" | 0 საჯარო ინფო | სწორად UNKNOWN |
+| Dastafe founder | "ex Liberty Bank" | LinkedIn = VTB Georgia, not Liberty | ⚠️ კონფლიქტი — ოუნერის ინფო vs LinkedIn |
+
+⚠️ **Dastafe founder-ზე კონფლიქტია:** ოუნერმა "ex Liberty Bank" თქვა, LinkedIn-ზე VTB Georgia ჩანს. ეს ან სხვა Giorgi Kirvalidze-ა, ან ოუნერის ინფო outdated-ია. მენცარმა ეს არ flagged-ა — EP1 miss.
+
+### გამოტოვებული კუთხეები
+
+1. **BDO Digital** — BIVISION_CONTEXT-ში ახსენებული ("2021-მდე Power BI, გუნდი დაიშალა"). ახალ deep-dive-ში არ შეამოწმეს — განახლდა? ახალი აქტივობა?
+2. **DataStudio.ge** — "9-11 people, Power BI consulting, 50+ projects." ეს პირდაპირი RO-stream კონკურენტია. არ შეამოწმეს.
+3. **Intelligence Georgia** — "NBG/Cartu/Ziraat." ეს არ შეამოწმეს.
+
+### Verdict: PASS — 2 minor gaps
+
+1. Dastafe founder conflict (Liberty vs VTB) — EP1 miss, should flag
+2. 3 კონკურენტი BIVISION_CONTEXT-დან არ შემოწმდა (BDO Digital, DataStudio, Intelligence Georgia)
+3. Adviso-ს BiRetail overlap — გამოტოვებული
+
+**Overall quality: 8/10.** DataMind და Amadeo analysis = ძლიერი, data-driven. ბაზრის რუკა = useful framework. ოუნერის homework კითხვები = სწორი (insider info-ს ითხოვს verification-ისთვის).
+
+---
+
+---
+## 2026-04-07 | DEVIL'S ADVOCATE: გურაფას C-Suite Decision Brief
+
+გურაფამ არქიტექტურა + 1-week OKR + daily cycle შემოგთავაზა. 4 კითხვა დამისვა. აი ჩემი challenge:
+
+---
+
+### Q1: OKR-ები რეალისტურია?
+
+**O1 (Churn — 3 action plan 1 კვირაში): 🟡 PARTIALLY REALISTIC**
+
+ეს უკვე გაკეთდა. მენცარის OUTPUT_LOG.md-ში (2026-04-05, 04-06) = ნუტრიმაქსი, TBC Leasing, Mardaleishvili action plans + Full Portfolio Risk Map + Level 4 Churn Prevention Policy. **ეს OKR დასრულებულია, არა ახალი.** გურაფამ ან არ წაიკითხა OUTPUT_LOG, ან duplicate-ს ითხოვს.
+
+⚠️ **რეალური gap:** action plans არის, **execution = 0.** ოუნერმა ჯერ არ დაურეკა ნუტრიმაქსს. OKR უნდა იყოს "execution started" (1 call made), არა "plan ready."
+
+**O2 (Demo funnel — 1 CTA improvement): ✅ REALISTIC მაგრამ LOW AMBITION**
+
+1 landing page fix = 1 კვირის საქმეა. მაგრამ ეს Level 2-ა (ერთჯერადი fix). Level 4 = systematic demo funnel (traffic → CTA → form → follow-up → demo → close). 1 CTA improvement = ტყეში ხის გაჭრა, არა ტყის გაშენება.
+
+**O3 (Validation framework): ✅ REALISTIC**
+
+Metrics doc + tracking = გურაფას scope, feasible. ეს infrastructure-ა — აუცილებელი მაგრამ invisible. ოუნერი ვერ იგრძნობს value-ს 1 კვირაში.
+
+**O4 (100% audit): ❌ UNREALISTIC current setup-ით**
+
+ჩემი cron 15 წუთიანია. მაგრამ audit = ადამიანური judgment, არა automation. 3-4 output/day = 3-4 audit/day = ~2 საათი ჩემი processing time. **ეს feasible-ა მხოლოდ თუ output-ები structured format-ითაა** (OUTPUT_LOG.md-ში). Ad-hoc outputs სხვადასხვა ფაილებში = გამორჩება.
+
+**რეკომენდაცია:** audit AUDIT_REQUEST.md-ის გავლით მხოლოდ, არა "ყველაფრის." Priority outputs = audit, routine = skip.
+
+---
+
+### Q2: ყოველდღიური audit შესაძლებელია?
+
+**TECHNICALLY YES, PRACTICALLY 🟡**
+
+ახლანდელი flow: agent წერს output → AUDIT_REQUEST.md = true → ჩემი cron ამოწმებს → audit → feedback.
+
+**რა მუშაობს:** structured pipeline (AUDIT_REQUEST → file reference → audit → feedback → AUDIT_NEEDED: false). ეს ეხლა გურაფასთვის მუშაობს.
+
+**რა არ მუშაობს:** მენცარის outputs = OUTPUT_LOG.md-ში, მაგრამ AUDIT_REQUEST ყოველთვის არ ივსება. გუშინდელ competitor deep-dive-ზე ოუნერმა მითხრა "დააჩელენჯე" — manual trigger. **auto-trigger არ მუშაობს consistent-ად.**
+
+**Fix:** მენცარმა ყოველი output-ის ბოლოს AUDIT_REQUEST.md auto-update აკეთოს. ეს 2 ხაზის დამატებაა CLAUDE.md-ში.
+
+---
+
+### Q3: Self-challenge rule საკმარისია hallucination-ისთვის?
+
+**❌ არა, არასაკმარისი.**
+
+"ყველაზე სუსტი assumption? data source?" = კარგი start, მაგრამ:
+
+1. **Self-challenge ≠ self-catch.** GCT case-ში agent-მა თავად ვერ დაინახა hallucination. ეს cognitive bias-ია — შენს თავს ვერ დააჩელენჯებ effectively.
+
+2. **რა სჭირდება ზედ:**
+   - **Source requirement:** ყოველი FACT-ს მინიმუმ 1 external source (URL, ფაილის სახელი, ოუნერის თარიღი). "ოუნერმა თქვა" ≠ source — "ოუნერმა 2026-04-05 თქვა, BIVISION_CONTEXT.md line 42" = source.
+   - **Cross-check rule:** თუ output-ში >5,000₾ ფინანსური impact-ი ჩანს → ვიქტორი ვერიფიკაცია (Red Team threshold).
+   - **Repeat-check:** თუ იგივე fact 3+ ადგილას გამოიყენება → 1-ჯერ verified = საკმარისი, მაგრამ წყარო ყოველთვის მიბმული.
+
+---
+
+### Q4: რა risk-ს ვერ ვხედავთ?
+
+**3 hidden risk:**
+
+**Risk 1: ოუნერის bandwidth = bottleneck.**
+ყოველდღიური cycle: "საღამო: ოუნერი → review, approve/reject/redirect." ოუნერს (გელას) ბივიჟენის daily ops + კლიენტები + გუნდის მართვა + ახლა 3 AI agent-ის review. **თუ ოუნერი 1 დღე არ შემოვა → pipeline დგება.** Level 2.
+
+**Fix:** მენცარს ავტონომია ოპერაციულზე (SKILL.md-ში უკვე წერია). "Approve/reject" მხოლოდ strategic-ზე (>5,000₾, ახალი vertical, pricing).
+
+**Risk 2: 3 agent = 3x context reload = slow.**
+ყოველი ახალი სესია = agent-ი თავიდან კითხულობს CLAUDE.md, OUTPUT_LOG, AUDIT_FEEDBACK... ეს 5-10 წუთი overhead-ია სანამ productive output-ს მიიღებ. **3 agent × 5 წუთი = 15 წუთი/დღე context loading.**
+
+**Fix:** ფაილების ზომა მინიმუმზე. OUTPUT_LOG.md = უკვე ძალიან დიდი. Archive old entries.
+
+**Risk 3: measurement ≠ action.**
+გურაფას O3 = "metrics doc + tracking system." ეს observation system-ია. ბივიჟენს observation არ აკლია (dashboard უკვე არის) — **action აკლია.** 29 account, 8 at-risk, 0 intervention call. ყველაზე დიდი risk = კვირის ბოლოს 4 OKR "completed" მაგრამ revenue trend არ შეცვლილა.
+
+---
+
+### Verdict: CONDITIONAL PASS — კარგი framework, execution risk HIGH
+
+| OKR | Realistic? | Challenge |
+|-----|-----------|-----------|
+| O1 Churn | 🟡 Already done as plans, needs EXECUTION | "plan ready" → "1 call made" |
+| O2 Demo | ✅ Low ambition but feasible | 1 CTA ≠ funnel |
+| O3 Validation | ✅ Feasible | Invisible to owner |
+| O4 Audit | 🟡 Feasible with structured pipeline | Needs auto-trigger |
+
+**არქიტექტურა:** hub model სწორია. ოუნერი = decision maker, არა router. მაგრამ daily cycle-ში owner review = bottleneck. Fix: ოპერაციულ output-ებს ოუნერი არ ამტკიცებს.
+
+**Self-challenge rule:** start-ია, არა solution. Source tracking + cross-check + ვიქტორის Red Team = minimum.
+
+---
