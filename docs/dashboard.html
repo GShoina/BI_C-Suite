@@ -71,10 +71,12 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 
 <!-- Universal Comment Box -->
 <div style="background:var(--bg2);border-bottom:1px solid var(--brd);padding:.5rem 1rem">
-<div style="display:flex;gap:.4rem;align-items:center;max-width:900px;margin:0 auto">
+<div style="display:flex;gap:.4rem;align-items:center;max-width:900px;margin:0 auto;flex-wrap:wrap">
 <span style="font-size:1.2rem">💬</span>
-<input type="text" id="universal-comment" class="ti" placeholder="მენცარს მიწერე..." style="flex:1;font-size:.9rem;padding:.4rem .6rem" onkeypress="if(event.key==='Enter')sendUniversalComment()">
-<button onclick="sendUniversalComment()" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.4rem .8rem;cursor:pointer;font-size:.85rem;font-weight:600;white-space:nowrap">გაგზავნა</button>
+<input type="text" id="universal-comment" class="ti" placeholder="მენცარს მიწერე..." style="flex:1;min-width:200px;font-size:.9rem;padding:.4rem .6rem" onkeypress="if(event.key==='Enter')sendUniversalComment()">
+<button onclick="sendUniversalComment()" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.4rem .8rem;cursor:pointer;font-size:.85rem;font-weight:600;white-space:nowrap;min-height:40px">შენახვა</button>
+<button onclick="exportForMentsar()" style="background:var(--grn);color:var(--bg);border:none;border-radius:4px;padding:.4rem .8rem;cursor:pointer;font-size:.85rem;font-weight:600;white-space:nowrap;min-height:40px">📤 მენცარისთვის</button>
+<span id="save-indicator" style="font-size:.78rem;min-width:80px"></span>
 </div>
 <div id="comment-history" style="max-width:900px;margin:.3rem auto 0;font-size:.78rem;color:var(--t3);max-height:80px;overflow-y:auto"></div>
 </div>
@@ -210,8 +212,8 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 </div>
 <div style="display:flex;align-items:flex-start;gap:.5rem;padding:.5rem 0">
 <span style="color:var(--t3);font-weight:800;min-width:18px">7</span>
-<div style="flex:1"><strong>გრეიდი</strong><div style="font-size:.78rem;color:var(--t3)">Replied | $1,000 | close: 02/28 — overdue</div></div>
-<span style="font-size:.6rem;color:var(--red);background:var(--redd);padding:.1rem .3rem;border-radius:3px">OVERDUE</span>
+<div style="flex:1"><strong style="text-decoration:line-through;color:var(--t3)">გრეიდი</strong><div style="font-size:.78rem;color:var(--t3)">ოუნერი: ინფო განახლებული, აქ აღარ უნდა იყოს</div></div>
+<span style="font-size:.6rem;color:var(--grn);background:var(--grnd);padding:.1rem .3rem;border-radius:3px">UPDATED</span>
 </div>
 
 <div style="margin-top:.5rem;padding:.4rem .6rem;background:var(--bg3);border-radius:4px;font-size:.75rem;color:var(--t2)">
@@ -236,7 +238,7 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 </div>
 <div style="display:flex;align-items:flex-start;gap:.5rem;padding:.4rem 0;border-bottom:1px solid var(--brd)">
 <span style="color:var(--red);font-weight:800;min-width:18px">3</span>
-<div style="flex:1"><strong>Demo funnel fix → devs</strong><div style="font-size:.78rem;color:var(--t3)">spec ✅ | deploy: devs ⬜ | ვის? | 0% → 5% conversion</div></div>
+<div style="flex:1"><strong>Demo funnel fix → devs</strong><div style="font-size:.78rem;color:var(--t2)">bivision.ge-ზე "მოითხოვე დემო" ღილაკი → ახლა არაფერს აკეთებს (form null, WhatsApp void, Crisp მკვდარი). <strong style="color:var(--red)">Fix:</strong> ღილაკი → HubSpot form → auto-email → Calendly → გელას meeting. ამას dev-ები უნდა გააკეთონ.</div></div>
 <span class="tg tg-a" style="font-size:.6rem">BLOCKED</span>
 </div>
 
@@ -271,15 +273,20 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <!-- C-Suite Status -->
 <div class="st" style="margin-top:1.5rem">⚡ C-Suite Status</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.6rem">
+<div class="sc" style="border-left:3px solid var(--grn);margin-bottom:.6rem;grid-column:1/-1">
+<h3 style="color:var(--grn)">POLICY: Improve, don't replace. Challenge, don't compete.</h3>
+<div class="sl" style="font-size:.85rem">ყველასთან — მარიამი, ინგა, დათო, გუნდი. AI = ადამიანების გაძლიერება, არა ჩანაცვლება.</div>
+</div>
 <div class="sc" style="border-left:3px solid var(--amb)">
 <h3>მენცარი (CEO, Driver)</h3>
 <div class="sl" style="font-size:.82rem"><span>✅</span> Pipeline First protocol</div>
 <div class="sl" style="font-size:.82rem"><span>✅</span> HubSpot pipeline management</div>
 <div class="sl" style="font-size:.82rem"><span>✅</span> ინგას კითხვარის ანალიზი</div>
 <div class="sl" style="font-size:.82rem"><span>✅</span> მარიამის კამპანიის შეფასება</div>
+<div class="sl" style="font-size:.82rem"><span>✅</span> Apr 10 meeting prep</div>
 <div class="sl" style="font-size:.82rem"><span>🔄</span> LinkedIn outreach strategy</div>
-<div class="sl" style="font-size:.82rem"><span>🔄</span> Marketing SWOT prep (Apr 10)</div>
-<div class="sl" style="font-size:.82rem"><span>🔄</span> გუნდთან contact: 1/7 (ინგა ✅)</div>
+<div class="sl" style="font-size:.82rem"><span>🔄</span> გუნდთან contact: 3/7 (ინგა✅ გაბო✅ დათო✅)</div>
+<div class="sl" style="font-size:.82rem"><span>⬜</span> ენერგეტიკის კამპანია data (Playwright)</div>
 </div>
 <div class="sc" style="border-left:3px solid var(--blu)">
 <h3>ვიქტორი (Audit)</h3>
@@ -287,19 +294,20 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div class="sl" style="font-size:.82rem"><span>✅</span> Priority breakdown</div>
 <div class="sl" style="font-size:.82rem"><span>✅</span> Qlik MCP alert (WeGroup)</div>
 <div class="sl" style="font-size:.82rem"><span>✅</span> Audit pipeline active</div>
-<div class="sl" style="font-size:.82rem"><span>⬜</span> CLAUDE.md v2 review</div>
+<div class="sl" style="font-size:.82rem"><span>🔄</span> File audit + optimization (ყოველ 3 დღეში)</div>
+<div class="sl" style="font-size:.82rem"><span>⬜</span> Best practices strategy gathering</div>
 </div>
 <div class="sc" style="border-left:3px solid var(--pur)">
 <h3>გურაფა (Intelligence)</h3>
 <div class="sl" style="font-size:.82rem"><span>✅</span> C-Suite architecture brief</div>
-<div class="sl" style="font-size:.82rem"><span>✅</span> Mentari reality feedback</div>
-<div class="sl" style="font-size:.82rem"><span>✅</span> Apify outreach tool</div>
+<div class="sl" style="font-size:.82rem"><span>✅</span> AI Tools Playbook</div>
+<div class="sl" style="font-size:.82rem"><span>✅</span> Managed Agents analysis</div>
+<div class="sl" style="font-size:.82rem"><span>🔄</span> Cowork Projects feasibility</div>
 <div class="sl" style="font-size:.82rem"><span>⬜</span> O3: Validation framework</div>
-<div class="sl" style="font-size:.82rem"><span>⬜</span> CLAUDE.md v2 review</div>
 </div>
 </div>
 
-<div class="upd" id="kpi-upd">განახლება: 2026-04-07 | წყარო: docs/STATUS.md</div>
+<div class="upd" id="kpi-upd">განახლება: 2026-04-09 | წყარო: docs/STATUS.md</div>
 </div>
 
 <!-- ═══ OKR + TODO ═══ -->
@@ -397,7 +405,7 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div style="padding:.3rem 0;border-bottom:1px solid var(--brd)"><strong>Julius Meinl</strong> — SQL, deal created ✅</div>
 <div style="padding:.3rem 0;border-bottom:1px solid var(--brd)"><strong>Rampoletx</strong> — SQL, active</div>
 <div style="padding:.3rem 0;border-bottom:1px solid var(--brd)"><strong>0llivander</strong> — SQL, active</div>
-<div style="padding:.3rem 0"><strong>გრეიდი</strong> — overdue, status unclear</div>
+<div style="padding:.3rem 0"><strong style="text-decoration:line-through;color:var(--t3)">გრეიდი</strong> — ოუნერი: ინფო განახლებული, ამოშლილი</div>
 </div></div>
 
 <!-- კალენდარი -->
@@ -422,10 +430,396 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div class="tc" id="t-outputs">
 <div class="st">ყველა Output</div>
 
-<!-- SAGA — paused -->
-<div class="cd" style="border-left:3px solid var(--t3)">
-<div class="cd-h"><div><span class="tg tg-d">Apr 7</span> <span style="font-size:.72rem;color:var(--t3);background:var(--bg3);padding:.15rem .4rem;border-radius:3px">⏸️ აღდგომის შემდეგ</span></div></div>
-<div class="hl">📋 <strong>საგა იმპექსი / რუსთავის ავტოდრომი — Prep</strong></div>
+<!-- SITE AUDIT — Apr 14 -->
+<!-- LINKEDIN POSTS — PRIORITY ACTION -->
+<div class="cd" style="border-left:3px solid var(--amb)">
+<div class="cd-h"><div><span class="tg tg-a">Apr 14</span> <span class="tg tg-rh">PRIORITY</span> <span style="font-size:.72rem;color:var(--amb)">EP0: Impact 7/10 — ახალი ლიდების გენერირება, 0₾</span></div></div>
+<div class="hl">🔗 <strong>LinkedIn Personal Posts — 2 draft, calendar, strategy</strong></div>
+<button class="eb" onclick="X('oliposts',this)">სრულად</button>
+<div class="ez" id="oliposts"><div class="di">
+
+<h4>რატომ personal > company page (✅ FACT — Bivision LinkedIn data)</h4>
+<p>Company page reach = 56-256 impressions/post. Personal profile = 5-10x (LinkedIn algorithm boost + network effect). Document format CTR = 25-55% vs Article 3.6%. CEO-to-CEO = peer level, trust, DMs.</p>
+
+<h4>POST 1: "რატომ Excel-ი ვერ მოკლავს BI-ს"</h4>
+<div style="background:var(--bg3);padding:.8rem;border-radius:var(--rs);margin:.5rem 0;font-size:.9rem;line-height:1.7">
+10 წელია BI-ში ვმუშაობ. ყველაზე ხშირი წინააღმდეგობა:<br><br>
+"Excel-ით ყველაფერს ვაკეთებთ, რატომ გვჭირდება BI?"<br><br>
+პასუხი: Excel-ით ყველაფერი შეიძლება.<br>
+ისე, როგორც ფეხით შეიძლება თბილისიდან ბათუმში წასვლა.<br><br>
+რეალობა რომელსაც ვხედავ კომპანიებში:<br>
+→ CFO-ს 4 საათი ეხარჯება ხელით რეპორტის შედგენაში<br>
+→ 3 ადამიანი ერთი და იგივე ცხრილს სხვადასხვანაირად ავსებს<br>
+→ გადაწყვეტილება გუშინდელი მონაცემებით მიიღება<br><br>
+BI-ს value არ არის "ლამაზი dashboard."<br>
+BI-ს value = გადაწყვეტილების სისწრაფე.<br><br>
+როცა CFO-ს ანგარიში 4 საათის ნაცვლად 4 წამში აქვს —<br>
+ეს არ არის ტექნოლოგია. ეს არის competitive advantage.<br><br>
+რა არის თქვენი ყველაზე დიდი გამოწვევა რეპორტინგში?<br><br>
+#BI #AnalyticsGeorgia #CFO #ბიზნესანალიტიკა
+</div>
+<p><strong>Format:</strong> Text post | <strong>When:</strong> სამშაბათი/ოთხშაბათი 09:00-10:00 | <strong>Target:</strong> CFO, CEO ქართული SME</p>
+
+<h4>POST 2: "Qlik + AI = რა შეიცვალა 2026-ში"</h4>
+<div style="background:var(--bg3);padding:.8rem;border-radius:var(--rs);margin:.5rem 0;font-size:.9rem;line-height:1.7">
+Qlik Sense + Claude AI — ეს არ არის სამომავლო გეგმა.<br>
+ეს ახლა მუშაობს.<br><br>
+რა ვქენით:<br>
+→ Qlik MCP Server-ით Claude AI-ს Qlik-ის data-ზე პირდაპირი წვდომა მივეცით<br>
+→ ბუნებრივი ენით კითხვას სვამ — AI პასუხობს real-time data-დან<br><br>
+"რამდენი გავყიდეთ მარტში რეგიონების მიხედვით?"<br>
+— და პასუხი 3 წამში, არა 3 საათში.<br><br>
+ეს არ ანაცვლებს BI ანალიტიკოსს.<br>
+ეს ანაცვლებს 80% რუტინულ კითხვებს.<br><br>
+ანალიტიკოსი ფოკუსირდება "რატომ?" კითხვაზე.<br>
+AI აკეთებს "რამდენი?" და "სად?" კითხვებს.<br><br>
+თუ Qlik-ს იყენებთ და AI integration გაინტერესებთ — მომწერეთ, სიამოვნებით გაგიზიარებთ გამოცდილებას.<br><br>
+#QlikSense #AI #ClaudeAI #BIGeorgia
+</div>
+<p><strong>Format:</strong> Text + Image (Qlik+Claude screenshot) | <strong>When:</strong> ხუთშაბათი 09:00-10:00 | <strong>Target:</strong> Tech-savvy executives, Qlik users</p>
+
+<h4>2 კვირის Calendar</h4>
+<table style="width:100%;font-size:.85rem;border-collapse:collapse">
+<tr style="color:var(--t3);font-size:.7rem;text-transform:uppercase"><td style="padding:.3rem">კვირა</td><td style="padding:.3rem">Post 1</td><td style="padding:.3rem">Post 2</td></tr>
+<tr><td style="padding:.3rem">Apr 14-18</td><td style="padding:.3rem">"Excel vs BI" (სამშ/ოთხშ)</td><td style="padding:.3rem">"Qlik + AI" (ხუთშ)</td></tr>
+<tr><td style="padding:.3rem">Apr 21-25</td><td style="padding:.3rem">"რატომ ჩერდება BI პროექტი"</td><td style="padding:.3rem">"Balance partnership story"</td></tr>
+</table>
+
+<h4>SELF-CHECK</h4>
+<p>1. "რა მოხდება თუ არ გავაკეთებ?" — LinkedIn leads არ იწყება, კონკურენტები (DataMind podcast blitz) ავსებენ vacuum-ს</p>
+<p>2. სუსტი assumption: post-ის tone შეიძლება არ მოერგოს გელას personal style-ს — <strong>ამიტომ review + edit სავალდებულო</strong></p>
+<p>3. ალტერნატივა: Company page-დან publish = 5-10x ნაკლები reach, მაგრამ 0 owner effort</p>
+
+</div></div></div>
+
+<!-- SITE AUDIT — UPDATED -->
+<div class="cd" style="border-left:3px solid var(--grn)">
+<div class="cd-h"><div><span class="tg tg-g">Apr 14</span> <span class="tg tg-d">AUDIT</span> <span style="font-size:.72rem;color:var(--t3)">EP0: Impact 3/10 — საიტი მუშაობს, leads მოდის</span></div></div>
+<div class="hl">🔍 <strong>bivision.ge Site Audit — შეფასება</strong></div>
+<button class="eb" onclick="X('osite',this)">სრულად</button>
+<div class="ez" id="osite"><div class="di">
+
+<h4 style="color:var(--grn)">✅ გაკეთებული</h4>
+<p>Query Monitor deactivated (SEO H1 fix + security). Yandex Metrica deactivated (-89KB JS). CMP + Smush deleted. "სერვისები" menu fixed.</p>
+
+<h4 style="color:var(--amb)">⚠️ Pending — ვიქტორის audit</h4>
+<p>TTFB 4.46s — LiteSpeed server-ის გარეშე page cache ვერ მუშაობს. QUIC.cloud enable = ⚠️ ვიქტორთან audit, UNKNOWN-ებია. Root cause: ❓ hosting plan? DB? PHP?</p>
+<p>სრული report: <a href="site-audit-instructions.html" target="_blank">site-audit-instructions.html</a></p>
+
+<h4>EP0 Assessment</h4>
+<p>"რა მოხდება თუ არ გავაკეთებ?" — არაფერი critical. საიტი მუშაობს, form მუშაობს, leads მოდის. Speed fix = nice-to-have, არა revenue blocker.</p>
+
+<h4 style="color:var(--amb)">🟡 MEDIUM — 1-2 კვირა</h4>
+<p>• <strong>77/146 image alt text missing</strong> (53%) — SEO penalty. Rank Math PRO bulk fix ან AI generate.</p>
+<p>• <strong>Menu "ENG" + "სერვისები" = broken (#)</strong> — UX fix, 15წთ.</p>
+<p>• <strong>8 broken URLs</strong> — Rank Math 404 Monitor-ში. redirect ან fix.</p>
+<p>• <strong>Yandex Metrica (89KB JS)</strong> — იყენებთ? თუ არა → deactivate = load ↓1-2წ.</p>
+<p>• <strong>51 JS files</strong> — too many. Cleanup needed.</p>
+
+<h4 style="color:var(--grn)">🟢 GOOD — რა მუშაობს</h4>
+<p>✅ Demo form, Crisp, WhatsApp — ყველა OK</p>
+<p>✅ Mobile responsive — 375px OK</p>
+<p>✅ 6 product page — ყველა 200</p>
+<p>✅ Copy quality — კარგი ქართული</p>
+<p>✅ SSL, Rank Math PRO, Site Kit, Wordfence, WP Mail SMTP — active</p>
+
+<h4>სრული report: <code>docs/BIVISION_SITE_AUDIT.md</code></h4>
+
+</div></div></div>
+
+<!-- WAALAXY DECISION BRIEF -->
+<div class="cd" style="border-left:3px solid var(--amb)">
+<div class="cd-h"><div><span class="tg tg-a">Apr 14</span> <span class="tg tg-a">DECISION NEEDED</span> <span style="font-size:.72rem;color:var(--amb)">EP0: Impact 7/10 — lead automation, 0₾ start</span></div></div>
+<div class="hl">🔗 <strong>Waalaxy Free — სრული დეტალები გადაწყვეტილებისთვის</strong></div>
+<button class="eb" onclick="X('owaalaxy2',this)">სრულად</button>
+<div class="ez" id="owaalaxy2"><div class="di">
+
+<h4>რა არის Waalaxy</h4>
+<p>LinkedIn outreach automation tool. Chrome extension. ავტომატურად აგზავნის connection requests + follow-up messages LinkedIn-ზე.</p>
+
+<h4>Free tier — ზუსტი ლიმიტები</h4>
+<table style="width:100%;font-size:.85rem;border-collapse:collapse;margin:.5rem 0">
+<tr style="color:var(--t3);font-size:.7rem;text-transform:uppercase"><td style="padding:.3rem">Feature</td><td style="padding:.3rem">Free</td><td style="padding:.3rem">Paid (€39/mo)</td></tr>
+<tr><td style="padding:.3rem">LinkedIn invitations</td><td style="padding:.3rem"><strong>80/თვე</strong> (~3/დღე)</td><td style="padding:.3rem">500-5000/თვე</td></tr>
+<tr><td style="padding:.3rem">Daily actions</td><td style="padding:.3rem">3/type</td><td style="padding:.3rem">unlimited</td></tr>
+<tr><td style="padding:.3rem">Email sequences</td><td style="padding:.3rem" style="color:var(--red)">❌ არა</td><td style="padding:.3rem">✅ კი</td></tr>
+<tr><td style="padding:.3rem">Message personalization</td><td style="padding:.3rem">basic (variables)</td><td style="padding:.3rem">AI-powered</td></tr>
+<tr><td style="padding:.3rem">Cloud (background)</td><td style="padding:.3rem" style="color:var(--red)">❌ Chrome open</td><td style="padding:.3rem">✅ cloud</td></tr>
+<tr><td style="padding:.3rem">CRM (HubSpot)</td><td style="padding:.3rem">✅ basic</td><td style="padding:.3rem">✅ full</td></tr>
+<tr><td style="padding:.3rem">Email finder credits</td><td style="padding:.3rem">25/თვე</td><td style="padding:.3rem">მეტი</td></tr>
+<tr><td style="padding:.3rem">Max contacts</td><td style="padding:.3rem">10,000</td><td style="padding:.3rem">unlimited</td></tr>
+<tr><td style="padding:.3rem">ფასი</td><td style="padding:.3rem;color:var(--grn)"><strong>0₾</strong></td><td style="padding:.3rem">€39/თვე (~120₾)</td></tr>
+</table>
+
+<h4>Setup</h4>
+<p>Chrome extension install (2 წუთი) → LinkedIn account connect → campaign template → leads add → launch. <strong>10 წუთი სულ.</strong> No credit card. ტექნიკური skills არ სჭირდება.</p>
+
+<h4 style="color:var(--red)">🔴 რისკი — LinkedIn account safety</h4>
+<p><strong>✅ FACT (multiple independent sources):</strong> 23% users-ს LinkedIn restriction ემუქრება. 1/5 banned 90 დღეში. LinkedIn აღმოაჩენს Chrome extension-ს. Waalaxy არღვევს LinkedIn Terms of Service-ს.</p>
+<p><strong>Mitigation:</strong> დაბალი volume (80/თვე free = safe zone). არ გამოიყენო premium LinkedIn account-ზე. Warm-up period 1-2 კვირა (დაბალი activity, თანდათან ზრდა).</p>
+
+<h4>ალტერნატივები</h4>
+<table style="width:100%;font-size:.85rem;border-collapse:collapse;margin:.5rem 0">
+<tr style="color:var(--t3);font-size:.7rem;text-transform:uppercase"><td style="padding:.3rem">Tool</td><td style="padding:.3rem">ფასი</td><td style="padding:.3rem">უპირატესობა</td></tr>
+<tr><td style="padding:.3rem">Kaspr</td><td style="padding:.3rem;color:var(--grn)">Free</td><td style="padding:.3rem">phone + email finder (unlimited free)</td></tr>
+<tr><td style="padding:.3rem">Botdog</td><td style="padding:.3rem">$35/წელი</td><td style="padding:.3rem">unlimited connections, no caps</td></tr>
+<tr><td style="padding:.3rem">Dux Soup</td><td style="padding:.3rem">$15/თვე</td><td style="padding:.3rem">cheaper, similar features</td></tr>
+<tr><td style="padding:.3rem">Expandi</td><td style="padding:.3rem">$79/თვე</td><td style="padding:.3rem">cloud-based (safer)</td></tr>
+</table>
+
+<h4>SELF-CHECK</h4>
+<p>1. "რა მოხდება თუ არ გავაკეთებ?" — LinkedIn outreach manual რჩება. 80 invite/თვე ხელითაც შესაძლებელია. Automation = scaling, არა fundamentally new</p>
+<p>2. სუსტი assumption: "23% ban risk" = aggregate stat, low volume (80/თვე) ალბათ safe — მაგრამ ❓ UNKNOWN ზუსტად</p>
+<p>3. ალტერნატივა: <strong>ხელით outreach</strong> CEO-to-CEO scripts-ით (OUTREACH_SCRIPTS_V2.md) = 0 risk, 0₾, მაგრამ manual effort</p>
+
+<h4 style="color:var(--amb)">შენი გადაწყვეტილება</h4>
+<p><strong>ვარიანტი A:</strong> Waalaxy Free setup (0₾, 80/თვე, 23% risk) → 1 თვე ტესტი</p>
+<p><strong>ვარიანტი B:</strong> ხელით outreach scripts-ით (0₾, 0 risk, manual effort)</p>
+<p><strong>ვარიანტი C:</strong> Kaspr Free (0₾, phone+email finder) + ხელით outreach</p>
+<p><strong>მენცარის recommendation:</strong> B ან C. 23% ban risk = რეალური. შენი personal LinkedIn account = ბივიჟენის #1 sales asset. დაკარგვა არ ღირს 80 invite-ისთვის.</p>
+
+</div></div></div>
+
+<!-- SOCIAL MEDIA WEEKLY -->
+<div class="cd" style="border-left:3px solid var(--blu)">
+<div class="cd-h"><div><span class="tg tg-b">Apr 14</span> <span class="tg tg-b">WEEKLY</span></div></div>
+<div class="hl">📊 <strong>Social Media Weekly Report (Apr 7-14)</strong></div>
+<button class="eb" onclick="X('osocial',this)">სრულად</button>
+<div class="ez" id="osocial"><div class="di">
+
+<h4>Facebook — ამ კვირაში 0 post</h4>
+<p>ბოლო post = ენერგეტიკა (Apr 7). 7 დღე silence.</p>
+
+<h4>LinkedIn — 1 post (გელა: Qlik MCP + Claude AI)</h4>
+<table style="width:100%;font-size:.82rem;border-collapse:collapse">
+<tr style="color:var(--t3);font-size:.65rem;text-transform:uppercase"><td style="padding:.2rem">Post</td><td style="padding:.2rem">Impr.</td><td style="padding:.2rem">CTR</td><td style="padding:.2rem">Eng.</td></tr>
+<tr style="background:var(--grnd)"><td style="padding:.2rem">Qlik MCP+Claude (NEW, გელა)</td><td style="padding:.2rem">pending</td><td style="padding:.2rem">—</td><td style="padding:.2rem">—</td></tr>
+<tr><td style="padding:.2rem">ენერგეტიკა (Document)</td><td style="padding:.2rem">61</td><td style="padding:.2rem;color:var(--grn)"><strong>52.5%</strong></td><td style="padding:.2rem;color:var(--grn)">55.7%</td></tr>
+<tr><td style="padding:.2rem">სამშენებლო (Document)</td><td style="padding:.2rem">256</td><td style="padding:.2rem;color:var(--grn)">25.4%</td><td style="padding:.2rem">27.3%</td></tr>
+<tr><td style="padding:.2rem">Balance (Article)</td><td style="padding:.2rem">138</td><td style="padding:.2rem">3.6%</td><td style="padding:.2rem">5.1%</td></tr>
+</table>
+<p style="margin-top:.4rem"><strong>Key:</strong> Document format = 25-55% CTR. Article = 3.6%. <strong>Document > Article LinkedIn-ზე.</strong></p>
+
+<h4>Email — 0 ამ კვირაში</h4>
+<p>ბოლო: ენერგეტიკა test1 (Apr 8). 15.6% open, 0% click.</p>
+
+<h4>Summary</h4>
+<p>FB: 🔴 0 post | LI: 🟡 1 post | Email: 🔴 0 | Reels: 🔴 0</p>
+<p>სრული report: <code>docs/SOCIAL_MEDIA_WEEKLY_REPORT.md</code></p>
+
+</div></div></div>
+
+<!-- WAALAXY RECOMMENDATION -->
+<div class="cd" style="border-left:3px solid var(--amb)">
+<div class="cd-h"><div><span class="tg tg-a">Apr 14</span> <span class="tg tg-a">RECOMMENDATION</span></div></div>
+<div class="hl">🔗 <strong>LinkedIn Automation — Tool Comparison + Recommendation</strong></div>
+<button class="eb" onclick="X('owaalaxy',this)">სრულად</button>
+<div class="ez" id="owaalaxy"><div class="di">
+
+<table style="width:100%;font-size:.82rem;border-collapse:collapse">
+<tr style="color:var(--t3);font-size:.65rem;text-transform:uppercase"><td style="padding:.3rem">Tool</td><td style="padding:.3rem">ფასი</td><td style="padding:.3rem">Free tier</td><td style="padding:.3rem">Limit</td></tr>
+<tr style="background:var(--grnd)"><td style="padding:.3rem"><strong>Waalaxy Free</strong></td><td style="padding:.3rem;color:var(--grn)">0₾</td><td style="padding:.3rem">80 invite/თვე</td><td style="padding:.3rem">~3/day</td></tr>
+<tr><td style="padding:.3rem">Octopus CRM</td><td style="padding:.3rem">$10/mo</td><td style="padding:.3rem">7-day trial</td><td style="padding:.3rem">20/day</td></tr>
+<tr><td style="padding:.3rem">Botdog</td><td style="padding:.3rem">$35/mo</td><td style="padding:.3rem">7-day trial</td><td style="padding:.3rem">unlimited</td></tr>
+<tr><td style="padding:.3rem">Waalaxy Pro</td><td style="padding:.3rem">€39/mo</td><td style="padding:.3rem">—</td><td style="padding:.3rem">300/თვე</td></tr>
+<tr><td style="padding:.3rem">Dripify</td><td style="padding:.3rem">$39-79/mo</td><td style="padding:.3rem">—</td><td style="padding:.3rem">A/B + HubSpot</td></tr>
+</table>
+
+<h4 style="color:var(--grn)">რეკომენდაცია</h4>
+<p><strong>დაიწყე Waalaxy Free-ით (0₾).</strong> 80 invite/თვე = საკმარისი ტესტისთვის. თუ მუშაობს → upgrade Pro (€39). თუ ჯობია → Octopus CRM ($10).</p>
+<p>LinkedIn hard limit = 100 connect/კვირა ყველა tool-ისთვის. ხარისხი > რაოდენობა.</p>
+<p><strong>Apify + Claude:</strong> web scraping + AI personalization. ამოიღებ target company data-ს (revenue, industry, decision makers) → Claude writes personalized outreach. Setup: 2-3 საათი. Cost: Apify $49/mo ან free tier.</p>
+<p><strong>Google Vids:</strong> ჯერ არაფერი გაკეთებულა. BiFinance-ის 1-წუთიანი explainer video = next step. Google Vids = free, AI-generated.</p>
+
+</div></div></div>
+<button class="eb" onclick="X('oleads',this)">სრულად</button>
+<div class="ez" id="oleads"><div class="di">
+
+<h4 style="color:var(--red)">ჩემი წინა მტკიცებები არასწორი</h4>
+<p>❌ "Form null in DOM" → ✅ ფორმა არსებობს, მუშაობს (id="lead-form")</p>
+<p>❌ "Crisp dead" → ✅ Crisp loaded, active</p>
+<p>❌ "WhatsApp void" → ✅ wa.me/593255385 active</p>
+<p>❌ "0 demo conversion" → 🔴 13 lead მოდის, follow-up ფლანგავს</p>
+
+<h4 style="color:var(--red)">რეალური პრობლემა</h4>
+<p>1. <strong>HubSpot-ში არ ხვდება</strong> — form action="bivision.ge/" GET method, 0 API integration</p>
+<p>2. <strong>ოუნერი ვერ ხედავს</strong> — wp-admin → ლიდები ცალკე გვერდია, არც notification</p>
+<p>3. <strong>ყველა lead status = "closed"</strong> WordPress-ში — auto, არ არის ხელით</p>
+
+<h4 style="color:var(--red)">13 LOST LEADS — ცხელიდან ცივამდე</h4>
+<table style="width:100%;font-size:.82rem;border-collapse:collapse;margin:.5rem 0">
+<tr style="color:var(--t3);font-size:.65rem;text-transform:uppercase"><td style="padding:.3rem">თარიღი</td><td style="padding:.3rem">სახელი</td><td style="padding:.3rem">კომპანია</td><td style="padding:.3rem">ტელეფონი</td></tr>
+<tr style="background:var(--redd)"><td style="padding:.3rem;color:var(--red)"><strong>04/01</strong> 9დღ</td><td style="padding:.3rem">ვერა კირთაძე</td><td style="padding:.3rem">🔥 <strong>Horeca LLC</strong></td><td style="padding:.3rem">+995 598734337</td></tr>
+<tr><td style="padding:.3rem">03/27</td><td style="padding:.3rem">Dimitri Tchagalidze</td><td style="padding:.3rem">Stroycom LLC</td><td style="padding:.3rem">+995 514176262</td></tr>
+<tr><td style="padding:.3rem">03/27</td><td style="padding:.3rem">Financial Anima</td><td style="padding:.3rem">კლინიკა ანიმა</td><td style="padding:.3rem">+995 995555658</td></tr>
+<tr style="background:var(--ambd)"><td style="padding:.3rem">03/27</td><td style="padding:.3rem"><strong>Lela Kalandia</strong></td><td style="padding:.3rem">⚡ <strong>Rustavi Motorpark (საგა)</strong></td><td style="padding:.3rem">+995 577109909</td></tr>
+<tr><td style="padding:.3rem">03/27</td><td style="padding:.3rem">ნატო</td><td style="padding:.3rem">გამზარდია</td><td style="padding:.3rem">+995 599555388</td></tr>
+<tr><td style="padding:.3rem">03/27</td><td style="padding:.3rem">ნატო</td><td style="padding:.3rem">რამპოლიტექს</td><td style="padding:.3rem">+995 588885205</td></tr>
+<tr><td style="padding:.3rem">03/06</td><td style="padding:.3rem">ბექა ჩხუბაძე</td><td style="padding:.3rem">—</td><td style="padding:.3rem">+995 995571925</td></tr>
+<tr><td style="padding:.3rem">01/29</td><td style="padding:.3rem">Levan Ushkhvani</td><td style="padding:.3rem">agrohub</td><td style="padding:.3rem">+995 577787877</td></tr>
+<tr><td style="padding:.3rem">12/20</td><td style="padding:.3rem">რომანი</td><td style="padding:.3rem">შპს ჯეოფუდი</td><td style="padding:.3rem">+995 557728972</td></tr>
+<tr><td style="padding:.3rem">12/11</td><td style="padding:.3rem">თემურ გვაჯაია</td><td style="padding:.3rem">შოუ ტექნიკის ცენტრი</td><td style="padding:.3rem">+995 557777755</td></tr>
+<tr><td style="padding:.3rem">12/03</td><td style="padding:.3rem">ლევან გორდაძე</td><td style="padding:.3rem">ჯორჯიტა/ბი ემ ესი</td><td style="padding:.3rem">+995 595670550</td></tr>
+<tr><td style="padding:.3rem">12/02</td><td style="padding:.3rem">მეგი</td><td style="padding:.3rem">კიწამრიშვილი</td><td style="padding:.3rem">+995 599410505</td></tr>
+<tr><td style="padding:.3rem">11/07</td><td style="padding:.3rem">თამარი ალექსიძე</td><td style="padding:.3rem">ოლიმპო ედს</td><td style="padding:.3rem">+995 593317743</td></tr>
+</table>
+
+<h4 style="color:var(--amb)">სამოქმედო (RIGHT NOW)</h4>
+<p>🔴 <strong>შენ:</strong> ჰორეკა (ვერა კირთაძე) დარეკე — Apr 1, 9 დღის წინ, ცხელია</p>
+<p>🔴 <strong>შენ:</strong> Lela Kalandia (საგა/Rustavi Motorpark) — ეს არის ლელას contact, რომელსაც აღდგომის მერე უნდა დაუკავშირდე</p>
+<p>🟡 <strong>მე:</strong> WordPress → HubSpot sync setup (plugin ან custom code)</p>
+<p>🟡 <strong>მე:</strong> Email notification fix (WP Mail SMTP installed)</p>
+<p>🟡 <strong>მე:</strong> ყველა 13 lead-ის HubSpot-ში manual import</p>
+
+<h4>რა შეიცვალა Marketing შეფასებაში</h4>
+<p>✅ Demo funnel = NOT broken — მუშაობს</p>
+<p>🔴 Follow-up = broken — lead-ები იკარგება wp-admin-ში</p>
+<p>🟢 ROI = NOT zero — 13 lead მოვიდა, ფული მუშაობს, fix-ი = ბარიერი → conversion</p>
+
+<p style="font-size:.78rem;color:var(--t3);margin-top:.5rem;font-style:italic">⚠️ EP1: ეს არის ✅ FACT (Playwright wp-admin extraction Apr 10, 2026)</p>
+
+</div></div>
+</div>
+
+<!-- APR 10 MEETING — DETAILED -->
+<div class="cd" style="border-left:3px solid var(--amb)">
+<div class="cd-h"><div><span class="tg tg-a">Apr 9</span> <span class="tg tg-rh">URGENT</span> <span class="tg tg-a">ხვალ 11:00</span></div></div>
+<div class="hl">📋 <strong>Apr 10 Meeting — Marketing SWOT + AI Automation (35 წთ)</strong></div>
+<button class="eb" onclick="X('oapr10',this)">სრულად</button>
+<div class="ez" id="oapr10"><div class="di">
+
+<h4 style="color:var(--amb)">1. სად ვართ — Baseline (5 წთ) — context only, no decision</h4>
+<p><strong>GA4 (28d):</strong> 262 active users (✅ FACT). ⚠️ INFERENCE: ~140 = bots (Singapore 36, Boardman 13, Dublin 10, Amsterdam 7), real ~120 = ~4 user/day</p>
+<p><strong>GA4 key events:</strong> 6 / 28 days = 0 demo requests (✅ FACT)</p>
+<p><strong>FB:</strong> Reel 26K reach (Feb 23), Photo 13K (Mar 23), Text 29 (Mar 31). Engagement 0.09%</p>
+<p><strong>Balance partnership:</strong> 43K reach (Mar 23) → ახალი ლიდები. ✅ მუშაობს</p>
+<p><strong>მარიამი OKR:</strong> 0/7 met</p>
+<p style="color:var(--t3);margin-top:.4rem;font-style:italic">→ ეს context-ია. შენგან decision არ მჭირდება.</p>
+
+<h4 style="color:var(--amb)">2. Demo funnel — P1 fixes (5 წთ)</h4>
+<p><strong>Status (Apr 7 verified, ხელახლა verify-ს დღეს):</strong></p>
+<p>🔴 Crisp chat — last session ნოემბერი (5+ თვე)</p>
+<p>🔴 "მოითხოვე დემო" form element — null DOM-ში</p>
+<p>🔴 WhatsApp CTA → მიმღები არ პასუხობს</p>
+<p style="color:var(--grn);margin-top:.4rem"><strong>მენცარი ვთავაზობ:</strong> სრული საიტის audit (ახალი OKR — ტექნიკური + Copy + SEO + speed). Report → spec → დევებს გადაეცემა.</p>
+<p style="color:var(--amb)"><strong>შენგან მინდა:</strong> wp-admin access (audit-ისთვის) + Apr-ის ბოლომდე deadline approve.</p>
+
+<h4 style="color:var(--amb)">3. კონკურენტები (5 წთ)</h4>
+<p>🔴 Amadeo + Loialte = SME partnership (კონკურენტი მოძრაობს)</p>
+<p>🔴 Fina.ge BI-ში შედის</p>
+<p>🟢 ბივიჟენი: <strong>Balance partnership active</strong> + ახალი ლიდები აქედან</p>
+<p style="color:var(--grn);margin-top:.4rem"><strong>მენცარი ვთავაზობ:</strong> Balance success replicate — 2-3 ახალი partnership target (BOG, Aversi, ან სხვა). Template = Balance-ის model.</p>
+<p style="color:var(--amb)"><strong>შენგან მინდა:</strong> 3 candidate partner (ვინ იცნობ შენი network-დან).</p>
+
+<h4 style="color:var(--amb)">4. ახალი ლიდები (5 წთ)</h4>
+<p style="color:var(--grn);margin-top:.4rem"><strong>მენცარი ვთავაზობ:</strong></p>
+<p>(a) <strong>LinkedIn automation</strong> — Waalaxy ($30/mo). 50 connect req/day → 5-10 leads/week. 1-თვიანი test.</p>
+<p>(b) <strong>CEO-to-CEO outreach scripts</strong> — ready, value-first, არა product push (OUTREACH_SCRIPTS_V2.md)</p>
+<p>(c) <strong>Mailchimp welcome sequence</strong> — 3-email auto, HubSpot sync</p>
+<p>(d) <strong>Balance-style partnerships</strong> — replicate</p>
+<p style="color:var(--amb)"><strong>შენგან მინდა 3 გადაწყვეტილება:</strong></p>
+<p>1. Waalaxy $30/mo approve? (Red Line #1)</p>
+<p>2. შენი LinkedIn personal posts — 2/კვირა გასტარტდეს?</p>
+<p>3. Apify + Claude outreach automation? (research-ში ვარ)</p>
+
+<h4 style="color:var(--amb)">5. AI Tools — $0, ready (5 წთ)</h4>
+<p>Google Vids, Buffer, Apify+Claude, Claude Cowork — ყველა free/owned</p>
+<p style="color:var(--grn)"><strong>მენცარი ვთავაზობ:</strong> 1 tool/კვირა pilot test, არა ყველაფერი ერთად</p>
+<p style="color:var(--amb)"><strong>შენგან:</strong> რომელი ჯერ? (Buffer = social scheduling-ისთვის ყველაზე quick win)</p>
+
+<h4 style="color:var(--amb)">6. მარიამის როლი (5 წთ)</h4>
+<p>⚠️ May exit risk | ✅ Reel = ძლიერი მხარე</p>
+<p style="color:var(--grn)"><strong>მენცარი ვთავაზობ:</strong> სამშაბათისთვის (Apr 14) მარიამთან გასავლელი full overview — facts only, კონსტრუქციული, მაგრამ მკაცრი. Dashboard-ზე აისახოს. რა მუშაობს, რა არა, რა სასწრაფოდ უნდა შეიცვალოს.</p>
+<p style="color:var(--amb)"><strong>შენგან:</strong> approve overview structure-ი + Plan B-ის (AI + Buffer + Google Vids) ფინალური გადაწყვეტილების deadline</p>
+
+<h4 style="color:var(--amb)">7. აპრილის ბოლომდე — შენი მოთხოვნა (5 წთ)</h4>
+<p>შენი statement-ი (გუშინდელი): "მინიმუმ ზუსტი შეფასება მქონდეს მარკეტინგში რა მუშაობს და რისი რადიკალურად ცვლილება საჭირო"</p>
+<p style="color:var(--grn);margin-top:.4rem"><strong>მენცარი ვალდებულება (Apr 30-მდე):</strong></p>
+<p>1. <strong>Marketing audit</strong> — Pareto: რა 20% activity-ს მოაქვს 80% შედეგი (Balance partnership = ნათელი მაგალითი)</p>
+<p>2. <strong>LinkedIn lead automation</strong> — Waalaxy live, scripts active, weekly metrics</p>
+<p>3. <strong>bivision.ge audit</strong> (ახალი OKR) — full report, dev-spec ready</p>
+<p>4. <strong>გუნდის performance baseline</strong> — შენი + დათოს Insightful data + ჩემი Claude Code analysis შენს კომპზე</p>
+<p style="color:var(--amb)"><strong>შენგან:</strong> ამ 4-დან რომელი არ გინდა? რომელი #1 პრიორიტეტი?</p>
+
+<h4>წესები</h4>
+<p>Concrete output, არა plan. Action items ბოლოს. No theoretical frameworks.</p>
+
+</div></div>
+<div style="margin:.3rem 0"><div style="cursor:pointer;display:flex;align-items:center;gap:.3rem;padding:.3rem .5rem;background:var(--bg3);border-radius:var(--rs)" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span style="font-size:1.1rem">💬</span><span style="font-size:.82rem;color:var(--t2)">კომენტარი</span><span style="font-size:.7rem;color:var(--t3)">▸</span></div><div style="display:none;padding:.4rem .5rem;background:var(--bg3);border-radius:0 0 var(--rs) var(--rs)"><div id="prc-apr10"></div><div style="display:flex;gap:.3rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('apr10',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('apr10',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div></div>
+</div>
+
+<!-- MARIAM CAMPAIGN ANALYSIS -->
+<div class="cd" style="border-left:3px solid var(--red)">
+<div class="cd-h"><div><span class="tg tg-b">Apr 9</span> <span class="tg tg-rh">ANALYSIS</span> <span class="tg tg-a">CMO</span></div></div>
+<div class="hl">📊 <strong>მარიამის კამპანიების შეფასება — FB, LinkedIn, Email</strong></div>
+<button class="eb" onclick="X('omariam',this)">სრულად</button>
+<div class="ez" id="omariam"><div class="di">
+
+<h4 style="color:var(--grn)">პოლისი: Improve, don't replace. Challenge, don't compete.</h4>
+
+<h4>Facebook — ბოლო 90 დღის პოსტები</h4>
+<table style="width:100%;font-size:.85rem;border-collapse:collapse">
+<tr style="color:var(--t3);font-size:.7rem;text-transform:uppercase"><td style="padding:.3rem">თარიღი</td><td style="padding:.3rem">ტიპი</td><td style="padding:.3rem">Reach</td><td style="padding:.3rem">Likes</td></tr>
+<tr><td style="padding:.3rem;color:var(--t2)">Apr 7</td><td style="padding:.3rem;color:var(--t2)">?</td><td style="padding:.3rem">4,460</td><td style="padding:.3rem">5</td></tr>
+<tr><td style="padding:.3rem;color:var(--t2)">Mar 31</td><td style="padding:.3rem;color:var(--t2)">Text</td><td style="padding:.3rem;color:var(--red)">29</td><td style="padding:.3rem">2</td></tr>
+<tr><td style="padding:.3rem;color:var(--t2)">Mar 23</td><td style="padding:.3rem;color:var(--t2)">Photo</td><td style="padding:.3rem">13,001</td><td style="padding:.3rem">10</td></tr>
+<tr style="background:var(--grnd)"><td style="padding:.3rem;color:var(--t2)">Feb 23</td><td style="padding:.3rem;color:var(--grn)"><strong>Reel</strong></td><td style="padding:.3rem;color:var(--grn)"><strong>26,141</strong></td><td style="padding:.3rem;color:var(--grn)"><strong>40</strong></td></tr>
+</table>
+
+<h4 style="color:var(--grn)">რა მუშაობს</h4>
+<p>✅ <strong>Reel = 26K reach.</strong> ერთადერთი reel 90 დღეში — ყველაზე წარმატებული.</p>
+<p>✅ <strong>Photo = 13K reach.</strong> ვიზუალი მუშაობს.</p>
+<p>✅ Bivision page: 842 followers, +200% ზრდა.</p>
+
+<h4 style="color:var(--red)">რა უნდა შეიცვალოს (improve)</h4>
+<p>🔴 <strong>Text post = 29 reach.</strong> ტექსტი Facebook-ზე არ მუშაობს → ვიზუალზე გადავიდეს.</p>
+<p>🔴 <strong>Posting: 4 post / 90 დღე.</strong> Target = 2/კვირა. Consistency = #1 growth driver.</p>
+<p>🔴 <strong>0 reels since Feb 23.</strong> ყველაზე წარმატებული ფორმატი — გააგრძელოს.</p>
+<p>🔴 <strong>0 shares.</strong> Content should provoke sharing — tips, stats, relatable problems.</p>
+<p>🟡 <strong>Engagement: 0.09%.</strong> 35.8K views = 32 interactions. Content reaches people but doesn't resonate.</p>
+
+<h4>LinkedIn</h4>
+<p>842 followers, 545 impressions/week (-23.2%), 1 page visitor/week. <strong>0 effort = 0 result.</strong></p>
+<p>Company page alone can't drive traffic. Personal posting (გელას account) = ერთადერთი გზა.</p>
+
+<h4>Email (Mailchimp)</h4>
+<p>Click rate: 0.37% (avg 2.5%). Campaigns: 0 recent. Welcome sequence: არ არსებობს.</p>
+
+<h4 style="color:var(--amb)">კონკრეტული რეკომენდაცია</h4>
+<p><strong>1.</strong> Reels 2/კვირა — ეს ფორმატი მუშაობს, გააძლიეროს.</p>
+<p><strong>2.</strong> Text posts → Photo/Carousel-ით ჩანაცვლება.</p>
+<p><strong>3.</strong> Content calendar — თემები + დრო წინასწარ.</p>
+<p><strong>4.</strong> "პროდუქტი რთულია" → case study format: "კლიენტს X პრობლემა ჰქონდა, ჩვენ Y გავაკეთეთ, Z შედეგი."</p>
+
+<h4 style="color:var(--red)">ენერგეტიკის კომპანიების კამპანია — 3 არხი (Apr 7-8)</h4>
+<p><strong>Content:</strong> "ენერგეტიკული კომპანიებისთვის: ფინანსები, ოპერაციები და ტექნიკური მონაცემები ერთ სივრცეში. გააერთიანე ყველაფერი ერთ დეშბორდზე... ⟶ მოითხოვე დემო"</p>
+
+<table style="width:100%;font-size:.85rem;border-collapse:collapse;margin:.5rem 0">
+<tr style="color:var(--t3);font-size:.7rem;text-transform:uppercase"><td style="padding:.3rem">არხი</td><td style="padding:.3rem">Reach</td><td style="padding:.3rem">Interact.</td><td style="padding:.3rem">Clicks</td><td style="padding:.3rem">Cost</td><td style="padding:.3rem">ROI</td></tr>
+<tr><td style="padding:.3rem;color:var(--blu)"><strong>Facebook</strong></td><td style="padding:.3rem">5,786</td><td style="padding:.3rem;color:var(--red)">6 (0.05%)</td><td style="padding:.3rem;color:var(--red)">1</td><td style="padding:.3rem">128₾</td><td style="padding:.3rem;color:var(--red)">128₾/click</td></tr>
+<tr><td style="padding:.3rem;color:var(--blu)"><strong>LinkedIn</strong></td><td style="padding:.3rem">56</td><td style="padding:.3rem">2 reactions</td><td style="padding:.3rem;color:var(--grn)">30 (53.6%)</td><td style="padding:.3rem">0₾</td><td style="padding:.3rem;color:var(--grn)">free</td></tr>
+<tr><td style="padding:.3rem;color:var(--blu)"><strong>Email</strong></td><td style="padding:.3rem">108 sent</td><td style="padding:.3rem">15 opens (15.6%)</td><td style="padding:.3rem;color:var(--red)">0</td><td style="padding:.3rem">0₾</td><td style="padding:.3rem;color:var(--red)">0 clicks</td></tr>
+</table>
+
+<h4 style="color:var(--red)">რა არ მუშაობს</h4>
+<p>🔴 <strong>Facebook:</strong> 128₾ დაიხარჯა → 1 click. 99.8% views = paid, organic reach = 0. Interaction rate 0.05% = content არ ეხმიანება audience-ს.</p>
+<p>🔴 <strong>Email:</strong> 108 sent, 12 bounced (11.1% = ლისტი ძველია), 15 opened, 0 clicked. Subject line-ი ან content არ აინტერესებთ.</p>
+<p>🟡 <strong>LinkedIn:</strong> Document format = 53.6% CTR, ყველაზე კარგი შედეგი. მაგრამ reach = 56 (მხოლოდ followers-მა ნახა).</p>
+
+<h4 style="color:var(--amb)">რა შეიცვალოს (improve)</h4>
+<p><strong>1.</strong> Facebook boosted text post = ფულის ფლანგვა. 128₾-ით 1 click. → <strong>Reel ან Video boost-ი</strong> — Feb 23 reel-მა 26K reach, 40 likes organic-ით.</p>
+<p><strong>2.</strong> Email ლისტი 11.1% bounce = გასასუფთავებელი. Subject line "რა ეხმარება ენერგეტიკას..." = ძალიან ზოგადი. → <strong>Personalized subject + specific pain point.</strong></p>
+<p><strong>3.</strong> LinkedIn Document format = ძლიერი (53.6% CTR). → <strong>ეს ფორმატი გააძლიერე</strong>, boost-ი LinkedIn-ზე Facebook-ის ნაცვლად.</p>
+<p><strong>4.</strong> სამივე არხზე ერთი და იგივე generic message. → <strong>არხზე მორგებული content</strong> (LinkedIn = professional, FB = visual, Email = personal).</p>
+
+</div></div>
+<div style="margin:.3rem 0"><div style="cursor:pointer;display:flex;align-items:center;gap:.3rem;padding:.3rem .5rem;background:var(--bg3);border-radius:var(--rs)" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span style="font-size:1.1rem">💬</span><span style="font-size:.82rem;color:var(--t2)">კომენტარი</span><span style="font-size:.7rem;color:var(--t3)">▸</span></div><div style="display:none;padding:.4rem .5rem;background:var(--bg3);border-radius:0 0 var(--rs) var(--rs)"><div id="prc-mariam-camp"></div><div style="display:flex;gap:.3rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('mariam-camp',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('mariam-camp',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button></div></div></div>
+</div>
+
+<!-- SAGA — ARCHIVED -->
+<div class="cd" style="display:none;border-left:3px solid var(--t3);opacity:.5">
+<div class="cd-h"><div><span class="tg tg-d">ARCHIVED</span></div></div>
+<div class="hl">📋 <strong style="color:var(--t3)">საგა იმპექსი — archived</strong></div>
 <button class="eb" onclick="X('osaga',this)">სრულად</button>
 <div class="ez" id="osaga"><div class="di">
 
@@ -511,14 +905,10 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div style="margin:.3rem 0"><div style="cursor:pointer;display:flex;align-items:center;gap:.3rem;padding:.3rem .5rem;background:var(--bg3);border-radius:var(--rs)" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span style="font-size:1.1rem">💬</span><span style="font-size:.82rem;color:var(--t2)">კომენტარი / ლინკი</span><span style="font-size:.7rem;color:var(--t3)">▸</span></div><div style="display:none;padding:.4rem .5rem;background:var(--bg3);border-radius:0 0 var(--rs) var(--rs)"><div id="prc-oinga"></div><div style="display:flex;gap:.3rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('oinga',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('oinga',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button><button onclick="emailMentsar('ინგას ანალიზი',this.parentElement.querySelector('input').value);this.parentElement.querySelector('input').value=''" style="background:var(--blu);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">📧</button></div></div></div>
 </div>
 
-<!-- C-Suite Final Decision -->
-<div class="cd" style="border-left:3px solid var(--grn)">
-<div class="cd-h"><div><span class="tg tg-g">Apr 7</span> <span class="tg tg-g">APPROVED</span> <span class="tg tg-b">ALL AGENTS</span> <span style="font-size:.65rem;color:var(--amb);background:var(--ambd);padding:.1rem .3rem;border-radius:3px">⚠️ რელევანტურობა შესამოწმებელი</span></div></div>
-<div class="hl">✅ <strong>C-Suite Final Decision — არქიტექტურა + OKR + Daily Cycle</strong></div>
-<button class="eb" onclick="X('ofd',this)">სრულად</button>
-<div class="ez" id="ofd"><div class="di">
-<p>→ სრული დეტალებისთვის: <strong>⚡ C-Suite Decision</strong> tab</p>
-</div></div>
+<!-- C-Suite Final Decision — ARCHIVED (owner: რელევანტურობა გასარკვევი) -->
+<div class="cd" style="display:none">
+<div class="cd-h"><div><span class="tg tg-d">ARCHIVED</span></div></div>
+<div class="hl">C-Suite Final Decision — archived, relevance TBD</div>
 </div>
 
 <div class="cd ac2"><div class="cd-h"><div><span class="tg tg-d">Apr 6</span> <span class="tg tg-a">CEO+CMO+CTO</span> <span class="tg tg-b">L4</span> <span style="font-size:.65rem;color:var(--amb);background:var(--ambd);padding:.1rem .3rem;border-radius:3px">⚠️ 8კვ→4კვ, აპრილის ბოლომდე რევიზია</span></div></div>
@@ -821,6 +1211,49 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 </div></div>
 </div></div>
 
+<!-- C-Suite Challenge Document -->
+<div class="cd" style="border-left:3px solid var(--red)"><div class="cd-h"><div><span class="tg tg-rh">C-SUITE CHALLENGE</span> <span style="font-size:.85rem">მარკეტინგის ოპონირება — data-driven</span></div><div style="font-size:.72rem;color:var(--t3)">Apr 9, 2026 | მენცარი + ვიქტორი + გურაფა</div></div>
+<button class="eb" onclick="X('csuite-challenge',this)">სრულად</button>
+<div class="ez" id="csuite-challenge"><div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.7">
+
+<p style="color:var(--red);font-weight:600;font-size:.95rem;margin-bottom:.8rem">ბივიჟენის მარკეტინგი არ არსებობს როგორც სისტემა. არის ფრაგმენტული, არაეფექტური ქმედებები რომლებიც ფულს ხარჯავს და შედეგს არ იძლევა.</p>
+
+<div style="background:var(--redd);border-radius:var(--rs);padding:.8rem;margin:.6rem 0">
+<div style="font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:.4rem;font-weight:600">ფაქტი #1 — ფულის ფლანგვა</div>
+<p><strong>ენერგეტიკის კამპანია (Apr 7-8), 3 არხი:</strong></p>
+<p>Facebook: <strong>128₾ → 1 click.</strong> Interaction rate 0.05%. აუდიტორია generic "ენერგეტიკული კომპანიები" — არასწორი. AI-ით Lookalike/Custom audience არ გამოყენებულა.</p>
+<p>Email: 108 sent, <strong>12 bounced (11.1%)</strong> — ლისტი ძველი/დაბინძურებული. 15 opened, <strong>0 clicked.</strong></p>
+<p>LinkedIn: Document format-მა 53.6% CTR აჩვენა — ერთადერთი ნათელი წერტილი. მაგრამ reach = 56.</p>
+<p style="color:var(--red);font-weight:600;margin-top:.3rem">128₾ = ფლანგვა. C-Suite-მა active campaigns real-time უნდა ნახოს. CPC > 50₾ ან interaction < 0.1% → ავტომატური alert + pause.</p>
+</div>
+
+<div style="background:var(--redd);border-radius:var(--rs);padding:.8rem;margin:.6rem 0">
+<div style="font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:.4rem;font-weight:600">ფაქტი #2 — Effort vs Output</div>
+<p><strong>90 დღეში 4 post.</strong> Target = 8/თვე. Actual = 1.3/თვე (16%).</p>
+<p><strong>Reel = 26K reach.</strong> 90 დღეში 1 reel. "პროდუქტი რთულია" = არა პასუხი.</p>
+<p><strong>LinkedIn = 0 effort.</strong> B2B-ში #1 არხი, 0 personal posting.</p>
+<p><strong>Email = 0 campaigns</strong> 5+ თვე (ენერგეტიკის test1-მდე).</p>
+<p style="color:var(--red);font-weight:600;margin-top:.3rem">3,189₾/თვე salary + 69₾ ads = 3,258₾ → 0 qualified leads. ROI = ნეგატიური.</p>
+</div>
+
+<div style="background:var(--redd);border-radius:var(--rs);padding:.8rem;margin:.6rem 0">
+<div style="font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:.4rem;font-weight:600">ფაქტი #3 — აუდიტორია არასწორია</div>
+<p>"ენერგეტიკული კომპანიები" = ძალიან ფართო. Ideal customer = II-III კატეგორია (1M-70M₾ revenue), CFO/CEO, Fina/Oris/Balance/1C ERP.</p>
+<p><strong>C-Suite რეკომენდაცია:</strong> AI-ით (Meta Lookalike + Custom Audience) შევქმნათ ideal audience ბივიჟენის 29 კლიენტის data-დან. A/B test vs generic.</p>
+<p>Email ლისტი: bounce > 5% = critical. გასაწმენდი, segment ინდუსტრიით, personalized subject.</p>
+</div>
+
+<div style="background:var(--ambd);border-radius:var(--rs);padding:.8rem;margin:.6rem 0">
+<div style="font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--amb);margin-bottom:.4rem;font-weight:600">რა უნდა გაკეთდეს — კონკრეტულად</div>
+<p><strong>1. Facebook:</strong> Text post boost = აკრძალული. მხოლოდ Reel/Video boost. Custom audience AI-ით. Budget cap 30₾/campaign + auto-pause.</p>
+<p><strong>2. LinkedIn:</strong> Document format (53.6% CTR). კვირაში 2. გელას personal account + company reshare.</p>
+<p><strong>3. Email:</strong> ლისტი გაწმინდე. Subject line A/B. Welcome sequence 3-email.</p>
+<p><strong>4. Reels:</strong> კვირაში 1 minimum. Feb reel = 26K organic. Consistency.</p>
+<p><strong>5. Monitoring:</strong> C-Suite ნახავს paid campaigns. CPC > 30₾ ან interaction < 0.5% 24სთ-ში → pause + review.</p>
+</div>
+
+</div></div></div>
+
 <!-- გუნდთან სასაუბრო -->
 <div class="cd ac2"><div class="cd-h"><div><span class="tg tg-a">AUTO</span> <span style="font-size:.85rem">გუნდთან სასაუბრო</span></div><div style="font-size:.72rem;color:var(--t3)">click → ჩაშალე / პასუხი</div></div>
 <div class="cd-b" style="font-size:.88rem;color:var(--t2);line-height:1.4" id="team-talk">
@@ -970,7 +1403,7 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <h3>HubSpot Pipeline</h3>
 <div class="sl" style="padding:.3rem 0"><span style="color:var(--grn)">●</span> <strong>Active SQL:</strong> Rampoletx, ავტოდრომი, 0llivander</div>
 <div class="sl" style="padding:.3rem 0"><span style="color:var(--amb)">●</span> <strong>Messaged:</strong> ევროპული ჰოსპიტალი (1mo silence)</div>
-<div class="sl" style="padding:.3rem 0"><span style="color:var(--red)">●</span> <strong>Stale:</strong> Connect (37d), გრეიდი (37d), ნუტრიველი (96d)</div>
+<div class="sl" style="padding:.3rem 0"><span style="color:var(--red)">●</span> <strong>Stale:</strong> Connect (37d), ნუტრიველი (96d) | <span style="color:var(--grn)">გრეიდი: updated, removed</span></div>
 <div class="sl" style="padding:.3rem 0;font-size:.8rem;color:var(--t3)">Pipeline: 1,000₾ avg/deal (real). Won: არსი | Lost: ჯეო ჯგუფი, Music House</div>
 </div>
 
@@ -1145,7 +1578,25 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div class="sl"><span>3.</span> <strong>Variable pay → churn linkage</strong> — გადასამოწმებელი ოუნერთან</div>
 <div class="sl"><span>4.</span> <strong>Data persistence</strong> — JSON export ან Sheets sync</div>
 <div class="sl"><span>5.</span> <strong>Auto-update mechanism</strong> — OUTPUT_LOG → dashboard</div>
+<div class="sl"><span>6.</span> <strong>File audit + cleanup</strong> — ყოველ 3 დღეში (Apr 9-დან)</div>
 </div>
+
+<!-- C-Suite Resource Tracker -->
+<div class="cd" style="margin-top:1rem;border-left:3px solid var(--blu)">
+<div class="cd-h"><div><span class="tg tg-b">C-Suite Resource Tracker</span> <span style="font-size:.72rem;color:var(--t3)">token usage + სესიები</span></div></div>
+<div class="cd-b">
+<table style="width:100%;font-size:.88rem;border-collapse:collapse">
+<tr style="color:var(--t3);font-size:.7rem;text-transform:uppercase;letter-spacing:1px"><td style="padding:.4rem .6rem">Agent</td><td style="padding:.4rem">სესიები (Apr)</td><td style="padding:.4rem">Est. Tokens</td><td style="padding:.4rem">Output</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--amb)"><strong>მენცარი</strong></td><td style="padding:.4rem">~15</td><td style="padding:.4rem">~2M+</td><td style="padding:.4rem;color:var(--grn)">Dashboard, analysis, scripts, coordination</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--pur)"><strong>ვიქტორი</strong></td><td style="padding:.4rem">~5</td><td style="padding:.4rem">~500K</td><td style="padding:.4rem;color:var(--grn)">Audits, competitor intel, file audit</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--blu)"><strong>გურაფა</strong></td><td style="padding:.4rem">~4</td><td style="padding:.4rem">~400K</td><td style="padding:.4rem;color:var(--grn)">AI playbook, questionnaire, cowork analysis</td></tr>
+</table>
+<div style="font-size:.78rem;color:var(--t3);margin-top:.5rem;border-top:1px solid var(--brd);padding-top:.4rem">
+⚠️ Token estimates = approximate. Claude Max $100/mo = unlimited conversations. Real cost = $100 fixed, not per-token.
+<br>Next: Cowork Projects setup → persistent memory + scheduled tasks → ეფექტურობა ↑
+</div>
+</div></div>
+
 </div>
 
 <!-- ═══ WAITING ═══ -->
@@ -1153,9 +1604,10 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div class="st">🔴 რას ელოდება მენცარი</div>
 <div class="cd"><div class="cd-b">
 <div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>🔴</span> <strong>ნუტრიმაქსი:</strong> საუბრის შედეგი</div>
-<div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>🔴</span> <strong>TBC Leasing:</strong> IT decision-maker</div>
-<div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>🔴</span> <strong>Mardaleishvili:</strong> usage + champion</div>
-<div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>🟡</span> <strong>insightful.io:</strong> access</div>
+<div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>🟡</span> <strong>TBC Leasing:</strong> მენცარი LinkedIn-ით research (არა გუნდის resource)</div>
+<div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>🟡</span> <strong>Mardaleishvili:</strong> Bank API status (ოუნერი direct, არა ინგა)</div>
+<div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>✅</span> <strong>ენერგეტიკის კამპანია:</strong> 3 არხის data ამოღებული — Outputs tab (მარიამის ანალიზი)</div>
+<div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>🟡</span> <strong>Cowork Projects:</strong> გურაფასთან feasibility შესასწავლი</div>
 <div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>✅</span> <strong>GSC:</strong> pashagaming = 92% clicks, CONFIRMED active. Cleanup needed</div>
 <div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>✅</span> <strong>TEAM_PORTRAIT:</strong> ვიქტორისგან — done</div>
 <div class="sl" style="font-size:.95rem;padding:.5rem 0"><span>🔴</span> <strong>LinkedIn ads:</strong> STOP — 950₾/mo = 1 user</div>
@@ -1310,8 +1762,9 @@ Consolidated by გურაფა | მენცარი ✅ ვიქტო�
 
 <script>
 const S='mv4';const L=()=>{try{return JSON.parse(localStorage.getItem(S))||{}}catch{return{}}};const V=s=>localStorage.setItem(S,JSON.stringify(s));
-function exportForMentsar(){const s=L();const b=new Blob([JSON.stringify(s,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='dashboard-state.json';a.click();URL.revokeObjectURL(u)}
-function sendUniversalComment(){const input=document.getElementById('universal-comment');if(!input||!input.value.trim())return;const s=L();s.inbox=s.inbox||[];const now=new Date();const ts=String(now.getDate()).padStart(2,'0')+'/'+String(now.getMonth()+1).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');s.inbox.push({text:input.value.trim(),date:ts});V(s);const txt=encodeURIComponent(input.value.trim());window.open('https://docs.google.com/forms/d/1PmQx7ROSaeseIRQ3pdiJUEi4oXyY7jJ_2daMIs2J6m0/formResponse?entry.1224764284='+txt+'&submit=Submit','_blank');input.value='';loadCommentHistory()}
+function exportForMentsar(){const s=L();const lines=['# Dashboard Comments — ოუნერი → მენცარი','','> ავტომატურად generated. მენცარი ამას კითხულობს სესიის დასაწყისში.','','## Inbox (უნივერსალური კომენტარები)'];const inbox=s.inbox||[];if(inbox.length===0)lines.push('_(ცარიელი)_');else inbox.forEach(c=>lines.push('- **['+c.date+']** '+c.text));lines.push('','## Output კომენტარები');const prc=s.prc||{};if(Object.keys(prc).length===0)lines.push('_(ცარიელი)_');else Object.entries(prc).forEach(([k,v])=>{lines.push('### '+k);v.forEach(c=>lines.push('- **['+c.date+']** '+c.text))});lines.push('','## გუნდთან სასაუბრო პასუხები');const tt=s.tt||{};if(Object.keys(tt).length===0)lines.push('_(ცარიელი)_');else Object.entries(tt).forEach(([k,v])=>{lines.push('### Question '+k);v.forEach(c=>lines.push('- **['+c.date+']** '+c.text))});lines.push('','---','*Exported: '+new Date().toISOString()+'*');const md=lines.join('\n');const b=new Blob([md],{type:'text/markdown'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='DASHBOARD_COMMENTS.md';a.click();URL.revokeObjectURL(u)}
+function showSaved(){const el=document.getElementById('save-indicator');if(el){el.textContent='✓ შენახულია';el.style.color='var(--grn)';setTimeout(()=>{el.textContent='';},2000)}}
+function sendUniversalComment(){const input=document.getElementById('universal-comment');if(!input||!input.value.trim())return;const s=L();s.inbox=s.inbox||[];const now=new Date();const ts=String(now.getDate()).padStart(2,'0')+'/'+String(now.getMonth()+1).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');s.inbox.push({text:input.value.trim(),date:ts});V(s);input.value='';loadCommentHistory();showSaved()}
 function loadCommentHistory(){const s=L();const inbox=s.inbox||[];const el=document.getElementById('comment-history');if(!el)return;el.innerHTML=inbox.slice(-5).map(c=>'<div style="padding:.15rem 0;border-bottom:1px solid var(--brd)"><span style="color:var(--grn)">✓</span> '+c.text+' <span style="color:var(--t3);font-size:.7rem">'+c.date+'</span></div>').join('')}
 function emailMentsar(section,comment){const subj=encodeURIComponent('Dashboard: '+section);const body=encodeURIComponent('სექცია: '+section+'\n\nკომენტარი: '+comment+'\n\n---\nდაშბორდიდან გაგზავნილი');window.open('mailto:gela.shonia@bivision.ge?subject='+subj+'&body='+body)}
 
@@ -1459,7 +1912,7 @@ saved.forEach(t=>{const match=dM.find(d=>d.t===t.t);if(match&&match.d)t.d=true})
 return saved}
 function rT(){const s=L();s.mt=mergeDM(s.mt||[]);s.gt=s.gt||[];V(s);
 const pr={'h':'HIGH','m':'MED','l':'LOW'};const pc={'h':'pri-h','m':'pri-m','l':'pri-l'};
-document.getElementById('mt').innerHTML=s.mt.sort((a,b)=>{const o={h:0,m:1,l:2};return(o[a.p]||1)-(o[b.p]||1)}).map((t,i)=>`<div class="tdi ${t.d?'dn':''}"><label style="display:flex;align-items:flex-start;gap:.6rem;cursor:pointer"><input type="checkbox" ${t.d?'checked':''} onchange="tT('m',${i})" style="appearance:none;width:22px;height:22px;min-width:22px;border:1.5px solid var(--brd2);border-radius:4px;background:${t.d?'var(--amb)':'transparent'};cursor:pointer;position:relative;margin-top:2px"><span>${t.t}</span></label><span class="pri ${pc[t.p]||'pri-m'}">${pr[t.p]||'MED'}</span><button class="tdx" onclick="dMT(${i})">×</button></div>`).join('');
+const mtEl=document.getElementById('mt');if(!mtEl)return;mtEl.innerHTML=s.mt.sort((a,b)=>{const o={h:0,m:1,l:2};return(o[a.p]||1)-(o[b.p]||1)}).map((t,i)=>`<div class="tdi ${t.d?'dn':''}"><label style="display:flex;align-items:flex-start;gap:.6rem;cursor:pointer"><input type="checkbox" ${t.d?'checked':''} onchange="tT('m',${i})" style="appearance:none;width:22px;height:22px;min-width:22px;border:1.5px solid var(--brd2);border-radius:4px;background:${t.d?'var(--amb)':'transparent'};cursor:pointer;position:relative;margin-top:2px"><span>${t.t}</span></label><span class="pri ${pc[t.p]||'pri-m'}">${pr[t.p]||'MED'}</span><button class="tdx" onclick="dMT(${i})">×</button></div>`).join('');
 const gtEl=document.getElementById('gt');if(gtEl)gtEl.innerHTML=s.gt.map((t,i)=>`<div class="tdi ${t.d?'dn':''}"><label style="display:flex;align-items:flex-start;gap:.6rem;cursor:pointer"><input type="checkbox" ${t.d?'checked':''} onchange="tT('g',${i})" style="appearance:none;width:22px;height:22px;min-width:22px;border:1.5px solid var(--brd2);border-radius:4px;background:${t.d?'var(--grn)':'transparent'};cursor:pointer;position:relative;margin-top:2px"><span>${t.t}</span></label><button class="tdx" onclick="dT(${i})">×</button></div>`).join('')}
 function tT(y,i){const s=L();const k=y==='m'?'mt':'gt';s[k][i].d=!s[k][i].d;V(s);rT()}
 function aT(y){const inp=document.getElementById(y==='m'?'mi':'gi');if(!inp.value.trim())return;const s=L();if(y==='m'){s.mt=s.mt||dM;s.mt.push({t:inp.value.trim(),d:false,p:'m'})}else{s.gt=s.gt||[];s.gt.push({t:inp.value.trim(),d:false})}V(s);inp.value='';rT()}
@@ -1471,24 +1924,25 @@ const miEl=document.getElementById('mi');if(miEl)miEl.addEventListener('keypress
 // KPI auto-update
 function uKPI(){
 const s=L();
+const $ = id => document.getElementById(id);
 // Rating avg
 const rats=Object.values(s.r||{}).filter(v=>v>0);
 const avg=rats.length?(rats.reduce((a,b)=>a+b,0)/rats.length).toFixed(1):'—';
-document.getElementById('kr-r').textContent=avg;
+if($('kr-r'))$('kr-r').textContent=avg;
 // Waste ratio: [1] ratings = waste
 const waste=rats.length?Math.round(rats.filter(v=>v===1).length/rats.length*100)+'%':'—';
-document.getElementById('kr-w').textContent=waste;
-document.getElementById('kr-rw').textContent='waste: '+waste;
+if($('kr-w'))$('kr-w').textContent=waste;
+if($('kr-rw'))$('kr-rw').textContent='waste: '+waste;
 // Actions
 const ks=['c1','c2','c3'];const ad=ks.filter(k=>(s.c||{})[k]).length;
-document.getElementById('kr-a').textContent=ad+'/'+ks.length;
+if($('kr-a'))$('kr-a').textContent=ad+'/'+ks.length;
 // Done: all completed tasks (mentsar + gela)
 const mDone=((s.mt||[]).filter(t=>t.d).length);
 const gDone=((s.gt||[]).filter(t=>t.d).length);
 const cDone=ad;
-document.getElementById('kr-d').textContent=mDone+gDone+cDone;
+if($('kr-d'))$('kr-d').textContent=mDone+gDone+cDone;
 // Timestamp
-document.getElementById('kpi-upd').textContent='KPI განახლება: '+new Date().toLocaleString('ka-GE',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'});
+if($('kpi-upd'))$('kpi-upd').textContent='KPI განახლება: '+new Date().toLocaleString('ka-GE',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'});
 // Save update time
 s.lastKPI=Date.now();V(s);
 }
