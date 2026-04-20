@@ -1,0 +1,27 @@
+# Playwright MCP browser session artifacts (ephemeral console logs, screenshots, YAML recordings)
+.playwright-mcp/
+
+# Temporary screenshots from testing/dev (root-level only; intentional images in docs/ preserved)
+/*.png
+/*.jpeg
+/*.jpg
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Node / Python
+node_modules/
+__pycache__/
+*.pyc
+.cache/
+*.tmp
+
+# Local-only secrets (none present currently — guard for future)
+.env
+.env.local
+*.key
+*.pem
+credentials.json
