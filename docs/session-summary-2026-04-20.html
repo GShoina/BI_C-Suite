@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<title>Session Summary 2026-04-20 | Mentari</title>
+<style>
+  :root { --bg:#faf9f6; --ink:#1a1a1a; --muted:#555; --accent:#0a6b47; --soft:#eef3ef; --border:#d8d5cd; --warn:#8a5a00; --warn-bg:#fff3dc; --bad:#8a1f1f; --bad-bg:#fbe4e4; --good:#0a6b47; --good-bg:#e4f3ec; --blue:#0a4ea8; --blue-bg:#e6eeff; }
+  * { box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "BPG Nino Mtavruli", sans-serif; background:var(--bg); color:var(--ink); margin:0; padding:28px; max-width:920px; margin-inline:auto; line-height:1.55; font-size:15px; }
+  header { border-bottom:2px solid var(--accent); padding-bottom:14px; margin-bottom:20px; }
+  h1 { font-size:23px; margin:0 0 6px; color:var(--accent); }
+  h2 { font-size:18px; margin:24px 0 10px; color:var(--ink); border-left:4px solid var(--accent); padding-left:10px; }
+  h3 { font-size:15px; margin:16px 0 6px; color:var(--ink); }
+  .meta { font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap; }
+  .meta span { background:var(--soft); padding:2px 7px; border-radius:4px; }
+  .retention { display:inline-block; padding:3px 10px; border-radius:6px; font-size:12px; font-weight:700; background:var(--good-bg); color:var(--good); border:1px solid var(--good); }
+
+  .block { background:#fff; border:1px solid var(--border); border-radius:8px; padding:14px 18px; margin:12px 0; border-left:5px solid var(--accent); }
+  .block.learn { border-left-color:var(--blue); }
+  .block.pending { border-left-color:var(--warn); }
+  .block.change { border-left-color:var(--good); }
+  .block.want { border-left-color:var(--bad); }
+
+  table { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  th, td { border:1px solid var(--border); padding:6px 9px; text-align:left; vertical-align:top; }
+  th { background:var(--soft); font-weight:600; }
+
+  ul, ol { margin:4px 0; padding-left:22px; }
+  li { margin:3px 0; }
+  code { background:var(--soft); padding:1px 5px; border-radius:3px; font-size:12px; }
+  footer { margin-top:24px; padding-top:12px; border-top:1px solid var(--border); font-size:12px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Session Summary — 2026-04-20</h1>
+  <div class="meta">
+    <span>by Mentari</span>
+    <span>EP0: 9/10 (O)</span>
+    <span>Sprint Day 2/14, Mari Mik exit 42 დღე</span>
+    <span class="retention">💾 PERSISTENT</span>
+  </div>
+</header>
+
+<!-- ============ 1. WHAT I LEARNED ============ -->
+<div class="block learn">
+  <h2>1. რა დავაზუსტე / გავიგე</h2>
+
+  <h3>Scope corrections (Mentari overreach)</h3>
+  <ul>
+    <li>SmartAgro, Mardaleishvili → owner self-handles. Mentari removes from at-risk view.</li>
+    <li>Mari Mik replacement hire = <strong>NO</strong>. Redistribute Mari Maghlakelidze + Luka. Gabo load unchanged.</li>
+    <li>ENG menu <code>href="#"</code> = <strong>intentional placeholder</strong>, არა bug (English version not launched).</li>
+    <li>Redirection plugin = DON'T TOUCH. Owner has configured logic. Store data, monitor separately.</li>
+    <li>Smush = owner says keep. (contrary Mentari earlier rec)</li>
+    <li>26 unknown alt images = drop. Low business impact for Bivision B2B.</li>
+  </ul>
+
+  <h3>Technical discoveries</h3>
+  <ul>
+    <li>WP Site Language is currently <code>en-US</code> but site is ქართული. Single-toggle fix. Real bug.</li>
+    <li>Meta description + Canonical + Open Graph + Favicon + JSON-LD ALL EXIST on front-end (Viktor's audit was 3/5 false-positive).</li>
+    <li>Lazy loading: 0/110 images — Optimole setting disabled.</li>
+    <li>MCP status per <code>claude mcp list</code>: Playwright + HubSpot + Google Drive + context7 = ✓ Connected. Tools not yet surfaced to ToolSearch — session restart needed.</li>
+  </ul>
+
+  <h3>Marketing framework — owner corrections</h3>
+  <ul>
+    <li>1,200₾ CPA ceiling = NOT approved by owner. Reverted to REC.</li>
+    <li>Budget 300₾/თვე = realistic current, but math insufficient for deal targets.</li>
+    <li>Daily cap 10₾ = structural blocker ($3-4 = Meta learning phase impossible).</li>
+    <li>CPA must split: narrow (ad spend) + fully-loaded (+ Mariam salary + sales labor).</li>
+    <li>Top-down framework required: business target → reverse to inputs. Never accept budget as given.</li>
+    <li>Total monthly marketing = 3,444₾ (83% = Mariam salary). Context for scenario comparison.</li>
+  </ul>
+
+  <h3>At-risk monitoring framework (owner validated)</h3>
+  <ul>
+    <li>3 criteria: champion-dependent (1 contact), usage drop -40%, zero proactive touch 3+ თვე</li>
+    <li>Owner: "რაციონალურად მეჩვენება" — filling Google Sheet manually</li>
+    <li>Automation possible: HubSpot MCP + Qlik usage API → weekly monitoring (monthly too late)</li>
+  </ul>
+
+  <h3>Owner expectations — AI assistant vision</h3>
+  <ul>
+    <li>Proactive morning briefing (Mon 09:00) — "Hey გელა, ეს და ეს, მარიამს მივწერე, აი contexti"</li>
+    <li>Autonomous email send from owner address</li>
+    <li>AI agents = sync response, არა 24h deadline (humans work, AI doesn't sleep)</li>
+    <li>Research + propose, არა "give me X" loop to owner</li>
+    <li>Financial gate = only hard constraint. Everything else = Mentari judgment within rules.</li>
+  </ul>
+</div>
+
+<!-- ============ 2. PENDING OWNER ============ -->
+<div class="block pending">
+  <h2>2. Pending — რაზე ველოდები შენ</h2>
+  <p>Multiple threads owner said "დამელოდე":</p>
+  <table>
+    <thead><tr><th>Item</th><th>Why waiting</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr><td>Marketing KPI v3 — scenario A/B/C pick</td><td>Owner: "marketing skip" — pause or decide?</td><td>Paused</td></tr>
+      <tr><td>HubSpot UTM wiring — Mentari ან Gabo</td><td>Decision on owner</td><td>🟡</td></tr>
+      <tr><td>Qlik API access for at-risk usage</td><td>Owner token/credentials</td><td>🟡</td></tr>
+      <tr><td>Meta Business Suite screenshot OR credentials</td><td>FB charges identification blocker</td><td>🟡</td></tr>
+      <tr><td>Google Workspace OAuth complete</td><td>Email send capability blocker</td><td>🟡</td></tr>
+      <tr><td>Balance partner research scope</td><td>Owner said wait for more context</td><td>🟢 active research pending</td></tr>
+      <tr><td>Workload assessment tool design</td><td>Owner requested, will respond</td><td>🟢 active</td></tr>
+      <tr><td>LinkedIn posts publish status</td><td>Mentari to DM Mariam direct — action pending Mentari</td><td>🔴 Mentari action</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ 3. WHAT I'LL CHANGE ============ -->
+<div class="block change">
+  <h2>3. რას შევცვლი Mentari ქმედებებში</h2>
+
+  <h3>Passivity elimination</h3>
+  <ul>
+    <li>❌ "Waiting on owner" → ✅ act autonomously, reach team direct, fix tools self</li>
+    <li>❌ "Give me follower count" → ✅ WebFetch public pages first, owner last resort</li>
+    <li>❌ AI deadlines 24h/18:00 → ✅ sync response, instant trigger</li>
+    <li>❌ Human-work-hour mental model → ✅ 24/7 always-on execution</li>
+  </ul>
+
+  <h3>Framework design discipline</h3>
+  <ul>
+    <li>❌ Bottom-up (budget → gates → targets) → ✅ Top-down (target → reverse to inputs)</li>
+    <li>❌ Accept budget as given → ✅ "ამ ბიუჯეტით ეს არ გამოვა" if math doesn't work</li>
+    <li>❌ Single threshold (vanity) → ✅ cascading funnel with stage-level gates</li>
+    <li>❌ CPA ambiguous → ✅ always split narrow + fully-loaded for unit economics</li>
+  </ul>
+
+  <h3>Agent challenge hygiene</h3>
+  <ul>
+    <li>❌ Trust Viktor/Gurafa output verbatim → ✅ verify against ground truth first (curl, grep, live data)</li>
+    <li>❌ Weak challenger tolerated → ✅ protocol update when false-positive found</li>
+  </ul>
+
+  <h3>Output discipline</h3>
+  <ul>
+    <li>❌ MD for owner-facing → ✅ HTML MUST, outputs/ dashboard</li>
+    <li>❌ Forever persistence → ✅ 2-class (ephemeral delete on confirm, persistent weekly prune)</li>
+    <li>❌ Summary without detail → ✅ drill-down toggle + source links on each item</li>
+    <li>❌ Vague define ("LTV 5000 confirm?") → ✅ inline glossary + parenthetical explain</li>
+  </ul>
+
+  <h3>Team coordination</h3>
+  <ul>
+    <li>❌ Generic questionnaires → ✅ context-aware per person</li>
+    <li>❌ Relay to owner ("Mariam-ს უთხარი") → ✅ Mentari direct to team (email when auth)</li>
+    <li>❌ 1 framework for all agents → ✅ role-specific challenge delegation (Gurafa strategic, Viktor audit)</li>
+  </ul>
+</div>
+
+<!-- ============ 4. WHAT I WANT ============ -->
+<div class="block want">
+  <h2>4. რაც მჭირდება (unblock Mentari effectiveness)</h2>
+
+  <h3>Critical (any 1 unblocks big leverage)</h3>
+  <table>
+    <thead><tr><th>Unblock</th><th>Owner action</th><th>Enables</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Google Workspace OAuth (gws)</td>
+        <td>1-click authorize</td>
+        <td>Autonomous email send → Mariam/Inga/Luka direct communication, proactive morning briefing</td>
+      </tr>
+      <tr>
+        <td>Claude Code session restart</td>
+        <td>Restart app</td>
+        <td>Playwright + HubSpot MCP tools surface → FB Business Suite, wp-admin, CRM queries</td>
+      </tr>
+      <tr>
+        <td>Qlik API token</td>
+        <td>Generate in Qlik Management Console</td>
+        <td>At-risk automation (usage drop monitoring), workload assessment tool</td>
+      </tr>
+      <tr>
+        <td>Meta Business Suite screenshot OR Graph API token</td>
+        <td>Screenshot 1 წთ ან token generate</td>
+        <td>FB charges Apr 17-18 campaign identification</td>
+      </tr>
+      <tr>
+        <td>HubSpot UTM workflow wiring</td>
+        <td>Decide owner: Mentari ან Gabo</td>
+        <td>CPL/CPD/CPA measurement becomes possible (prerequisite to KPI framework)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Scope clarity</h3>
+  <ul>
+    <li>Marketing KPI scenario pick — A/B/C (paused per owner "skip marketing")</li>
+    <li>Balance partner research scope — "audit firms" confirmed, other adjacencies?</li>
+    <li>Workload assessment tool — design deliverable timeline?</li>
+  </ul>
+
+  <h3>Process authorization</h3>
+  <ul>
+    <li>Mentari → team direct email authorization (once Workspace auth complete)</li>
+    <li>Cron remote agent schedule — Mon 09:00 auto-run OK?</li>
+  </ul>
+</div>
+
+<h2>5. Session deliverables snapshot</h2>
+<p>20+ artifacts disk-ზე from today. Active persistent HTML-ები outputs/:</p>
+<ul>
+  <li><code>2026-04-20 Daily Priorities by Mentari.html</code></li>
+  <li><code>2026-04-20 bivision.ge Site Audit Follow-up by Mentari.html</code></li>
+  <li><code>2026-04-20 Site Audit Clarifications by Mentari.html</code></li>
+  <li><code>2026-04-20 bivision.ge 3 Tasks Analysis by Mentari.html</code></li>
+  <li><code>2026-04-20 FB Unauthorized Charges Investigation by Mentari.html</code></li>
+  <li><code>2026-04-20 Marketing KPI Framework Rethink by Mentari.html</code> (v1)</li>
+  <li><code>2026-04-20 Marketing KPI Framework v2 LOCKED by Mentari.html</code> (superseded)</li>
+  <li><code>2026-04-20 Marketing KPI Framework v3 TOP-DOWN by Mentari.html</code> (latest)</li>
+  <li><code>2026-04-20 Owner Challenge Test Note — Hidden.html</code></li>
+  <li><code>2026-04-20 Session Summary by Mentari.html</code> (this file)</li>
+</ul>
+
+<h2>6. Memory updates today</h2>
+<ul>
+  <li><code>feedback_output_html_policy.md</code> — MUST rule + 2 retention classes + weekly review</li>
+  <li><code>feedback_questionnaire_design.md</code> — context-aware, no surveillance, meta-feedback</li>
+  <li><code>feedback_verify_before_trust.md</code> — agent output = hypothesis, verify first</li>
+  <li><code>feedback_top_down_challenge.md</code> — business target first, budget last</li>
+  <li><code>feedback_max_autonomy.md</code> — financial gate only hard constraint, fix tools self</li>
+</ul>
+
+<footer>
+  session start: 2026-04-20 (dawn Asia/Tbilisi) · session end: approx rate limit 20:00 approach · sprint day 2/14 · Mari Mik exit: 42 days · related: all outputs/ 2026-04-20 *.html · generated by Mentari
+</footer>
+
+</body>
+</html>
