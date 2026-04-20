@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<title>CEO Daily Feedback — Sprint Day 2/14 | 2026-04-20</title>
+<style>
+  :root { --bg:#faf9f6; --ink:#1a1a1a; --muted:#555; --accent:#0a6b47; --soft:#eef3ef; --border:#d8d5cd; --warn:#8a5a00; --warn-bg:#fff3dc; --bad:#8a1f1f; --bad-bg:#fbe4e4; --good:#0a6b47; --good-bg:#e4f3ec; }
+  * { box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "BPG Nino Mtavruli", sans-serif; background:var(--bg); color:var(--ink); margin:0; padding:24px; max-width:820px; margin-inline:auto; line-height:1.55; font-size:15px; }
+  header { border-bottom:2px solid var(--accent); padding-bottom:14px; margin-bottom:18px; }
+  h1 { font-size:23px; margin:0 0 6px; color:var(--accent); }
+  h2 { font-size:17px; margin:24px 0 10px; color:var(--ink); border-left:4px solid var(--accent); padding-left:10px; }
+  .meta { font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap; }
+  .meta span { background:var(--soft); padding:2px 7px; border-radius:4px; }
+  .retention { display:inline-block; padding:3px 10px; border-radius:6px; font-size:12px; font-weight:700; background:var(--good-bg); color:var(--good); border:1px solid var(--good); }
+
+  .alarm { background:var(--bad-bg); border:2px solid var(--bad); border-radius:10px; padding:14px 18px; margin:14px 0; }
+  .alarm strong { color:var(--bad); }
+
+  .scorecard { background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px 18px; margin:14px 0; }
+  .scorecard-item { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border); }
+  .scorecard-item:last-child { border-bottom:none; }
+  .scorecard-item .name { font-weight:500; }
+  .status { padding:3px 12px; border-radius:4px; font-size:12px; font-weight:700; }
+  .status.done { background:var(--good-bg); color:var(--good); }
+  .status.not-done { background:var(--bad-bg); color:var(--bad); }
+  .progress-line { margin-top:10px; padding-top:10px; border-top:2px solid var(--border); font-size:15px; font-weight:700; display:flex; justify-content:space-between; }
+
+  table { width:100%; border-collapse:collapse; margin:6px 0; font-size:13px; }
+  th, td { border:1px solid var(--border); padding:6px 8px; text-align:left; vertical-align:top; }
+  th { background:var(--soft); font-weight:600; }
+
+  .block { background:#fff; border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:12px 0; }
+  .block.blocked { border-left:5px solid var(--warn); }
+  .block.commit { border-left:5px solid var(--good); }
+
+  ul, ol { margin:4px 0; padding-left:22px; }
+  li { margin:3px 0; }
+  footer { margin-top:24px; padding-top:12px; border-top:1px solid var(--border); font-size:12px; color:var(--muted); }
+
+  .zero { color:var(--bad); font-weight:700; }
+  .honest { background:var(--warn-bg); border-left:3px solid var(--warn); padding:8px 12px; margin:8px 0; font-size:13px; font-style:italic; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CEO Daily Feedback — Sprint Day 2/14</h1>
+  <div class="meta">
+    <span>2026-04-20</span>
+    <span>by Mentari</span>
+    <span>12 days remaining</span>
+    <span>Mari Mik exit: 42 days</span>
+    <span class="retention">💾 PERSISTENT</span>
+  </div>
+</header>
+
+<div class="alarm">
+  <strong>🚨 Sprint alarm:</strong> Day 2 of 14, <strong>0/4 criteria met</strong>. Current trajectory fails sprint. 20+ HTML artifacts ≠ business impact. Pattern break required tomorrow.
+</div>
+
+<!-- 1. SCORECARD -->
+<h2>1. Sprint Scorecard</h2>
+<div class="scorecard">
+  <div class="scorecard-item">
+    <span class="name">LinkedIn-ზე გამოქვეყნებული პოსტი</span>
+    <span class="status not-done">❌ NOT DONE</span>
+  </div>
+  <div class="scorecard-item">
+    <span class="name">შეთავაზების template რეალურ prospect-ზე</span>
+    <span class="status not-done">❌ NOT DONE</span>
+  </div>
+  <div class="scorecard-item">
+    <span class="name">მინიმუმ 1 connector რეალურ workflow-ში</span>
+    <span class="status not-done">❌ NOT DONE</span>
+  </div>
+  <div class="scorecard-item">
+    <span class="name">1 prospect-ის სრული cycle</span>
+    <span class="status not-done">❌ NOT DONE</span>
+  </div>
+  <div class="progress-line">
+    <span>Progress:</span>
+    <span class="zero">0/4</span>
+  </div>
+  <div class="progress-line" style="font-weight:500;font-size:13px;color:var(--muted);border-top:1px solid var(--border)">
+    <span>Days remaining:</span>
+    <span>12</span>
+  </div>
+</div>
+
+<!-- 2. TODAY COMPLETED -->
+<h2>2. დღეს რა გაკეთდა (completed only)</h2>
+
+<table>
+  <thead><tr><th>აგენტი</th><th>Completed deliverable</th><th>Business impact</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Mentari</strong></td>
+      <td>
+        <ul>
+          <li>CAC/LTV model v2 realistic (Inga 15% + Dev 25% allocation)</li>
+          <li>Marketing Framework v3 top-down rebuild (3 scenarios + glossary)</li>
+          <li>5-stage funnel gates + OKR v3 proposal</li>
+          <li>Historical + total marketing cost comparison added</li>
+          <li>FB charges investigation (agent cause ruled out + pattern analysis)</li>
+          <li>bivision.ge site audit follow-up + 3-task analysis + clarifications</li>
+          <li>Team targeted questions final (5 persons ready-to-send)</li>
+          <li>Session summary + owner hidden challenge test note</li>
+          <li>Git: 5 commits pushed (gitignore, cleanup, content, v3, session)</li>
+          <li>Memory: 5 new principles (HTML MUST, questionnaire design, verify-before-trust, top-down challenge, max autonomy, morning briefing)</li>
+        </ul>
+      </td>
+      <td style="color:var(--bad);font-weight:700">0 direct revenue impact</td>
+    </tr>
+    <tr>
+      <td><strong>Viktor</strong></td>
+      <td>არაფერი — audit queue სპოუთ-ჩეკ pending (AUDIT_REQUEST updated but no written verdicts)</td>
+      <td><span class="zero">0</span></td>
+    </tr>
+    <tr>
+      <td><strong>Gurafa</strong></td>
+      <td>
+        <ul>
+          <li>AI Pulse Georgia Signals Apr 20 (outputs/)</li>
+          <li>Widgera Competitor Teardown</li>
+          <li>Noah Tasler Claude Cold Email Analysis</li>
+          <li>Claude Core Capabilities Playbook</li>
+          <li>AI_IDEAS_TRACKER updates (Apr 20 entries)</li>
+        </ul>
+      </td>
+      <td>Intelligence layer active — usable for Mentari briefings</td>
+    </tr>
+    <tr>
+      <td><strong>Mariam</strong></td>
+      <td>Standby — FB policy pending owner approve, LinkedIn post publish pending Mentari-relay</td>
+      <td><span class="zero">0</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="honest">
+  <strong>Honest summary:</strong> Mentari = 10+ HTML deliverables structural/framework. Zero revenue-adjacent deliverable. Pattern: planning-loop, not execution-loop. Gurafa = only agent delivering sprint-aligned artifacts today (4 completed intelligence outputs).
+</div>
+
+<!-- 3. BLOCKED -->
+<h2>3. Blocked — რაც owner-ის გარეშე ვერ გავაკეთე</h2>
+
+<div class="block blocked">
+  <table>
+    <thead><tr><th>#</th><th>Item</th><th>რა სჭირდება</th><th>რატომ owner-ს</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>FB charges Apr 17-18 campaign identification</td>
+        <td>Meta Business Suite screenshot ან Graph API token</td>
+        <td>Auth wall — Meta login-walled. WebFetch და Bash can't auth Meta.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Autonomous email to team (morning briefing dependency)</td>
+        <td>Google Workspace OAuth complete (gws CLI auth)</td>
+        <td>OAuth flow requires owner authorize in browser — Mentari ვერ დასრულებს.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Playwright + HubSpot MCP tools surface (wp-admin, CRM queries, at-risk automation)</td>
+        <td>Claude Code session restart</td>
+        <td>Mentari self-restart impossible. Owner restart app.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>4. ხვალის 1 deliverable commitment</h2>
+
+<div class="block commit">
+  <p><strong>2026-04-21 ბოლოსთვის DONE იქნება:</strong></p>
+  <p style="font-size:17px;color:var(--accent);font-weight:700;padding:8px 0">Mari Mik handover plan — full HTML published გარდა outputs/ + BI_C-Suite/docs/</p>
+
+  <p><strong>Scope:</strong></p>
+  <ul>
+    <li>11 account inventory + per-account risk rank (revenue × knowledge-gap × complexity)</li>
+    <li>Mari Magh + Luka redistribution matrix (which accounts to whom, why)</li>
+    <li>6-week absorption timetable (week-by-week, easy → hard progression)</li>
+    <li>3 tacit knowledge capture sessions framework (60 წთ each, recorded format)</li>
+    <li>Decision gates (week 2 checkpoint, week 4 checkpoint)</li>
+    <li>First action: Mari Mik message sent (from owner or Mentari-via-email-post-OAuth)</li>
+  </ul>
+
+  <p><strong>Measurable DONE criteria:</strong></p>
+  <ul>
+    <li>HTML file on disk + GitHub Pages URL active</li>
+    <li>All 11 accounts named, each with owner label (Mari Magh OR Luka)</li>
+    <li>Week-by-week calendar 6 weeks filled</li>
+    <li>Mari Mik outreach message sent (track in Distribution log)</li>
+  </ul>
+
+  <p><strong>NOT promised tomorrow:</strong> owner approval, Mari Mik response, replacement-hire decision (not needed, already NO).</p>
+</div>
+
+<!-- 5. AGENT VALUE TRACKER -->
+<h2>5. Agent Value Tracker</h2>
+
+<table>
+  <thead>
+    <tr><th>აგენტი</th><th>დღეს completed</th><th>Sprint total (Apr 19-20)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Mentari</strong></td>
+      <td>10+ structural HTML (0 revenue)</td>
+      <td>Day 1: Team Real Picture + Pending Decisions + Daily Priorities (3 business-facing). Day 2: 10+ process/framework (0 revenue-facing). <strong>Total sprint business impact: ~3 (analysis foundations only)</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Viktor</strong></td>
+      <td>0</td>
+      <td><strong>0 sprint deliverables.</strong> Audit queue stale 4+ items since Apr 15. Critical role under-utilized.</td>
+    </tr>
+    <tr>
+      <td><strong>Gurafa</strong></td>
+      <td>4 intel artifacts (AI Pulse, Widgera teardown, Tasler analysis, Claude playbook)</td>
+      <td>Day 1: daily scout + architecture analysis. Day 2: 4 completed. <strong>Most consistent delivery across sprint.</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Mariam</strong></td>
+      <td>0 (standby)</td>
+      <td>Blocked by owner approvals. <strong>0 sprint deliverables.</strong> Role needs unblock ASAP.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="honest">
+  <strong>Ranking today:</strong> Gurafa #1 (4 concrete outputs). Mentari #2 (high-volume, low business-impact). Viktor #3 (silent). Mariam #4 (blocked).
+  <br><strong>Sprint-level:</strong> Critical path = Mentari business execution + Viktor audit flow + Mariam publishing unblock. 3 of 4 agents under-delivering on core role.
+</div>
+
+<h2>6. Viktor challenge context (self-aware)</h2>
+<ul>
+  <li>Sprint Day 2, 0/4 criteria = alarm-level</li>
+  <li>20+ HTML artifacts ≠ business impact — acknowledged</li>
+  <li>"Waiting on owner" = relay pattern — 5 of 10 pending items Mentari could execute autonomously</li>
+  <li>10:30 AM morning brief commitment — testable tomorrow</li>
+</ul>
+
+<h2>7. Viktor Audit Results — Apr 20 (integrated)</h2>
+
+<h3>Geo-Metri (brother's renovation site)</h3>
+<table>
+  <thead><tr><th>Item</th><th>Score / Status</th></tr></thead>
+  <tbody>
+    <tr><td>PageSpeed Desktop</td><td>✅ <strong>97/100/100/97</strong></td></tr>
+    <tr><td>PageSpeed Mobile</td><td>⚠️ <strong>88/100/100/82</strong> — 90+ target unmet</td></tr>
+    <tr><td>Mobile blocker #1</td><td>Google Fonts async load (render-blocking 750ms, FCP 2.7s → &lt;1.8s needed)</td></tr>
+    <tr><td>Mobile blocker #2</td><td>SEO 82 → 90+ — title/description trim pending</td></tr>
+    <tr><td>40-standard audit</td><td>22 PASS, 5 PARTIAL, 0 FAIL, 12 cannot verify (Playwright down)</td></tr>
+    <tr><td>Copy matrix</td><td>✅ Approved — 2 fixes: EN/RU hero tagline + RU FAQ tone</td></tr>
+    <tr><td>Copywriting insert to copy.json</td><td>⏳ pending</td></tr>
+  </tbody>
+</table>
+
+<h3>bivision.ge (Viktor vs Mentari finding cross-check)</h3>
+<table>
+  <thead><tr><th>Item</th><th>Viktor Apr 20 verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Viktor false-positives</td><td>3/5 — OG tags, JSON-LD, Favicon exist (WebFetch tool limitation caused bad signal). Mentari's curl-ground-truth catch confirmed.</td></tr>
+    <tr><td>Viktor correct findings</td><td>2/5 — lang="ka" missing, lazy loading 0/110</td></tr>
+    <tr><td>WP Site Language fix</td><td>Owner must toggle (10 seconds)</td></tr>
+    <tr><td>Alt text 41 missing</td><td>11 HIGH-confidence ready, 26 unknown (Playwright reconnect needed)</td></tr>
+    <tr><td>Smush plugin</td><td>Owner directive: keep (reverses Mentari earlier rec)</td></tr>
+    <tr><td>Redirection plugin</td><td>Owner directive: keep. CSV export → diff → migrate path planned.</td></tr>
+  </tbody>
+</table>
+
+<h3>⚠️ Viktor's critique of Mentari Apr 14-20 (6-day execution)</h3>
+<div class="alarm" style="background:var(--warn-bg);border-color:var(--warn)">
+  <strong style="color:var(--warn)">Mentari-ს Apr 14 audit 7 რეკომენდაციიდან 3 შესრულდა, 4 არა — 6 დღეში.</strong>
+  <ul>
+    <li>✅ Done: Query Monitor deactivated, Yandex Metrica deactivated, სერვისები menu fixed</li>
+    <li>❌ Not done: Alt text 77 images, LiteSpeed Cache tune, ENG menu fix, 8 broken URLs fix</li>
+    <li>Completion rate: <strong>43%</strong> over 6 days = failing execution discipline</li>
+  </ul>
+  <p><strong>Mentari's accountability:</strong> site audit was Mentari ownership. 4 items Mariam/Gabo had ability + context to complete. Mentari didn't follow up. Same "waiting" pattern observed across sprint.</p>
+</div>
+
+<h2>Tomorrow's targets (measurable)</h2>
+<ol>
+  <li><strong>10:30 AM first Active CEO briefing delivered</strong> — HTML + iPhone URL</li>
+  <li><strong>Mari Mik handover plan DONE</strong> (per Section 4 commitment)</li>
+  <li><strong>1/4 sprint criterion progressed:</strong> either LinkedIn Post 1 published (via Mariam direct) OR Mari Mik targeted message sent (first team outreach)</li>
+  <li><strong>Balance partner autonomous research:</strong> 3 audit firm candidates with evidence</li>
+</ol>
+
+<footer>
+  source: session conversation 2026-04-20 · all outputs/ HTML artifacts · git log 3 commits pushed · memory 5 new principles locked · generated by Mentari · tone: honest + non-defensive per owner directive
+</footer>
+
+</body>
+</html>
