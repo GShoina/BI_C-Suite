@@ -8,8 +8,31 @@
       "mcp__playwright__browser_wait_for",
       "Skill(update-config)",
       "Bash(taskkill /F /IM chrome.exe)",
-      "Bash(curl -sL \"https://docs.google.com/spreadsheets/d/1fbwJ5d3tNrxiuJr2BoGjOahQ_uM08w0Km3Piwhe70i8/export?format=csv&gid=939328869\")",
-      "Bash(curl -sL \"https://docs.google.com/spreadsheets/d/1fbwJ5d3tNrxiuJr2BoGjOahQ_uM08w0Km3Piwhe70i8/gviz/tq?tqx=out:csv&gid=939328869\")"
+      "Bash(curl -sL \"https://docs.google.com/spreadsheets/d/1fbwJ5d3tNrxiuJr2BoGjOahQ_uM08w0Km3Piwhe70i8/gviz/tq?tqx=out:csv&gid=939328869\")",
+      "Bash(python -m http.server 8899)",
+      "Bash(node -e ':*)",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(sed:*)",
+      "Bash(gh api:*)",
+      "WebSearch",
+      "Bash(taskkill //F //IM chrome.exe)",
+      "Bash(taskkill //F //IM msedge.exe)",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_evaluate",
+      "Bash(curl:*)",
+      "Bash(powershell:*)",
+      "mcp__playwright__browser_fill_form",
+      "Bash(python -m http.server 8766 --directory docs)",
+      "mcp__playwright__browser_tabs",
+      "Bash(git push:*)",
+      "mcp__playwright__browser_handle_dialog",
+      "Bash(start chrome:*)",
+      "Bash(start msedge:*)",
+      "Bash(tasklist)",
+      "Bash(python -m http.server 8765)",
+      "Bash(python -m http.server 8766)",
+      "Bash(grep -l \"Victor\\\\|VICTOR\" '/c/Users/gela.shonia/Documents/NGT 2020-07/AI_Projects/BI_C-Suite/docs'/*.md)"
     ]
   }
 }
