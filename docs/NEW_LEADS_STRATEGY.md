@@ -5,6 +5,7 @@ to: owner
 type: STRATEGY — new leads focus
 created: 2026-04-08
 owner-directive: "არსებულებზე ნაკლები რესურსი, მთავარი აქცენტი ახალი ლიდები, LinkedIn, email კამპანია, გრძელვადიანი = ტექნოლოგიები"
+canonical-status: mixed — Email + long-term tech sections CANONICAL; LinkedIn section SUPERSEDED 2026-04-15 by docs/LINKEDIN_BATTLE_PLAN.md
 ---
 
 # ახალი ლიდების სტრატეგია

@@ -5,6 +5,7 @@ to: owner — APPROVE before sending
 type: Outreach scripts — CEO to CEO
 created: 2026-04-09
 owner-feedback: "CEO to CEO, ღირებულების მომტანი. არ მივიდეთ ჩვენი პერსპექტივით — დავაზუსტოთ მათი გამოწვევა."
+canonical-status: canonical (message bank for LinkedIn outreach). Referenced by docs/LINKEDIN_BATTLE_PLAN.md.
 ---
 
 # Outreach Scripts — CEO to CEO

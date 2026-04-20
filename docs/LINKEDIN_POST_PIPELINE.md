@@ -5,6 +5,7 @@ to: owner
 type: LinkedIn daily post pipeline
 created: 2026-04-09
 source: GURAFA_AI_TOOLS_PLAYBOOK.md
+canonical-status: reference-only (content cadence + hook examples). Referenced by docs/LINKEDIN_BATTLE_PLAN.md. Not a strategy doc.
 ---
 
 # LinkedIn Post Pipeline — 30 წთ/დღე

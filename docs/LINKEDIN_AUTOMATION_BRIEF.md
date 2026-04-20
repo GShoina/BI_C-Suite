@@ -1,9 +1,10 @@
 ---
-class: ACTIVE
+class: ARCHIVE-CANDIDATE
 from: mentari
 to: გელა, გაბო, ინგა, მარიამი
 type: DISCUSSION — LinkedIn ავტომატიზაცია
 created: 2026-04-08
+canonical-status: SUPERSEDED 2026-04-15 by docs/WAALAXY_DECISION_BRIEF.md (tool choice resolved: manual outreach, no Waalaxy on main account) and docs/LINKEDIN_BATTLE_PLAN.md (outreach design). Kept as historical reference for options discussion.
 ---
 
 # LinkedIn ავტომატიზაცია — განხილვის brief

@@ -1,7 +1,8 @@
 ---
-class: ACTIVE
+class: REFERENCE
 owner: Auditor (Victor/Mentari)
 updated: 2026-04-05
+canonical-status: historical audit log (Apr 5–7 CLAUDE.md reviews). No entries since Apr 7. Current audit activity tracked in docs/AUDIT_REQUEST.md append-log. Append future audit findings here; do not re-review old entries at session start.
 ---
 
 # Audit Feedback

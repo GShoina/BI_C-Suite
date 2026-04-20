@@ -55,7 +55,7 @@ purpose: გუნდის deep interview — Level 4 system building-ისთ
 
 მას შემდეგ რაც ინგა/დათოსგან სტრუქტურა გვექნება.
 
-### მარი მაღალკელიძე — Account Manager + Dev
+### მარი მაღლაკელიძე — Account Manager + Dev
 
 **ჰიპოთეზა:** კლიენტების 70%-ს პირადად იცნობს. Champion redundancy-ის გასაღები.
 
