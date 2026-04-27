@@ -407,6 +407,18 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <div class="tc" id="t-outputs">
 <div class="st">ყველა Output</div>
 
+<!-- INDEX REGISTRY — Apr 21 -->
+<div class="cd" style="border-left:3px solid var(--amb);background:linear-gradient(90deg,var(--ambd) 0%,var(--bg2) 40%)">
+<div class="cd-h"><div><span class="tg tg-a">📚 INDEX</span> <span style="font-size:.85rem;color:var(--amb);font-weight:600">Mentari Output Registry</span></div></div>
+<div class="cd-b" style="font-size:.9rem;line-height:1.7">
+<p style="margin-bottom:.6rem">სრული ცოცხალი რეესტრი — Active / R&amp;D / Archived / Deleted, per-artifact status + ვინ რას ელოდება. ყოველ ახალ output-ს ვამატებ.</p>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem">
+<a href="https://gshoina.github.io/bivision-shares/mentari-index.html" target="_blank" style="padding:.55rem .9rem;background:var(--amb);color:var(--bg);text-decoration:none;border-radius:4px;font-weight:600;font-size:.88rem">🌐 Public (phone/team)</a>
+<a href="../../outputs/MENTARI_INDEX.html" target="_blank" style="padding:.55rem .9rem;background:var(--bg3);color:var(--t1);text-decoration:none;border-radius:4px;font-size:.88rem;border:1px solid var(--brd)">💻 Local (disk)</a>
+</div>
+<p style="margin-top:.7rem;font-size:.78rem;color:var(--t3)">Weekly review ორშაბათს — stale PENDING force decide, ARCHIVED &gt;14d prune.</p>
+</div></div>
+
 <!-- FB FRESH DATA — Apr 17 -->
 <div class="cd" style="border-left:3px solid var(--red)">
 <div class="cd-h"><div><span class="tg tg-a">Apr 17</span> <span class="tg tg-rh">ALERT</span> <span style="font-size:.72rem;color:var(--red)">Facebook: Views ↑31%, Interactions ↓85%</span></div></div>
@@ -507,8 +519,8 @@ Qlik Sense + Claude AI — ეს არ არის სამომავლ�
 ეს ანაცვლებს 80% რუტინულ კითხვებს.<br><br>
 ანალიტიკოსი ფოკუსირდება "რატომ?" კითხვაზე.<br>
 AI აკეთებს "რამდენი?" და "სად?" კითხვებს.<br><br>
-თუ Qlik-ს იყენებთ და AI integration გაინტერესებთ — მომწერეთ, სიამოვნებით გაგიზიარებთ გამოცდილებას.<br><br>
-#QlikSense #AI #ClaudeAI #BIGeorgia
+თუ BI-ს იყენებთ და AI integration გაინტერესებთ — მომწერეთ, სიამოვნებით გაგიზიარებთ გამოცდილებას.<br><br>
+#AI #ClaudeAI #BIGeorgia #ბიზნესანალიტიკა
 </div>
 <p><strong>Format:</strong> Text + Image (Qlik+Claude screenshot) | <strong>When:</strong> ხუთშაბათი 09:00-10:00 | <strong>Target:</strong> Tech-savvy executives, Qlik users</p>
 
@@ -771,40 +783,6 @@ AI აკეთებს "რამდენი?" და "სად?" კით�
 <div style="margin:.3rem 0"><div style="cursor:pointer;display:flex;align-items:center;gap:.3rem;padding:.3rem .5rem;background:var(--bg3);border-radius:var(--rs)" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span style="font-size:1.1rem">💬</span><span style="font-size:.82rem;color:var(--t2)">კომენტარი / ლინკი / დადასტურება</span><span style="font-size:.7rem;color:var(--t3)">▸</span></div><div style="display:none;padding:.4rem .5rem;background:var(--bg3);border-radius:0 0 var(--rs) var(--rs)"><div id="prc-saga"></div><div style="display:flex;gap:.3rem"><input type="text" class="ti" placeholder="კომენტარი, ლინკი..." onkeypress="if(event.key==='Enter')addPRC('saga',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('saga',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button><button onclick="emailMentsar('საგა იმპექსი',this.parentElement.querySelector('input').value);this.parentElement.querySelector('input').value=''" style="background:var(--blu);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">📧</button></div></div></div>
 </div>
 
-<!-- Inga Questionnaire Analysis -->
-<div class="cd ac2"><div class="cd-h"><div><span class="tg tg-d">Apr 8</span> <span class="tg tg-a">CEO+HR</span> <span class="tg tg-b">INSIGHT</span> <span style="font-size:.65rem;color:var(--amb);background:var(--ambd);padding:.1rem .3rem;border-radius:3px">⚠️ NEEDS CHALLENGE</span></div></div>
-<div class="hl">💡 <strong>ინგას კითხვარის ანალიზი — CEO/HR პერსპექტივა</strong></div>
-<button class="eb" onclick="X('oinga',this)">სრულად</button>
-<div class="ez" id="oinga"><div class="di">
-
-<h4 style="color:var(--grn)">რა აღმოვაჩინე</h4>
-<p><strong>1. მოტივირებულია მაგრამ ოპერაციულმა ჩაჭამა.</strong> ინგას ძლიერი მხარე = მონაცემების ანალიზი → ბიზნეს გადაწყვეტილებებად ტრანსფორმაცია. მაგრამ "ოპერაციულ ამოცანებზე მიწევს ფოკუსი" — სტრატეგიული capacity იხარჯება ყოველდღიურობაზე.</p>
-<p><strong>2. გუნდის ინიციატივის ნაკლებობა.</strong> რას შეცვლიდა: "პასუხისმგებლობების განაწილება + <strong>ინიციატივა გუნდის მხრიდან.</strong>" ეს ნიშნავს — ინგა ყველაფერს თავად აკეთებს, გუნდი არ იღებს ინიციატივას.</p>
-<p><strong>3. AI power user.</strong> ყოველდღე იყენებს: Excel ანალიზი, კოდინგი, დოკუმენტირება. ეს = AI integration-ის ყველაზე ძლიერი კანდიდატი გუნდში.</p>
-<p><strong>4. გუნდი არ საუბრობს.</strong> "ხშირად არ ვსაუბრობთ, თუნდაც არაფორმალურ გარემოში." კომუნიკაციის gap = information silo risk.</p>
-
-<h4 style="color:var(--red)">გამოწვევები</h4>
-<p>🔴 <strong>Burnout risk:</strong> პარალელურად რამდენიმე ამოცანა + პროცესების სტრუქტურირების დროის ნაკლებობა.</p>
-<p>🔴 <strong>სტრატეგიული capacity waste:</strong> ახალ პროდუქტებზე/შეთავაზებებზე ფიქრის დრო არ აქვს.</p>
-<p>🟡 <strong>გელასთან კომუნიკაცია:</strong> "უფრო მეტს ვისაუბრებდი <strong>შედეგებზე და მომავლის გეგმებზე.</strong>" ახლა ოპერაციულ საუბარია, არა სტრატეგიული.</p>
-<p>🟡 <strong>Churn prevention:</strong> ინგა ხედავს გამოსავალს ("მეტი კომუნიკაცია + სიახლეების შეთავაზება") მაგრამ ოპერაციულმა workload-მა არ აცლის.</p>
-
-<h4 style="color:var(--amb)">რა უნდა გაკეთდეს</h4>
-<p><strong>1. ინგას ოპერაციული დატვირთვის შემცირება.</strong> რუტინული ამოცანები → მარი მაღ/ლუკას. ინგა = სტრატეგიული partner, არა task executor.</p>
-<p><strong>2. ყოველკვირეული გუნდის sync.</strong> ინგამ თავად თქვა — "ხშირად არ ვსაუბრობთ." 30-წუთიანი weekly standup = information flow fix.</p>
-<p><strong>3. გელა-ინგა: შედეგებზე საუბარი.</strong> ინგა ითხოვს სტრატეგიულ dialogue-ს. კვირაში 1 შეხვედრა = "რა მოხდა, რა მუშაობს, სად მივდივართ."</p>
-<p><strong>4. AI integration lead.</strong> ინგა ყოველდღე იყენებს AI-ს. ის = Qlik + Claude pilot-ის ბუნებრივი owner.</p>
-<p><strong>5. Churn prevention mandate.</strong> ინგას მიეცეს პროაქტიული client outreach-ის უფლებამოსილება — არა მხოლოდ support, არამედ "სიახლეების შეთავაზება."</p>
-
-<h4>ინგას ციტატები</h4>
-<p style="color:var(--t2);font-style:italic">"ახალ პროდუქტებზე და განვითარებაზე ფიქრისთვის მეტი დრო რომ მქონდეს უკეთესი იქნებოდა"</p>
-<p style="color:var(--t2);font-style:italic">"ოპერაციულ ამოცანებზე მიწევს ფოკუსი"</p>
-<p style="color:var(--t2);font-style:italic">"უფრო მეტს ვისაუბრებდი შედეგებზე და მომავლის გეგმებზე"</p>
-
-</div></div>
-<div style="margin:.3rem 0"><div style="cursor:pointer;display:flex;align-items:center;gap:.3rem;padding:.3rem .5rem;background:var(--bg3);border-radius:var(--rs)" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span style="font-size:1.1rem">💬</span><span style="font-size:.82rem;color:var(--t2)">კომენტარი / ლინკი</span><span style="font-size:.7rem;color:var(--t3)">▸</span></div><div style="display:none;padding:.4rem .5rem;background:var(--bg3);border-radius:0 0 var(--rs) var(--rs)"><div id="prc-oinga"></div><div style="display:flex;gap:.3rem"><input type="text" class="ti" placeholder="კომენტარი..." onkeypress="if(event.key==='Enter')addPRC('oinga',this)" style="flex:1;font-size:.8rem;padding:.3rem .5rem"><button onclick="addPRC('oinga',this.previousElementSibling)" style="background:var(--amb);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">↵</button><button onclick="emailMentsar('ინგას ანალიზი',this.parentElement.querySelector('input').value);this.parentElement.querySelector('input').value=''" style="background:var(--blu);color:var(--bg);border:none;border-radius:4px;padding:.2rem .5rem;cursor:pointer;font-size:.75rem;min-height:26px">📧</button></div></div></div>
-<div class="rb" data-o="inga1"><span class="rl">შეფასება</span><button class="rn" data-v="1">1</button><button class="rn" data-v="2">2</button><button class="rn" data-v="3">3</button><button class="rn" data-v="4">4</button><button class="rn" data-v="0">skip</button></div></div>
-
 <!-- C-Suite Final Decision — ARCHIVED (owner: რელევანტურობა გასარკვევი) -->
 <div class="cd" style="display:none">
 <div class="cd-h"><div><span class="tg tg-d">ARCHIVED</span></div></div>
@@ -950,7 +928,7 @@ AI აკეთებს "რამდენი?" და "სად?" კით�
 
 <!-- ═══ MARKETING ═══ -->
 <div class="tc" id="t-mkt">
-<div class="upd">ბოლო განახლება: 2026-04-17 | წყარო: Meta Business Suite (fresh), GA4, GSC, Clarity, HubSpot, Mailchimp | შემდეგი: კვირაში 1x Playwright auto
+<div class="upd">ბოლო განახლება: 2026-04-26 | წყარო: LinkedIn Admin + Meta + GA4 + HubSpot | OKR v2 targets | Apr 26 absorb: no-bureaucracy + no-idle + 3-h cron + no-fabrication active
 <br><a href="?view=marketing" style="color:var(--amb)" target="_blank">📎 გუნდის ლინკი — მხოლოდ ეს გვერდი</a></div>
 
 <!-- Marketing Sub-tabs -->
@@ -966,6 +944,28 @@ AI აკეთებს "რამდენი?" და "სად?" კით�
 <!-- ════ SUB-TAB: OVERVIEW ════ -->
 <div class="mkt-panel on" id="mkt-overview">
 
+<!-- 🟢 Apr 26 Locked Content (video v3 + carousel V2 + B hook) -->
+<div class="cd" style="border-left:3px solid var(--grn)"><div class="cd-h"><div><span class="tg tg-g">🟢 LOCKED Apr 26</span> <span style="font-size:.82rem;color:var(--t2)">Mariam-ისთვის ship-ready</span></div></div>
+<div class="cd-b" style="font-size:.88rem;color:var(--t2);line-height:1.7">
+<p><strong style="color:var(--grn)">Video script v3</strong> (4 owner-edits Apr 26): Hook flip / Proof "30+ ბიზნესი + 4 vertical" (no fabricated metric) / Voice owner-rephrased / CTA Balance-post style + info@bivision.ge<br>
+🔗 <a href="https://gshoina.github.io/bivision-shares/bivision-video-script-mentari-2026-04-23.html" style="color:var(--amb)" target="_blank">video-script-v3</a></p>
+<p><strong style="color:var(--grn)">Carousel V2</strong> (B hook locked): Carousel 1 "Problem→System" 9-slide + Carousel 2 "გადაწყვეტილებები" 8-slide<br>
+🔗 <a href="https://gshoina.github.io/bivision-shares/bivision-carousel-v2-2026-04-24.html" style="color:var(--amb)" target="_blank">carousel-v2</a></p>
+<p><strong style="color:var(--amb)">Pending owner</strong>: 1 client pick (Mardaleishvili rec) + employee voice performer (ინგა/დათო/ლუკა) + bivision.ge/audit landing (Geo dispatch sent)<br>
+🔗 <a href="https://gshoina.github.io/bivision-shares/client-proof-candidates-2026-04-26.html" style="color:var(--amb)" target="_blank">client-candidates</a> · <a href="https://gshoina.github.io/bivision-shares/owner-pending-card-2026-04-26.html" style="color:var(--amb)" target="_blank">pending-card</a></p>
+<p><strong style="color:var(--blu)">Apr 28 target</strong>: Mariam Reel #1 + video shoot (Excel-დან advance ანალიტიკაში)</p>
+</div></div>
+
+<!-- 🛡️ Apr 26 Cross-agent Directives -->
+<div class="cd" style="border-left:3px solid var(--blu)"><div class="cd-h"><div><span class="tg tg-b">🛡️ Apr 26 RULES</span> <span style="font-size:.82rem;color:var(--t2)">cross-agent enforcement</span></div></div>
+<div class="cd-b" style="font-size:.88rem;color:var(--t2);line-height:1.7">
+<p>1. <strong>No-bureaucracy</strong>: 5-ship + 5-next-step pattern banned. Single artifact + 1 next step. ACK = action, არა doc.<br>
+2. <strong>No-idle on owner Yes</strong>: blocked on Yes → next task pickup; Yes arrives → return + ship.<br>
+3. <strong>3-h auto cron</strong>: cross-agent AUDIT_REQUEST scan every 3 სთ; new asks short-link card; 0 new = silent.<br>
+4. <strong>No-fabrication</strong>: ციფრი/თარიღი/outcome unverified → placeholder, არა fill. Source-fetch first.<br>
+🔗 <a href="https://gshoina.github.io/bivision-shares/no-bureaucracy-2026-04-26.md" style="color:var(--amb)" target="_blank">directive-no-bureaucracy</a></p>
+</div></div>
+
 <!-- 🔴 Fuckup List -->
 <div class="cd ac" style="border-left:3px solid var(--red)"><div class="cd-h"><div><span class="tg tg-rh">🔴 FUCKUP LIST</span> <span style="font-size:.82rem;color:var(--t2)">რასაც ვაკეთებთ და არ მუშაობს</span></div></div>
 <div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.6">
@@ -973,20 +973,28 @@ AI აკეთებს "რამდენი?" და "სად?" კით�
 </div></div>
 
 <!-- OKR Weekly -->
-<div class="cd ac"><div class="cd-h"><div><span class="tg tg-rh">0/7 OKR</span> <span class="tg tg-d">კვირის tracking</span></div><div style="font-size:.75rem;color:var(--t3)">Deadline: მაისის დასაწყისი</div></div>
+<div class="cd ac"><div class="cd-h"><div><span class="tg tg-rh">OKR v2 (Apr 22)</span> <span class="tg tg-d">კვირის tracking</span></div><div style="font-size:.75rem;color:var(--t3)">Framework: outputs/2026-04-23 Bivision OKR Framework v2 by Mentari.html</div></div>
 <div class="cd-b">
 <!-- OKR Summary: ბოლო 4 კვირის ჯამი -->
-<div style="font-size:.78rem;color:var(--t3);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:1px">ბოლო 4 კვირის ჯამი (actual)</div>
+<div style="font-size:.78rem;color:var(--t3);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:1px">OKR v2 targets (Apr 22) vs actual — LinkedIn Admin live Apr 23 (Mar 23 - Apr 21 window)</div>
 <table style="width:100%;font-size:.88rem;border-collapse:collapse" id="okr-summary">
-<tr style="color:var(--t3);font-size:.72rem;text-transform:uppercase;letter-spacing:1px;font-family:'Outfit',sans-serif"><td style="padding:.4rem .6rem">OKR</td><td style="padding:.4rem">Target</td><td style="padding:.4rem">4W Actual</td><td style="padding:.4rem">Gap</td></tr>
-<tr><td style="padding:.4rem .6rem;color:var(--t2)">Engagement/post</td><td style="padding:.4rem">35-40</td><td style="padding:.4rem;color:var(--red)" id="okr-eng">4</td><td style="padding:.4rem;color:var(--red)">-90%</td></tr>
-<tr><td style="padding:.4rem .6rem;color:var(--t2)">Link clicks/post</td><td style="padding:.4rem">20-25</td><td style="padding:.4rem;color:var(--red)" id="okr-clicks">1</td><td style="padding:.4rem;color:var(--red)">-96%</td></tr>
-<tr><td style="padding:.4rem .6rem;color:var(--t2)">Post frequency</td><td style="padding:.4rem">1/2 week</td><td style="padding:.4rem;color:var(--amb)" id="okr-freq">1/week</td><td style="padding:.4rem;color:var(--amb)">-50%</td></tr>
-<tr><td style="padding:.4rem .6rem;color:var(--t2)">Video/reels</td><td style="padding:.4rem">2/month</td><td style="padding:.4rem;color:var(--red)" id="okr-reels">0</td><td style="padding:.4rem;color:var(--red)">-100%</td></tr>
-<tr><td style="padding:.4rem .6rem;color:var(--t2)">Qualified leads (digital)</td><td style="padding:.4rem">5-10/mo</td><td style="padding:.4rem;color:var(--red)" id="okr-leads">0</td><td style="padding:.4rem;color:var(--red)">digital = 0</td></tr>
-<tr><td style="padding:.4rem .6rem;color:var(--t2)">SQL pipeline (HubSpot, Apr 17)</td><td style="padding:.4rem">—</td><td style="padding:.4rem;color:var(--amb)" id="okr-sql">5 deals</td><td style="padding:.4rem;color:var(--t3)">Horeca, Meinl, Rampoletx, 0llivander, საგა</td></tr>
-<tr><td style="padding:.4rem .6rem;color:var(--t2)">Click-to-lead</td><td style="padding:.4rem">≥5%</td><td style="padding:.4rem;color:var(--red)" id="okr-ctl">0%</td><td style="padding:.4rem;color:var(--red)">-100%</td></tr>
+<tr style="color:var(--t3);font-size:.72rem;text-transform:uppercase;letter-spacing:1px;font-family:'Outfit',sans-serif"><td style="padding:.4rem .6rem">OKR v2 KR</td><td style="padding:.4rem">Target</td><td style="padding:.4rem">4W Actual</td><td style="padding:.4rem">Gap</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3.1 Engagement rate / post</td><td style="padding:.4rem">3% (industry med)</td><td style="padding:.4rem;color:var(--red)" id="okr-eng">1.25%</td><td style="padding:.4rem;color:var(--red)">-58%</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3.1 Link clicks/post</td><td style="padding:.4rem">6+ (2x)</td><td style="padding:.4rem;color:var(--red)" id="okr-clicks">3</td><td style="padding:.4rem;color:var(--red)">-50%</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3.2 Post frequency (LinkedIn)</td><td style="padding:.4rem">3-4/week</td><td style="padding:.4rem;color:var(--red)" id="okr-freq">1/week</td><td style="padding:.4rem;color:var(--red)">-72%</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3.2 Video (LinkedIn native + YouTube)</td><td style="padding:.4rem">≥2/week</td><td style="padding:.4rem;color:var(--red)" id="okr-reels">0</td><td style="padding:.4rem;color:var(--red)">-100%</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3.2 Bihub amplification</td><td style="padding:.4rem">4/month</td><td style="padding:.4rem;color:var(--red)" id="okr-bihub">0</td><td style="padding:.4rem;color:var(--red)">-100%</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3.2 Georgian-language ratio</td><td style="padding:.4rem">≥70%</td><td style="padding:.4rem;color:var(--amb)" id="okr-ka">50% (1/2)</td><td style="padding:.4rem;color:var(--amb)">-29%</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3 LinkedIn followers</td><td style="padding:.4rem">growth trajectory</td><td style="padding:.4rem;color:var(--amb)" id="okr-followers">844 (+6/30d, 0.7%)</td><td style="padding:.4rem;color:var(--amb)">slow</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3 Sponsored followers</td><td style="padding:.4rem">paid tier TBD</td><td style="padding:.4rem;color:var(--t3)" id="okr-sponsored">0</td><td style="padding:.4rem;color:var(--t3)">Scenario B pending</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3.3 Qualified leads (social)</td><td style="padding:.4rem">5-10/mo</td><td style="padding:.4rem;color:var(--red)" id="okr-leads">0</td><td style="padding:.4rem;color:var(--red)">digital = 0</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR1.KR2 SQL pipeline (HubSpot)</td><td style="padding:.4rem">—</td><td style="padding:.4rem;color:var(--amb)" id="okr-sql">5 deals</td><td style="padding:.4rem;color:var(--t3)">Horeca, Meinl, Rampoletx, 0llivander, საგა</td></tr>
+<tr><td style="padding:.4rem .6rem;color:var(--t2)">OKR3.3 Click-to-lead</td><td style="padding:.4rem">≥5%</td><td style="padding:.4rem;color:var(--red)" id="okr-ctl">0%</td><td style="padding:.4rem;color:var(--red)">-100%</td></tr>
 </table>
+<div style="margin-top:.6rem;font-size:.78rem;color:var(--t3);padding:.5rem .7rem;background:var(--bg3);border-radius:var(--rs);line-height:1.5">
+<strong style="color:var(--amb)">Apr 23 LinkedIn baseline (Mar 23 - Apr 21):</strong> 2,243 imp (+152.9% MoM), 28 reactions (+16.7%), 3 comments (0%), 0 reposts (+100%), 0 sponsored. 2 post / 14d. Mariam სამშენებლო article 4/14 = 100 imp, 3 clicks, 4% eng. Gela Qlik+Claude MCP image 4/14 = untracked metrics.<br>
+<strong style="color:var(--red)">Key gap:</strong> post frequency 1/week vs 3-4/week target (-72%). Video 0 (IG/TikTok არ არის, LinkedIn native + YouTube-ით ship). Georgian 50% vs 70% target (English-first mismatch: 53% Tbilisi audience).
+</div>
 <!-- Expandable weekly breakdown -->
 <button class="eb" onclick="X('okr-weeks',this)">კვირებად</button>
 <div class="ez" id="okr-weeks"><div style="padding:.8rem 1rem">
