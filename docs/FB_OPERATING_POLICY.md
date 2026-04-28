@@ -32,16 +32,26 @@ FB-ის native "leads" column არ ვიყენებ (misattribution ris
 - **Tertiary (soft):** Messenger DM within 48h of ad view — manual tag in HubSpot by Mariam.
 - **NOT a metric:** FB Ads Manager native "leads" count. Reach. Impressions. Engagement (except Reel organic amplification test).
 
-**Success threshold (LOCKED 2026-04-20, revised):** cost per HubSpot-attributed deal < **1,200₾**.
+**5-Stage Cascading Funnel Framework — owner-approved 2026-04-20, pending Viktor/Gurafa challenge before final lock.**
 
-Derivation (owner-validated 2026-04-20):
-- LTV baseline = 800₾/თვე × 15 თვე pilot+mandatory contract = 12,000₾ minimum first-contract
-- 2-year retention LTV = 19,200₾
-- CAC realistic (2 pilot concurrent + existing client load): Inga 15% + Developer 25% × pilot 3 თვე ≈ **8,000₾** internal labor per new pilot
-- First-contract margin = 12,000 – 8,000 = 4,000₾
-- FB ad threshold = margin / 3 = ~1,300₾ → conservative lock **1,200₾/deal**
-- Alt scenarios: 2-year margin 11,200₾ → 3,700₾/deal max; 3-year margin 20,800₾ → 6,900₾/deal max. Start conservative (1,200), widen with retention + deal data.
-- Recalibrate after 3 campaigns.
+| Stage | Metric | Gate | Check at | On fail |
+|---|---|---|---|---|
+| 1. Traffic | CTR (click-through rate) | ≥ 0.5% | 1,000 impressions | pause creative/targeting |
+| 2. Landing | bounce rate < 70%, time on page > 30s | (both) | 50 ad-sourced visits | fix page or ad |
+| 3. Lead | CPL (cost per lead) | ≤ **50₾/lead** | 100 visits OR 7 days | pause, investigate |
+| 4. SQL | CPD (cost per demo booked) | ≤ **150₾/demo** | 10 leads OR 14 days | review qualification |
+| 5. Deal | CPA (cost per acquisition) | ≤ **650₾/deal** | 30-90 day cohort | sales process audit |
+
+**Note on 650₾ CPA (owner-tightened from Mentari's proposed 1,200₾):** aggressive target, enforces LTV:CAC ≥ 18:1 on first contract. Evidence needed (3 deals minimum) before considering loosen.
+
+**Total monthly digital budget = 300₾** covering ALL channels combined: Facebook ads + LinkedIn ads + Mailchimp email. Single budget pool — elastic upward only with proven unit economics.
+
+**Daily cap = 10₾/day total** (300 ÷ 30) across all channels. Enforced at Meta Ads Manager + LinkedIn Ads + Mailchimp billing settings.
+
+**Elastic budget logic:**
+- 0 deals attributed → freeze at 300₾/mo max
+- 1 deal with CPA ≤ 650₾ → 2× scale (600₾/mo)
+- 3+ deals consistent → 10× scale OK (3,000₾+/mo if LTV:CAC holds)
 
 ## Audience logic
 

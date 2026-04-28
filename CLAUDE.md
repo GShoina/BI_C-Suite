@@ -61,6 +61,18 @@ Read and follow these files at session start:
 6. Read any new files from Viktor/Gurafa in docs/
 7. First output = EP0 scored, format per output-format.md
 
+## Session End
+MANDATORY before `/clear`, window-close, or context-reset. Execute 7-step `../Mentari_Virtual-C-Suite/docs/core/session-close.md`:
+1. Memory update + MEMORY.md index
+2. Active plan → `docs/SESSION_<YYYY-MM-DD>_plan.md`
+3. Findings routing (AUDIT_FEEDBACK / outputs/ / ADR / AUDIT_REQUEST)
+4. Open items → `docs/SESSION_OPEN_ITEMS.md`
+5. Disk verify every Write via Read-back
+6. Git commit reminder (docs/ git-tracked; memory/ local-only)
+7. Owner confirmation block (paths verified + NOT-saved list + "Safe to /clear")
+
+Trigger: `/clear`, "wrap up", "session end", "done for today", window-close intent, context-reset language.
+
 ## Business Context
 - Company: Bivision (bivision.ge) — BI, Qlik partner, 7 people
 - Full context: docs/BIVISION_CONTEXT.md

@@ -699,3 +699,51 @@ Metrics doc + tracking = გურაფას scope, feasible. ეს infrastru
 **Self-challenge rule:** start-ია, არა solution. Source tracking + cross-check + ვიქტორის Red Team = minimum.
 
 ---
+
+## 2026-04-21 | Viktor audit — Mentari Protocol Readout (D3 sprint)
+
+**Target:** `outputs/2026-04-21 Mentari Protocol Readout by Mentari.html`
+**Deliverable:** 10-section HTML protocol readout, 4-block shell + 9 Mentari overlays.
+**Audit source:** Viktor (delivered via owner channel, not AUDIT_REQUEST.md routing).
+
+### Verdict: CONDITIONAL — structurally complete, action-commitment missing. 6 material gaps.
+
+### What worked
+- 4-block format coverage + 9 Mentari overlay documentation
+- Section 6 canonical roots clarity + disk-beats-memory rule
+- Section 10 commitment + forbidden phrase marker
+- HTML MUST retention classes (ephemeral/persistent)
+
+### What broke — 6 material gaps
+1. **Op Note OR menu** — "LinkedIn publish OR proposal test OR connector" = self-rule breach (Section 4 "ერთი რეკომენდაცია, არა მენიუ"). D3 requires 1 specific commit, not alternatives
+2. **Section 5 Viktor row** — cross-agent command boundary breach per coordination.md §2. Viktor daily routine SSOT = viktor.md role doc, not Mentari readout
+3. **HubSpot connector self-fix path log absent** — Section 7 P1 item but 0 of 3 self-fix paths attempted (API key / service account / MCP alt). Agency principle breach symmetric to audits Mentari applied to other agents
+4. **FB Policy 4-day (actually 6-day) stale — readout silent** — filed Apr 15, REMINDER Apr 19, 0 Viktor response. Either disk-check skip (session-start breach) or silence on declining trajectory. coordination.md §5 24h Mandatory timeout cited but FB Policy = spot-check, so principle applies indirectly (stale-surface still owed)
+5. **EP0 causal link broken** — "9/10 sprint D3 0 trust burn rate stop" — readout does not bag 4-criterion. Trust restoration = shipped-artifact function, readout burns equally if shipped or not
+6. **EP1 tagging missing** — "22 protocol file loaded", team roster, Geo-Metri commit hash — FACT/INFERENCE/ASSUMPTION/UNKNOWN tags omitted
+
+### Sub-findings
+- Mari Mikurt 2026-06-01 departure + 11-account handover = unflagged risk Section 7
+- Mentari-overlay 9 — 4 in output-format.md §6, 5 memory-only (Routing, Staged cadence, Default=proceed, Mid-correction, Product-capability). SSOT drift risk → ADR or role-doc reference needed
+- Self-verify symmetry missing — Mentari verifies Viktor/Gurafa/Mariam output but own readout claims unverified
+
+### Mentari acknowledgment + fixes
+- Audit valid, 1 precision correction: FB Policy original filed **Apr 15** (not Apr 19) → 6 days stale, not 4. Apr 19 entry = REMINDER
+- Precision 2: FB Policy routing = spot-check, not Mandatory, so §5 24h rule doesn't directly apply; stale-surface principle still valid
+
+### Fixes executed Apr 21
+- ✅ Section 5 Viktor row excised from readout HTML (comment preserved per coordination.md §2 rationale)
+- ✅ Owner directive received: close readout, ship 1 4-criterion item. → LinkedIn Post 1 publish package shipped: `outputs/2026-04-21 LinkedIn Post 1 Publish Now by Mentari.html`
+
+### Fixes deferred Apr 22 (per owner directive "დანარჩენი ხვალ")
+- FB Policy 6-day stale → HTML owner-flag surface
+- HubSpot 3 self-fix path log (1h cap) → API key / service account / MCP alt
+- Readout v2 — EP0 recalibrate, EP1 tags, Mentari-overlay SSOT consolidation
+- Mari Mikurt departure risk flag
+- Op Note "1 rec not menu" self-rule reinforcement
+
+### Confidence / Evidence Gap
+- viktor.md / coordination.md / output-format.md / AUDIT_REQUEST.md disk-verified Apr 21 session
+- Mentari-overlay 5 non-core item ground truth — core SSOT grep not yet exhaustive
+
+---

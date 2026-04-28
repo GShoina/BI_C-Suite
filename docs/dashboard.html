@@ -91,7 +91,6 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <button class="tab" data-t="mkt">📢 Marketing</button>
 <button class="tab" data-t="audit">🔒 Audit</button>
 <button class="tab" data-t="waiting">⏳ Waiting</button>
-<button class="tab" data-t="csuite">⚡ C-Suite Decision</button>
 </nav>
 
 <!-- ═══ MAIN ═══ -->
@@ -100,14 +99,19 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 <!-- 🔔 Notifications -->
 <div id="notifications-area-main"></div>
 
+<!-- 📌 Canonical current status v2 link -->
+<div style="background:#fff5d6;border-left:4px solid #c9a227;padding:.6rem 1rem;margin-bottom:1rem;border-radius:4px;font-size:.88rem">
+📌 <strong>Canonical current state:</strong> <a href="https://gshoina.github.io/bivision-shares/status-2026-04-27.html" target="_blank" style="color:#8b6914;font-weight:600">status-2026-04-27.html v2</a> — OKRs + Apr 26-27 done + Apr 28-30 plan + owner-pending + delegation. ეს dashboard = interactive comments + history; status v2 = current sprint snapshot.
+</div>
+
 <!-- სად ვართ — Bivision KPI -->
-<div class="st">სად ვართ — Bivision</div>
+<div class="st">სად ვართ — Bivision (⚠️ Apr 9 baseline — refresh-pending)</div>
 <div class="kr">
 <div class="kc" data-a="r"><div class="kl">Revenue Trend</div><div class="kv" style="color:var(--red)">↓6%</div><div class="ks td">1M(2024) → 942K(2026)</div></div>
 <div class="kc" data-a="r"><div class="kl">Billings</div><div class="kv" style="color:var(--red)">↓19%</div><div class="ks td">931K → 755K</div></div>
 <div class="kc" data-a="r"><div class="kl">Churn MRR</div><div class="kv" style="color:var(--red)">23.4K</div><div class="ks td">accelerating</div></div>
 <div class="kc" data-a="r"><div class="kl">Demo Convert</div><div class="kv" style="color:var(--red)">0%</div><div class="ks td">funnel broken (verified)</div></div>
-<div class="kc" data-a="a"><div class="kl">MRR</div><div class="kv">66.7K₾</div><div class="ks">29 accounts</div></div>
+<div class="kc" data-a="a"><div class="kl">MRR</div><div class="kv">67.3K₾</div><div class="ks">Apr 24 (Viktor brief)</div></div>
 <div class="kc" data-a="r"><div class="kl">AI Positioning</div><div class="kv" style="color:var(--red)">0</div><div class="ks td">competitors: all have AI</div></div>
 </div>
 
@@ -161,8 +165,8 @@ html{font-size:17px}body{font-family:'Outfit',sans-serif;background:var(--bg);co
 
 </div></div>
 
-<!-- PIPELINE — HubSpot (last update: Apr 9) -->
-<div class="st" style="margin-top:1.5rem">🔴 Pipeline — HubSpot</div>
+<!-- PIPELINE — HubSpot (last update: Apr 9 — 18-day stale, HubSpot pull pending) -->
+<div class="st" style="margin-top:1.5rem">🔴 Pipeline — HubSpot <span style="font-size:.75rem;color:#8b3d14;background:#fce9d6;padding:1px 8px;border-radius:3px;font-weight:700">⚠️ Apr 9 stale, 18 days, HubSpot pull pending</span></div>
 <div class="cd" style="border-left:3px solid var(--red)"><div class="cd-b" style="font-size:.88rem;line-height:1.5">
 
 <div style="display:flex;align-items:flex-start;gap:.5rem;padding:.5rem 0;border-bottom:1px solid var(--brd)">
@@ -1965,94 +1969,6 @@ Decision Layer v1 · updated 2026-04-17 · FB data: Meta Business Suite · HubSp
 </div>
 
 <!-- ═══ C-SUITE DECISION ═══ -->
-<div class="tc" id="t-csuite">
-<div class="st">⚡ C-Suite Final Decision — APPROVED (2026-04-07)</div>
-
-<!-- Architecture -->
-<div class="cd" style="border-left:3px solid var(--grn)">
-<div class="cd-h"><span class="tg tg-g">APPROVED</span> <strong style="margin-left:.5rem">არქიტექტურა</strong></div>
-<div class="cd-b" style="font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:2;color:var(--t2)">
-ოუნერი ──→ <strong style="color:var(--amb)">მენცარი</strong> (default hub, daily ops)<br>
-&nbsp;&nbsp; ├──→ <strong style="color:var(--red)">ვიქტორი</strong> (on-demand + auto-audit ყოველ output-ზე)<br>
-&nbsp;&nbsp; └──→ <strong style="color:var(--blu)">გურაფა</strong> (on-demand + intelligence + coaching)<br><br>
-მენცარი ←→ docs/ ←→ ვიქტორი<br>
-მენცარი ←→ docs/ ←→ გურაფა
-</div>
-</div>
-
-<!-- Roles -->
-<div class="cd">
-<div class="cd-h"><span class="tg tg-a">ROLES</span> <strong style="margin-left:.5rem">როლები</strong></div>
-<div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.8">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
-<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem;border-left:3px solid var(--amb)">
-<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--amb);margin-bottom:.4rem">მენცარი — HUB</div>
-<div><strong>პირველადი:</strong> execution hub, ბიზნეს ops, marketing</div>
-<div><strong>მეორეული:</strong> data collection, გუნდთან კომუნიკაცია</div>
-</div>
-<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem;border-left:3px solid var(--red)">
-<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:.4rem">ვიქტორი — DEVIL'S ADVOCATE</div>
-<div><strong>პირველადი:</strong> audit ყოველ output-ზე, ruthless challenge</div>
-<div><strong>მეორეული:</strong> source verification, >5K₾ cross-check</div>
-</div>
-<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem;border-left:3px solid var(--blu)">
-<div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--blu);margin-bottom:.4rem">გურაფა — INTELLIGENCE + COACH</div>
-<div><strong>პირველადი:</strong> AI intelligence, CEO coaching, strategic challenge</div>
-<div><strong>მეორეული:</strong> cross-agent coordination, improvement, social feed</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Approval Model -->
-<div class="cd" style="border-left:3px solid var(--amb)">
-<div class="cd-h"><span class="tg tg-a">PHASE 1</span> <strong style="margin-left:.5rem">Approval Model (კვირა 1-3)</strong></div>
-<div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.8">
-<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem;margin-bottom:.8rem">
-<strong style="color:var(--t1)">ყოველი output → ოუნერი validates (MUST)</strong><br><br>
-<span style="color:var(--amb)">⏱ TIMEOUT RULE:</span> თუ <strong>24 საათში</strong> ოუნერი არ პასუხობს → auto-approve<br>
-<span style="color:var(--red)">🛡 SAFEGUARD:</span> auto-approve-ზე → <strong style="color:var(--red)">ვიქტორი = ruthless challenger</strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;→ ოუნერის მაგივრად დაუნდობელი ჩელენჯი, არა rubber stamp
-</div>
-<div style="background:var(--bg3);border-radius:var(--rs);padding:1rem">
-<strong style="color:var(--t1)">ფაზა 2 (კვირა 4+):</strong> გადაისინჯება<br>
-მოდელი მუშაობს → ოპერაციული auto-approve, strategic = owner-only<br>
-არ მუშაობს → ფაზა 1 გრძელდება
-</div>
-</div>
-</div>
-
-<!-- Hallucination Prevention -->
-<div class="cd">
-<div class="cd-h"><span class="tg tg-rh">SAFETY</span> <strong style="margin-left:.5rem">Hallucination Prevention</strong></div>
-<div class="cd-b" style="font-size:.9rem;color:var(--t2);line-height:1.8">
-<div style="display:grid;gap:.5rem">
-<div>1. <strong>Self-challenge:</strong> ყოველი output-ის წინ — "ყველაზე სუსტი assumption? რა შეიძლება ცდომიერი?"</div>
-<div>2. <strong>Source tracking:</strong> ყოველი FACT → წყარო (URL/file/date)</div>
-<div>3. <strong>Cross-check:</strong> >5K₾ impact → ვიქტორი ვერიფიკაცია BEFORE output</div>
-<div>4. <strong>GCT rule:</strong> კლიენტის სტატუსზე statement → data source required</div>
-</div>
-</div>
-</div>
-
-<!-- Daily Cycle -->
-<div class="cd" style="border-left:3px solid var(--pur)">
-<div class="cd-h"><span class="tg tg-b">CYCLE</span> <strong style="margin-left:.5rem">ყოველდღიური ციკლი</strong></div>
-<div class="cd-b" style="font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:2.2;color:var(--t2)">
-<span style="color:var(--grn)">დილა:</span>&nbsp;&nbsp;&nbsp; მენცარი/გურაფა → output + AUDIT_REQUEST<br>
-<span style="color:var(--amb)">შუადღე:</span> ვიქტორი → audit + challenge<br>
-<span style="color:var(--blu)">საღამო:</span> ოუნერი → review → approve/reject<br>
-<span style="color:var(--t3)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └→ 24სთ timeout → auto + ruthless challenge</span><br>
-<span style="color:var(--pur)">დილა+1:</span> corrected + next deliverable
-</div>
-</div>
-
-<!-- OKR + Action Deficit archived — see To-Do tab for current OKRs -->
-
-<div style="text-align:center;padding:1rem;font-size:.78rem;color:var(--t3)">
-Consolidated by გურაფა | მენცარი ✅ ვიქტორი ✅ ოუნერი ✅ | 2026-04-07
-</div>
-</div>
 
 <footer class="ft">მენცარ დეშბორდი v4 — Bivision AI C-Suite — EP1-EP6 — Audited by Mentari</footer>
 

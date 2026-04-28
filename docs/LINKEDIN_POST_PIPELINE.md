@@ -26,7 +26,7 @@ canonical-status: reference-only (content cadence + hook examples). Referenced b
 1. "576 დილერის performance ერთ დაშბორდზე — ვანახე კლიენტს, 3 წუთი ჩუმად იყო"
 2. "ფინანსურ დირექტორს ვკითხე: რამდენი საათი ხარჯავს Excel-ში? პასუხი გამაოგნა"
 3. "AI-მ ჩემი კომპანიის 3 თვის data 10 წუთში გააანალიზა. აი რა აღმოაჩინა"
-4. "ქართულ კომპანიას Power BI-ზე გადასვლა 200,000₾ დაუჯდა. ჩვენი გზა 10x იაფი იყო"
+4. [REMOVED 2026-04-21 — SME reality fail; see memory/feedback_linkedin_ban_list.md]
 5. "გურული progress check: CEO-მ AI-ს ჰკითხა 'რა გააკეთე?' AI-მ უპასუხა 'dashboard გავაკეთე.' CEO-მ თქვა 'dashboard ≠ action.'"
 
 ## Content Calendar Template

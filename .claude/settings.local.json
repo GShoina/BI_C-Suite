@@ -32,7 +32,8 @@
       "Bash(tasklist)",
       "Bash(python -m http.server 8765)",
       "Bash(python -m http.server 8766)",
-      "Bash(grep -l \"Victor\\\\|VICTOR\" '/c/Users/gela.shonia/Documents/NGT 2020-07/AI_Projects/BI_C-Suite/docs'/*.md)"
+      "Bash(grep -l \"Victor\\\\|VICTOR\" '/c/Users/gela.shonia/Documents/NGT 2020-07/AI_Projects/BI_C-Suite/docs'/*.md)",
+      "Bash(claude mcp *)"
     ]
   }
 }
