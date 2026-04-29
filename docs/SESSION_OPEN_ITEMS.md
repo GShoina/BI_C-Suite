@@ -33,7 +33,7 @@ owner: Mentari
 | P2 | Mariam directive v2 re-ship with v3 gates | OKR3 |
 | P3 | Playwright LinkedIn admin session baseline | OKR3.1/3.2 |
 
-## Shipped Apr 27 → Apr 28 02:00
+## Shipped Apr 27 → Apr 29 morning
 
 - ✅ Mari Mikurt Departure Risk Surface — `outputs/2026-04-27 Mari Mikurt Departure Risk Surface by Mentari.html` (OKR4.KR5; off-priority drift)
 - ✅ Apr 25 Viktor Hardening Brief ACK — AUDIT_REQUEST.md entry Apr 27
@@ -43,9 +43,12 @@ owner: Mentari
 - ✅ MENTARI_CROSS_AGENT_RESPONSES_2026-04-27 (11 thread closures consolidated)
 - ✅ MENTARI_AUDIT_GURAFA_2026-04-27 (GitHub Repos counter-audit, PARTIAL PASS)
 - ✅ Dashboard cleanup conservative (C-Suite Decision tab removed, status v2 link, MRR 66.7→67.3K, stale warnings)
-- ✅ Cross-agent scans 3 (evening + late + Apr 28 morning)
-- ✅ Memory: `feedback_destructive_action_verify_target.md` saved
+- ✅ Cross-agent scans 4 (evening Apr 27 + late Apr 27 + Apr 28 morning + Apr 29 morning)
+- ✅ Memory: `feedback_destructive_action_verify_target.md` + `feedback_bivision_shares_remote_canonical.md` saved
 - ✅ Questionnaire restoration (5 files restored after Apr 27 mistaken delete)
+- ✅ WebSearch lead-gen research delivered (Apollo/Lemlist/Expandi/Waalaxy/LGM verified pricing + 2026 LinkedIn safe limits + Khoshtaria framework industry-aligned)
+- ✅ session-close.md §6a — standard pre-/clear command added (cross-agent canonical)
+- ✅ bivision-shares re-cloned after Apr 28-29 temp wipe
 
 ## Retired items
 
