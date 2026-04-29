@@ -92,3 +92,64 @@ Append at bottom under "## Viktor Verdict v5".
 WAITING Viktor verdict before Termly install attempt. Cookie swap goals all unachieved, but site stable on CookieYes baseline.
 
 Memory rules applied: [EP0 ✓ / readable-Georgian ✓ / 4-block ✓ / result-over-bureaucracy ✓ / no-fabrication ✓ / probe-discipline ✓ / enforcement-protocol-apr27 ✓ / geo-to-viktor-counter-audit ✓]
+
+---
+
+## Viktor Verdict v5
+
+**Date:** 2026-04-29
+**Re:** Option B (Termly free) pre-execute audit
+**Audit:** GO REDUCED | Impact 6 | Evidence 5 | Readiness 7 | Risk: low
+
+### Core Judgment
+APPROVE Option B with conditions. Empirical n=2 cheaper than theme-dev escalation. Single-source theme-block hypothesis needs second data point before expensive root-cause path. Termly = $0, reversible, 4-step protocol holds. Success → 4 goals solved. Failure → confirmed theme block, escalate FastCloud + theme dev with 2-plugin evidence (stronger ask than n=1).
+
+### What is weak
+- Termly multi-lang KA support = 80% Geo-stated, NOT verified on docs.termly.io
+- "30 წთ" estimate Geo-stated, not empirical
+- "Partial compliance" claim vague, needs criterion
+- No fallback timebox in Geo proposal → drift risk
+
+### Stance per challenge point
+
+1. **Theme conflict same risk** — YES likely. Frame Termly as DIAGNOSTIC test (isolate plugin-vs-theme), not solution attempt. Reframe expectations.
+2. **Sample n=1** — n→2 justified. Theme-dev escalation needs evidence; second plugin failure = that evidence.
+3. **Scope drift** — NO. Apr 26 directive named tool, not method. Goals preserved. Legitimate adaptation post-empirical failure.
+4. **Multi-lang priority** — REMAINS. Owner Apr 27 reaffirm = current truth. No deferral without owner re-call.
+5. **Option E (CookieYes manual)** — REJECT as primary. Solves Goal 1 only, Goals 2-3-4 unaddressed. Reserve as fallback if B fails AND theme-dev blocked.
+6. **Theme-dev FIRST** — NO. 45-min empirical < unknown-hr theme-dev investigation. Post-B-fail (if), escalate with 2-plugin failure log = stronger evidence package.
+
+### What must change before execute
+1. **Pre-flight verify** — docs.termly.io multi-lang KA support (10 min). If docs unclear/no KA → DEFER, do not guess.
+2. **Hard timebox: 45 min** (10 verify + 30 install + 5 wire-verify). No extension.
+3. **Stop condition** — if Termly JS fails to inject same pattern as Complianz → STOP, no Plugin #3.
+4. **Post-fail action pre-defined** — escalate FastCloud ticket + theme dev ask with both failure logs attached.
+
+### Better version
+Option B-prime: pre-flight docs verify + hard timebox + pre-defined fail action + reframe as diagnostic n=2.
+
+### Execution readiness
+**Ready with conditions** — pre-flight gate must pass before install.
+
+### Confidence / evidence gap
+- Theme-block hypothesis: high after Complianz failure, but n=1 (need n=2)
+- Termly multi-lang KA: UNVERIFIED [EP1: HYPOTHESIS]
+- Owner cost of further delay: unknown, assumed acceptable for 45-min boxed test
+- Termly auto-scanner parity: 85% Geo-stated, unverified
+
+### Self-audit
+- Reject reason = weak (n=1 + unverified KA), not unfamiliar ✓
+- Risk real (plugin churn drift, theme-block recurrence) ✓
+- Better version offered (B-prime) ✓
+- Not blocking unnecessarily — Go reduced, not Hold ✓
+- Confidence proportional — Evidence 5/10 reflects unverified Termly claims ✓
+
+### Path (CEO directive, paste-ready)
+
+Geo, შენი Option B approved with conditions. Execute:
+1. Pre-flight: docs.termly.io გადაამოწმე KA multi-lang support (10 წთ). თუ unclear → DEFER, არ გამოიცნო.
+2. Hard timebox: 45 წთ მთლიანობაში. გადაცილება ბანი.
+3. Termly JS injection ფეილი (Complianz pattern) → STOP, plugin #3 ბანი.
+4. Fail-case: FastCloud + theme dev escalation ticket draft მზადდება Complianz + Termly logs-ით.
+
+Sample n=2 = კონფირმაცია, არა plugin churn.
