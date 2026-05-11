@@ -14,22 +14,32 @@ created: 2026-04-07
 
 ## 1. Amadeo — LinkedIn Data (564 followers, 8 employees)
 
+_Updated: 2026-05-11 — Gurafa scan May 8 confirmed new connector data. Sources: entrepreneur.com/ka + saasargeblo.ge + amadeo.ge Facebook._
+
 ### Verified Facts
 - **Team:** 2-10 (LinkedIn), 8 (schema data). Founder: გიორგი ჩუღოშვილი (ex-TBC Bank)
 - **Account Manager:** ნინა ცინაძე — Spotlight Tech 2025 speaker
 - **New client:** New Wave Hotel Chain (hospitality, food service, multiple entities)
 - **Partnership:** Formula Empire — "enhance service value"
 - **BOG deal (CORRECTED):** 50% ფასდაკლება BOG ბიზნეს კლიენტებისთვის წლიურ subscription-ზე. ეს არა "partnership" — ეს discount agreement.
-- **Orio 7 integration:** ახალი accounting software connector (Balance.ge-ს გარდა)
+- **ERP connectors (May 8 confirmed):** Oris (= Orio 7 — same platform), FINA, Apricot, FMG — [FACT, 3 sources]
+- **Apricot + FMG (NEW vs Apr 7):** added connectors — direct overlap with Bivision's target ERP stack
 - **Axel Startup Investment Forum (ბათუმი):** portfolio company-ად წარდგენილი
 - **Features:** revenue/expense analysis, KPI dashboards, cash flow, budgeting, SARAS, P&L auto-generation
+- **Messaging (May 8):** "financial analytics + reporting automation for SMB, no technical knowledge required" — ease-of-use positioning
 - **Founder focus split:** amadeo.ge + retain.ge + freebusiness.ge + amadeo.tech (AI/NLP international)
 
+### Risk Assessment (updated May 11)
+**🔴 HIGH** — Same ERP stack (Oris/FINA) + same ICP + same pain + BOG discount + ease-of-use messaging = direct substitution risk.
+
 ### Bivision-ისთვის
-- ⚠️ Amadeo-ს Orio 7 connector = ახალი. Bivision-ს Oris connector აქვს, Orio 7 = სხვა ვერსია? შესამოწმებელი.
+- ⚠️ **Apricot + FMG connectors confirmed** — Bivision-ს ეს connectors აქვს? Owner verify required.
 - ⚠️ BOG 50% discount = aggressive pricing. 40K+ BOG SME clients addressable.
+- ⚠️ "No technical knowledge required" = competing on ease-of-use, not depth.
 - ✅ 8 ადამიანი, founder focus გაყოფილი = შეზღუდული execution capacity.
-- ✅ Hospitality client (New Wave) = sector diversification, არა bivision-ის core.
+- ✅ Hospitality client (New Wave) = sector diversification, არა Bivision-ის core.
+- ✅ Bivision differentiation: Power BI-grade viz + Qlik partnership + 2-3wk deployment + public case studies.
+- ✅ No public Amadeo case studies visible (May 8). Bivision-ს case study advantage = use it.
 
 ---
 

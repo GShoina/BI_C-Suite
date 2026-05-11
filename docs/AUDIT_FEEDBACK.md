@@ -10,6 +10,24 @@ canonical-status: historical audit log (Apr 5–7 CLAUDE.md reviews). No entries
 No feedback yet. Auditor will write here after reviewing OUTPUT_LOG.md entries.
 
 ---
+
+## 2026-05-02 | bivision.ge live audit delta (Geo session)
+
+**Source:** curl live check during Geo session 2026-05-02  
+**From:** Geo agent (observation only — not Geo scope; flagged for Mentari/Viktor)
+
+| Metric | Apr 23 baseline | May 2 live | Δ | Status |
+|--------|----------------|------------|---|--------|
+| TTFB | 1.35s | **1.79s** | +0.44s | 🔴 WORSENING |
+| HSTS | missing | max-age=86400 | implemented | 🟡 Weak (need 31536000) |
+| CSP | missing | **still missing** | 0 | 🔴 |
+| X-Frame-Options | missing | ✓ | fixed | ✅ |
+| X-Content-Type-Options | missing | ✓ | fixed | ✅ |
+| LiteSpeed cache | seen in headers | active but not hitting | — | 🟡 |
+
+**Action needed (Mentari/Viktor):** TTFB regression requires investigation — LiteSpeed cache miss likely cause. CSP still open. HSTS needs max-age upgrade to 31536000.
+
+---
 ## 2026-04-05 | PIPELINE TEST
 Auditor (ccsuite) can read and write to this file. Pipeline works.
 ---

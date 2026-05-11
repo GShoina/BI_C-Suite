@@ -1,10 +1,25 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-04-27
+updated: 2026-05-09
 owner: Mentari
 ---
 
 # Open Items — Mentari
+
+## Gurafa open items — May 9
+
+| Item | Status | Owner |
+|---|---|---|
+| `/sales icp` run (Bivision description) | Ready, not yet run | Gurafa next session |
+| Oris cookbook | **BLOCKED** — owner must send Oris CSV column headers | Owner |
+| GURAFA_INDEX.html — 0507 entry | Ready, P3 | Gurafa |
+| Higgsfield free tier test | Ready, P1 (gate for Meta MCP) | Gurafa |
+| Viktor: Amadeo Apricot/FMG update | ✅ CLOSED May 11 — VICTOR_COMPETITOR_INTEL.md updated | Viktor |
+| Apricot — what is it? ICP overlap? | Open — Gurafa research needed | Gurafa |
+| FMG blocks Amadeo too? | [UNVERIFIED] — owner or Gurafa verify | Owner/Gurafa |
+| Monday May 11: Meta Ads Library scan | Scheduled | Gurafa |
+
+---
 
 ## BLOCKED on owner action
 
@@ -59,3 +74,45 @@ owner: Mentari
 
 - Mon AM: CEO brief HTML (right / wrong / missing / resource redirect) — weekly rhythm
 - Daily session-start: Mariam OKR3 delta check (Reels count, post count, ban-list, FB Leads >24h pending)
+
+## Viktor 2026-05-01 — Token Optimization protocol open items
+
+**Pending owner action:**
+- Layer 2 Anthropic console "Active sessions" / login activity check (Gabo blind-spot verification on Solo plan)
+- Dispatch 4 agent prompts (Gurafa account ToS, Geo local audit, Agent A self-audit, Agent B self-audit) — paste-ready in Viktor session scrollback
+- /clear after this snapshot, switch `/model claude-sonnet-4-6` for execution-tier work
+- PowerShell `$PROFILE` functions (viqtor/gurafa/Nikacho/mentari) verify cd-to-project-root works (or fix with template in Token Audit HTML)
+
+**Pending Viktor (next session):**
+- Receive 4 outputs → consolidation HTML "Token Usage Final Audit + Migration Decision Input"
+- 5-task benchmark suite definition for Migration Assessment Phase 1 parallel trial (Bivision Q&A / Multi-file SSOT / Audit task / Research scout / Cross-agent coord)
+- MEMORY.md prune (currently 25.5KB > 24.4KB limit, truncated load)
+- F4 Dastafe — Apr 28 Gurafa brief "ACTIVE-WATCH Balance ERP overlap" vs Viktor REJECT (DataFest conf misID) — cross-confirm owner-instructed reject
+
+**Pending DonotUseMe:**
+- Data-source connection protocol document creation (T1 browser → T2 CSV → T3 OAuth → T4 API key → T5 SA fallback)
+- GA4 Service Account workspace-policy blocker resolution path (T1/T2 fallback per protocol)
+
+**Pending Geo:**
+- F4 Bivision local Claude state audit (PowerShell + settings.json + processes + credentials existence)
+
+**Pending Gurafa:**
+- Account ToS research (Solo Max multi-device, Sonnet quota share)
+- Claude Managed Agents deep-dive 1.5hr (re Mentari re-eval per Apr 28 brief)
+- F1 verification: BiPriceMonitoring = Retail Info rename? BiDistribution source?
+
+## Added 2026-05-02
+
+**Owner action:**
+- GA4 Key Events: Admin → Events → mark `whatsapp_click`, `phone_call`, `contact_form_submit` as key; unmark `close_convert_lead`, `purchase`, `qualify_lead`
+
+**Pending Geo (next session):**
+- Execute Issue #3 plan: `Nikacho/docs/superpowers/plans/2026-05-02-projects-pages.md` (6 tasks: list page + 3 project pages + homepage links + deploy + changelog V20)
+
+**Pending Mentari/Viktor:**
+- bivision.ge TTFB regression: 1.35s (Apr 23) → 1.79s (May 2) — LiteSpeed cache miss investigation needed
+- bivision.ge CSP still missing — implementation needed
+- bivision.ge HSTS upgrade: 86400 → 31536000
+
+**All agents:**
+- superpowers plugin now global (v5.0.7). Use `writing-plans` before multi-step tasks, `subagent-driven-development` for parallel execution. Skills at `~/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/`
