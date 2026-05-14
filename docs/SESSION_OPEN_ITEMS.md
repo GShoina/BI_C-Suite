@@ -1,10 +1,162 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-09
+updated: 2026-05-14
 owner: Mentari
 ---
 
 # Open Items — Mentari
+
+## Mentari deliverables shipped May 14
+
+- ✅ 96 contacts added to Mailchimp IVF-Medical (v2: 9 + v3: 20 + v4: 67)
+- ✅ FNAME ts.akhalaia@hcore.ge → ცოტნე
+- ✅ Campaign 17993958 subject: "კლინიკის ფინანსური სურათი 1 დაშბორდზე / BiMedical"
+- ✅ Calendly links inserted Email 3 + 4 in HTML sequence files
+- ✅ GitHub push: bimedical-sequence-0513.html live
+
+## Mentari carry-forward P0 — May 15+
+
+| Item | Blocker | Action |
+|---|---|---|
+| Campaign 17993958 — set send time 10:00 AM | **owner action** | Edit send time in Mailchimp, change from 7:30 PM → 10:00 AM AZT, then Schedule |
+| BiMedical Email 2–4 follow-up flow | after Email 1 sends May 19 | Non-openers flow: E2 day 3-5, E3 day 8-10, E4 day 12-15 |
+| Keep-awake script | not completed this session | `powercfg /change standby-timeout-ac 0` or WScript.Shell background job |
+| Meta B*Product_Traffic — monitor delivery | none | Check spend/CTR; kill if CTR<0.3% day3 |
+| Construction HubSpot campaign — confirm recipients | unresolved | check HubSpot campaign 17751009 recipient count |
+| Meta Lead Gen rebuild | after May 19 | `Bivision — Lead Gen Calendly — 2026-05-19`, OUTCOME_LEADS |
+| Gemini paid API key | owner action | add to .bivision-creds.env |
+| BiAudit campaign | after BiMedical launch | next vertical |
+| Contact enrichment workflow | not built | company name + tax ID → contact lookup → Mailchimp import |
+| Meta App Live mode | owner action | developers.facebook.com |
+
+---
+
+## Viktor open items — May 13
+
+| Item | Status | Next |
+|---|---|---|
+| F4 Dastafe | Viktor REJECT, Gurafa no counter-evidence → stays REJECT | Gurafa confirm or close next session |
+| bivision.ge TTFB 1.79s | Viktor flag only → Geo execute | Geo |
+| bivision.ge CSP missing | Viktor flag → Geo execute | Geo |
+| HSTS 86400→31536000 | Viktor flag → Geo execute | Geo |
+| Daily HTML deliverable | 0 shipped May 13 | Viktor next session |
+| HSTS state → SESSION_OPEN_ITEMS | before Gurafa deletes hardening sprint file | Gurafa |
+
+**HSTS current state (for Gurafa):** max-age=86400 + includeSubDomains. Target: max-age=31536000. Upgrade pending.
+
+---
+
+## Geo open items — bivision.ge performance (May 14 late)
+
+### Done this session
+- ✅ 21 GIFs → WebM+MP4 converted + uploaded (ffmpeg VP9+H.264 local pipeline)
+- ✅ render_block filter priority 5: GIF→video, Optimole CDN URL + Georgian filename handled
+- ✅ Mobile panel overflow fix (products-mobile-image)
+- ✅ Smart video preload JS (active tab=auto, hidden=none)
+- ✅ Hero video border-radius: 16px added (was missing on video vs img)
+- ✅ Cache purged, verified on live site
+
+### P0 (next Geo session — bivision.ge perf)
+| Item | Notes |
+|---|---|
+| Owner confirm hero fix on real device | Playwright OK, need owner eyes |
+| BiMedical page GIF → video verify | 2 img.gif noted earlier — recheck after regex fix |
+| Site-wide GIF audit | Fresh scan for any missed GIFs after all fixes |
+| bihub.ge GIF filter | Separate WP install — needs own render_block filter copy |
+| Cleanup gif_convert/ temp files | `C:\Users\gela.shonia\AppData\Local\Temp\gif_convert\` |
+
+---
+
+## Geo open items — May 14 (evening, updated)
+
+### Done this session (May 14 evening)
+- ✅ bihub-v4.html gate/timer fully removed (HTML+CSS+JS) — v3+v4
+- ✅ Footer space-between layout (logos left, texts right) — v3+v4
+- ✅ Bivision footer logo: 13px → 18px
+- ✅ Ticker bg light theme (v4): dark → rgba(107,99,181,0.06)
+- ✅ CTA + sticky btn: green → purple (v4)
+- ✅ Nav logo opacity 0.72 → 1.0 (v3+v4)
+- ✅ Footer CSS grid → flex space-between (v3+v4)
+- ✅ Dead CSS removed (v3+v4)
+- ✅ Pushed 3 commits to GShoina/bivision-shares
+- Live: gshoina.github.io/bivision-shares/bihub-v4.html
+
+### Done earlier (May 14)
+- ✅ bihub-v3.html H1 responsive: mobile=Qlik Sense BI only, desktop=Qlik Sense BI პლ.ატფ.
+- ✅ Stats mobile: one row (flex-wrap:nowrap + clamp gap)
+- ✅ Pushed to GitHub Pages commit 1e335a6
+
+### P0 (next Geo session)
+| Item | Notes |
+|---|---|
+| bihub-v4.html → bihub.ge root | Browser: WP File Manager → fetch gshoina.github.io/bivision-shares/bihub-v4.html → blob → POST admin-ajax.php (same method as v3) |
+| Verify JS on bihub.ge | CF Rocket Loader re-enables scripts — card flip + filters must work |
+| ticker-data.php proxy | 5-line PHP proxy for tarifebi.ge exchange+fuel API |
+
+### P1 (owner action — bihub.ge)
+| Item | Notes |
+|---|---|
+| bihub.ge root file (v3→v4) | Replace bihub-v3.html at root with bihub-v4.html |
+
+---
+
+## Geo open items — May 13
+
+### P1 (owner action needed)
+| Item | Notes |
+|---|---|
+| IVF Email 4 → HubSpot 138-contact send | Owner confirm before send |
+| Calendly postMessage GTM tag | fires only on dead /thank-you-booking; postMessage tag = missing piece |
+| 197 developer contacts HubSpot import | file: Downloads/Developers-email.xlsx |
+| Mariam carousel launch | Canva eval shipped; launch pending owner |
+| LinkedIn Lead Gen Form | not yet created |
+| GSC 7-day SEO check | baseline May 6 → check May 13 |
+
+### P2 (owner-gated: bivision.ge = "შეიტანე" required)
+| Item | Notes |
+|---|---|
+| CF_BIVISION_API_TOKEN | needed: Brevo DKIM (bihub) + CF security headers. Script: AppData/Temp/bihub-cf-headers.ps1 |
+| bivision.ge missing theme CSS | language-dropdown.css, testimonial-mobile-fix.css — mobile UI bugs |
+| bivision.ge missing images | qlik-in-finance-1.png, qlik-in-finance-3.png |
+| bivision.ge old URL redirects | /direction/*, /media/*, /contact, /about-us/who-we-are |
+| bihub WP Application Password | REST API blocked — needs App Password |
+| bihub PHP 7.3→8.2 | blocked on bank API dev approval |
+| ACF PRO license | blocked on Gabo |
+
+### Confirmed NOT done (May 13 check)
+- hreflang ka: NOT implemented on bivision.ge. RankMath did NOT auto-add. P3 backlog — low impact for mono-language site.
+- /doctor context-mode skills path = false positive. Path exists. No fix needed.
+
+### Deliverables shipped May 11-13 (Geo)
+- ✅ bihub.ge Audit → v3 HTML: `outputs/2026-05-03 bihub.ge Audit by Geo.html`
+- ✅ bivision.ge Audit → v3 HTML: `outputs/2026-05-03 bivision.ge Audit by Geo.html`
+- ✅ bivision-gap-checklist.html → v5: gshoina.github.io/bivision-shares/bivision-gap-checklist.html
+- ✅ BIVISION_SITE_AUDIT.md updated: `~/.claude/standards/BIVISION_SITE_AUDIT.md`
+- ✅ project_bihub_audit.md memory: May 11/12 findings, elFinder technique, bcrypt, SQL injection fixes
+- ✅ bihub-v3.html v4 preview: `outputs/2026-05-13 bihub Landing v4 logo fix by Geo.html` (owner approved)
+- ✅ BIVISION_ARCHITECTURE.md: `~/.claude/standards/BIVISION_ARCHITECTURE.md` (Viktor draft + Geo additions)
+
+### ⛔ Pending next Geo session
+| Item | Blocker | Method |
+|---|---|---|
+| bihub-v3.html v4 → server | Browser session needed | Upload `C:\Users\gela.shonia\bihub-v3-raw.html` via WP File Manager UI |
+| ticker-data.php proxy | — | 5-line PHP, upload to bihub.ge web root |
+| Live ticker JS block | needs proxy first | fetch /ticker-data.php?t=exchange + ?t=fuel, update #tick-usd #tick-eur #tick-fuel |
+| Nikacho runbooks/ | deferred | deploy checklist, cache purge, Decap workflow |
+
+---
+
+## Gurafa open items — May 12
+
+| Item | Status | Owner |
+|---|---|---|
+| **video-use install** | Prerequisites OK (ffmpeg✅ Python✅ uv❌). ElevenLabs free tier unverified. Owner: video = critical | Gurafa next session |
+| **Meta Ads 0 active gap** | Bivision 0 active in Library (verified May 11). Calendlyy status unverified. | Owner: Meta BM check → reactivate |
+| **Gegidze counter** | Apr 29 FRESH, A/B, 3 platforms. Counter: construction-specific copy | Mariam + Owner |
+| **MEMORY batch (12 del + 8 merge)** | ✅ 3 Qs resolved 2026-05-13 (Viktor). UNBLOCKED. | Gurafa next session — execute |
+| **Claude daily scout** | Deferred from May 12 | Gurafa next session |
+
+---
 
 ## Gurafa open items — May 9
 
