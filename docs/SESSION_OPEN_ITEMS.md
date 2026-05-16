@@ -1,18 +1,42 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-14
+updated: 2026-05-16
 owner: Mentari
 ---
 
+## Geo open items — May 16 (bivision.ge fixes)
+
+### ✅ Done this session
+- Chrome GPU artifact fix: `transform:translateZ(0)` on hero video
+- Products video: `height:360px !important; object-fit:cover; object-position:left center`
+- BiRetail CSS corruption (wpautop `<br />` in `<style>`): `the_content` filter priority 99 — ALL CLEAN
+- BIVISION_SITE_AUDIT.md updated with May 16 section
+
+### P0 (next Geo session)
+| Item | Method | Blocker |
+|---|---|---|
+| BiRetail tabs fix | functions.php JS: add `id` to `.products-tab-content` panels + click handler | none — can do without browser |
+| "სუპერი" testimonial card delete | WP Admin | browser needed |
+| Hero video switching speed | Investigate JS/animation in theme | — |
+
+### P1 (next Geo session)
+| Item | Notes |
+|---|---|
+| BiMedical GIFs verify | 2 img.gif — check if replaced after regex fix |
+| bihub.ge GIF filter | Separate WP install — own render_block filter |
+| Cleanup gif_convert/ | `C:\Users\gela.shonia\AppData\Local\Temp\gif_convert\` |
+
+### agent-teams check
+GelLa ran `agent-teams:team*` review on bivision.ge. Await findings before next site action.
+
 # Open Items — Mentari
 
-## Mentari deliverables shipped May 14
+## Mentari deliverables shipped May 14–15
 
-- ✅ 96 contacts added to Mailchimp IVF-Medical (v2: 9 + v3: 20 + v4: 67)
-- ✅ FNAME ts.akhalaia@hcore.ge → ცოტნე
-- ✅ Campaign 17993958 subject: "კლინიკის ფინანსური სურათი 1 დაშბორდზე / BiMedical"
-- ✅ Calendly links inserted Email 3 + 4 in HTML sequence files
-- ✅ GitHub push: bimedical-sequence-0513.html live
+- ✅ 96 contacts added to Mailchimp IVF-Medical
+- ✅ Campaign 17993958 subject updated + scheduled May 19
+- ✅ Calendly links in Email 3+4, GitHub push
+- ✅ bivision.ge SEO audit — 2 P1 issues found + fixed by Geo (www redirect + PHP BOM)
 
 ## Mentari carry-forward P0 — May 15+
 
@@ -31,16 +55,16 @@ owner: Mentari
 
 ---
 
-## Viktor open items — May 13
+## Viktor open items — May 16
 
 | Item | Status | Next |
 |---|---|---|
-| F4 Dastafe | Viktor REJECT, Gurafa no counter-evidence → stays REJECT | Gurafa confirm or close next session |
+| F4 Dastafe | Viktor REJECT, Gurafa no counter-evidence → stays REJECT | Gurafa confirm or close |
 | bivision.ge TTFB 1.79s | Viktor flag only → Geo execute | Geo |
 | bivision.ge CSP missing | Viktor flag → Geo execute | Geo |
 | HSTS 86400→31536000 | Viktor flag → Geo execute | Geo |
-| Daily HTML deliverable | 0 shipped May 13 | Viktor next session |
-| HSTS state → SESSION_OPEN_ITEMS | before Gurafa deletes hardening sprint file | Gurafa |
+| Daily HTML deliverable | ❌ 0 shipped May 13, 0 shipped May 15 — 2 consecutive FAIL | Viktor P0 next session |
+| fewer-permission-prompts | Skill loaded, NOT completed (interrupted by /clear) | Viktor next session |
 
 **HSTS current state (for Gurafa):** max-age=86400 + includeSubDomains. Target: max-age=31536000. Upgrade pending.
 
