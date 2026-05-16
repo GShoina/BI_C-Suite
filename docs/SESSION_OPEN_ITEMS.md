@@ -4,6 +4,21 @@ updated: 2026-05-16
 owner: Mentari
 ---
 
+## 🚨 CRITICAL — RESTORE IN PROGRESS (2026-05-16)
+- FastCloud support ticket: May 15 full site restore submitted by owner
+- Status: **WAITING** — do NOT touch bivision.ge functions.php or DB until support confirms
+- After restore: ALL today's DB changes lost (სუპერი removal, etc.) — must redo
+- Contact: check FastCloud support ticket status before starting next session
+
+## GelLa P0 — after restore confirmed
+1. Re-do სუპერი testimonial removal (posts #1066, #2210, #2261, #2264, #2269, #2271)
+2. Fix BiRetail tabs SOLO — no Geo coordination: wp_head CSS + wp_footer JS init
+3. Test all 6 product pages mobile + desktop (Playwright)
+4. Homepage services section slow images: Optimole/CDN investigation
+5. getimagesize() fallback: re-add to functions.php (restore overwrites it)
+
+---
+
 ## Geo open items — May 16 (bivision.ge fixes)
 
 ### ✅ Done this session
