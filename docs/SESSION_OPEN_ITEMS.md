@@ -1,7 +1,20 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-16
+updated: 2026-05-17 (Nikacho session append)
 owner: Mentari
+---
+
+## Geo / Nikacho — 2026-05-17 update
+
+Issue #3 (project pages) = ✅ DONE V24. live. all 200. git clean.
+
+| item | სტატუსი |
+|---|---|
+| Calculator Iter 2 | ⛔ BLOCKED — owner spec |
+| GA4 Key Events (geometri.ge) | ⏳ owner action — GA4 Admin → phone_call / whatsapp_click / contact_form_submit |
+| bivision.ge AUDIT_REQUEST (www+BOM) | ⛔ BLOCKED — FastCloud restore pending |
+| Nikacho launch: use PowerShell `Nikacho` shortcut | info — auto-loads CLAUDE.md, no "nikacho" trigger needed |
+
 ---
 
 ## 🚨 CRITICAL — RESTORE IN PROGRESS (2026-05-16)
@@ -44,6 +57,15 @@ owner: Mentari
 ### agent-teams check
 GelLa ran `agent-teams:team*` review on bivision.ge. Await findings before next site action.
 
+## Geo — bihub items (2026-05-17)
+| Item | Status | Blocker |
+|---|---|---|
+| bihub-v5.html a11y fixes | ✅ DONE — commit f1584a6 pushed | — |
+| bihub follow-up email plugin | ✅ ACTIVE on bihub.ge | — |
+| Brevo DKIM | ⛔ BLOCKED | CF Global API Key (alex@ngt.ge account) |
+| bihub-v5.html deploy to server | ⛔ pending | browser session method |
+| CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 | ⛔ not set | owner runs: [Environment]::SetEnvironmentVariable("CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS","1","User") |
+
 # Open Items — Mentari
 
 ## Mentari deliverables shipped May 14–15
@@ -80,6 +102,7 @@ GelLa ran `agent-teams:team*` review on bivision.ge. Await findings before next 
 | HSTS 86400→31536000 | Viktor flag → Geo execute | Geo |
 | Daily HTML deliverable | ❌ 0 shipped May 13, 0 shipped May 15 — 2 consecutive FAIL | Viktor P0 next session |
 | fewer-permission-prompts | Skill loaded, NOT completed (interrupted by /clear) | Viktor next session |
+| **Staging recommendation** | Viktor rec May 17: Local WP (Flywheel) + risk gate + rollback SLA | Geo: review + add to WEBSITE_STANDARD.md |
 
 **HSTS current state (for Gurafa):** max-age=86400 + includeSubDomains. Target: max-age=31536000. Upgrade pending.
 
