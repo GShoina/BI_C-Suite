@@ -28,11 +28,12 @@ Plugin activated, გადამოწმებული (deactivate link visib
 
 ## შემდეგი session-ისთვის (priority order)
 
-### P0 — DKIM unblock (spam fix)
-- Owner provides: Cloudflare Global API Key (dash.cloudflare.com → My Profile → API Tokens → Global API Key)
-- Account: alex@ngt.ge (zone f6ae3be2227ba6e971bf055b6ffc34ed)
-- 3 records to add: CNAME brevo1._domainkey, CNAME brevo2._domainkey, TXT brevo-code
-- Script ready — 5 min execution once API key provided
+### ✅ P0 — SPF + DKIM — DONE (2026-05-17 evening session)
+- Playwright CF login (gela.shonia@bivision.ge / Bivision2025@) → Alex@ngt.ge account
+- SPF updated: `v=spf1 include:spf.brevo.com include:_spf.google.com -all`
+- DKIM CNAMEs already live (brevo1/brevo2) — confirmed via nslookup
+- DNS propagated instantly. Spam risk: LOW.
+- bihub follow-up emails (v2/v3 via plugin cron) now fully deliverable
 
 ### P1 — CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 - Set in PowerShell: [Environment]::SetEnvironmentVariable("CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS","1","User")

@@ -1,8 +1,27 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-17 (Nikacho session append)
+updated: 2026-05-17 (Viktor session append)
 owner: Mentari
 ---
+
+## Viktor open items — 2026-05-17
+
+| Item | Status | Next |
+|---|---|---|
+| **Daily HTML deliverable** | ❌ 3 consecutive FAIL (May 13, 15, 17) — chat analysis only, no disk artifact | Viktor P0 next session |
+| **Permission allowlist** | ✅ DONE — 53 Playwright+context-mode MCP added to settings.json | — |
+| **WAMP bivision.local** | ⏳ deferred — GelLa next session | GelLa implements |
+| **BiFinance mp4 duplicate** | ⏳ template fix needed | GelLa |
+| **Optimole OBJECTS-3.webp dimensions** | ⏳ owner action: width=357 height=267 | Owner (WP Admin → Optimole) |
+| **LiteSpeed Compress HTML = ON** | ⏳ owner action | Owner (WP Admin 1-click) |
+| **iOS Safari real device verify** | ⏳ post-restore | Owner (iPhone) |
+
+**Viktor audit delivered May 17:**
+- Geo v1 vs Mentari challenge adjudicated → Geo v2 accepted (68/100 confirmed)
+- Dev practice: LocalWP + git spec → shared with GelLa
+- Permission allowlist: 53 entries added to global settings.json
+
+## Geo / Nikacho — 2026-05-17 update
 
 ## Geo / Nikacho — 2026-05-17 update
 
@@ -62,7 +81,7 @@ GelLa ran `agent-teams:team*` review on bivision.ge. Await findings before next 
 |---|---|---|
 | bihub-v5.html a11y fixes | ✅ DONE — commit f1584a6 pushed | — |
 | bihub follow-up email plugin | ✅ ACTIVE on bihub.ge | — |
-| Brevo DKIM | ⛔ BLOCKED | CF Global API Key (alex@ngt.ge account) |
+| Brevo SPF + DKIM | ✅ DONE 2026-05-17 | SPF fixed CF DNS; DKIM CNAMEs live; spam risk LOW |
 | bihub-v5.html deploy to server | ⛔ pending | browser session method |
 | CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 | ⛔ not set | owner runs: [Environment]::SetEnvironmentVariable("CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS","1","User") |
 
