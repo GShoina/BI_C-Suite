@@ -1,8 +1,24 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-18 (Geo — bihub.ge full backup)
+updated: 2026-05-19 (Geo — bihub-v8 landing page)
 owner: Mentari
 ---
+
+## Geo open items — 2026-05-19 (bihub-v8 session)
+
+| Item | Priority | Next |
+|---|---|---|
+| **Mobile overflow — hero-text1** | P1 | `white-space:nowrap` may overflow 375px — add clamp fallback or overflow:hidden on mobile |
+| **bihub-v8 production deploy** | P1 | Owner approves → upload to bihub.ge WP or replace static HTML via WinRM |
+| **UpdraftPlus file backup** | P1 carry-forward | Add themes+plugins to bihub.ge backup schedule |
+| **bihub.ge off-server backup** | P2 | Download bihub_fullbackup_20260518.zip locally |
+
+**Shipped 2026-05-19 (Geo):**
+- ✅ bihub-v8.html — new hero (Text1/Text2/no-card), footer single-row, Bivision logo restored
+- ✅ Notify strip → HubSpot CRM (PHP proxy mu-plugin deployed server-side)
+- ✅ Copy: 3 global replacements (რეგისტრაცია უფასოდ, წვდომა უფასოდ, footer tagline)
+- ✅ Lock flag consistency: 4 cards fixed
+- ✅ v6/v7 deleted from repo
 
 ## Geo open items — 2026-05-18 (backup session)
 
