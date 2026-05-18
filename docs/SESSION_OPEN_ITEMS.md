@@ -86,26 +86,26 @@ owner: Mentari
 
 ---
 
-## Gurafa open items — 2026-05-18
+## Gurafa open items — 2026-05-19 (updated)
 
 | Item | Status | Next |
 |---|---|---|
-| **May 19 competitor scan** — Dastafe + DataStudio.ge | ⏳ QUEUED | Gurafa Mon May 19 — P0 |
-| **Bivision Academy page** | 🆕 PLAN READY — domain TBD | Owner: domain decision → GelLa builds |
-| **ctx-upgrade context-mode** | ⛔ broken (better-sqlite3, v1.0.111→1.0.136) | `npm install -g context-mode@latest` |
+| **May 19 competitor scan** — Dastafe + DataStudio.ge | ⏳ P0 TODAY | `/competitor-ads-watch` — Gurafa |
+| **Academy build** — bivision.ge/academy | 🟢 UNBLOCKED — domain+pricing DECIDED | Owner "შეიტანე" → GelLa builds |
 | **Mentari: keep-awake script** | ℹ️ OBSOLETE — Claude Code Routines replaces | Mentari close item |
 | **Oris ERP financial statements** | ⛔ BLOCKED — owner sends ZIP | Owner action |
 | **ნინო გორგაძე monitoring** | 🔄 ONGOING | Monthly note to Mariam |
 | **GURAFA_INDEX_v2.html** | ✅ CANONICAL — commit 8c5ed10 | — |
 
-**Gurafa shipped 2026-05-18:**
-- ✅ AI Deep Dive May 15-17 → `BI_gurafa/outputs/2026-05-17 AI Deep Dive May 15-17 by Gurafa.html`
-- ✅ Bivision Academy concept + page plan (memory: project_bivision_academy.md)
-- ✅ aiworkshop.ge competitor signal analyzed
+**Gurafa shipped 2026-05-19:**
+- ✅ ctx-upgrade v1.0.135 → v1.0.136 (better-sqlite3 ABI 137 fixed, plugins reloaded)
+- ✅ bihub-v6/v7/v8 review + 7-dimension challenge (parallel window)
+- ✅ bihub design brief compiled (hero structure, ticker labels, empty state lead capture)
 
-**Owner-pending (Academy):**
-- Domain: bivision.ge/academy OR academy.bivision.ge?
-- Module pricing: M01 free / M02-06 = ?
+**Academy — DECIDED (2026-05-19):**
+- Domain: `bivision.ge/academy` ✅
+- Pricing: M01 free / M02-06 700-800 GEL ✅
+- Build: no blockers remain — owner "შეიტანე" triggers GelLa
 
 **Gurafa deliverables shipped 2026-05-17:**
 - ✅ Hub Identity + Mission section (tasks/principles/limits/questionnaire)
