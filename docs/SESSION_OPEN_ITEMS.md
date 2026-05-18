@@ -1,7 +1,29 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-19 (Geo — bihub-v8 landing page)
+updated: 2026-05-19 (GelLa — bivision.ge audit fixes)
 owner: Mentari
+---
+
+## GelLa open items — 2026-05-19 (bivision.ge audit)
+
+| Item | Priority | Next |
+|---|---|---|
+| **Energy email → Mailchimp** | P0 | "BiFinance — ენერგეტიკა — 2026-05-18" campaign create + paste HTML |
+| **BiMedical #17993958** | P0 | Fix BiAudit URL bug (both CTAs → BiFinance) + assign audience |
+| **Old pixel 495329725412052 in theme** | P1 Geo | BeVision theme wp_head → Geo removes/replaces |
+| **B-03 Empty H1** | P1 Geo | Theme block — Geo lane |
+| **B-05 Organization schema dup** | P1 Geo | functions.php area — Geo lane |
+| **hreflang ka + x-default** | P1 | Rank Math Sitemap |
+| **H1 keyword gap** | P1 | bivision.ge homepage H1 optimization |
+| **wp-json restrict** | P1 | .htaccess |
+| **LiteSpeed Compress HTML** | P2 | WP Admin 1-click |
+
+**GelLa shipped 2026-05-19:**
+- ✅ GTM V14: Meta Pixel ID fixed → 24993373220352719 (live)
+- ✅ GA4 2× fire fixed: Site Kit snippet OFF (live)
+- ✅ /saas-products/bifinance-2/ → 301 → /saas-products/bifinance/ (verified)
+- ✅ B-04 OG image: 1200×630 PNG, WP Media ID 3883, Rank Math Social set (og:image:width=1200 live)
+
 ---
 
 ## Geo open items — 2026-05-19 (bihub-v8 session)
@@ -86,26 +108,35 @@ owner: Mentari
 
 ---
 
-## Gurafa open items — 2026-05-19 (updated)
+## Gurafa open items — 2026-05-19 (updated — Academy session)
 
 | Item | Status | Next |
 |---|---|---|
-| **May 19 competitor scan** — Dastafe + DataStudio.ge | ⏳ P0 TODAY | `/competitor-ads-watch` — Gurafa |
-| **Academy build** — bivision.ge/academy | 🟢 UNBLOCKED — domain+pricing DECIDED | Owner "შეიტანე" → GelLa builds |
-| **Mentari: keep-awake script** | ℹ️ OBSOLETE — Claude Code Routines replaces | Mentari close item |
+| **Academy WP deploy** — bivision.ge/academy | 🟢 V7 SHIPPED — WP deploy pending | Geo lane — owner brief Geo |
+| **Academy registration backend** | ⏳ not built | Email → HubSpot contact create |
+| **Academy mobile test (375px)** | ⏳ not verified | hero-marketing gap on small screen |
+| **May 19 competitor scan** — Dastafe + DataStudio.ge | ⏳ P0 deferred (Academy work priority) | `/competitor-ads-watch` — Gurafa next session |
 | **Oris ERP financial statements** | ⛔ BLOCKED — owner sends ZIP | Owner action |
 | **ნინო გორგაძე monitoring** | 🔄 ONGOING | Monthly note to Mariam |
 | **GURAFA_INDEX_v2.html** | ✅ CANONICAL — commit 8c5ed10 | — |
 
-**Gurafa shipped 2026-05-19:**
-- ✅ ctx-upgrade v1.0.135 → v1.0.136 (better-sqlite3 ABI 137 fixed, plugins reloaded)
-- ✅ bihub-v6/v7/v8 review + 7-dimension challenge (parallel window)
-- ✅ bihub design brief compiled (hero structure, ticker labels, empty state lead capture)
+**Gurafa shipped 2026-05-19 (Academy session):**
+- ✅ Academy V3 extracted from Claude Designer bundled file
+- ✅ Academy V3 SEO pass: 10 JSON-LD blocks, OG, aria, hreflang, security
+- ✅ Academy V4–V7 density passes (3 restore passes + 2 tighten passes)
+- ✅ Academy V7 canonical: `outputs/2026-05-19 Bivision Academy V7 by Gurafa.html`
+- ✅ GitHub Pages: gshoina.github.io/bivision-shares/academy-v7.html (V1–V6 deleted)
+
+**Academy V7 density rules (LOCKED):**
+- `section.block { padding: 44px 0; }` global
+- `section#what.block { padding: 80px 0; }` override (learn cards preserved)
+- `#what .sec-head { margin-bottom: 32px; }` override
+- hero + KPI = separate rules, untouched
+- `section > .container > *:first-child { margin-top: 0; }` active
 
 **Academy — DECIDED (2026-05-19):**
 - Domain: `bivision.ge/academy` ✅
 - Pricing: M01 free / M02-06 700-800 GEL ✅
-- Build: no blockers remain — owner "შეიტანე" triggers GelLa
 
 **Gurafa deliverables shipped 2026-05-17:**
 - ✅ Hub Identity + Mission section (tasks/principles/limits/questionnaire)
@@ -137,9 +168,9 @@ owner: Mentari
 | **Menu სერვისები URL** | ✅ DONE → /saas-products/ | — |
 | **AI-3 Case study blog post** | ⏳ pending | Owner: sector + results needed |
 | **Organization schema clean (1 block)** | ⏳ next session | Rank Math Local SEO native fields |
-| **Redirect /saas-products/bifinance-2/** | ⏳ next session | Rank Math Redirections |
+| **Redirect /saas-products/bifinance-2/** | ✅ DONE 2026-05-19 | 301 → /saas-products/bifinance/ live |
 | **LiteSpeed Compress HTML = ON** | ⏳ owner action | WP Admin 1-click |
-| **OG image branded 1200×630** | ⏳ P1 | GelLa |
+| **OG image branded 1200×630** | ✅ DONE 2026-05-19 | WP Media ID 3883, og:image:width=1200 live |
 | **hreflang ka + x-default** | ⏳ P1 | Rank Math Sitemap |
 | **H1 keyword gap** | ⏳ P1 | GelLa |
 | **wp-json restrict** | ⏳ P1 | .htaccess |
