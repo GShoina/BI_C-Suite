@@ -106,3 +106,61 @@
 **BiRetail tabs broken** — pre-existing, May 16-მდე. ჩემი ცვლილება არ.
 **BiRetail 301 redirect** — session-ის დასაწყისში 301 იყო, later 200. LiteSpeed cache purge-ის შემდეგ გასწორდა.
 **functions.php server state post-incident:** 59152 bytes, 3 hook — სტაბილური, მაგრამ WP Additional CSS conflict-ი რჩება restore-მდე.
+
+---
+
+## MISTAKE #6 და #7 — Session-ის მეორე ნახევარი (context resume შემდეგ)
+
+### MISTAKE #6: PowerShell UTF-8 BOM upload
+- **რა გავაკეთე:** `Out-File -Encoding utf8` PowerShell-ში → ფაილი BOM-ით (EF BB BF bytes at start)
+- **შედეგი:** PHP error `Cannot modify header information - headers already sent by functions.php:1` — ყველა გვერდი broken
+- **root cause:** PowerShell utf8 encoding = UTF-8 with BOM; PHP-ი BOM-ს output-ად ბეჭდავს headers-ამდე
+- **fix:** `[System.IO.File]::WriteAllBytes()` — BOM-ის გარეშე წერს
+
+### MISTAKE #7: CRLF line endings Linux server-ზე
+- **რა გავაკეთე:** PowerShell-ში ფაილი წავიკითხე, BOM მოვაშორე, ავტვირთე — მაგრამ `\r\n` line endings შევინახე
+- **შედეგი:** server-ზე file size: 53298 bytes vs original 52771 bytes (+527 = ~527 lines × 1 extra byte)
+- **root cause:** Windows PowerShell string → CRLF; Linux PHP ზოგ შემთხვევაში ართმევს, ზოგ შემთხვევაში edge cases
+- **fix:** `$text.Replace("\`r\`n", "\`n")` before WriteAllBytes
+
+### MISTAKE #8: `the_content` hook — hero section strip
+- **რა გავაკეთე:** `$content = substr($content, $pos)` — ყველაფერი `<div class="wp-block-bevision-">`-მდე წავშალე
+- **შედეგი:** hero section-იც გაქრა — ის bevision block-ამდეა content-ში
+- **სწორი approach:** raw CSS strip = regex, არა blind substr
+
+---
+
+## განახლებული წესები
+
+### 🚫 NEVER — PowerShell file upload to Linux
+| აკრძალვა | მიზეზი | სწორი გზა |
+|---|---|---|
+| `Out-File -Encoding utf8` PHP ფაილისთვის | BOM → PHP headers error | `[System.IO.File]::WriteAllBytes()` only |
+| CRLF ფაილი Linux-ზე | size mismatch, edge case bugs | `$text.Replace("\`r\`n", "\`n")` before upload |
+| `substr($content, $pos)` the_content hook-ში | hero section-იც ისტრიპება | regex-ით CSS-ი ამოიღე, block-ი ნუ წაშლი |
+
+### functions.php upload — სწორი checklist
+```
+1. Read server file via cPanel Fileman API
+2. Strip BOM if present (check bytes[0..2] == EF BB BF)
+3. Convert CRLF → LF: $text.Replace("\r\n", "\n")
+4. Write with [System.IO.File]::WriteAllBytes() — no BOM
+5. Verify: first 3 bytes = 3C 3F 70 (= <?p)
+6. Upload via curl.exe -F "content=<filepath"
+7. Verify server byte count matches local byte count
+8. Test page HTTP 200 + content length reasonable (>50KB)
+```
+
+### ლეოს წესები (owner-defined, 2026-05-17)
+```
+1. functions.php-ზე ხელი არ ახლო პირდაპირ
+2. CSS ახლა: /wp-content/themes/BeVision/bivision-custom.css — ყველა ვიზუალური ცვლილება იქ
+3. PHP echo '<style>' → 500 error (single-quote conflict)
+4. FTP upload: curl -k flag (SSL cert bypass)
+```
+
+### საბოლოო სტატუსი May 16 session-ის ბოლოს
+- functions.php server: 53298 bytes — BOM-გარეშე მაგრამ CRLF (სწორ restore საჭიროა)
+- საჭირო: support ან manual restore May 14 clean version-ზე (52771 bytes, LF-only)
+- BiRetail raw CSS bug: **გადაუჭრელი** — hook-ი სწორად ვერ დაიწერა
+- ყველა სხვა გვერდი: restore-ის შემდეგ სტაბილური იყო, hook-ის გამო კი დაზარალდა

@@ -76,3 +76,36 @@ Nikacho git = clean. V24. No active work in flight.
 | PowerShell launch fix | info — use `Nikacho` $PROFILE shortcut |
 
 ## permission-ask count: 0
+
+---
+
+# Session 2026-05-17 — Gurafa (hub cleanup + mission section)
+
+## რაც გაკეთდა
+
+- **GURAFA_INDEX_v2.html** — Identity + Mission section added (tasks/5, principles/8, limits/5, questionnaire/10)
+- **Hub cleanup** — 18+ files deleted from outputs/ (ephemeral + superseded Gurafa scope)
+- **GURAFA_INDEX v1 deleted** — only v2 canonical remains
+- **gurafa-panel.html deleted** — content inlined into hub Identity section
+- **Apr22 Scout card** — replaced with inline insights (no dead file link)
+- **Apr22 Competitor Ad card** — replaced with inline Gegidze messaging insights
+- **4 dead Apr21 cards removed** from hub
+- **Schema JSON review** — 6 SoftwareApplication schemas for Rank Math reviewed
+- **MEMORY** — project_gurafa_hub_state.md written; MEMORY.md index updated
+- **GitHub Pages** — commit 8c5ed10 pushed. gshoina.github.io/bivision-shares/GURAFA_INDEX_v2.html live
+
+## სად გაჩერდა
+
+clear-bi protocol completing. Hub = canonical, clean, deployed.
+
+## შემდეგი session-ისთვის (priority order)
+
+| P | Item | Notes |
+|---|---|---|
+| P0 | May 19 competitor scan — Dastafe + DataStudio.ge | First scan. Active Watch queued. |
+| P0 | AI deep dive May 15-19 | Owner asked. No output this session. |
+| P1 | Oris ERP → Balance Sheet + P&L + Indirect CF | Owner sends ZIP + Excel mapping first. |
+| P1 | ctx-upgrade context-mode | v1.0.111 → v1.0.135 (better-sqlite3 missing) |
+| P2 | ნინო გორგაძე monitoring | Weekly. Signal note to Mariam monthly. |
+
+## permission-ask count (Gurafa): 0

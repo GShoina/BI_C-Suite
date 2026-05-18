@@ -1,20 +1,134 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-17 (Viktor session append)
+updated: 2026-05-18 (Geo — bihub.ge full backup)
 owner: Mentari
 ---
 
-## Viktor open items — 2026-05-17
+## Geo open items — 2026-05-18 (backup session)
 
 | Item | Status | Next |
 |---|---|---|
-| **Daily HTML deliverable** | ❌ 3 consecutive FAIL (May 13, 15, 17) — chat analysis only, no disk artifact | Viktor P0 next session |
+| **bihub.ge off-server backup** | ⚡ P0 — backup on server only | Download bihub_fullbackup_20260518.zip locally OR FastCloud panel |
+| **UpdraftPlus file backup** | ⛔ DB-only since May 7 | Add themes+plugins to backup schedule |
+| **bivision.ge DKIM Brevo auth** | ⏳ DNS live, Brevo "Authenticate" not clicked | app.brevo.com → senders/domain/list → Authenticate (2 min) |
+| **www.bivision.ge 301 redirect** | ⏳ owner-gate | Owner: "შეიტანე" |
+| **functions.php reconstruction** | ⚠️ 2,434/9,673 bytes recovered | Low priority if site works |
+
+**Shipped 2026-05-18 (Geo):**
+- ✅ Full server backup: `C:\wamp\bihub_fullbackup_20260518.zip` (191.9MB) on server 185.229.111.201
+- ✅ WinRM compress method: .NET ZipFile (Compress-Archive fails — pre-1980 timestamps)
+- ✅ PHP warning fixed (front-page.php:79 error_reporting)
+
+## GelLa open items — 2026-05-18
+
+| Item | Status | Next |
+|---|---|---|
+| bihub.ge weekly backup | ⏳ approved, not built | WinRM Scheduled Task — 30 min job |
+| Morning deals analysis (10:30) | ⏳ incomplete | Pull Meta+Mailchimp → unified HTML |
+| Elgromotors follow-up | ⚡ HOT — close May 31, 60% | გელა: პირადი კონტაქტი |
+| რუსთავის ავტოდრომი follow-up | ⚡ HOT — close May 31, 40% | გელა: პირადი კონტაქტი |
+| 0llivander + ნუტრიველი | ⏳ overdue | Owner confirm closedlost? |
+| FB Lead Gen campaign | ⏳ pending | Mariam 6Q gate → launch |
+| LinkedIn Community Management API | ⏳ pending (submitted 2026-05-17) | Check email → li_oauth2.py |
+| Construction email follow-up | ⏳ 7-10 days | Mailchimp open rate → non-openers |
+
+**Shipped 2026-05-18:**
+- ✅ **bihub.ge RECOVERED** — style.css restored, cards visible, CPT registered. WinRM method confirmed.
+- ✅ WinRM access established (185.229.111.201:5985, ntlm) — canonical edit path for bihub.ge
+- ✅ GA4 SA setup (bivision-analytics → property 302944682)
+- ✅ GA4 real data: 194 sessions, BiRetail #1, Organic Search=5 (critical SEO gap)
+- ✅ CEO Brief updated with GA4 channel + page breakdown
+- ✅ Analytics Admin API + OAuth client (shining-courage-493721-v5)
+- ✅ ga4_query.py script (token cached — no browser next time)
+
+**Social media state (2026-05-18):**
+- Meta: 1 active campaign paused (B*Product_Traffic, 0 leads, $24.84 spent). No active paid campaigns.
+- LinkedIn: 842 followers, Community Management API pending review (submitted 2026-05-17).
+- FB Lead Gen: Mariam 6Q gate not yet done. Not launched.
+- Mailchimp construction blast: 7-10 day window, open rates not yet checked.
+
+## GelLa open items — 2026-05-17 (attribution + CEO brief session)
+
+| Item | Status | Next |
+|---|---|---|
+| Elgromotors follow-up | ⚡ HOT — close May 31, 60% | გელა: პირადი კონტაქტი |
+| რუსთავის ავტოდრომი follow-up | ⚡ HOT — close May 31, 40% | გელა: პირადი კონტაქტი |
+| FB Lead Gen campaign (ახალი) | ⏳ pending | Mariam 6Q gate → launch |
+| LinkedIn Community Management API | ⏳ pending review (1-5 days) | Check email → run li_oauth2.py |
+| Construction email follow-up | ⏳ 7-10 days after send | Check Mailchimp open rate first |
+| GA4 MCP → settings.json | ⏳ next session | GelLa implement |
+| HubSpot deals: 0llivander + ნუტრიველი | ⏳ overdue | Owner: closedlost? |
+
+**Shipped 2026-05-17:**
+- ✅ FB→HubSpot Ads integration (Lead forms auto-sync)
+- ✅ HubSpot tracking code live (bivision.ge/mu-plugins/bivision-hubspot-tracking.php, portal 147341634)
+- ✅ Attribution audit HTML: `outputs/2026-05-17 Marketing Attribution Audit by GelLa.html`
+- ✅ CEO Brief: `outputs/2026-05-18 CEO Brief by GelLa.html`
+- ✅ Meta campaign PAUSED (B*Product_Traffic, 0 leads, $24.84)
+- ✅ LinkedIn Developer App setup (Client ID: 77sf2r5iq6osvn, Community Management API submitted)
+- ✅ SoftwareApplication schema × 6 + Organization patch + llms.txt (all live on bivision.ge)
+
+---
+
+## Gurafa open items — 2026-05-18
+
+| Item | Status | Next |
+|---|---|---|
+| **May 19 competitor scan** — Dastafe + DataStudio.ge | ⏳ QUEUED | Gurafa Mon May 19 — P0 |
+| **Bivision Academy page** | 🆕 PLAN READY — domain TBD | Owner: domain decision → GelLa builds |
+| **ctx-upgrade context-mode** | ⛔ broken (better-sqlite3, v1.0.111→1.0.136) | `npm install -g context-mode@latest` |
+| **Mentari: keep-awake script** | ℹ️ OBSOLETE — Claude Code Routines replaces | Mentari close item |
+| **Oris ERP financial statements** | ⛔ BLOCKED — owner sends ZIP | Owner action |
+| **ნინო გორგაძე monitoring** | 🔄 ONGOING | Monthly note to Mariam |
+| **GURAFA_INDEX_v2.html** | ✅ CANONICAL — commit 8c5ed10 | — |
+
+**Gurafa shipped 2026-05-18:**
+- ✅ AI Deep Dive May 15-17 → `BI_gurafa/outputs/2026-05-17 AI Deep Dive May 15-17 by Gurafa.html`
+- ✅ Bivision Academy concept + page plan (memory: project_bivision_academy.md)
+- ✅ aiworkshop.ge competitor signal analyzed
+
+**Owner-pending (Academy):**
+- Domain: bivision.ge/academy OR academy.bivision.ge?
+- Module pricing: M01 free / M02-06 = ?
+
+**Gurafa deliverables shipped 2026-05-17:**
+- ✅ Hub Identity + Mission section (tasks/principles/limits/questionnaire)
+- ✅ 18+ ephemeral/superseded files deleted from outputs/
+- ✅ GURAFA_INDEX v1 + gurafa-panel.html deleted (superseded)
+- ✅ Apr22 cards inlined, 4 dead Apr21 cards removed
+- ✅ GitHub Pages commit 8c5ed10
+
+---
+
+## Viktor open items — 2026-05-18
+
+| Item | Status | Next |
+|---|---|---|
+| **Daily HTML deliverable** | ❌ 4 consecutive FAIL (May 13, 15, 17, 18) — chat analysis only, no disk artifact | Viktor P0 next session |
+| **BiSchema verify — GelLa** | ⏳ 4 open questions before schema ship | GelLa: BiStock reorder / BiMedical patient flow / BiAudit "all" / ERP naming |
+| **gap-checklist HSTS claim** | ⚠️ CONFLICT: checklist ✅, open items OPEN | Playwright verify before regression section updated |
+| **updateActiveCard P2→P1** | Viktor recommendation | GelLa: 85% JS errors = conversion impact, promote severity |
+| **fewer-permission-prompts** | ❌ NOT completed — 2nd carry-forward | Viktor next session |
 | **Permission allowlist** | ✅ DONE — 53 Playwright+context-mode MCP added to settings.json | — |
 | **WAMP bivision.local** | ⏳ deferred — GelLa next session | GelLa implements |
 | **BiFinance mp4 duplicate** | ⏳ template fix needed | GelLa |
 | **Optimole OBJECTS-3.webp dimensions** | ⏳ owner action: width=357 height=267 | Owner (WP Admin → Optimole) |
 | **LiteSpeed Compress HTML = ON** | ⏳ owner action | Owner (WP Admin 1-click) |
-| **iOS Safari real device verify** | ⏳ post-restore | Owner (iPhone) |
+| **iOS Safari real device verify** | ✅ DONE — owner iPhone verified | — |
+| **SoftwareApplication schema ×6** | ✅ DONE live | — |
+| **Organization foundingDate+areaServed** | ✅ DONE live (custom block, duplicate minor) | — |
+| **llms.txt updated** | ✅ DONE ASCII-safe | — |
+| **Menu სერვისები URL** | ✅ DONE → /saas-products/ | — |
+| **AI-3 Case study blog post** | ⏳ pending | Owner: sector + results needed |
+| **Organization schema clean (1 block)** | ⏳ next session | Rank Math Local SEO native fields |
+| **Redirect /saas-products/bifinance-2/** | ⏳ next session | Rank Math Redirections |
+| **LiteSpeed Compress HTML = ON** | ⏳ owner action | WP Admin 1-click |
+| **OG image branded 1200×630** | ⏳ P1 | GelLa |
+| **hreflang ka + x-default** | ⏳ P1 | Rank Math Sitemap |
+| **H1 keyword gap** | ⏳ P1 | GelLa |
+| **wp-json restrict** | ⏳ P1 | .htaccess |
+| **Performance: total load 6.7s** | ⏳ new finding | LiteSpeed Page Optimization |
+| **Audit v4 HTML (updated scores)** | ⏳ next session | Viktor |
 
 **Viktor audit delivered May 17:**
 - Geo v1 vs Mentari challenge adjudicated → Geo v2 accepted (68/100 confirmed)

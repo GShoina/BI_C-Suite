@@ -58,6 +58,7 @@ Read and follow these files at session start:
 3. Read `../Mentari_Virtual-C-Suite/docs/core/output-format.md` — SSOT for owner-facing response format
 4. Read docs/AUDIT_FEEDBACK.md for pending feedback
 5. Read docs/EXECUTION_QUEUE.md for active priorities
+5a. Read docs/SELF_RULES.md — my own operating rules (priority gate, lanes, red lines)
 6. Read any new files from Viktor/Gurafa in docs/
 7. First output = EP0 scored, format per output-format.md
 
