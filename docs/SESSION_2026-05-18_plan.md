@@ -116,3 +116,57 @@ Backup created. /clear triggered.
 5. **functions.php** — current reconstruction 2,434 bytes; original 9,673 bytes; ~7,239 unknown. Low priority if site works.
 
 ## permission_asks Geo session: 1 (backup target: server vs local — clarified by owner)
+
+---
+
+# GelLa SESSION 2026-05-18 — Email Campaigns (continuation 2)
+
+## გაკეთდა
+
+1. ✅ BiMedical Email v3 General → `outputs/2026-05-18 BiMedical Email v3 General by GelLa.html`
+   - Mariam-ის ორიგინალი ტექსტი 100% შენარჩუნებული (ზოგადი სამედიცინო)
+   - Google Fonts — preview only, NOT email-safe
+
+2. ✅ BiMedical Email v3 EmailSafe → `outputs/2026-05-18 BiMedical Email v3 EmailSafe by GelLa.html`
+   - Email-safe: no @import, Arial/Helvetica system fonts
+   - Outlook VML buttons + conditional comment table fallback for stats grid
+   - Mailchimp merge tags: `*|ARCHIVE|*` + `*|UNSUB|*`
+   - **PASTED INTO Mailchimp campaign 17993958** (Legacy Builder CodeMirror)
+
+3. ✅ BiMedical IVF Email v2 → `outputs/2026-05-18 BiMedical IVF Email v2 by GelLa.html`
+   - IVF-specific: cycle P&L, donor mgmt, ICSI, lab costs
+   - Saved for future use (IVF contacts not yet filtered)
+   - Same EmailSafe design
+
+4. ✅ BiFinance Energy Email v1 → `outputs/2026-05-18 BiFinance Energy Email v1 by GelLa.html`
+   - ICP: ელ-სადგური / HPP / ქარის-მზის კომპანიები — CFO/CEO
+   - Pain: SCADA + ESCO + ბუღალტერია = 3 სისტემა, ხელით Excel კონსოლიდაცია
+   - Stats: "2 კვირა / 0 Excel / 360° SCADA+ESCO+ბუღალტერია"
+   - Features: Generation P&L, ESCO settlement, O&M analysis, Plan vs Actual
+   - EmailSafe design (same pattern as BiMedical v3)
+   - **NOT yet in Mailchimp** — next step
+
+## Mailchimp campaign state
+
+| Campaign ID | Name | Status | HTML |
+|---|---|---|---|
+| 17993958 | BiMedical — IVF კლინიკები — 2026-05-16 | Draft, HTML pasted, **NO audience yet** | ✅ v3 EmailSafe |
+| 17994019 | Original Mariam test | Draft | old |
+| 17994024 | Copy 01 | Draft | old |
+
+## ბაგი — გასასწორებელი სანამ გავიდ
+- Campaign 17993958: BiAudit link ← points to BiFinance URL (both CTAs point to BiFinance). Fix before send.
+- Campaign 17993958: Audience NOT assigned. Must assign before send.
+
+## pending — შემდეგი სესია
+
+1. **Energy email → Mailchimp**: Create new campaign "BiFinance — ენერგეტიკა — 2026-05-18", paste v1 HTML
+2. **BiMedical audience assign**: Pick list for campaign 17993958 + fix BiAudit URL bug
+3. **Retail email campaigns** (after FB retail lead gen): a) sales analytics b) price monitoring
+4. **Follow-up tagging strategy**: Mailchimp Customer Journey (Standard+) vs manual tag — plan only, owner decides tier
+5. **IVF email send**: After IVF contacts filtered from medical list
+
+## Mailchimp technique — CONFIRMED WORKING
+CodeMirror.setValue(html) via `page.evaluate((html) => {...}, htmlString)` — passes HTML as function param to avoid template literal escape issues. Legacy Builder HTML-paste page: `/campaigns/wizard/html-paste?id=CAMPAIGN_ID`.
+
+## permission_asks GelLa email session: 0

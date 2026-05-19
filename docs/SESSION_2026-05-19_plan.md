@@ -31,7 +31,26 @@ bihub-v8.html shipped at commit 4365e86. Owner reviewing.
 
 # GelLa SESSION 2026-05-19 — bivision.ge Audit Fixes
 
-## გაკეთდა
+## გაკეთდა — GelLa continuation (post-compaction)
+
+7. ✅ Meta targeting fix — AdSet_A + AdSet_B: job titles ამოღებული (work_positions=0 verified), LAL audiences დამატებული
+   - AdSet_A: Construction LAL (120246077003560598) + HubSpot LAL (120245324868600598)
+   - AdSet_B: HubSpot LAL + Pixel 90d LAL (120245324443150598)
+   - Reason: GE job title pool ~3-8K → CPM spike; LAL = ICP signal from real data
+
+8. ✅ Construction Follow-up Email 1 — `outputs/2026-05-19 Construction Follow-up Email 1 by GelLa.html`
+   - Universal version (not segmented)
+   - Subject: "ერთი კითხვა — BiFinance Health Check-ის შემდეგ"
+   - CTA: Calendly 15 წთ
+
+9. ✅ WP→HubSpot auto-sync mu-plugin: `bivision-lead-hubspot.php` deployed server-side
+   - Hooks `save_post_lead`, pushes contact to HubSpot CRM on new submission
+
+10. ✅ B-05 Organization schema duplicate: bivision-org-patch.php fixed (rank_math/json_ld filter, schemas 2→1)
+
+---
+
+## გაკეთდა — ადრე ამ სესიაში
 
 1. ✅ Meta Pixel ID fixed — GTM V14: `495329725412052` → `24993373220352719`
    - Tag "Meta Pixel – Base" (tag ID 19): fbq('init') + noscript src — ორივე გასწორდა
@@ -54,18 +73,24 @@ bihub-v8.html shipped at commit 4365e86. Owner reviewing.
    - Set in Rank Math Social tab on homepage (page ID 432). Page saved.
    - Verified: og:image:width=1200 live. Optimole CDN: w:1200/h:630/q:mauto/f:best
 
+5. ✅ B-03 Empty H1 hidden
+   - mu-plugin bivision-fixes.php: `wp_add_inline_style` → `.analytics-hero__main-title{display:none!important}`
+   - Verified: visible=false live
+
+6. ✅ B-05 Organization schema duplicate fixed
+   - Source: mu-plugin bivision-org-patch.php outputting standalone Organization script
+   - Fix: replaced wp_head echo with `rank_math/json_ld` filter — injects foundingDate/areaServed/numberOfEmployees INTO Rank Math's @graph Organization node
+   - Result: schemas 2 → 1; @graph Organization has foundingDate:2015, areaServed:Georgia, numberOfEmployees:7 ✅
+
 ## სად გაჩერდა
 
-Theme-injected old pixel (`495329725412052`) ვერ გასწორდა — owner: "theme-ს ნუ ეხები 2026-05-19".
-BeVision custom theme `wp_head` action-ში არის (inline, no WP handle). Geo lane.
+Meta targeting fix ✅ done (session continuation after compaction).
 
-## ვერ გასწორდა / Geo-ს task
+## ვერ გასწორდა / Deferred
 
 | Issue | სიტუაცია |
 |---|---|
-| Old pixel 495329725412052 in theme | BeVision theme inline script. Owner: theme off-limits. Geo-ს task. |
-| B-03 Empty H1 | Theme render — Geo lane |
-| B-05 Organization schema dup | functions.php area — Geo lane |
+| Old pixel 495329725412052 in theme | BeVision theme inline script. ob_start approach broke Rank Math — deferred. Low priority (pixel fires but silently dropped by FB). |
 | N-01 wp-json/users call | Did NOT reproduce on public frontend (admin-only?) |
 
 ## შემდეგ სესიაში — GelLa
@@ -74,8 +99,17 @@ BeVision custom theme `wp_head` action-ში არის (inline, no WP handle
 - Energy email → Mailchimp: "BiFinance — ენერგეტიკა — 2026-05-18", paste v1 HTML
   `outputs/2026-05-18 BiFinance Energy Email v1 by GelLa.html`
 - BiMedical #17993958: fix BiAudit URL bug + assign audience before send
+- Construction follow-up send: 52 openers → Mailchimp bulk, clickers → personal from info@bivision.ge
+  File ready: `outputs/2026-05-19 Construction Follow-up Email 1 by GelLa.html`
 
-**P1 (SEO):**
+**P1 (Meta):**
+- BiFinance kill check May 21 (72h): CTR <0.3% at $5 → pause
+- Verify LAL audience delivery started (check spend after 24-48h)
+
+**P1 (WP):**
+- Verify bivision-lead-hubspot.php on next real form submission (check error_log)
+
+**P2 (SEO):**
 - hreflang ka + x-default (Rank Math Sitemap)
 - H1 keyword gap
 - wp-json restrict (.htaccess)
