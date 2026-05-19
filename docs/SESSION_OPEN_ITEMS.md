@@ -1,28 +1,34 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-19 (GelLa — bivision.ge audit fixes)
+updated: 2026-05-19 end-of-session (GelLa — Meta targeting + WP sync + Construction email)
 owner: Mentari
 ---
 
-## GelLa open items — 2026-05-19 (bivision.ge audit)
+## GelLa open items — 2026-05-19 (end of session)
 
 | Item | Priority | Next |
 |---|---|---|
-| **Energy email → Mailchimp** | P0 | "BiFinance — ენერგეტიკა — 2026-05-18" campaign create + paste HTML |
-| **BiMedical #17993958** | P0 | Fix BiAudit URL bug (both CTAs → BiFinance) + assign audience |
-| **Old pixel 495329725412052 in theme** | P1 Geo | BeVision theme wp_head → Geo removes/replaces |
-| **B-03 Empty H1** | P1 Geo | Theme block — Geo lane |
-| **B-05 Organization schema dup** | P1 Geo | functions.php area — Geo lane |
-| **hreflang ka + x-default** | P1 | Rank Math Sitemap |
-| **H1 keyword gap** | P1 | bivision.ge homepage H1 optimization |
-| **wp-json restrict** | P1 | .htaccess |
-| **LiteSpeed Compress HTML** | P2 | WP Admin 1-click |
+| **Energy email → Mailchimp** | P0 | "BiFinance — ენერგეტიკა — 2026-05-18" campaign create + paste v1 HTML |
+| **BiMedical #17993958** | P0 | Fix BiAudit URL bug (both CTAs → BiFinance) + assign audience + send |
+| **Construction follow-up send** | P0 | 52 openers → Mailchimp bulk; clickers → personal from info@bivision.ge. File ready. |
+| **BiFinance Meta kill check** | P1 | May 21 (72h): CTR <0.3% at $5 → pause both adsets |
+| **bivision-lead-hubspot.php verify** | P1 | Next form submission → check error_log for HubSpot sync status=201 |
+| **Old pixel 495329725412052 in theme** | P2 Geo | BeVision theme wp_head → Geo lane |
+| **hreflang ka + x-default** | P2 | Rank Math Sitemap |
+| **H1 keyword gap** | P2 | bivision.ge homepage H1 optimization |
+| **wp-json restrict** | P2 | .htaccess |
+| **LiteSpeed Compress HTML** | P3 | WP Admin 1-click |
 
-**GelLa shipped 2026-05-19:**
+**GelLa shipped 2026-05-19 (full session):**
 - ✅ GTM V14: Meta Pixel ID fixed → 24993373220352719 (live)
 - ✅ GA4 2× fire fixed: Site Kit snippet OFF (live)
 - ✅ /saas-products/bifinance-2/ → 301 → /saas-products/bifinance/ (verified)
-- ✅ B-04 OG image: 1200×630 PNG, WP Media ID 3883, Rank Math Social set (og:image:width=1200 live)
+- ✅ B-04 OG image: 1200×630 PNG, WP Media ID 3883, og:image:width=1200 live
+- ✅ B-03 Empty H1: hidden via mu-plugin (display:none!important live)
+- ✅ B-05 Organization schema: 2→1 block, foundingDate/areaServed/numberOfEmployees in @graph
+- ✅ Construction Follow-up Email 1: `outputs/2026-05-19 Construction Follow-up Email 1 by GelLa.html`
+- ✅ bivision-lead-hubspot.php deployed: WP form → HubSpot auto-sync on save_post_lead
+- ✅ Meta targeting fixed: AdSet_A + AdSet_B job titles removed, LAL audiences active (API verified)
 
 ---
 
@@ -108,16 +114,26 @@ owner: Mentari
 
 ---
 
-## Gurafa open items — 2026-05-19 (updated — Academy session)
+## Gurafa open items — 2026-05-19 (updated — Competitor Scan + AI Scout session)
 
 | Item | Status | Next |
 |---|---|---|
 | **Academy WP deploy** — bivision.ge/academy | 🟢 V7 SHIPPED — WP deploy pending | Geo lane — owner brief Geo |
 | **Academy registration backend** | ⏳ not built | Email → HubSpot contact create |
 | **Academy mobile test (375px)** | ⏳ not verified | hero-marketing gap on small screen |
-| **May 19 competitor scan** — Dastafe + DataStudio.ge | ⏳ P0 deferred (Academy work priority) | `/competitor-ads-watch` — Gurafa next session |
+| **May 19 competitor scan** | ✅ DONE — Amadeo+Gegidze+Dastafe+DataStudio.ge+Intelligence Georgia | HTML + GitHub Pages live |
+| **BiFinance CTR kill check** | ⏳ May 21 (72h) | Kill if CTR <0.3% at $5 spent |
+| **Claude Finance agents test** | ⏳ P1 | Gurafa tests templates → Academy M03 brief |
+| **ERP connector copy variant** | ⏳ P1 | "Oris/Fina/1C კავშირი" — Mariam next variant |
 | **Oris ERP financial statements** | ⛔ BLOCKED — owner sends ZIP | Owner action |
 | **ნინო გორგაძე monitoring** | 🔄 ONGOING | Monthly note to Mariam |
+
+**Gurafa shipped 2026-05-19 (Competitor Scan session):**
+- ✅ Competitor Ads Watch HTML: `BI_DonotUseMe/outputs/2026-05-19 Competitor Ads Watch by Gela.html`
+- ✅ GitHub Pages: gshoina.github.io/bivision-shares/competitor-watch-2026-05-19.html
+- ✅ competitor_intel.md: Intelligence Georgia confirmed 0, Dastafe downgraded to monthly
+- ✅ ai_scout.md: 5 signals logged (Claude Finance agents, Excel add-in, MCP beta, etc.)
+- ✅ Key signal: Claude Finance 10 agents = Academy M03 + BiFinance demo opportunity
 | **GURAFA_INDEX_v2.html** | ✅ CANONICAL — commit 8c5ed10 | — |
 
 **Gurafa shipped 2026-05-19 (Academy session):**
