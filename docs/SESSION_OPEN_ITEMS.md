@@ -14,7 +14,7 @@ owner: Mentari
 
 | Item | Action | Who | Status |
 |---|---|---|---|
-| Wordfence full scan | WP Admin → Wordfence → Scan → Full. Check /uploads/ for .php files | Owner | ⏳ TODAY |
+| ~~Wordfence scan~~ | Multiple scans post-March 2026 — clean. ~~Not actionable.~~ | Owner | ✅ DONE |
 | GA4 Key Events | GA4 Admin → Events → phone_call/whatsapp_click/contact_form_submit → toggle Key Event | Owner | ⏳ TODAY |
 | BiRetail tabs P0 (B-01) | mu-plugin: `.products-tab-content` IDs + click handler | Geo | ⏳ needs "შეიტანე" |
 
@@ -25,7 +25,7 @@ owner: Mentari
 | Item | Action | Who | Status |
 |---|---|---|---|
 | fb/paid LAL monitoring | Check eng.rate May 22+. If still <35% → /demo LP | Mariam+Geo | ⏳ monitor |
-| GSC Removals | 411 spam URL batch removal request | Owner/Geo | ⏳ |
+| ~~GSC Removals~~ | Reported multiple rounds, Google responded. 411 declining naturally — monitor only. | Owner | ✅ DONE |
 | UTM on email campaigns | Mailchimp UTM template + WhatsApp links | GelLa/Mariam | ⏳ |
 
 ---
