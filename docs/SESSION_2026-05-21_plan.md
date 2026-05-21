@@ -54,3 +54,21 @@ status: DONE
 | LCP mobile | ~4.3s | 4.3s |
 
 Next target: 80+ mobile → requires LCP improvement (images/video) + remaining TBT (Crisp)
+
+---
+
+## bihub.ge session (2026-05-21 evening) — Geo lane
+
+### Done
+- Forgot password: flow works, email → spam
+- SPF added CF DNS: `v=spf1 include:spf.brevo.com ~all` ✅
+- DKIM ✅ DMARC ✅ (both since May 17)
+- Accidental migration + immediate rollback ✅
+- Migration DEFERRED to 2026-05-22 night
+- FastCloud panel pass updated in creds ✅
+
+### Tomorrow (2026-05-22)
+1. SPF spam retest — forgot password → inbox?
+2. Migration: `powershell -File ~/.claude/scripts/bihub_migration.ps1`
+3. Post-migration tests: bihub.ge/ v10, /cards/ WP, /wp-admin/ login
+4. SweetAlert forgot form fix (post-migration)
