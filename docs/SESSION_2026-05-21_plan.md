@@ -60,15 +60,25 @@ Next target: 80+ mobile → requires LCP improvement (images/video) + remaining 
 ## bihub.ge session (2026-05-21 evening) — Geo lane
 
 ### Done
-- Forgot password: flow works, email → spam
-- SPF added CF DNS: `v=spf1 include:spf.brevo.com ~all` ✅
-- DKIM ✅ DMARC ✅ (both since May 17)
-- Accidental migration + immediate rollback ✅
-- Migration DEFERRED to 2026-05-22 night
-- FastCloud panel pass updated in creds ✅
+
+| Task | Result |
+|---|---|
+| Forgot password live test | Flow works, email lands in spam |
+| DKIM verify | Already live since May 17 ✅ |
+| SPF added to CF DNS | `v=spf1 include:spf.brevo.com ~all` ✅ |
+| DMARC verify | `p=none` live ✅ |
+| Accidental migration + rollback | .htaccess clean ✅ |
+| Migration DEFERRED | Owner: 2026-05-22 night |
+| FastCloud panel pass updated | creds ✅ |
+
+### Backups on server (185.229.111.201)
+
+- `C:\wamp\bihub_fullbackup_20260520.zip` — 180MB
+- `C:\wamp\bihub_db_20260520.sql` — 19MB
 
 ### Tomorrow (2026-05-22)
+
 1. SPF spam retest — forgot password → inbox?
 2. Migration: `powershell -File ~/.claude/scripts/bihub_migration.ps1`
-3. Post-migration tests: bihub.ge/ v10, /cards/ WP, /wp-admin/ login
-4. SweetAlert forgot form fix (post-migration)
+3. Post-migration tests: bihub.ge/ → v10, /cards/ → WP, /wp-admin/ → login
+4. SweetAlert fix (post-migration) — forgot form AJAX + "შეამოწმეთ სპამი"

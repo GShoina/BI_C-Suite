@@ -1,7 +1,17 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-21 session-close (Gurafa — BI Platform Watch + Competitor Scan)
+updated: 2026-05-21 session-close (Geo — bihub.ge SPF + migration prep)
 owner: Mentari
+---
+
+## bihub.ge — P0 open (2026-05-22)
+
+| # | Item | Status |
+|---|---|---|
+| P0 | bihub.ge migration execute | READY — script at `~/.claude/scripts/bihub_migration.ps1` |
+| P0 | SPF spam retest | Send fresh forgot-password → inbox? If spam: Gmail headers or mail-tester.com |
+| P1 | SweetAlert forgot form (post-migration) | AJAX submit + "შეამოწმეთ სპამი" UI |
+
 ---
 
 ## Deliverables shipped 2026-05-21 ✅
