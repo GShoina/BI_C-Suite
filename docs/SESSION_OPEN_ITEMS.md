@@ -18,6 +18,9 @@ owner: Mentari
 - GTM V15 published: "Clarity → Window Loaded" — Clarity tag trigger All Pages → Window Loaded
 - bivision.ge PageSpeed Mobile: 57 → **71** (+14pts), TBT: 800ms → **370ms** (-54%)
 - Note: Crisp not in GTM (tag 24 = UTM cookie tracker). Crisp loads via WP plugin — deferred separately if needed.
+- **B-02 DONE**: Wrong Meta pixel `495329725412052` (Ad Account ID) removed from `functions.php` wp_head hook. Only correct pixel `24993373220352719` now fires. LiteSpeed purged + verified.
+- **B-01 FALSE POSITIVE**: Viktor audit said `.products-tab-btn` broken — JS already uses `.products-tab-item`. All 6 tabs verified working.
+- **PageSpeed recheck** (after B-02 purge): Mobile 67, TBT 780ms — suspect LiteSpeed cold cache. Recheck May 22.
 
 ## Deliverables shipped 2026-05-20 ✅
 - `outputs/2026-05-20 bivision.ge Audit v4 by Geo.html` (score 72/100) — Geo session
@@ -58,7 +61,8 @@ owner: Mentari
 
 | Item | Details |
 |---|---|
-| B-02: old Meta pixel in theme | Remove 495329725412052 from BeVision theme wp_head |
+| ~~B-02: old Meta pixel~~ | ✅ DONE 2026-05-21 |
+| B-03: Empty H1 | backlog — owner deferred, recheck May 22 with PageSpeed |
 | B-04: hreflang | ka + x-default → Rank Math Sitemap settings |
 | B-05: H1 keyword gap | H1 keyword alignment |
 | 38 empty alt="" | Gutenberg inline blocks |

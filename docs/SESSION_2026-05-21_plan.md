@@ -1,6 +1,6 @@
 ---
 date: 2026-05-21
-agent: GelLa (this session)
+agent: GelLa + Mentari (multiple sessions)
 status: DONE
 ---
 
@@ -54,6 +54,33 @@ status: DONE
 | LCP mobile | ~4.3s | 4.3s |
 
 Next target: 80+ mobile → requires LCP improvement (images/video) + remaining TBT (Crisp)
+
+---
+
+## Viktor audit session (2026-05-21 afternoon) — Mentari/Geo lane
+
+### Done
+
+| Task | Result |
+|---|---|
+| .gitignore audit (all repos) | All 4 repos already had canonical credential block ✅ |
+| B-02 pixel fix | `495329725412052` removed from functions.php wp_head via fetch POST to WP Admin. LiteSpeed purged. Only correct pixel `24993373220352719` fires. ✅ |
+| B-01 tab JS | FALSE POSITIVE — JS already correct (`.products-tab-item`), all 6 tabs work ✅ |
+| GTM malware flag | UI artifact from hack period. Tags fire normally. GA4 confirmed via network. ✅ |
+| PageSpeed recheck | Mobile 67, TBT 780ms — suspect LiteSpeed cold cache after purge. Recheck May 22. |
+
+### Where stopped
+- B-03 (empty H1) → backlog, owner deferred to May 22
+- PageSpeed TBT needs recheck May 22 (cold cache suspect)
+
+### May 22 priorities
+
+| # | Item | Notes |
+|---|---|---|
+| P0 | bihub.ge migration | Script ready: `~/.claude/scripts/bihub_migration.ps1` |
+| P0 | PageSpeed recheck | Mobile 67 → confirm 71 recovery or investigate TBT 780ms |
+| P1 | B-03 empty H1 | PHP template edit — owner to decide approach |
+| P1 | Crisp + render-blocking scripts | If TBT still high after cache warm |
 
 ---
 
