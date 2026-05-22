@@ -1,7 +1,38 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-21 session-close (Geo — bihub.ge SPF + migration prep)
+updated: 2026-05-22 session (bihub v11 live; carry-forwards: forgot-pw test, mail-tester, CF headers)
 owner: Mentari
+---
+
+## bihub.ge carry-forwards (2026-05-22)
+- P0: Forgot password flow end-to-end test — db.php patched, live test not done
+- P0: mail-tester.com deliverability score
+- P1: v11 Playwright visual regression baseline
+- P1: CF security headers audit (X-Frame-Options, CSP, HSTS)
+
+---
+
+## BiMedical IVF — Follow-up P0 (2026-05-22) ⏰ OWNER REMINDER
+
+| # | Item | Detail |
+|---|---|---|
+| P0 | g.metreveli@vivomedical.ge — follow-up | Clicked BiMedical IVF email 2026-05-20. Mariam → personalized outreach |
+| P0 | paatachikovani@gmail.com — follow-up | Clicked BiMedical IVF email. Unknown clinic. Mariam → personalized outreach |
+| NOTE | davit.dgebuadze@vbc.ge | Clicked but excluded from follow-up per owner rule |
+
+---
+
+## BiFinance Leads Campaign — ✅ PUBLISHED 2026-05-22
+
+| # | Item | Detail |
+|---|---|---|
+| ✅ | **Lead Gen TOS** | Accepted 2026-05-22 session |
+| ✅ | **Creative** — "New Leads Ad" | BiFinance image + Georgian CFO copy + headline done. Published. |
+| ✅ | **Campaign published** | `BiFinance_Phase1_Leads_2026-05-22` → In review (Meta). Score 100. |
+| ✅ | **Pause old Traffic** | `BiFinance_Phase0_AB_Traffic_2026-05-18` → PAUSED 2026-05-22. Status: Off. |
+| ✅ | **Image fix: B→A** | `New Leads Ad` creative swapped to `BiFinance single post A.jpeg` (CFO/Ad_A_CFO_GelLa). Re-published 2026-05-22. |
+| ✅ | **End date set — June 1** | AdSet end_time=2026-06-01T00:00:00+0400 via Meta API (UI blocked start date, API bypass). Start=May 22 unchanged. |
+
 ---
 
 ## bihub.ge — P0 open (2026-05-22)
