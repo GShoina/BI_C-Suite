@@ -1,8 +1,21 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-22 session (bihub v11 live; carry-forwards: forgot-pw test, mail-tester, CF headers)
+updated: 2026-05-23 session (gamige intel done; bihub audit 6 bugs; WEBSITE_STANDARD §25b/c added)
 owner: Mentari
 ---
+
+## bihub.ge — Viktor Audit Bugs (2026-05-22, carry to Geo)
+
+| # | Priority | Bug | Fix |
+|---|---|---|---|
+| B-01 | **P0** | /forgot-password/ → 404 | Find modal JS forgot-password URL, fix endpoint |
+| REG | **P0** | /register-me/ → 500 (ACF deleted) | Install ACF Pro OR replace get_field() with native WP meta |
+| B-02 | P1 | Logo href="#" | Change to href="/" |
+| B-03 | P1 | Terms/Privacy dead links | Need page content from owner |
+| B-04 | P1 | 7 security headers missing | CF Transform Rules → Modify Response Headers (NOT .htaccess) |
+| B-05 | P2 | Rocket Loader deferring 18 resources | CF Dashboard → Speed → Rocket Loader → OFF |
+| B-06 | P2 | noscript display:none | Change to visibility:hidden |
+| NOTE | — | /tbc/.htaccess | DO NOT DELETE — needed |
 
 ## bihub.ge carry-forwards (2026-05-22)
 - P0: Forgot password flow end-to-end test — db.php patched, live test not done
@@ -82,7 +95,7 @@ owner: Mentari
 | UTM on email campaigns | Mailchimp UTM template + WhatsApp links | GelLa/Mariam | ⏳ |
 | **BOG payment link** | Academy payment setup: merchant agreement + link details | Owner | ⏳ needs owner |
 | **Academy WP deploy** | bivision.ge/academy — brief Geo | Owner → Geo | ⏳ blocked |
-| **Academy M03 brief** | Claude Finance agent templates → lesson brief draft | Gurafa | ⏳ next session |
+| **Academy M03 brief** | Brief DONE (`BI_gurafa/docs/ACADEMY_M03_BRIEF.md`). Prompt templates + sample Georgian data → Gurafa next session | Gurafa | ⏳ partial |
 | **"Power BI Q&A deprecating" post** | LinkedIn + email draft → Mariam. Dec 2026 deprecation = lead gen. | Gurafa | ⏳ next session |
 | **BiFinance AI roadmap confirm** | Claude API + Qlik MCP = feasible. Owner confirm P0? | Owner | ⏳ needs owner |
 
