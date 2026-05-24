@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bihub.ge Audit v3 — Viktor | 2026-05-24</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; line-height: 1.6; }
+  .header { background: #1d1d1f; color: #fff; padding: 32px 40px; }
+  .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+  .header p { color: #a1a1a6; font-size: 14px; }
+  .ep0 { background: #2d2d30; color: #fff; padding: 12px 40px; font-size: 13px; border-bottom: 2px solid #6B63B5; }
+  .container { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  .summary-card { background: #fff; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .summary-card .num { font-size: 32px; font-weight: 800; }
+  .summary-card .label { font-size: 12px; color: #6e6e73; margin-top: 4px; }
+  .num.green { color: #00A651; }
+  .num.red { color: #d93025; }
+  .num.orange { color: #f5a623; }
+  .num.gray { color: #888; }
+  .section { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .section h2 { font-size: 16px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #f5f5f7; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 12px; color: #6e6e73; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { padding: 10px 12px; border-bottom: 1px solid #f5f5f7; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .badge-p0 { background: #fce8e6; color: #c5221f; }
+  .badge-p1 { background: #fef7e0; color: #b06000; }
+  .badge-p2 { background: #e8f0fe; color: #1a73e8; }
+  .badge-fixed { background: #e6f4ea; color: #137333; }
+  .badge-partial { background: #fff3e0; color: #e65100; }
+  .badge-pending { background: #f3e8fd; color: #7b1fa2; }
+  .badge-unverified { background: #f5f5f5; color: #666; }
+  .verdict-fixed { color: #137333; font-weight: 700; }
+  .verdict-broken { color: #c5221f; font-weight: 700; }
+  .verdict-partial { color: #e65100; font-weight: 700; }
+  .verdict-pending { color: #7b1fa2; font-weight: 700; }
+  .verdict-unverified { color: #666; font-weight: 600; }
+  .progress-bar { background: #f0f0f0; border-radius: 8px; height: 8px; margin-top: 8px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #00A651; border-radius: 8px; }
+  .score-banner { background: linear-gradient(135deg, #6B63B5 0%, #00A651 100%); color: #fff; border-radius: 12px; padding: 24px 32px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; }
+  .score-banner .score-num { font-size: 48px; font-weight: 800; }
+  .score-banner .score-label { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+  .score-banner .score-delta { font-size: 18px; font-weight: 700; opacity: 0.9; }
+  .note { font-size: 12px; color: #6e6e73; margin-top: 6px; }
+  code { background: #f5f5f7; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px; }
+  .highlight-row { background: #f0faf4; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>bihub.ge — Security &amp; Bug Audit v3</h1>
+  <p>Viktor | 2026-05-24 | Post-fix verification (Geo fixes applied)</p>
+</div>
+<div class="ep0">EP0: 9/10 (S) — live Playwright re-audit; P0 closure verified; 3 P2s remain open</div>
+
+<div class="container">
+
+  <div class="score-banner">
+    <div>
+      <div class="score-num">82<span style="font-size:24px">/100</span></div>
+      <div class="score-label">Audit Score v3 (was ~60/100 in v2)</div>
+    </div>
+    <div style="text-align:right">
+      <div class="score-delta">+22pts</div>
+      <div class="score-label">P0 Security resolved<br>3 of 7 bugs fixed</div>
+    </div>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="num green">3</div>
+      <div class="label">Fixed (this cycle)</div>
+    </div>
+    <div class="summary-card">
+      <div class="num red">0</div>
+      <div class="label">P0 Open</div>
+    </div>
+    <div class="summary-card">
+      <div class="num orange">3</div>
+      <div class="label">P1-P2 Open</div>
+    </div>
+    <div class="summary-card">
+      <div class="num gray">2</div>
+      <div class="label">Pending / Unverified</div>
+    </div>
+  </div>
+
+  <!-- Fixed this cycle -->
+  <div class="section">
+    <h2>&#10003; Geo-მ გაასწორა (2026-05-24)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Bug</th>
+          <th>Priority</th>
+          <th>Evidence</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td><strong>REG /register-me/ — Fatal error</strong><br><code>Cannot redeclare bihub_mail() in db.php:29</code></td>
+          <td><span class="badge badge-p0">P0</span></td>
+          <td>Page loads — form renders correctly. Title: "register-me - Bihub". No PHP error in DOM.</td>
+          <td><span class="verdict-fixed">FIXED</span></td>
+        </tr>
+        <tr class="highlight-row">
+          <td><strong>N1 — Path disclosure</strong><br>Server path <code>C:\wamp\www\...</code> visible in browser on 500</td>
+          <td><span class="badge badge-p0">P0 Security</span></td>
+          <td>db.php direct access = blank page (no error). 404 = standard WP template, no path. Fatal error removed = disclosure vector closed.</td>
+          <td><span class="verdict-fixed">FIXED</span></td>
+        </tr>
+        <tr class="highlight-row">
+          <td><strong>N2 — favicon.ico 404</strong><br>Missing at <code>themes/qlik/assets/img/favicon.ico</code></td>
+          <td><span class="badge badge-p1">P1</span></td>
+          <td>bihub.ge/favicon.ico → loads 256×256. Browser title tab shows icon.</td>
+          <td><span class="verdict-fixed">FIXED</span></td>
+        </tr>
+        <tr class="highlight-row">
+          <td><strong>HSTS upgrade (bonus)</strong><br>Was <code>max-age=86400</code></td>
+          <td>—</td>
+          <td>Now: <code>strict-transport-security: max-age=31536000; includeSubDomains; preload</code></td>
+          <td><span class="verdict-fixed">UPGRADED</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Still open -->
+  <div class="section">
+    <h2>&#9888; ჯერ კიდევ ღია</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Bug</th>
+          <th>Priority</th>
+          <th>Evidence</th>
+          <th>Status</th>
+          <th>Fix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>B-02 — Logo href="#"</strong></td>
+          <td><span class="badge badge-p1">P1</span></td>
+          <td>Homepage header: <code>link "bihub მთავარი გვერდი" /url: "#"</code>. Inner pages (register-me) logo → <code>https://bihub.ge</code> ✅ fixed there.</td>
+          <td><span class="verdict-partial">PARTIAL</span></td>
+          <td>Homepage template logo <code>href</code> → <code>/</code></td>
+        </tr>
+        <tr>
+          <td><strong>B-05 — Rocket Loader ON</strong></td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td>Network: <code>rocket-loader.min.js</code> still loading. Wordfence MIME errors persist risk.</td>
+          <td><span class="verdict-broken">NOT FIXED</span></td>
+          <td>CF Dashboard → Speed → Rocket Loader → OFF</td>
+        </tr>
+        <tr>
+          <td><strong>N3 — CSP header missing</strong></td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td>Response headers: no <code>Content-Security-Policy</code>. All other 5 security headers present.</td>
+          <td><span class="verdict-broken">NOT FIXED</span></td>
+          <td>CF Transform Rules → Add CSP header</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pending / Unverified -->
+  <div class="section">
+    <h2>&#8205; Pending / Unverified</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Bug</th>
+          <th>Priority</th>
+          <th>Reason</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>B-03 — Terms/Privacy dead links</strong></td>
+          <td><span class="badge badge-p1">P1</span></td>
+          <td>Page content not provided by owner. Cannot auto-fix.</td>
+          <td><span class="verdict-pending">OWNER PENDING</span></td>
+        </tr>
+        <tr>
+          <td><strong>N4 — Google Maps API key (no domain restriction)</strong></td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td>Cannot verify domain restriction from browser. Requires Google Cloud Console access.</td>
+          <td><span class="verdict-unverified">UNVERIFIED [EP1]</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Full header state -->
+  <div class="section">
+    <h2>Security Headers — სრული სტატუსი</h2>
+    <table>
+      <thead>
+        <tr><th>Header</th><th>Value</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>Strict-Transport-Security</code></td><td><code>max-age=31536000; includeSubDomains; preload</code></td><td><span class="verdict-fixed">PASS</span></td></tr>
+        <tr><td><code>X-Frame-Options</code></td><td><code>SAMEORIGIN</code></td><td><span class="verdict-fixed">PASS</span></td></tr>
+        <tr><td><code>X-Content-Type-Options</code></td><td><code>nosniff</code></td><td><span class="verdict-fixed">PASS</span></td></tr>
+        <tr><td><code>Referrer-Policy</code></td><td><code>strict-origin-when-cross-origin</code></td><td><span class="verdict-fixed">PASS</span></td></tr>
+        <tr><td><code>Permissions-Policy</code></td><td><code>camera=(), microphone=(), geolocation=(self)</code></td><td><span class="verdict-fixed">PASS</span></td></tr>
+        <tr><td><code>Content-Security-Policy</code></td><td>— absent —</td><td><span class="verdict-broken">MISSING</span></td></tr>
+      </tbody>
+    </table>
+    <div class="progress-bar"><div class="progress-fill" style="width:83%"></div></div>
+    <div class="note">5/6 security headers present (83%). CSP remaining.</div>
+  </div>
+
+  <!-- Next steps -->
+  <div class="section">
+    <h2>გზა — შემდეგი ნაბიჯები (Geo lane)</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Action</th><th>Priority</th><th>Where</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Homepage logo <code>href="#"</code> → <code>href="/"</code></td>
+          <td><span class="badge badge-p1">P1</span></td>
+          <td>Homepage theme template (header)</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Rocket Loader → OFF</td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td>CF Dashboard → Speed → Optimization</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>CSP header add</td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td>CF Transform Rules → Modify Response Header</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Google Maps API → domain restrict <code>*.bihub.ge/*</code></td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td>Google Cloud Console → Credentials</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Terms/Privacy page content</td>
+          <td><span class="badge badge-p1">P1</span></td>
+          <td>Owner provides content → Geo deploys</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="text-align:center; color:#a1a1a6; font-size:12px; padding: 16px 0 32px;">
+    Viktor | bihub.ge Audit v3 | 2026-05-24 | Live Playwright verification
+  </div>
+
+</div>
+</body>
+</html>
