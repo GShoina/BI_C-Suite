@@ -8,9 +8,9 @@ owner: GelLa
 
 | Item | Owner | Status |
 |---|---|---|
-| **Mentari_Virtual-C-Suite/ folder archive** | GelLa | ⏳ P0 next session — missed in Phase 1 |
+| **Mentari_Virtual-C-Suite/ folder archive** | GelLa | ✅ DONE 2026-05-25 → `archive/2026-05/` (219 files) |
 | **Owner Phase 4.3 checklist** | Owner | ⏳ P1 — Constitution readability confirm |
-| **BI_C-Suite/CLAUDE.md** | GelLa | ⏳ P2 — still references Mentari; fix after folder archive |
+| **BI_C-Suite/CLAUDE.md** | GelLa | ✅ DONE 2026-05-25 → GelLa thin-loader, commit 186aeeb |
 | ctx-upgrade v1.0.151 | GelLa | ✅ done (already shown in Viktor session) |
 
 **Memory system status:** ✅ COMPLETE
