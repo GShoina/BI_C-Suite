@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bihub.ge Audit v2 — Viktor | 2026-05-24</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; line-height: 1.6; }
+  .header { background: #1d1d1f; color: #fff; padding: 32px 40px; }
+  .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+  .header p { color: #a1a1a6; font-size: 14px; }
+  .ep0 { background: #2d2d30; color: #fff; padding: 12px 40px; font-size: 13px; border-bottom: 2px solid #6B63B5; }
+  .container { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  .summary-card { background: #fff; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .summary-card .num { font-size: 32px; font-weight: 800; }
+  .summary-card .label { font-size: 12px; color: #6e6e73; margin-top: 4px; }
+  .num.green { color: #00A651; }
+  .num.red { color: #d93025; }
+  .num.orange { color: #f5a623; }
+  .num.gray { color: #888; }
+  .section { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .section h2 { font-size: 16px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #f5f5f7; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 12px; color: #6e6e73; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { padding: 10px 12px; border-bottom: 1px solid #f5f5f7; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .badge-p0 { background: #fce8e6; color: #c5221f; }
+  .badge-p1 { background: #fef7e0; color: #b5620a; }
+  .badge-p2 { background: #e8f0fe; color: #1a73e8; }
+  .badge-ok { background: #e6f4ea; color: #137333; }
+  .badge-na { background: #f1f3f4; color: #5f6368; }
+  .status-fixed { color: #00A651; font-weight: 700; }
+  .status-broken { color: #d93025; font-weight: 700; }
+  .status-new { color: #f5a623; font-weight: 700; }
+  .code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background: #f5f5f7; padding: 2px 6px; border-radius: 4px; word-break: break-all; }
+  .fix-box { background: #f5f5f7; border-radius: 8px; padding: 14px 16px; margin-top: 8px; font-size: 12px; }
+  .fix-box strong { display: block; margin-bottom: 6px; color: #1d1d1f; }
+  pre { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; white-space: pre-wrap; word-break: break-all; line-height: 1.5; }
+  .footer { text-align: center; color: #a1a1a6; font-size: 12px; padding: 32px 20px; }
+  .highlight-row { background: #fff8e1; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>bihub.ge Audit v2 — Geo-სთვის</h1>
+  <p>ავტორი: Viktor &nbsp;|&nbsp; თარიღი: 2026-05-24 &nbsp;|&nbsp; საიტი ახლად ატვირთული (v12 pre-deploy)</p>
+</div>
+<div class="ep0">EP0: 8/10 (S) — live Playwright audit, 10 check, credentials tested, console + headers + mobile verified</div>
+
+<div class="container">
+
+  <!-- Summary -->
+  <div class="summary-grid">
+    <div class="summary-card"><div class="num green">3</div><div class="label">Fixed ✅</div></div>
+    <div class="summary-card"><div class="num red">2</div><div class="label">Still Broken ❌</div></div>
+    <div class="summary-card"><div class="num orange">4</div><div class="label">New Bugs 🆕</div></div>
+    <div class="summary-card"><div class="num gray">2</div><div class="label">N/A / Pending</div></div>
+  </div>
+
+  <!-- Fixed -->
+  <div class="section">
+    <h2>✅ Fixed (May 22 → May 24)</h2>
+    <table>
+      <thead><tr><th>Bug</th><th>Status</th><th>შენიშვნა</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>B-01 — Forgot Password 404</strong></td>
+          <td><span class="status-fixed">✅ FIXED</span></td>
+          <td>Modal-ში სრულად მუშაობს. "გამოგზავნეთ ბმული" button ✅. 404 გაქრა.</td>
+        </tr>
+        <tr>
+          <td><strong>B-04 — Security Headers</strong></td>
+          <td><span class="status-fixed">✅ FIXED (partial)</span></td>
+          <td>HSTS ✅ X-Frame-Options ✅ X-Content-Type-Options ✅ Referrer-Policy ✅ Permissions-Policy ✅<br><em>CSP (Content-Security-Policy) — ჯერ კიდევ აკლია → N3 იხილე</em></td>
+        </tr>
+        <tr>
+          <td><strong>Login — gela.shonia@bivision.ge</strong></td>
+          <td><span class="status-fixed">✅ WORKS</span></td>
+          <td>Credentials tested live. Modal → form → submit → logged in. ✅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Still Broken -->
+  <div class="section">
+    <h2>❌ ჯერ კიდევ გატეხილი</h2>
+    <table>
+      <thead><tr><th>Bug</th><th>Priority</th><th>Error</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td><strong>REG — /register-me/ Fatal Error</strong></td>
+          <td><span class="badge badge-p0">P0</span></td>
+          <td><span class="code">Fatal error: Cannot redeclare bihub_mail() in db.php:29</span><br>db.php ორჯერ ჩაიტვირთება (double include)</td>
+          <td>
+            <div class="fix-box">
+              <strong>Fix — db.php line 29:</strong>
+              <pre>// wrap function declaration:
+if (!function_exists('bihub_mail')) {
+    function bihub_mail($to, $subject, $body) {
+        // existing code...
+    }
+}
+</pre>
+              <strong style="margin-top:8px; display:block;">ან:</strong>
+              <pre>// მოძებნე სად ხდება db.php double include
+// grep -r "db.php" wp-content/themes/qlik/
+// და ამოიღე duplicate require/include</pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>B-02 — Logo href="#"</strong></td>
+          <td><span class="badge badge-p1">P1</span></td>
+          <td>Logo ჯერ კიდევ <span class="code">href="#"</span> → homepage-ზე არ გადადის</td>
+          <td>
+            <div class="fix-box">
+              <strong>Fix — header template:</strong>
+              <pre>&lt;a href="/" aria-label="bihub მთავარი გვერდი"&gt;</pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>B-05 — Rocket Loader</strong></td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td>Console error: <span class="code">Refused to execute script... MIME type ('text/html')</span> — Wordfence sync script blocked</td>
+          <td>CF Dashboard → Speed → Optimization → Rocket Loader → <strong>OFF</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- New Bugs -->
+  <div class="section">
+    <h2>🆕 ახალი პრობლემები (v12 upload-ის შემდეგ)</h2>
+    <table>
+      <thead><tr><th>#</th><th>Priority</th><th>პრობლემა</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td><strong>N1</strong></td>
+          <td><span class="badge badge-p0">P0 Security</span></td>
+          <td><strong>Path Disclosure</strong> — /register-me/ 500 error-ზე browser-ში სრული სერვერის გზა ჩანს:<br><span class="code">C:\wamp\www\wp-content\themes\qlik\auth\config\db.php</span></td>
+          <td>
+            <div class="fix-box">
+              <strong>wp-config.php-ში:</strong>
+              <pre>define('WP_DEBUG', false);
+define('WP_DEBUG_DISPLAY', false);
+define('WP_DEBUG_LOG', false);</pre>
+              500 error page-ს ნაცვლად custom error.php მოამზადე.
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>N2</strong></td>
+          <td><span class="badge badge-p1">P1</span></td>
+          <td><strong>Favicon 404</strong> — <span class="code">themes/qlik/assets/img/favicon.ico</span> არ არსებობს</td>
+          <td>favicon.ico ატვირთე <span class="code">wp-content/themes/qlik/assets/img/</span>-ში, ან header-ში გზა შეცვალე WP root-ზე</td>
+        </tr>
+        <tr>
+          <td><strong>N3</strong></td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td><strong>CSP Header Missing</strong> — Content-Security-Policy CF Transform Rules-ში არ არის (დანარჩენი 5 header ✅)</td>
+          <td>
+            <div class="fix-box">
+              <strong>CF → Rules → Transform Rules → Modify Response Headers → Add:</strong>
+              <pre>Name: Content-Security-Policy
+Value: default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'</pre>
+              (minimal — strict version საჭიროებს JS audit-ს)
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>N4</strong></td>
+          <td><span class="badge badge-p2">P2</span></td>
+          <td><strong>Google Maps API Key</strong> — URL-ში visible: <span class="code">AIzaSyC3fgHNfrUB1TlPMlYwgGc4XvtIkLgz6pc</span></td>
+          <td>Google Cloud Console → Credentials → ამ key-ზე Application Restriction → HTTP Referrers → <span class="code">*.bihub.ge/*</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- N/A & Pending -->
+  <div class="section">
+    <h2>⏸ N/A / Owner-Pending</h2>
+    <table>
+      <thead><tr><th>Bug</th><th>Status</th><th>შენიშვნა</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>B-03 — Terms/Privacy dead links</strong></td>
+          <td><span class="badge badge-na">PENDING OWNER</span></td>
+          <td>Links exist in footer — content needs owner. არ შეიძლება agent-მა შექმნას.</td>
+        </tr>
+        <tr>
+          <td><strong>B-06 — noscript display:none</strong></td>
+          <td><span class="badge badge-na">N/A</span></td>
+          <td>GTM noscript არ მოიძებნა. Content noscript = <span class="code">aria-hidden + display:none</span> (SEO fallback — acceptable). ❌ bug არ არის.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Security Headers Detail -->
+  <div class="section">
+    <h2>🔒 Security Headers — სრული სტატუსი</h2>
+    <table>
+      <thead><tr><th>Header</th><th>Status</th><th>მნიშვნელობა</th></tr></thead>
+      <tbody>
+        <tr><td>Strict-Transport-Security</td><td><span class="badge badge-ok">✅ LIVE</span></td><td><span class="code">max-age=31536000; includeSubDomains; preload</span></td></tr>
+        <tr><td>X-Frame-Options</td><td><span class="badge badge-ok">✅ LIVE</span></td><td><span class="code">SAMEORIGIN</span></td></tr>
+        <tr><td>X-Content-Type-Options</td><td><span class="badge badge-ok">✅ LIVE</span></td><td><span class="code">nosniff</span></td></tr>
+        <tr><td>Referrer-Policy</td><td><span class="badge badge-ok">✅ LIVE</span></td><td><span class="code">strict-origin-when-cross-origin</span></td></tr>
+        <tr><td>Permissions-Policy</td><td><span class="badge badge-ok">✅ LIVE</span></td><td><span class="code">camera=(), microphone=(), geolocation=(self)</span></td></tr>
+        <tr class="highlight-row"><td>Content-Security-Policy</td><td><span class="badge badge-p1">❌ MISSING</span></td><td>CF Transform Rules-ში დასამატებელია → N3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Mobile -->
+  <div class="section">
+    <h2>📱 Mobile 375px</h2>
+    <table>
+      <thead><tr><th>Check</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Layout — homepage</td><td><span class="badge badge-ok">✅ OK</span></td></tr>
+        <tr><td>Hero section</td><td><span class="badge badge-ok">✅ OK</span></td></tr>
+        <tr><td>Report cards grid</td><td><span class="badge badge-ok">✅ OK</span></td></tr>
+        <tr><td>Footer</td><td><span class="badge badge-ok">✅ OK</span></td></tr>
+        <tr><td>Hamburger menu</td><td><span class="badge badge-na">NOT TESTED</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Priority Summary for Geo -->
+  <div class="section">
+    <h2>🎯 Geo — Priority Action List</h2>
+    <table>
+      <thead><tr><th>#</th><th>Priority</th><th>Action</th><th>სად</th></tr></thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td>1</td><td><span class="badge badge-p0">P0</span></td>
+          <td><strong>db.php double include fix</strong> — wrap bihub_mail() in <span class="code">if (!function_exists())</span></td>
+          <td><span class="code">themes/qlik/auth/config/db.php:29</span></td>
+        </tr>
+        <tr class="highlight-row">
+          <td>2</td><td><span class="badge badge-p0">P0</span></td>
+          <td><strong>WP_DEBUG_DISPLAY = false</strong> — path disclosure გამორთვა</td>
+          <td><span class="code">wp-config.php</span></td>
+        </tr>
+        <tr>
+          <td>3</td><td><span class="badge badge-p1">P1</span></td>
+          <td><strong>Logo href="#" → "/"</strong></td>
+          <td>header template</td>
+        </tr>
+        <tr>
+          <td>4</td><td><span class="badge badge-p1">P1</span></td>
+          <td><strong>favicon.ico ატვირთვა</strong></td>
+          <td><span class="code">themes/qlik/assets/img/</span></td>
+        </tr>
+        <tr>
+          <td>5</td><td><span class="badge badge-p2">P2</span></td>
+          <td><strong>Rocket Loader OFF</strong></td>
+          <td>CF Dashboard → Speed</td>
+        </tr>
+        <tr>
+          <td>6</td><td><span class="badge badge-p2">P2</span></td>
+          <td><strong>CSP header</strong> — CF Transform Rules</td>
+          <td>Cloudflare Dashboard</td>
+        </tr>
+        <tr>
+          <td>7</td><td><span class="badge badge-p2">P2</span></td>
+          <td><strong>Google Maps API key restrict</strong></td>
+          <td>Google Cloud Console</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">
+  Viktor Audit v2 &nbsp;|&nbsp; bihub.ge &nbsp;|&nbsp; 2026-05-24 &nbsp;|&nbsp; Playwright live test &nbsp;|&nbsp; Bivision
+</div>
+
+</body>
+</html>

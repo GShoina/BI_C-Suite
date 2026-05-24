@@ -1,27 +1,30 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-23 session (gamige intel done; bihub audit 6 bugs; WEBSITE_STANDARD §25b/c added)
+updated: 2026-05-24 Viktor audit v2 (live Playwright test post-upload)
 owner: Mentari
 ---
 
-## bihub.ge — Viktor Audit Bugs (2026-05-22, carry to Geo)
+## bihub.ge — Viktor Audit v2 (2026-05-24, carry to Geo)
 
 | # | Priority | Bug | Fix |
 |---|---|---|---|
-| B-01 | **P0** | /forgot-password/ → 404 | Find modal JS forgot-password URL, fix endpoint |
-| REG | **P0** | /register-me/ → 500 (ACF deleted) | Install ACF Pro OR replace get_field() with native WP meta |
+| ~~B-01~~ | ✅ FIXED | ~~forgot-password → 404~~ | Modal works, no 404 |
+| **REG** | **P0** | /register-me/ → Fatal error: `Cannot redeclare bihub_mail()` in db.php:29 | Wrap in `if (!function_exists('bihub_mail'))` OR find duplicate include |
+| **N1** | **P0 Security** | Path disclosure — server path `C:\wamp\www\...` visible in browser on 500 | `wp-config.php`: `WP_DEBUG_DISPLAY=false` |
 | B-02 | P1 | Logo href="#" | Change to href="/" |
 | B-03 | P1 | Terms/Privacy dead links | Need page content from owner |
-| B-04 | P1 | 7 security headers missing | CF Transform Rules → Modify Response Headers (NOT .htaccess) |
-| B-05 | P2 | Rocket Loader deferring 18 resources | CF Dashboard → Speed → Rocket Loader → OFF |
-| B-06 | P2 | noscript display:none | Change to visibility:hidden |
+| ~~B-04~~ | ✅ FIXED (5/6) | ~~Security headers~~ | HSTS✅ X-Frame✅ X-Content✅ Referrer✅ Permissions✅ — CSP missing → N3 |
+| N2 | P1 | favicon.ico 404 — `themes/qlik/assets/img/favicon.ico` missing | Upload favicon.ico to that path |
+| B-05 | P2 | Rocket Loader still ON — Wordfence script blocked (MIME error) | CF Dashboard → Speed → Rocket Loader → OFF |
+| N3 | P2 | CSP header missing (Content-Security-Policy) | CF Transform Rules → Add header |
+| N4 | P2 | Google Maps API key in URL — not domain-restricted | Google Cloud Console → Credentials → restrict to *.bihub.ge/* |
+| ~~B-06~~ | ✅ N/A | ~~noscript display:none~~ | GTM noscript not found. Content noscript = acceptable SEO pattern |
 | NOTE | — | /tbc/.htaccess | DO NOT DELETE — needed |
 
-## bihub.ge carry-forwards (2026-05-22)
-- P0: Forgot password flow end-to-end test — db.php patched, live test not done
-- P0: mail-tester.com deliverability score
-- P1: v11 Playwright visual regression baseline
-- P1: CF security headers audit (X-Frame-Options, CSP, HSTS)
+## bihub.ge carry-forwards (2026-05-24)
+- Backup verified: `C:\wamp\bihub_fullbackup_20260523.zip` — 184.7MB / 17,063 entries / wp-config.php ✅
+- P0: mail-tester.com deliverability score — still pending
+- P1: Playwright visual regression baseline — still pending
 
 ---
 
