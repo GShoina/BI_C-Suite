@@ -1,8 +1,53 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-24 Meta Phase1 v2 + form swap
-owner: Mentari
+updated: 2026-05-25 — GelLa session (Operating Constitution complete)
+owner: GelLa
 ---
+
+## 2026-05-25 — GelLa session (memory cleanup COMPLETE)
+
+| Item | Owner | Status |
+|---|---|---|
+| **Mentari_Virtual-C-Suite/ folder archive** | GelLa | ⏳ P0 next session — missed in Phase 1 |
+| **Owner Phase 4.3 checklist** | Owner | ⏳ P1 — Constitution readability confirm |
+| **BI_C-Suite/CLAUDE.md** | GelLa | ⏳ P2 — still references Mentari; fix after folder archive |
+| ctx-upgrade v1.0.151 | GelLa | ✅ done (already shown in Viktor session) |
+
+**Memory system status:** ✅ COMPLETE
+- 10 canonicals + OPERATING_CONSTITUTION.md + CLAUDE.md thin-loader
+- 141 archived, 90 active, MEMORY.md = 128 lines
+- All 6 patches applied (A/B/C/D/E/F)
+
+---
+
+## 2026-05-25 — Viktor session carry-forwards
+
+| Item | Owner | Status |
+|---|---|---|
+| ctx-upgrade v1.0.151 | GelLa | ⏳ `/ctx-upgrade` next session |
+| GTM Key Events (phone_call / whatsapp_click / form_submit) | Owner | ⏳ P0 |
+| Mailchimp billing | Owner | ⏳ P0 |
+| Energy #17994061 segment filter | GelLa (after billing) | ⏳ P1 |
+| Constitution §3 Viktor launcher text | GelLa | P3 — "(Mentari session / standalone)" → "standalone" |
+| 7 project files future archive | GelLa monthly | P3 |
+
+**Memory system status:** ✅ COMPLETE — 10 canonicals + Constitution live. 141 archived. CLAUDE.md thin loader.
+
+---
+
+## GelLa P0 execution — 2026-05-24 evening
+
+| Task | Status | Notes |
+|---|---|---|
+| LiteSpeed Preload All (TTFB) | ✅ DONE | Crawler ON, async running, cache warming |
+| MariaDB upgrade check | ⏳ FastCloud pending | Current: 10.5.29-MariaDB-cll-lve. Owner: "არ ვიცი როდის" |
+| Redis object cache | ⏳ blocked on MariaDB confirm | Option available in LiteSpeed Cache settings |
+| Mailchimp billing | ⏳ owner fixing | Payment declined = root cause of 6-day email stall |
+| Energy #17994061 audience filter | ⏳ after billing | "All subscribed contacts" → needs Energy segment |
+| BiMedical #17993958 URL fix | ℹ️ already sent May 20 | Open 41.3% ✅, Bounce 13.1% ⚠️ — clean list before next send |
+| GTM Key Events | ⏳ pending | phone_call / whatsapp_click / form_submit = unmeasured |
+| ctx-upgrade v1.0.136→v1.0.150 | ⏳ git timeout | Hooks fixed. Retry when network clear: `/ctx-upgrade` |
+| Memory/file cleanup session | ⏳ paused | Resumed after today's P0s done |
 
 ## BiFinance Phase1 v2 — 2026-05-24 ✅ LIVE
 
