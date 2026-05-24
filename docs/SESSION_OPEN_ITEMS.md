@@ -1,30 +1,50 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-24 Viktor audit v2 (live Playwright test post-upload)
+updated: 2026-05-24 Meta Phase1 v2 + form swap
 owner: Mentari
 ---
 
-## bihub.ge — Viktor Audit v2 (2026-05-24, carry to Geo)
+## BiFinance Phase1 v2 — 2026-05-24 ✅ LIVE
 
-| # | Priority | Bug | Fix |
-|---|---|---|---|
-| ~~B-01~~ | ✅ FIXED | ~~forgot-password → 404~~ | Modal works, no 404 |
-| **REG** | **P0** | /register-me/ → Fatal error: `Cannot redeclare bihub_mail()` in db.php:29 | Wrap in `if (!function_exists('bihub_mail'))` OR find duplicate include |
-| **N1** | **P0 Security** | Path disclosure — server path `C:\wamp\www\...` visible in browser on 500 | `wp-config.php`: `WP_DEBUG_DISPLAY=false` |
-| B-02 | P1 | Logo href="#" | Change to href="/" |
-| B-03 | P1 | Terms/Privacy dead links | Need page content from owner |
-| ~~B-04~~ | ✅ FIXED (5/6) | ~~Security headers~~ | HSTS✅ X-Frame✅ X-Content✅ Referrer✅ Permissions✅ — CSP missing → N3 |
-| N2 | P1 | favicon.ico 404 — `themes/qlik/assets/img/favicon.ico` missing | Upload favicon.ico to that path |
-| B-05 | P2 | Rocket Loader still ON — Wordfence script blocked (MIME error) | CF Dashboard → Speed → Rocket Loader → OFF |
-| N3 | P2 | CSP header missing (Content-Security-Policy) | CF Transform Rules → Add header |
-| N4 | P2 | Google Maps API key in URL — not domain-restricted | Google Cloud Console → Credentials → restrict to *.bihub.ge/* |
-| ~~B-06~~ | ✅ N/A | ~~noscript display:none~~ | GTM noscript not found. Content noscript = acceptable SEO pattern |
-| NOTE | — | /tbc/.htaccess | DO NOT DELETE — needed |
+| # | Item | Status |
+|---|---|---|
+| ✅ | Campaign `BiFinance_Phase1_v2_2026-05-22` (120246759167590598) | ACTIVE, $20 lifetime, ends Jun 1 |
+| ✅ | AdSet LAL_PixelSeed only, Advantage+ OFF, age 28-55 | VERIFIED via API |
+| ✅ | Form swap: old 990562330546376 (5 fields, 0 leads) → **1495634402063502** (3 fields + Calendly) | PUBLISHED via Playwright |
+| ✅ | GSC sitemap resubmit + all pages indexing requested | DONE 2026-05-24 |
+| ⏳ | **2026-05-27 checkpoint** (72h) — CTR/impressions/leads | Owner check |
+| ⏳ | Meta app dev mode → Live (1-3 day review) | Owner → Meta Developer Console |
+| ⏳ | GA4↔Meta gap: Lead Gen Form = no website visit = no GA4 | Decision: keep form OR switch to website CTA |
+| ⏳ | bihub.ge migration | `~/.claude/scripts/bihub_migration.ps1` READY |
+| ⏳ | Search Console API enable | project 690459787742 → `searchconsole.googleapis.com` |
 
-## bihub.ge carry-forwards (2026-05-24)
-- Backup verified: `C:\wamp\bihub_fullbackup_20260523.zip` — 184.7MB / 17,063 entries / wp-config.php ✅
-- P0: mail-tester.com deliverability score — still pending
-- P1: Playwright visual regression baseline — still pending
+---
+
+## bihub.ge — Viktor Audit v3 (2026-05-24, score 82/100)
+
+| # | Priority | Bug | Status | Fix |
+|---|---|---|---|---|
+| ~~B-01~~ | ✅ FIXED | ~~forgot-password → 404~~ | FIXED | — |
+| ~~REG~~ | ✅ FIXED | ~~Fatal error db.php:29~~ | FIXED | — |
+| ~~N1~~ | ✅ FIXED | ~~Path disclosure~~ | FIXED | — |
+| ~~N2~~ | ✅ FIXED | ~~favicon.ico 404~~ | FIXED | — |
+| ~~B-04~~ | ✅ FIXED | ~~Security headers (5/6)~~ | FIXED | — |
+| HSTS | ✅ UPGRADED | — | max-age=31536000 + preload | — |
+| **B-02** | **P1** | Logo href="#" on homepage | **PARTIAL** — inner pages fixed, homepage still "#" | Homepage template header href → "/" |
+| **B-03** | **P1** | Terms/Privacy dead links | **OWNER PENDING** | Owner provides content |
+| **B-05** | **P2** | Rocket Loader ON | **NOT FIXED** | CF → Speed → Rocket Loader → OFF |
+| **N3** | **P2** | CSP header missing | **NOT FIXED** | CF Transform Rules → Add CSP |
+| **N4** | **P2** | Maps API key not domain-restricted | **UNVERIFIED** [EP1] | Google Cloud Console → Credentials → *.bihub.ge/* |
+| NOTE | — | /tbc/.htaccess | DO NOT DELETE | — |
+
+## bihub.ge carry-forwards (2026-05-24 v3)
+- Backup: `C:\wamp\bihub_fullbackup_20260523.zip` — 184.7MB / 17,063 entries / wp-config.php ✅
+- P0 open: 0 — both cleared by Geo ✅
+- P1 remaining: B-02 (partial), B-03 (owner-pending)
+- P2 remaining: B-05, N3, N4 — ~1-2h Geo work
+- mail-tester.com deliverability score — still pending
+- Playwright visual regression baseline — still pending
+- bihub.ge strategic Q: registration conversion rate unknown — owner check GA4 `/register-me/` completion
 
 ---
 
@@ -143,3 +163,21 @@ owner: Mentari
 - ნინო გორგაძე monthly signal note — Gurafa → Mariam next session
 - BiFinance CTR: confirm kill or continue (May 21)
 - Power BI MCP service — შემოვთავაზო Power BI Pro კლიენტებს?
+
+---
+
+## bivision.ge SEO — Open items (Geo 2026-05-22)
+
+**Brief:** `outputs/2026-05-22 bivision.ge SEO Brief by Geo.html` — agent handoff for reputation/content strategy.
+
+| P | Item | Lane |
+|---|---|---|
+| P0 | TTFB 1.49s → LiteSpeed Preload All (10 min fix now) + Redis post-MariaDB | GelLa |
+| P0 | Key Events: phone_call / whatsapp_click / form_submit → GTM | Owner / GelLa |
+| P0 | Content: first post targeting "ფინანსური რეპორტინგი ავტომატიზება" (blue ocean) | Gurafa + Mariam |
+| P1 | B-03 Empty H1 homepage | GelLa (theme) |
+| P1 | B-06 Privacy Policy = PDF → WP page + 301 | GelLa |
+| P1 | B-07 legalName "bevision" → "Bivision" (Rank Math Organization) | GelLa |
+| P2 | B-08 Cache-Control inconsistency | GelLa |
+| P2 | hreflang ka + x-default | GelLa |
+| monitor | FB paid eng.rate — if <35% → build /demo LP | Mariam |
