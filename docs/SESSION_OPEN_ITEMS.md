@@ -1,7 +1,59 @@
 ---
 class: OPEN ITEMS (always-on tracker)
-updated: 2026-05-25 — GelLa session (Operating Constitution complete)
+updated: 2026-05-27 — Geo session appended (bihub GA4 LIVE + dashboard) + GelLa CEO Brief v1/v2
 owner: GelLa
+---
+
+## 2026-05-27 — Geo session (bihub/bivision evaluation + dashboard)
+
+| Item | Owner | Status |
+|---|---|---|
+| **bihub.ge GA4 G-DTW4NJD1ZB LIVE** | Geo | ✅ DONE — 43 sess/7d first real data, today 7 sess + 1 realtime |
+| **Akismet `71da507a51c9` installed + valid** | Geo | ✅ DONE — real-time spam pre-filter active |
+| **Spam vector eliminated** | Geo | ✅ post ID=1 + 131 comments DELETED, all 60 posts comment-closed |
+| **Wordfence emails OFF (per owner request)** | Geo | ✅ email_summary_enabled=0, 14 alertOn_*=0 |
+| **2026-05-27 Geo Dashboard v1** | Geo | ✅ `outputs/2026-05-27 Geo Dashboard by Geo.html` (5 tabs, live-pull only) |
+| **3 old dashboards archived** | Geo | ✅ → `outputs/archive/2026-05-superseded/` |
+| **bihub 7d GA4 baseline (organic)** | Geo | ⏳ wait ~6 days, then full baseline pull → reposition decision |
+| **bivision avgDur crash investigation** | Geo + GelLa | ⏳ verify hypothesis: Paid Social/AN/Organic Social drag mean from 264s→93s |
+| **bihub reposition decision** | Owner (data-backed in 7d) | ⏳ kill / pivot to free-data hub / scale — wait for baseline |
+| **HubSpot bridge build (registration → webhook)** | Geo + Owner | ⛔ 94% lead capture loss; pre-condition for lead rescue |
+| **Meta form regression A/B (Phase0 vs Phase1_v2)** | GelLa / Mariam | ⛔ owner-decision — 16 leads → 0 after form swap |
+
+**Memory files added/updated (Geo lane):**
+- `feedback_verify_first_evaluation.md` — verify-first protocol
+- `feedback_bihub_homepage_static.md` — bihub root = static via .htaccess, WP only sub-paths
+- `feedback_sitekit_token_extraction.md` — bypass SA grant via WinRM PHP
+- `reference_ga4_credentials.md` corrected (bihub property: 690459787742 WRONG → 538903738)
+- `project_bihub_v11_state.md` + `project_fb_ads_active.md` updated
+
+---
+
+## 2026-05-27 — GelLa session (CEO Brief v1 + Roast feedback)
+
+| Item | Owner | Status |
+|---|---|---|
+| CEO Brief v2 SHIPPED 2026-05-27 | GelLa | ✅ `outputs/2026-05-27 CEO Brief v2 by GelLa.html` — all 6 v1 issues fixed |
+| Brief quality standard applies forward (next week + onward) | GelLa | ✅ `feedback_brief_quality_standard.md` auto-triggers on every CEO Brief |
+| **HubSpot pipeline DATA STALENESS** — Elgromotors = closedlost (2026-05-21), my brief still listed as HOT | GelLa | ⛔ verify pipeline live before every brief |
+| Phase1_v2 — AN-OFF + UTM url_tags live (creative 1641652157120899) | GelLa | ✅ DONE; monitor 72h checkpoint 2026-05-27 evening for leads/CTR |
+| Mailchimp API key empty in env (post-rotation) | Owner | ⏳ P0 — credential restore + billing fix unblocks Energy + IVF batches |
+| Meta App dev→Live mode | Owner | ⏳ P0 — blocks NEW creative post creation (UTM workaround used object_story_id) |
+| GSC API enable (project 690459787742) | Owner | ⏳ P0 — 1-click in console.developers.google.com |
+| GTM Key Events (phone_call/whatsapp_click/form_submit) | Owner | ⏳ P0 — 6+ days open |
+| LinkedIn API approval (submitted 2026-05-17) | LinkedIn | ⏳ pending |
+| FB Page Access Token regenerate | Owner | ⏳ P1 — blocks FB organic insights |
+| Saved brief quality standard for v2 next week | GelLa | ✅ `feedback_brief_quality_standard.md` |
+| Saved /Roast directive | GelLa | ✅ `reference_roast_directive.md` |
+| Session plan saved | GelLa | ✅ `SESSION_2026-05-27_plan.md` |
+| **Gurafa session 2026-05-25→27 — appended to plan** | Gurafa | ✅ Healthcare CF v4 + Qlik MCP + Power BI MCP + AI-Native Playbook + 5 directive refs + 4 new feedback files |
+| Power BI MCP outreach — Week 1 pilot install | Gurafa | 🔓 next-session autonomous start |
+| Power BI MCP outreach — copy approval | Owner | ⛔ Mariam-edited LinkedIn/DM hook |
+| Healthcare CF v4 — analyst colleague share | Owner | ⛔ dashboard ready, awaiting owner action |
+| "12 Skills for Georgian SMB CFO" article — Q2 priority? | Owner | ⛔ decision pending |
+| Beliūnas paid Substack subscribe — Anthropic playbook unlock | Owner | ⛔ decision pending |
+| Weekly skill-refinement cron — Viktor-owned vs split? | Owner | ⛔ ownership pending |
+
 ---
 
 ## 2026-05-25 — GelLa session (memory cleanup COMPLETE)
